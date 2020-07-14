@@ -1,0 +1,37 @@
+{
+  "name": "@twilio-labs/match-styling-library",
+  "version": "0.0.0",
+  "description": "CSS-in-JS wrapper library for use with the Twilio Match Design System.",
+  "author": "Twilio Inc.",
+  "license": "UNLICENSED",
+  "main:dev": "src/index.ts",
+  "main": "dist/index.ts",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "packages/match-components"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "rollup -c --environment NODE_ENV:production",
+    "compile:dev": "rollup -c --environment NODE_ENV:development",
+    "prepublishOnly": "npm run build",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "styled-components": "^5.1.1"
+  }
+}

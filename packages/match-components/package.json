@@ -1,0 +1,38 @@
+{
+  "name": "@twilio-labs/match-components",
+  "version": "0.0.0",
+  "description": "Twilio Match Design System Components",
+  "author": "Twilio Inc.",
+  "license": "UNLICENSED",
+  "main:dev": "src/index.ts",
+  "main": "dist/index.ts",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "packages/match-components"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "rollup -c --environment NODE_ENV:production",
+    "compile:dev": "rollup -c --environment NODE_ENV:development",
+    "prepublishOnly": "npm run build",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@twilio-labs/match-styling-library": "^0.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@twilio-labs/match-styling-library": "^0.0.2"
+  }
+}

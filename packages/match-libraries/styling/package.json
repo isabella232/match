@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-styling-library",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "CSS-in-JS wrapper library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",

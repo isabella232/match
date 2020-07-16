@@ -3,14 +3,15 @@
     "packages/**"
   ],
   "version": "independent",
-  "npmClient": "npm",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
   "command": {
     "publish": {
       "ignoreChanges": [
         "**/stories/**",
         "**/__tests__/**"
       ],
-      "npmClient": "npm"
+      "npmClient": "yarn"
     }
   }
 }

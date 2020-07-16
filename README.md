@@ -5,10 +5,9 @@ Match is a design system used to build accessible, consistent, and high quality 
 ## Getting started
 
 ```
-npm ci
-npm run bootstrap
-npm run build
-npm run dev
+yarn
+yarn build
+yarn dev
 ```
 
 Build things 🔥

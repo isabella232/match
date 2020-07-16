@@ -20,11 +20,11 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "build": "npm run clean && npm run compile",
+    "build": "yarn clean && yarn compile",
     "clean": "rm -rf ./dist",
     "compile": "rollup -c --environment NODE_ENV:production",
     "compile:dev": "rollup -c --environment NODE_ENV:development",
-    "prepublishOnly": "npm run build",
+    "prepack": "yarn build",
     "type-check": "tsc --noEmit"
   },
   "peerDependencies": {
@@ -33,6 +33,22 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@twilio-labs/match-styling-library": "^0.0.2"
+    "@babel/core": "^7.10.5",
+    "@rollup/plugin-babel": "^5.1.0",
+    "@rollup/plugin-commonjs": "^13.0.2",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "@storybook/addon-knobs": "6.0.0-rc.8",
+    "@twilio-labs/match-styling-library": "^0.0.2",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.1",
+    "core-js": "^3.6.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.21.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.7"
   }
 }

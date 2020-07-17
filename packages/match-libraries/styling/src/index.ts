@@ -1,2 +1,2 @@
-import styled from 'styled-components';
-export {styled}
+import styled from "styled-components";
+export { styled };

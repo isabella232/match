@@ -18,13 +18,13 @@ const StyledWombat = styled.div<StyledWombatProps>`
   grid-template-columns: repeat(${(props) => props.columns}, max-content);
 
   > div {
-    background: ${(props) => props.color};
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 2rem;
     height: 2rem;
+    background: ${(props) => props.color};
     border-radius: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 `;
 

@@ -11,7 +11,8 @@
     "start:storybook": "start-storybook -p 6006",
     "prettier": "prettier --list-different '**/*.{ts,tsx,js,json,md,mdx,yml}'",
     "prettier:write": "prettier --write '**/*.{ts,tsx,js,json,md,mdx,yml}'",
-    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "lint:js": "eslint '**/*.{ts,tsx,js}'",
+    "lint:css": "stylelint './packages/**/*.tsx'",
     "type-check": "yarn workspaces foreach run type-check",
     "build": "yarn workspaces foreach run build",
     "release": "lerna publish"
@@ -53,8 +54,30 @@
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
     "styled-components": "^5.1.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-no-unsupported-browser-features": "^4.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^3.9.7"
   },
+  "browserslist": [
+    "last 2 versions and > 1%",
+    "last 2 Firefox versions",
+    "last 2 Chrome versions",
+    "last 2 Edge versions",
+    "last 2 Safari versions",
+    "last 2 FirefoxAndroid versions",
+    "last 2 ChromeAndroid versions",
+    "last 2 iOS versions",
+    "not IE <= 11",
+    "not IE_Mob <= 11",
+    "not dead"
+  ],
   "engines": {
     "node": "12.x"
   }

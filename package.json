@@ -17,6 +17,22 @@
     "build": "yarn workspaces foreach run build",
     "release": "lerna publish"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn type-check"
+    }
+  },
+  "lint-staged": {
+    "*.{json,yml,md}": [
+      "prettier --write"
+    ],
+    "*.{js,ts,tsx}": [
+      "eslint"
+    ],
+    "*.tsx": [
+      "stylelint"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -48,7 +64,9 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-unicorn": "^21.0.0",
+    "husky": "^4.2.5",
     "lerna": "^3.22.1",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

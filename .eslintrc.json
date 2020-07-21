@@ -27,7 +27,10 @@
     "prettier/react",
     "prettier/unicorn"
   ],
-  "plugins": ["unicorn", "import"],
+  "plugins": [
+    "unicorn",
+    "import"
+  ],
   "rules": {
     // Common abbreviations are known and readable
     "unicorn/prevent-abbreviations": "off",
@@ -37,14 +40,26 @@
   },
   "overrides": [
     {
-      "files": ["rollup.config.js"],
+      "files": [
+        "rollup.config.js"
+      ],
       "rules": {
         "import/prefer-default-export": "error",
         "import/no-default-export": "off"
       }
     },
     {
-      "files": ["*.stories.tsx"],
+      "files": [
+        "*.stories.tsx"
+      ],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    },
+    {
+      "files": [
+        "*.test.tsx"
+      ],
       "rules": {
         "import/no-default-export": "off"
       }

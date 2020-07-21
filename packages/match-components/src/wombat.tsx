@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import styled from "styled-components";
+import { styled } from "@twilio-labs/match-styling-library";
 
 interface StyledWombatProps {
   columns: number;

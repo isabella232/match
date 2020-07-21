@@ -3680,6 +3680,7 @@ __metadata:
     rollup: ^2.21.0
     rollup-plugin-terser: ^6.1.0
     rollup-plugin-typescript2: ^0.27.1
+    styled-components: ^5.1.1
     tslib: ^2.0.0
     typescript: ^3.9.7
   peerDependencies:

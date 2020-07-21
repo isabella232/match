@@ -4105,7 +4105,7 @@ __metadata:
     "@rollup/plugin-node-resolve": ^8.1.0
     "@storybook/addon-knobs": 6.0.0-rc.8
     "@storybook/addon-storyshots": ^5.3.19
-    "@twilio-labs/match-styling-library": ^0.0.3
+    "@twilio-labs/match-styling-library": ^0.0.4
     "@types/prop-types": ^15.7.3
     "@types/react": ^16.9.43
     "@types/react-dom": ^16.9.8
@@ -4130,7 +4130,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@twilio-labs/match-styling-library@^0.0.3, @twilio-labs/match-styling-library@workspace:packages/match-libraries/styling":
+"@twilio-labs/match-styling-library@^0.0.4, @twilio-labs/match-styling-library@workspace:packages/match-libraries/styling":
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-styling-library@workspace:packages/match-libraries/styling"
   dependencies:
@@ -4140,6 +4140,7 @@ __metadata:
     "@rollup/plugin-node-resolve": ^8.1.0
     "@types/styled-components": ^5.1.1
     core-js: ^3.6.5
+    react: ^16.13.1
     react-is: ^16.13.1
     rollup: ^2.21.0
     rollup-plugin-terser: ^6.1.0

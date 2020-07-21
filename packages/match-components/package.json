@@ -39,6 +39,7 @@
     "@rollup/plugin-commonjs": "^13.0.2",
     "@rollup/plugin-node-resolve": "^8.1.0",
     "@storybook/addon-knobs": "6.0.0-rc.8",
+    "@storybook/addon-storyshots": "^5.3.19",
     "@twilio-labs/match-styling-library": "^0.0.4",
     "@types/prop-types": "^15.7.3",
     "@types/react": "^16.9.43",

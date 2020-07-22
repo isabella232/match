@@ -5,5 +5,5 @@
     "rootDir": "./src",
     "esModuleInterop": true
   },
-  "include": ["src/**/*", "wombat.stories.tsx"]
+  "include": ["src/**/*"]
 }

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "incremental": true,
+    "target": "ESNext",
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "strict": true,
+    "outDir": "./lib",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"]
+}

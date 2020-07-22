@@ -1,0 +1,16 @@
+name: PR Checks
+
+on: push
+
+jobs:
+  build_and_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Build packages
+        run: yarn install
+      - name: Run tests
+        run: yarn test

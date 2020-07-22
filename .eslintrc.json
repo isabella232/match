@@ -48,6 +48,15 @@
       "rules": {
         "import/no-default-export": "off"
       }
+    },
+    {
+      "files": ["*.test.tsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "import/no-default-export": "off"
+      }
     }
   ]
 }

@@ -38,6 +38,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# NPM Lock File
+package-lock.json
+
 # TypeScript cache
 *.tsbuildinfo
 

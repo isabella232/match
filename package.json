@@ -7,7 +7,7 @@
     "packages/**"
   ],
   "scripts": {
-    "dev": "yarn start:storybook",
+    "dev": "yarn build:match-tokens && yarn start:storybook",
     "start:storybook": "start-storybook -p 6006",
     "prettier": "prettier --list-different '**/*.{ts,tsx,js,json,md,mdx,yml}'",
     "prettier:write": "prettier --write '**/*.{ts,tsx,js,json,md,mdx,yml}'",
@@ -15,6 +15,7 @@
     "lint:css": "stylelint './packages/**/*.tsx'",
     "type-check": "yarn workspaces foreach run type-check",
     "build": "yarn workspaces foreach run build",
+    "build:match-tokens": "yarn workspace @twilio-labs/match-tokens build",
     "release": "lerna publish",
     "test": "jest"
   },

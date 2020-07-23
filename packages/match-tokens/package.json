@@ -4,7 +4,9 @@
   "description": "Token library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/wrapper.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -14,9 +16,6 @@
     "directory": "packages/match-libraries/styling"
   },
   "publishConfig": {
-    "main": "dist/index.js",
-    "module": "dist/wrapper.mjs",
-    "types": "dist/index.d.ts",
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
@@ -37,7 +36,6 @@
     "build": "yarn clean && yarn compile && yarn tidy",
     "compile": "diez compile -t web",
     "clean": "rm -rf ./dist",
-    "tidy": "mv ./build/diez-twilio-labs-match-tokens-web/ ./dist/ && rm -rf ./dist/package.json build lib",
-    "diez:start": "diez hot -t web"
+    "tidy": "mv ./build/diez-twilio-labs-match-tokens-web/ ./dist/ && rm -rf ./dist/package.json build lib"
   }
 }

@@ -1,0 +1,41 @@
+{
+  "name": "@twilio-labs/match-tokens",
+  "version": "0.0.0",
+  "description": "Token library for use with the Twilio Match Design System.",
+  "author": "Twilio Inc.",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "module": "dist/wrapper.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "packages/match-libraries/styling"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "@diez/web-sdk-common": "^10.6.0"
+  },
+  "devDependencies": {
+    "@diez/compiler-core": "^10.6.0",
+    "@diez/engine": "^10.6.0",
+    "@diez/extractors": "^10.6.0",
+    "@diez/prefabs": "^10.6.0",
+    "@diez/stdlib": "^10.6.0",
+    "core-js": "^3.6.5",
+    "diez": "^10.6.0",
+    "semver": "^7.3.2",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn compile && yarn tidy",
+    "compile": "diez compile -t web",
+    "clean": "rm -rf ./dist",
+    "tidy": "mv ./build/diez-twilio-labs-match-tokens-web/ ./dist/ && rm -rf ./dist/package.json build lib"
+  }
+}

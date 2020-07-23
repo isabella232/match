@@ -4,10 +4,7 @@
   "description": "CSS-in-JS wrapper library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
-  "main:dev": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
   "files": [
     "dist"
   ],
@@ -17,6 +14,9 @@
     "directory": "packages/match-libraries/styling"
   },
   "publishConfig": {
+    "main": "dist/index.js",
+    "module": "dist/index.es.js",
+    "types": "dist/index.d.ts",
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
@@ -38,13 +38,13 @@
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@rollup/plugin-babel": "^5.1.0",
-    "@rollup/plugin-commonjs": "^13.0.2",
-    "@rollup/plugin-node-resolve": "^8.1.0",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
     "@types/styled-components": "^5.1.1",
     "core-js": "^3.6.5",
     "react": "^16.13.1",
     "react-is": "^16.13.1",
-    "rollup": "^2.21.0",
+    "rollup": "^2.22.2",
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-typescript2": "^0.27.1",
     "typescript": "^3.9.7"

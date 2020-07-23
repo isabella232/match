@@ -82,3 +82,8 @@ package-lock.json
 
 # Build files
 **/dist/*
+
+# Diez
+.diez
+packages/match-tokens/lib/*
+packages/match-tokens/build/*

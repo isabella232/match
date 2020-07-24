@@ -20,7 +20,7 @@
     "publish:all": "yarn workspaces foreach --topological-dev --exclude 'match' npm publish --tolerate-republish",
     "release": "yarn version:all && yarn publish:all",
     "test": "jest --watch",
-    "test:ci": "jest --ci""
+    "test:ci": "jest --ci"
   },
   "husky": {
     "hooks": {

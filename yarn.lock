@@ -3990,12 +3990,14 @@ __metadata:
     "@storybook/addon-knobs": 6.0.0-rc.8
     "@twilio-labs/match-styling-library": ^0.0.4
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens"
+    "@types/jest-axe": ^3.5.0
     "@types/prop-types": ^15.7.3
     "@types/react": ^16.9.43
     "@types/react-dom": ^16.9.8
     "@types/react-test-renderer": ^16.9.2
     "@types/styled-components": ^5.1.1
     core-js: ^3.6.5
+    jest-axe: ^3.5.0
     prop-types: ^15.7.2
     react: ^16.13.1
     react-dom: ^16.13.1
@@ -4229,7 +4231,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^26.0.5":
+"@types/jest-axe@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "@types/jest-axe@npm:3.5.0"
+  dependencies:
+    "@types/jest": "*"
+    axe-core: ^3.5.5
+  checksum: 6ccd44320a77118957dcc368b38f4f0e4acfe3db11b7adb83221a26f6902a90701d07778d0a7058e9ac59e5a80bca0a0615912e1a8507098e53fddd99a5964bf
+  languageName: node
+  linkType: hard
+
+"@types/jest@npm:*, @types/jest@npm:^26.0.5":
   version: 26.0.5
   resolution: "@types/jest@npm:26.0.5"
   dependencies:
@@ -5700,7 +5712,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axe-core@npm:^3.5.2, axe-core@npm:^3.5.4":
+"axe-core@npm:^3.5.2, axe-core@npm:^3.5.4, axe-core@npm:^3.5.5":
   version: 3.5.5
   resolution: "axe-core@npm:3.5.5"
   checksum: 3d42ed3f0a24ae08081f878a6e1c629a60e4556ab0be896463ff800274b78bf3f1ce62a20396b4e892dc17e682df631ee06fd0daaf2928a49e46e8c0c4dfdcd0
@@ -8703,14 +8715,6 @@ __metadata:
   checksum: 93bc4b164cce013c429fb3be22f7b0e404aea4898e96777f958909496de768ced0bec8f65c7f06021995cf92815d184b0669f177f12bab1031e7174c8f1c1483
   languageName: node
   linkType: hard
-
-"diez-twilio-labs-match-tokens@workspace:packages/match-tokens/build/diez-twilio-labs-match-tokens-web":
-  version: 0.0.0-use.local
-  resolution: "diez-twilio-labs-match-tokens@workspace:packages/match-tokens/build/diez-twilio-labs-match-tokens-web"
-  dependencies:
-    "@diez/web-sdk-common": ^10.6.0
-  languageName: unknown
-  linkType: soft
 
 "diez@npm:*, diez@npm:^10.6.0":
   version: 10.6.0
@@ -12921,6 +12925,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"jest-axe@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "jest-axe@npm:3.5.0"
+  dependencies:
+    axe-core: ^3.5.5
+    chalk: ^4.0.0
+    jest-matcher-utils: ^26.0.1
+    lodash.merge: ^4.6.2
+  checksum: fefd64e27b8a845221f5c4e2a6afb33347b847fdba6c1e9c8037f2cefd7888b73708691503315864261dff02eab68e46b08d7f325f8dd48d45eb6ca96281ee3a
+  languageName: node
+  linkType: hard
+
 "jest-changed-files@npm:^26.1.0":
   version: 26.1.0
   resolution: "jest-changed-files@npm:26.1.0"
@@ -13127,7 +13143,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest-matcher-utils@npm:^26.1.0":
+"jest-matcher-utils@npm:^26.0.1, jest-matcher-utils@npm:^26.1.0":
   version: 26.1.0
   resolution: "jest-matcher-utils@npm:26.1.0"
   dependencies:
@@ -14136,6 +14152,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"lodash.merge@npm:^4.6.2":
+  version: 4.6.2
+  resolution: "lodash.merge@npm:4.6.2"
+  checksum: 4e2bb42a87a148991458d7c384bc197e96f7115e9536fc8e2c86ae9e99ce1c1f693ff15eb85761952535f48d72253aed8e673d9f32dde3e671cd91e3fde220a7
+  languageName: node
+  linkType: hard
+
 "lodash.omit@npm:^4.5.0":
   version: 4.5.0
   resolution: "lodash.omit@npm:4.5.0"
@@ -14612,6 +14635,7 @@ fsevents@^1.2.7:
     "@storybook/react": 6.0.0-rc.8
     "@testing-library/react": ^10.4.7
     "@types/jest": ^26.0.5
+    "@types/jest-axe": ^3.5.0
     "@types/node": ^14.0.24
     "@types/react": ^16.9.43
     "@types/react-test-renderer": ^16.9.2
@@ -14633,6 +14657,7 @@ fsevents@^1.2.7:
     eslint-plugin-unicorn: ^21.0.0
     husky: ^4.2.5
     jest: ^26.1.0
+    jest-axe: ^3.5.0
     lerna: ^3.22.1
     lint-staged: ^10.2.11
     prettier: ^2.0.5

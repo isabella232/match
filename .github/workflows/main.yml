@@ -1,0 +1,16 @@
+name: PR Checks
+
+on: pull_request
+
+jobs:
+  build_and_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Build Tokens
+        run: yarn build:tokens
+      - name: Run tests
+        run: yarn test:ci

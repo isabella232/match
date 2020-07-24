@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Wombat it should render Wombat with the color chocolate 1`] = `
+exports[`Wombat it should render Wombat with the color burrito 1`] = `
 <div
-  className="sc-AxjAm jeLojW"
-  color="chocolate"
+  className="sc-AxjAm itHmcp"
+  color="burrito"
 >
   <div>
     🌯

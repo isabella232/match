@@ -28,7 +28,8 @@
     "type-check": "tsc --noEmit --composite false"
   },
   "peerDependencies": {
-    "@twilio-labs/match-styling-library": "^0.0.2",
+    "@twilio-labs/match-styling-library": "*",
+    "@twilio-labs/match-tokens": "*",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -39,7 +40,7 @@
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
     "@storybook/addon-knobs": "6.0.0-rc.8",
-    "@twilio-labs/match-styling-library": "^0.0.4",
+    "@twilio-labs/match-styling-library": "workspace:packages/match-libraries/styling",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens",
     "@types/jest-axe": "^3.5.0",
     "@types/prop-types": "^15.7.3",

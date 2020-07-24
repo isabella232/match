@@ -35,7 +35,8 @@
   "scripts": {
     "build": "yarn clean && yarn compile && yarn tidy",
     "compile": "diez compile -t web",
-    "clean": "rm -rf ./dist",
-    "tidy": "mv ./build/diez-twilio-labs-match-tokens-web/ ./dist/ && rm -rf ./dist/package.json build lib"
+    "clean": "rm -rf ./dist ./.diez",
+    "tidy": "mv ./build/diez-twilio-labs-match-tokens-web/ ./dist/ && rm -rf ./dist/package.json build lib",
+    "prepack": "yarn build"
   }
 }

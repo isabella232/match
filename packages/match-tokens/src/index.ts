@@ -3,4 +3,5 @@
  * components exported here will be made available to the packages generated when
  * you run `diez compile`.
  */
+export { wombatDesignTokens } from "./wombat-tokens";
 export { defaultDesignTokens } from "./default-tokens";

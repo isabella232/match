@@ -1,11 +1,9 @@
-import { Color } from "@diez/prefabs";
+import { Breakpoint } from "./breakpoints";
 
-const droppings = {
-  burrito: Color.hex("#624a2d"),
-  icecream: Color.hex("#513e5c"),
-  hamburger: Color.hex("#98942e"),
+const breakpoints = {
+  small: Breakpoint.minWidth(360),
 };
 
 export const defaultDesignTokens = {
-  droppings,
+  breakpoints,
 };

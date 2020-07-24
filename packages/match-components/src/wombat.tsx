@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { styled } from "@twilio-labs/match-styling-library";
-import { DefaultDesignTokens } from "@twilio-labs/match-tokens";
+import { WombatDesignTokens } from "@twilio-labs/match-tokens";
 
-const ds = new DefaultDesignTokens();
+const ds = new WombatDesignTokens();
 
 interface StyledWombatProps {
   columns: number;

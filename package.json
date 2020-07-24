@@ -16,9 +16,11 @@
     "type-check": "yarn workspaces foreach run type-check",
     "build": "yarn workspaces foreach --topological-dev run build",
     "build:tokens": "yarn workspace @twilio-labs/match-tokens build",
-    "release": "yarn version check --interactive && yarn version apply --all && yarn workspaces foreach npm publish",
+    "version:all": "yarn version check --interactive && yarn version apply --all",
+    "publish:all": "yarn workspaces foreach --topological-dev --exclude 'match' npm publish --tolerate-republish",
+    "release": "yarn version:all && yarn publish:all",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci""
   },
   "husky": {
     "hooks": {
@@ -81,7 +83,6 @@
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-axe": "^3.5.0",
-    "lerna": "^3.22.1",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "react": "^16.13.1",

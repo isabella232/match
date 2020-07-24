@@ -17,7 +17,8 @@
     "build": "yarn workspaces foreach --topological-dev run build",
     "build:tokens": "yarn workspace @twilio-labs/match-tokens build",
     "release": "yarn version check --interactive && yarn version apply --all && yarn workspaces foreach npm publish",
-    "test": "jest"
+    "test": "jest --watch",
+    "test:ci": "jest --ci"
   },
   "husky": {
     "hooks": {

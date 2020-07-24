@@ -1491,7 +1491,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@diez/extractors@npm:^10.6.0":
+"@diez/extractors@npm:*, @diez/extractors@npm:^10.6.0":
   version: 10.6.0
   resolution: "@diez/extractors@npm:10.6.0"
   dependencies:
@@ -3988,7 +3988,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^14.0.0
     "@rollup/plugin-node-resolve": ^8.4.0
     "@storybook/addon-knobs": 6.0.0-rc.8
-    "@twilio-labs/match-styling-library": ^0.0.4
+    "@twilio-labs/match-styling-library": "workspace:packages/match-libraries/styling"
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens"
     "@types/prop-types": ^15.7.3
     "@types/react": ^16.9.43
@@ -4008,14 +4008,15 @@ __metadata:
     tslib: ^2.0.0
     typescript: ^3.9.7
   peerDependencies:
-    "@twilio-labs/match-styling-library": ^0.0.2
+    "@twilio-labs/match-styling-library": "*"
+    "@twilio-labs/match-tokens": "*"
     prop-types: ^15.7.2
     react: ^16.13.1
     react-dom: ^16.13.1
   languageName: unknown
   linkType: soft
 
-"@twilio-labs/match-styling-library@^0.0.4, @twilio-labs/match-styling-library@workspace:packages/match-libraries/styling":
+"@twilio-labs/match-styling-library@workspace:packages/match-libraries/styling":
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-styling-library@workspace:packages/match-libraries/styling"
   dependencies:
@@ -14603,6 +14604,11 @@ fsevents@^1.2.7:
     "@babel/preset-env": ^7.10.4
     "@babel/preset-react": ^7.10.4
     "@babel/preset-typescript": ^7.10.4
+    "@diez/compiler-core": ^10.6.0
+    "@diez/engine": ^10.6.0
+    "@diez/extractors": ^10.6.0
+    "@diez/prefabs": ^10.6.0
+    "@diez/stdlib": ^10.6.0
     "@storybook/addon-a11y": 6.0.0-rc.8
     "@storybook/addon-actions": 6.0.0-rc.8
     "@storybook/addon-knobs": 6.0.0-rc.8
@@ -14620,6 +14626,7 @@ fsevents@^1.2.7:
     babel-jest: ^26.1.0
     babel-plugin-styled-components: ^1.10.7
     core-js: ^3.6.5
+    diez: ^10.6.0
     eslint: ^7.5.0
     eslint-config-prettier: ^6.11.0
     eslint-import-resolver-node: ^0.3.4

@@ -7321,14 +7321,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diez-twilio-labs-match-tokens@workspace:packages/match-tokens/build/diez-twilio-labs-match-tokens-web":
-  version: 0.0.0-use.local
-  resolution: "diez-twilio-labs-match-tokens@workspace:packages/match-tokens/build/diez-twilio-labs-match-tokens-web"
-  dependencies:
-    "@diez/web-sdk-common": ^10.6.0
-  languageName: unknown
-  linkType: soft
-
 "diez@npm:*, diez@npm:^10.6.0":
   version: 10.6.0
   resolution: "diez@npm:10.6.0"

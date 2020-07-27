@@ -1,9 +1,9 @@
-import { Breakpoint } from "./breakpoints";
+import { MediaQuery } from "./components/media-query";
 
-const breakpoints = {
-  small: Breakpoint.minWidth(360),
+const Breakpoints = {
+  small: MediaQuery.minWidth(360),
 };
 
 export const defaultDesignTokens = {
-  breakpoints,
+  Breakpoints,
 };

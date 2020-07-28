@@ -1,0 +1,62 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "plugin:promise/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react",
+    "prettier/unicorn"
+  ],
+  "plugins": ["unicorn", "import"],
+  "rules": {
+    // Common abbreviations are known and readable
+    "unicorn/prevent-abbreviations": "off",
+    // https://basarat.gitbook.io/typescript/main-1/defaultisbad
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error"
+  },
+  "overrides": [
+    {
+      "files": ["rollup.config.js"],
+      "rules": {
+        "import/prefer-default-export": "error",
+        "import/no-default-export": "off"
+      }
+    },
+    {
+      "files": ["*.stories.tsx"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    },
+    {
+      "files": ["*.test.tsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ]
+}

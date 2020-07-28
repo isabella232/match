@@ -24,13 +24,6 @@ const config = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-typescript',
-      options: {
-        isTSX: true,
-        allExtensions: true,
-      },
-    },
-    {
       resolve: 'gatsby-theme-docz',
       options: {
         themeConfig: {},
@@ -43,8 +36,8 @@ const config = {
         mdPlugins: [],
         hastPlugins: [],
         ignore: [],
-        typescript: true,
-        ts: true,
+        typescript: false,
+        ts: false,
         propsParser: true,
         'props-parser': true,
         debug: false,
@@ -74,7 +67,7 @@ const config = {
         paths: {
           root: '/Users/serenabuxton/Documents/match',
           templates:
-            '/Users/serenabuxton/Documents/match/.yarn/cache/docz-core-npm-2.3.0-d3ce3f38e7-616cabd580.zip/node_modules/docz-core/dist/templates',
+            '/Users/serenabuxton/Documents/match/node_modules/docz-core/dist/templates',
           docz: '/Users/serenabuxton/Documents/match/.docz',
           cache: '/Users/serenabuxton/Documents/match/.docz/.cache',
           app: '/Users/serenabuxton/Documents/match/.docz/app',

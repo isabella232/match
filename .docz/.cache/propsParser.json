@@ -1,0 +1,93 @@
+{
+  "packages/match-components/dist/index.ts": {
+    "hash": "c2196c9db28a3451f071cb62a9b4d42e",
+    "props": []
+  },
+  "packages/match-components/src/index.ts": {
+    "hash": "c7da07ca8645451306e82c5c6e9a05c6",
+    "props": [
+      {
+        "description": "",
+        "displayName": "Wombat",
+        "methods": [],
+        "props": {
+          "droppings": {
+            "defaultValue": null,
+            "description": "",
+            "name": "droppings",
+            "parent": {
+              "fileName": "/Users/serenabuxton/Documents/match/packages/match-components/src/wombat.tsx",
+              "name": "WombatProps"
+            },
+            "required": true,
+            "type": { "name": "string[]" }
+          },
+          "color": {
+            "defaultValue": null,
+            "description": "",
+            "name": "color",
+            "parent": {
+              "fileName": "/Users/serenabuxton/Documents/match/packages/match-components/src/wombat.tsx",
+              "name": "WombatProps"
+            },
+            "required": true,
+            "type": { "name": "string" }
+          }
+        }
+      }
+    ]
+  },
+  "packages/match-components/src/wombat.tsx": {
+    "hash": "7b09bbdb207603ee64aa8124a4db38a4",
+    "props": [
+      {
+        "description": "",
+        "displayName": "Wombat",
+        "methods": [],
+        "props": {
+          "droppings": {
+            "defaultValue": null,
+            "description": "",
+            "name": "droppings",
+            "parent": {
+              "fileName": "/Users/serenabuxton/Documents/match/packages/match-components/src/wombat.tsx",
+              "name": "WombatProps"
+            },
+            "required": true,
+            "type": { "name": "string[]" }
+          },
+          "color": {
+            "defaultValue": null,
+            "description": "",
+            "name": "color",
+            "parent": {
+              "fileName": "/Users/serenabuxton/Documents/match/packages/match-components/src/wombat.tsx",
+              "name": "WombatProps"
+            },
+            "required": true,
+            "type": { "name": "string" }
+          }
+        }
+      }
+    ]
+  },
+  "packages/match-components/stories/wombat.stories.tsx": {
+    "hash": "63d33cb9712fba332ea616d37ed86f6a",
+    "props": [
+      {
+        "description": "",
+        "displayName": "withDroppings",
+        "methods": [],
+        "props": {}
+      }
+    ]
+  },
+  "packages/match-tokens/src/index.ts": {
+    "hash": "c46cfa01710e59835eadc35fed62fdcf",
+    "props": []
+  },
+  "packages/match-libraries/styling/src/index.ts": {
+    "hash": "a372f6c04f12345723aebf40b323e3e5",
+    "props": []
+  }
+}

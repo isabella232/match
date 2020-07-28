@@ -21,7 +21,7 @@
     "release": "yarn version:all && yarn publish:all",
     "test": "jest --watch",
     "test:ci": "jest --ci",
-    "docz:dev": "docz dev --typescript",
+    "docz:dev": "docz dev",
     "docz:build": "docz build",
     "docz:serve": "docz build && docz serve"
   },
@@ -84,6 +84,7 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-unicorn": "^21.0.0",
+    "gatsby-plugin-typescript": "^2.4.16",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-axe": "^3.5.0",
@@ -121,5 +122,8 @@
   ],
   "engines": {
     "node": "12.x"
+  },
+  "dependencies": {
+    "docz-core": "^2.3.0"
   }
 }

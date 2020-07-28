@@ -1,0 +1,13 @@
+{
+  "data": {
+    "allSitePage": {
+      "nodes": [
+        { "path": "/" },
+        { "path": "/readme" },
+        { "path": "/404/" },
+        { "path": "/404.html" }
+      ]
+    }
+  },
+  "pageContext": {}
+}

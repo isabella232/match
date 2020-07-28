@@ -1,7 +1,9 @@
+const { queryToCss } = require('../src/sdk/css-media-query');
+
 Object.defineProperties(MediaQuery.prototype, {
-  query: {
+  mediaQuery: {
     get() {
-      return `min-width: ${this.minWidth}px`;
-    }
-  }
+      return queryToCss(this);
+    },
+  },
 });

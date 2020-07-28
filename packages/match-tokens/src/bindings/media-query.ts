@@ -10,8 +10,8 @@ const binding: WebBinding<MediaQuery> = {
   assetsBinder: async (instance, _program, output, _spec, property) => {
     const name = joinToKebabCase(property.parentType, property.name);
     output.styleSheet.variables.set(
-      `${name}-query`,
-      `min-width: ${instance.minWidth}px`
+      `${name}`,
+      `"min-width: ${instance.minWidth}px"`
     );
   },
   dependencies: [

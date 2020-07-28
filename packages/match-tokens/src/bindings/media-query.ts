@@ -2,6 +2,7 @@ import { diezVersion } from "@diez/cli-core";
 import { joinToKebabCase, WebBinding } from "@diez/targets";
 import { resolve } from "path";
 import { MediaQuery } from "../components/media-query";
+import { queryToCss } from "../sdk/css-media-query";
 
 const binding: WebBinding<MediaQuery> = {
   sources: [resolve(__dirname, "../../", "sources", "media-query.js")],
@@ -9,10 +10,7 @@ const binding: WebBinding<MediaQuery> = {
   examples: [],
   assetsBinder: async (instance, _program, output, _spec, property) => {
     const name = joinToKebabCase(property.parentType, property.name);
-    output.styleSheet.variables.set(
-      `${name}`,
-      `"min-width: ${instance.minWidth}px"`
-    );
+    output.styleSheet.variables.set(`${name}`, `"${queryToCss(instance)}"`);
   },
   dependencies: [
     {

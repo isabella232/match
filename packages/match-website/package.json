@@ -10,7 +10,7 @@
     "package.json"
   ],
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop --open",
     "build": "docz build",
     "serve": "docz build && docz serve"
   },
@@ -26,17 +26,13 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/types": "^7.11.0",
     "@emotion/core": "^10.0.28",
-    "@emotion/styled-base": "^10.0.31",
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "babel-plugin-export-metadata": "^2.3.0",
     "docz-core": "^2.3.0",
-    "eslint-plugin-promise": "^4.2.1",
     "gatsby-plugin-mdx": "^1.2.30",
-    "jest": "^26.2.2",
-    "prettier": "^2.0.5",
     "typescript": "^3.9.7"
   }
 }

@@ -1889,7 +1889,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled-base@npm:^10.0.27, @emotion/styled-base@npm:^10.0.31":
+"@emotion/styled-base@npm:^10.0.27":
   version: 10.0.31
   resolution: "@emotion/styled-base@npm:10.0.31"
   dependencies:
@@ -3485,7 +3485,6 @@ __metadata:
     "@babel/preset-env": ^7.11.0
     "@babel/types": ^7.11.0
     "@emotion/core": ^10.0.28
-    "@emotion/styled-base": ^10.0.31
     "@mdx-js/mdx": ^1.6.16
     "@mdx-js/react": ^1.6.16
     "@types/react": ^16.8.23
@@ -3493,12 +3492,9 @@ __metadata:
     babel-plugin-export-metadata: ^2.3.0
     docz: ^2.3.1
     docz-core: ^2.3.0
-    eslint-plugin-promise: ^4.2.1
     gatsby: ^2.24.15
     gatsby-plugin-mdx: ^1.2.30
     gatsby-theme-docz: ^2.3.1
-    jest: ^26.2.2
-    prettier: ^2.0.5
     react: ^16.13.1
     react-dom: ^16.13.1
     typescript: ^3.9.7
@@ -7856,6 +7852,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"concurrently@npm:*, concurrently@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "concurrently@npm:5.2.0"
+  dependencies:
+    chalk: ^2.4.2
+    date-fns: ^2.0.1
+    lodash: ^4.17.15
+    read-pkg: ^4.0.1
+    rxjs: ^6.5.2
+    spawn-command: ^0.0.2-1
+    supports-color: ^6.1.0
+    tree-kill: ^1.2.2
+    yargs: ^13.3.0
+  bin:
+    concurrently: bin/concurrently.js
+  checksum: 3fd4d40a286fee797db0cb04845a13bf6c05b1fffed357ecc61a57e4acb8a0b5b085ae2828aefa52a87d0292eb61e2bdc24ef15a77bc44db4b1db59d1b90ba30
+  languageName: node
+  linkType: hard
+
 "config-master@npm:^3.1.0":
   version: 3.1.0
   resolution: "config-master@npm:3.1.0"
@@ -8703,7 +8718,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.14.0":
+"date-fns@npm:^2.0.1, date-fns@npm:^2.14.0":
   version: 2.15.0
   resolution: "date-fns@npm:2.15.0"
   checksum: 045c172823f361aa466338a2d2670629b2639ad33da22d5f4012d97e2726e92d8fc617a0d6c815a11086a0e6d2226192c2191c4d5c0d898c5a978794f21007cb
@@ -15765,7 +15780,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest@npm:^26.1.0, jest@npm:^26.2.2":
+"jest@npm:*, jest@npm:^26.1.0":
   version: 26.2.2
   resolution: "jest@npm:26.2.2"
   dependencies:
@@ -17255,6 +17270,7 @@ fsevents@^1.2.7:
     "@typescript-eslint/parser": ^3.7.0
     babel-jest: ^26.1.0
     babel-plugin-styled-components: ^1.10.7
+    concurrently: ^5.2.0
     core-js: ^3.6.5
     diez: ^10.6.0
     eslint: ^7.5.0
@@ -20281,21 +20297,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"prettier@npm:*, prettier@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "prettier@npm:2.0.5"
+  bin:
+    prettier: bin-prettier.js
+  checksum: d249d89361870a29b20e8b268cb09e908490b8c9e21f70393d12a213701f29ba7e95b7f9ce0ad63929c16ce475176742481911737ae3da4a498873e4a3b90990
+  languageName: node
+  linkType: hard
+
 "prettier@npm:^1.18.2":
   version: 1.19.1
   resolution: "prettier@npm:1.19.1"
   bin:
     prettier: ./bin-prettier.js
   checksum: e5fcdfe5e159ef5c5480245353cf8fb5bbd1b8afff266f31f281641825238f8a645e58472f77cd75a09ccc45d44c335466e8d901ec138c2bda05e1bd6ea1077c
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.0.5":
-  version: 2.0.5
-  resolution: "prettier@npm:2.0.5"
-  bin:
-    prettier: bin-prettier.js
-  checksum: d249d89361870a29b20e8b268cb09e908490b8c9e21f70393d12a213701f29ba7e95b7f9ce0ad63929c16ce475176742481911737ae3da4a498873e4a3b90990
   languageName: node
   linkType: hard
 
@@ -21427,6 +21443,17 @@ fsevents@^1.2.7:
     normalize-package-data: ^2.3.2
     path-type: ^3.0.0
   checksum: 8cc577b41ddd70a0037d6c0414acfab8db3a25a30c7854decf3d613f1f4240c8a47e20fddbd82724e02d4eb5a0c489e2621b4a5bb3558e09ce81f53306d1b850
+  languageName: node
+  linkType: hard
+
+"read-pkg@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "read-pkg@npm:4.0.1"
+  dependencies:
+    normalize-package-data: ^2.3.2
+    parse-json: ^4.0.0
+    pify: ^3.0.0
+  checksum: cc1ed67240e0f8c51e11ab3dbe17041ceae75427925babf816812e437d0adfbe2c8449142a41feaed81a5c2572a986e27be2fa093dab8b3f2eb29951ca24f8d2
   languageName: node
   linkType: hard
 
@@ -22582,7 +22609,7 @@ resolve@1.15.1:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^6.5.3, rxjs@npm:^6.6.0":
+"rxjs@npm:^6.5.2, rxjs@npm:^6.5.3, rxjs@npm:^6.6.0":
   version: 6.6.2
   resolution: "rxjs@npm:6.6.2"
   dependencies:
@@ -23482,6 +23509,13 @@ resolve@1.15.1:
   version: 1.1.5
   resolution: "space-separated-tokens@npm:1.1.5"
   checksum: 2b143776c39176e7faa020d9c96d41ecc33862139b8bc92d5551561e9ae7adbe537b3a51d381da563a953dbda82ea117cefaa7dec9075fb869596cb02d582abe
+  languageName: node
+  linkType: hard
+
+"spawn-command@npm:^0.0.2-1":
+  version: 0.0.2
+  resolution: "spawn-command@npm:0.0.2"
+  checksum: 961fb1551f2d5848509ec661f639c515e582034b010724fcaad6949148e21c50226e30889dd710a70dce25c4ba43437665aad621fc37c0f8a75fa9ec3e46a69f
   languageName: node
   linkType: hard
 
@@ -25098,6 +25132,15 @@ resolve@1.15.1:
   dependencies:
     punycode: ^2.1.1
   checksum: c8c221907944e8b577c4fff14d180a213c21a29b54a12a031aa6986cbb711a5d470588b556a7be9c7844f09142e12deef6b76fe10f6bd4d274b54f1a7e0aac9e
+  languageName: node
+  linkType: hard
+
+"tree-kill@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "tree-kill@npm:1.2.2"
+  bin:
+    tree-kill: cli.js
+  checksum: 967643efa4a231868232ea9d046c3ba7494ea6061fbb1e661c699b43ca0f0a14dad0782a631d915959d562830035166bab80ed726f9fe33b838af8a7516624ed
   languageName: node
   linkType: hard
 

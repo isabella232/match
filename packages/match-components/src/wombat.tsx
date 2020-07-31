@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { styled } from "@twilio-labs/match-styling-library";
-import { WombatDesignTokens } from "@twilio-labs/match-tokens-twilio";
+import { WombatDesignTokens } from "@twilio-labs/match-tokens";
 
 const ds = new WombatDesignTokens();
 

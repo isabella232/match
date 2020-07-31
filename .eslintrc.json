@@ -56,7 +56,7 @@
       }
     },
     {
-      "files": ["*.test.ts", "*.test.tsx"],
+      "files": ["*.test.tsx"],
       "env": {
         "jest": true
       },

@@ -1,9 +1,9 @@
-import { MediaQueryData } from "../prefabs/media-query";
+import { MediaQueryData } from "../components/media-query";
 
 /**
  * Returns a string with a valid css media query.
  */
-export const queryToCss = (query: MediaQueryData): string => {
+export const queryToCss = (query: MediaQueryData) => {
   const mediaQueries = [];
 
   if (query.operator !== "none" && query.type !== "none") {

@@ -15,7 +15,7 @@
     "lint:css": "stylelint './packages/**/*.tsx'",
     "type-check": "yarn workspaces foreach run type-check",
     "build": "yarn workspaces foreach --topological-dev run build",
-    "build:tokens": "yarn workspaces foreach --topological-dev --include '@twilio-labs/match-tokens*' run build",
+    "build:tokens": "yarn workspace @twilio-labs/match-tokens build",
     "version:all": "yarn version check --interactive && yarn version apply --all",
     "publish:all": "yarn workspaces foreach --topological-dev --exclude 'match' npm publish --tolerate-republish",
     "release": "yarn version:all && yarn publish:all",

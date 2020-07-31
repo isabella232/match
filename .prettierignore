@@ -2,5 +2,5 @@ dist
 .yarn
 .pnp.js
 .diez
-packages/match-tokens/lib
-packages/match-tokens/build
+packages/match-tokens/**/lib/*
+packages/match-tokens/**/build/*

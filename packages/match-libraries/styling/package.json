@@ -4,7 +4,7 @@
   "description": "CSS-in-JS wrapper library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "files": [
     "dist"
   ],

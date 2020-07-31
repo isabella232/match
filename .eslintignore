@@ -3,5 +3,5 @@
 node_modules
 dist
 .diez
-packages/match-tokens/lib
-packages/match-tokens/build
+packages/match-tokens/**/lib/*
+packages/match-tokens/**/build/*

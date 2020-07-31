@@ -1,5 +1,5 @@
-import { MediaQuery } from "../src/components/media-query";
-import { queryToCss } from "../src/sdk/css-media-query";
+import { MediaQuery } from "../src/framework/prefabs/media-query";
+import { queryToCss } from "../src/framework/sdk/css-media-query";
 
 describe("Media Query", () => {
   test("min width functionality", () => {

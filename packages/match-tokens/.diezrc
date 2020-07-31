@@ -4,7 +4,7 @@
   },
   "bindings": {
     ".:MediaQuery": {
-      "web": "./lib/bindings/media-query"
+      "web": "./lib/framework/bindings/media-query"
     }
   }
 }

@@ -1,4 +1,4 @@
-import { MediaQueryData } from "../components/media-query";
+import { MediaQueryData } from "../prefabs/media-query";
 
 /**
  * Returns a string with a valid css media query.

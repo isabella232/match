@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { styled } from "@twilio-labs/match-styling-library";
-import { WombatDesignTokens } from "@twilio-labs/match-tokens";
+import { DesignTokens } from "@twilio-labs/match-tokens";
 
-const ds = new WombatDesignTokens();
+const ds = new DesignTokens();
 
 interface StyledWombatProps {
   columns: number;
@@ -26,7 +26,7 @@ const StyledWombat = styled.div<StyledWombatProps>`
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    background: ${(props) => ds.droppings[props.color].color};
+    background: ${(props) => ds.wombat.droppings[props.color].color};
     border-radius: 0.5rem;
   }
 `;

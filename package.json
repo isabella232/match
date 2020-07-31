@@ -31,7 +31,7 @@
     }
   },
   "lint-staged": {
-    "*.{json,yml,md}": [
+    "*.{js,ts,tsx,json,yml,md,mdx}": [
       "prettier --write"
     ],
     "*.{js,ts,tsx}": [
@@ -72,7 +72,6 @@
     "babel-plugin-styled-components": "^1.10.7",
     "core-js": "^3.6.5",
     "diez": "^10.6.0",
-    "docz": "^2.3.1",
     "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-node": "^0.3.4",
@@ -84,7 +83,6 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-unicorn": "^21.0.0",
-    "gatsby-plugin-typescript": "^2.4.16",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-axe": "^3.5.0",
@@ -122,8 +120,5 @@
   ],
   "engines": {
     "node": "12.x"
-  },
-  "dependencies": {
-    "docz-core": "^2.3.0"
   }
 }

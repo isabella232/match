@@ -37,7 +37,7 @@
   },
   "overrides": [
     {
-      "files": ["rollup.config.js"],
+      "files": ["rollup.config.js", "doczrc.js"],
       "rules": {
         "import/prefer-default-export": "error",
         "import/no-default-export": "off"

@@ -37,6 +37,12 @@
   },
   "overrides": [
     {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    {
       "files": ["rollup.config.js", "doczrc.js"],
       "rules": {
         "import/prefer-default-export": "error",

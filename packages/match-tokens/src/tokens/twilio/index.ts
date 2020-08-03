@@ -1,3 +1,3 @@
-import { twilioBeakpoint as breakpoint } from "./breakpoint";
+import { breakpoint } from "../common/breakpoint";
 
 export const twilio = { breakpoint };

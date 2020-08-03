@@ -1,11 +1,7 @@
-import { Color } from "@diez/prefabs";
-
-const wombatDroppings = {
-  burrito: Color.hex("#624a2d"),
-  icecream: Color.hex("#513e5c"),
-  hamburger: Color.hex("#98942e"),
-};
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import * as _prefabs from "@diez/prefabs";
+import { wombatDroppings as droppings } from "./droppings";
 
 export const wombat = {
-  droppings: wombatDroppings,
+  droppings,
 };

@@ -3,7 +3,7 @@ name: Publish Website
 on: pull_request
 
 jobs:
-  build_and_tests:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:

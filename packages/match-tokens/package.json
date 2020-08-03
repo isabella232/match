@@ -8,7 +8,8 @@
   "module": "dist/wrapper.mjs",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "lib/framework/sdk"
   ],
   "repository": {
     "type": "git",
@@ -35,9 +36,9 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "build": "yarn clean && yarn compile && mv ./build/diez-twilio-labs-match-tokens-web/ ./dist/ && rm -rf ./dist/package.json ./build ./lib ./tsconfig.tsbuildinfo",
+    "build": "yarn clean && yarn compile && mv ./build/diez-twilio-labs-match-tokens-web/ ./dist/ && rm -rf ./dist/package.json ./build ./tsconfig.tsbuildinfo",
     "compile": "diez compile -t web",
-    "clean": "rm -rf ./dist ./.diez",
+    "clean": "rm -rf ./dist ./.diez ./lib",
     "prepack": "yarn build"
   }
 }

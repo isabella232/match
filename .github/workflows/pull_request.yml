@@ -11,6 +11,9 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: "12"
+      - run: |
+          git config user.name MatchBot
+          git config user.email match@twilio.com
       - name: Install dependencies
         run: yarn install
       - name: Build Tokens

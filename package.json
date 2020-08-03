@@ -23,9 +23,7 @@
     "release": "yarn version:all && yarn publish:all",
     "test": "jest --watch",
     "test:ci": "jest --ci",
-    "docz:dev": "docz dev",
-    "docz:build": "docz build",
-    "docz:serve": "docz build && docz serve"
+    "deploy:website": "yarn workspace @twilio-labs/match-website deploy"
   },
   "husky": {
     "hooks": {

@@ -7,8 +7,10 @@
     "packages/**"
   ],
   "scripts": {
-    "dev": "yarn build:tokens && yarn start:storybook",
+    "start": "yarn build:tokens && yarn start:storybook",
+    "start:all": "yarn build:tokens && concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -p 6006",
+    "start:website": "yarn workspace @twilio-labs/match-website dev",
     "prettier": "prettier --list-different '**/*.{ts,tsx,js,json,md,mdx,yml}'",
     "prettier:write": "prettier --write '**/*.{ts,tsx,js,json,md,mdx,yml}'",
     "lint:js": "eslint '**/*.{ts,tsx,js}'",
@@ -20,7 +22,8 @@
     "publish:all": "yarn workspaces foreach --topological-dev --exclude 'match' npm publish --tolerate-republish",
     "release": "yarn version:all && yarn publish:all",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "deploy:website": "yarn workspace @twilio-labs/match-website deploy"
   },
   "husky": {
     "hooks": {
@@ -28,7 +31,7 @@
     }
   },
   "lint-staged": {
-    "*.{json,yml,md}": [
+    "*.{js,ts,tsx,json,yml,md,mdx}": [
       "prettier --write"
     ],
     "*.{js,ts,tsx}": [
@@ -62,6 +65,7 @@
     "@typescript-eslint/parser": "^3.7.0",
     "babel-jest": "^26.1.0",
     "babel-plugin-styled-components": "^1.10.7",
+    "concurrently": "^5.2.0",
     "core-js": "^3.6.5",
     "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",

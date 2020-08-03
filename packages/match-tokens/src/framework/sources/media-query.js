@@ -1,4 +1,4 @@
-const { queryToCss } = require('../lib/framework/sdk/css-media-query');
+const { queryToCss } = require("../lib/framework/sdk/css-media-query");
 
 Object.defineProperties(MediaQuery.prototype, {
   mediaQuery: {

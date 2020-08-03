@@ -1,6 +1,6 @@
 {
-  "name": "@twilio-labs/match-tokens",
-  "version": "0.0.2",
+  "name": "@twilio-labs/match-tokens-wombat",
+  "version": "0.0.0",
   "description": "Token library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -10,14 +10,7 @@
   "files": [
     "dist"
   ],
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/twilio-labs/match",
-    "directory": "packages/match-libraries/styling"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
+  "private": true,
   "dependencies": {
     "@diez/web-sdk-common": "^10.6.0"
   },
@@ -29,13 +22,14 @@
     "@diez/prefabs": "^10.6.0",
     "@diez/stdlib": "^10.6.0",
     "@diez/targets": "^10.6.0",
+    "@twilio-labs/match-tokens-core": "workspace:packages/match-tokens/core",
     "core-js": "^3.6.5",
     "diez": "^10.6.0",
     "semver": "^7.3.2",
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "build": "yarn clean && yarn compile && mv ./build/diez-twilio-labs-match-tokens-web/ ./dist/ && rm -rf ./dist/package.json ./build ./lib ./tsconfig.tsbuildinfo",
+    "build": "yarn clean && yarn compile && mv ./build/diez-twilio-labs-match-tokens-wombat-web/ ./dist/ && rm -rf ./dist/package.json ./build ./lib ./tsconfig.tsbuildinfo",
     "compile": "diez compile -t web",
     "clean": "rm -rf ./dist ./.diez",
     "prepack": "yarn build"

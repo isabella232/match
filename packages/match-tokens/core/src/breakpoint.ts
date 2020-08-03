@@ -1,4 +1,4 @@
-import { MediaQuery } from "../../framework/prefabs/media-query";
+import { MediaQuery } from "./framework/prefabs/media-query";
 
 export const breakpoint = {
   small: new MediaQuery({ minWidth: 360 }),

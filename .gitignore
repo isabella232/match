@@ -85,5 +85,5 @@ package-lock.json
 
 # Diez
 .diez
-packages/match-tokens/lib/*
-packages/match-tokens/build/*
+packages/match-tokens/**/lib/*
+packages/match-tokens/**/build/*

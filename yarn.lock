@@ -2971,7 +2971,7 @@ __metadata:
     "@rollup/plugin-node-resolve": ^8.4.0
     "@storybook/addon-knobs": 6.0.0-rc.8
     "@twilio-labs/match-styling-library": "workspace:packages/match-libraries/styling"
-    "@twilio-labs/match-tokens": "workspace:packages/match-tokens"
+    "@twilio-labs/match-tokens-wombat": "workspace:packages/match-tokens/wombat"
     "@types/jest-axe": ^3.5.0
     "@types/prop-types": ^15.7.3
     "@types/react": ^16.9.43
@@ -2993,7 +2993,7 @@ __metadata:
     typescript: ^3.9.7
   peerDependencies:
     "@twilio-labs/match-styling-library": ^0.0.6
-    "@twilio-labs/match-tokens": ^0.0.2
+    "@twilio-labs/match-tokens-twilio": ^0.0.2
     prop-types: ^15.7.2
     react: ^16.13.1
     react-dom: ^16.13.1
@@ -3024,9 +3024,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@twilio-labs/match-tokens@workspace:packages/match-tokens":
+"@twilio-labs/match-tokens-core@workspace:packages/match-tokens/core":
   version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-tokens@workspace:packages/match-tokens"
+  resolution: "@twilio-labs/match-tokens-core@workspace:packages/match-tokens/core"
   dependencies:
     "@diez/cli-core": ^10.6.0
     "@diez/compiler-core": ^10.6.0
@@ -3036,6 +3036,46 @@ __metadata:
     "@diez/stdlib": ^10.6.0
     "@diez/targets": ^10.6.0
     "@diez/web-sdk-common": ^10.6.0
+    core-js: ^3.6.5
+    diez: ^10.6.0
+    semver: ^7.3.2
+    typescript: ^3.9.7
+  languageName: unknown
+  linkType: soft
+
+"@twilio-labs/match-tokens-twilio@workspace:packages/match-tokens/twilio":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match-tokens-twilio@workspace:packages/match-tokens/twilio"
+  dependencies:
+    "@diez/cli-core": ^10.6.0
+    "@diez/compiler-core": ^10.6.0
+    "@diez/engine": ^10.6.0
+    "@diez/extractors": ^10.6.0
+    "@diez/prefabs": ^10.6.0
+    "@diez/stdlib": ^10.6.0
+    "@diez/targets": ^10.6.0
+    "@diez/web-sdk-common": ^10.6.0
+    "@twilio-labs/match-tokens-core": "workspace:packages/match-tokens/core"
+    core-js: ^3.6.5
+    diez: ^10.6.0
+    semver: ^7.3.2
+    typescript: ^3.9.7
+  languageName: unknown
+  linkType: soft
+
+"@twilio-labs/match-tokens-wombat@workspace:packages/match-tokens/wombat":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match-tokens-wombat@workspace:packages/match-tokens/wombat"
+  dependencies:
+    "@diez/cli-core": ^10.6.0
+    "@diez/compiler-core": ^10.6.0
+    "@diez/engine": ^10.6.0
+    "@diez/extractors": ^10.6.0
+    "@diez/prefabs": ^10.6.0
+    "@diez/stdlib": ^10.6.0
+    "@diez/targets": ^10.6.0
+    "@diez/web-sdk-common": ^10.6.0
+    "@twilio-labs/match-tokens-core": "workspace:packages/match-tokens/core"
     core-js: ^3.6.5
     diez: ^10.6.0
     semver: ^7.3.2

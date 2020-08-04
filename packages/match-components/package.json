@@ -29,7 +29,7 @@
   },
   "peerDependencies": {
     "@twilio-labs/match-styling-library": "^0.0.6",
-    "@twilio-labs/match-tokens-wombat": "^0.0.0",
+    "@twilio-labs/match-tokens": "^0.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -41,7 +41,7 @@
     "@rollup/plugin-node-resolve": "^8.4.0",
     "@storybook/addon-knobs": "6.0.0-rc.8",
     "@twilio-labs/match-styling-library": "workspace:packages/match-libraries/styling",
-    "@twilio-labs/match-tokens-wombat": "workspace:packages/match-tokens/wombat",
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
     "@types/jest-axe": "^3.5.0",
     "@types/prop-types": "^15.7.3",
     "@types/react": "^16.9.43",

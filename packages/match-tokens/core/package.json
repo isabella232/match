@@ -6,10 +6,9 @@
   "license": "UNLICENSED",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "private": true,
-  "dependencies": {
-    "@diez/web-sdk-common": "^10.6.0"
-  },
+  "files": [
+    "lib"
+  ],
   "devDependencies": {
     "@diez/cli-core": "^10.6.0",
     "@diez/compiler-core": "^10.6.0",

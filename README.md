@@ -7,7 +7,7 @@ Match is a design system used to build accessible, consistent, and high quality 
 ```
 yarn
 yarn build
-yarn dev
+yarn start
 ```
 
 Build things 🔥

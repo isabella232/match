@@ -87,3 +87,8 @@ package-lock.json
 .diez
 packages/match-tokens/**/lib/*
 packages/match-tokens/**/build/*
+
+# Gatsby / Docz
+packages/match-website/public
+packages/match-website/.cache
+packages/match-website/.docz

@@ -1,0 +1,31 @@
+{
+  "name": "@twilio-labs/match-tokens-core",
+  "version": "0.0.0",
+  "description": "Token library for use with the Twilio Match Design System.",
+  "author": "Twilio Inc.",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@diez/cli-core": "^10.6.0",
+    "@diez/compiler-core": "^10.6.0",
+    "@diez/engine": "^10.6.0",
+    "@diez/extractors": "^10.6.0",
+    "@diez/prefabs": "^10.6.0",
+    "@diez/stdlib": "^10.6.0",
+    "@diez/targets": "^10.6.0",
+    "core-js": "^3.6.5",
+    "diez": "^10.6.0",
+    "semver": "^7.3.2",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "compile": "tsc",
+    "clean": "rm -rf ./lib tsconfig.tsbuildinfo",
+    "prepack": "yarn build"
+  }
+}

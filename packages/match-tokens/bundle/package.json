@@ -1,0 +1,43 @@
+{
+  "name": "@twilio-labs/match-tokens",
+  "version": "0.0.2",
+  "description": "Token library for use with the Twilio Match Design System.",
+  "author": "Twilio Inc.",
+  "license": "UNLICENSED",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "packages/match-libraries/styling"
+  },
+  "publishConfig": {
+    "main": "dist/index.js",
+    "module": "dist/index.es.js",
+    "types": "dist/index.d.ts",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf ./dist",
+    "compile": "rollup -c --environment NODE_ENV:production",
+    "compile:dev": "rollup -c --environment NODE_ENV:development",
+    "prepack": "yarn build",
+    "type-check": "tsc --noEmit --composite false"
+  },
+  "dependencies": {
+    "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio",
+    "@twilio-labs/match-tokens-wombat": "workspace:packages/match-tokens/wombat"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@rollup/plugin-babel": "^5.1.0",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "rollup": "^2.23.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "typescript": "^3.9.7"
+  }
+}

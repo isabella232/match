@@ -1,4 +1,4 @@
-const { queryToCss } = require('../src/sdk/css-media-query');
+const { queryToCss } = require('@twilio-labs/match-tokens-core/lib/framework/sdk/css-media-query');
 
 Object.defineProperties(MediaQuery.prototype, {
   mediaQuery: {

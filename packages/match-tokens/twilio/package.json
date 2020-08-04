@@ -19,7 +19,8 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
-    "@diez/web-sdk-common": "^10.6.0"
+    "@diez/web-sdk-common": "^10.6.0",
+    "@twilio-labs/match-tokens-core": "workspace:packages/match-tokens/core"
   },
   "devDependencies": {
     "@diez/cli-core": "^10.6.0",
@@ -29,7 +30,6 @@
     "@diez/prefabs": "^10.6.0",
     "@diez/stdlib": "^10.6.0",
     "@diez/targets": "^10.6.0",
-    "@twilio-labs/match-tokens-core": "workspace:packages/match-tokens/core",
     "core-js": "^3.6.5",
     "diez": "^10.6.0",
     "semver": "^7.3.2",

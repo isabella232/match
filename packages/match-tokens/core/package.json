@@ -4,10 +4,10 @@
   "description": "Token library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "devDependencies": {
     "@diez/cli-core": "^10.6.0",

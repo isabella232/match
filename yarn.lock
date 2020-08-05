@@ -1689,7 +1689,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@diez/prefabs@npm:*, @diez/prefabs@npm:^10.6.0":
+"@diez/prefabs@npm:^10.6.0":
   version: 10.6.0
   resolution: "@diez/prefabs@npm:10.6.0"
   dependencies:

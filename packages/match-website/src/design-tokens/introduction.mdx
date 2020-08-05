@@ -1,13 +1,14 @@
 ---
 name: Introduction
 menu: Design Tokens
+route: /design-tokens/introduction
 ---
 
 # Introduction
 
 Design tokens are tiny pieces of UI information that are used to ensure brand consistency and product design-engineer collaboration across all properties.
 
-⚠️ Design tokens and theming is still a work in progress.
+⚠️ Design tokens and theming is still a work in progress. [Check out our roadmap!](../roadmap)
 
 ## Installation
 
@@ -19,24 +20,25 @@ yarn add @twilio-labs/match-tokens
 
 ## How to use
 
-To use the default design tokens, add an import in the file where you want to use the design tokens
+To use Twilio design tokens, add an import in the file where you want to use the design tokens
 
 ```
-import { DesignTokens } from "@twilio-labs/match-tokens";
+import { TwilioDesignTokens } from "@twilio-labs/match-tokens";
 ```
 
 Following the imports add the following line to create a new instance of the design tokens
 
 ```
-const ds = new DesignTokens();
+const ds = new TwilioDesignTokens();
 ```
 
-Now you can use the tokens by typing ds and continuing the dot notation with the token name followed by the token value the token value. For instance, `ds.Breakpoint.small`.
+Now you can use the tokens by typing ds and continuing the dot notation with the token name. For instance, `ds.Breakpoint.small` or `ds.baseBlue.color`.
+
+See the complete list of token names on the [tokens page](./tokens).
 
 ## Naming Convention
 
 Every token name on Match starts with its related CSS property such as Fontweight and Breakpoint and is then followed by the token value.
-color-base-blue.
 
 - JavaScript: `breakpoint.small`
 - CSS: `--breakpoint-small`

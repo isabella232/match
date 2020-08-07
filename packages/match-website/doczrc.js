@@ -1,9 +1,13 @@
 export default {
   typescript: true,
   menu: [
-    "Getting Started",
+    {
+      name: "Getting Started",
+      menu: ["Overview", "Design", "Develop"],
+    },
     {
       name: "Design Tokens",
+      menu: ["Introduction", "Tokens"],
     },
   ],
 };

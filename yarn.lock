@@ -1633,7 +1633,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@diez/extractors-core@npm:^10.6.0":
+"@diez/extractors-core@npm:*, @diez/extractors-core@npm:^10.6.0":
   version: 10.6.0
   resolution: "@diez/extractors-core@npm:10.6.0"
   dependencies:
@@ -1689,7 +1689,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@diez/prefabs@npm:*, @diez/prefabs@npm:^10.6.0":
+"@diez/prefabs@npm:^10.6.0":
   version: 10.6.0
   resolution: "@diez/prefabs@npm:10.6.0"
   dependencies:
@@ -3465,9 +3465,9 @@ __metadata:
   resolution: "@twilio-labs/match-tokens-core@workspace:packages/match-tokens/core"
   dependencies:
     "@diez/cli-core": ^10.6.0
-    "@diez/compiler-core": ^10.6.0
     "@diez/engine": ^10.6.0
     "@diez/extractors": ^10.6.0
+    "@diez/extractors-core": ^10.6.0
     "@diez/prefabs": ^10.6.0
     "@diez/stdlib": ^10.6.0
     "@diez/targets": ^10.6.0
@@ -3475,6 +3475,8 @@ __metadata:
     diez: ^10.6.0
     semver: ^7.3.2
     typescript: ^3.9.7
+  peerDependencies:
+    "@diez/engine": ^10.6.0
   languageName: unknown
   linkType: soft
 
@@ -3485,7 +3487,6 @@ __metadata:
     "@diez/cli-core": ^10.6.0
     "@diez/compiler-core": ^10.6.0
     "@diez/engine": ^10.6.0
-    "@diez/extractors": ^10.6.0
     "@diez/prefabs": ^10.6.0
     "@diez/stdlib": ^10.6.0
     "@diez/targets": ^10.6.0
@@ -3505,7 +3506,6 @@ __metadata:
     "@diez/cli-core": ^10.6.0
     "@diez/compiler-core": ^10.6.0
     "@diez/engine": ^10.6.0
-    "@diez/extractors": ^10.6.0
     "@diez/prefabs": ^10.6.0
     "@diez/stdlib": ^10.6.0
     "@diez/targets": ^10.6.0
@@ -9275,7 +9275,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diez@npm:*, diez@npm:^10.6.0":
+"diez@npm:^10.6.0":
   version: 10.6.0
   resolution: "diez@npm:10.6.0"
   dependencies:
@@ -25573,16 +25573,6 @@ resolve@1.15.1:
   languageName: node
   linkType: hard
 
-"typescript@*, typescript@^3.7.2, typescript@^3.9.7":
-  version: 3.9.7
-  resolution: "typescript@npm:3.9.7"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10848a9c35fd8c70a8792b8bd9485317534bcd58768793d3b7d9c7486e9fd30cf345f83fa2a324e0bf6088bc8a4d8d061d58fda38b18c2ff187cf01fbbff6267
-  languageName: node
-  linkType: hard
-
 typescript@3.0.1 - 3.6.4:
   version: 3.6.4
   resolution: "typescript@npm:3.6.4"
@@ -25603,13 +25593,13 @@ typescript@3.5.3:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@*#builtin<compat/typescript>, typescript@patch:typescript@^3.7.2#builtin<compat/typescript>, typescript@patch:typescript@^3.9.7#builtin<compat/typescript>":
+"typescript@^3.7.2, typescript@^3.9.7":
   version: 3.9.7
-  resolution: "typescript@patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"
+  resolution: "typescript@npm:3.9.7"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: f0d3d9c987860c7c458229ab6dd7e3d322405db36b70abccba610b5efd9f9451e4e67a3fc7983c0d3741033c1f1a8d7aa859a1510caa8f20fad762fc39648bfa
+  checksum: 10848a9c35fd8c70a8792b8bd9485317534bcd58768793d3b7d9c7486e9fd30cf345f83fa2a324e0bf6088bc8a4d8d061d58fda38b18c2ff187cf01fbbff6267
   languageName: node
   linkType: hard
 
@@ -25630,6 +25620,16 @@ typescript@3.5.3:
     tsc: ./bin/tsc
     tsserver: ./bin/tsserver
   checksum: 20a9025d6f85047a1c14325a3a697616749fd4bfad48fc62ce97f3e164f92df25ce47261db7becfb53bbf919ded2169b2ad7a225a3d7b63d4515387f44fa6260
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^3.7.2#builtin<compat/typescript>, typescript@patch:typescript@^3.9.7#builtin<compat/typescript>":
+  version: 3.9.7
+  resolution: "typescript@patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: f0d3d9c987860c7c458229ab6dd7e3d322405db36b70abccba610b5efd9f9451e4e67a3fc7983c0d3741033c1f1a8d7aa859a1510caa8f20fad762fc39648bfa
   languageName: node
   linkType: hard
 

@@ -4,10 +4,27 @@ menu: Getting Started
 route: "/getting-started/develop/"
 ---
 
-import Wombat from "../../../match-components/src/wombat";
-import { WombatDesignTokens } from "@twilio-labs/match-tokens";
+import { Table } from "../../components/match-table";
 
-<Wombat droppings={["🌯", "🍦", "🍔"]} color={"burrito"} />] # Develop
+<Table
+  headerData={["Name", "Type", "Default", "Description"]}
+  tableData={[
+    [
+      "as?",
+      "string",
+      "button",
+      "The HTML tag to replace the default <button> tag.",
+    ],
+    [
+      "loading?",
+      "boolean",
+      "false",
+      "Prevent actions and show a loading spinner",
+    ],
+  ]}
+/>
+
+# Develop
 
 👋 Hi Twilio developer. Follow the steps below to begin building with Match
 

@@ -3941,7 +3941,7 @@ __metadata:
     tslib: ^2.0.1
     typescript: ^3.9.7
   peerDependencies:
-    "@twilio-labs/match-styling-library": ^0.0.6
+    "@twilio-labs/match-styling-library": ^0.0.7
     "@twilio-labs/match-tokens": ^0.0.0
     prop-types: ^15.7.2
     react: ^16.13.1

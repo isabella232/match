@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-tokens-core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Core token library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -9,6 +9,14 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "packages/match-tokens/core"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "peerDependencies": {
     "@diez/engine": "^10.6.0"
   },
@@ -30,6 +38,7 @@
     "compile": "tsc",
     "clean": "rm -rf ./dist tsconfig.tsbuildinfo",
     "prepack": "yarn build",
-    "extract": "diez extract"
+    "extract": "diez extract",
+    "publish": "yarn npm publish --tolerate-republish"
   }
 }

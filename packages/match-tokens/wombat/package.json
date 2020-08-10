@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-tokens-wombat",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Demo Token library.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -30,7 +30,6 @@
   "scripts": {
     "build": "yarn clean && yarn compile && mv ./build/diez-twilio-labs-match-tokens-wombat-web/ ./dist/ && rm -rf ./dist/package.json ./build ./lib ./tsconfig.tsbuildinfo",
     "compile": "diez compile -t web",
-    "clean": "rm -rf ./dist ./.diez",
-    "prepack": "yarn build"
+    "clean": "rm -rf ./dist ./.diez"
   }
 }

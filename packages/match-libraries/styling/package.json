@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-styling-library",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "CSS-in-JS wrapper library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -25,7 +25,8 @@
     "compile": "rollup -c --environment NODE_ENV:production",
     "compile:dev": "rollup -c --environment NODE_ENV:development",
     "prepack": "yarn build",
-    "type-check": "tsc --noEmit --composite false"
+    "type-check": "tsc --noEmit --composite false",
+    "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
     "react": ">= 16.8.0",

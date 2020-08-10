@@ -19,7 +19,7 @@
     "build": "yarn workspaces foreach --topological-dev run build",
     "build:tokens": "yarn workspaces foreach --topological-dev --parallel --include '@twilio-labs/match-tokens*' run build",
     "version:all": "yarn version check --interactive && yarn version apply --all",
-    "publish:all": "yarn workspaces foreach --topological-dev --exclude 'match' npm publish --tolerate-republish",
+    "publish:all": "yarn workspaces foreach --topological-dev run publish",
     "release": "yarn version:all && yarn publish:all",
     "test": "jest --watch",
     "test:ci": "jest --ci",

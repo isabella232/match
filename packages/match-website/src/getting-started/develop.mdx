@@ -19,7 +19,9 @@ route: "/getting-started/develop/"
 
 ### Install dependencies using yarn
 
-    yarn add react react-dom prop-types react-uid
+```shell
+yarn add react react-dom prop-types react-uid
+```
 
 ## 2. Install Match packages
 
@@ -27,9 +29,43 @@ You can consume Match’s components, icons and tokens packages in order to buil
 
 | Package                            | Version |
 | ---------------------------------- | ------- |
-| @twilio-labs/match-tokens          | 0.1.1   |
-| @twilio-labs/match-styling-library | 0.1.1   |
+| @twilio-labs/match-tokens          | 0.1.0   |
+| @twilio-labs/match-styling-library | 0.0.7   |
 
-### Install Match packages using yarn
+### Configure GitHub Package Regsitry
 
-    yarn add @twilio-labs/match-tokens @twilio-labs/match-styling-library
+The Match packages are hosted on the GitHub Package Registry and require some additional configuration to install.
+
+For Yarn 2 and up, add the following to the .yarnrc.yml file in the root of your project:
+
+```yaml
+npmScopes:
+  twilio-labs:
+    npmRegistryServer: "https://npm.pkg.github.com"
+```
+
+For Yarn 1, add the following to the .yarnrc file in the root of your project.
+
+```
+"@twilio-labs:registry" "https://npm.pkg.github.com"
+```
+
+For NPM, add the following to the .npmrc file in the root of your project.
+
+```
+@twilio-labs:regsitry=https://npm.pkg.github.com
+```
+
+### Install Match packages
+
+With Yarn:
+
+```shell
+yarn add @twilio-labs/match-tokens @twilio-labs/match-styling-library
+```
+
+With NPM:
+
+```shell
+npm install --save @twilio-labs/match-tokens @twilio-labs/match-styling-library
+```

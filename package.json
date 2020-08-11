@@ -55,6 +55,7 @@
     "@storybook/addons": "6.0.0-rc.30",
     "@storybook/core": "6.0.0-rc.30",
     "@storybook/react": "6.0.0-rc.30",
+    "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/react": "^10.4.8",
     "@types/jest": "^26.0.9",
     "@types/jest-axe": "^3.5.0",

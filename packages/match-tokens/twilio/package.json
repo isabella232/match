@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-tokens-twilio",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Twilio token library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
-    "directory": "packages/match-libraries/styling"
+    "directory": "packages/match-tokens/twilio"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -38,6 +38,7 @@
     "build": "yarn clean && yarn compile && mv ./build/diez-twilio-labs-match-tokens-twilio-web/ ./dist/ && rm -rf ./dist/package.json ./build ./lib ./tsconfig.tsbuildinfo",
     "compile": "diez compile -t web",
     "clean": "rm -rf ./dist ./.diez ./lib",
-    "prepack": "yarn build"
+    "prepack": "yarn build",
+    "publish": "yarn npm publish --tolerate-republish"
   }
 }

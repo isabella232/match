@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-styling-library",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "CSS-in-JS wrapper library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -25,7 +25,8 @@
     "compile": "rollup -c --environment NODE_ENV:production",
     "compile:dev": "rollup -c --environment NODE_ENV:development",
     "prepack": "yarn build",
-    "type-check": "tsc --noEmit --composite false"
+    "type-check": "tsc --noEmit --composite false",
+    "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
     "react": ">= 16.8.0",
@@ -36,17 +37,17 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5",
+    "@babel/core": "^7.11.1",
     "@rollup/plugin-babel": "^5.1.0",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
-    "@types/styled-components": "^5.1.1",
+    "@types/styled-components": "^5.1.2",
     "core-js": "^3.6.5",
     "react": "^16.13.1",
     "react-is": "^16.13.1",
-    "rollup": "^2.22.2",
-    "rollup-plugin-terser": "^6.1.0",
-    "rollup-plugin-typescript2": "^0.27.1",
+    "rollup": "^2.23.1",
+    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-typescript2": "^0.27.2",
     "typescript": "^3.9.7"
   }
 }

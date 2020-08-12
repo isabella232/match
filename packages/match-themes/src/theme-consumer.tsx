@@ -4,13 +4,19 @@ import { ThemeConsumer } from "styled-components";
 import {
   TwilioDesignTokens,
   SendGridDesignTokens,
+  SignalDesignTokens,
+  AhoyDesignTokens,
 } from "@twilio-labs/match-tokens";
 
 export interface MatchThemeConsumerProps {
   children: ({
     theme,
   }: {
-    theme: TwilioDesignTokens | SendGridDesignTokens;
+    theme:
+      | TwilioDesignTokens
+      | SendGridDesignTokens
+      | SignalDesignTokens
+      | AhoyDesignTokens;
   }) => React.ReactNode;
 }
 

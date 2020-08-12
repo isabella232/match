@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@twilio-labs/match-tokens-sendgrid": "workspace:packages/match-tokens/sendgrid",
+    "@twilio-labs/match-tokens-signal": "workspace:packages/match-tokens/signal",
     "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio",
     "@twilio-labs/match-tokens-wombat": "workspace:packages/match-tokens/wombat"
   },

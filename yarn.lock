@@ -4015,6 +4015,7 @@ __metadata:
     rollup-plugin-terser: ^7.0.0
     rollup-plugin-typescript2: ^0.27.2
     styled-components: ^5.1.1
+    tslib: ^2.0.1
     typescript: ^3.9.7
   peerDependencies:
     "@twilio-labs/match-tokens": ^0.0.0
@@ -4049,6 +4050,25 @@ __metadata:
 "@twilio-labs/match-tokens-sendgrid@workspace:packages/match-tokens/sendgrid":
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-tokens-sendgrid@workspace:packages/match-tokens/sendgrid"
+  dependencies:
+    "@diez/cli-core": ^10.6.0
+    "@diez/compiler-core": ^10.6.0
+    "@diez/engine": ^10.6.0
+    "@diez/prefabs": ^10.6.0
+    "@diez/stdlib": ^10.6.0
+    "@diez/targets": ^10.6.0
+    "@diez/web-sdk-common": ^10.6.0
+    "@twilio-labs/match-tokens-core": "workspace:packages/match-tokens/core"
+    core-js: ^3.6.5
+    diez: ^10.6.0
+    semver: ^7.3.2
+    typescript: ^3.9.7
+  languageName: unknown
+  linkType: soft
+
+"@twilio-labs/match-tokens-signal@workspace:packages/match-tokens/signal":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match-tokens-signal@workspace:packages/match-tokens/signal"
   dependencies:
     "@diez/cli-core": ^10.6.0
     "@diez/compiler-core": ^10.6.0
@@ -4112,6 +4132,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^14.0.0
     "@rollup/plugin-node-resolve": ^8.4.0
     "@twilio-labs/match-tokens-sendgrid": "workspace:packages/match-tokens/sendgrid"
+    "@twilio-labs/match-tokens-signal": "workspace:packages/match-tokens/signal"
     "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio"
     "@twilio-labs/match-tokens-wombat": "workspace:packages/match-tokens/wombat"
     rollup: ^2.23.1

@@ -4,6 +4,7 @@ import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import {
   TwilioDesignTokens,
   SendGridDesignTokens,
+  SignalDesignTokens,
 } from "@twilio-labs/match-tokens";
 import { ThemeVariants } from "./constants";
 
@@ -34,7 +35,7 @@ const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({
       case ThemeVariants.SendGrid:
         return new SendGridDesignTokens();
       case ThemeVariants.Signal:
-        return {};
+        return new SignalDesignTokens();
       case ThemeVariants.Ahoy:
         return {};
       case ThemeVariants.Twilio:

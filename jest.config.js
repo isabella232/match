@@ -2,6 +2,10 @@ module.exports = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
+  testPathIgnorePatterns: [
+    "<rootDir>/packages/match-website/.cache",
+    "<rootDir>/packages/match-website/public",
+  ],
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   preset: "ts-jest",

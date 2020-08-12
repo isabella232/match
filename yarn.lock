@@ -4046,6 +4046,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@twilio-labs/match-tokens-sendgrid@workspace:packages/match-tokens/sendgrid":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match-tokens-sendgrid@workspace:packages/match-tokens/sendgrid"
+  dependencies:
+    "@diez/cli-core": ^10.6.0
+    "@diez/compiler-core": ^10.6.0
+    "@diez/engine": ^10.6.0
+    "@diez/prefabs": ^10.6.0
+    "@diez/stdlib": ^10.6.0
+    "@diez/targets": ^10.6.0
+    "@diez/web-sdk-common": ^10.6.0
+    "@twilio-labs/match-tokens-core": "workspace:packages/match-tokens/core"
+    core-js: ^3.6.5
+    diez: ^10.6.0
+    semver: ^7.3.2
+    typescript: ^3.9.7
+  languageName: unknown
+  linkType: soft
+
 "@twilio-labs/match-tokens-twilio@workspace:packages/match-tokens/twilio":
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-tokens-twilio@workspace:packages/match-tokens/twilio"
@@ -4092,6 +4111,7 @@ __metadata:
     "@rollup/plugin-babel": ^5.1.0
     "@rollup/plugin-commonjs": ^14.0.0
     "@rollup/plugin-node-resolve": ^8.4.0
+    "@twilio-labs/match-tokens-sendgrid": "workspace:packages/match-tokens/sendgrid"
     "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio"
     "@twilio-labs/match-tokens-wombat": "workspace:packages/match-tokens/wombat"
     rollup: ^2.23.1
@@ -4723,7 +4743,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/testing-library__jest-dom@npm:^5.9.1":
+"@types/testing-library__jest-dom@npm:^5.9.1, @types/testing-library__jest-dom@npm:^5.9.2":
   version: 5.9.2
   resolution: "@types/testing-library__jest-dom@npm:5.9.2"
   dependencies:
@@ -19205,6 +19225,7 @@ fsevents@^1.2.7:
     "@types/node": ^14.0.27
     "@types/react": ^16.9.46
     "@types/react-test-renderer": ^16.9.3
+    "@types/testing-library__jest-dom": ^5.9.2
     "@typescript-eslint/eslint-plugin": ^3.9.0
     "@typescript-eslint/parser": ^3.9.0
     babel-jest: ^26.3.0

@@ -1,9 +1,17 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { ThemeConsumer } from "styled-components";
+import {
+  TwilioDesignTokens,
+  SendGridDesignTokens,
+} from "@twilio-labs/match-tokens";
 
 export interface MatchThemeConsumerProps {
-  children: ({ theme }: { theme: Record<string, unknown> }) => React.ReactNode;
+  children: ({
+    theme,
+  }: {
+    theme: TwilioDesignTokens | SendGridDesignTokens;
+  }) => React.ReactNode;
 }
 
 const MatchThemeConsumer = ({

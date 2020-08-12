@@ -1,0 +1,10 @@
+{
+  "designs": {
+    "services": []
+  },
+  "bindings": {
+    ".:MediaQuery": {
+      "web": "../core/dist/framework/bindings/media-query"
+    }
+  }
+}

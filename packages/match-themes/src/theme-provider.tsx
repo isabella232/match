@@ -1,17 +1,14 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import { TwilioDesignTokens } from "@twilio-labs/match-tokens";
-
-export const enum Theme {
-  Twilio = "TWILIO",
-  SendGrid = "SENDGRID",
-  Signal = "SIGNAL",
-  Ahoy = "AHOY",
-}
+import {
+  TwilioDesignTokens,
+  SendGridDesignTokens,
+} from "@twilio-labs/match-tokens";
+import { ThemeVariants } from "./constants";
 
 export interface MatchThemeProviderProps {
-  theme?: Theme;
+  theme?: ThemeVariants;
 }
 
 const GlobalStyles = createGlobalStyle`
@@ -34,13 +31,13 @@ const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({
 }) => {
   const themeProps = React.useMemo(() => {
     switch (theme) {
-      case "SENDGRID":
+      case ThemeVariants.SendGrid:
+        return new SendGridDesignTokens();
+      case ThemeVariants.Signal:
         return {};
-      case "SIGNAL":
+      case ThemeVariants.Ahoy:
         return {};
-      case "AHOY":
-        return {};
-      case "TWILIO":
+      case ThemeVariants.Twilio:
       default:
         return new TwilioDesignTokens();
     }
@@ -55,15 +52,15 @@ const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({
 
 MatchThemeProvider.propTypes = {
   theme: PropTypes.oneOf([
-    Theme.Twilio,
-    Theme.SendGrid,
-    Theme.Signal,
-    Theme.Ahoy,
+    ThemeVariants.Twilio,
+    ThemeVariants.SendGrid,
+    ThemeVariants.Signal,
+    ThemeVariants.Ahoy,
   ]).isRequired,
 };
 
 MatchThemeProvider.defaultProps = {
-  theme: Theme.Twilio,
+  theme: ThemeVariants.Twilio,
 };
 
 export { MatchThemeProvider };

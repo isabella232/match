@@ -5,6 +5,7 @@ import {
   TwilioDesignTokens,
   SendGridDesignTokens,
   SignalDesignTokens,
+  AhoyDesignTokens,
 } from "@twilio-labs/match-tokens";
 import { ThemeVariants } from "./constants";
 
@@ -37,7 +38,7 @@ const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({
       case ThemeVariants.Signal:
         return new SignalDesignTokens();
       case ThemeVariants.Ahoy:
-        return {};
+        return new AhoyDesignTokens();
       case ThemeVariants.Twilio:
       default:
         return new TwilioDesignTokens();

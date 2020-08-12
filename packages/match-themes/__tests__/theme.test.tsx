@@ -3,6 +3,8 @@ import { render } from "@testing-library/react";
 import {
   TwilioDesignTokens,
   SendGridDesignTokens,
+  SignalDesignTokens,
+  AhoyDesignTokens,
 } from "@twilio-labs/match-tokens";
 import { Theme, ThemeVariants } from "../src";
 
@@ -29,6 +31,26 @@ describe("Theme.Provider", () => {
     const tokens = new SendGridDesignTokens();
     const { getByTestId } = render(
       <Theme.Provider theme={ThemeVariants.SendGrid}>
+        <ThemeConsumerExample />
+      </Theme.Provider>
+    );
+    expect(getByTestId("color")).toHaveTextContent(tokens.swatch.brand.color);
+  });
+
+  test("should render the Signal brand color", (): void => {
+    const tokens = new SignalDesignTokens();
+    const { getByTestId } = render(
+      <Theme.Provider theme={ThemeVariants.Signal}>
+        <ThemeConsumerExample />
+      </Theme.Provider>
+    );
+    expect(getByTestId("color")).toHaveTextContent(tokens.swatch.brand.color);
+  });
+
+  test("should render the Ahoy brand color", (): void => {
+    const tokens = new AhoyDesignTokens();
+    const { getByTestId } = render(
+      <Theme.Provider theme={ThemeVariants.Ahoy}>
         <ThemeConsumerExample />
       </Theme.Provider>
     );

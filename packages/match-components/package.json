@@ -29,11 +29,11 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-styling-library": "^0.0.7",
     "@twilio-labs/match-tokens": "^0.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -41,7 +41,6 @@
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
     "@storybook/addon-knobs": "6.0.0-rc.30",
-    "@twilio-labs/match-styling-library": "workspace:packages/match-libraries/styling",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
     "@types/jest-axe": "^3.5.0",
     "@types/prop-types": "^15.7.3",

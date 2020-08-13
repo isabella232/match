@@ -44,6 +44,10 @@ const themeConfig = merge(defaultConfig, {
     ul: {
       fontSize: 14,
     },
+    pre: {
+      fontSize: 14,
+      width: 778,
+    },
   },
 });
 // export const matchTheme = theme(themeConfig)(Theme);

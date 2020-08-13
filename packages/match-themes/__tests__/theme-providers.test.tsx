@@ -6,23 +6,29 @@ import {
   SignalDesignTokens,
   AhoyDesignTokens,
 } from "@twilio-labs/match-tokens";
-import { Theme, ThemeVariants } from "../src";
+import {
+  TwilioTheme,
+  SendGridTheme,
+  SignalTheme,
+  AhoyTheme,
+  ThemeConsumer,
+} from "../src";
 
 const ThemeConsumerExample = (): React.ReactElement => {
   return (
-    <Theme.Consumer>
+    <ThemeConsumer>
       {({ theme }) => <p data-testid="color">{theme.swatch.brand.color}</p>}
-    </Theme.Consumer>
+    </ThemeConsumer>
   );
 };
 
-describe("Theme.Provider", () => {
+describe("Theme Providers", () => {
   test("should render the Twilio brand color", (): void => {
     const tokens = new TwilioDesignTokens();
     const { getByTestId } = render(
-      <Theme.Provider>
+      <TwilioTheme>
         <ThemeConsumerExample />
-      </Theme.Provider>
+      </TwilioTheme>
     );
     expect(getByTestId("color")).toHaveTextContent(tokens.swatch.brand.color);
   });
@@ -30,9 +36,9 @@ describe("Theme.Provider", () => {
   test("should render the SendGrid brand color", (): void => {
     const tokens = new SendGridDesignTokens();
     const { getByTestId } = render(
-      <Theme.Provider theme={ThemeVariants.SendGrid}>
+      <SendGridTheme>
         <ThemeConsumerExample />
-      </Theme.Provider>
+      </SendGridTheme>
     );
     expect(getByTestId("color")).toHaveTextContent(tokens.swatch.brand.color);
   });
@@ -40,9 +46,9 @@ describe("Theme.Provider", () => {
   test("should render the Signal brand color", (): void => {
     const tokens = new SignalDesignTokens();
     const { getByTestId } = render(
-      <Theme.Provider theme={ThemeVariants.Signal}>
+      <SignalTheme>
         <ThemeConsumerExample />
-      </Theme.Provider>
+      </SignalTheme>
     );
     expect(getByTestId("color")).toHaveTextContent(tokens.swatch.brand.color);
   });
@@ -50,9 +56,9 @@ describe("Theme.Provider", () => {
   test("should render the Ahoy brand color", (): void => {
     const tokens = new AhoyDesignTokens();
     const { getByTestId } = render(
-      <Theme.Provider theme={ThemeVariants.Ahoy}>
+      <AhoyTheme>
         <ThemeConsumerExample />
-      </Theme.Provider>
+      </AhoyTheme>
     );
     expect(getByTestId("color")).toHaveTextContent(tokens.swatch.brand.color);
   });

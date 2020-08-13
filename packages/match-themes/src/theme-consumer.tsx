@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import { ThemeConsumer } from "styled-components";
+import { ThemeConsumer as WrappedThemeConsumer } from "styled-components";
 import {
   TwilioDesignTokens,
   SendGridDesignTokens,
@@ -8,7 +8,7 @@ import {
   AhoyDesignTokens,
 } from "@twilio-labs/match-tokens";
 
-export interface MatchThemeConsumerProps {
+export interface ThemeConsumerProps {
   children: ({
     theme,
   }: {
@@ -20,20 +20,22 @@ export interface MatchThemeConsumerProps {
   }) => React.ReactNode;
 }
 
-const MatchThemeConsumer = ({
+const ThemeConsumer = ({
   children,
   ...props
-}: MatchThemeConsumerProps): React.ReactElement => {
+}: ThemeConsumerProps): React.ReactElement => {
   if (!children || typeof children !== "function") {
     throw new Error("[ThemeConsumer]: You must pass a function as children");
   }
   return (
-    <ThemeConsumer>{(theme) => children({ ...props, theme })}</ThemeConsumer>
+    <WrappedThemeConsumer>
+      {(theme) => children({ ...props, theme })}
+    </WrappedThemeConsumer>
   );
 };
 
-MatchThemeConsumer.propTypes = {
+ThemeConsumer.propTypes = {
   children: PropTypes.func,
 };
 
-export { MatchThemeConsumer };
+export { ThemeConsumer };

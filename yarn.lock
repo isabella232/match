@@ -3553,10 +3553,14 @@ __metadata:
     gatsby-plugin-mdx: ^1.2.30
     gatsby-theme-docz: ^2.3.1
     gh-pages: ^3.1.0
+    lodash: ^4.17.19
     prop-types: ^15.7.2
     react: ^16.13.1
     react-dom: ^16.13.1
+    theme-ui: ^0.2.38
     typescript: ^3.9.7
+  peerDependencies:
+    "@theme-ui/css": "*"
   languageName: unknown
   linkType: soft
 

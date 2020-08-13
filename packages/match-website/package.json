@@ -36,6 +36,11 @@
     "babel-plugin-export-metadata": "^2.3.0",
     "docz-core": "^2.3.0",
     "gatsby-plugin-mdx": "^1.2.30",
+    "lodash": "^4.17.19",
+    "theme-ui": "^0.2.38",
     "typescript": "^3.9.7"
+  },
+  "peerDependencies": {
+    "@theme-ui/css": "*"
   }
 }

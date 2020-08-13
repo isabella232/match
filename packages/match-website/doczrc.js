@@ -1,5 +1,7 @@
 export default {
   typescript: true,
+  title: "Match",
+  description: "Design System for Twilio Public Facing Properties",
   menu: [
     {
       name: "Getting Started",

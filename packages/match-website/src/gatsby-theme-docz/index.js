@@ -35,7 +35,14 @@ const themeConfig = merge(defaultConfig, {
       color: "heading",
     },
     p: {
-      fontSize: 16,
+      fontSize: 14,
+    },
+    table: {
+      fontSize: 14,
+      width: 778,
+    },
+    ul: {
+      fontSize: 14,
     },
   },
 });

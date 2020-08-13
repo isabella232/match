@@ -5,6 +5,7 @@ route: "/getting-started/develop/"
 ---
 
 import { Table } from "../../components/match-table";
+import { BigParagraph } from "../../src/gatsby-theme-docz/custom-components/big-paragraph";
 
 <Table
   headerData={["Name", "Type", "Default", "Description"]}
@@ -26,16 +27,34 @@ import { Table } from "../../components/match-table";
 
 # Develop
 
-👋 Hi Twilio developer. Follow the steps below to begin building with Match
+<BigParapgraph>
+  👋 Hi Twilio developer. Follow the steps below to begin building with Match
+</BigParapgraph>
 
 ## 1.Install external dependencies
 
-| Package    | Version  |
-| ---------- | -------- |
-| react      | ^16.8.6  |
-| react-dom  | ^16.8.6  |
-| prop-types | ^16.8.6  |
-| react-is   | ^16.13.1 |
+<table>
+  <tr>
+    <th style="width: 312px;">Package</th>
+    <th style="width: 312px">Version</th>
+  </tr>
+  <tr>
+    <td> react</td>
+    <td>^16.8.6</td>
+  </tr>
+  <tr>
+    <td>react-dom </td>
+    <td>^16.8.6 </td>
+  </tr>
+  <tr>
+    <td>prop-types</td>
+    <td>^16.8.6</td>
+  </tr>
+  <tr>
+    <td>react-is</td>
+    <td>^16.13.1</td>
+  </tr>
+</table>
 
 ### Install dependencies using yarn
 
@@ -45,10 +64,20 @@ import { Table } from "../../components/match-table";
 
 You can consume Match’s components, icons and tokens packages in order to build custom page sections.
 
-| Package                            | Version |
-| ---------------------------------- | ------- |
-| @twilio-labs/match-tokens          | 0.1.1   |
-| @twilio-labs/match-styling-library | 0.1.1   |
+<table>
+  <tr>
+    <th style="width: 312px;">Package</th>
+    <th style="width: 312px">Version</th>
+  </tr>
+  <tr>
+    <td> @twilio-labs/match-tokens </td>
+    <td>0.1.1</td>
+  </tr>
+  <tr>
+    <td>@twilio-labs/match-styling-library </td>
+    <td>0.1.1 </td>
+  </tr>
+</table>
 
 ### Install Match packages using yarn
 

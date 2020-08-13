@@ -5,22 +5,16 @@ import {
   SignalDesignTokens,
   AhoyDesignTokens,
 } from "@twilio-labs/match-tokens";
-import { withTheme } from "./with-theme";
+import { withTokens } from "./with-tokens";
 
-const TwilioTheme = withTheme(new TwilioDesignTokens())(ThemeProvider);
+const TwilioTheme = withTokens(new TwilioDesignTokens())(ThemeProvider);
 
-const SendGridTheme = withTheme(new SendGridDesignTokens())(ThemeProvider);
+const SendGridTheme = withTokens(new SendGridDesignTokens())(ThemeProvider);
 
-const SignalTheme = withTheme(new SignalDesignTokens())(ThemeProvider);
+const SignalTheme = withTokens(new SignalDesignTokens())(ThemeProvider);
 
-const AhoyTheme = withTheme(new AhoyDesignTokens())(ThemeProvider);
+const AhoyTheme = withTokens(new AhoyDesignTokens())(ThemeProvider);
 
 export { ThemeConsumer } from "./theme-consumer";
+export { useTheme } from "./use-theme";
 export { TwilioTheme, SendGridTheme, SignalTheme, AhoyTheme };
-
-// export { ThemeVariants } from "./constants";
-
-// export const Theme = {
-//   Provider: MatchThemeProvider,
-//   Consumer: MatchThemeConsumer,
-// };

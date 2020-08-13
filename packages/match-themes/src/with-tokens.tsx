@@ -21,7 +21,7 @@ const GlobalStyles = createGlobalStyle`
 
 const StyledBase = styled.div``;
 
-export const withTheme = (
+const withTokens = (
   tokens:
     | TwilioDesignTokens
     | SendGridDesignTokens
@@ -38,3 +38,5 @@ export const withTheme = (
   };
   return ThemeProviderWithTokens;
 };
+
+export { withTokens };

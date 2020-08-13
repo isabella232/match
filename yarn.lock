@@ -3546,6 +3546,8 @@ __metadata:
     "@mdx-js/react": ^1.6.16
     "@twilio-labs/match-styling-library": "workspace:packages/match-libraries/styling"
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle"
+    "@types/react": ^16.9.46
+    "@types/react-dom": ^16.9.8
     babel-plugin-export-metadata: ^2.3.0
     docz: ^2.3.1
     docz-core: ^2.3.0
@@ -4051,6 +4053,16 @@ __metadata:
     "@types/prop-types": "*"
     csstype: ^2.2.0
   checksum: b9d4491463ab013e0752bf6f99bd578f91504f74dfd1ebd7fbceebbdffe89762b040494a78403e249bb72d1645d2784f844890e7b1acdb3634432533ff9732fb
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^16.9.46":
+  version: 16.9.46
+  resolution: "@types/react@npm:16.9.46"
+  dependencies:
+    "@types/prop-types": "*"
+    csstype: ^3.0.2
+  checksum: ad8d07195dc483f9186dc7886bba15c39e6f9c29bbbd97e52a7a117016f07ac6f923b202749d40833bef62fe60f4af6847b82dcfa0c539495e541ad6d819e49a
   languageName: node
   linkType: hard
 
@@ -8711,6 +8723,13 @@ __metadata:
   version: 2.6.13
   resolution: "csstype@npm:2.6.13"
   checksum: 0a84ef4b068e464039ee4cc79e621a38b4b8b5c683fd12d42dbb810e6457ac454c3c7e578e4d327f958fc563fc03aec0e74b57180abd5804d6e2590ae3cf7086
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "csstype@npm:3.0.2"
+  checksum: acf2852a3c5f5e1ed84e36526e41584e09353ee57b9bd93bf17f91bd2be60545adaf86c4439b84952d1f596149e06f9da6bb28c1d1ab883c9b2ad68e143e79f4
   languageName: node
   linkType: hard
 

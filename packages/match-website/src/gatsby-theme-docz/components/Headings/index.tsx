@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled } from "@twilio-labs/match-styling-library";
+import styled from "styled-components";
 import * as PropTypes from "prop-types";
 
 const StyledHeadingLink = styled.a`

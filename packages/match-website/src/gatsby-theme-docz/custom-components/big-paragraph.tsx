@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import { styled } from "@twilio-labs/match-styling-library";
+import styled from "styled-components";
 
 const StyledBigParagraph = styled.p`
   font-size: 16px;

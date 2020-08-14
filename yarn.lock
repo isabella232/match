@@ -3544,7 +3544,6 @@ __metadata:
     "@emotion/core": ^10.0.28
     "@mdx-js/mdx": ^1.6.16
     "@mdx-js/react": ^1.6.16
-    "@twilio-labs/match-styling-library": "workspace:packages/match-libraries/styling"
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle"
     "@types/react": ^16.9.46
     "@types/react-dom": ^16.9.8
@@ -3559,6 +3558,8 @@ __metadata:
     prop-types: ^15.7.2
     react: ^16.13.1
     react-dom: ^16.13.1
+    react-is: ^16.13.1
+    styled-components: ^5.1.1
     theme-ui: ^0.2.38
     typescript: ^3.9.7
   peerDependencies:

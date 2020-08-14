@@ -15,5 +15,7 @@ jobs:
         run: yarn install
       - name: Build Tokens
         run: yarn build:tokens
+      - name: Run type checker
+        run: yarn type-check
       - name: Run tests
         run: yarn test:ci

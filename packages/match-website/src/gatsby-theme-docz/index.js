@@ -4,7 +4,7 @@ import defaultConfig from "gatsby-theme-docz/src/theme";
 import { merge } from "lodash";
 import React from "react";
 import { Styled, ThemeProvider } from "theme-ui";
-import { Link } from "./custom-components/link";
+import { Link } from "../components/link";
 
 const componentsMap = {
   ...baseComponents,

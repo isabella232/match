@@ -5,6 +5,7 @@ route: /design-tokens/tokens
 ---
 
 import { BigParagraph } from "../../src/gatsby-theme-docz/custom-components/big-paragraph";
+import { Link } from "../../src/gatsby-theme-docz/custom-components/link";
 
 # Token List
 
@@ -13,7 +14,12 @@ import { BigParagraph } from "../../src/gatsby-theme-docz/custom-components/big-
   consistency and product design-engineer collaboration across all properties.
 </BigParagraph>
 
-⚠️ Design tokens and theming is still a work in progress. [Checkout our roadmap!]()
+<div style="border:solid 1px purple; width: 778px; padding: 20px 28px;">
+  <BigParagraph>
+    ⚠️ Design tokens and theming is still a work in progress.{" "}
+    <Link href="../roadmap">Check out our roadmap!</Link>
+  </BigParagraph>
+</div>
 
 ## Breakpoints
 
@@ -51,10 +57,8 @@ Match takes a mobile-first approach to responsive web design. These breakpoints 
 
 ### Primary
 
-<SmallParagraph>
-  This palette defines our brand. Emphasize Twilio Red and avoid introducing too
-  many secondary colors for audiences new to Twilio.
-</SmallParagraph>
+This palette defines our brand. Emphasize Twilio Red and avoid introducing too
+many secondary colors for audiences new to Twilio.
 
 <table>
   <tr>
@@ -100,10 +104,7 @@ Match takes a mobile-first approach to responsive web design. These breakpoints 
 
 ### Secondary
 
-<SmallParagraph>
-  {" "}
-  We use these colors to help guide attention through a layout or illustration.{" "}
-</SmallParagraph>
+We use these colors to help guide attention through a layout or illustration.
 
 <table style="width:778px">
   <tr>
@@ -160,10 +161,7 @@ Match takes a mobile-first approach to responsive web design. These breakpoints 
 
 ### Tertiary
 
-<SmallParagraph>
-  {" "}
-  We use these colors to help guide attention through a layout or illustration.{" "}
-</SmallParagraph>
+We use these colors to help guide attention through a layout or illustration.
 
 <table style="width:778px">
   <tr>

@@ -36,6 +36,7 @@ const themeConfig = merge(defaultConfig, {
     },
     p: {
       fontSize: 14,
+      width: 778,
     },
     table: {
       fontSize: 14,

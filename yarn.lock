@@ -4153,7 +4153,7 @@ __metadata:
     docz: ^2.3.1
     docz-core: ^2.3.0
     gatsby: ^2.24.37
-    gatsby-plugin-mdx: ^1.2.34
+    gatsby-plugin-mdx: ^1.2.30
     gatsby-theme-docz: ^2.3.1
     gh-pages: ^3.1.0
     lodash: ^4.17.19
@@ -4677,7 +4677,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^16.9.43":
+"@types/react@npm:*":
   version: 16.9.43
   resolution: "@types/react@npm:16.9.43"
   dependencies:
@@ -13279,7 +13279,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-mdx@npm:^1.2.34":
+"gatsby-plugin-mdx@npm:^1.2.30":
   version: 1.2.34
   resolution: "gatsby-plugin-mdx@npm:1.2.34"
   dependencies:

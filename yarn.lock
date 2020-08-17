@@ -1852,7 +1852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/core@npm:^10.0.14, @emotion/core@npm:^10.0.16, @emotion/core@npm:^10.0.20, @emotion/core@npm:^10.0.28, @emotion/core@npm:^10.0.9":
+"@emotion/core@npm:^10.0.0, @emotion/core@npm:^10.0.14, @emotion/core@npm:^10.0.16, @emotion/core@npm:^10.0.20, @emotion/core@npm:^10.0.28, @emotion/core@npm:^10.0.9":
   version: 10.0.28
   resolution: "@emotion/core@npm:10.0.28"
   dependencies:
@@ -1937,7 +1937,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:^10.0.14, @emotion/styled@npm:^10.0.17":
+"@emotion/styled@npm:^10.0.0, @emotion/styled@npm:^10.0.14, @emotion/styled@npm:^10.0.17":
   version: 10.0.27
   resolution: "@emotion/styled@npm:10.0.27"
   dependencies:
@@ -3683,7 +3683,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@styled-system/css@npm:^5.0.16":
+"@styled-system/css@npm:^5.0.16, @styled-system/css@npm:^5.1.5":
   version: 5.1.5
   resolution: "@styled-system/css@npm:5.1.5"
   checksum: 3b3322754e87992b1ce8dba0e58241c6a07858e45373179920dd273ca378e4f5f8abff1dcf2672e708ae980ae5ebaffcd13a0ab5d3918a1b79b1292324e35ab2
@@ -4146,9 +4146,12 @@ __metadata:
     "@emotion/core": ^10.0.28
     "@mdx-js/mdx": ^1.6.16
     "@mdx-js/react": ^1.6.16
+    "@styled-system/css": ^5.1.5
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle"
+    "@types/prop-types": ^15.7.3
     "@types/react": ^16.9.46
     "@types/react-dom": ^16.9.8
+    "@types/theme-ui": ^0.3.6
     babel-plugin-export-metadata: ^2.3.0
     docz: ^2.3.1
     docz-core: ^2.3.0
@@ -4757,6 +4760,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/styled-system@npm:*":
+  version: 5.1.10
+  resolution: "@types/styled-system@npm:5.1.10"
+  dependencies:
+    csstype: ^3.0.2
+  checksum: 4e147f95798094d6635d0b5a84e210671299dec6f23c35d845df4d9ae5626ee93d16f7350683acce6cc99411d89af586a7fbc330d7c92c082c0087f9d5640756
+  languageName: node
+  linkType: hard
+
+"@types/styled-system__css@npm:*":
+  version: 5.0.13
+  resolution: "@types/styled-system__css@npm:5.0.13"
+  dependencies:
+    csstype: ^3.0.2
+  checksum: c89fdca16eafccc479b1e73c088ecf3b51a586e364efa563a2a7705a15842e4b1a26b15e213c694c86d95785a5d87a7374a3f96d300ad13da3b3d6c4b03da6a4
+  languageName: node
+  linkType: hard
+
 "@types/tapable@npm:*, @types/tapable@npm:^1.0.5":
   version: 1.0.6
   resolution: "@types/tapable@npm:1.0.6"
@@ -4770,6 +4791,33 @@ __metadata:
   dependencies:
     "@types/jest": "*"
   checksum: 34621bc2f1336a073c93552c427d891b796639fd54100bef52665d635530fc95b000d71c523fd5cc6b13c4342c72f6f7a8f098a47e36e1e62bd14c54d197a804
+  languageName: node
+  linkType: hard
+
+"@types/theme-ui@npm:*, @types/theme-ui@npm:^0.3.6":
+  version: 0.3.6
+  resolution: "@types/theme-ui@npm:0.3.6"
+  dependencies:
+    "@emotion/serialize": ^0.11.15
+    "@types/react": "*"
+    "@types/styled-system": "*"
+    "@types/styled-system__css": "*"
+    "@types/theme-ui__components": "*"
+    csstype: ^3.0.2
+  checksum: c6383569f8ecfa5cf85fb86d4f727ed19d9a4790684004fe1b83d4c6a52f020966141f5f3e51f96de930995ecbf008892f54e4c8f80ab80bd2ebd51b2f0f816e
+  languageName: node
+  linkType: hard
+
+"@types/theme-ui__components@npm:*":
+  version: 0.2.5
+  resolution: "@types/theme-ui__components@npm:0.2.5"
+  dependencies:
+    "@emotion/core": ^10.0.0
+    "@emotion/styled": ^10.0.0
+    "@types/react": "*"
+    "@types/styled-system": "*"
+    "@types/theme-ui": "*"
+  checksum: 5b6d30cd5b06239716abfa4aea2f5c01e3bfc1bc365437324253098f6bb06dbe1d2c1323051bfad87de5d0a69569b1524a13489142844907178e17c2ed18f089
   languageName: node
   linkType: hard
 

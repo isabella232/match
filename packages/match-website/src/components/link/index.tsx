@@ -4,7 +4,11 @@ import * as PropTypes from "prop-types";
 import { jsx } from "theme-ui";
 import * as Styles from "./styles";
 
-const Link: React.FC = ({ children, href }) =>
+interface LinkProps extends React.HTMLAttributes<"a"> {
+  href: string;
+}
+
+const Link: React.FC<LinkProps> = ({ children, href }) =>
   href.startsWith("http://") || href.startsWith("https://") ? (
     <a href={href} target="_blank" rel="noreferrer nofollow" sx={Styles.link}>
       {children}

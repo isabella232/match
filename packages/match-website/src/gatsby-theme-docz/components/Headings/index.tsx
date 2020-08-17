@@ -1,10 +1,16 @@
 /** @jsx jsx */
-import * as React from "react";
+
 import * as PropTypes from "prop-types";
-import { jsx } from "theme-ui";
+import { jsx, SxStyleProp } from "theme-ui";
 import * as Styles from "./styles";
 
-const h2: React.FC = ({ children, id }) => (
+interface H2Props extends React.HTMLAttributes<"h2"> {
+  href: string;
+  id: string;
+  sx: SxStyleProp;
+}
+
+const h2: React.FC<H2Props> = ({ children, id }) => (
   <h2 id={id} sx={Styles.h2}>
     <a href={`#${id}`} sx={Styles.link}>
       {children}
@@ -17,7 +23,12 @@ h2.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
-const h3: React.FC = ({ children, id }) => (
+interface H3Props extends React.HTMLAttributes<"h3"> {
+  href: string;
+  sx: SxStyleProp;
+}
+
+const h3: React.FC<H3Props> = ({ children, id }) => (
   <h3 id={id} sx={Styles.h3}>
     <a href={`#${id}`} sx={Styles.link}>
       {children}
@@ -30,7 +41,11 @@ h3.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
-const h4: React.FC = ({ children, id }) => (
+interface H4Props extends React.HTMLAttributes<"h4"> {
+  href: string;
+}
+
+const h4: React.FC<H4Props> = ({ children, id }) => (
   <h4 id={id} sx={Styles.h4}>
     <a href={`#${id}`} sx={Styles.link}>
       {children}

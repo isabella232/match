@@ -13,11 +13,12 @@
     "dev": "gatsby develop --open",
     "build": "gatsby build",
     "serve": "gatsby build && gatsby serve",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://${GH_TOKEN}@github.com/twilio-labs/match.git"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://${GH_TOKEN}@github.com/twilio-labs/match.git",
+    "type-check": "tsc --noEmit --composite false"
   },
   "dependencies": {
     "docz": "^2.3.1",
-    "gatsby": "^2.24.37",
+    "gatsby": "^2.24.47",
     "gatsby-theme-docz": "^2.3.1",
     "gh-pages": "^3.1.0",
     "react": "^16.13.1",
@@ -30,11 +31,20 @@
     "@emotion/core": "^10.0.28",
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
+    "@theme-ui/css": "^0.3.1",
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
+    "@types/prop-types": "^15.7.3",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
+    "@types/theme-ui": "^0.3.6",
     "babel-plugin-export-metadata": "^2.3.0",
     "docz-core": "^2.3.0",
     "gatsby-plugin-mdx": "^1.2.34",
+    "prop-types": "^15.7.2",
+    "theme-ui": "^0.3.1",
     "typescript": "^3.9.7"
+  },
+  "peerDependencies": {
+    "@theme-ui/css": "*"
   }
 }

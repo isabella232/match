@@ -43,7 +43,11 @@
       }
     },
     {
-      "files": ["rollup.config.js", "doczrc.js"],
+      "files": [
+        "rollup.config.js",
+        "doczrc.js",
+        "packages/match-website/src/gatsby-theme-docz/index.tsx"
+      ],
       "rules": {
         "import/prefer-default-export": "error",
         "import/no-default-export": "off"

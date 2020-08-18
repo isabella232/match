@@ -30,33 +30,54 @@ const themeConfig = {
   },
   styles: {
     ...defaultConfig.styles,
+    a: {
+      ...defaultConfig.styles.a,
+      textDecoration: "underline",
+    },
     h1: {
       ...defaultConfig.styles.h1,
       fontSize: 36,
       color: "heading",
     },
+    h2: {
+      ...defaultConfig.styles.h2,
+      fontSize: 24,
+      color: "heading",
+      textDecoration: "none",
+    },
+    h3: {
+      ...defaultConfig.styles.h3,
+      fontSize: 20,
+      color: "heading",
+      textDecoration: "none",
+    },
+    h4: {
+      ...defaultConfig.styles.h4,
+      fontSize: 16,
+      color: "heading",
+      textDecoration: "none",
+    },
     p: {
       ...defaultConfig.styles.p,
       fontSize: 16,
       width: 778,
+      textDecoration: "none",
     },
     table: {
       ...defaultConfig.styles.table,
       fontSize: 14,
       width: 778,
+      textDecoration: "none",
     },
     ul: {
       ...defaultConfig.styles.ul,
       fontSize: 14,
+      textDecoration: "none",
     },
     pre: {
       ...defaultConfig.styles.pre,
       fontSize: 14,
       width: 778,
-    },
-    a: {
-      ...defaultConfig.styles.a,
-      textDecoration: "underline",
     },
   },
 };

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-
+import * as React from "react";
 import * as PropTypes from "prop-types";
 import { jsx, SxStyleProp } from "theme-ui";
 import * as Styles from "./styles";
@@ -7,7 +7,7 @@ import * as Styles from "./styles";
 interface H2Props extends React.HTMLAttributes<"h2"> {
   href: string;
   id: string;
-  sx: SxStyleProp;
+  sx?: SxStyleProp;
 }
 
 const h2: React.FC<H2Props> = ({ children, id }) => (
@@ -43,6 +43,7 @@ h3.propTypes = {
 
 interface H4Props extends React.HTMLAttributes<"h4"> {
   href: string;
+  sx: SxStyleProp;
 }
 
 const h4: React.FC<H4Props> = ({ children, id }) => (

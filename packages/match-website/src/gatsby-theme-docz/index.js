@@ -3,11 +3,9 @@ import baseComponents from "gatsby-theme-docz/src/components";
 import defaultConfig from "gatsby-theme-docz/src/theme";
 import React from "react";
 import { Styled, ThemeProvider } from "theme-ui";
-import { Link } from "../components/link";
 
 const componentsMap = {
   ...baseComponents,
-  a: Link,
 };
 
 // eslint-disable-next-line react/prop-types
@@ -55,6 +53,10 @@ const themeConfig = {
       ...defaultConfig.styles.pre,
       fontSize: 14,
       width: 778,
+    },
+    a: {
+      ...defaultConfig.styles.a,
+      textDecoration: "underline",
     },
   },
 };

@@ -38,7 +38,8 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "typeRoots": ["./@types"]
   },
   "exclude": ["node_modules", "dist"]
 }

@@ -1,15 +1,15 @@
+import * as React from "react";
+import * as PropTypes from "prop-types";
 import { ComponentsProvider, theme, useConfig } from "docz";
 import baseComponents from "gatsby-theme-docz/src/components";
 import defaultConfig from "gatsby-theme-docz/src/theme";
-import React from "react";
 import { Styled, ThemeProvider } from "theme-ui";
 
 const componentsMap = {
   ...baseComponents,
 };
 
-// eslint-disable-next-line react/prop-types
-const Theme = ({ children }) => {
+const Theme: React.FC = ({ children }) => {
   const config = useConfig();
   return (
     <ThemeProvider theme={config.themeConfig}>
@@ -18,6 +18,10 @@ const Theme = ({ children }) => {
       </ComponentsProvider>
     </ThemeProvider>
   );
+};
+
+Theme.propTypes = {
+  children: PropTypes.node,
 };
 
 const themeConfig = {
@@ -81,7 +85,5 @@ const themeConfig = {
     },
   },
 };
-// export const matchTheme = theme(themeConfig)(Theme);
-// export const matchTheme = (themeConfig, Theme) => theme(themeConfig)(Theme);
 
 export default theme(themeConfig)(Theme);

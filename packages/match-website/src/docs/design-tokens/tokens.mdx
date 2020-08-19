@@ -4,9 +4,7 @@ menu: Design Tokens
 route: /design-tokens/tokens
 ---
 
-import { TokenFilters } from "../../components/token-filters";
-import { BreakpointTokens } from "../../components/breakpoint-tokens";
-import { SwatchTokens } from "../../components/swatch-tokens";
+import { Tokens } from "../../components/tokens";
 
 # Token List
 
@@ -20,47 +18,7 @@ consistency and product design-engineer collaboration across all properties.
   </p>
 </div>
 
-<TokenFilters />
-
-## Breakpoints
-
-Match takes a mobile-first approach to responsive web design. These breakpoints provide ranges needed to ensure that your UI communicates valuable information for customers of all screen sizes.
-
-<BreakpointTokens />
-
-## Colors
-
-### Primary
-
-This palette defines our brand. Emphasize Twilio Red and avoid introducing too
-many secondary colors for audiences new to Twilio.
-
-<SwatchTokens include={["brand", "brandHighlight", "white"]} />
-
-### Secondary
-
-We use these colors to help guide attention through a layout or illustration.
-
-<SwatchTokens
-  include={["baseBlue", "baseGreen", "baseOrange", "baseYellow", "basePurple"]}
-/>
-
-### Tertiary
-
-We use these colors to help guide attention through a layout or illustration.
-
-<SwatchTokens
-  exclude={[
-    "brand",
-    "brandHighlight",
-    "white",
-    "baseBlue",
-    "baseGreen",
-    "baseOrange",
-    "baseYellow",
-    "basePurple",
-  ]}
-/>
+<Tokens />
 
 ## Background Colors
 

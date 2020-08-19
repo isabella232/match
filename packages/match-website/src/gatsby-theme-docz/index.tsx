@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as PropTypes from "prop-types";
 import { ComponentsProvider, theme, useConfig } from "docz";
 import baseComponents from "gatsby-theme-docz/src/components";
 import defaultConfig from "gatsby-theme-docz/src/theme";
@@ -21,10 +20,6 @@ const Theme: React.FC = ({ children }) => {
       </ThemeProvider>
     </MatchProvider>
   );
-};
-
-Theme.propTypes = {
-  children: PropTypes.node,
 };
 
 const themeConfig = {

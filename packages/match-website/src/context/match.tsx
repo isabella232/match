@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as PropTypes from "prop-types";
 import { ThemeVariants, MatchThemeProvider } from "@twilio-labs/match-themes";
 import { MatchActionTypes, matchReducer } from "../reducers/match";
 import { MatchState } from "../types/match";
@@ -26,10 +25,6 @@ const MatchProvider: React.FC = ({ children }) => {
       <MatchThemeProvider theme={state.theme}>{children}</MatchThemeProvider>
     </MatchContext.Provider>
   );
-};
-
-MatchProvider.propTypes = {
-  children: PropTypes.node,
 };
 
 export { MatchContext, MatchProvider };

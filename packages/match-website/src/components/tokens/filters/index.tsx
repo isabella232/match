@@ -2,8 +2,8 @@
 import { jsx } from "theme-ui";
 import * as React from "react";
 import { ThemeVariants } from "@twilio-labs/match-themes";
-import { MatchActions } from "../../reducers/match";
-import { MatchContext } from "../../context/match";
+import { MatchActions } from "../../../reducers/match";
+import { MatchContext } from "../../../context/match";
 import * as styles from "./styles";
 
 const TokenFilters: React.FC = () => {
@@ -29,12 +29,13 @@ const TokenFilters: React.FC = () => {
   return (
     <form sx={styles.container}>
       <input
+        sx={styles.input}
         placeholder="Filter design tokens..."
         type="text"
         value={filterText}
         onChange={handleFilterChange}
       />
-      <select onBlur={handleThemeChange}>
+      <select sx={styles.input} onBlur={handleThemeChange}>
         {Object.entries(ThemeVariants).map(([key, val]) => (
           <option key={key} value={key}>
             {val}

@@ -2,8 +2,6 @@
 import { jsx } from "theme-ui";
 import * as React from "react";
 import { useConfig } from "docz";
-import { useTheme } from "@twilio-labs/match-themes";
-import { MatchContext } from "../../context/match";
 
 interface SwatchTokensProps {
   tokens: [string, string, string][];

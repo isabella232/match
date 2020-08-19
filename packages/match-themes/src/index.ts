@@ -15,6 +15,8 @@ const SignalTheme = withTokens(new SignalDesignTokens())(ThemeProvider);
 
 const AhoyTheme = withTokens(new AhoyDesignTokens())(ThemeProvider);
 
+export { ThemeVariants } from "./constants";
+export { MatchThemeProvider } from "./theme-provider";
 export { ThemeConsumer } from "./theme-consumer";
 export { useTheme } from "./use-theme";
 export { TwilioTheme, SendGridTheme, SignalTheme, AhoyTheme };

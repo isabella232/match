@@ -24,13 +24,13 @@ const Tokens: React.FC = () => {
     state: { filterText },
   } = React.useContext(MatchContext);
 
-  const breakpointTokens = React.useMemo(() => {
+  const breakpointTokens: [string, string][] = React.useMemo(() => {
     return Object.entries(breakpoint)
       .filter(([key]) => textSearch(`breakpoint.${key}`, filterText))
       .map(([key, token]) => [key, token.mediaQuery]);
   }, [filterText, breakpoint]);
 
-  const primaryColorTokens = React.useMemo(
+  const primaryColorTokens: [string, string, string][] = React.useMemo(
     () =>
       Object.entries(swatch)
         .filter(([key]) => ["brand", "brandHighlight", "white"].includes(key))
@@ -43,7 +43,7 @@ const Tokens: React.FC = () => {
     [filterText, swatch]
   );
 
-  const secondaryColorTokens = React.useMemo(
+  const secondaryColorTokens: [string, string, string][] = React.useMemo(
     () =>
       Object.entries(swatch)
         .filter(([key]) =>
@@ -64,7 +64,7 @@ const Tokens: React.FC = () => {
     [filterText, swatch]
   );
 
-  const tertiaryColorTokens = React.useMemo(
+  const tertiaryColorTokens: [string, string, string][] = React.useMemo(
     () =>
       Object.entries(swatch)
         .filter(

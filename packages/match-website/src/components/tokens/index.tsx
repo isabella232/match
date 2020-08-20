@@ -1,12 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import * as React from "react";
+import { ColorTranslator } from "colortranslator";
 import { useConfig } from "docz";
 import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
 import { TokenFilters } from "./filters";
 import { BreakpointTokens } from "./breakpoint";
 import { SwatchTokens } from "./swatch";
+
+type Token = [string, string][];
 
 const textSearch = (hayStack: string, needle: string) => {
   return (
@@ -24,26 +27,27 @@ const Tokens: React.FC = () => {
     state: { filterText },
   } = React.useContext(MatchContext);
 
-  const breakpointTokens: [string, string][] = React.useMemo(() => {
+  const breakpointTokens: Token = React.useMemo(() => {
     return Object.entries(breakpoint)
       .filter(([key]) => textSearch(`breakpoint.${key}`, filterText))
       .map(([key, token]) => [key, token.mediaQuery]);
   }, [filterText, breakpoint]);
 
-  const primaryColorTokens: [string, string, string][] = React.useMemo(
+  console.log(swatch);
+
+  const primaryColorTokens: Token = React.useMemo(
     () =>
       Object.entries(swatch)
         .filter(([key]) => ["brand", "brandHighlight", "white"].includes(key))
         .filter(([key]) => textSearch(`swatch.${key}`, filterText))
         .map(([key, token]) => [
           `swatch.${key}.color`,
-          token.lowFidelityColor,
-          token.color,
+          ColorTranslator.toHEX(token.color),
         ]),
     [filterText, swatch]
   );
 
-  const secondaryColorTokens: [string, string, string][] = React.useMemo(
+  const secondaryColorTokens: Token = React.useMemo(
     () =>
       Object.entries(swatch)
         .filter(([key]) =>
@@ -58,13 +62,12 @@ const Tokens: React.FC = () => {
         .filter(([key]) => textSearch(`swatch.${key}`, filterText))
         .map(([key, token]) => [
           `swatch.${key}.color`,
-          token.lowFidelityColor,
-          token.color,
+          ColorTranslator.toHEX(token.color),
         ]),
     [filterText, swatch]
   );
 
-  const tertiaryColorTokens: [string, string, string][] = React.useMemo(
+  const tertiaryColorTokens: Token = React.useMemo(
     () =>
       Object.entries(swatch)
         .filter(
@@ -83,8 +86,7 @@ const Tokens: React.FC = () => {
         .filter(([key]) => textSearch(`swatch.${key}`, filterText))
         .map(([key, token]) => [
           `swatch.${key}.color`,
-          token.lowFidelityColor,
-          token.color,
+          ColorTranslator.toHEX(token.color),
         ]),
     [filterText, swatch]
   );

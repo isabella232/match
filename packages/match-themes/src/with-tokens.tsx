@@ -1,25 +1,12 @@
 import * as React from "react";
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import {
   TwilioDesignTokens,
   SendGridDesignTokens,
   SignalDesignTokens,
   AhoyDesignTokens,
 } from "@twilio-labs/match-tokens";
-
-const GlobalStyles = createGlobalStyle`
-  html {
-    font-size: 100%;
-  }
-  body {
-    margin: 0;
-  }
-  *, *::after, *::before {
-    box-sizing: border-box;
-  }
-`;
-
-const StyledBase = styled.div``;
+import { GlobalStyles, StyledBase } from "./styles";
 
 const withTokens = (
   tokens:

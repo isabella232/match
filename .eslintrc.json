@@ -43,6 +43,12 @@
       }
     },
     {
+      "files": ["packages/match-website/**/*.{ts,tsx}"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    },
+    {
       "files": [
         "rollup.config.js",
         "doczrc.js",
@@ -54,13 +60,13 @@
       }
     },
     {
-      "files": ["*.stories.tsx"],
+      "files": ["*.stories.{ts,tsx}"],
       "rules": {
         "import/no-default-export": "off"
       }
     },
     {
-      "files": ["*.test.tsx"],
+      "files": ["*.test.{ts,tsx}"],
       "env": {
         "jest": true
       },

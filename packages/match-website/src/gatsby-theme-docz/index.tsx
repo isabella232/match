@@ -1,9 +1,9 @@
 import * as React from "react";
-import * as PropTypes from "prop-types";
 import { ComponentsProvider, theme, useConfig } from "docz";
 import baseComponents from "gatsby-theme-docz/src/components";
 import defaultConfig from "gatsby-theme-docz/src/theme";
 import { Styled, ThemeProvider } from "theme-ui";
+import { MatchProvider } from "../context/match";
 
 const componentsMap = {
   ...baseComponents,
@@ -12,16 +12,14 @@ const componentsMap = {
 const Theme: React.FC = ({ children }) => {
   const config = useConfig();
   return (
-    <ThemeProvider theme={config.themeConfig}>
-      <ComponentsProvider components={componentsMap}>
-        <Styled.root>{children}</Styled.root>
-      </ComponentsProvider>
-    </ThemeProvider>
+    <MatchProvider>
+      <ThemeProvider theme={config.themeConfig}>
+        <ComponentsProvider components={componentsMap}>
+          <Styled.root>{children}</Styled.root>
+        </ComponentsProvider>
+      </ThemeProvider>
+    </MatchProvider>
   );
-};
-
-Theme.propTypes = {
-  children: PropTypes.node,
 };
 
 const themeConfig = {
@@ -34,6 +32,13 @@ const themeConfig = {
   },
   styles: {
     ...defaultConfig.styles,
+    Container: {
+      ...defaultConfig.Container,
+      p: 55,
+      maxWidth: 778 + 55 * 2,
+      marginLeft: 0,
+      marginRight: 0,
+    },
     a: {
       ...defaultConfig.styles.a,
       textDecoration: "underline",
@@ -64,13 +69,11 @@ const themeConfig = {
     p: {
       ...defaultConfig.styles.p,
       fontSize: 16,
-      width: 778,
       textDecoration: "none",
     },
     table: {
       ...defaultConfig.styles.table,
       fontSize: 14,
-      width: 778,
       textDecoration: "none",
     },
     ul: {
@@ -81,7 +84,6 @@ const themeConfig = {
     pre: {
       ...defaultConfig.styles.pre,
       fontSize: 14,
-      width: 778,
     },
   },
 };

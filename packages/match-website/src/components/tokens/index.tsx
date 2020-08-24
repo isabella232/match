@@ -1,15 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import * as React from "react";
-import { ColorTranslator } from "colortranslator";
 import { useConfig } from "docz";
 import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
 import { TokenFilters } from "./filters";
 import { BreakpointTokens } from "./breakpoint";
 import { SwatchTokens } from "./swatch";
-
-type Token = [string, string][];
+import { ColorToken, BreakpointToken } from "../../types/tokens";
 
 const textSearch = (hayStack: string, needle: string) => {
   return (
@@ -27,27 +25,23 @@ const Tokens: React.FC = () => {
     state: { filterText },
   } = React.useContext(MatchContext);
 
-  const breakpointTokens: Token = React.useMemo(() => {
-    return Object.entries(breakpoint)
-      .filter(([key]) => textSearch(`breakpoint.${key}`, filterText))
-      .map(([key, token]) => [key, token.mediaQuery]);
+  const breakpointTokens: BreakpointToken[] = React.useMemo(() => {
+    return Object.entries(breakpoint).filter(([key]) =>
+      textSearch(`breakpoint.${key}`, filterText)
+    );
   }, [filterText, breakpoint]);
 
   console.log(swatch);
 
-  const primaryColorTokens: Token = React.useMemo(
+  const primaryColorTokens: ColorToken[] = React.useMemo(
     () =>
       Object.entries(swatch)
         .filter(([key]) => ["brand", "brandHighlight", "white"].includes(key))
-        .filter(([key]) => textSearch(`swatch.${key}`, filterText))
-        .map(([key, token]) => [
-          `swatch.${key}.color`,
-          ColorTranslator.toHEX(token.color),
-        ]),
+        .filter(([key]) => textSearch(`swatch.${key}`, filterText)),
     [filterText, swatch]
   );
 
-  const secondaryColorTokens: Token = React.useMemo(
+  const secondaryColorTokens: ColorToken[] = React.useMemo(
     () =>
       Object.entries(swatch)
         .filter(([key]) =>
@@ -59,15 +53,11 @@ const Tokens: React.FC = () => {
             "basePurple",
           ].includes(key)
         )
-        .filter(([key]) => textSearch(`swatch.${key}`, filterText))
-        .map(([key, token]) => [
-          `swatch.${key}.color`,
-          ColorTranslator.toHEX(token.color),
-        ]),
+        .filter(([key]) => textSearch(`swatch.${key}`, filterText)),
     [filterText, swatch]
   );
 
-  const tertiaryColorTokens: Token = React.useMemo(
+  const tertiaryColorTokens: ColorToken[] = React.useMemo(
     () =>
       Object.entries(swatch)
         .filter(
@@ -83,11 +73,7 @@ const Tokens: React.FC = () => {
               "basePurple",
             ].includes(key)
         )
-        .filter(([key]) => textSearch(`swatch.${key}`, filterText))
-        .map(([key, token]) => [
-          `swatch.${key}.color`,
-          ColorTranslator.toHEX(token.color),
-        ]),
+        .filter(([key]) => textSearch(`swatch.${key}`, filterText)),
     [filterText, swatch]
   );
 

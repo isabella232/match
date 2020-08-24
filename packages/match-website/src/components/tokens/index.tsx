@@ -7,7 +7,14 @@ import { MatchContext } from "../../context/match";
 import { TokenFilters } from "./filters";
 import { BreakpointTokens } from "./breakpoint";
 import { SwatchTokens } from "./swatch";
-import { ColorToken, BreakpointToken } from "../../types/tokens";
+import { StringTokens } from "./string";
+import { UnitTokens } from "./unit";
+import {
+  ColorToken,
+  BreakpointToken,
+  StringToken,
+  UnitToken,
+} from "../../types/tokens";
 
 const textSearch = (hayStack: string, needle: string) => {
   return (
@@ -17,7 +24,7 @@ const textSearch = (hayStack: string, needle: string) => {
 };
 
 const Tokens: React.FC = () => {
-  const { breakpoint, swatch } = useTheme();
+  const { breakpoint, swatch, fontFamily, fontSize, fontWeight } = useTheme();
   const {
     themeConfig: { styles },
   } = useConfig();
@@ -77,6 +84,30 @@ const Tokens: React.FC = () => {
     [filterText, swatch]
   );
 
+  const fontFamilyTokens: StringToken[] = React.useMemo(
+    () =>
+      Object.entries(fontFamily as StringToken).filter(([key]) =>
+        textSearch(`fontFamily.${key}`, filterText)
+      ),
+    [filterText, fontFamily]
+  );
+
+  const fontSizeTokens: UnitToken[] = React.useMemo(
+    () =>
+      Object.entries(fontSize).filter(([key]) =>
+        textSearch(`fontSize.${key}`, filterText)
+      ),
+    [filterText, fontSize]
+  );
+
+  const fontWeightTokens: StringToken[] = React.useMemo(
+    () =>
+      Object.entries(fontWeight as StringToken).filter(([key]) =>
+        textSearch(`fontWeight.${key}`, filterText)
+      ),
+    [filterText, fontWeight]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
@@ -87,7 +118,10 @@ const Tokens: React.FC = () => {
     breakpointTokens.length +
       primaryColorTokens.length +
       secondaryColorTokens.length +
-      tertiaryColorTokens.length
+      tertiaryColorTokens.length +
+      fontFamilyTokens.length +
+      fontSizeTokens.length +
+      fontWeightTokens.length
   );
 
   return (
@@ -144,6 +178,27 @@ const Tokens: React.FC = () => {
             illustration.
           </p>
           <SwatchTokens tokens={tertiaryColorTokens} />
+        </div>
+      )}
+
+      {fontFamilyTokens.length > 0 && (
+        <div>
+          <h2 sx={styles.h2}>Font Families</h2>
+          <StringTokens prefix="fontFamily" tokens={fontFamilyTokens} />
+        </div>
+      )}
+
+      {fontSizeTokens.length > 0 && (
+        <div>
+          <h2 sx={styles.h2}>Font Sizes</h2>
+          <UnitTokens tokens={fontSizeTokens} />
+        </div>
+      )}
+
+      {fontWeightTokens.length > 0 && (
+        <div>
+          <h2 sx={styles.h2}>Font Weights</h2>
+          <StringTokens prefix="fontWeight" tokens={fontWeightTokens} />
         </div>
       )}
     </div>

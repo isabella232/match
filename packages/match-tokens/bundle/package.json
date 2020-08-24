@@ -32,11 +32,10 @@
     "@twilio-labs/match-tokens-ahoy": "workspace:packages/match-tokens/ahoy",
     "@twilio-labs/match-tokens-sendgrid": "workspace:packages/match-tokens/sendgrid",
     "@twilio-labs/match-tokens-signal": "workspace:packages/match-tokens/signal",
-    "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio",
-    "@twilio-labs/match-tokens-wombat": "workspace:packages/match-tokens/wombat"
+    "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
+    "@babel/core": "^7.11.4",
     "@rollup/plugin-babel": "^5.1.0",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",

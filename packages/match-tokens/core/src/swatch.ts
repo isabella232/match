@@ -1,7 +1,7 @@
 import { coreThemeTokens } from "./designs/CoreTheme.sketch";
 const { colors: C } = coreThemeTokens;
 
-export class Swatch {
+export class Swatches {
   brand = C.brandColor;
   brandHighlight = C.brandHighlight;
   white = C.white;

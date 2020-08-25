@@ -1,4 +1,4 @@
-export class FontWeight {
+export class FontWeights {
   thin = "200";
   light = "300";
   regular = "400";

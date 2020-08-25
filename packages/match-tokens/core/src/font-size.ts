@@ -1,6 +1,6 @@
 import { Unit } from "./framework/prefabs/unit";
 
-export class FontSize {
+export class FontSizes {
   scale60 = Unit.px(12);
   scale70 = Unit.px(13);
   scale80 = Unit.px(14);

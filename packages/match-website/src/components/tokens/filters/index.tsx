@@ -9,7 +9,7 @@ import * as styles from "./styles";
 const TokenFilters: React.FC = () => {
   const {
     dispatch,
-    state: { filterText },
+    state: { filterText, theme },
   } = React.useContext(MatchContext);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -20,6 +20,7 @@ const TokenFilters: React.FC = () => {
   };
 
   const handleThemeChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    if (theme === e.currentTarget.value) return;
     dispatch({
       type: MatchActions.SetMatchTheme,
       payload: ThemeVariants[e.currentTarget.value],
@@ -35,7 +36,11 @@ const TokenFilters: React.FC = () => {
         value={filterText}
         onChange={handleFilterChange}
       />
-      <select sx={styles.input} onBlur={handleThemeChange}>
+      <select
+        sx={styles.input}
+        onBlur={handleThemeChange}
+        onChange={handleThemeChange}
+      >
         {Object.entries(ThemeVariants).map(([key, val]) => (
           <option key={key} value={key}>
             {val}

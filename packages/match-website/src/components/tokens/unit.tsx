@@ -2,13 +2,13 @@
 import { jsx } from "theme-ui";
 import * as React from "react";
 import { useConfig } from "docz";
-import { BreakpointToken } from "../../types/tokens";
+import { UnitToken } from "../../types/tokens";
 
 interface BreakpointTokensProps {
-  tokens: BreakpointToken[];
+  tokens: UnitToken[];
 }
 
-const BreakpointTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
+const UnitTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
   const {
     themeConfig: { styles },
   } = useConfig();
@@ -19,14 +19,16 @@ const BreakpointTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
         <thead>
           <tr>
             <th sx={styles.th}>Token</th>
-            <th sx={styles.th}>Value</th>
+            <th sx={styles.th}>Value (px)</th>
+            <th sx={styles.th}>Value (rem)</th>
           </tr>
         </thead>
         <tbody>
           {tokens.map(([name, token]) => (
             <tr key={name}>
-              <td sx={styles.td}>{`breakpoint.${name}.mediaQuery`}</td>
-              <td sx={styles.td}>{token.mediaQuery}</td>
+              <td sx={styles.td}>{`fontSize.${name}.rem`}</td>
+              <td sx={styles.td}>{token.px}</td>
+              <td sx={styles.td}>{token.rem}</td>
             </tr>
           ))}
         </tbody>
@@ -35,4 +37,4 @@ const BreakpointTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
   );
 };
 
-export { BreakpointTokens };
+export { UnitTokens };

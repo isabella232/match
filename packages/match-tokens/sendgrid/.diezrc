@@ -5,6 +5,9 @@
   "bindings": {
     ".:MediaQuery": {
       "web": "../core/dist/framework/bindings/media-query"
+    },
+    ".:Unit": {
+      "web": "../core/dist/framework/bindings/unit"
     }
   }
 }

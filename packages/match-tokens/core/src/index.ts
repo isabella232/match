@@ -1,7 +1,6 @@
-import { coreThemeTokens } from "./designs/CoreTheme.sketch";
-
-const { colors } = coreThemeTokens;
-
-export { colors };
-
+export * from "./constants";
 export * from "./breakpoint";
+export * from "./swatch";
+export * from "./font-size";
+export * from "./font-family";
+export * from "./font-weight";

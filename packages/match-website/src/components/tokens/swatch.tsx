@@ -2,9 +2,11 @@
 import { jsx } from "theme-ui";
 import * as React from "react";
 import { useConfig } from "docz";
+import { ColorTranslator } from "colortranslator";
+import { ColorToken } from "../../types/tokens";
 
 interface SwatchTokensProps {
-  tokens: [string, string][];
+  tokens: ColorToken[];
 }
 
 const SwatchTokens: React.FC<SwatchTokensProps> = ({ tokens }) => {
@@ -22,13 +24,13 @@ const SwatchTokens: React.FC<SwatchTokensProps> = ({ tokens }) => {
         </tr>
       </thead>
       <tbody>
-        {tokens.map(([name, color]) => (
+        {tokens.map(([name, token]) => (
           <tr key={name}>
-            <td sx={styles.td}>{name}</td>
-            <td sx={styles.td}>{color}</td>
+            <td sx={styles.td}>{`swatch.${name}.color`}</td>
+            <td sx={styles.td}>{ColorTranslator.toHEX(token.color)}</td>
             <td sx={styles.td}>
               <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">
-                <circle cx="40" cy="21" r="20" fill={color} />
+                <circle cx="40" cy="21" r="20" fill={token.color} />
               </svg>
             </td>
           </tr>

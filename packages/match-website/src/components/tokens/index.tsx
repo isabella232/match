@@ -86,7 +86,7 @@ const Tokens: React.FC = () => {
 
   const fontFamilyTokens: StringToken[] = React.useMemo(
     () =>
-      Object.entries(fontFamily as StringToken).filter(([key]) =>
+      Object.entries(fontFamily).filter(([key]) =>
         textSearch(`fontFamily.${key}`, filterText)
       ),
     [filterText, fontFamily]
@@ -102,7 +102,7 @@ const Tokens: React.FC = () => {
 
   const fontWeightTokens: StringToken[] = React.useMemo(
     () =>
-      Object.entries(fontWeight as StringToken).filter(([key]) =>
+      Object.entries(fontWeight).filter(([key]) =>
         textSearch(`fontWeight.${key}`, filterText)
       ),
     [filterText, fontWeight]

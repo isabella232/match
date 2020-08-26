@@ -4008,6 +4008,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^14.0.0
     "@rollup/plugin-node-resolve": ^8.4.0
     "@storybook/addon-knobs": 6.0.16
+    "@testing-library/react": ^10.4.9
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle"
     "@types/jest-axe": ^3.5.0
     "@types/prop-types": ^15.7.3

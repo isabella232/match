@@ -11,6 +11,5 @@ export default {
       name: "Design Tokens",
       menu: ["Introduction", "Tokens"],
     },
-    "Roadmap",
   ],
 };

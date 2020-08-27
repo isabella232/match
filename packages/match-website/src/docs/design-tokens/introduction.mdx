@@ -7,7 +7,7 @@ route: /design-tokens/introduction
 # Introduction
 
 Design tokens are tiny pieces of UI information that are used to ensure brand
-consistency and product design-engineer collaboration across all properties.
+consistency and design-engineer collaboration across all properties.
 
 <div style="border:solid 1px purple; padding: 20px 28px;">
   <p>
@@ -26,27 +26,46 @@ yarn add @twilio-labs/match-tokens
 
 ## How to use
 
-To use Twilio design tokens, add an import in the file where you want to use the design tokens
+To use Twilio design tokens, import the appropriate theme provider in the root of your React application.
 
-```
-import { TwilioDesignTokens } from "@twilio-labs/match-tokens";
-```
+```typescript
+import * as React from "react";
+import { TwilioTheme } from "@twilio-labs/match-themes";
 
-Following the imports add the following line to create a new instance of the design tokens
-
-```
-const ds = new TwilioDesignTokens();
+const App: React.FC = ({ children }) => <TwilioTheme>{children}</TwilioTheme>;
+export { App };
 ```
 
-Now you can use the tokens by typing ds and continuing the dot notation with the token name and token value. For instance, `ds.breakpoint.small` or `ds.swatch.baseBlue.color`.
+You can then access tokens within a styled component using the `theme` prop.
+
+```typescript
+const Component = styled.div`
+  background: ${({ theme }) => theme.swatch.brand.color};
+  text-align: center;
+`;
+```
+
+Or within a component using the `useTheme` hook.
+
+```typescript
+import * as React from "react";
+import { useTheme } from "@twilio-labs/match-themes";
+
+const Component: React.FC = () => {
+  const theme = useTheme();
+  return <div>{theme.breakpoint.small.mediaQuery}</div>;
+};
+```
+
+Tokens are read using dot notation with the token name and token value. For instance, `theme.breakpoint.small.mediaQuery` or `theme.swatch.baseBlue.color`.
 
 See the complete list of token names on the [tokens page](./tokens).
 
 ## Naming Convention
 
-Every token name on Match starts with its related CSS property such as Fontweight and Breakpoint and is then followed by the token value.
+Every token name on Match starts with its related CSS property such as Font Weight and Breakpoint and is then followed by the token value.
 
-- JavaScript: `breakpoint.small`
+- JavaScript: `breakpoint.small.mediaQuery`
 - CSS: `--breakpoint-small`
 - SASS: `$breakpoint-small`
 

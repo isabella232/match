@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-tokens-signal",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Signal token library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",

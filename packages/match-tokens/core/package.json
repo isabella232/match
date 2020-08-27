@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-tokens-core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Core token library for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",

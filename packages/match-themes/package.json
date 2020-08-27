@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-themes",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Twilio Match Design System Themes",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -29,7 +29,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-tokens": "^0.0.0",
+    "@twilio-labs/match-tokens": "^0.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

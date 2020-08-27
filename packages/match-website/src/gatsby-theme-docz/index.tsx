@@ -84,6 +84,7 @@ const themeConfig = {
     pre: {
       ...defaultConfig.styles.pre,
       fontSize: 14,
+      backgroundColor: "#FAFAFA",
     },
   },
 };

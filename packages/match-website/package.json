@@ -17,6 +17,7 @@
     "type-check": "tsc --noEmit --composite false"
   },
   "dependencies": {
+    "@twilio-labs/match-components": "workspace:packages/match-components",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
     "colortranslator": "^1.3.4",

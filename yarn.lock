@@ -4030,7 +4030,7 @@ __metadata:
     tslib: ^2.0.1
     typescript: ^3.9.7
   peerDependencies:
-    "@twilio-labs/match-tokens": ^0.0.0
+    "@twilio-labs/match-tokens": ^0.2.0
     prop-types: ^15.7.2
     react: ^16.13.1
     react-dom: ^16.13.1
@@ -4066,7 +4066,7 @@ __metadata:
     tslib: ^2.0.1
     typescript: ^3.9.7
   peerDependencies:
-    "@twilio-labs/match-tokens": ^0.0.0
+    "@twilio-labs/match-tokens": ^0.2.0
     prop-types: ^15.7.2
     react: ^16.13.1
     react-dom: ^16.13.1
@@ -4218,8 +4218,6 @@ __metadata:
     react-dom: ^16.13.1
     theme-ui: ^0.3.1
     typescript: ^3.9.7
-  peerDependencies:
-    "@theme-ui/css": "*"
   languageName: unknown
   linkType: soft
 

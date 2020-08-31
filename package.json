@@ -7,8 +7,7 @@
     "packages/**"
   ],
   "scripts": {
-    "start": "yarn build:tokens && yarn start:storybook",
-    "start:all": "yarn build:tokens && concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
+    "start:all": "concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -p 6006",
     "start:website": "yarn workspace @twilio-labs/match-website dev",
     "prettier": "prettier --list-different '**/*.{ts,tsx,js,json,md,mdx,yml}'",
@@ -28,7 +27,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-checkout": "yarn build:tokens",
+      "post-merge": "yarn build:tokens"
     }
   },
   "lint-staged": {

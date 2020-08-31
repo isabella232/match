@@ -2,6 +2,9 @@ export default {
   typescript: true,
   title: "Match",
   description: "Design System for Twilio Public Facing Properties",
+  docgenConfig: {
+    searchPatterns: ["../match-components/src/**/*.tsx"],
+  },
   menu: [
     {
       name: "Getting Started",

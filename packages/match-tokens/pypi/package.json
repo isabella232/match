@@ -1,0 +1,25 @@
+{
+  "name": "@twilio-labs/match-tokens-pypi",
+  "version": "0.0.1",
+  "description": "Match token library for Python",
+  "author": "Twilio Inc.",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "packages/match-tokens/pypi"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf match-tokens build dist match_tokens.egg-info",
+    "compile": "node index.js && python3 setup.py sdist bdist_wheel",
+    "publish": "twine upload dist/*",
+    "publish:test": "twine upload --repository testpypi dist/*"
+  },
+  "devDependencies": {
+    "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio",
+    "ejs": "^3.1.5"
+  }
+}

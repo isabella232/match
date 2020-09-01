@@ -8,6 +8,7 @@ import {
   FontFamilies,
   FontSizes,
   FontWeights,
+  Backgrounds,
 } from "@twilio-labs/match-tokens-core";
 
 export const ahoyDesignTokens = {
@@ -16,4 +17,5 @@ export const ahoyDesignTokens = {
   fontFamily: new FontFamilies(),
   fontSize: new FontSizes(),
   fontWeight: new FontWeights(),
+  background: new Backgrounds(),
 };

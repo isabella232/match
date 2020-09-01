@@ -4,3 +4,4 @@ export * from "./swatch";
 export * from "./font-size";
 export * from "./font-family";
 export * from "./font-weight";
+export * from "./background";

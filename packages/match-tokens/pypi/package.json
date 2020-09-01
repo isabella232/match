@@ -1,5 +1,5 @@
 {
-  "name": "@twilio-labs/match-tokens-pypi",
+  "name": "@twilio-labs/pypi-match-tokens",
   "version": "0.0.1",
   "description": "Match token library for Python",
   "author": "Twilio Inc.",

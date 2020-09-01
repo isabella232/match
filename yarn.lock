@@ -4055,15 +4055,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@twilio-labs/match-tokens-pypi@workspace:packages/match-tokens/pypi":
-  version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-tokens-pypi@workspace:packages/match-tokens/pypi"
-  dependencies:
-    "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio"
-    ejs: ^3.1.5
-  languageName: unknown
-  linkType: soft
-
 "@twilio-labs/match-tokens-sendgrid@workspace:packages/match-tokens/sendgrid":
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-tokens-sendgrid@workspace:packages/match-tokens/sendgrid"
@@ -4169,6 +4160,15 @@ __metadata:
     react-dom: ^16.13.1
     theme-ui: ^0.3.1
     typescript: ^3.9.7
+  languageName: unknown
+  linkType: soft
+
+"@twilio-labs/pypi-match-tokens@workspace:packages/match-tokens/pypi":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/pypi-match-tokens@workspace:packages/match-tokens/pypi"
+  dependencies:
+    "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio"
+    ejs: ^3.1.5
   languageName: unknown
   linkType: soft
 

@@ -1,3 +1,4 @@
+import * as _prefabs from "@diez/prefabs";
 import { Swatches } from "@twilio-labs/match-tokens-core";
 const swatch = new Swatches();
 

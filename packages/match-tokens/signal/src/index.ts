@@ -8,6 +8,7 @@ import {
   FontSizes,
   FontWeights,
   Backgrounds,
+  TextColors,
 } from "@twilio-labs/match-tokens-core";
 import { fontFamily } from "./font-family";
 
@@ -18,4 +19,5 @@ export const signalDesignTokens = {
   fontSize: new FontSizes(),
   fontWeight: new FontWeights(),
   background: new Backgrounds(),
+  text: new TextColors(),
 };

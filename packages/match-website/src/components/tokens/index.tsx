@@ -186,7 +186,7 @@ const Tokens: React.FC = () => {
             This palette defines our brand. Emphasize Twilio Red and avoid
             introducing too many secondary colors for audiences new to Twilio.
           </p>
-          <SwatchTokens tokens={primaryColorTokens} prefix={swatch} />
+          <SwatchTokens tokens={primaryColorTokens} prefix="swatch" />
         </div>
       )}
 
@@ -197,7 +197,7 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <SwatchTokens tokens={secondaryColorTokens} prefix={swatch} />
+          <SwatchTokens tokens={secondaryColorTokens} prefix="swatch" />
         </div>
       )}
 
@@ -208,7 +208,24 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <SwatchTokens tokens={tertiaryColorTokens} prefix={swatch} />
+          <SwatchTokens tokens={tertiaryColorTokens} prefix="swatch" />
+        </div>
+      )}
+
+      {backgroundColorTokens.length > 0 && (
+        <div>
+          <h2 sx={styles.h2}>Background Colors</h2>
+          <SwatchTokens tokens={backgroundColorTokens} prefix="background" />
+        </div>
+      )}
+
+      {textColorTokens.length > 0 && (
+        <div>
+          <h2 sx={styles.h2}>Text Colors</h2>
+          <TextColorTokens
+            tokens={textColorTokens}
+            backgrounds={backgroundColorTokens}
+          />
         </div>
       )}
 
@@ -230,23 +247,6 @@ const Tokens: React.FC = () => {
         <div>
           <h2 sx={styles.h2}>Font Weights</h2>
           <StringTokens prefix="fontWeight" tokens={fontWeightTokens} />
-        </div>
-      )}
-
-      {backgroundColorTokens.length > 0 && (
-        <div>
-          <h2 sx={styles.h2}>Background Colors</h2>
-          <SwatchTokens tokens={backgroundColorTokens} prefix="background" />
-        </div>
-      )}
-
-      {textColorTokens.length > 0 && (
-        <div>
-          <h2 sx={styles.h2}>Text Colors</h2>
-          <TextColorTokens
-            tokens={textColorTokens}
-            backgrounds={backgroundColorTokens}
-          />
         </div>
       )}
     </div>

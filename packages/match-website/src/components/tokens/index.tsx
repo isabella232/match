@@ -9,6 +9,7 @@ import { BreakpointTokens } from "./breakpoint";
 import { SwatchTokens } from "./swatch";
 import { StringTokens } from "./string";
 import { UnitTokens } from "./unit";
+import { TextColorTokens } from "./text-color";
 import {
   ColorToken,
   BreakpointToken,
@@ -31,6 +32,7 @@ const Tokens: React.FC = () => {
     fontSize,
     fontWeight,
     background,
+    text,
   } = useTheme();
   const {
     themeConfig: { styles },
@@ -123,11 +125,22 @@ const Tokens: React.FC = () => {
     [filterText, background]
   );
 
+  const textColorTokens: ColorToken[] = React.useMemo(
+    () =>
+      Object.entries(text)
+        .filter(([key]) =>
+          ["primary", "secondary", "tertiary", "inversePrimary"].includes(key)
+        )
+        .filter(([key]) => textSearch(`text.${key}`, filterText)),
+    [filterText, text]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
       tertiaryColorTokens.length +
-      backgroundColorTokens.length
+      backgroundColorTokens.length +
+      textColorTokens.length
   );
 
   const hasAnyTokens = Boolean(
@@ -138,7 +151,8 @@ const Tokens: React.FC = () => {
       fontFamilyTokens.length +
       fontSizeTokens.length +
       fontWeightTokens.length +
-      backgroundColorTokens.length
+      backgroundColorTokens.length +
+      textColorTokens.length
   );
 
   return (
@@ -223,6 +237,16 @@ const Tokens: React.FC = () => {
         <div>
           <h2 sx={styles.h2}>Background Colors</h2>
           <SwatchTokens tokens={backgroundColorTokens} prefix="background" />
+        </div>
+      )}
+
+      {textColorTokens.length > 0 && (
+        <div>
+          <h2 sx={styles.h2}>Text Colors</h2>
+          <TextColorTokens
+            tokens={textColorTokens}
+            backgrounds={backgroundColorTokens}
+          />
         </div>
       )}
     </div>

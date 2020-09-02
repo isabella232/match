@@ -4148,6 +4148,7 @@ __metadata:
     "@types/react": ^16.9.48
     "@types/react-dom": ^16.9.8
     "@types/theme-ui": ^0.3.6
+    "@types/wcag-contrast": ^3
     babel-plugin-export-metadata: ^2.3.0
     colortranslator: ^1.3.4
     docz: ^2.3.1
@@ -4160,6 +4161,8 @@ __metadata:
     react-dom: ^16.13.1
     theme-ui: ^0.3.1
     typescript: ^3.9.7
+    wcag-contrast: ^3.0.0
+    yarn: ^1.22.5
   languageName: unknown
   linkType: soft
 
@@ -4859,6 +4862,13 @@ __metadata:
   version: 3.0.0
   resolution: "@types/warning@npm:3.0.0"
   checksum: cb7a16aa88641beceec53ce765274c1ba3a9136e3c7c53cafd769d5063ea96f8899332ce7031c6f374bd23b5713a9a733d42c369ebdb4b62daf9b7562700848c
+  languageName: node
+  linkType: hard
+
+"@types/wcag-contrast@npm:^3":
+  version: 3.0.0
+  resolution: "@types/wcag-contrast@npm:3.0.0"
+  checksum: 855311a34f20df9fbaaa3e05701afdd6af8d34717cda36302cadfe48cae91494f837d753b70b3723edc27562776a319eedc30c0b89b86acdbc272e9d24647122
   languageName: node
   linkType: hard
 
@@ -11544,6 +11554,13 @@ __metadata:
   bin:
     eslint: bin/eslint.js
   checksum: 6f47e20ec67a8ad58ed79ad350373142fb30387f4b9847f43943d80a2307e74252ea8739a9f53ec850ef5eaf689103c3d7b8bbc71e04e06444687cfda51fe3b7
+  languageName: node
+  linkType: hard
+
+"esm@npm:^3.0.84":
+  version: 3.2.25
+  resolution: "esm@npm:3.2.25"
+  checksum: 12a0272aaa15ce4bc07e52cbb66d471cf56ad81ad1a3c1d9f6fa1e29e8c2712716333825e2572f9dbdfdc787e5717a75cb00ce2846e2a50e2bba6971c24402f3
   languageName: node
   linkType: hard
 
@@ -23448,6 +23465,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"relative-luminance@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "relative-luminance@npm:2.0.1"
+  dependencies:
+    esm: ^3.0.84
+  checksum: a9deff0aec0bf030efc830b185a0b9cf716b0e0ddcbdc6e6aa89ba0d88bc2db5c11ebb3c702427af213e95df8b5d04e14ed18076f6485ba9edcec08069ad456d
+  languageName: node
+  linkType: hard
+
 "remark-docz@npm:^2.1.0":
   version: 2.1.0
   resolution: "remark-docz@npm:2.1.0"
@@ -28315,6 +28341,15 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
+"wcag-contrast@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "wcag-contrast@npm:3.0.0"
+  dependencies:
+    relative-luminance: ^2.0.0
+  checksum: a0064903163aaa31514c715ad415ae7972e8bdffb45a89416affcf487e183fc5e60d6ed905aa75a403ef5ad63e0669ffef94d17c2f185198b159ab143f2bdeb1
+  languageName: node
+  linkType: hard
+
 "wcwidth@npm:^1.0.1":
   version: 1.0.1
   resolution: "wcwidth@npm:1.0.1"
@@ -29075,6 +29110,16 @@ resolve@1.1.7:
     y18n: ^4.0.0
     yargs-parser: ^18.1.2
   checksum: dbf687d6b938f01bbf11e158dde6df906282b70cd9295af0217ee8cefbd83ad09d49fa9458d0d5325b0e66f03df954a38986db96f91e5b46ccdbbaf9a0157b23
+  languageName: node
+  linkType: hard
+
+"yarn@npm:^1.22.5":
+  version: 1.22.5
+  resolution: "yarn@npm:1.22.5"
+  bin:
+    yarn: bin/yarn.js
+    yarnpkg: bin/yarn.js
+  checksum: b41a5337f334f490baa3c4d1f55ef286cab0de3b1a0b06f5a999a0605f212b26d89b1c3dbdc6cde17a4adb7899dd10350feefc00265d926c50ebace033208e75
   languageName: node
   linkType: hard
 

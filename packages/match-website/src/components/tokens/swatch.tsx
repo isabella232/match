@@ -7,9 +7,10 @@ import { ColorToken } from "../../types/tokens";
 
 interface SwatchTokensProps {
   tokens: ColorToken[];
+  prefix: string;
 }
 
-const SwatchTokens: React.FC<SwatchTokensProps> = ({ tokens }) => {
+const SwatchTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
   const {
     themeConfig: { styles },
   } = useConfig();
@@ -26,7 +27,7 @@ const SwatchTokens: React.FC<SwatchTokensProps> = ({ tokens }) => {
       <tbody>
         {tokens.map(([name, token]) => (
           <tr key={name}>
-            <td sx={styles.td}>{`swatch.${name}.color`}</td>
+            <td sx={styles.td}>{`${prefix}.${name}.color`}</td>
             <td sx={styles.td}>{ColorTranslator.toHEX(token.color)}</td>
             <td sx={styles.td}>
               <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">

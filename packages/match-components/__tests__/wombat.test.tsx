@@ -1,23 +1,24 @@
 import * as React from "react";
-import * as renderer from "react-test-renderer";
-import { render } from "react-dom";
+import { render } from "@testing-library/react";
 import { axe } from "jest-axe";
+import { withTheme } from "@twilio-labs/match-themes";
 import { Wombat } from "../src";
+
+const WombatWithTheme = withTheme()(Wombat);
 
 describe("Wombat", () => {
   it("it should render Wombat with the brand color", (): void => {
-    const tree = renderer
-      .create(<Wombat droppings={["🌯", "🍦", "🍔"]} color="brand" />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(
+      <WombatWithTheme droppings={["🌯", "🍦", "🍔"]} color="brand" />
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should have no accessibility violations", async () => {
-    const container = document.createElement("div");
-    container.setAttribute("role", "main");
-    document.body.append(container);
-    render(<Wombat droppings={["🌯", "🍦", "🍔"]} color="brand" />, container);
-    const results = await axe(document.body);
+    const { container } = render(
+      <WombatWithTheme droppings={["🌯", "🍦", "🍔"]} color="brand" />
+    );
+    const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 });

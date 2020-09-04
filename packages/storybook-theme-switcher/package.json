@@ -2,6 +2,7 @@
   "name": "@twilio-labs/storybook-theme-switcher",
   "version": "0.0.0",
   "description": "Storybook addon to change the active Match theme",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
@@ -15,6 +16,7 @@
     "*.js"
   ],
   "scripts": {
+    "bootstrap": "yarn build",
     "build": "yarn clean && yarn compile",
     "clean": "rm -rf dist tsconfig.tsbuildinfo",
     "compile": "tsc",

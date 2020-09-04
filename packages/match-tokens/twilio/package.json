@@ -35,6 +35,7 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
+    "bootstrap": "yarn build",
     "build": "yarn clean && yarn compile && mv ./build/diez-twilio-labs-match-tokens-twilio-web/ ./dist/ && rm -rf ./dist/package.json ./build ./lib ./tsconfig.tsbuildinfo",
     "compile": "diez compile -t web",
     "clean": "rm -rf ./dist ./.diez ./lib",

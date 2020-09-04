@@ -20,6 +20,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
+    "bootstrap": "yarn build",
     "build": "yarn clean && yarn compile",
     "clean": "rm -rf ./dist",
     "compile": "rollup -c --environment NODE_ENV:production",

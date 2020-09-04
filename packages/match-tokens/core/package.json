@@ -34,6 +34,7 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
+    "bootstrap": "yarn build",
     "build": "yarn clean && yarn compile",
     "compile": "tsc",
     "clean": "rm -rf ./dist tsconfig.tsbuildinfo",

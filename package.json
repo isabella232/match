@@ -7,6 +7,7 @@
     "packages/**"
   ],
   "scripts": {
+    "bootstrap": "yarn workspaces foreach --topological-dev --parallel run bootstrap",
     "start:all": "concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -p 6006",
     "start:website": "yarn workspace @twilio-labs/match-website dev",
@@ -29,8 +30,8 @@
     "hooks": {
       "pre-commit": "lint-staged",
       "pre-push": "yarn type-check",
-      "post-checkout": "yarn && yarn build:tokens",
-      "post-merge": "yarn && yarn build:tokens"
+      "post-checkout": "yarn && yarn bootstrap",
+      "post-merge": "yarn && yarn bootstrap"
     }
   },
   "lint-staged": {

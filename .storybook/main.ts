@@ -4,5 +4,6 @@ module.exports = {
     "@storybook/addon-knobs",
     "@storybook/addon-a11y",
     "@storybook/addon-viewport",
+    "@twilio-labs/storybook-theme-switcher",
   ],
 };

@@ -39,6 +39,7 @@
     "compile": "diez compile -t web",
     "clean": "rm -rf ./dist ./.diez ./lib",
     "prepack": "yarn build",
-    "publish": "yarn npm publish --tolerate-republish"
+    "publish": "yarn npm publish --tolerate-republish",
+    "type-check": "tsc --noEmit --composite false"
   }
 }

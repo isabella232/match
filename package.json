@@ -28,6 +28,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
+      "pre-push": "yarn type-check",
       "post-checkout": "yarn && yarn build:tokens",
       "post-merge": "yarn && yarn build:tokens"
     }

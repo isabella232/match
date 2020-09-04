@@ -19,6 +19,17 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
     themeConfig: { styles },
   } = useConfig();
 
+  //create a default object with background colors
+  const backgroundColors = {
+    blue: "#ffffff",
+    light: "#ffffff",
+    darkest: "#ffffff",
+  };
+  //map passed in background colors to background object so code is less ambiguous
+  backgrounds.forEach(
+    (colorData) => (backgroundColors[colorData[0]] = colorData[1].color)
+  );
+
   return (
     <table sx={styles.table}>
       <thead>
@@ -40,7 +51,7 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
                     color: `${token.color}`,
                     backgroundColor: `${
                       name.includes("inverse")
-                        ? backgrounds[0][1].color
+                        ? backgroundColors.blue
                         : "#ffffff"
                     }`,
                     width: 56,
@@ -56,7 +67,7 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
                     hex(
                       ColorTranslator.toHEX(token.color),
                       name.includes("inverse")
-                        ? ColorTranslator.toHEX(backgrounds[0][1].color)
+                        ? ColorTranslator.toHEX(backgroundColors.blue)
                         : "#ffffff"
                     )
                   )}
@@ -66,8 +77,8 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
                     color: `${token.color}`,
                     backgroundColor: `${
                       name.includes("inverse")
-                        ? backgrounds[2][1].color
-                        : backgrounds[1][1].color
+                        ? backgroundColors.darkest
+                        : backgroundColors.light
                     }`,
                     width: 56,
                     height: 40,
@@ -83,8 +94,8 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
                     hex(
                       ColorTranslator.toHEX(token.color),
                       name.includes("inverse")
-                        ? ColorTranslator.toHEX(backgrounds[2][1].color)
-                        : ColorTranslator.toHEX(backgrounds[1][1].color)
+                        ? ColorTranslator.toHEX(backgroundColors.darkest)
+                        : ColorTranslator.toHEX(backgroundColors.light)
                     )
                   )}
                 </div>

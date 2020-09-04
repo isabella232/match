@@ -219,7 +219,7 @@ const Tokens: React.FC = () => {
         </div>
       )}
 
-      {textColorTokens.length > 0 && (
+      {textColorTokens.length > 0 && backgroundColorTokens.length > 0 && (
         <div>
           <h2 sx={styles.h2}>Text Colors</h2>
           <TextColorTokens

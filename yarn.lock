@@ -4162,7 +4162,6 @@ __metadata:
     theme-ui: ^0.3.1
     typescript: ^3.9.7
     wcag-contrast: ^3.0.0
-    yarn: ^1.22.5
   languageName: unknown
   linkType: soft
 
@@ -29110,16 +29109,6 @@ resolve@1.1.7:
     y18n: ^4.0.0
     yargs-parser: ^18.1.2
   checksum: dbf687d6b938f01bbf11e158dde6df906282b70cd9295af0217ee8cefbd83ad09d49fa9458d0d5325b0e66f03df954a38986db96f91e5b46ccdbbaf9a0157b23
-  languageName: node
-  linkType: hard
-
-"yarn@npm:^1.22.5":
-  version: 1.22.5
-  resolution: "yarn@npm:1.22.5"
-  bin:
-    yarn: bin/yarn.js
-    yarnpkg: bin/yarn.js
-  checksum: b41a5337f334f490baa3c4d1f55ef286cab0de3b1a0b06f5a999a0605f212b26d89b1c3dbdc6cde17a4adb7899dd10350feefc00265d926c50ebace033208e75
   languageName: node
   linkType: hard
 

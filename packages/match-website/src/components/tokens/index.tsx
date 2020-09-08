@@ -1,7 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
 import * as React from "react";
-import { useConfig } from "docz";
 import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
 import { TokenFilters } from "./filters";
@@ -26,9 +23,6 @@ const textSearch = (hayStack: string, needle: string) => {
 const Tokens: React.FC = () => {
   const { breakpoint, swatch, fontFamily, fontSize, fontWeight } = useTheme();
   const {
-    themeConfig: { styles },
-  } = useConfig();
-  const {
     state: { filterText },
   } = React.useContext(MatchContext);
 
@@ -37,8 +31,6 @@ const Tokens: React.FC = () => {
       textSearch(`breakpoint.${key}`, filterText)
     );
   }, [filterText, breakpoint]);
-
-  console.log(swatch);
 
   const primaryColorTokens: ColorToken[] = React.useMemo(
     () =>
@@ -128,16 +120,12 @@ const Tokens: React.FC = () => {
     <div>
       <TokenFilters />
 
-      {!hasAnyTokens && (
-        <p sx={{ ...styles.p, textAlign: "center", fontStyle: "italic" }}>
-          No tokens found for filter {`"${filterText}"`}
-        </p>
-      )}
+      {!hasAnyTokens && <p>No tokens found for filter {`"${filterText}"`}</p>}
 
       {breakpointTokens.length > 0 && (
         <div>
-          <h1 sx={styles.h1}>Breakpoints</h1>
-          <p sx={styles.p}>
+          <h1>Breakpoints</h1>
+          <p>
             Match takes a mobile-first approach to responsive web design. These
             breakpoints provide ranges needed to ensure that your UI
             communicates valuable information for customers of all screen sizes.
@@ -146,12 +134,12 @@ const Tokens: React.FC = () => {
         </div>
       )}
 
-      {hasColorTokens && <h1 sx={styles.h1}>Colors</h1>}
+      {hasColorTokens && <h1>Colors</h1>}
 
       {primaryColorTokens.length > 0 && (
         <div>
-          <h2 sx={styles.h2}>Primary</h2>
-          <p sx={styles.p}>
+          <h2>Primary</h2>
+          <p>
             This palette defines our brand. Emphasize Twilio Red and avoid
             introducing too many secondary colors for audiences new to Twilio.
           </p>
@@ -161,8 +149,8 @@ const Tokens: React.FC = () => {
 
       {secondaryColorTokens.length > 0 && (
         <div>
-          <h3 sx={styles.h3}>Secondary</h3>
-          <p sx={styles.p}>
+          <h3>Secondary</h3>
+          <p>
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
@@ -172,8 +160,8 @@ const Tokens: React.FC = () => {
 
       {tertiaryColorTokens.length > 0 && (
         <div>
-          <h3 sx={styles.h3}>Tertiary</h3>
-          <p sx={styles.p}>
+          <h3>Tertiary</h3>
+          <p>
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
@@ -183,21 +171,21 @@ const Tokens: React.FC = () => {
 
       {fontFamilyTokens.length > 0 && (
         <div>
-          <h2 sx={styles.h2}>Font Families</h2>
+          <h2>Font Families</h2>
           <StringTokens prefix="fontFamily" tokens={fontFamilyTokens} />
         </div>
       )}
 
       {fontSizeTokens.length > 0 && (
         <div>
-          <h2 sx={styles.h2}>Font Sizes</h2>
+          <h2>Font Sizes</h2>
           <UnitTokens tokens={fontSizeTokens} />
         </div>
       )}
 
       {fontWeightTokens.length > 0 && (
         <div>
-          <h2 sx={styles.h2}>Font Weights</h2>
+          <h2>Font Weights</h2>
           <StringTokens prefix="fontWeight" tokens={fontWeightTokens} />
         </div>
       )}

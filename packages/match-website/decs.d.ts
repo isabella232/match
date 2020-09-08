@@ -1,2 +1,3 @@
-declare module "gatsby-theme-docz/src/components";
-declare module "gatsby-theme-docz/src/theme";
+declare module "@docusaurus/*";
+declare module "@theme/*";
+declare module "*.css";

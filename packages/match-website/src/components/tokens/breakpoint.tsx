@@ -1,7 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
 import * as React from "react";
-import { useConfig } from "docz";
 import { BreakpointToken } from "../../types/tokens";
 
 interface BreakpointTokensProps {
@@ -9,24 +6,20 @@ interface BreakpointTokensProps {
 }
 
 const BreakpointTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
-  const {
-    themeConfig: { styles },
-  } = useConfig();
-
   return (
     <div>
-      <table sx={styles.table}>
+      <table>
         <thead>
           <tr>
-            <th sx={styles.th}>Token</th>
-            <th sx={styles.th}>Value</th>
+            <th>Token</th>
+            <th>Value</th>
           </tr>
         </thead>
         <tbody>
           {tokens.map(([name, token]) => (
             <tr key={name}>
-              <td sx={styles.td}>{`breakpoint.${name}.mediaQuery`}</td>
-              <td sx={styles.td}>{token.mediaQuery}</td>
+              <td>{`breakpoint.${name}.mediaQuery`}</td>
+              <td>{token.mediaQuery}</td>
             </tr>
           ))}
         </tbody>

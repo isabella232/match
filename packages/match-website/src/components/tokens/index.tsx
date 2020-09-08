@@ -47,8 +47,6 @@ const Tokens: React.FC = () => {
     );
   }, [filterText, breakpoint]);
 
-  console.log(swatch);
-
   const primaryColorTokens: ColorToken[] = React.useMemo(
     () =>
       Object.entries(swatch)
@@ -120,7 +118,7 @@ const Tokens: React.FC = () => {
   const backgroundColorTokens: ColorToken[] = React.useMemo(
     () =>
       Object.entries(background)
-        .filter(([key]) => ["blue", "light", "darkest"].includes(key))
+        .filter(([key]) => ["white", "blue", "light", "darkest"].includes(key))
         .filter(([key]) => textSearch(`background.${key}`, filterText)),
     [filterText, background]
   );
@@ -219,12 +217,15 @@ const Tokens: React.FC = () => {
         </div>
       )}
 
-      {textColorTokens.length > 0 && backgroundColorTokens.length > 0 && (
+      {textColorTokens.length > 0 && (
         <div>
           <h2 sx={styles.h2}>Text Colors</h2>
           <TextColorTokens
             tokens={textColorTokens}
-            backgrounds={backgroundColorTokens}
+            bgLight={background.light.color}
+            bgDarkest={background.darkest.color}
+            bgColor={background.blue.color}
+            bgWhite={background.white.color}
           />
         </div>
       )}

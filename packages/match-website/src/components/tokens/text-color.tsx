@@ -8,27 +8,22 @@ import { hex, score } from "wcag-contrast";
 
 interface TextColorTokensProps {
   tokens: ColorToken[];
-  backgrounds: ColorToken[];
+  bgLight: string;
+  bgDarkest: string;
+  bgColor: string;
+  bgWhite: string;
 }
 
 const TextColorTokens: React.FC<TextColorTokensProps> = ({
   tokens,
-  backgrounds,
+  bgLight,
+  bgDarkest,
+  bgColor,
+  bgWhite,
 }) => {
   const {
     themeConfig: { styles },
   } = useConfig();
-
-  //create a default object with background colors
-  const backgroundColors = {
-    blue: "#ffffff",
-    light: "#ffffff",
-    darkest: "#ffffff",
-  };
-  //map passed in background colors to background object so code is less ambiguous
-  backgrounds.forEach(
-    (colorData) => (backgroundColors[colorData[0]] = colorData[1].color)
-  );
 
   return (
     <table sx={styles.table}>
@@ -50,9 +45,7 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
                   sx={{
                     color: `${token.color}`,
                     backgroundColor: `${
-                      name.includes("inverse")
-                        ? backgroundColors.blue
-                        : "#ffffff"
+                      name.includes("inverse") ? bgColor : bgWhite
                     }`,
                     width: 56,
                     height: 40,
@@ -67,8 +60,8 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
                     hex(
                       ColorTranslator.toHEX(token.color),
                       name.includes("inverse")
-                        ? ColorTranslator.toHEX(backgroundColors.blue)
-                        : "#ffffff"
+                        ? ColorTranslator.toHEX(bgColor)
+                        : ColorTranslator.toHEX(bgWhite)
                     )
                   )}
                 </div>
@@ -76,9 +69,7 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
                   sx={{
                     color: `${token.color}`,
                     backgroundColor: `${
-                      name.includes("inverse")
-                        ? backgroundColors.darkest
-                        : backgroundColors.light
+                      name.includes("inverse") ? bgDarkest : bgLight
                     }`,
                     width: 56,
                     height: 40,
@@ -94,8 +85,8 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
                     hex(
                       ColorTranslator.toHEX(token.color),
                       name.includes("inverse")
-                        ? ColorTranslator.toHEX(backgroundColors.darkest)
-                        : ColorTranslator.toHEX(backgroundColors.light)
+                        ? ColorTranslator.toHEX(bgDarkest)
+                        : ColorTranslator.toHEX(bgLight)
                     )
                   )}
                 </div>

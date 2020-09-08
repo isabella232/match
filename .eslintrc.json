@@ -43,9 +43,14 @@
       }
     },
     {
-      "files": ["packages/match-website/**/*.{ts,tsx}"],
+      "files": [
+        "packages/match-website/**/*.{ts,tsx}",
+        "packages/storybook-theme-switcher/**/*.{ts,tsx}"
+      ],
       "rules": {
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "react/display-name": "off",
+        "@typescript-eslint/no-explicit-any": "off"
       }
     },
     {

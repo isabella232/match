@@ -9,6 +9,8 @@ import {
   FontWeights,
 } from "@twilio-labs/match-tokens-core";
 import { fontFamily } from "./font-family";
+import { Backgrounds } from "./background";
+import { TextColors } from "./text-color";
 
 export const sendGridDesignTokens = {
   breakpoint: new Breakpoints(),
@@ -16,4 +18,6 @@ export const sendGridDesignTokens = {
   fontFamily,
   fontSize: new FontSizes(),
   fontWeight: new FontWeights(),
+  text: new TextColors(),
+  background: new Backgrounds(),
 };

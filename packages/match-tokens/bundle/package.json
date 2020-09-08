@@ -20,6 +20,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
+    "bootstrap": "yarn build",
     "build": "yarn clean && yarn compile",
     "clean": "rm -rf ./dist",
     "compile": "rollup -c --environment NODE_ENV:production",
@@ -35,7 +36,7 @@
     "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.4",
+    "@babel/core": "^7.11.6",
     "@rollup/plugin-babel": "^5.1.0",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",

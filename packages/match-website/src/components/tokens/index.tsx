@@ -6,6 +6,7 @@ import { BreakpointTokens } from "./breakpoint";
 import { SwatchTokens } from "./swatch";
 import { StringTokens } from "./string";
 import { UnitTokens } from "./unit";
+import { TextColorTokens } from "./text-color";
 import {
   ColorToken,
   BreakpointToken,
@@ -21,7 +22,15 @@ const textSearch = (hayStack: string, needle: string) => {
 };
 
 const Tokens: React.FC = () => {
-  const { breakpoint, swatch, fontFamily, fontSize, fontWeight } = useTheme();
+  const {
+    breakpoint,
+    swatch,
+    fontFamily,
+    fontSize,
+    fontWeight,
+    background,
+    text,
+  } = useTheme();
   const {
     state: { filterText },
   } = React.useContext(MatchContext);
@@ -100,10 +109,30 @@ const Tokens: React.FC = () => {
     [filterText, fontWeight]
   );
 
+  const backgroundColorTokens: ColorToken[] = React.useMemo(
+    () =>
+      Object.entries(background)
+        .filter(([key]) => ["white", "blue", "light", "darkest"].includes(key))
+        .filter(([key]) => textSearch(`background.${key}`, filterText)),
+    [filterText, background]
+  );
+
+  const textColorTokens: ColorToken[] = React.useMemo(
+    () =>
+      Object.entries(text)
+        .filter(([key]) =>
+          ["primary", "secondary", "tertiary", "inversePrimary"].includes(key)
+        )
+        .filter(([key]) => textSearch(`text.${key}`, filterText)),
+    [filterText, text]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
-      tertiaryColorTokens.length
+      tertiaryColorTokens.length +
+      backgroundColorTokens.length +
+      textColorTokens.length
   );
 
   const hasAnyTokens = Boolean(
@@ -113,7 +142,9 @@ const Tokens: React.FC = () => {
       tertiaryColorTokens.length +
       fontFamilyTokens.length +
       fontSizeTokens.length +
-      fontWeightTokens.length
+      fontWeightTokens.length +
+      backgroundColorTokens.length +
+      textColorTokens.length
   );
 
   return (
@@ -143,7 +174,7 @@ const Tokens: React.FC = () => {
             This palette defines our brand. Emphasize Twilio Red and avoid
             introducing too many secondary colors for audiences new to Twilio.
           </p>
-          <SwatchTokens tokens={primaryColorTokens} />
+          <SwatchTokens tokens={primaryColorTokens} prefix="swatch" />
         </div>
       )}
 
@@ -154,7 +185,7 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <SwatchTokens tokens={secondaryColorTokens} />
+          <SwatchTokens tokens={secondaryColorTokens} prefix="swatch" />
         </div>
       )}
 
@@ -165,7 +196,27 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <SwatchTokens tokens={tertiaryColorTokens} />
+          <SwatchTokens tokens={tertiaryColorTokens} prefix="swatch" />
+        </div>
+      )}
+
+      {backgroundColorTokens.length > 0 && (
+        <div>
+          <h2>Background Colors</h2>
+          <SwatchTokens tokens={backgroundColorTokens} prefix="background" />
+        </div>
+      )}
+
+      {textColorTokens.length > 0 && (
+        <div>
+          <h2>Text Colors</h2>
+          <TextColorTokens
+            tokens={textColorTokens}
+            bgLight={background.light.color}
+            bgDarkest={background.darkest.color}
+            bgColor={background.blue.color}
+            bgWhite={background.white.color}
+          />
         </div>
       )}
 

@@ -1,6 +1,6 @@
 import { FONTS } from "./constants";
 
-export class FontFamilies {
+export class FontFamily {
   text = FONTS.whitney;
   heading = FONTS.whitneyCond;
   quote = FONTS.surveyor;

@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #0263e0;
+  --ifm-color-primary: var(--swatch-blue60);
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -19,10 +19,10 @@
   /* --ifm-container-width: 778px; */
 
   /* Sidebar */
-  --ifm-navbar-height: 0;
+  --ifm-navbar-height: 0px;
   --ifm-toc-border-color: #e1e3ea;
   --ifm-menu-link-padding-vertical: 20px;
-  --ifm-menu-link-padding-horizontal: 0;
+  --ifm-menu-link-padding-horizontal: 0px;
   --ifm-menu-color-background-active: transparent;
   --ifm-menu-color-background-hover: transparent;
   --ifm-menu-color: #0b0b0f;
@@ -33,6 +33,10 @@
   --ifm-h2-font-size: 24px;
   --ifm-h3-font-size: 20px;
   --ifm-h4-font-size: 16px;
+}
+
+.menu {
+  font-weight: normal;
 }
 
 .menu__list .menu__list {

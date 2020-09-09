@@ -3,21 +3,21 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as _prefabs from "@diez/prefabs";
 import {
-  Breakpoints,
-  Swatches,
-  FontSizes,
-  FontWeights,
-  Backgrounds,
-  TextColors,
+  Breakpoint,
+  Swatch,
+  FontSize,
+  FontWeight,
+  Background,
+  Text,
 } from "@twilio-labs/match-tokens-core";
 import { fontFamily } from "./font-family";
 
 export const signalDesignTokens = {
-  breakpoint: new Breakpoints(),
-  swatch: new Swatches(),
+  breakpoint: new Breakpoint(),
+  swatch: new Swatch(),
   fontFamily,
-  fontSize: new FontSizes(),
-  fontWeight: new FontWeights(),
-  background: new Backgrounds(),
-  text: new TextColors(),
+  fontSize: new FontSize(),
+  fontWeight: new FontWeight(),
+  background: new Background(),
+  text: new Text(),
 };

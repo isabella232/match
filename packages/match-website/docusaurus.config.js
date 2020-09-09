@@ -56,7 +56,12 @@ module.exports = {
           editUrl: undefined,
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: [
+            require.resolve(
+              "@twilio-labs/match-tokens-twilio/dist/static/styles.css"
+            ),
+            require.resolve("./src/css/custom.css"),
+          ],
         },
       },
     ],

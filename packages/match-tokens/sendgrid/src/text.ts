@@ -1,8 +1,8 @@
 import * as _prefabs from "@diez/prefabs";
-import { Swatches } from "@twilio-labs/match-tokens-core";
-const swatch = new Swatches();
+import { Swatch } from "@twilio-labs/match-tokens-core";
+const swatch = new Swatch();
 
-export class TextColors {
+export class Text {
   primary = swatch.gray100;
   secondary = swatch.gray90;
   tertiary = swatch.gray70;

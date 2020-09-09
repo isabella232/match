@@ -20,6 +20,7 @@
     "@twilio-labs/match-components": "workspace:packages/match-components",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
+    "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio",
     "clsx": "^1.1.1",
     "colortranslator": "^1.3.4",
     "docusaurus-plugin-react-docgen-typescript": "^0.0.1",

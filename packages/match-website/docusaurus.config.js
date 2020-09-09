@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   title: "Match",
   tagline: "The tagline of my site",
@@ -96,6 +98,23 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
+        },
+      },
+    ],
+  ],
+  plugins: [
+    [
+      "docusaurus-plugin-react-docgen-typescript",
+      {
+        src: [path.join(__dirname, "../match-components/src/**/*.tsx")],
+        global: true,
+        parserOptions: {
+          propFilter: (prop) => {
+            if (prop.parent) {
+              return !prop.parent.fileName.includes("@types/react");
+            }
+            return true;
+          },
         },
       },
     ],

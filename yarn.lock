@@ -4018,7 +4018,9 @@ __metadata:
     "@types/react-dom": ^16.9.8
     clsx: ^1.1.1
     colortranslator: ^1.3.4
+    docusaurus-plugin-react-docgen-typescript: ^0.0.1
     react: ^16.8.4
+    react-docgen-typescript: ^1.20.4
     react-dom: ^16.8.4
     typescript: ^4.0.2
     wcag-contrast: ^3.0.0
@@ -9198,6 +9200,17 @@ __metadata:
   dependencies:
     esutils: ^2.0.2
   checksum: 2eae469bd2889ceee9892083a67340b3622568fe5290edce620e5d5ddab23d644b2a780e9a7c68ad9c8a62716a70c5e484402ac93a398fa78b54b7505592aa7f
+  languageName: node
+  linkType: hard
+
+"docusaurus-plugin-react-docgen-typescript@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "docusaurus-plugin-react-docgen-typescript@npm:0.0.1"
+  dependencies:
+    globby: ^11.0.1
+  peerDependencies:
+    react-docgen-typescript: ^1.20.4
+  checksum: 3139cc5e7bd06caa8c5c5db1e0e57037408bbb14ca60d536d5f427e1ad0c4610c34764d3b86f7ae0e4f84dc7e9209bc04787213c022a6271d30294418e02a571
   languageName: node
   linkType: hard
 
@@ -18942,7 +18955,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript@npm:^1.15.0, react-docgen-typescript@npm:^1.20.1":
+"react-docgen-typescript@npm:^1.15.0, react-docgen-typescript@npm:^1.20.1, react-docgen-typescript@npm:^1.20.4":
   version: 1.20.4
   resolution: "react-docgen-typescript@npm:1.20.4"
   peerDependencies:

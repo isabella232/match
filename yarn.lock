@@ -8448,6 +8448,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"css@npm:^2.2.4":
+  version: 2.2.4
+  resolution: "css@npm:2.2.4"
+  dependencies:
+    inherits: ^2.0.3
+    source-map: ^0.6.1
+    source-map-resolve: ^0.5.2
+    urix: ^0.1.0
+  checksum: b94365b3c07c35529beab95f679102c66d1027774c2e80f5179a6ee11ccc440046aeb7771df33569334bbdfd8ea753dd132197040dc079fcd881141348a1886f
+  languageName: node
+  linkType: hard
+
 "css@npm:^3.0.0":
   version: 3.0.0
   resolution: "css@npm:3.0.0"
@@ -14006,6 +14018,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"jest-styled-components@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "jest-styled-components@npm:7.0.3"
+  dependencies:
+    css: ^2.2.4
+  peerDependencies:
+    styled-components: ">= 5"
+  checksum: 250e8b6f77aa596e715d587826c52b08a55746f7686f169cf6f6b3957debf5c05bd41a01effa155e2312af0fbf7f04e42b70dc3320ac40400f541ccbcaa2459b
+  languageName: node
+  linkType: hard
+
 "jest-util@npm:26.x, jest-util@npm:^26.3.0":
   version: 26.3.0
   resolution: "jest-util@npm:26.3.0"
@@ -15441,6 +15464,7 @@ fsevents@^1.2.7:
     husky: ^4.2.5
     jest: ^26.4.2
     jest-axe: ^4.0.0
+    jest-styled-components: ^7.0.3
     lint-staged: ^10.3.0
     prettier: ^2.1.1
     react: ^16.13.1
@@ -21037,7 +21061,7 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"source-map-resolve@npm:^0.5.0":
+"source-map-resolve@npm:^0.5.0, source-map-resolve@npm:^0.5.2":
   version: 0.5.3
   resolution: "source-map-resolve@npm:0.5.3"
   dependencies:

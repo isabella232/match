@@ -7,36 +7,33 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: var(--swatch-blue60);
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary-dark: var(--swatch-blue-70);
+  --ifm-color-primary-darker: var(--swatch-blue-80);
+  --ifm-color-primary-darkest: var(--swatch-blue-90);
+  --ifm-color-primary-light: var(--swatch-blue-30);
+  --ifm-color-primary-lighter: var(--swatch-blue-20);
+  --ifm-color-primary-lightest: var(--swatch-blue-10);
   --ifm-code-font-size: 95%;
-
-  /* Layout */
-  /* --ifm-container-width: 778px; */
 
   /* Sidebar */
   --ifm-navbar-height: 0px;
-  --ifm-toc-border-color: #e1e3ea;
+  --ifm-toc-border-color: var(--swatch-gray20);
   --ifm-menu-link-padding-vertical: 20px;
   --ifm-menu-link-padding-horizontal: 0px;
   --ifm-menu-color-background-active: transparent;
   --ifm-menu-color-background-hover: transparent;
-  --ifm-menu-color: #0b0b0f;
+  --ifm-menu-color: var(--text-primary);
 
   /* Headings */
-  --ifm-heading-color: #0b0b10;
-  --ifm-h1-font-size: 36px;
-  --ifm-h2-font-size: 24px;
-  --ifm-h3-font-size: 20px;
-  --ifm-h4-font-size: 16px;
+  --ifm-heading-color: var(--text-primary);
+  --ifm-h1-font-size: var(--font-size-scale-280-rem);
+  --ifm-h2-font-size: var(--font-size-scale-180-rem);
+  --ifm-h3-font-size: var(--font-size-scale-140-rem);
+  --ifm-h4-font-size: var(--font-size-scale100-rem);
 }
 
 .menu {
-  font-weight: normal;
+  font-weight: var(--font-weight-regular);
 }
 
 .menu__list .menu__list {
@@ -48,7 +45,7 @@
 }
 
 .menu__link {
-  font-size: 14px;
+  font-size: var(--font-size-scale80-rem);
 }
 
 .menu__link:hover {
@@ -59,6 +56,10 @@
   width: 1.2rem;
   height: 1.2rem;
   background-size: contain;
+}
+
+.menu__list-item {
+  margin: 0;
 }
 
 .docusaurus-highlight-code-line {

@@ -14,8 +14,8 @@ const binding: WebBinding<Unit> = {
   examples: [],
   assetsBinder: async (instance, _program, output, _spec, property) => {
     const name = joinToKebabCase(property.parentType, property.name);
-    output.styleSheet.variables.set(`${name}-px`, `"${unitToPx(instance)}"`);
-    output.styleSheet.variables.set(`${name}-rem`, `"${unitToRem(instance)}"`);
+    output.styleSheet.variables.set(`${name}-px`, unitToPx(instance));
+    output.styleSheet.variables.set(`${name}-rem`, unitToRem(instance));
   },
   dependencies: [
     {

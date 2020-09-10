@@ -56,21 +56,17 @@ module.exports = {
           editUrl: undefined,
         },
         theme: {
-          customCss: [
-            require.resolve(
-              "@twilio-labs/match-tokens-twilio/dist/static/styles.css"
-            ),
-            require.resolve("./src/css/custom.css"),
-          ],
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],
   ],
   plugins: [
+    path.resolve(__dirname, "./plugins/register-match-tokens"),
     [
       "docusaurus-plugin-react-docgen-typescript",
       {
-        src: [path.join(__dirname, "../match-components/src/**/*.tsx")],
+        src: [path.resolve(__dirname, "../match-components/src/**/*.tsx")],
         global: true,
         parserOptions: {
           propFilter: (prop) => {

@@ -7,7 +7,7 @@ interface StyledWombatProps {
   color: string;
 }
 
-interface WombatProps extends React.HTMLAttributes<"div"> {
+export interface WombatProps extends React.HTMLAttributes<"div"> {
   droppings: Array<string>;
   color: string;
 }

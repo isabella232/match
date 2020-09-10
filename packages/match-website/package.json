@@ -3,14 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "docusaurus": "docusaurus",
     "dev": "docusaurus start",
     "build": "yarn clean && yarn compile",
-    "clean": "rm -rf .docusaurus build node_modules",
+    "clean": "rm -rf .docusaurus build",
     "compile": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
+    "deploy": "yarn build && gh-pages -d build -r https://${GH_TOKEN}@github.com/twilio-labs/match.git",
     "type-check": "tsc --noEmit --composite false"
   },
   "dependencies": {
@@ -45,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@docusaurus/module-type-aliases": "v2.0.0-alpha.63",
     "@types/mdx-js__react": "^1.5.2",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",

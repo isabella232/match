@@ -30,7 +30,6 @@
     "hooks": {
       "pre-commit": "lint-staged",
       "pre-push": "yarn type-check",
-      "post-checkout": "yarn && yarn bootstrap",
       "post-merge": "yarn && yarn bootstrap"
     }
   },
@@ -41,7 +40,7 @@
     "*.{js,ts,tsx}": [
       "eslint"
     ],
-    "*.tsx": [
+    "*.{tsx,css}": [
       "stylelint"
     ]
   },
@@ -81,7 +80,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.0",
+    "eslint-plugin-react-hooks": "^4.1.1",
     "eslint-plugin-unicorn": "^21.0.0",
     "husky": "^4.3.0",
     "jest": "^26.4.2",
@@ -103,7 +102,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-processor-styled-components": "^1.10.0",
     "ts-jest": "^26.3.0",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.2"
   },
   "browserslist": [
     "last 2 versions and > 1%",

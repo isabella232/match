@@ -5,14 +5,14 @@ import commonjs from "@rollup/plugin-commonjs";
 import pkg from "./package.json";
 
 export default {
-  input: pkg.main,
+  input: "src/index.ts",
   output: [
     {
-      file: pkg.publishConfig.main,
+      file: pkg.main,
       format: "cjs",
     },
     {
-      file: pkg.publishConfig.module,
+      file: pkg.module,
       format: "esm",
     },
   ],

@@ -28,10 +28,14 @@
   /* Headings */
   --ifm-heading-font-weight: var(--font-weight-semibold);
   --ifm-heading-color: var(--ifm-font-color-base);
-  --ifm-h1-font-size: var(--font-size-scale-280-rem);
-  --ifm-h2-font-size: var(--font-size-scale-180-rem);
-  --ifm-h3-font-size: var(--font-size-scale-140-rem);
+  --ifm-h1-font-size: var(--font-size-scale280-rem);
+  --ifm-h2-font-size: var(--font-size-scale180-rem);
+  --ifm-h3-font-size: var(--font-size-scale140-rem);
   --ifm-h4-font-size: var(--font-size-scale100-rem);
+}
+
+article > header > h1 {
+  font-size: var(--ifm-h1-font-size) !important;
 }
 
 .menu {

@@ -7,13 +7,14 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: var(--swatch-blue60);
-  --ifm-color-primary-dark: var(--swatch-blue-70);
-  --ifm-color-primary-darker: var(--swatch-blue-80);
-  --ifm-color-primary-darkest: var(--swatch-blue-90);
-  --ifm-color-primary-light: var(--swatch-blue-30);
-  --ifm-color-primary-lighter: var(--swatch-blue-20);
-  --ifm-color-primary-lightest: var(--swatch-blue-10);
+  --ifm-color-primary-dark: var(--swatch-blue70);
+  --ifm-color-primary-darker: var(--swatch-blue80);
+  --ifm-color-primary-darkest: var(--swatch-blue90);
+  --ifm-color-primary-light: var(--swatch-blue30);
+  --ifm-color-primary-lighter: var(--swatch-blue20);
+  --ifm-color-primary-lightest: var(--swatch-blue10);
   --ifm-code-font-size: 95%;
+  --ifm-font-color-base: #0b0b0f;
 
   /* Sidebar */
   --ifm-navbar-height: 0px;
@@ -22,10 +23,11 @@
   --ifm-menu-link-padding-horizontal: 0px;
   --ifm-menu-color-background-active: transparent;
   --ifm-menu-color-background-hover: transparent;
-  --ifm-menu-color: var(--text-primary);
+  --ifm-menu-color: var(--ifm-font-color-base);
 
   /* Headings */
-  --ifm-heading-color: var(--text-primary);
+  --ifm-heading-font-weight: var(--font-weight-semibold);
+  --ifm-heading-color: var(--ifm-font-color-base);
   --ifm-h1-font-size: var(--font-size-scale-280-rem);
   --ifm-h2-font-size: var(--font-size-scale-180-rem);
   --ifm-h3-font-size: var(--font-size-scale-140-rem);

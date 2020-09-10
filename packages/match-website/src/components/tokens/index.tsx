@@ -6,12 +6,14 @@ import { BreakpointTokens } from "./breakpoint";
 import { SwatchTokens } from "./swatch";
 import { StringTokens } from "./string";
 import { UnitTokens } from "./unit";
+import { WeightTokens } from "./weight";
 import { TextColorTokens } from "./text-color";
 import {
   ColorToken,
   BreakpointToken,
   StringToken,
   UnitToken,
+  WeightToken,
 } from "../../types/tokens";
 
 const textSearch = (hayStack: string, needle: string) => {
@@ -101,7 +103,7 @@ const Tokens: React.FC = () => {
     [filterText, fontSize]
   );
 
-  const fontWeightTokens: StringToken[] = React.useMemo(
+  const fontWeightTokens: WeightToken[] = React.useMemo(
     () =>
       Object.entries(fontWeight).filter(([key]) =>
         textSearch(`fontWeight.${key}`, filterText)
@@ -237,7 +239,7 @@ const Tokens: React.FC = () => {
       {fontWeightTokens.length > 0 && (
         <div>
           <h2>Font Weights</h2>
-          <StringTokens prefix="fontWeight" tokens={fontWeightTokens} />
+          <WeightTokens prefix="fontWeight" tokens={fontWeightTokens} />
         </div>
       )}
     </div>

@@ -10,7 +10,7 @@ import AnnouncementBar from "@theme/AnnouncementBar";
 // import Footer from "@theme/Footer";
 import type { Props } from "@theme/Layout";
 
-import { MatchProvider } from "@twilio-labs/match-website/src/context/match";
+import { MatchProvider } from "@site/src/context/match";
 
 import "./styles.css";
 

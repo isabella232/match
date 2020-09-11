@@ -167,7 +167,7 @@ function DocSidebar({
 }): JSX.Element | null {
   const [showResponsiveSidebar, setShowResponsiveSidebar] = useState(false);
   const {
-    siteConfig: { themeConfig: { navbar: { title = "" } = {} } = {} } = {},
+    // siteConfig: { themeConfig: { navbar: { title = "" } = {} } = {} } = {},
     isClient,
   } = useDocusaurusContext();
   const { logoLink, logoLinkProps, logoImageUrl, logoAlt } = useLogo();

@@ -89,7 +89,7 @@ packages/match-tokens/**/lib/*
 packages/match-tokens/**/build/*
 
 # PyPI
-packages/match-tokens/pypi/match-tokens/*
+packages/match-tokens/pypi/match_tokens/*
 packages/match-tokens/pypi/match_tokens.egg-info
 
 # Docusaurus

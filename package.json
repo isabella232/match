@@ -2,6 +2,7 @@
   "name": "match",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
+  "homepage": "https://match.twilio.design",
   "private": true,
   "workspaces": [
     "packages/**"

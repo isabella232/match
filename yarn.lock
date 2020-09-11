@@ -4039,15 +4039,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@twilio-labs/pypi-match-tokens@workspace:packages/match-tokens/pypi":
-  version: 0.0.0-use.local
-  resolution: "@twilio-labs/pypi-match-tokens@workspace:packages/match-tokens/pypi"
-  dependencies:
-    "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio"
-    ejs: ^3.1.5
-  languageName: unknown
-  linkType: soft
-
 "@twilio-labs/storybook-theme-switcher@workspace:packages/storybook-theme-switcher":
   version: 0.0.0-use.local
   resolution: "@twilio-labs/storybook-theme-switcher@workspace:packages/storybook-theme-switcher"
@@ -15573,6 +15564,15 @@ fsevents@^1.2.7:
     stylelint-processor-styled-components: ^1.10.0
     ts-jest: ^26.3.0
     typescript: ^4.0.2
+  languageName: unknown
+  linkType: soft
+
+"match_tokens@workspace:packages/match-tokens/pypi":
+  version: 0.0.0-use.local
+  resolution: "match_tokens@workspace:packages/match-tokens/pypi"
+  dependencies:
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle"
+    ejs: ^3.1.5
   languageName: unknown
   linkType: soft
 

@@ -8,15 +8,15 @@ with open('package.json', 'r') as fh:
     package = json.loads(fh.read())
 
 setup(
-    name='match-tokens',
+    name=package['name'],
     version=package['version'],
-    author='Twilio Inc.',
+    author=package['author'],
     author_email='match@twilio.com',
-    description='Match design system tokens',
+    description=package['description'],
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://match.twilio.design',
-    packages=find_packages(exclude=['templates']),
+    url=package['homepage'],
+    packages=find_packages(exclude=['src']),
     classifiers=[
         'License :: Other/Proprietary License',
         'Operating System :: OS Independent',

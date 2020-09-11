@@ -48,9 +48,17 @@
         "packages/storybook-theme-switcher/**/*.{ts,tsx}"
       ],
       "rules": {
+        "import/prefer-default-export": "off",
+        "import/no-default-export": "off",
         "react/prop-types": "off",
         "react/display-name": "off",
-        "@typescript-eslint/no-explicit-any": "off"
+        "@typescript-eslint/no-explicit-any": "off",
+        "unicorn/consistent-function-scoping": "off",
+        "unicorn/no-null": "off",
+        "import/no-unresolved": [
+          "ERROR",
+          { "ignore": ["^@theme", "^@docusaurus", "^@generated", "^@site"] }
+        ]
       }
     },
     {

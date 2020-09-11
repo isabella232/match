@@ -88,7 +88,7 @@ package-lock.json
 packages/match-tokens/**/lib/*
 packages/match-tokens/**/build/*
 
-# Gatsby / Docz
-packages/match-website/public
-packages/match-website/.cache
-packages/match-website/.docz
+# Docusaurus
+packages/match-website/build/*
+.docusaurus
+.cache-loader

@@ -3,21 +3,21 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as _prefabs from "@diez/prefabs";
 import {
-  Breakpoints,
-  Swatches,
-  FontSizes,
-  FontWeights,
+  Breakpoint,
+  Swatch,
+  FontSize,
+  FontWeight,
 } from "@twilio-labs/match-tokens-core";
 import { fontFamily } from "./font-family";
-import { Backgrounds } from "./background";
-import { TextColors } from "./text-color";
+import { Background } from "./background";
+import { Text } from "./text";
 
 export const sendGridDesignTokens = {
-  breakpoint: new Breakpoints(),
-  swatch: new Swatches(),
+  breakpoint: new Breakpoint(),
+  swatch: new Swatch(),
   fontFamily,
-  fontSize: new FontSizes(),
-  fontWeight: new FontWeights(),
-  text: new TextColors(),
-  background: new Backgrounds(),
+  fontSize: new FontSize(),
+  fontWeight: new FontWeight(),
+  text: new Text(),
+  background: new Background(),
 };

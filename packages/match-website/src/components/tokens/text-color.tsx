@@ -1,7 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
 import * as React from "react";
-import { useConfig } from "docz";
 import { ColorTranslator } from "colortranslator";
 import { ColorToken } from "../../types/tokens";
 import { hex, score } from "wcag-contrast";
@@ -21,28 +18,24 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
   bgColor,
   bgWhite,
 }) => {
-  const {
-    themeConfig: { styles },
-  } = useConfig();
-
   return (
-    <table sx={styles.table}>
+    <table>
       <thead>
         <tr>
-          <th sx={styles.th}>Token</th>
-          <th sx={styles.th}>Value</th>
-          <th sx={styles.th}>Example</th>
+          <th>Token</th>
+          <th>Value</th>
+          <th>Example</th>
         </tr>
       </thead>
       <tbody>
         {tokens.map(([name, token]) => (
           <tr key={name}>
-            <td sx={styles.td}>{`text.${name}.color`}</td>
-            <td sx={styles.td}>{ColorTranslator.toHEX(token.color)}</td>
-            <td sx={styles.td}>
-              <div sx={{ display: "inline" }}>
+            <td>{`text.${name}.color`}</td>
+            <td>{ColorTranslator.toHEX(token.color)}</td>
+            <td>
+              <div style={{ display: "inline" }}>
                 <div
-                  sx={{
+                  style={{
                     color: `${token.color}`,
                     backgroundColor: `${
                       name.includes("inverse") ? bgColor : bgWhite
@@ -66,7 +59,7 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
                   )}
                 </div>
                 <div
-                  sx={{
+                  style={{
                     color: `${token.color}`,
                     backgroundColor: `${
                       name.includes("inverse") ? bgDarkest : bgLight

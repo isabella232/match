@@ -1,8 +1,8 @@
 import * as _prefabs from "@diez/prefabs";
-import { Swatches } from "@twilio-labs/match-tokens-core";
-const swatch = new Swatches();
+import { Swatch } from "@twilio-labs/match-tokens-core";
+const swatch = new Swatch();
 
-export class Backgrounds {
+export class Background {
   white = swatch.white;
   blue = swatch.blue60;
   light = swatch.gray10;

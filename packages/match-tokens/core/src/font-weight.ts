@@ -1,8 +1,10 @@
-export class FontWeights {
-  thin = "200";
-  light = "300";
-  regular = "400";
-  medium = "500";
-  semibold = "600";
-  bold = "700";
+import { Weight } from "./framework/prefabs/weight";
+
+export class FontWeight {
+  thin = Weight.num(200);
+  light = Weight.num(300);
+  regular = Weight.num(400);
+  medium = Weight.num(500);
+  semibold = Weight.num(600);
+  bold = Weight.num(700);
 }

@@ -3,17 +3,21 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as _prefabs from "@diez/prefabs";
 import {
-  Breakpoints,
-  Swatches,
-  FontFamilies,
-  FontSizes,
-  FontWeights,
+  Breakpoint,
+  Swatch,
+  FontFamily,
+  FontSize,
+  FontWeight,
+  Background,
+  Text,
 } from "@twilio-labs/match-tokens-core";
 
 export const ahoyDesignTokens = {
-  breakpoint: new Breakpoints(),
-  swatch: new Swatches(),
-  fontFamily: new FontFamilies(),
-  fontSize: new FontSizes(),
-  fontWeight: new FontWeights(),
+  breakpoint: new Breakpoint(),
+  swatch: new Swatch(),
+  fontFamily: new FontFamily(),
+  fontSize: new FontSize(),
+  fontWeight: new FontWeight(),
+  background: new Background(),
+  text: new Text(),
 };

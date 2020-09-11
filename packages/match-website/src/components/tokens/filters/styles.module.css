@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 32px;
+  margin: 3rem 0;
+}
+
+.container input,
+.container select {
+  border: 1px solid #e1e3ea;
+  padding: 1rem;
+  border-radius: 3px;
+  font-size: 14px;
+}

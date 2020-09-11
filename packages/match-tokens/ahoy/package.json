@@ -32,13 +32,15 @@
     "core-js": "^3.6.5",
     "diez": "^10.6.0",
     "semver": "^7.3.2",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.2"
   },
   "scripts": {
+    "bootstrap": "yarn build",
     "build": "yarn clean && yarn compile && mv ./build/diez-twilio-labs-match-tokens-ahoy-web/ ./dist/ && rm -rf ./dist/package.json ./build ./lib ./tsconfig.tsbuildinfo",
     "compile": "diez compile -t web",
     "clean": "rm -rf ./dist ./.diez ./lib",
     "prepack": "yarn build",
-    "publish": "yarn npm publish --tolerate-republish"
+    "publish": "yarn npm publish --tolerate-republish",
+    "type-check": "tsc --noEmit --composite false"
   }
 }

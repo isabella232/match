@@ -17,7 +17,7 @@ const asTags = [
   "th",
 ] as const;
 
-interface VisuallyHiddenProps {
+export interface VisuallyHiddenProps {
   as: typeof asTags[number];
 }
 

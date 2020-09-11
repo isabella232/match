@@ -1,0 +1,26 @@
+.docPage {
+  display: flex;
+}
+
+.docSidebarContainer {
+  border-right: 2px solid var(--ifm-toc-border-color);
+  box-sizing: border-box;
+  width: 328px;
+  background: #fafafa;
+  position: relative;
+  margin-top: calc(-1 * var(--ifm-navbar-height));
+}
+
+.docMainContainer {
+  flex-grow: 1;
+}
+
+@media (max-width: 996px) {
+  .docPage {
+    display: inherit;
+  }
+
+  .docSidebarContainer {
+    margin-top: 0;
+  }
+}

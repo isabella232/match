@@ -1,0 +1,55 @@
+---
+id: visually-hidden
+title: VisuallyHidden
+sidebar_label: VisuallyHidden
+slug: /components/visually-hidden/
+---
+
+import { VisuallyHidden } from "@twilio-labs/match-components";
+import { Props } from "../../src/components/props";
+
+Utility for visually hiding content to provide an accessible experience for users of assistive technology.
+
+**Sources:** [[Github]](https://github.com/twilio-labs/match)
+
+**Version:** [0.1.0]
+
+**Install:** `yarn add @twilio-labs/components`
+
+**Import:** `import { VisuallyHidden } from '@twilio-labs/components'`
+
+**Props**
+
+<Props of={VisuallyHidden} />
+
+## Examples
+
+### Instructional Cues
+
+When location or presentation provide context to sighted users, visually hidden content can offer cues for assistive technology. Breadcrumbs are an example of a commonly understood user interface that may be unclear when encountered by a screen reader. The text “You are here:” provides context for assistive technology, but is visually hidden to prevent redundancy.
+
+Because screen readers do not convey any visual information, regions of a page layout must be explicitly defined. In this example, the h2 element refines our page outline which can assist sightless users with navigation.
+
+```jsx live
+<nav>
+  <VisuallyHidden as="h2">You are here:</VisuallyHidden>
+  <a href="/solutions">Solutions</a> / <a href="/solutions/sms">SMS</a>
+</nav>
+```
+
+## Composition
+
+Use the Visually Hidden component to provide additional or contextual information to users of assistive technology which may be inferred by sighted users and which you cannot provide with semantic HTML.
+
+### Don't Do This
+
+Don’t hide interactive elements.
+
+### Do This
+
+Provide additional context to screen readers.
+
+### Accessibility
+
+- Because “sightless” users may have some limited vision, Visually Hidden content should be complimentary
+- In page browser searches will find visually hidden content which may confuse sighted users

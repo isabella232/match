@@ -1,16 +1,13 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import styled from "styled-components";
-import { TwilioDesignTokens } from "@twilio-labs/match-tokens";
-
-const ds = new TwilioDesignTokens();
 
 interface StyledWombatProps {
   columns: number;
   color: string;
 }
 
-interface WombatProps extends React.HTMLAttributes<"div"> {
+export interface WombatProps extends React.HTMLAttributes<"div"> {
   droppings: Array<string>;
   color: string;
 }
@@ -26,7 +23,7 @@ const StyledWombat = styled.div<StyledWombatProps>`
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    background: ${(props) => ds.swatch[props.color].color};
+    background: ${({ theme, color }) => theme.swatch[color].color};
     border-radius: 0.5rem;
   }
 `;

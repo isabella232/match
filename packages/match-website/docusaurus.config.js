@@ -18,14 +18,14 @@ module.exports = {
     //     facetFilters: [`version:2.0.0-alpha.61`],
     //   },
     // },
-    navbar: {
-      title: "Match",
-      logo: {
-        alt: "Match Logo",
-        src: "img/logo.png",
-      },
-      items: [],
-    },
+    // navbar: {
+    //   title: "Match",
+    //   logo: {
+    //     alt: "Match Logo",
+    //     src: "img/logo.png",
+    //   },
+    //   items: [],
+    // },
     footer: {
       style: "dark",
       links: [

@@ -8,8 +8,9 @@ const ejs = require("ejs");
 const path = require("path");
 const fs = require("fs");
 
+const pkg = require("../package.json");
 const src = "./templates";
-const dist = "../match_tokens";
+const dist = `../${pkg.name}`;
 
 const themes = {
   twilio: new TwilioDesignTokens(),

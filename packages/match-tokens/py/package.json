@@ -1,6 +1,6 @@
 {
-  "name": "match_tokens",
-  "version": "0.0.1",
+  "name": "match_tokens_py",
+  "version": "0.0.0",
   "description": "Match token library for Python",
   "homepage": "https://match.twilio.design",
   "author": "Twilio Inc.",
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "yarn clean && yarn compile",
-    "clean": "rm -rf match_tokens build dist match_tokens.egg-info",
+    "clean": "rm -rf match_tokens_py build dist match_tokens_py.egg-info",
     "compile": "node src/index.js && python3 setup.py sdist bdist_wheel",
     "publish": "twine upload dist/*",
     "publish:test": "twine upload --repository testpypi dist/*"

@@ -89,8 +89,8 @@ packages/match-tokens/**/lib/*
 packages/match-tokens/**/build/*
 
 # PyPI
-packages/match-tokens/pypi/match_tokens/*
-packages/match-tokens/pypi/match_tokens.egg-info
+packages/match-tokens/py/match_tokens_py/*
+packages/match-tokens/py/match_tokens_py.egg-info
 
 # Docusaurus
 packages/match-website/build/*

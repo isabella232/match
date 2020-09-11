@@ -15567,9 +15567,9 @@ fsevents@^1.2.7:
   languageName: unknown
   linkType: soft
 
-"match_tokens@workspace:packages/match-tokens/pypi":
+"match_tokens_py@workspace:packages/match-tokens/py":
   version: 0.0.0-use.local
-  resolution: "match_tokens@workspace:packages/match-tokens/pypi"
+  resolution: "match_tokens_py@workspace:packages/match-tokens/py"
   dependencies:
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle"
     ejs: ^3.1.5

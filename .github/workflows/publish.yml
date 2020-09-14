@@ -9,6 +9,7 @@ jobs:
   website:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/actions/bootstrap.yml
       - name: Configure Git
         run: |
@@ -22,6 +23,7 @@ jobs:
   pypi:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/actions/bootstrap.yml
       - uses: actions/setup-python@v2
         with:

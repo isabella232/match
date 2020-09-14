@@ -6,6 +6,7 @@ jobs:
   build_and_tests:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/actions/bootstrap.yml
       - name: Run type checker
         run: yarn type-check

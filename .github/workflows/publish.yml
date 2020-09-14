@@ -35,7 +35,7 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip setuptools wheel twine
       - name: Generate tokens
-        run: yarn workspace @twilio-labs/match_tokens_py build
+        run: yarn workspace match_tokens_py build
       - name: Build and publish PyPI package
         working-directory: "packages/match-tokens/py"
         env:

@@ -1,6 +1,9 @@
 name: Release
 
-on: pull_request
+on:
+  release:
+    types:
+      - created
 
 jobs:
   deploy:

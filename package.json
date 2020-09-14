@@ -17,7 +17,7 @@
     "lint:js": "eslint '**/*.{ts,tsx,js}'",
     "lint:css": "stylelint './packages/**/*.tsx'",
     "type-check": "yarn workspaces foreach --parallel run type-check",
-    "build": "yarn workspaces foreach --topological-dev run build",
+    "build:all": "yarn workspaces foreach --topological-dev run build",
     "build:tokens": "yarn workspaces foreach --topological-dev --parallel --include '@twilio-labs/match-tokens*' run build",
     "build:plugins": "yarn workspace @twilio-labs/storybook-theme-switcher build",
     "version:all": "yarn version check --interactive && yarn version apply --all",

@@ -3,6 +3,7 @@ description: "Installs Node dependencies and builds token packages"
 runs:
   using: "composite"
   steps:
+    - uses: actions/checkout@v2
     - name: "Setup Node"
       uses: actions/setup-node@v2-beta
       with:

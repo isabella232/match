@@ -9,7 +9,7 @@ jobs:
   website:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/bootstrap
+      - uses: ./.github/actions/bootstrap.yml
       - name: Configure Git
         run: |
           git config user.name MatchBot
@@ -22,7 +22,7 @@ jobs:
   pypi:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/bootstrap
+      - uses: ./.github/actions/bootstrap.yml
       - uses: actions/setup-python@v2
         with:
           python-version: "3.x"

@@ -88,6 +88,10 @@ package-lock.json
 packages/match-tokens/**/lib/*
 packages/match-tokens/**/build/*
 
+# PyPI
+packages/match-tokens/py/match_tokens_py/*
+packages/match-tokens/py/match_tokens_py.egg-info
+
 # Docusaurus
 packages/match-website/build/*
 .docusaurus

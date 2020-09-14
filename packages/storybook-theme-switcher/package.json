@@ -16,7 +16,6 @@
     "*.js"
   ],
   "scripts": {
-    "bootstrap": "yarn build",
     "build": "yarn clean && yarn compile",
     "clean": "rm -rf dist tsconfig.tsbuildinfo",
     "compile": "tsc",

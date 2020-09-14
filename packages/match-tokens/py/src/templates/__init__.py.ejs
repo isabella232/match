@@ -1,0 +1,9 @@
+<% packages.forEach((pkg) => { -%>
+from . import <%=pkg%>
+<% }); -%>
+
+__all__ = [
+<% packages.forEach((pkg) => { -%>
+    '<%=pkg%>'
+<% }); -%>
+]

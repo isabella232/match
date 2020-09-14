@@ -8,3 +8,4 @@ packages/match-tokens/**/designs
 packages/match-website/.cache
 packages/match-website/.docz
 packages/match-website/public
+*.ejs

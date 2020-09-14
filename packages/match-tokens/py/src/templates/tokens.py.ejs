@@ -1,0 +1,17 @@
+swatch = {
+<% Object.entries(swatch).forEach(([name, token]) => { -%>
+    '<%=name%>': '<%=token.color%>',
+<% }); -%>
+}
+
+background = {
+<% Object.entries(background).forEach(([name, token]) => { -%>
+    '<%=name%>': '<%=token.color%>',
+<% }); -%>
+}
+
+text = {
+<% Object.entries(text).forEach(([name, token]) => { -%>
+    '<%=name%>': '<%=token.color%>',
+<% }); -%>
+}

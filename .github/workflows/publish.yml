@@ -1,15 +1,14 @@
-name: Publish
+name: Release
 
-on:
-  push:
-    branches:
-      - main
+on: pull_request
 
 jobs:
-  website:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      # Setup Match
       - name: "Setup Node"
         uses: actions/setup-node@v2-beta
         with:
@@ -17,8 +16,7 @@ jobs:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      - name: Restore yarn cache
-        uses: actions/cache@v2
+      - uses: actions/cache@v2
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -29,6 +27,25 @@ jobs:
         run: yarn install --immutable
       - name: Build Tokens
         run: yarn build:tokens
+
+      # Publish PyPI Package
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: Install Python dependencies
+        run: python -m pip install --upgrade pip setuptools wheel twine
+      - name: Generate tokens
+        run: yarn workspace @twilio-labs/match_tokens_py build
+      - name: Build and publish PyPI package
+        working-directory: "packages/match-tokens/py"
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+          python setup.py sdist bdist_wheel
+          twine upload --non-interactive --repository pypi dist/*
+
+      # Deploy website
       - name: Configure Git
         run: |
           git config user.name MatchBot
@@ -37,42 +54,3 @@ jobs:
         run: yarn workspace @twilio-labs/match-website deploy
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
-  pypi:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: "Setup Node"
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: "12"
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      - name: Restore yarn cache
-        uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Install Node dependencies
-        run: yarn install --immutable
-      - name: Build Tokens
-        run: yarn build:tokens
-      - uses: actions/setup-python@v2
-        with:
-          python-version: "3.x"
-      - name: Install Python dependencies
-        run: python -m pip install --upgrade pip setuptools wheel twine
-      - name: Build tokens
-        run: yarn workspace @twilio-labs/match_tokens_py build
-      - name: Publish to PyPI
-        working-directory: "packages/match-tokens/py"
-        env:
-          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        run: |
-          python setup.py sdist bdist_wheel
-          twine upload --non-interactive --repository pypi dist/*

@@ -14,10 +14,8 @@
   },
   "scripts": {
     "build": "yarn clean && yarn compile",
-    "clean": "rm -rf match_tokens_py build dist match_tokens_py.egg-info",
-    "compile": "node src/index.js && python3 setup.py sdist bdist_wheel",
-    "publish": "twine upload dist/*",
-    "publish:test": "twine upload --repository testpypi dist/*"
+    "clean": "rm -rf match_tokens_py",
+    "compile": "node src/index.js"
   },
   "devDependencies": {
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",

@@ -1,4 +1,4 @@
-name: Publish Website
+name: Publish
 
 on:
   push:
@@ -6,23 +6,35 @@ on:
       - main
 
 jobs:
-  deploy:
+  website:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: "12"
+      - uses: ./.github/actions/bootstrap
       - name: Configure Git
         run: |
           git config user.name MatchBot
           git config user.email match@twilio.com
-      - name: Install dependencies
-        run: yarn install
-      - name: Build Tokens
-        run: yarn build:tokens
       - name: Deploy to GH Pages
-        run: yarn deploy:website
+        run: yarn workspace @twilio-labs/match-website deploy
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  pypi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/bootstrap
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: Install Python dependencies
+        run: python -m pip install --upgrade pip setuptools wheel twine
+      - name: Build tokens
+        run: yarn workspace @twilio-labs/match_tokens_py build
+      - name: Publish to PyPI
+        working-directory: "packages/match-tokens/py"
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+          python setup.py sdist bdist_wheel
+          twine upload --non-interactive --repository pypi dist/*

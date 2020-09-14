@@ -8,7 +8,7 @@
     "packages/**"
   ],
   "scripts": {
-    "bootstrap": "yarn workspaces foreach --topological-dev --parallel run bootstrap",
+    "bootstrap": "yarn build:tokens && yarn build:plugins",
     "start:all": "concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -p 6006",
     "start:website": "yarn workspace @twilio-labs/match-website dev",
@@ -19,13 +19,13 @@
     "type-check": "yarn workspaces foreach run type-check",
     "build": "yarn workspaces foreach --topological-dev run build",
     "build:tokens": "yarn workspaces foreach --topological-dev --parallel --include '@twilio-labs/match-tokens*' run build",
+    "build:plugins": "yarn workspace @twilio-labs/storybook-theme-switcher build",
     "version:all": "yarn version check --interactive && yarn version apply --all",
     "publish:all": "yarn workspaces foreach --topological-dev run publish",
     "release": "yarn version:all && yarn publish:all",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "jest --ci",
-    "deploy:website": "yarn workspace @twilio-labs/match-website deploy"
+    "test:ci": "jest --ci"
   },
   "husky": {
     "hooks": {

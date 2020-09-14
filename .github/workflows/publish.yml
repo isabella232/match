@@ -43,7 +43,7 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         run: |
           python setup.py sdist bdist_wheel
-          twine upload --non-interactive --repository pypi dist/*
+          twine upload --non-interactive --skip-existing --repository pypi dist/*
 
       # Deploy website
       - name: Configure Git

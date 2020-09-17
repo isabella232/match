@@ -11,6 +11,7 @@ import {
 import { fontFamily } from "./font-family";
 import { Background } from "./background";
 import { Text } from "./text";
+import { Gradient } from "./gradient";
 
 export const sendGridDesignTokens = {
   breakpoint: new Breakpoint(),
@@ -20,4 +21,5 @@ export const sendGridDesignTokens = {
   fontWeight: new FontWeight(),
   text: new Text(),
   background: new Background(),
+  gradient: new Gradient(),
 };

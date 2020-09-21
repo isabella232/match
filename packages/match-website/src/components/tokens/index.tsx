@@ -8,12 +8,14 @@ import { StringTokens } from "./string";
 import { UnitTokens } from "./unit";
 import { WeightTokens } from "./weight";
 import { TextColorTokens } from "./text-color";
+import { GradientTokens } from "./gradient";
 import {
   ColorToken,
   BreakpointToken,
   StringToken,
   UnitToken,
   WeightToken,
+  GradientToken,
 } from "../../types/tokens";
 
 const textSearch = (hayStack: string, needle: string) => {
@@ -32,6 +34,7 @@ const Tokens: React.FC = () => {
     fontWeight,
     background,
     text,
+    gradient,
   } = useTheme();
   const {
     state: { filterText },
@@ -129,6 +132,14 @@ const Tokens: React.FC = () => {
     [filterText, text]
   );
 
+  const gradientTokens: GradientToken[] = React.useMemo(
+    () =>
+      Object.entries(gradient).filter(([key]) =>
+        textSearch(`gradient.${key}`, filterText)
+      ),
+    [filterText, gradient]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
@@ -146,7 +157,8 @@ const Tokens: React.FC = () => {
       fontSizeTokens.length +
       fontWeightTokens.length +
       backgroundColorTokens.length +
-      textColorTokens.length
+      textColorTokens.length +
+      gradientTokens.length
   );
 
   return (
@@ -206,6 +218,27 @@ const Tokens: React.FC = () => {
         <div>
           <h2>Background Colors</h2>
           <SwatchTokens tokens={backgroundColorTokens} prefix="background" />
+        </div>
+      )}
+
+      {gradientTokens.length > 0 && (
+        <div>
+          <h2>Gradients</h2>
+          <GradientTokens
+            prefix="gradient"
+            tokens={gradientTokens}
+            gradientColors={[
+              ["brandHighlight", swatch.brandHighlight],
+              ["baseBlue", swatch.baseBlue],
+              ["baseOrange", swatch.baseOrange],
+              ["baseGreen", swatch.baseGreen],
+              ["blue60", swatch.blue60],
+              ["basePurple", swatch.basePurple],
+              ["gray90", swatch.gray90],
+              ["red60", swatch.red60],
+              ["baseBlue", swatch.baseBlue],
+            ]}
+          />
         </div>
       )}
 

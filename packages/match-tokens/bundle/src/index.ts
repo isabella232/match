@@ -8,4 +8,5 @@ export type {
   MediaQuery,
   Unit,
   Weight,
+  LinearGradient,
 } from "@twilio-labs/match-tokens-twilio";

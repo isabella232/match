@@ -12,15 +12,23 @@ export class Gradient {
   red180 = LinearGradient.make(
     180,
     C.brandHighlight.fade(0.25),
-    C.brandHighlight
+    C.brandHighlight.fade(1)
   );
-  orange180 = LinearGradient.make(180, C.baseOrange.fade(0.25), C.baseOrange);
-  green180 = LinearGradient.make(180, C.baseGreen.fade(0.25), C.baseGreen);
-  blue180 = LinearGradient.make(
+  orange180 = LinearGradient.make(
     180,
-    C.blue60,
+    C.baseOrange.fade(0.25),
+    C.baseOrange.fade(1)
+  );
+  green180 = LinearGradient.make(
+    180,
+    C.baseGreen.fade(0.25),
+    C.baseGreen.fade(1)
+  );
+  blue180 = LinearGradient.make(180, C.blue60.fade(0.25), C.blue60.fade(1));
+  purple180 = LinearGradient.make(
+    180,
     C.basePurple.fade(0.25),
-    C.basePurple
+    C.basePurple.fade(1)
   );
   darkGray = LinearGradient.make(135, C.gray90.fade(0.8), C.gray90.fade(0.2));
   lightRedBlue = LinearGradient.make(

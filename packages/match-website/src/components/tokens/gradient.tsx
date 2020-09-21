@@ -26,14 +26,16 @@ function getColorTokenName(color, gradientColors) {
       gradientColor[1].s == color.s &&
       gradientColor[1].l == color.l
   );
-  return colorToken[0];
+  if (colorToken) return colorToken[0];
+  return "";
 }
 
 function prettyPrint(token, gradientColors) {
+  if (token == undefined) return "";
   const gradientValues = parseToken(token);
   const color1Token = getColorTokenName(gradientValues.color1, gradientColors);
   const color1 =
-    "( " +
+    "(" +
     color1Token +
     "," +
     gradientValues.color1.a
@@ -78,7 +80,6 @@ const GradientTokens: React.FC<GradientTokensProps> = ({
         {tokens.map(([name, token]) => (
           <tr key={name}>
             <td>{`${prefix}.${name}.linearGradient`}</td>
-            {/* <td>{parseToken(token).color1.color}</td> */}
             <td>{prettyPrint(token, gradientColors)}</td>
             <td style={token.backgroundStyle}>
               {/* <svg height="150" width="150">

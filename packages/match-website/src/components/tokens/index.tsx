@@ -236,7 +236,7 @@ const Tokens: React.FC = () => {
               ["basePurple", swatch.basePurple],
               ["gray90", swatch.gray90],
               ["red60", swatch.red60],
-              ["baseBlue", swatch.baseBlue],
+              ["blue10", swatch.blue10],
             ]}
           />
         </div>

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ColorTranslator } from "colortranslator";
 import { ColorToken, GradientToken } from "../../types/tokens";
 
 function parseToken(token) {
@@ -11,7 +10,6 @@ function parseToken(token) {
   //Diez doesnt have a good way to get the angle of the gradient so this splits the token value based on , and (
   //The array that is generated is ['linear-gradient', angle, ...] so angle is the 1st element
   const angle = token.linearGradient.split(/[(,]/)[1];
-  console.log(angle);
   return {
     angle: angle,
     color1: color1,
@@ -35,10 +33,22 @@ function prettyPrint(token, gradientColors) {
   const gradientValues = parseToken(token);
   const color1Token = getColorTokenName(gradientValues.color1, gradientColors);
   const color1 =
-    "( " + color1Token + "," + gradientValues.color1.a.toFixed(2) + ")";
+    "( " +
+    color1Token +
+    "," +
+    gradientValues.color1.a
+      .toFixed(3)
+      .replace(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/, "$1$2$3") +
+    ")";
   const color2Token = getColorTokenName(gradientValues.color2, gradientColors);
   const color2 =
-    "( " + color2Token + "," + gradientValues.color2.a.toFixed(2) + ")";
+    "( " +
+    color2Token +
+    "," +
+    gradientValues.color2.a
+      .toFixed(3)
+      .replace(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/, "$1$2$3") +
+    ")";
   return (
     "linear-gradient(" + gradientValues.angle + color1 + "," + color2 + ")"
   );

@@ -34,25 +34,23 @@ function prettyPrint(token, gradientColors) {
   if (token == undefined) return "";
   const gradientValues = parseToken(token);
   const color1Token = getColorTokenName(gradientValues.color1, gradientColors);
-  const color1 =
-    "(" +
-    color1Token +
-    "," +
-    gradientValues.color1.a
-      .toFixed(3)
-      .replace(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/, "$1$2$3") +
-    ")";
+  const color1Percent = (gradientValues.color1.a * 100)
+    .toFixed(3)
+    .replace(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/, "$1$2$3");
   const color2Token = getColorTokenName(gradientValues.color2, gradientColors);
-  const color2 =
-    "( " +
-    color2Token +
-    "," +
-    gradientValues.color2.a
-      .toFixed(3)
-      .replace(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/, "$1$2$3") +
-    ")";
+  const color2Percent = (gradientValues.color2.a * 100)
+    .toFixed(3)
+    .replace(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/, "$1$2$3");
   return (
-    "linear-gradient(" + gradientValues.angle + color1 + "," + color2 + ")"
+    gradientValues.angle +
+    ", \n" +
+    color1Percent +
+    "% " +
+    color1Token +
+    " to " +
+    color2Percent +
+    "% " +
+    color2Token
   );
 }
 
@@ -79,32 +77,25 @@ const GradientTokens: React.FC<GradientTokensProps> = ({
       <tbody>
         {tokens.map(([name, token]) => (
           <tr key={name}>
-            <td>{`${prefix}.${name}.linearGradient`}</td>
+            <td>{`${prefix}.${name}\n.linearGradient`}</td>
             <td>{prettyPrint(token, gradientColors)}</td>
-            <td style={token.backgroundStyle}>
-              {/* <svg height="150" width="150">
+            <td>
+              <svg width="205" height="96">
                 <defs>
-                  <linearGradient id={name} x1="0%" y1="0%" x2="100%" y2="0%">
+                  <linearGradient id={name} gradientTransform="rotate(90)">
                     <stop
-                      offset={parseToken(token.linearGradient)[2]}
-                      stopColor={parseToken(token.linearGradient)[1]}
+                      offset={parseToken(token).offset1}
+                      stopColor={parseToken(token).color1.color}
                     />
                     <stop
-                      offset={parseToken(token.linearGradient)[4]}
-                      stopColor={parseToken(token.linearGradient)[3]}
+                      offset={parseToken(token).offset2}
+                      stopColor={parseToken(token).color2.color}
                     />
                   </linearGradient>
-                  <rect
-                    x="10"
-                    y="10"
-                    rx="15"
-                    ry="15"
-                    width="100"
-                    height="100"
-                    fill={`url(#${name})`}
-                  />
                 </defs>
-              </svg> */}
+
+                <rect width="205" height="96" fill={`url(#${name})`} />
+              </svg>
             </td>
           </tr>
         ))}

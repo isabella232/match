@@ -82,7 +82,7 @@ const GradientTokens: React.FC<GradientTokensProps> = ({
             <td>
               <svg width="205" height="96">
                 <defs>
-                  <linearGradient id={name} gradientTransform="rotate(90)">
+                  <linearGradient id={name}>
                     <stop
                       offset={parseToken(token).offset1}
                       stopColor={parseToken(token).color1.color}

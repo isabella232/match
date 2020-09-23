@@ -3,12 +3,19 @@
 exports[`Wombat it should render Wombat with the brand color 1`] = `
 <DocumentFragment>
   .c0 {
+  color: hsla(217.33333333333334,42.05607476635513%,20.980392156862745%,1);
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: Whitney SSm A,Whitney SSm B,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.c1 {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(3,max-content);
 }
 
-.c0 > div {
+.c1 > div {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,10 +35,10 @@ exports[`Wombat it should render Wombat with the brand color 1`] = `
 }
 
 <div
-    class=""
+    class="c0"
   >
     <div
-      class="c0"
+      class="c1"
       color="brand"
     >
       <div>

@@ -8,4 +8,5 @@ export type {
   MediaQuery,
   Unit,
   Weight,
+  DropShadows,
 } from "@twilio-labs/match-tokens-twilio";

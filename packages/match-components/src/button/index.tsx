@@ -29,6 +29,7 @@ Button.propTypes = {
 Button.defaultProps = {
   variant: ButtonVariant.PRIMARY,
   type: ButtonType.BUTTON,
+  size: ButtonSize.NORMAL,
   disabled: false,
   fullWidth: false,
   download: false,

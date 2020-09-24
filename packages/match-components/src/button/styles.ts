@@ -66,6 +66,12 @@ const variants = {
       background: ${({ theme }) => theme.swatch.blue70.color};
       border-color: ${({ theme }) => theme.swatch.blue70.color};
     }
+
+    &:disabled {
+      color: ${({ theme }) => theme.swatch.gray100.color};
+      background: ${({ theme }) => theme.swatch.gray40.color};
+      border-color: ${({ theme }) => theme.swatch.gray40.color};
+    }
   `,
   [ButtonVariant.INVERSE]: css`
     color: ${({ theme }) => theme.swatch.blue60.color};
@@ -87,6 +93,12 @@ const variants = {
       color: ${({ theme }) => theme.text.inversePrimary.color};
       background: ${({ theme }) => theme.swatch.blue100.color};
       border-color: ${({ theme }) => theme.swatch.blue100.color};
+    }
+
+    &:disabled {
+      color: ${({ theme }) => theme.swatch.gray100.color};
+      background: ${({ theme }) => theme.swatch.gray40.color};
+      border-color: ${({ theme }) => theme.swatch.gray40.color};
     }
   `,
 };

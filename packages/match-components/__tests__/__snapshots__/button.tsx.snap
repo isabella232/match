@@ -20,6 +20,8 @@ exports[`Button snapshot 1`] = `
   border-width: 2px;
   border-radius: 4px;
   cursor: pointer;
+  padding: calc(16px - 2px) calc(24px - 2px);
+  font-size: 1rem;
   color: hsla(0,0%,100%,1);
   background: hsla(213.78378378378378,98.23008849557523%,44.31372549019608%,1);
   border-color: hsla(213.78378378378378,98.23008849557523%,44.31372549019608%,1);

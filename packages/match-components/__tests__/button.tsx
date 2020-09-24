@@ -19,7 +19,7 @@ describe("Button", () => {
     expect(getByText(/click me/i).tagName.toLowerCase()).toBe("button");
   });
 
-  test("snapshot", (): void => {
+  test("snapshot", () => {
     const { asFragment } = render(<ButtonWithTheme>Click Me</ButtonWithTheme>);
     expect(asFragment()).toMatchSnapshot();
   });

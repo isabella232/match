@@ -13,7 +13,6 @@ export enum ButtonType {
 export enum ButtonSize {
   NORMAL = "normal",
   SMALL = "small",
-  ICON = "icon",
 }
 
 export interface ButtonProps {

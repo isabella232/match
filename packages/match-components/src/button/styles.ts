@@ -4,15 +4,11 @@ import { ButtonProps, ButtonSize, ButtonVariant } from "./types";
 
 const sizes = {
   [ButtonSize.NORMAL]: css`
-    padding: 14px 22px;
+    padding: calc(16px - 2px) calc(24px - 2px);
     font-size: ${({ theme }) => theme.fontSize.scale100.rem};
   `,
   [ButtonSize.SMALL]: css`
-    padding: 6px 14px;
-    font-size: ${({ theme }) => theme.fontSize.scale80.rem};
-  `,
-  [ButtonSize.ICON]: css`
-    padding: 10px;
+    padding: calc(8px - 2px) calc(16px - 2px);
     font-size: ${({ theme }) => theme.fontSize.scale80.rem};
   `,
 };

@@ -10,16 +10,20 @@ export const parameters = {
         value: "#FFFFFF",
       },
       {
-        name: "Blue",
-        value: "#001489",
-      },
-      {
         name: "Light",
         value: "#F4F4F6",
       },
       {
         name: "Darkest",
         value: "#06033A",
+      },
+      {
+        name: "Twilio Blue",
+        value: "#001489",
+      },
+      {
+        name: "SendGrid Blue",
+        value: "#0263E0",
       },
     ],
   },

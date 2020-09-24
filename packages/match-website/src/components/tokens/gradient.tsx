@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ColorToken, GradientToken } from "../../types/tokens";
+import { Color } from "@twilio-labs/match-tokens";
 
 function parseToken(token) {
   const color1 = token.stops[0].color;
@@ -7,15 +8,23 @@ function parseToken(token) {
   const color2 = token.stops[1].color;
   const offset2 = token.stops[1].position;
 
+  const stops: Array<[Color, number]> = [];
+
+  token.stops.forEach((stop) => {
+    stops.push([stop.color, stop.position]);
+  });
+
   //Diez doesnt have a good way to get the angle of the gradient so this splits the token value based on , and (
   //The array that is generated is ['linear-gradient', angle, ...] so angle is the 1st element
-  const angle = token.linearGradient.split(/[(,]/)[1];
+  const angle = token.linearGradient.match(/linear-gradient\(([\s\w]+),/)[1];
+
   return {
     angle: angle,
     color1: color1,
     offset1: offset1,
     color2: color2,
     offset2: offset2,
+    stops: stops,
   };
 }
 
@@ -33,25 +42,17 @@ function getColorTokenName(color, gradientColors) {
 function prettyPrint(token, gradientColors) {
   if (token == undefined) return "";
   const gradientValues = parseToken(token);
-  const color1Token = getColorTokenName(gradientValues.color1, gradientColors);
-  const color1Percent = (gradientValues.color1.a * 100)
-    .toFixed(3)
-    .replace(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/, "$1$2$3");
-  const color2Token = getColorTokenName(gradientValues.color2, gradientColors);
-  const color2Percent = (gradientValues.color2.a * 100)
-    .toFixed(3)
-    .replace(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/, "$1$2$3");
-  return (
-    gradientValues.angle +
-    ", \n" +
-    color1Percent +
-    "% " +
-    color1Token +
-    " to " +
-    color2Percent +
-    "% " +
-    color2Token
+  const colorInfo: Array<string> = [];
+  gradientValues.stops.map(([gradientColor]) =>
+    colorInfo.push(
+      (gradientColor.a * 100)
+        .toFixed(3)
+        .replace(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/, "$1$2$3") +
+        "% " +
+        getColorTokenName(gradientColor, gradientColors)
+    )
   );
+  return gradientValues.angle + ", " + colorInfo.join(", ");
 }
 
 interface GradientTokensProps {
@@ -77,20 +78,21 @@ const GradientTokens: React.FC<GradientTokensProps> = ({
       <tbody>
         {tokens.map(([name, token]) => (
           <tr key={name}>
-            <td>{`${prefix}.${name}\n.linearGradient`}</td>
+            <td>{`${prefix}.${name}.linearGradient`}</td>
             <td>{prettyPrint(token, gradientColors)}</td>
             <td>
               <svg width="205" height="96">
                 <defs>
                   <linearGradient id={name}>
-                    <stop
-                      offset={parseToken(token).offset1}
-                      stopColor={parseToken(token).color1.color}
-                    />
-                    <stop
-                      offset={parseToken(token).offset2}
-                      stopColor={parseToken(token).color2.color}
-                    />
+                    {parseToken(token).stops.map(
+                      ([gradientColor, position]) => (
+                        <stop
+                          key={position + "_" + gradientColor.color}
+                          offset={position}
+                          stopColor={gradientColor.color}
+                        />
+                      )
+                    )}
                   </linearGradient>
                 </defs>
 

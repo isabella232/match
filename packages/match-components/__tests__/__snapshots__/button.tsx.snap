@@ -59,7 +59,6 @@ exports[`Button snapshot 1`] = `
     <button
       class="c1"
       type="button"
-      variant="primary"
     >
       Click Me
     </button>

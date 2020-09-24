@@ -9,7 +9,7 @@ const Button: React.FC<ButtonProps> = ({ type, ...props }) => {
 
   return (
     <StyledButton
-      as={props.href ? "a" : undefined}
+      forwardedAs={props.href ? "a" : undefined}
       type={!props.href ? type : undefined}
       {...props}
     />

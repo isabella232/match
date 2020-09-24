@@ -103,7 +103,9 @@ const variants = {
   `,
 };
 
-const StyledButton = styled(Button)<ButtonProps>`
+const StyledButton = styled(Button).withConfig({
+  shouldForwardProp: (prop, validate) => validate(prop),
+})<ButtonProps>`
   display: inline-block;
   font-weight: ${({ theme }) => theme.fontWeight.medium.value};
   font-family: ${({ theme }) => theme.fontFamily.text};

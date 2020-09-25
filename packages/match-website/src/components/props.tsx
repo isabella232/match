@@ -3,45 +3,79 @@ import { ComponentDoc } from "react-docgen-typescript";
 import { usePluginData } from "@docusaurus/useGlobalData";
 
 interface PropsProps {
-  of: React.ComponentType;
+  of: string;
 }
+
+type ComponentProp = {
+  name: string;
+  type: string;
+  default: string;
+  description: string;
+};
 
 const Props: React.FC<PropsProps> = ({ of }) => {
   const docgens = usePluginData("docusaurus-plugin-react-docgen-typescript");
-  const doc: ComponentDoc = React.useMemo(
-    () => docgens.find((docgen) => docgen.displayName === of.name),
-    [docgens, of]
-  );
-  const hasDescription = React.useMemo(
-    () =>
-      Boolean(
-        Object.values(doc.props).filter((prop) => prop.description.length > 1)
-          .length
-      ),
-    [doc]
-  );
 
-  if (!doc) return <p>No component props found for {of.name} 😔</p>;
+  const props: ComponentProp[] = React.useMemo(() => {
+    const doc: ComponentDoc = docgens.find(
+      (docgen) => docgen.displayName === of
+    );
+    if (!doc) return [];
+
+    return Object.values(doc.props).map(
+      ({ name, required, type, defaultValue, description }) => {
+        const prop: ComponentProp = {
+          name: name + (!required ? "?" : ""),
+          type: type.raw && type.name === "enum" ? type.raw : type.name,
+          default: defaultValue ? defaultValue.value : "null",
+          description,
+        };
+
+        /**
+         * Get and format the ENUM key as default value
+         * e.g. 'primary' instead of Variant.PRIMARY
+         */
+        if (defaultValue && type.name === "enum") {
+          prop.default = `'${defaultValue.value
+            .split(".")
+            .pop()
+            .toLowerCase()}'`;
+        }
+
+        /**
+         * Format all possible enum values as comma separated list
+         * when no description is provided.
+         */
+        if (!description && type.name === "enum") {
+          prop.description = type.value
+            .map(({ value }) => value.replace(/"/g, "'"))
+            .join(", ");
+        }
+
+        return prop;
+      }
+    );
+  }, [docgens, of]);
+
+  if (props.length === 0) return <p>No component props found for {of} 😔</p>;
 
   return (
     <table>
       <thead>
         <tr>
-          <th>Property</th>
+          <th>Name</th>
           <th>Type</th>
-          <th>Required</th>
           <th>Default</th>
-          {hasDescription && <th>Description</th>}
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
-        {Object.values(doc.props).map((prop) => (
+        {props.map((prop) => (
           <tr key={prop.name}>
             <td>{prop.name}</td>
-            <td>{prop.type.name}</td>
-            <td>{prop.required ? "true" : "false"}</td>
-            <td>{prop.defaultValue.value}</td>
-            {hasDescription && <td>{prop.description}</td>}
+            <td>{prop.type}</td>
+            <td>{prop.default}</td>
+            <td>{prop.description}</td>
           </tr>
         ))}
       </tbody>

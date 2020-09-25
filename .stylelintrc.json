@@ -16,7 +16,7 @@
       true,
       {
         "severity": "warning",
-        "ignore": ["multicolumn"]
+        "ignore": ["multicolumn", "css3-cursors"]
       }
     ]
   }

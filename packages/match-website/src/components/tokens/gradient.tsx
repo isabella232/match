@@ -54,11 +54,16 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
         );
         const angle = matchedRegex ? matchedRegex[1] : "0deg";
         const value = angle + ", " + colorInfo.join(", ");
+        console.log(token.start);
 
         return {
           value: value, // ths should end up being the printed value
           angle: angle,
           stops: stops,
+          startx: token.start.x,
+          starty: token.start.y,
+          stopx: token.end.x,
+          stopy: token.end.y,
           name: name,
         };
       }),
@@ -82,7 +87,13 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
             <td>
               <svg width="205" height="96">
                 <defs>
-                  <linearGradient id={token.name}>
+                  <linearGradient
+                    id={token.name}
+                    x1={token.startx}
+                    x2={token.stopx}
+                    y1={token.starty}
+                    y2={token.stopy}
+                  >
                     {token.stops.map((stop) => (
                       <stop
                         key={

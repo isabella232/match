@@ -1,71 +1,69 @@
 import * as React from "react";
-import { ColorToken, GradientToken } from "../../types/tokens";
+import { GradientToken } from "../../types/tokens";
 import { Color } from "@twilio-labs/match-tokens";
-
-function parseToken(token) {
-  const color1 = token.stops[0].color;
-  const offset1 = token.stops[0].position;
-  const color2 = token.stops[1].color;
-  const offset2 = token.stops[1].position;
-
-  const stops: Array<[Color, number]> = [];
-
-  token.stops.forEach((stop) => {
-    stops.push([stop.color, stop.position]);
-  });
-
-  //Diez doesnt have a good way to get the angle of the gradient so this splits the token value based on , and (
-  //The array that is generated is ['linear-gradient', angle, ...] so angle is the 1st element
-  const angle = token.linearGradient.match(/linear-gradient\(([\s\w]+),/)[1];
-
-  return {
-    angle: angle,
-    color1: color1,
-    offset1: offset1,
-    color2: color2,
-    offset2: offset2,
-    stops: stops,
-  };
-}
-
-function getColorTokenName(color, gradientColors) {
-  const colorToken = gradientColors.find(
-    (gradientColor) =>
-      gradientColor[1].h == color.h &&
-      gradientColor[1].s == color.s &&
-      gradientColor[1].l == color.l
-  );
-  if (colorToken) return colorToken[0];
-  return "";
-}
-
-function prettyPrint(token, gradientColors) {
-  if (token == undefined) return "";
-  const gradientValues = parseToken(token);
-  const colorInfo: Array<string> = [];
-  gradientValues.stops.map(([gradientColor]) =>
-    colorInfo.push(
-      (gradientColor.a * 100)
-        .toFixed(3)
-        .replace(/^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/, "$1$2$3") +
-        "% " +
-        getColorTokenName(gradientColor, gradientColors)
-    )
-  );
-  return gradientValues.angle + ", " + colorInfo.join(", ");
-}
+import { useTheme } from "@twilio-labs/match-themes";
 
 interface GradientTokensProps {
   tokens: GradientToken[];
-  gradientColors: ColorToken[];
   prefix: string;
 }
 
-const GradientTokens: React.FC<GradientTokensProps> = ({
-  tokens,
-  gradientColors,
-  prefix,
-}) => {
+type GradientStop = {
+  color: Color;
+  position: number;
+};
+
+const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
+  const { swatch } = useTheme();
+  const parsedTokens = React.useMemo(
+    () =>
+      tokens.map(([name, token]) => {
+        const stops: GradientStop[] = [];
+        const colorInfo: string[] = [];
+
+        token.stops.forEach((stop) => {
+          Object.entries(swatch).some(([tokenName, color]) => {
+            //do this for each swatch and find corresponding color
+            if (
+              color.h == stop.color.h &&
+              color.s == stop.color.s &&
+              color.l == stop.color.l
+            ) {
+              stops.push({
+                color: stop.color,
+                position: stop.position,
+              });
+              colorInfo.push(
+                (stop.color.a * 100)
+                  .toFixed(3)
+                  .replace(
+                    /^([\d,]+)$|^([\d,]+)\.0*$|^([\d,]+\.\d*?)0*$/,
+                    "$1$2$3"
+                  ) +
+                  "% " +
+                  tokenName
+              );
+              return true;
+            }
+          });
+        });
+
+        //Diez doesnt have a good way to get the angle of the gradient so parse value to get angle
+        const matchedRegex = token.linearGradient.match(
+          /linear-gradient\(([\s\w]+),/
+        );
+        const angle = matchedRegex ? matchedRegex[1] : "0deg";
+        const value = angle + ", " + colorInfo.join(", ");
+
+        return {
+          value: value, // ths should end up being the printed value
+          angle: angle,
+          stops: stops,
+          name: name,
+        };
+      }),
+    [tokens, swatch]
+  );
   return (
     <table>
       <thead>
@@ -76,27 +74,28 @@ const GradientTokens: React.FC<GradientTokensProps> = ({
         </tr>
       </thead>
       <tbody>
-        {tokens.map(([name, token]) => (
-          <tr key={name}>
-            <td>{`${prefix}.${name}.linearGradient`}</td>
-            <td>{prettyPrint(token, gradientColors)}</td>
+        {parsedTokens.map((token) => (
+          <tr key={token.name}>
+            {console.log(token.stops)}
+            <td>{`${prefix}.${token.name}.linearGradient`}</td>
+            <td>{token.value}</td>
             <td>
               <svg width="205" height="96">
                 <defs>
-                  <linearGradient id={name}>
-                    {parseToken(token).stops.map(
-                      ([gradientColor, position]) => (
-                        <stop
-                          key={position + "_" + gradientColor.color}
-                          offset={position}
-                          stopColor={gradientColor.color}
-                        />
-                      )
-                    )}
+                  <linearGradient id={token.name}>
+                    {token.stops.map((stop) => (
+                      <stop
+                        key={
+                          stop.position + "-" + token.name + "-" + stop.color.a
+                        }
+                        offset={stop.position}
+                        stopColor={stop.color.color}
+                      />
+                    ))}
                   </linearGradient>
                 </defs>
 
-                <rect width="205" height="96" fill={`url(#${name})`} />
+                <rect width="205" height="96" fill={`url(#${token.name})`} />
               </svg>
             </td>
           </tr>

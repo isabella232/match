@@ -224,21 +224,7 @@ const Tokens: React.FC = () => {
       {gradientTokens.length > 0 && (
         <div>
           <h2>Gradients</h2>
-          <GradientTokens
-            prefix="gradient"
-            tokens={gradientTokens}
-            gradientColors={[
-              ["brandHighlight", swatch.brandHighlight],
-              ["baseBlue", swatch.baseBlue],
-              ["baseOrange", swatch.baseOrange],
-              ["baseGreen", swatch.baseGreen],
-              ["blue60", swatch.blue60],
-              ["basePurple", swatch.basePurple],
-              ["gray90", swatch.gray90],
-              ["red60", swatch.red60],
-              ["blue10", swatch.blue10],
-            ]}
-          />
+          <GradientTokens prefix="gradient" tokens={gradientTokens} />
         </div>
       )}
 

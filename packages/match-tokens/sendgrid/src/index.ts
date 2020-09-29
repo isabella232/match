@@ -7,12 +7,11 @@ import {
   Swatch,
   FontSize,
   FontWeight,
-  Shadow,
 } from "@twilio-labs/match-tokens-core";
 import { fontFamily } from "./font-family";
 import { Background } from "./background";
 import { Text } from "./text";
-//import { Shadow } from "./shadow";
+import { Shadow } from "./shadow";
 
 export const sendGridDesignTokens = {
   breakpoint: new Breakpoint(),

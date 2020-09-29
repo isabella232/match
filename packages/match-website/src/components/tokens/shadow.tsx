@@ -23,7 +23,7 @@ const ShadowTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
           <tr key={name}>
             <td>{`${prefix}.${name}.boxShadow`}</td>
             {console.log(token)}
-            <td>{token.shadows[0].boxShadow}</td>
+            <td>{token.boxShadow}</td>
             <td></td>
           </tr>
         ))}

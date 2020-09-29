@@ -3,7 +3,7 @@ const {
 } = require("@twilio-labs/match-tokens-core/dist/framework/sdk/css-drop-shadows");
 
 Object.defineProperties(DropShadows.prototype, {
-  dropShadows: {
+  boxShadow: {
     get() {
       return dropShadowsToCss(this);
     },

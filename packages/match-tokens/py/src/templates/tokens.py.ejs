@@ -15,3 +15,9 @@ text = {
     '<%=name%>': '<%=token.color%>',
 <% }); -%>
 }
+
+gradient = {
+<% Object.entries(gradient).forEach(([name, token]) => { -%>
+    '<%=name%>': '<%=token.linearGradient%>',
+<% }); -%>
+}

@@ -8,4 +8,108 @@ slug: /components/button/
 import { Button } from "@twilio-labs/match-components";
 import { Props } from "../../src/components/props";
 
+A button communicates actions users can take with a single click or tap. They are found throughout the interface, typically in dialogues, cards, forms, and modals.
+
+**Status:** production
+
+**Version:** 0.1.0
+
+**Sources:** [Github](https://github.com/twilio-labs/match/tree/main/packages/match-components/src/button)
+
+## Usage Guide
+
+### Installation
+
+```shell
+yarn add @twilio-labs/match-components
+```
+
+### Usage
+
+```jsx
+import { Button } from "@twilio-labs/match-components";
+
+const Component = () => (
+  <Button variant="secondary" size="small" onClick={() => {}}>
+    Ahoy
+  </Button>
+);
+```
+
+### Props
+
 <Props of="Button" />
+
+---
+
+## Guidelines
+
+### About Buttons
+
+The Button component enables userse to trigger an event such as submitting a form, opening a modal and confirming or canceling an action. Buttons make it clear what users should do to continue with their main flow.
+
+Prioritize the actions on a page and use the button sizes and types to clarify which are the most important. If you have many actions, consider using button links to offer less important ones.
+
+### Accessibility
+
+Here are some quick tips to improve the user experience for those who are reliant on Assistive Technology (A.T.) such as screen readers and dictation software.
+
+- Choose button text that clearly describes the action that is about to happen
+- Use anchors that look like buttons sparingly. Voice dictation users may encounter issues when trying to activate them. A user may say, “Click the read more button”, but the dictation software won’t respond since it can’t tell what the anchor looks like visually. Use an alternative where possible, such as an anchor with an icon or with a larger font size.
+- Avoid using only color to communicate information. Use another indicator such as an icon or button copy for users to be certain of the action and the next step.
+- Avoid small font sizes and blinking / moving text within the button. Font sizes also affect whether it meets AA / AAA under WCAG guidelines.
+- The area for clicking and tapping the button must have enough space within and around the button for usability on all devices.
+
+---
+
+## Composition
+
+Use a button to indicate that users can trigger an action.
+
+In general, align buttons to the direction of the text (e.g., left-aligned in English) for easy scannability.
+
+When moving customers through a sequence, place the primary button in the direction of the movement (e.g., a “Next” button goes on the right in an English-language flow).
+
+---
+
+## Examples
+
+### Primary
+
+Primary buttons indicate the most important action a user may take on the current screen.
+
+```jsx live
+<Button>Ahoy</Button>
+```
+
+### Secondary
+
+Secondary buttons indicate a recommended action for a user, but is not the most important one available on the current screen.
+
+```jsx live
+<Button variant="secondary">Ahoy</Button>
+```
+
+### Tertiary
+
+```jsx live
+<div style={{ background: "#06033A", padding: "1rem" }}>
+  <Button variant="tertiary">Ahoy</Button>
+</div>
+```
+
+### Inverse
+
+```jsx live
+<div style={{ background: "#06033A", padding: "1rem" }}>
+  <Button variant="inverse">Ahoy</Button>
+</div>
+```
+
+### Disabled
+
+Disabled buttons will not recieve any click events. It should be obvious to the user why the button might be disabled (e.g. it follows an empty text field).
+
+```jsx live
+<Button disabled>Submit</Button>
+```

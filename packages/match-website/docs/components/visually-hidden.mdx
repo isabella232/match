@@ -10,17 +10,33 @@ import { Props } from "../../src/components/props";
 
 Utility for visually hiding content to provide an accessible experience for users of assistive technology.
 
-**Sources:** [[Github]](https://github.com/twilio-labs/match/blob/main/packages/match-components/src/visually-hidden.tsx)
+**Status:** production
 
-**Version:** [0.1.0]
+**Version:** 0.1.0
 
-**Install:** `yarn add @twilio-labs/components`
+**Sources:** [Github](https://github.com/twilio-labs/match/blob/main/packages/match-components/src/visually-hidden.tsx)
 
-**Import:** `import { VisuallyHidden } from '@twilio-labs/components'`
+## Usage Guide
 
-**Props**
+### Installation
+
+```shell
+yarn add @twilio-labs/match-components
+```
+
+### Props
 
 <Props of="VisuallyHidden" />
+
+### Usage
+
+```jsx
+import { VisuallyHidden } from "@twilio-labs/match-components";
+
+const Component = () => (
+  <VisuallyHidden as="p">Visually hidden text</VisuallyHidden>
+);
+```
 
 ## Examples
 

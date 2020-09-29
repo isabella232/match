@@ -40,12 +40,12 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
 
         return {
           value: value, // this should end up being the printed value
-          stops: stops,
-          startx: token.start.x,
-          starty: token.start.y,
-          stopx: token.end.x,
-          stopy: token.end.y,
           name: name,
+          style: {
+            width: "193px",
+            height: "96px",
+            background: token.linearGradient,
+          },
         };
       }),
     [tokens]
@@ -65,27 +65,7 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
             <td>{`${prefix}.${token.name}.linearGradient`}</td>
             <td>{token.value}</td>
             <td>
-              <svg width="205" height="96">
-                <defs>
-                  <linearGradient
-                    id={token.name}
-                    x1={token.startx}
-                    x2={token.stopx}
-                    y1={token.starty}
-                    y2={token.stopy}
-                  >
-                    {token.stops.map((stop) => (
-                      <stop
-                        key={stop.position + "-" + token.name}
-                        offset={stop.position}
-                        stopColor={stop.color.color}
-                      />
-                    ))}
-                  </linearGradient>
-                </defs>
-
-                <rect width="205" height="96" fill={`url(#${token.name})`} />
-              </svg>
+              <div style={token.style}></div>
             </td>
           </tr>
         ))}

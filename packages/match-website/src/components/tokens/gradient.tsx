@@ -1,7 +1,6 @@
 import * as React from "react";
 import { GradientToken } from "../../types/tokens";
 import { Color } from "@twilio-labs/match-tokens";
-import { useTheme } from "@twilio-labs/match-themes";
 import { ColorTranslator } from "colortranslator";
 
 interface GradientTokensProps {
@@ -16,7 +15,6 @@ type GradientStop = {
 };
 
 const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
-  const { swatch } = useTheme();
   const parsedTokens = React.useMemo(
     () =>
       tokens.map(([name, token]) => {
@@ -28,7 +26,7 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
           })
         );
 
-        //Diez doesnt have a good way to get the angle of the gradient so parse value to get angle
+        // Diez doesnt have a good way to get the angle of the gradient so parse value to get angle
         const matchedRegex = token.linearGradient.match(
           /linear-gradient\(([\s\w]+),/
         );
@@ -41,7 +39,7 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
             .join(", ");
 
         return {
-          value: value, // ths should end up being the printed value
+          value: value, // this should end up being the printed value
           stops: stops,
           startx: token.start.x,
           starty: token.start.y,
@@ -50,7 +48,7 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
           name: name,
         };
       }),
-    [tokens, swatch]
+    [tokens]
   );
   return (
     <table>

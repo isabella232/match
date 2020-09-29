@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ShadowToken } from "../../types/tokens";
-import { useTheme } from "@twilio-labs/match-themes";
+import { ColorTranslator } from "colortranslator";
 
 interface SwatchTokensProps {
   tokens: ShadowToken[];
@@ -8,7 +8,36 @@ interface SwatchTokensProps {
 }
 
 const ShadowTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
-  const { swatch } = useTheme();
+  const parsedTokens = React.useMemo(
+    () =>
+      tokens.map(([name, token]) => {
+        const singleShadowValue = token.shadows.map((shadow) => {
+          return (
+            shadow.offset.x +
+            "px " +
+            shadow.offset.y +
+            "px " +
+            shadow.radius +
+            "px " +
+            ColorTranslator.toHEXA(shadow.color.color)
+          );
+        });
+        console.log(singleShadowValue);
+
+        return {
+          name: name,
+          shadow: token,
+          value: singleShadowValue.join(", "),
+          cssStyle: {
+            backgroundColor: "#ffffff",
+            width: "193px",
+            height: "96px",
+            boxShadow: token.boxShadow,
+          },
+        };
+      }),
+    [tokens]
+  );
   return (
     <table>
       <thead>
@@ -19,12 +48,13 @@ const ShadowTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
         </tr>
       </thead>
       <tbody>
-        {tokens.map(([name, token]) => (
-          <tr key={name}>
-            <td>{`${prefix}.${name}.boxShadow`}</td>
-            {console.log(token)}
-            <td>{token.boxShadow}</td>
-            <td></td>
+        {parsedTokens.map((token) => (
+          <tr key={token.name}>
+            <td>{`${prefix}.${token.name}.boxShadow`}</td>
+            <td>{token.value}</td>
+            <td>
+              <div style={token.cssStyle}></div>
+            </td>
           </tr>
         ))}
       </tbody>

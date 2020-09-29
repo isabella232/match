@@ -8,12 +8,14 @@ import { StringTokens } from "./string";
 import { UnitTokens } from "./unit";
 import { WeightTokens } from "./weight";
 import { TextColorTokens } from "./text-color";
+import { ShadowTokens } from "./shadow";
 import {
   ColorToken,
   BreakpointToken,
   StringToken,
   UnitToken,
   WeightToken,
+  ShadowToken,
 } from "../../types/tokens";
 
 const textSearch = (hayStack: string, needle: string) => {
@@ -32,6 +34,7 @@ const Tokens: React.FC = () => {
     fontWeight,
     background,
     text,
+    shadow,
   } = useTheme();
   const {
     state: { filterText },
@@ -127,6 +130,16 @@ const Tokens: React.FC = () => {
         )
         .filter(([key]) => textSearch(`text.${key}`, filterText)),
     [filterText, text]
+  );
+
+  const shadowTokens: ShadowToken[] = React.useMemo(
+    () =>
+      Object.entries(shadow)
+        .filter(([key]) =>
+          ["card", "navigation", "image", "large", "inverse"].includes(key)
+        )
+        .filter(([key]) => textSearch(`shadow.${key}`, filterText)),
+    [filterText, shadow]
   );
 
   const hasColorTokens = Boolean(
@@ -240,6 +253,13 @@ const Tokens: React.FC = () => {
         <div>
           <h2>Font Weights</h2>
           <WeightTokens prefix="fontWeight" tokens={fontWeightTokens} />
+        </div>
+      )}
+
+      {shadowTokens.length > 0 && (
+        <div>
+          <h2>Shadows</h2>
+          <ShadowTokens prefix="shadow" tokens={shadowTokens} />
         </div>
       )}
     </div>

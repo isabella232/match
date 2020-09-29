@@ -1,3 +1,3 @@
 export declare class DropShadows {
-  dropShadows: string;
+  boxShadow: string;
 }

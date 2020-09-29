@@ -11,7 +11,7 @@ export const dropShadowsToCss = (dropShadows: DropShadowsData) => {
       shadow.radius
     }px ${colorToCss(shadow.color)}`;
   });
-  return singleDropShadows.join(" , ");
+  return singleDropShadows.join(", ");
 };
 
 /**
@@ -27,5 +27,5 @@ export const dropShadowsToFilterCss = (dropShadows: DropShadowsData) => {
       shadow.offset.y
     }px ${radius}px ${colorToCss(shadow.color)})`;
   });
-  return singleDropShadows.join(" , ");
+  return singleDropShadows.join(", ");
 };

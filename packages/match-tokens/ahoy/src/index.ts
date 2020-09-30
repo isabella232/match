@@ -10,6 +10,7 @@ import {
   FontWeight,
   Background,
   Text,
+  Gradient,
 } from "@twilio-labs/match-tokens-core";
 
 export const ahoyDesignTokens = {
@@ -20,4 +21,5 @@ export const ahoyDesignTokens = {
   fontWeight: new FontWeight(),
   background: new Background(),
   text: new Text(),
+  gradient: new Gradient(),
 };

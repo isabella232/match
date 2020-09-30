@@ -9,6 +9,7 @@ import {
   FontWeight,
   Background,
   Text,
+  Gradient,
 } from "@twilio-labs/match-tokens-core";
 import { fontFamily } from "./font-family";
 
@@ -20,4 +21,5 @@ export const signalDesignTokens = {
   fontWeight: new FontWeight(),
   background: new Background(),
   text: new Text(),
+  gradient: new Gradient(),
 };

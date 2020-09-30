@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-declaration-block-no-ignored-properties"
+  ],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-rational-order",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "plugin/declaration-block-no-ignored-properties": true,
+    "plugin/no-unsupported-browser-features": [
+      true,
+      {
+        "severity": "warning",
+        "ignore": ["multicolumn", "css3-cursors"]
+      }
+    ]
+  }
+}

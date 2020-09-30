@@ -1,5 +1,4 @@
 {
-  "processors": ["stylelint-processor-styled-components"],
   "plugins": [
     "stylelint-no-unsupported-browser-features",
     "stylelint-declaration-block-no-ignored-properties"
@@ -7,8 +6,7 @@
   "extends": [
     "stylelint-config-recommended",
     "stylelint-config-rational-order",
-    "stylelint-config-prettier",
-    "stylelint-config-styled-components"
+    "stylelint-config-prettier"
   ],
   "rules": {
     "plugin/declaration-block-no-ignored-properties": true,

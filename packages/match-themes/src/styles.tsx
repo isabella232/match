@@ -12,6 +12,11 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const StyledBase = styled.div``;
+const StyledBase = styled.div`
+  color: ${({ theme }) => theme.text.primary.color};
+  font-weight: ${({ theme }) => theme.fontWeight.regular.value};
+  font-size: ${({ theme }) => theme.fontSize.scale100.rem};
+  font-family: ${({ theme }) => theme.fontFamily.text};
+`;
 
 export { GlobalStyles, StyledBase };

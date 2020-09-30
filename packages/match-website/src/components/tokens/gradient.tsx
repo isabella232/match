@@ -2,6 +2,7 @@ import * as React from "react";
 import { GradientToken } from "../../types/tokens";
 import { Color } from "@twilio-labs/match-tokens";
 import { ColorTranslator } from "colortranslator";
+import styles from "./styles.module.css";
 
 interface GradientTokensProps {
   tokens: GradientToken[];
@@ -39,11 +40,9 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
             .join(", ");
 
         return {
-          value: value, // this should end up being the printed value
+          value: value,
           name: name,
           style: {
-            width: "193px",
-            height: "96px",
             background: token.linearGradient,
           },
         };
@@ -65,7 +64,10 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
             <td>{`${prefix}.${token.name}.linearGradient`}</td>
             <td>{token.value}</td>
             <td>
-              <div style={token.style}></div>
+              <div
+                style={token.style}
+                className={styles.rectangleExample}
+              ></div>
             </td>
           </tr>
         ))}

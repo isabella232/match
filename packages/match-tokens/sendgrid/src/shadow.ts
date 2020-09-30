@@ -61,4 +61,13 @@ export class Shadow {
       }),
     ],
   });
+  inverse = new DropShadows({
+    shadows: [
+      new DropShadow({
+        offset: Point2D.make(0, 6),
+        radius: 8,
+        color: swatch.gray100.fade(0.88),
+      }),
+    ],
+  });
 }

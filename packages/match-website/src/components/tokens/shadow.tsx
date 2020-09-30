@@ -26,7 +26,6 @@ const ShadowTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
 
         return {
           name: name,
-          shadow: token,
           value: singleShadowValue.join(", "),
           cssStyle: {
             backgroundColor: "#ffffff",

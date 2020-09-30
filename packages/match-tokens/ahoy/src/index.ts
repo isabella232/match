@@ -10,9 +10,8 @@ import {
   FontWeight,
   Background,
   Text,
-  Shadow,
 } from "@twilio-labs/match-tokens-core";
-
+import { Shadow } from "./shadow";
 export const ahoyDesignTokens = {
   breakpoint: new Breakpoint(),
   swatch: new Swatch(),

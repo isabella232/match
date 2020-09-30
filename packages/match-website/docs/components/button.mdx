@@ -42,7 +42,7 @@ const Component = () => (
 
 ### About Buttons
 
-The Button component enables users to trigger an event such as submitting a form, opening a modal and confirming or canceling an action. Buttons make it clear what users should do to continue with their main flow.
+The Button component enables users to trigger an event such as submitting a form, opening a modal and confirming or canceling an action. Buttons make it clear what users should do to continue with their main flow. They may be used as CTA's to guide a user through a desired journey.
 
 Prioritize the actions on a page using button sizes and types to clarify which are the most important. If you have many actions, consider using button links to offer less important ones.
 
@@ -88,6 +88,8 @@ Secondary buttons indicate a recommended action for a user, but is not the most 
 
 ### Tertiary
 
+Tertiary buttons are used for actions that are not as equally important in the user experience. They are used in cases where the secondary button is not accessible due to the background color, such as darker colors.
+
 ```jsx live
 <div style={{ background: "#06033A", padding: "1rem" }}>
   <Button variant="tertiary">Ahoy</Button>
@@ -95,6 +97,8 @@ Secondary buttons indicate a recommended action for a user, but is not the most 
 ```
 
 ### Inverse
+
+Inverse buttons are formatted for use on top of various background colors, where the hover and active state of the primary or secondary buttons may clash against the background.
 
 ```jsx live
 <div style={{ background: "#06033A", padding: "1rem" }}>

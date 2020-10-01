@@ -7,3 +7,4 @@ export * from "./font-weight";
 export * from "./background";
 export * from "./text";
 export * from "./gradient";
+export * from "./button";

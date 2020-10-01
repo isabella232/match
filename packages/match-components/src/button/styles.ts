@@ -74,14 +74,14 @@ const variants = {
     }
   `,
   [ButtonVariant.INVERSE]: css`
-    color: ${({ theme }) => theme.swatch.blue60.color};
+    color: ${({ theme }) => theme.button.inverseText.color};
     background: ${({ theme }) => theme.swatch.white.color};
     border-color: ${({ theme }) => theme.swatch.white.color};
 
     &:hover {
       color: ${({ theme }) => theme.text.inversePrimary.color};
-      background: ${({ theme }) => theme.swatch.blue90.color};
-      border-color: ${({ theme }) => theme.swatch.blue90.color};
+      background: ${({ theme }) => theme.button.inverseHoverBg.color};
+      border-color: ${({ theme }) => theme.button.inverseHoverBg.color};
     }
 
     &:focus {
@@ -91,8 +91,8 @@ const variants = {
     &:focus,
     &:active {
       color: ${({ theme }) => theme.text.inversePrimary.color};
-      background: ${({ theme }) => theme.swatch.blue100.color};
-      border-color: ${({ theme }) => theme.swatch.blue100.color};
+      background: ${({ theme }) => theme.button.inverseFocusBg.color};
+      border-color: ${({ theme }) => theme.button.inverseFocusBg.color};
     }
 
     &:disabled {
@@ -115,6 +115,9 @@ const StyledButton = styled(Button).withConfig({
   border-width: 2px;
   border-radius: 4px;
   cursor: pointer;
+  transition-duration: 0.2s;
+  transition-property: color, background, border;
+  transition-timing-function: ease-in;
 
   &:focus {
     outline-width: 2px;
@@ -139,8 +142,7 @@ const StyledButton = styled(Button).withConfig({
     `}
 
   ${({ size }) => size && sizes[size]}
-  ${({ variant }) =>
-    variant && variants[variant]}
+  ${({ variant }) => variant && variants[variant]}
 `;
 
 export { StyledButton };

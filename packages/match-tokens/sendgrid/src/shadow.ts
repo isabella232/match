@@ -38,7 +38,7 @@ export class Shadow {
       new DropShadow({
         offset: Point2D.make(0, 2),
         radius: 8,
-        color: swatch.blue10,
+        color: swatch.gray20.fade(0.5),
       }),
       new DropShadow({
         offset: Point2D.make(0, 0),

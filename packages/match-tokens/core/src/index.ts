@@ -9,4 +9,4 @@ export * from "./text";
 export * from "./gradient";
 export * from "./shadow";
 
-export { DropShadows, DropShadowsData } from "./framework/prefabs/drop-shadows";
+export { DropShadows } from "./framework/prefabs/drop-shadows";

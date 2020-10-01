@@ -20,6 +20,12 @@ exports[`Button snapshot 1`] = `
   border-width: 2px;
   border-radius: 4px;
   cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-property: color,background,border;
+  transition-property: color,background,border;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
   padding: calc(16px - 2px) calc(24px - 2px);
   font-size: 1rem;
   color: hsla(0,0%,100%,1);

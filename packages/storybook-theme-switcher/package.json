@@ -22,10 +22,10 @@
     "type-check": "tsc --noEmit --composite false"
   },
   "dependencies": {
-    "@storybook/addons": "^6.0.21",
-    "@storybook/api": "^6.0.21",
-    "@storybook/components": "^6.0.21",
-    "@storybook/theming": "^6.0.21",
+    "@storybook/addons": "^6.0.22",
+    "@storybook/api": "^6.0.22",
+    "@storybook/components": "^6.0.22",
+    "@storybook/theming": "^6.0.22",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "core-js": "^3.6.5"
   },

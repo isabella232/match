@@ -3993,6 +3993,7 @@ __metadata:
   resolution: "@twilio-labs/match-tokens@workspace:packages/match-tokens/bundle"
   dependencies:
     "@babel/core": ^7.11.6
+    "@diez/prefabs": ^10.6.0
     "@rollup/plugin-babel": ^5.2.1
     "@rollup/plugin-commonjs": ^14.0.0
     "@rollup/plugin-node-resolve": ^8.4.0

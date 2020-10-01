@@ -278,7 +278,11 @@ const Tokens: React.FC = () => {
       {shadowTokens.length > 0 && (
         <div>
           <h2>Shadows</h2>
-          <ShadowTokens prefix="shadow" tokens={shadowTokens} />
+          <ShadowTokens
+            prefix="shadow"
+            tokens={shadowTokens}
+            backgroundColor={background.blue.color}
+          />
         </div>
       )}
     </div>

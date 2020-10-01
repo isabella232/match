@@ -4036,6 +4036,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^14.0.0
     "@rollup/plugin-node-resolve": ^8.4.0
     "@twilio-labs/match-tokens-ahoy": "workspace:packages/match-tokens/ahoy"
+    "@twilio-labs/match-tokens-core": "workspace:packages/match-tokens/core"
     "@twilio-labs/match-tokens-sendgrid": "workspace:packages/match-tokens/sendgrid"
     "@twilio-labs/match-tokens-signal": "workspace:packages/match-tokens/signal"
     "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio"

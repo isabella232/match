@@ -11,6 +11,7 @@ import {
   Background,
   Text,
   Gradient,
+  Button,
 } from "@twilio-labs/match-tokens-core";
 import { Shadow } from "./shadow";
 export const ahoyDesignTokens = {
@@ -23,4 +24,5 @@ export const ahoyDesignTokens = {
   text: new Text(),
   shadow: new Shadow(),
   gradient: new Gradient(),
+  button: new Button(),
 };

@@ -2,10 +2,9 @@
 .pnp.js
 node_modules
 dist
+build
 .diez
+.docusaurus
+.cache
 packages/match-tokens/**/lib
-packages/match-tokens/**/build
 packages/match-tokens/**/designs
-packages/match-website/.cache
-packages/match-website/.docz
-packages/match-website/public

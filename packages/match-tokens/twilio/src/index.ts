@@ -12,6 +12,7 @@ import {
   Text,
   Shadow,
   Gradient,
+  Button,
 } from "@twilio-labs/match-tokens-core";
 
 export const twilioDesignTokens = {
@@ -24,4 +25,5 @@ export const twilioDesignTokens = {
   text: new Text(),
   shadow: new Shadow(),
   gradient: new Gradient(),
+  button: new Button(),
 };

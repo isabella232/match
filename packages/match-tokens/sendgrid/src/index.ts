@@ -13,6 +13,7 @@ import { Background } from "./background";
 import { Text } from "./text";
 import { Shadow } from "./shadow";
 import { Gradient } from "./gradient";
+import { Button } from "./button";
 
 export const sendGridDesignTokens = {
   breakpoint: new Breakpoint(),
@@ -24,4 +25,5 @@ export const sendGridDesignTokens = {
   background: new Background(),
   shadow: new Shadow(),
   gradient: new Gradient(),
+  button: new Button(),
 };

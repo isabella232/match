@@ -43,7 +43,7 @@
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
     "@storybook/addon-knobs": "6.0.21",
-    "@testing-library/react": "^11.0.2",
+    "@testing-library/react": "^11.0.4",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
     "@types/jest-axe": "^3.5.0",

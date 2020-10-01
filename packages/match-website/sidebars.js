@@ -6,7 +6,7 @@ module.exports = {
       "getting-started/develop",
     ],
     ["Design Tokens"]: ["design-tokens/introduction", "design-tokens/tokens"],
-    ["Components"]: ["components/visually-hidden"],
+    ["Components"]: ["components/button", "components/visually-hidden"],
     ["Instapage"]: [
       "instapage/how-to-use-blocks",
       "instapage/card-list",

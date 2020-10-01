@@ -70,6 +70,9 @@ module.exports = {
         src: [path.resolve(__dirname, "../match-components/src/**/*.tsx")],
         global: true,
         parserOptions: {
+          shouldRemoveUndefinedFromOptional: true,
+          shouldExtractLiteralValuesFromEnum: true,
+          savePropValueAsString: true,
           propFilter: (prop) => {
             if (prop.parent) {
               return !prop.parent.fileName.includes("@types/react");

@@ -2,23 +2,22 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import styled from "styled-components";
 
-const asTags = [
-  "span",
-  "div",
-  "p",
-  "h1",
-  "h2",
-  "h3",
-  "h4",
-  "h5",
-  "h6",
-  "thead",
-  "tr",
-  "th",
-] as const;
+type asTags =
+  | "span"
+  | "div"
+  | "p"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "thead"
+  | "tr"
+  | "th";
 
 export interface VisuallyHiddenProps {
-  as: typeof asTags[number];
+  as: asTags;
 }
 
 const StyledVisuallyHidden = styled.span`
@@ -39,7 +38,20 @@ const VisuallyHidden: React.FC<VisuallyHiddenProps> = (props) => (
 );
 
 VisuallyHidden.propTypes = {
-  as: PropTypes.oneOf(asTags).isRequired,
+  as: PropTypes.oneOf([
+    "span",
+    "div",
+    "p",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "thead",
+    "tr",
+    "th",
+  ] as asTags[]).isRequired,
 };
 
 VisuallyHidden.defaultProps = {

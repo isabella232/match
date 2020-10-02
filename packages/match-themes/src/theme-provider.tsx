@@ -12,7 +12,7 @@ import { GlobalStyles, StyledBase } from "./styles";
 
 export interface MatchThemeProviderProps {
   theme?: ThemeVariants;
-  includeBaseStyles: boolean;
+  includeBaseStyles?: boolean;
 }
 
 const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({

@@ -12,12 +12,12 @@ import { GlobalStyles, StyledBase } from "./styles";
 
 export interface MatchThemeProviderProps {
   theme?: ThemeVariants;
-  includeBaseStyles?: boolean;
+  excludeBaseStyles?: boolean;
 }
 
 const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({
   theme,
-  includeBaseStyles,
+  excludeBaseStyles,
   ...props
 }) => {
   const tokens = React.useMemo(() => {
@@ -36,7 +36,7 @@ const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({
   return (
     <ThemeProvider theme={tokens}>
       <GlobalStyles />
-      {includeBaseStyles ? <StyledBase {...props} /> : <div {...props} />}
+      {!excludeBaseStyles ? <StyledBase {...props} /> : <div {...props} />}
     </ThemeProvider>
   );
 };
@@ -48,12 +48,12 @@ MatchThemeProvider.propTypes = {
     ThemeVariants.SIGNAL,
     ThemeVariants.AHOY,
   ]).isRequired,
-  includeBaseStyles: PropTypes.bool.isRequired,
+  excludeBaseStyles: PropTypes.bool,
 };
 
 MatchThemeProvider.defaultProps = {
   theme: ThemeVariants.TWILIO,
-  includeBaseStyles: true,
+  excludeBaseStyles: false,
 };
 
 export { MatchThemeProvider };

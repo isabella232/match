@@ -6,10 +6,10 @@ import { MatchContext } from "../../context/match";
 import styles from "./styles.module.css";
 
 interface ThemeSwitcherProps {
-  showDescription?: boolean;
+  noDescription?: boolean;
 }
 
-const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ showDescription }) => {
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ noDescription }) => {
   const {
     dispatch,
     state: { theme },
@@ -27,7 +27,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ showDescription }) => {
 
   return (
     <>
-      {showDescription && (
+      {!noDescription && (
         <p>
           We currently serve four different themes: Twilio, SendGrid, Signal,
           and Ahoy.

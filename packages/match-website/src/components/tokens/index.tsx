@@ -177,7 +177,7 @@ const Tokens: React.FC = () => {
 
   return (
     <div>
-      <ThemeSwitcher showDescription={false} />
+      <ThemeSwitcher noDescription />
       <TokenFilters />
 
       {!hasAnyTokens && <p>No tokens found for filter {`"${filterText}"`}</p>}

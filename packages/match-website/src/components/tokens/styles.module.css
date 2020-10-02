@@ -3,3 +3,13 @@
   height: 96px;
   background: #ffffff;
 }
+
+.textColorBackground {
+  display: inline-block;
+  width: 56px;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  border-radius: 3px;
+}

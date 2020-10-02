@@ -244,13 +244,7 @@ const Tokens: React.FC = () => {
       {textColorTokens.length > 0 && (
         <div>
           <h2>Text Colors</h2>
-          <TextColorTokens
-            tokens={textColorTokens}
-            bgLight={background.light.color}
-            bgDarkest={background.darkest.color}
-            bgColor={background.blue.color}
-            bgWhite={background.white.color}
-          />
+          <TextColorTokens tokens={textColorTokens} />
         </div>
       )}
 
@@ -278,11 +272,7 @@ const Tokens: React.FC = () => {
       {shadowTokens.length > 0 && (
         <div>
           <h2>Shadows</h2>
-          <ShadowTokens
-            prefix="shadow"
-            tokens={shadowTokens}
-            backgroundColor={background.blue.color}
-          />
+          <ShadowTokens prefix="shadow" tokens={shadowTokens} />
         </div>
       )}
     </div>

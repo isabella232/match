@@ -1,19 +1,16 @@
 import * as React from "react";
 import { ShadowToken } from "../../types/tokens";
 import { ColorTranslator } from "colortranslator";
+import { useTheme } from "@twilio-labs/match-themes";
 import styles from "./styles.module.css";
 
 interface SwatchTokensProps {
   tokens: ShadowToken[];
   prefix: string;
-  backgroundColor: string;
 }
 
-const ShadowTokens: React.FC<SwatchTokensProps> = ({
-  tokens,
-  prefix,
-  backgroundColor,
-}) => {
+const ShadowTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
+  const { background } = useTheme();
   const parsedTokens = React.useMemo(
     () =>
       tokens.map(([name, token]) => {
@@ -31,7 +28,7 @@ const ShadowTokens: React.FC<SwatchTokensProps> = ({
 
         //the inverse example should appear on a dark background
         const backgroundStyle =
-          name === "inverse" ? { background: backgroundColor } : {};
+          name === "inverse" ? { background: background.blue.color } : {};
 
         return {
           name: name,
@@ -42,7 +39,7 @@ const ShadowTokens: React.FC<SwatchTokensProps> = ({
           backgroundStyle: backgroundStyle,
         };
       }),
-    [tokens, backgroundColor]
+    [tokens, background]
   );
   return (
     <table>

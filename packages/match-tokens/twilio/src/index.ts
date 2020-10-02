@@ -10,6 +10,7 @@ import {
   FontWeight,
   Background,
   Text,
+  Shadow,
   Gradient,
   Button,
 } from "@twilio-labs/match-tokens-core";
@@ -22,6 +23,7 @@ export const twilioDesignTokens = {
   fontWeight: new FontWeight(),
   background: new Background(),
   text: new Text(),
+  shadow: new Shadow(),
   gradient: new Gradient(),
   button: new Button(),
 };

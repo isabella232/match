@@ -7,4 +7,7 @@ export * from "./font-weight";
 export * from "./background";
 export * from "./text";
 export * from "./gradient";
+export * from "./shadow";
 export * from "./button";
+
+export { DropShadows } from "./framework/prefabs/drop-shadows";

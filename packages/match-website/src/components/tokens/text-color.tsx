@@ -2,22 +2,47 @@ import * as React from "react";
 import { ColorTranslator } from "colortranslator";
 import { ColorToken } from "../../types/tokens";
 import { hex, score } from "wcag-contrast";
+import { useTheme } from "@twilio-labs/match-themes";
+import styles from "./styles.module.css";
 
 interface TextColorTokensProps {
   tokens: ColorToken[];
-  bgLight: string;
-  bgDarkest: string;
-  bgColor: string;
-  bgWhite: string;
 }
 
-const TextColorTokens: React.FC<TextColorTokensProps> = ({
-  tokens,
-  bgLight,
-  bgDarkest,
-  bgColor,
-  bgWhite,
-}) => {
+const TextColorTokens: React.FC<TextColorTokensProps> = ({ tokens }) => {
+  const { background } = useTheme();
+  const parsedTokens = React.useMemo(
+    () =>
+      tokens.map(([name, token]) => {
+        const backgroundColors = name.includes("inverse")
+          ? {
+              bg1: ColorTranslator.toHEX(background.blue.color),
+              bg2: ColorTranslator.toHEX(background.darkest.color),
+            }
+          : {
+              bg1: ColorTranslator.toHEX(background.white.color),
+              bg2: ColorTranslator.toHEX(background.light.color),
+            };
+        const value = ColorTranslator.toHEX(token.color);
+        return {
+          name: name,
+          value: value,
+          backgroundColors: backgroundColors,
+          score1: score(hex(value, backgroundColors.bg1)),
+          score2: score(hex(value, backgroundColors.bg2)),
+          style1: {
+            color: token.color,
+            backgroundColor: backgroundColors.bg1,
+          },
+          style2: {
+            color: token.color,
+            backgroundColor: backgroundColors.bg2,
+            marginLeft: "2px",
+          },
+        };
+      }),
+    [tokens, background]
+  );
   return (
     <table>
       <thead>
@@ -28,60 +53,23 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({
         </tr>
       </thead>
       <tbody>
-        {tokens.map(([name, token]) => (
-          <tr key={name}>
-            <td>{`text.${name}.color`}</td>
-            <td>{ColorTranslator.toHEX(token.color)}</td>
+        {parsedTokens.map((textColor) => (
+          <tr key={textColor.name}>
+            <td>{`text.${textColor.name}.color`}</td>
+            <td>{textColor.value}</td>
             <td>
               <div style={{ display: "inline" }}>
                 <div
-                  style={{
-                    color: `${token.color}`,
-                    backgroundColor: `${
-                      name.includes("inverse") ? bgColor : bgWhite
-                    }`,
-                    width: 56,
-                    height: 40,
-                    borderRadius: 3,
-                    textAlign: "center",
-                    paddingTop: 10,
-                    paddingBottom: 10,
-                    display: "inline-block",
-                  }}
+                  className={styles.textColorBackground}
+                  style={textColor.style1}
                 >
-                  {score(
-                    hex(
-                      ColorTranslator.toHEX(token.color),
-                      name.includes("inverse")
-                        ? ColorTranslator.toHEX(bgColor)
-                        : ColorTranslator.toHEX(bgWhite)
-                    )
-                  )}
+                  {textColor.score1}
                 </div>
                 <div
-                  style={{
-                    color: `${token.color}`,
-                    backgroundColor: `${
-                      name.includes("inverse") ? bgDarkest : bgLight
-                    }`,
-                    width: 56,
-                    height: 40,
-                    borderRadius: 3,
-                    textAlign: "center",
-                    paddingTop: 10,
-                    paddingBottom: 10,
-                    marginLeft: "2px",
-                    display: "inline-block",
-                  }}
+                  className={styles.textColorBackground}
+                  style={textColor.style2}
                 >
-                  {score(
-                    hex(
-                      ColorTranslator.toHEX(token.color),
-                      name.includes("inverse")
-                        ? ColorTranslator.toHEX(bgDarkest)
-                        : ColorTranslator.toHEX(bgLight)
-                    )
-                  )}
+                  {textColor.score2}
                 </div>
               </div>
             </td>

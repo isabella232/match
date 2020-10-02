@@ -13,7 +13,7 @@ import {
   Gradient,
   Button,
 } from "@twilio-labs/match-tokens-core";
-
+import { Shadow } from "./shadow";
 export const ahoyDesignTokens = {
   breakpoint: new Breakpoint(),
   swatch: new Swatch(),
@@ -22,6 +22,7 @@ export const ahoyDesignTokens = {
   fontWeight: new FontWeight(),
   background: new Background(),
   text: new Text(),
+  shadow: new Shadow(),
   gradient: new Gradient(),
   button: new Button(),
 };

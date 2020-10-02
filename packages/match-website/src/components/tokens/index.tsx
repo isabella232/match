@@ -8,6 +8,7 @@ import { StringTokens } from "./string";
 import { UnitTokens } from "./unit";
 import { WeightTokens } from "./weight";
 import { TextColorTokens } from "./text-color";
+import { ShadowTokens } from "./shadow";
 import { GradientTokens } from "./gradient";
 import {
   ColorToken,
@@ -15,6 +16,7 @@ import {
   StringToken,
   UnitToken,
   WeightToken,
+  ShadowToken,
   GradientToken,
 } from "../../types/tokens";
 
@@ -34,6 +36,7 @@ const Tokens: React.FC = () => {
     fontWeight,
     background,
     text,
+    shadow,
     gradient,
   } = useTheme();
   const {
@@ -140,6 +143,16 @@ const Tokens: React.FC = () => {
     [filterText, gradient]
   );
 
+  const shadowTokens: ShadowToken[] = React.useMemo(
+    () =>
+      Object.entries(shadow)
+        .filter(([key]) =>
+          ["card", "navigation", "image", "large", "inverse"].includes(key)
+        )
+        .filter(([key]) => textSearch(`shadow.${key}`, filterText)),
+    [filterText, shadow]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
@@ -231,13 +244,7 @@ const Tokens: React.FC = () => {
       {textColorTokens.length > 0 && (
         <div>
           <h2>Text Colors</h2>
-          <TextColorTokens
-            tokens={textColorTokens}
-            bgLight={background.light.color}
-            bgDarkest={background.darkest.color}
-            bgColor={background.blue.color}
-            bgWhite={background.white.color}
-          />
+          <TextColorTokens tokens={textColorTokens} />
         </div>
       )}
 
@@ -259,6 +266,13 @@ const Tokens: React.FC = () => {
         <div>
           <h2>Font Weights</h2>
           <WeightTokens prefix="fontWeight" tokens={fontWeightTokens} />
+        </div>
+      )}
+
+      {shadowTokens.length > 0 && (
+        <div>
+          <h2>Shadows</h2>
+          <ShadowTokens prefix="shadow" tokens={shadowTokens} />
         </div>
       )}
     </div>

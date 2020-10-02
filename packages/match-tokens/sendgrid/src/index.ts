@@ -11,6 +11,7 @@ import {
 import { fontFamily } from "./font-family";
 import { Background } from "./background";
 import { Text } from "./text";
+import { Shadow } from "./shadow";
 import { Gradient } from "./gradient";
 import { Button } from "./button";
 
@@ -22,6 +23,7 @@ export const sendGridDesignTokens = {
   fontWeight: new FontWeight(),
   text: new Text(),
   background: new Background(),
+  shadow: new Shadow(),
   gradient: new Gradient(),
   button: new Button(),
 };

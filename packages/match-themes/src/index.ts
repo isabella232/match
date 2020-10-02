@@ -17,6 +17,7 @@ const AhoyTheme = withTokens(new AhoyDesignTokens())(ThemeProvider);
 
 export { ThemeVariants } from "./constants";
 export { MatchThemeProvider } from "./theme-provider";
+export { StyledBase } from "./styles";
 export { withTheme } from "./with-theme";
 export { ThemeConsumer } from "./theme-consumer";
 export { useTheme } from "./use-theme";

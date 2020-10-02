@@ -4039,6 +4039,8 @@ __metadata:
     react-docgen-typescript: ^1.20.5
     react-dom: ^16.13.1
     react-is: ^16.13.1
+    react-live: ^2.2.2
+    reakit: ^1.2.5
     styled-components: ^5.2.0
     typescript: ^4.0.3
     wcag-contrast: ^3.0.0
@@ -19260,7 +19262,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-live@npm:^2.2.1":
+"react-live@npm:^2.2.1, react-live@npm:^2.2.2":
   version: 2.2.2
   resolution: "react-live@npm:2.2.2"
   dependencies:

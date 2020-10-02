@@ -1,0 +1,27 @@
+.tabList {
+  margin: 40px 0;
+  border-bottom: 1px solid var(--swatch-gray20);
+}
+
+.tabList button {
+  margin-bottom: -1px;
+  padding: 4px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-scale100-rem);
+  letter-spacing: 0.01em;
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.tabList button + button {
+  margin-left: 30px;
+}
+
+.tabList button[aria-selected="true"] {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0;
+  border-bottom-color: var(--swatch-blue60);
+}

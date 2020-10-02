@@ -22,7 +22,9 @@ const MatchProvider: React.FC = ({ children }) => {
   const [state, dispatch] = React.useReducer(matchReducer, initialState);
   return (
     <MatchContext.Provider value={{ state, dispatch }}>
-      <MatchThemeProvider theme={state.theme}>{children}</MatchThemeProvider>
+      <MatchThemeProvider theme={state.theme} includeBaseStyles={false}>
+        {children}
+      </MatchThemeProvider>
     </MatchContext.Provider>
   );
 };

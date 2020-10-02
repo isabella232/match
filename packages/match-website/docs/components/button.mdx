@@ -7,6 +7,7 @@ slug: /components/button/
 
 import { Button } from "@twilio-labs/match-components";
 import { Props } from "../../src/components/props";
+import { ThemeSwitcher } from "../../src/components/theme-switcher";
 
 A button communicates actions users can take with a single click or tap. They are found throughout the interface, typically in dialogues, cards, forms, and modals.
 
@@ -70,6 +71,8 @@ When moving customers through a sequence, place the primary button in the direct
 
 ## Examples
 
+<ThemeSwitcher />
+
 ### Primary
 
 Primary buttons indicate the most important action a user may take on the current screen.
@@ -90,20 +93,16 @@ Secondary buttons indicate a recommended action for a user, but is not the most 
 
 Tertiary buttons are used for actions that are not as equally important in the user experience. They are used in cases where the secondary button is not accessible due to the background color, such as darker colors.
 
-```jsx live
-<DarkPreview>
-  <Button variant="tertiary">Ahoy</Button>
-</DarkPreview>
+```jsx live bg=darkest
+<Button variant="tertiary">Ahoy</Button>
 ```
 
 ### Inverse
 
 Inverse buttons are formatted for use on top of various background colors, where the hover and active state of the primary or secondary buttons may clash against the background.
 
-```jsx live
-<DarkPreview bg="blue">
-  <Button variant="inverse">Ahoy</Button>
-</DarkPreview>
+```jsx live bg=blue
+<Button variant="inverse">Ahoy</Button>
 ```
 
 ### Disabled

@@ -1,0 +1,21 @@
+.playground {
+  overflow: hidden;
+  border-radius: var(--ifm-global-radius);
+  box-shadow: 0 4px 16px 0 rgba(86, 91, 115, 0.15);
+}
+
+.liveEditor {
+  font-family: var(--ifm-font-family-monospace) !important;
+  background: transparent !important;
+}
+
+.playgroundEditor {
+  padding: 24px 40px;
+  background: var(--swatch-gray90);
+}
+
+.playgroundPreview {
+  position: relative;
+  padding: 40px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}

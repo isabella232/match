@@ -61,7 +61,7 @@ const ShadowTokens: React.FC<SwatchTokensProps> = ({
             <td style={token.backgroundStyle}>
               <div
                 style={token.cardStyle}
-                className={`${styles.rectangleExample} ${styles.backgroundWhite}`}
+                className={styles.rectangleExample}
               ></div>
             </td>
           </tr>

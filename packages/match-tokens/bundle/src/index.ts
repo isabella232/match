@@ -16,8 +16,6 @@ import type {
 
 type Color = ColorClass & ColorData;
 
-//type DropShadows = DropShadowsClass & DropShadowsData;
-
 interface DropShadow extends DropShadowClass, Omit<DropShadowData, "color"> {
   color: Color;
 }

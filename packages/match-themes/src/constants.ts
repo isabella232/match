@@ -1,6 +1,6 @@
 export enum ThemeVariants {
   TWILIO = "Twilio",
-  SIGNAL = "Twilio Signal",
+  SIGNAL = "Signal",
   AHOY = "Ahoy",
   SENDGRID = "SendGrid",
 }

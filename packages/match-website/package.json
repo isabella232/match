@@ -31,6 +31,8 @@
     "react-docgen-typescript": "^1.20.5",
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
+    "react-live": "^2.2.2",
+    "reakit": "^1.2.5",
     "styled-components": "^5.2.0",
     "wcag-contrast": "^3.0.0"
   },
@@ -38,7 +40,8 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "not IE <= 11"
     ],
     "development": [
       "last 1 chrome version",

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
+import { ThemeSwitcher } from "../theme-switcher";
 import { TokenFilters } from "./filters";
 import { BreakpointTokens } from "./breakpoint";
 import { SwatchTokens } from "./swatch";
@@ -176,6 +177,7 @@ const Tokens: React.FC = () => {
 
   return (
     <div>
+      <ThemeSwitcher noDescription />
       <TokenFilters />
 
       {!hasAnyTokens && <p>No tokens found for filter {`"${filterText}"`}</p>}

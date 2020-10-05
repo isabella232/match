@@ -17,7 +17,6 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ noDescription }) => {
   const tab = useTabState({ selectedId: theme });
 
   React.useEffect(() => {
-    console.log(tab.selectedId);
     if (!tab.selectedId || theme === tab.selectedId) return;
     dispatch({
       type: MatchActions.SetMatchTheme,

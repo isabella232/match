@@ -6,10 +6,6 @@ interface PlaygroundPreviewProps {
 
 const PlaygroundPreview = styled.div<PlaygroundPreviewProps>`
   background: ${({ bg, theme }) => theme.background[bg].color};
-  border-color: ${({ bg, theme }) =>
-    bg === "white"
-      ? "var(--ifm-color-emphasis-200)"
-      : theme.background[bg].color};
 `;
 
 PlaygroundPreview.defaultProps = {

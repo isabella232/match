@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-website",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "docusaurus start",
@@ -8,7 +8,7 @@
     "clean": "rm -rf .docusaurus build",
     "compile": "docusaurus build",
     "serve": "docusaurus serve",
-    "deploy": "yarn build && gh-pages -d build -r https://${GH_TOKEN}@github.com/twilio-labs/match.git",
+    "deploy": "gh-pages -d build -r https://${GH_TOKEN}@github.com/twilio-labs/match.git",
     "type-check": "tsc --noEmit --composite false"
   },
   "dependencies": {
@@ -16,25 +16,25 @@
     "@docusaurus/preset-classic": "2.0.0-alpha.65",
     "@docusaurus/theme-classic": "2.0.0-alpha.65",
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.65",
-    "@mdx-js/react": "^1.6.18",
+    "@mdx-js/react": "1.6.18",
     "@twilio-labs/match-components": "workspace:packages/match-components",
     "@twilio-labs/match-fonts": "workspace:packages/match-fonts",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
     "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio",
-    "clsx": "^1.1.1",
-    "colortranslator": "^1.3.4",
-    "docusaurus-plugin-react-docgen-typescript": "^0.0.1",
-    "gh-pages": "^3.1.0",
-    "pnp-webpack-plugin": "^1.6.4",
-    "react": "^16.13.1",
-    "react-docgen-typescript": "^1.20.5",
-    "react-dom": "^16.13.1",
-    "react-is": "^16.13.1",
-    "react-live": "^2.2.2",
-    "reakit": "^1.2.5",
-    "styled-components": "^5.2.0",
-    "wcag-contrast": "^3.0.0"
+    "clsx": "1.1.1",
+    "colortranslator": "1.3.4",
+    "docusaurus-plugin-react-docgen-typescript": "0.0.1",
+    "gh-pages": "3.1.0",
+    "pnp-webpack-plugin": "1.6.4",
+    "react": "16.13.1",
+    "react-docgen-typescript": "1.20.5",
+    "react-dom": "16.13.1",
+    "react-is": "16.13.1",
+    "react-live": "2.2.2",
+    "reakit": "1.2.5",
+    "styled-components": "5.2.0",
+    "wcag-contrast": "3.0.0"
   },
   "browserslist": {
     "production": [
@@ -51,12 +51,12 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "v2.0.0-alpha.65",
-    "@types/gh-pages": "^3.0.0",
-    "@types/mdx-js__react": "^1.5.3",
-    "@types/react": "^16.9.51",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-is": "^16.7.1",
-    "@types/styled-components": "^5.1.3",
-    "typescript": "^4.0.3"
+    "@types/gh-pages": "3.0.0",
+    "@types/mdx-js__react": "1.5.3",
+    "@types/react": "16.9.51",
+    "@types/react-dom": "16.9.8",
+    "@types/react-is": "16.7.1",
+    "@types/styled-components": "5.1.3",
+    "typescript": "4.0.3"
   }
 }

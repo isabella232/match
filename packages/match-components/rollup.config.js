@@ -27,6 +27,7 @@ export default {
       tsconfig: "./tsconfig.json",
     }),
     babel({
+      babelHelpers: "bundled",
       exclude: "node_modules/**",
     }),
     process.env.NODE_ENV === "production" ? terser() : undefined,

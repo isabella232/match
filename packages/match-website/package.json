@@ -12,10 +12,10 @@
     "type-check": "tsc --noEmit --composite false"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.64",
-    "@docusaurus/preset-classic": "2.0.0-alpha.64",
-    "@docusaurus/theme-classic": "2.0.0-alpha.64",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.64",
+    "@docusaurus/core": "2.0.0-alpha.65",
+    "@docusaurus/preset-classic": "2.0.0-alpha.65",
+    "@docusaurus/theme-classic": "2.0.0-alpha.65",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.65",
     "@mdx-js/react": "^1.6.18",
     "@twilio-labs/match-components": "workspace:packages/match-components",
     "@twilio-labs/match-fonts": "workspace:packages/match-fonts",
@@ -50,12 +50,12 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "v2.0.0-alpha.64",
+    "@docusaurus/module-type-aliases": "v2.0.0-alpha.65",
     "@types/gh-pages": "^3.0.0",
     "@types/mdx-js__react": "^1.5.3",
-    "@types/react": "^16.9.49",
+    "@types/react": "^16.9.51",
     "@types/react-dom": "^16.9.8",
-    "@types/react-is": "^16",
+    "@types/react-is": "^16.7.1",
     "@types/styled-components": "^5.1.3",
     "typescript": "^4.0.3"
   }

@@ -9,7 +9,6 @@ import type {
   Unit,
   Weight,
   DropShadow as DropShadowClass,
-  DropShadows as DropShadowsClass,
   Color as ColorClass,
   LinearGradient as LinearGradientClass,
 } from "@twilio-labs/match-tokens-twilio";
@@ -18,10 +17,6 @@ type Color = ColorClass & ColorData;
 
 interface DropShadow extends DropShadowClass, Omit<DropShadowData, "color"> {
   color: Color;
-}
-
-interface DropShadows extends DropShadowsClass {
-  shadows: DropShadow[];
 }
 
 interface GradientStop extends Omit<GradientStopData, "color"> {
@@ -34,7 +29,7 @@ interface LinearGradient
   stops: GradientStop[];
 }
 
-export type { Color, MediaQuery, Unit, Weight, LinearGradient, DropShadows };
+export type { Color, MediaQuery, Unit, Weight, LinearGradient, DropShadow };
 
 export { TwilioDesignTokens } from "@twilio-labs/match-tokens-twilio";
 export { SendGridDesignTokens } from "@twilio-labs/match-tokens-sendgrid";

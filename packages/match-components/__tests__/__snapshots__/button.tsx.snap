@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button snapshot 1`] = `
-<DocumentFragment>
-  .c0 {
+.c0 {
   color: hsla(217.33333333333334,42.05607476635513%,20.980392156862745%,1);
   font-weight: 400;
   font-size: 1rem;
@@ -60,14 +59,13 @@ exports[`Button snapshot 1`] = `
 }
 
 <div
-    class="c0"
+  class="c0"
+>
+  <button
+    class="c1"
+    type="button"
   >
-    <button
-      class="c1"
-      type="button"
-    >
-      Click Me
-    </button>
-  </div>
-</DocumentFragment>
+    Click Me
+  </button>
+</div>
 `;

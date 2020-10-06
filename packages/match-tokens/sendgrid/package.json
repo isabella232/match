@@ -38,7 +38,6 @@
     "build": "yarn clean && yarn compile && mv ./build/diez-twilio-labs-match-tokens-sendgrid-web/ ./dist/ && rm -rf ./dist/package.json ./build ./lib ./tsconfig.tsbuildinfo",
     "compile": "diez compile -t web",
     "clean": "rm -rf ./dist ./.diez ./lib",
-    "prepack": "yarn build",
     "publish": "yarn npm publish --tolerate-republish",
     "type-check": "tsc --noEmit --composite false"
   }

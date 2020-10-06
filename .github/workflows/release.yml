@@ -28,6 +28,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install Node dependencies
         run: yarn install --immutable
+      - name: Build packages
+        run: yarn build:all
 
       # Publish GitHub Packages
       - name: Publish packages
@@ -41,8 +43,6 @@ jobs:
           python-version: "3.x"
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip setuptools wheel twine
-      - name: Build Python tokens
-        run: yarn workspace match_tokens_py build
       - name: Publish PyPI package
         working-directory: "packages/match-tokens/py"
         env:

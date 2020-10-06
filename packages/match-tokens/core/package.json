@@ -38,7 +38,6 @@
     "build": "yarn clean && yarn compile",
     "compile": "tsc",
     "clean": "rm -rf ./dist tsconfig.tsbuildinfo",
-    "prepack": "yarn build",
     "extract": "diez extract",
     "publish": "yarn npm publish --tolerate-republish",
     "type-check": "tsc --noEmit --composite false"

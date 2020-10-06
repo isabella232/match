@@ -23,7 +23,6 @@
     "clean": "rm -rf ./dist",
     "compile": "rollup -c --environment NODE_ENV:production",
     "compile:dev": "rollup -c --environment NODE_ENV:development",
-    "prepack": "yarn build",
     "type-check": "tsc --noEmit --composite false",
     "publish": "yarn npm publish --tolerate-republish"
   },

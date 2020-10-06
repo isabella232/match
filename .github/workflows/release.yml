@@ -1,10 +1,9 @@
 name: Release
 
-on: pull_request
-# on:
-#   release:
-#     types:
-#       - created
+on:
+  release:
+    types:
+      - created
 
 jobs:
   deploy:
@@ -29,8 +28,6 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install Node dependencies
         run: yarn install --immutable
-      - name: Build packages
-        run: yarn build:all
 
       # Publish GitHub Packages
       - name: Publish packages
@@ -39,26 +36,28 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       # Publish PyPI Package
-      # - uses: actions/setup-python@v2
-      #   with:
-      #     python-version: "3.x"
-      # - name: Install Python dependencies
-      #   run: python -m pip install --upgrade pip setuptools wheel twine
-      # - name: Build and publish PyPI package
-      #   working-directory: "packages/match-tokens/py"
-      #   env:
-      #     TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-      #     TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      #   run: |
-      #     python setup.py sdist bdist_wheel
-      #     twine upload --non-interactive --skip-existing --repository pypi dist/*
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: Install Python dependencies
+        run: python -m pip install --upgrade pip setuptools wheel twine
+      - name: Build Python tokens
+        run: yarn workspace match_tokens_py build
+      - name: Publish PyPI package
+        working-directory: "packages/match-tokens/py"
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+          python setup.py sdist bdist_wheel
+          twine upload --non-interactive --skip-existing --repository pypi dist/*
 
       # Deploy website
-      # - name: Configure Git
-      #   run: |
-      #     git config user.name MatchBot
-      #     git config user.email match@twilio.com
-      # - name: Deploy to GH Pages
-      #   run: yarn workspace @twilio-labs/match-website deploy
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Configure Git
+        run: |
+          git config user.name MatchBot
+          git config user.email match@twilio.com
+      - name: Deploy to GH Pages
+        run: yarn workspace @twilio-labs/match-website deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}

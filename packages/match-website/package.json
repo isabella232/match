@@ -8,7 +8,7 @@
     "clean": "rm -rf .docusaurus build",
     "compile": "docusaurus build",
     "serve": "docusaurus serve",
-    "deploy": "gh-pages -d build -r https://${GH_TOKEN}@github.com/twilio-labs/match.git",
+    "deploy": "yarn build && gh-pages -d build -r https://${GH_TOKEN}@github.com/twilio-labs/match.git",
     "type-check": "tsc --noEmit --composite false"
   },
   "dependencies": {

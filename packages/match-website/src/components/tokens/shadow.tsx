@@ -14,17 +14,17 @@ const ShadowTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
   const parsedTokens = React.useMemo(
     () =>
       tokens.map(([name, token]) => {
-        const singleShadowValue = token.shadows.map((shadow) => {
-          return (
-            shadow.offset.x +
-            "px " +
-            shadow.offset.y +
-            "px " +
-            shadow.radius +
-            "px " +
-            ColorTranslator.toHEXA(shadow.color.color)
-          );
-        });
+        //   const singleShadowValue = token.shadows.map((shadow) => {
+        //     return (
+        //       shadow.offset.x +
+        //       "px " +
+        //       shadow.offset.y +
+        //       "px " +
+        //       shadow.radius +
+        //       "px " +
+        //       ColorTranslator.toHEXA(shadow.color.color)
+        //     );
+        //   });
 
         //the inverse example should appear on a dark background
         const backgroundStyle =
@@ -32,7 +32,14 @@ const ShadowTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
 
         return {
           name: name,
-          value: singleShadowValue.join(", "),
+          value:
+            token.offset.x +
+            "px " +
+            token.offset.y +
+            "px " +
+            token.radius +
+            "px " +
+            ColorTranslator.toHEXA(token.color.color),
           cardStyle: {
             boxShadow: token.boxShadow,
           },

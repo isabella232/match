@@ -11,9 +11,6 @@
     },
     ".:Weight": {
       "web": "../core/dist/framework/bindings/weight"
-    },
-    ".:DropShadows":{
-      "web": "../core/dist/framework/bindings/drop-shadows"
     }
   }
 }

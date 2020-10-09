@@ -14,6 +14,7 @@ export default {
   },
   argTypes: {
     children: { table: { disable: true } },
+    variant: { table: { disable: true } },
     size: {
       control: { type: "select", options: Object.values(ButtonSize) },
     },

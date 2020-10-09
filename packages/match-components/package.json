@@ -14,7 +14,7 @@
     "directory": "packages/match-components"
   },
   "publishConfig": {
-    "main": "dist/index.ts",
+    "main": "dist/index.js",
     "module": "dist/index.es.js",
     "types": "dist/index.d.ts",
     "registry": "https://npm.pkg.github.com/"

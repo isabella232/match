@@ -6,5 +6,5 @@ dist
 build
 packages/match-tokens/**/lib
 packages/match-tokens/**/designs
-packages/match-website/.cache
+packages/match-icons/**/src
 *.ejs

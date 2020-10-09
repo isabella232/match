@@ -3696,6 +3696,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@svgr/cli@npm:5.4.0":
+  version: 5.4.0
+  resolution: "@svgr/cli@npm:5.4.0"
+  dependencies:
+    "@svgr/core": ^5.4.0
+    "@svgr/plugin-jsx": ^5.4.0
+    "@svgr/plugin-prettier": ^5.4.0
+    "@svgr/plugin-svgo": ^5.4.0
+    camelcase: ^6.0.0
+    chalk: ^4.0.0
+    commander: ^5.1.0
+    dashify: ^2.0.0
+    glob: ^7.1.4
+    output-file-sync: ^2.0.1
+  bin:
+    svgr: bin/svgr
+  checksum: 075c4d715a4f1738af01e0d31d76644cf66ac69fdb117e596f90bab1060a6a183d12d26c77e4fa147094f1f7302f2501272c1c3ac17a249ef9a0e058a8e0af5e
+  languageName: node
+  linkType: hard
+
 "@svgr/core@npm:^5.4.0":
   version: 5.4.0
   resolution: "@svgr/core@npm:5.4.0"
@@ -3725,6 +3745,16 @@ __metadata:
     "@svgr/hast-util-to-babel-ast": ^5.4.0
     svg-parser: ^2.0.2
   checksum: 96c20838c74fecbea1100c08c2c8420cad533a4bc791bcc8bc2201bd0bb0da698105bb5eb021ed11c2f1ff216b31c400e39b3234a598c73187fe59e9e18b5ab2
+  languageName: node
+  linkType: hard
+
+"@svgr/plugin-prettier@npm:^5.4.0":
+  version: 5.4.0
+  resolution: "@svgr/plugin-prettier@npm:5.4.0"
+  dependencies:
+    merge-deep: ^3.0.2
+    prettier: ^2.0.5
+  checksum: b3f39d11a153dc0125989b0f7bce00fd6504517a5c33c39f8cfc0f15c5583d2ac15d0e007a12963f233d8c4683b00ba75b8022530051ae6cb32672421967a99c
   languageName: node
   linkType: hard
 
@@ -3855,6 +3885,52 @@ __metadata:
 "@twilio-labs/match-fonts@workspace:packages/match-fonts":
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-fonts@workspace:packages/match-fonts"
+  languageName: unknown
+  linkType: soft
+
+"@twilio-labs/match-icons-product@workspace:packages/match-icons/product":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match-icons-product@workspace:packages/match-icons/product"
+  dependencies:
+    "@svgr/cli": 5.4.0
+    "@types/prop-types": 15.7.3
+    "@types/react": 16.9.51
+    prop-types: 15.7.2
+    react: 16.13.1
+    rollup: 2.28.2
+    rollup-config-match: "workspace:configs/rollup"
+    svgr-config-match: "workspace:configs/svgr"
+    tsconfig-match: "workspace:configs/tsconfig"
+    tslib: 2.0.2
+    typescript: 4.0.3
+  peerDependencies:
+    prop-types: 15.x
+    react: 16.x
+    react-dom: 16.x
+    react-is: 16.x
+  languageName: unknown
+  linkType: soft
+
+"@twilio-labs/match-icons-twilio@workspace:packages/match-icons/twilio":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match-icons-twilio@workspace:packages/match-icons/twilio"
+  dependencies:
+    "@svgr/cli": 5.4.0
+    "@types/prop-types": 15.7.3
+    "@types/react": 16.9.51
+    prop-types: 15.7.2
+    react: 16.13.1
+    rollup: 2.28.2
+    rollup-config-match: "workspace:configs/rollup"
+    svgr-config-match: "workspace:configs/svgr"
+    tsconfig-match: "workspace:configs/tsconfig"
+    tslib: 2.0.2
+    typescript: 4.0.3
+  peerDependencies:
+    prop-types: 15.x
+    react: 16.x
+    react-dom: 16.x
+    react-is: 16.x
   languageName: unknown
   linkType: soft
 
@@ -7776,7 +7852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^5.0.0":
+"commander@npm:^5.0.0, commander@npm:^5.1.0":
   version: 5.1.0
   resolution: "commander@npm:5.1.0"
   checksum: d16141ea7f580945156fb8a06de2834c4647c7d9d3732ebd4534ab8e0b7c64747db301e18f2b840f28ea8fef51f7a8d6178e674b45a21931f0b65ff1c7f476b3
@@ -8705,6 +8781,13 @@ __metadata:
   dependencies:
     assert-plus: ^1.0.0
   checksum: 5959409ee42dc4bdbf3fa384b801ece580ca336658bb0342ffab0099b3fc6bf9b3e239e1b82dcc4fcaeee315353e08f2eae47b0928a6a579391598c44958afa1
+  languageName: node
+  linkType: hard
+
+"dashify@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "dashify@npm:2.0.0"
+  checksum: ee6a1e538dabe0bf2b08f58b907f4235505bab23ad193d53b8e5894d7de0a9050868ceab9cd1c5b9aa8c2a6381e4e69752728d321e9839ef136d1d31baba721c
   languageName: node
   linkType: hard
 
@@ -16944,6 +17027,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"output-file-sync@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "output-file-sync@npm:2.0.1"
+  dependencies:
+    graceful-fs: ^4.1.11
+    is-plain-obj: ^1.1.0
+    mkdirp: ^0.5.1
+  checksum: 62a33b53891429fbcaeb62144e50da6e9e3dfed2fdb60c9dfe66df815a2358d26e2975f38470373b11c62abaa181bcec2e4fead35a8cd1ddd7ebba332e0edf18
+  languageName: node
+  linkType: hard
+
 "overlayscrollbars@npm:^1.10.2":
   version: 1.13.0
   resolution: "overlayscrollbars@npm:1.13.0"
@@ -18535,7 +18629,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.1.2":
+"prettier@npm:2.1.2, prettier@npm:^2.0.5":
   version: 2.1.2
   resolution: "prettier@npm:2.1.2"
   bin:
@@ -20462,6 +20556,23 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
+"rollup-config-match@workspace:configs/rollup":
+  version: 0.0.0-use.local
+  resolution: "rollup-config-match@workspace:configs/rollup"
+  dependencies:
+    "@babel/core": 7.11.6
+    "@rollup/plugin-babel": 5.2.1
+    "@rollup/plugin-commonjs": 15.1.0
+    "@rollup/plugin-node-resolve": 9.0.0
+    rollup: 2.28.2
+    rollup-plugin-terser: 7.0.2
+    rollup-plugin-typescript2: 0.27.3
+  peerDependencies:
+    tslib: "*"
+    typescript: "*"
+  languageName: unknown
+  linkType: soft
+
 "rollup-plugin-terser@npm:7.0.2":
   version: 7.0.2
   resolution: "rollup-plugin-terser@npm:7.0.2"
@@ -22295,6 +22406,12 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
+"svgr-config-match@workspace:configs/svgr":
+  version: 0.0.0-use.local
+  resolution: "svgr-config-match@workspace:configs/svgr"
+  languageName: unknown
+  linkType: soft
+
 "swap-case@npm:^1.1.0":
   version: 1.1.2
   resolution: "swap-case@npm:1.1.2"
@@ -22961,6 +23078,12 @@ resolve@1.1.7:
   checksum: 78341a27939de565e2754ff65ebb689743c16e3295528089d143c08d91842cf9029c3d6b3c95a9a20854a114a7904329d02c710d63f7ce4dbf671b8a3e560ac1
   languageName: node
   linkType: hard
+
+"tsconfig-match@workspace:configs/tsconfig":
+  version: 0.0.0-use.local
+  resolution: "tsconfig-match@workspace:configs/tsconfig"
+  languageName: unknown
+  linkType: soft
 
 "tsconfig-paths@npm:^3.9.0":
   version: 3.9.0

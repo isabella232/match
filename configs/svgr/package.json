@@ -1,0 +1,12 @@
+{
+  "name": "svgr-config-match",
+  "version": "0.0.0",
+  "private": true,
+  "main": "svgr.config.js",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "configs/svgr"
+  }
+}

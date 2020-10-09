@@ -8,3 +8,4 @@ build
 .cache
 packages/match-tokens/**/lib
 packages/match-tokens/**/designs
+packages/match-icons/**/src

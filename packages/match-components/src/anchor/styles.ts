@@ -31,31 +31,27 @@ const variants = {
     }
   `,
   [AnchorVariant.NOUNDERLINE]: css`
-    color: ${({ theme }) => theme.text.blue60.color};
-    text-decoration: "none";
+    color: ${({ theme }) => theme.swatch.blue60.color};
+    text-decoration: none;
 
     &:hover {
       color: ${({ theme }) => theme.swatch.blue70.color};
-      text-decoration: "underline";
-    }
-
-    &:focus {
-      outline-color: ${({ theme }) => theme.swatch.white.color};
+      text-decoration: underline;
     }
 
     &:focus,
     &:active {
       color: ${({ theme }) => theme.swatch.blue80.color};
-      text-decoration: "underline";
+      text-decoration: underline;
     }
   `,
   [AnchorVariant.NOUNDERLINEINVERSE]: css`
     color: ${({ theme }) => theme.swatch.white.color};
-    text-decoration: "none";
+    text-decoration: none;
 
     &:hover {
       color: ${({ theme }) => theme.swatch.blue30.color};
-      text-decoration: "underline";
+      text-decoration: underline;
     }
 
     &:focus {
@@ -65,7 +61,7 @@ const variants = {
     &:focus,
     &:active {
       color: ${({ theme }) => theme.text.inversePrimary.color};
-      text-decoration: "none";
+      text-decoration: underline;
     }
   `,
 };
@@ -73,14 +69,6 @@ const variants = {
 const StyledAnchor = styled("a").withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
 })<AnchorProps>`
-  /* display: inline-block;
-  font-weight: ${({ theme }) => theme.fontWeight.medium.value};
-  font-family: ${({ theme }) => theme.fontFamily.text};
-  text-align: center;
-  text-decoration: none;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 4px; */
   cursor: pointer;
   transition-duration: 0.2s;
   transition-property: color;

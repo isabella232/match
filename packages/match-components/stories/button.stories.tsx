@@ -1,32 +1,58 @@
 import * as React from "react";
-import { withKnobs, select, boolean, text } from "@storybook/addon-knobs";
-import { Button, ButtonVariant, ButtonSize } from "../src";
+import { Story, Meta } from "@storybook/react/types-6-0";
+import { Button, ButtonProps, ButtonVariant, ButtonSize } from "../src";
 
 export default {
   title: "Components/Button",
-  decorators: [withKnobs],
+  component: Button,
+  args: {
+    children: "Ahoy",
+    disabled: false,
+    fullWidth: false,
+    href: "",
+    size: Object.values(ButtonSize).shift(),
+  },
+  argTypes: {
+    children: { table: { disable: true } },
+    size: {
+      control: { type: "select", options: Object.values(ButtonSize) },
+    },
+    disabled: {
+      control: { type: "boolean" },
+    },
+    fullWidth: {
+      control: { type: "boolean" },
+    },
+    href: {
+      control: { type: "text" },
+    },
+  },
+} as Meta;
+
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  variant: ButtonVariant.PRIMARY,
 };
 
-export const button: React.FC = () => {
-  const variant = select(
-    "Variant",
-    Object.values(ButtonVariant),
-    Object.values(ButtonVariant).shift()
-  );
-  const size = select(
-    "Size",
-    Object.values(ButtonSize),
-    Object.values(ButtonSize).shift()
-  );
-  return (
-    <Button
-      variant={variant}
-      size={size}
-      disabled={boolean("Disabled", false)}
-      fullWidth={boolean("Full Width", false)}
-      href={text("href", "")}
-    >
-      Click Me
-    </Button>
-  );
+export const Secondary = Template.bind({});
+Secondary.args = {
+  variant: ButtonVariant.SECONDARY,
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  variant: ButtonVariant.TERTIARY,
+};
+Tertiary.parameters = {
+  backgrounds: { default: "Darkest" },
+};
+
+export const Inverse = Template.bind({});
+Inverse.args = {
+  variant: ButtonVariant.INVERSE,
+};
+Inverse.parameters = {
+  backgrounds: { default: "Twilio Blue" },
 };

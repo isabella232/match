@@ -1,14 +1,21 @@
 export enum AnchorVariant {
   TEXT = "text",
   INVERSE = "inverse",
-  NOUNDERLINE = "no underline",
-  NOUNDERLINEINVERSE = "no undlerline inverse",
 }
 
-export interface AnchorProps {
+export enum AnchorTarget {
+  SELF = "_self",
+  BLANK = "_blank",
+  PARENT = "_parent",
+  TOP = "_top",
+}
+
+export interface AnchorProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: AnchorVariant;
   /** A URL to route to. */
   href?: string;
-  target?: string;
+  target?: AnchorTarget;
   rel?: string;
+  noUnderline?: boolean;
 }

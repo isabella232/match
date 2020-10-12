@@ -10,12 +10,6 @@ exports[`Button snapshot 1`] = `
 
 .c1 {
   cursor: pointer;
-  -webkit-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-property: color;
-  transition-property: color;
   color: hsla(213.78378378378378,98.23008849557523%,44.31372549019608%,1);
 }
 

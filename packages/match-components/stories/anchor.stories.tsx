@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Anchor, AnchorProps, AnchorVariant, AnchorTarget } from "../src";
+import { Anchor, AnchorProps, AnchorVariant } from "../src";
 
 export default {
   title: "Components/Anchor",
@@ -8,9 +8,9 @@ export default {
   args: {
     children: "Ahoy",
     noUnderline: false,
-    target: Object.values(AnchorTarget).shift(),
+    target: "",
     rel: "",
-    href: "https://twilio.com",
+    href: "/flex",
   },
   argTypes: {
     children: { table: { disable: true } },
@@ -22,7 +22,7 @@ export default {
       control: { type: "text" },
     },
     target: {
-      control: { type: "select", options: Object.values(AnchorTarget) },
+      control: { type: "text" },
     },
     rel: {
       control: { type: "text" },
@@ -43,4 +43,13 @@ Inverse.args = {
 };
 Inverse.parameters = {
   backgrounds: { default: "Darkest" },
+};
+
+export const External = Template.bind({});
+External.args = {
+  variant: AnchorVariant.TEXT,
+  href: "https://twilio.com",
+  target: "_blank",
+  rel: "noreferrer noopener",
+  children: "Default for an External Link in Text Variant",
 };

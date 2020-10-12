@@ -34,9 +34,6 @@ const variants = {
 
 const StyledAnchor = styled("a")<AnchorProps>`
   cursor: pointer;
-  transition-timing-function: ease-in;
-  transition-duration: 0.2s;
-  transition-property: color;
 
   &:focus {
     outline-width: 2px;

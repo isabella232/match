@@ -1,6 +1,7 @@
 export enum AnchorVariant {
-  TEXT = "text",
+  PRIMARY = "primary",
   INVERSE = "inverse",
+  TEXT = "text",
 }
 
 export interface AnchorProps

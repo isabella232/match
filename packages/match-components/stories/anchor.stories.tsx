@@ -30,11 +30,15 @@ export default {
   },
 } as Meta;
 
-const Template: Story<AnchorProps> = (args) => <Anchor {...args} />;
+const Template: Story<AnchorProps> = (args) => (
+  <p style={{ color: "#1F304C" }}>
+    <Anchor {...args} />
+  </p>
+);
 
-export const Text = Template.bind({});
-Text.args = {
-  variant: AnchorVariant.TEXT,
+export const Primary = Template.bind({});
+Primary.args = {
+  variant: AnchorVariant.PRIMARY,
 };
 
 export const Inverse = Template.bind({});
@@ -45,9 +49,14 @@ Inverse.parameters = {
   backgrounds: { default: "Darkest" },
 };
 
+export const Text = Template.bind({});
+Text.args = {
+  variant: AnchorVariant.TEXT,
+};
+
 export const External = Template.bind({});
 External.args = {
-  variant: AnchorVariant.TEXT,
+  variant: AnchorVariant.PRIMARY,
   href: "https://twilio.com",
   target: "_blank",
   rel: "noreferrer noopener",

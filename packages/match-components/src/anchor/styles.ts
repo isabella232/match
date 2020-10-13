@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { AnchorProps, AnchorVariant } from "./types";
 
 const variants = {
-  [AnchorVariant.TEXT]: css`
+  [AnchorVariant.PRIMARY]: css`
     color: ${({ theme }) => theme.swatch.blue60.color};
 
     &:hover {
@@ -28,6 +28,18 @@ const variants = {
     &:focus,
     &:active {
       color: ${({ theme }) => theme.swatch.blue40.color};
+    }
+  `,
+  [AnchorVariant.TEXT]: css`
+    color: inherit;
+
+    &:hover {
+      color: ${({ theme }) => theme.swatch.blue60.color};
+    }
+
+    &:focus,
+    &:active {
+      color: ${({ theme }) => theme.swatch.blue70.color};
     }
   `,
 };

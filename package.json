@@ -26,8 +26,7 @@
     "release": "yarn version:all && yarn publish:all",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "jest --ci",
-    "chromatic": "yarn chromatic --project-token=p9na1dnp8e8"
+    "test:ci": "jest --ci"
   },
   "husky": {
     "hooks": {

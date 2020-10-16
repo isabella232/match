@@ -20,12 +20,14 @@
     "build:all": "yarn workspaces foreach --topological-dev run build",
     "build:tokens": "yarn workspaces foreach --topological-dev --include '@twilio-labs/match-tokens*' run build",
     "build:plugins": "yarn workspace @twilio-labs/storybook-theme-switcher build",
+    "build-storybook": "build-storybook -c .storybook -o .out",
     "version:all": "yarn version check --interactive && yarn version apply --all",
     "publish:all": "yarn workspaces foreach --topological-dev run publish",
     "release": "yarn version:all && yarn publish:all",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "chromatic": "yarn chromatic --project-token=p9na1dnp8e8"
   },
   "husky": {
     "hooks": {
@@ -74,6 +76,7 @@
     "@typescript-eslint/parser": "4.4.0",
     "babel-jest": "26.5.2",
     "babel-plugin-styled-components": "1.11.1",
+    "chromatic": "5.2.0",
     "concurrently": "5.3.0",
     "core-js": "3.6.5",
     "eslint": "7.10.0",

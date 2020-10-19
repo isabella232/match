@@ -3,9 +3,10 @@ import { UnitToken } from "../../types/tokens";
 
 interface BreakpointTokensProps {
   tokens: UnitToken[];
+  prefix: string;
 }
 
-const UnitTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
+const UnitTokens: React.FC<BreakpointTokensProps> = ({ prefix, tokens }) => {
   return (
     <div>
       <table>
@@ -19,7 +20,7 @@ const UnitTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
         <tbody>
           {tokens.map(([name, token]) => (
             <tr key={name}>
-              <td>{`fontSize.${name}.rem`}</td>
+              <td>{`${prefix}.${name}.rem`}</td>
               <td>{token.px}</td>
               <td>{token.rem}</td>
             </tr>

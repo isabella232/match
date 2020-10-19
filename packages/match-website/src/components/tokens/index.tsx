@@ -40,6 +40,7 @@ const Tokens: React.FC = () => {
     shadow,
     gradient,
     border,
+    borderWidth,
   } = useTheme();
   const {
     state: { filterText },
@@ -163,6 +164,14 @@ const Tokens: React.FC = () => {
     [filterText, border]
   );
 
+  const borderWidthTokens: UnitToken[] = React.useMemo(
+    () =>
+      Object.entries(borderWidth).filter(([key]) =>
+        textSearch(`borderWidth.${key}`, filterText)
+      ),
+    [filterText, borderWidth]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
@@ -268,7 +277,7 @@ const Tokens: React.FC = () => {
       {fontSizeTokens.length > 0 && (
         <div>
           <h2>Font Sizes</h2>
-          <UnitTokens tokens={fontSizeTokens} />
+          <UnitTokens tokens={fontSizeTokens} prefix="fontSize" />
         </div>
       )}
 
@@ -290,6 +299,13 @@ const Tokens: React.FC = () => {
         <div>
           <h2>Borders</h2>
           <SwatchTokens tokens={borderTokens} prefix="border" />
+        </div>
+      )}
+
+      {borderWidthTokens.length > 0 && (
+        <div>
+          <h2>Border Widths</h2>
+          <UnitTokens tokens={borderWidthTokens} prefix="borderWidth" />
         </div>
       )}
     </div>

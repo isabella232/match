@@ -14,6 +14,7 @@ import {
   Gradient,
   Button,
   Border,
+  BorderWidth,
 } from "@twilio-labs/match-tokens-core";
 
 export const twilioDesignTokens = {
@@ -28,4 +29,5 @@ export const twilioDesignTokens = {
   gradient: new Gradient(),
   button: new Button(),
   border: new Border(),
+  borderWidth: new BorderWidth(),
 };

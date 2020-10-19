@@ -12,6 +12,7 @@ import {
   Shadow,
   Gradient,
   Button,
+  Border,
 } from "@twilio-labs/match-tokens-core";
 import { fontFamily } from "./font-family";
 
@@ -26,4 +27,5 @@ export const signalDesignTokens = {
   shadow: new Shadow(),
   gradient: new Gradient(),
   button: new Button(),
+  border: new Border(),
 };

@@ -9,3 +9,4 @@ export * from "./text";
 export * from "./gradient";
 export * from "./shadow";
 export * from "./button";
+export * from "./border";

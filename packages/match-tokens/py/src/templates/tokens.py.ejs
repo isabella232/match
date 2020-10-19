@@ -10,6 +10,12 @@ background = {
 <% }); -%>
 }
 
+border = {
+<% Object.entries(border).forEach(([name, token]) => { -%>
+    '<%=name%>': '<%=token.color%>',
+<% }); -%>
+}
+
 text = {
 <% Object.entries(text).forEach(([name, token]) => { -%>
     '<%=name%>': '<%=token.color%>',

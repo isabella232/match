@@ -39,6 +39,7 @@ const Tokens: React.FC = () => {
     text,
     shadow,
     gradient,
+    border,
   } = useTheme();
   const {
     state: { filterText },
@@ -154,12 +155,18 @@ const Tokens: React.FC = () => {
     [filterText, shadow]
   );
 
+  const borderTokens: ColorToken[] = React.useMemo(
+    () =>
+      Object.entries(border).filter(([key]) =>
+        textSearch(`border.${key}`, filterText)
+      ),
+    [filterText, border]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
-      tertiaryColorTokens.length +
-      backgroundColorTokens.length +
-      textColorTokens.length
+      tertiaryColorTokens.length
   );
 
   const hasAnyTokens = Boolean(
@@ -172,7 +179,8 @@ const Tokens: React.FC = () => {
       fontWeightTokens.length +
       backgroundColorTokens.length +
       textColorTokens.length +
-      gradientTokens.length
+      gradientTokens.length +
+      borderTokens.length
   );
 
   return (
@@ -198,7 +206,7 @@ const Tokens: React.FC = () => {
 
       {primaryColorTokens.length > 0 && (
         <div>
-          <h2>Primary</h2>
+          <h3>Primary</h3>
           <p>
             This palette defines our brand. Emphasize Twilio Red and avoid
             introducing too many secondary colors for audiences new to Twilio.
@@ -275,6 +283,13 @@ const Tokens: React.FC = () => {
         <div>
           <h2>Shadows</h2>
           <ShadowTokens prefix="shadow" tokens={shadowTokens} />
+        </div>
+      )}
+
+      {borderTokens.length > 0 && (
+        <div>
+          <h2>Borders</h2>
+          <SwatchTokens tokens={borderTokens} prefix="border" />
         </div>
       )}
     </div>

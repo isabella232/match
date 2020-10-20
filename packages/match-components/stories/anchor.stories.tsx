@@ -8,8 +8,6 @@ export default {
   args: {
     children: "Ahoy",
     noUnderline: false,
-    target: Object.values(AnchorTarget).shift(),
-    rel: "",
     href: "/flex",
   },
   argTypes: {
@@ -19,12 +17,6 @@ export default {
       control: { type: "boolean" },
     },
     href: {
-      control: { type: "text" },
-    },
-    target: {
-      control: { type: "select", options: Object.values(AnchorTarget) },
-    },
-    rel: {
       control: { type: "text" },
     },
   },
@@ -58,7 +50,5 @@ export const External = Template.bind({});
 External.args = {
   variant: AnchorVariant.PRIMARY,
   href: "https://twilio.com",
-  target: AnchorTarget.BLANK,
-  rel: "noreferrer noopener",
   children: "Default for an External Link in Text Variant",
 };

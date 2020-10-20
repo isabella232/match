@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button snapshot 1`] = `
+.c0 {
+  color: hsla(217.33333333333334,42.05607476635513%,20.980392156862745%,1);
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: Whitney SSm A,Whitney SSm B,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.c1 {
+  cursor: pointer;
+  color: inherit;
+}
+
+.c1:focus {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: hsla(213.78378378378378,98.23008849557523%,44.31372549019608%,1);
+  outline-offset: 2px;
+  -moz-outline-radius: 4px;
+}
+
+.c1:hover {
+  color: hsla(213.78378378378378,98.23008849557523%,44.31372549019608%,1);
+}
+
+.c1:focus,
+.c1:active {
+  color: hsla(221.01694915254237,95.67567567567566%,36.274509803921575%,1);
+}
+
+<div
+  class="c0"
+>
+  <a
+    class="c1"
+    href="https://twilio.com"
+    rel="noreferrer noopener"
+    target="_blank"
+  >
+    Click Me
+  </a>
+</div>
+`;

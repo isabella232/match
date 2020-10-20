@@ -18,9 +18,14 @@ const secureExternalLink = (
   }
 };
 
-const Anchor: React.FC<AnchorProps> = ({ ...props }) => {
-  return <StyledAnchor {...secureExternalLink(props.href)} {...props} />;
-};
+const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
+  ({ ...props }, ref) => {
+    return (
+      <StyledAnchor {...secureExternalLink(props.href)} {...props} ref={ref} />
+    );
+  }
+);
+Anchor.displayName = "anchor";
 
 Anchor.propTypes = {
   variant: PropTypes.oneOf(Object.values(AnchorVariant)),

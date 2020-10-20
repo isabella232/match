@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Anchor, AnchorProps, AnchorVariant, AnchorTarget } from "../src";
+import { Anchor, AnchorProps, AnchorVariant } from "../src";
 
 export default {
   title: "Components/Anchor",
@@ -23,7 +23,7 @@ export default {
 } as Meta;
 
 const Template: Story<AnchorProps> = (args) => (
-  <p style={{ color: "#1F304C" }}>
+  <p>
     <Anchor {...args} />
   </p>
 );

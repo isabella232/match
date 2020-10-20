@@ -40,7 +40,7 @@ jobs:
       # - name: Run tests
       #   run: yarn test:ci
       - name: Build Storybook
-        run: yarn build-storybook
+        run: yarn build:storybook
       - name: Run Chromatic
         uses: chromaui/action@v1
         with:

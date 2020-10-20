@@ -30,15 +30,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      # Build and test
+      # Bootstrap Match
       - name: Install Node dependencies
         run: yarn install --immutable
       - name: Build Tokens
         run: yarn bootstrap
-      # - name: Run type checker
-      #   run: yarn type-check
-      # - name: Run tests
-      #   run: yarn test:ci
+
+      # Test
+      - name: Run type checker
+        run: yarn type-check
+      - name: Run tests
+        run: yarn test:ci
+
+      # Upload to Chromatic
       - name: Build Storybook
         run: yarn build:storybook
       - name: Run Chromatic

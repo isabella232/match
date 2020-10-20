@@ -34,7 +34,7 @@ jobs:
       - name: Install Node dependencies
         run: yarn install --immutable
       - name: Build Tokens
-        run: yarn build:tokens
+        run: yarn bootstrap
       # - name: Run type checker
       #   run: yarn type-check
       # - name: Run tests
@@ -48,4 +48,4 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: ./build
         env:
-          CHROMATIC_STORYBOOK_VERSION: react@6.x
+          CHROMATIC_STORYBOOK_VERSION: react@6.0.26

@@ -20,7 +20,7 @@
     "build:all": "yarn workspaces foreach --topological-dev run build",
     "build:tokens": "yarn workspaces foreach --topological-dev --include '@twilio-labs/match-tokens*' run build",
     "build:plugins": "yarn workspace @twilio-labs/storybook-theme-switcher build",
-    "build-storybook": "build-storybook -c .storybook -o .out",
+    "build-storybook": "build-storybook -c .storybook -o ./build",
     "version:all": "yarn version check --interactive && yarn version apply --all",
     "publish:all": "yarn workspaces foreach --topological-dev run publish",
     "release": "yarn version:all && yarn publish:all",

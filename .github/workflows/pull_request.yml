@@ -35,12 +35,15 @@ jobs:
         run: yarn install --immutable
       - name: Build Tokens
         run: yarn build:tokens
-      - name: Run type checker
-        run: yarn type-check
-      - name: Run tests
-        run: yarn test:ci
+      # - name: Run type checker
+      #   run: yarn type-check
+      # - name: Run tests
+      #   run: yarn test:ci
+      - name: Build Storybook
+        run: yarn build-storybook
       - name: Run Chromatic
         uses: chromaui/action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: "build"

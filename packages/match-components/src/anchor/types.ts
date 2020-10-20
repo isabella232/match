@@ -4,12 +4,7 @@ export enum AnchorVariant {
   TEXT = "text",
 }
 
-export enum AnchorTarget {
-  SELF = "_self",
-  BLANK = "_blank",
-  PARENT = "_parent",
-  TOP = "_top",
-}
+export type AnchorTarget = "_self" | "_blank" | "_parent" | "_top";
 
 export interface AnchorProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {

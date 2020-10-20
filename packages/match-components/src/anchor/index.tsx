@@ -14,14 +14,14 @@ const secureExternalLink = (
   href: string
 ): Record<string, unknown> | undefined => {
   if (EXTERNAL_URL_REGEX.test(href)) {
-    return { rel: "noreferrer noopener", target: AnchorTarget.BLANK };
+    return { rel: "noreferrer noopener", target: "_blank" };
   }
 };
 
 const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
   ({ ...props }, ref) => {
     return (
-      <StyledAnchor {...secureExternalLink(props.href)} {...props} ref={ref} />
+      <StyledAnchor ref={ref} {...secureExternalLink(props.href)} {...props} />
     );
   }
 );
@@ -30,7 +30,7 @@ Anchor.displayName = "anchor";
 Anchor.propTypes = {
   variant: PropTypes.oneOf(Object.values(AnchorVariant)),
   href: PropTypes.string.isRequired,
-  target: PropTypes.oneOf(Object.values(AnchorTarget)),
+  target: PropTypes.oneOf(["_self", "_blank", "_parent", "_top"]),
   rel: PropTypes.string,
   noUnderline: PropTypes.bool,
 };

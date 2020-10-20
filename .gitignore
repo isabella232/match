@@ -96,3 +96,6 @@ packages/match-tokens/py/match_tokens_py.egg-info
 packages/match-website/build/*
 .docusaurus
 .cache-loader
+
+# Chromatic
+.out

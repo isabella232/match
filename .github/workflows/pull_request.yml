@@ -6,11 +6,19 @@ jobs:
   build_and_tests:
     runs-on: ubuntu-latest
     steps:
+      # Chromatic requires full git history
+      # See: https://github.com/chromaui/action#checkout-depth
       - uses: actions/checkout@v2
-      - name: "Setup Node"
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
           node-version: "12"
+
+      # Cache Yarn dependencies
+      # https://github.com/actions/cache/blob/main/examples.md#node---yarn-2
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
@@ -21,6 +29,8 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+
+      # Build and test
       - name: Install Node dependencies
         run: yarn install --immutable
       - name: Build Tokens
@@ -29,3 +39,8 @@ jobs:
         run: yarn type-check
       - name: Run tests
         run: yarn test:ci
+      - name: Run Chromatic
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

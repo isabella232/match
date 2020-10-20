@@ -3,11 +3,6 @@ import * as PropTypes from "prop-types";
 import { StyledAnchor } from "./styles";
 import { AnchorVariant, AnchorTarget, AnchorProps } from "./types";
 
-export interface ExternalProps {
-  rel: string;
-  target: AnchorTarget;
-}
-
 const EXTERNAL_URL_REGEX = /^(https?:)\S*$/;
 
 const secureExternalLink = (

@@ -20,7 +20,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
     );
   }
 );
-Anchor.displayName = "anchor";
+Anchor.displayName = "Anchor";
 
 Anchor.propTypes = {
   variant: PropTypes.oneOf(Object.values(AnchorVariant)),
@@ -31,7 +31,7 @@ Anchor.propTypes = {
 };
 
 Anchor.defaultProps = {
-  variant: AnchorVariant.TEXT,
+  variant: AnchorVariant.PRIMARY,
   noUnderline: false,
 };
 

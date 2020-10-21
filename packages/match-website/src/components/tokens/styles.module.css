@@ -21,6 +21,7 @@
 .borderExample {
   width: 168px;
   height: 48px;
+  border-color: var(--border-darkest);
   border-style: solid;
-  border-width: 2px;
+  border-width: var(--border-width-light-rem);
 }

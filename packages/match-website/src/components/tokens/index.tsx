@@ -12,6 +12,7 @@ import { TextColorTokens } from "./text-color";
 import { ShadowTokens } from "./shadow";
 import { GradientTokens } from "./gradient";
 import { BorderColorTokens } from "./border-color";
+import { BorderWidthTokens } from "./border-width";
 import {
   ColorToken,
   BreakpointToken,
@@ -306,7 +307,7 @@ const Tokens: React.FC = () => {
       {borderWidthTokens.length > 0 && (
         <div>
           <h2>Border Widths</h2>
-          <UnitTokens tokens={borderWidthTokens} prefix="borderWidth" />
+          <BorderWidthTokens tokens={borderWidthTokens} prefix="borderWidth" />
         </div>
       )}
     </div>

@@ -1,7 +1,7 @@
 import { Color } from "@diez/prefabs";
 
 export class Swatch {
-  brandColor = Color.rgba(0, 20, 137, 1);
+  brand = Color.rgba(0, 20, 137, 1);
   brandHighlight = Color.rgba(242, 47, 70, 1);
   white = Color.rgba(255, 255, 255, 1);
   baseBlue = Color.rgba(0, 140, 255, 1);

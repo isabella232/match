@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "v2.0.0-alpha.65",
+    "@tsconfig/docusaurus": "1.0.2",
     "@types/gh-pages": "3.0.0",
     "@types/mdx-js__react": "1.5.3",
     "@types/react": "16.9.51",

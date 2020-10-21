@@ -11,6 +11,8 @@ import { WeightTokens } from "./weight";
 import { TextColorTokens } from "./text-color";
 import { ShadowTokens } from "./shadow";
 import { GradientTokens } from "./gradient";
+import { BorderColorTokens } from "./border-color";
+import { BorderWidthTokens } from "./border-width";
 import {
   ColorToken,
   BreakpointToken,
@@ -39,6 +41,8 @@ const Tokens: React.FC = () => {
     text,
     shadow,
     gradient,
+    border,
+    borderWidth,
   } = useTheme();
   const {
     state: { filterText },
@@ -154,12 +158,26 @@ const Tokens: React.FC = () => {
     [filterText, shadow]
   );
 
+  const borderTokens: ColorToken[] = React.useMemo(
+    () =>
+      Object.entries(border).filter(([key]) =>
+        textSearch(`border.${key}`, filterText)
+      ),
+    [filterText, border]
+  );
+
+  const borderWidthTokens: UnitToken[] = React.useMemo(
+    () =>
+      Object.entries(borderWidth).filter(([key]) =>
+        textSearch(`borderWidth.${key}`, filterText)
+      ),
+    [filterText, borderWidth]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
-      tertiaryColorTokens.length +
-      backgroundColorTokens.length +
-      textColorTokens.length
+      tertiaryColorTokens.length
   );
 
   const hasAnyTokens = Boolean(
@@ -172,7 +190,8 @@ const Tokens: React.FC = () => {
       fontWeightTokens.length +
       backgroundColorTokens.length +
       textColorTokens.length +
-      gradientTokens.length
+      gradientTokens.length +
+      borderTokens.length
   );
 
   return (
@@ -198,7 +217,7 @@ const Tokens: React.FC = () => {
 
       {primaryColorTokens.length > 0 && (
         <div>
-          <h2>Primary</h2>
+          <h3>Primary</h3>
           <p>
             This palette defines our brand. Emphasize Twilio Red and avoid
             introducing too many secondary colors for audiences new to Twilio.
@@ -260,7 +279,7 @@ const Tokens: React.FC = () => {
       {fontSizeTokens.length > 0 && (
         <div>
           <h2>Font Sizes</h2>
-          <UnitTokens tokens={fontSizeTokens} />
+          <UnitTokens tokens={fontSizeTokens} prefix="fontSize" />
         </div>
       )}
 
@@ -275,6 +294,20 @@ const Tokens: React.FC = () => {
         <div>
           <h2>Shadows</h2>
           <ShadowTokens prefix="shadow" tokens={shadowTokens} />
+        </div>
+      )}
+
+      {borderTokens.length > 0 && (
+        <div>
+          <h2>Borders</h2>
+          <BorderColorTokens tokens={borderTokens} prefix="border" />
+        </div>
+      )}
+
+      {borderWidthTokens.length > 0 && (
+        <div>
+          <h2>Border Widths</h2>
+          <BorderWidthTokens tokens={borderWidthTokens} prefix="borderWidth" />
         </div>
       )}
     </div>

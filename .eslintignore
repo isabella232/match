@@ -7,4 +7,3 @@ build
 .docusaurus
 .cache
 packages/match-tokens/**/lib
-packages/match-tokens/**/designs

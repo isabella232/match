@@ -1,5 +1,6 @@
-import { coreThemeTokens } from "./designs/CoreTheme.sketch";
-const { colors: C } = coreThemeTokens;
+import { Swatch } from "./swatch";
+
+const C = new Swatch();
 
 export class Text {
   primary = C.gray90;

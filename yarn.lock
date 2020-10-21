@@ -1701,7 +1701,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@diez/extractors-core@npm:*, @diez/extractors-core@npm:10.6.0, @diez/extractors-core@npm:^10.6.0":
+"@diez/extractors-core@npm:*, @diez/extractors-core@npm:^10.6.0":
   version: 10.6.0
   resolution: "@diez/extractors-core@npm:10.6.0"
   dependencies:
@@ -1714,7 +1714,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@diez/extractors@npm:*, @diez/extractors@npm:10.6.0":
+"@diez/extractors@npm:*":
   version: 10.6.0
   resolution: "@diez/extractors@npm:10.6.0"
   dependencies:
@@ -4062,8 +4062,6 @@ __metadata:
   dependencies:
     "@diez/cli-core": 10.6.0
     "@diez/engine": 10.6.0
-    "@diez/extractors": 10.6.0
-    "@diez/extractors-core": 10.6.0
     "@diez/prefabs": 10.6.0
     "@diez/stdlib": 10.6.0
     "@diez/targets": 10.6.0

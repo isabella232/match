@@ -1,6 +1,7 @@
-import { coreThemeTokens } from "./designs/CoreTheme.sketch";
-const { colors: C } = coreThemeTokens;
 import { Toward, LinearGradient } from "@diez/prefabs";
+import { Swatch } from "./swatch";
+
+const C = new Swatch();
 
 export class Gradient {
   redHero = LinearGradient.make(

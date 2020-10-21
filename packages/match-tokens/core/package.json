@@ -23,8 +23,6 @@
   "devDependencies": {
     "@diez/cli-core": "10.6.0",
     "@diez/engine": "10.6.0",
-    "@diez/extractors": "10.6.0",
-    "@diez/extractors-core": "10.6.0",
     "@diez/prefabs": "10.6.0",
     "@diez/stdlib": "10.6.0",
     "@diez/targets": "10.6.0",
@@ -38,7 +36,6 @@
     "build": "yarn clean && yarn compile",
     "compile": "tsc",
     "clean": "rm -rf ./dist tsconfig.tsbuildinfo",
-    "extract": "diez extract",
     "publish": "yarn npm publish --tolerate-republish",
     "type-check": "tsc --noEmit --composite false"
   }

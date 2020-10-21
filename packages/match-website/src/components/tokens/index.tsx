@@ -11,6 +11,7 @@ import { WeightTokens } from "./weight";
 import { TextColorTokens } from "./text-color";
 import { ShadowTokens } from "./shadow";
 import { GradientTokens } from "./gradient";
+import { BorderColorTokens } from "./border-color";
 import {
   ColorToken,
   BreakpointToken,
@@ -298,7 +299,7 @@ const Tokens: React.FC = () => {
       {borderTokens.length > 0 && (
         <div>
           <h2>Borders</h2>
-          <SwatchTokens tokens={borderTokens} prefix="border" />
+          <BorderColorTokens tokens={borderTokens} prefix="border" />
         </div>
       )}
 

@@ -17,3 +17,10 @@
 .themeSwitcher p {
   display: none;
 }
+
+.borderExample {
+  width: 168px;
+  height: 48px;
+  border-style: solid;
+  border-width: 2px;
+}

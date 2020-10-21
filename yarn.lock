@@ -4348,13 +4348,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/docusaurus@npm:1.0.2":
-  version: 1.0.2
-  resolution: "@tsconfig/docusaurus@npm:1.0.2"
-  checksum: 94edb244f8c1b4a1ce99f7092749c15dd96473d326b5638d54316f39b98bdb6862b8ff64df45e966229d00c1b2ccbef662ac0d1702d2147b6925385b0ffab493
-  languageName: node
-  linkType: hard
-
 "@twilio-labs/match-components@workspace:packages/match-components":
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-components@workspace:packages/match-components"
@@ -4494,6 +4487,7 @@ __metadata:
     core-js: 3.6.5
     diez: 10.6.0
     semver: 7.3.2
+    tsconfig-match: "workspace:configs/tsconfig"
     typescript: 4.0.3
   languageName: unknown
   linkType: soft
@@ -4513,6 +4507,7 @@ __metadata:
     core-js: 3.6.5
     diez: 10.6.0
     semver: 7.3.2
+    tsconfig-match: "workspace:configs/tsconfig"
     typescript: 4.0.3
   peerDependencies:
     "@diez/engine": 10.x
@@ -4534,6 +4529,7 @@ __metadata:
     core-js: 3.6.5
     diez: 10.6.0
     semver: 7.3.2
+    tsconfig-match: "workspace:configs/tsconfig"
     typescript: 4.0.3
   languageName: unknown
   linkType: soft
@@ -4553,6 +4549,7 @@ __metadata:
     core-js: 3.6.5
     diez: 10.6.0
     semver: 7.3.2
+    tsconfig-match: "workspace:configs/tsconfig"
     typescript: 4.0.3
   languageName: unknown
   linkType: soft
@@ -4572,6 +4569,7 @@ __metadata:
     core-js: 3.6.5
     diez: 10.6.0
     semver: 7.3.2
+    tsconfig-match: "workspace:configs/tsconfig"
     typescript: 4.0.3
   languageName: unknown
   linkType: soft
@@ -4592,6 +4590,7 @@ __metadata:
     core-js: 3.6.5
     rollup: 2.28.2
     rollup-plugin-typescript2: 0.27.3
+    tsconfig-match: "workspace:configs/tsconfig"
     typescript: 4.0.3
   languageName: unknown
   linkType: soft
@@ -4606,7 +4605,6 @@ __metadata:
     "@docusaurus/theme-classic": 2.0.0-alpha.65
     "@docusaurus/theme-live-codeblock": 2.0.0-alpha.65
     "@mdx-js/react": 1.6.18
-    "@tsconfig/docusaurus": 1.0.2
     "@twilio-labs/match-components": "workspace:packages/match-components"
     "@twilio-labs/match-fonts": "workspace:packages/match-fonts"
     "@twilio-labs/match-themes": "workspace:packages/match-themes"
@@ -4631,6 +4629,7 @@ __metadata:
     react-live: 2.2.2
     reakit: 1.2.5
     styled-components: 5.2.0
+    tsconfig-match: "workspace:configs/tsconfig"
     typescript: 4.0.3
     wcag-contrast: 3.0.0
   languageName: unknown
@@ -4653,6 +4652,7 @@ __metadata:
     react: 16.13.1
     react-dom: 16.13.1
     react-is: 16.13.1
+    tsconfig-match: "workspace:configs/tsconfig"
     tslib: 2.0.2
     typescript: 4.0.3
   peerDependencies:

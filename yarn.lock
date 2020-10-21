@@ -4614,6 +4614,7 @@ __metadata:
     "@twilio-labs/match-tokens-twilio": "workspace:packages/match-tokens/twilio"
     "@types/gh-pages": 3.0.0
     "@types/mdx-js__react": 1.5.3
+    "@types/node": 14.14.1
     "@types/react": 16.9.51
     "@types/react-dom": 16.9.8
     "@types/react-is": 16.7.1
@@ -4951,6 +4952,13 @@ __metadata:
   version: 14.11.5
   resolution: "@types/node@npm:14.11.5"
   checksum: 974f9dbebf83593b3fcd3ef2266cef2be033b33ccfe24a37b265abfe1340eee0e3967824819a099ec336182758b07a816798a7cdecbaf1b5a8c714d8e663ba82
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:14.14.1":
+  version: 14.14.1
+  resolution: "@types/node@npm:14.14.1"
+  checksum: 6e17842ab09fd128f1bef254f2d4bae9bd30a8c9fbaa10c28062726faa7805c0d48ccda0f5ea45db8ecf107ec92b9ab754849c37d0f422c20793e90ddc0b62fc
   languageName: node
   linkType: hard
 

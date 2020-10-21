@@ -16218,6 +16218,7 @@ fsevents@^1.2.7:
     stylelint-order: 4.1.0
     stylelint-processor-styled-components: 1.10.0
     ts-jest: 26.4.1
+    tsconfig-match: "workspace:configs/tsconfig"
     typescript: 4.0.3
   languageName: unknown
   linkType: soft

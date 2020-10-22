@@ -7,6 +7,8 @@ import {
   Swatch,
   FontSize,
   FontWeight,
+  Border,
+  BorderWidth,
 } from "@twilio-labs/match-tokens-core";
 import { fontFamily } from "./font-family";
 import { Background } from "./background";
@@ -26,4 +28,6 @@ export const sendGridDesignTokens = {
   shadow: new Shadow(),
   gradient: new Gradient(),
   button: new Button(),
+  border: new Border(),
+  borderWidth: new BorderWidth(),
 };

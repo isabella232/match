@@ -11,7 +11,7 @@ import { ThemeSwitcher } from "../../src/components/theme-switcher";
 
 Anchors are hyperlinks that take users to another page or a section on a page. They are found throughout the interface, both on their own line and inline with text.
 
-**Sources:** [Github](https://github.com/twilio-labs/match/tree/main/packages/match-components/src/anchor)
+**Sources:** <Anchor href="https://github.com/twilio-labs/match/tree/main/packages/match-components/src/anchor">GitHub</Anchor>
 
 ## Usage Guide
 
@@ -54,8 +54,6 @@ Here are some quick accessibility tips to ensure a positive user experience for 
 - Avoid using only color to communicate information. Use another indicator, such as an underline.
 - Screen Reader users may choose to navigate by links instead of reading the full page, so anchor text needs to make sense without the surrounding
   sentences or content. When this is not possible use the <Anchor href="../visually-hidden">visually hidden component</Anchor> to supply additional information to users.
-- Anchors should be at least 44px wide and 22px tall to ensure low coordination and mobile users can easily click on links. Anchors should not be too
-  large on mobile to ensure that users do not accidentally activate them while trying to scroll
 
 **Note**: The title attribute was not included because it is not exposed by all browsers in an accessible way, meaning that users navigating
 with assistive technology may never see that information.
@@ -137,9 +135,9 @@ that the text is an anchor. Consider using an icon as an additional indicator th
 ```jsx live
 <p>
   Sources:
-  <Anchor href="https://sendgrid.com" noUnderline={true}>
+  <Anchor href="https://sendgrid.com" noUnderline>
     sendgrid.com
-  </Anchor>, <Anchor href="https://twilio.com" noUnderline={true}>
+  </Anchor>, <Anchor href="https://twilio.com" noUnderline>
     twilio.com
   </Anchor>
 </p>

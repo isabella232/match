@@ -9,7 +9,7 @@ import { Anchor } from "@twilio-labs/match-components";
 import { Props } from "../../src/components/props";
 import { ThemeSwitcher } from "../../src/components/theme-switcher";
 
-An anchor connects users to another URL with a single click. They are found throughout the interface, both on their own line and inline with text.
+Anchors are hyperlinks that take users to another page or a section on a page. They are found throughout the interface, both on their own line and inline with text.
 
 **Sources:** [Github](https://github.com/twilio-labs/match/tree/main/packages/match-components/src/anchor)
 
@@ -26,11 +26,7 @@ yarn add @twilio-labs/match-components
 ```jsx
 import { Anchor } from "@twilio-labs/match-components";
 
-const Component = () => (
-  <Anchor variant="text" href="../index">
-    Ahoy
-  </Anchor>
-);
+const Component = () => <Anchor href="../index">Ahoy</Anchor>;
 ```
 
 ### Props
@@ -41,33 +37,37 @@ const Component = () => (
 
 ## Guidelines
 
-### About Anchors
-
-Anchors are hyperlinks that take users to a another page or a section on a page. They work with internal and external URLs.
-
 ### Anchors vs Buttons
 
-All actions outside of linking to another URL should use a button. For example, actions such as submitting a form or closing a module should use a button.
+All actions outside of linking to another URL should use a button. For example, actions such as submitting a form or closing a module should
+use a button.
 
-The button component can also be used as an anchor when the href prop is included. In this situation the anchor looks like a button but renders as an anchor element, so that it is accessible to assistive technology users. Anchors that look like buttons are commonly used as CTAs.
+The button component can also be used as a CTA anchor when the href prop is included. In this situation the element looks like a button but
+renders as an anchor.
 
-Learn more about the [button component](../button) to determine if it will fit your needs better
+Learn more about the <Anchor href="../button">button component</Anchor> to determine if it will fit your needs better.
 
 ### Accessibility
 
 Here are some quick accessibility tips to ensure a positive user experience for all users:
 
-- Avoid using only color to communicate information. Use another indicator such as an underline.
-- Screen Reader users may choose to navigate by links instead of reading the full page, so link text needs to make sense without the surrounding sentences or content. When this is not possible use the [visually hidden component](../visually-hidden) to supply additional information to users.
-- Links should be at least 44px wide and 22px tall to ensure low coordination and mobile users can easily click on links. Links should not be too large on mobile to ensure that users do not accidentally activate them while trying to scroll
+- Avoid using only color to communicate information. Use another indicator, such as an underline.
+- Screen Reader users may choose to navigate by links instead of reading the full page, so anchor text needs to make sense without the surrounding
+  sentences or content. When this is not possible use the <Anchor href="../visually-hidden">visually hidden component</Anchor> to supply additional information to users.
+- Anchors should be at least 44px wide and 22px tall to ensure low coordination and mobile users can easily click on links. Anchors should not be too
+  large on mobile to ensure that users do not accidentally activate them while trying to scroll
 
-**Note**: The title attribute was not included because it is not exposed by all browsers in an accessible way, meaning that users navigating with assistive technology may never see that information.
+**Note**: The title attribute was not included because it is not exposed by all browsers in an accessible way, meaning that users navigating
+with assistive technology may never see that information.
 
 ---
 
 ## Composition
 
-TODO
+Anchors inherit font size and alignment from their parent container.
+
+Make sure to always include a valid href and anchor text that conveys the function, purpose, or destination of the anchor. Avoid ambiguous anchor
+text, such as ‘click here’ or ‘more’. When possible avoid using the same anchor text for anchors that take users to different content.
 
 ---
 
@@ -77,7 +77,7 @@ TODO
 
 ### Primary
 
-The primary link is the most common varition and can be used on any light background.
+The primary link is the most common variation and can be used on any light background.
 
 ```jsx live
 <Anchor href="../button">Learn when to use a button</Anchor>
@@ -87,7 +87,7 @@ The primary link is the most common varition and can be used on any light backgr
 
 Inverse anchors are designed to be accessible on dark backgrounds.
 
-**Note:** Inverse anchors are not accessible on SendGrid Blue backgrounds, use a [button](../button) instead
+**Note:** Inverse anchors are not accessible on SendGrid Blue backgrounds, use a <Anchor href="../button">button</Anchor> instead.
 
 ```jsx live bg=darkest
 <Anchor variant="inverse" href="../../design-tokens/tokens">
@@ -97,7 +97,8 @@ Inverse anchors are designed to be accessible on dark backgrounds.
 
 ### Text
 
-Text anchors inherent their parent's color for the default state. This variation should be used sparyingly and should be used in instances where it is obvious that it is a hyperlink, such as a blog title or a reference in a list of references.
+Text anchors inherit their parent's color for the default state. This variation should be used sparingly and should be used in instances
+where it is obvious that it is a hyperlink, such as a reference in a list of references.
 
 ```jsx live
 <Anchor
@@ -110,10 +111,11 @@ Text anchors inherent their parent's color for the default state. This variation
 
 ### External Link
 
-If an external anchor is used for href, the target and rel will automatically be set for security purposes
+If an external anchor is used for the href prop, the target and rel will automatically be set for security purposes.
 
-**target ="\_blank"**
-**rel="noreferrer noopener"**
+**target = "\_blank"**
+
+**rel = "noreferrer noopener"**
 
 ```jsx live
 <Anchor href="https://twilio.com/flex">Twilio Flex</Anchor>
@@ -129,14 +131,15 @@ However, the target and rel property can be overriden using the target and rel p
 
 ### Primary, No Underline
 
-Anchors with no underline should be used sparingly as they can cause accessibility concerns for low vision users. They should only be used when it is obvious that it is a hyperlink, such as a blog title or a reference in a list of reference. Consider using an icon as an additional indicator that it is a hyperlink.
+Every anchor variation has an option to get rid of the underline. Anchors without an underline should only be used when it is obvious
+that the text is an anchor. Consider using an icon as an additional indicator that the text is an anchor for anchors without an underline.
 
 ```jsx live
 <p>
   Sources:
   <Anchor href="https://sendgrid.com" noUnderline={true}>
     sendgrid.com
-  </Anchor>,<Anchor href="https://twilio.com" noUnderline={true}>
+  </Anchor>, <Anchor href="https://twilio.com" noUnderline={true}>
     twilio.com
   </Anchor>
 </p>

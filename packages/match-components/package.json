@@ -37,11 +37,13 @@
     "styled-components": "5.x"
   },
   "devDependencies": {
+    "@babel/core": "7.12.3",
     "@emotion/core": "10.0.35",
     "@storybook/react": "6.0.26",
     "@testing-library/react": "11.0.4",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
+    "@types/babel__core": "^7",
     "@types/jest-axe": "3.5.0",
     "@types/prop-types": "15.7.3",
     "@types/react": "16.9.51",

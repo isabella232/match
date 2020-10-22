@@ -43,7 +43,7 @@
     "@testing-library/react": "11.0.4",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
-    "@types/babel__core": "^7",
+    "@types/babel__core": "7.1.10",
     "@types/jest-axe": "3.5.0",
     "@types/prop-types": "15.7.3",
     "@types/react": "16.9.51",

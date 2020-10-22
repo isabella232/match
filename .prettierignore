@@ -5,5 +5,5 @@ dist
 .docusaurus
 build
 packages/match-tokens/**/lib
-packages/match-website/.cache
+packages/match-icons/**/src
 *.ejs

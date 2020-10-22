@@ -1,2 +1,2 @@
-export { default as AlignBottom } from './AlignBottom'
-export { default as Archive } from './Archive'
+export { default as ArrowBack } from './ArrowBack'
+export { default as ArrowForward } from './ArrowForward'

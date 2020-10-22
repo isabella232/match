@@ -1,12 +1,16 @@
 import * as React from "react";
 import { UnitToken } from "../../types/tokens";
+import styles from "./styles.module.css";
 
-interface UnitTokensProps {
+interface BorderWidthTokensProps {
   tokens: UnitToken[];
   prefix: string;
 }
 
-const UnitTokens: React.FC<UnitTokensProps> = ({ prefix, tokens }) => {
+const BorderWidthTokens: React.FC<BorderWidthTokensProps> = ({
+  prefix,
+  tokens,
+}) => {
   return (
     <div>
       <table>
@@ -15,6 +19,7 @@ const UnitTokens: React.FC<UnitTokensProps> = ({ prefix, tokens }) => {
             <th>Token</th>
             <th>Value (px)</th>
             <th>Value (rem)</th>
+            <th>Example</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +28,12 @@ const UnitTokens: React.FC<UnitTokensProps> = ({ prefix, tokens }) => {
               <td>{`${prefix}.${name}.rem`}</td>
               <td>{token.px}</td>
               <td>{token.rem}</td>
+              <td>
+                <div
+                  className={styles.borderExample}
+                  style={{ borderWidth: token.rem }}
+                />
+              </td>
             </tr>
           ))}
         </tbody>
@@ -31,4 +42,4 @@ const UnitTokens: React.FC<UnitTokensProps> = ({ prefix, tokens }) => {
   );
 };
 
-export { UnitTokens };
+export { BorderWidthTokens };

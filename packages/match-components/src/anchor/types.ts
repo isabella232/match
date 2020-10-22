@@ -11,7 +11,10 @@ export interface AnchorProps
   variant?: AnchorVariant;
   /** A URL to route to. */
   href: string;
+  /** Defaults to '_blank' for external links */
   target?: AnchorTarget;
+  /** Defaults to 'noreferrer noopener' for external links  */
   rel?: string;
+  /** Removes the underline from the anchor  */
   noUnderline?: boolean;
 }

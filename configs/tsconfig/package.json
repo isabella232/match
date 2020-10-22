@@ -1,0 +1,12 @@
+{
+  "name": "tsconfig-match",
+  "version": "0.0.0",
+  "private": true,
+  "main": "tsconfig.json",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "configs/svgr"
+  }
+}

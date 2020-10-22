@@ -5,7 +5,7 @@ module.exports = {
     "@babel/preset-typescript",
   ],
   plugins: [
-    "@babel/proposal-class-properties",
+    ["@babel/proposal-class-properties", { loose: true }],
     "@babel/proposal-object-rest-spread",
     "babel-plugin-styled-components",
   ],

@@ -30,6 +30,7 @@
     "core-js": "3.6.5",
     "diez": "10.6.0",
     "semver": "7.3.2",
+    "tsconfig-match": "workspace:configs/tsconfig",
     "typescript": "4.0.3"
   },
   "scripts": {

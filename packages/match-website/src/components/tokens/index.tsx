@@ -324,7 +324,7 @@ const Tokens: React.FC = () => {
         </div>
       )}
 
-      {borderWidthTokens.length > 0 && (
+      {spacingTokens.length > 0 && (
         <div>
           <h2>Spacing</h2>
           <SpacingTokens tokens={spacingTokens} prefix="space" />

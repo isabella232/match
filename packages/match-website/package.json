@@ -16,7 +16,7 @@
     "@docusaurus/preset-classic": "2.0.0-alpha.65",
     "@docusaurus/theme-classic": "2.0.0-alpha.65",
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.65",
-    "@mdx-js/react": "1.6.18",
+    "@mdx-js/react": "1.6.19",
     "@twilio-labs/match-components": "workspace:packages/match-components",
     "@twilio-labs/match-fonts": "workspace:packages/match-fonts",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",

@@ -11,3 +11,4 @@ export * from "./shadow";
 export * from "./button";
 export * from "./border";
 export * from "./border-width";
+export * from "./space";

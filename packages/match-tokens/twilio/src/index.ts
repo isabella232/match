@@ -15,6 +15,7 @@ import {
   Button,
   Border,
   BorderWidth,
+  Space,
 } from "@twilio-labs/match-tokens-core";
 
 export const twilioDesignTokens = {
@@ -30,4 +31,5 @@ export const twilioDesignTokens = {
   button: new Button(),
   border: new Border(),
   borderWidth: new BorderWidth(),
+  space: new Space(),
 };

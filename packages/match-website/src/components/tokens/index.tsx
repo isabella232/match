@@ -13,6 +13,8 @@ import { ShadowTokens } from "./shadow";
 import { GradientTokens } from "./gradient";
 import { BorderColorTokens } from "./border-color";
 import { BorderWidthTokens } from "./border-width";
+import { SpacingTokens } from "./space";
+
 import {
   ColorToken,
   BreakpointToken,
@@ -43,6 +45,7 @@ const Tokens: React.FC = () => {
     gradient,
     border,
     borderWidth,
+    space,
   } = useTheme();
   const {
     state: { filterText },
@@ -174,6 +177,14 @@ const Tokens: React.FC = () => {
     [filterText, borderWidth]
   );
 
+  const spacingTokens: UnitToken[] = React.useMemo(
+    () =>
+      Object.entries(space).filter(([key]) =>
+        textSearch(`space.${key}`, filterText)
+      ),
+    [filterText, borderWidth]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
@@ -191,7 +202,9 @@ const Tokens: React.FC = () => {
       backgroundColorTokens.length +
       textColorTokens.length +
       gradientTokens.length +
-      borderTokens.length
+      borderTokens.length +
+      borderWidthTokens.length +
+      spacingTokens.length
   );
 
   return (
@@ -308,6 +321,13 @@ const Tokens: React.FC = () => {
         <div>
           <h2>Border Widths</h2>
           <BorderWidthTokens tokens={borderWidthTokens} prefix="borderWidth" />
+        </div>
+      )}
+
+      {spacingTokens.length > 0 && (
+        <div>
+          <h2>Spacing</h2>
+          <SpacingTokens tokens={spacingTokens} prefix="space" />
         </div>
       )}
     </div>

@@ -9,6 +9,7 @@ import {
   FontWeight,
   Border,
   BorderWidth,
+  Space,
 } from "@twilio-labs/match-tokens-core";
 import { fontFamily } from "./font-family";
 import { Background } from "./background";
@@ -30,4 +31,5 @@ export const sendGridDesignTokens = {
   button: new Button(),
   border: new Border(),
   borderWidth: new BorderWidth(),
+  space: new Space(),
 };

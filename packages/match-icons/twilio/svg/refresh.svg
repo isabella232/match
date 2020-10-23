@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Refresh</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Refresh" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Refresh">
+            <g transform="translate(1.000000, 3.000000)">
+                <polyline id="Path" stroke="#394762" stroke-width="1.98863636" points="6.05113636 15.9348485 6.05113636 21.9007576 0.0852272727 21.9007576"></polyline>
+                <polyline id="Path" stroke="#394762" stroke-width="1.98863636" points="23.9488636 9.96893939 23.9488636 4.0030303 29.9147727 4.0030303"></polyline>
+                <path d="M24.3227273,3.99905303 C28.5629692,8.41661586 29.1227407,15.2028895 25.663657,20.2555376 C22.2045734,25.3081858 15.6754214,27.2413253 10.0231061,24.8863636" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M5.67594697,21.9047348 C1.44512654,17.485174 0.890992762,10.7052402 4.34802394,5.65734015 C7.80505512,0.609440079 14.3268825,-1.3245542 19.9768939,1.02272727" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+            </g>
+        </g>
+    </g>
+</svg>

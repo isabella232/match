@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/UserSignal</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/UserSignal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="User-Signal">
+            <g transform="translate(1.000000, 1.000000)">
+                <path d="M15,6 C16.9333333,6 18.5,7.56666667 18.5,9.5 C18.5,11.4333333 16.9333333,13 15,13 C13.0666667,13 11.5,11.4333333 11.5,9.5 C11.5,7.56666667 13.0666667,6 15,6 Z" id="Path" stroke="#394762" stroke-width="2"></path>
+                <path d="M20,22 L20,19 C20,16.2386667 17.7613333,14 15,14 C12.2386667,14 10,16.2386667 10,19 L10,22 L12,22 L13,30 L17,30 L18,22 L20,22 Z" id="Path" stroke="#394762" stroke-width="2"></path>
+                <path d="M23,8.99066667 C25.1613333,11.8746667 25.608,15.696 24.168,19" id="Path" stroke="#394762" stroke-width="2"></path>
+                <path d="M7,8.99066667 C4.83866667,11.8746667 4.392,15.696 5.832,19" id="Path" stroke="#394762" stroke-width="2"></path>
+                <path d="M3,24 C-1.97066667,17.372 -0.628,7.97066667 6,3 C12.628,-1.97066667 22.0293333,-0.628 27,6 C31,11.3333333 31,18.6666667 27,24" id="Path" stroke="#394762" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

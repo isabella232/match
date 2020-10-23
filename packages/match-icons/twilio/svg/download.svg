@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Action/16px/Download</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Action/16px/Download" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Download">
+            <g transform="translate(1.000000, 2.000000)">
+                <path d="M0,6.78461538 L6.61876923,0.161538462 C6.71978921,0.0602627839 6.85695526,0.00334515603 7,0.00334515603 C7.14304474,0.00334515603 7.28021079,0.0602627839 7.38123077,0.161538462 L14,6.78461538" id="Path" stroke="#394762" stroke-width="1.75" transform="translate(7.000000, 3.393980) rotate(180.000000) translate(-7.000000, -3.393980) "></path>
+                <line x1="0" y1="10.5495385" x2="14" y2="10.5495385" id="Path" stroke="#394762" stroke-width="1.75"></line>
+            </g>
+        </g>
+    </g>
+</svg>

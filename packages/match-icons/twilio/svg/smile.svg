@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Smile</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Smile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Smile">
+            <g transform="translate(1.000000, 1.000000)">
+                <path d="M15.9943182,0.0852026036 C10.9422915,0.0779429325 6.28404888,2.81222602 3.82757195,7.22683216 C1.37109501,11.6414383 1.503171,17.0412609 4.17253788,21.3304924 L0.0852272727,29.9147727 L8.66818182,25.8261364 C13.6876557,28.9482046 20.1315294,28.5597022 24.739548,24.8571905 C29.3475666,21.1546789 31.114713,14.9456825 29.1469057,9.37162098 C27.1790984,3.79755942 21.9055198,0.07414552 15.9943182,0.0852026036 Z" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M12.8602273,11.6856061 C12.3624964,10.671422 11.3311573,10.0287255 10.2014205,10.0287255 C9.07168358,10.0287255 8.04034448,10.671422 7.54261364,11.6856061" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M24.7840909,11.6856061 C24.2863601,10.671422 23.255021,10.0287255 22.1252841,10.0287255 C20.9955472,10.0287255 19.9642081,10.671422 19.4664773,11.6856061" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M11.0306818,18.9772727 C13.9387604,21.6288945 18.3879442,21.6288945 21.2960227,18.9772727" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+            </g>
+        </g>
+    </g>
+</svg>

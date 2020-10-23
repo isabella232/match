@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/CheckedMessage</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/CheckedMessage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Checked-Message">
+            <g transform="translate(1.000000, 1.000000)">
+                <path d="M29.9986667,22 C29.9986667,26.418278 26.4169447,30 21.9986667,30 C17.5803887,30 13.9986667,26.418278 13.9986667,22 C13.9986667,17.581722 17.5803887,14 21.9986667,14" id="Path" stroke="#394762" stroke-width="2"></path>
+                <path d="M29.9986667,16 L22.7053333,23.292 C22.5177786,23.479675 22.2633275,23.5851198 21.998,23.5851198 C21.7326725,23.5851198 21.4782214,23.479675 21.2906667,23.292 L19,21" id="Path" stroke="#394762" stroke-width="2"></path>
+                <path d="M9.964,25.5333333 L4,30 L4,24 L2,24 C0.8954305,24 0,23.1045695 0,22 L0,2 C0,0.8954305 0.8954305,0 2,0 L28,0 C29.1045695,0 30,0.8954305 30,2 L30,12" id="Path" stroke="#394762" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

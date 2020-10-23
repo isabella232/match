@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/RealEstate</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/RealEstate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Real-Estate">
+            <g transform="translate(1.000000, 2.000000)">
+                <path d="M10.0284091,24.3655303 L6.05113636,24.3655303 C4.95284283,24.3655303 4.0625,23.4751875 4.0625,22.3768939 L4.0625,12.4337121" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M0.0852272727,10.4450758 L11.7267045,0.59469697 C12.4681987,-0.0328174761 13.5545285,-0.0328174761 14.2960227,0.59469697 L25.9375,10.4450758" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <polyline id="Path" stroke="#394762" stroke-width="1.98863636" points="19.9715909 0.501893939 23.9488636 0.501893939 23.9488636 4.47916667"></polyline>
+                <path d="M21.9602273,28.342803 L15.180303,21.2698864 C13.9594216,20.0493445 13.6566192,18.1844658 14.4285985,16.6403409 L14.4285985,16.6403409 C15.0054396,15.4871406 16.101425,14.6814956 17.3742167,14.4750544 C18.6470084,14.2686131 19.9414519,14.686541 20.8532197,15.5982955 L21.9602273,16.705303 L23.0672348,15.5982955 C23.9790026,14.686541 25.2734461,14.2686131 26.5462378,14.4750544 C27.8190296,14.6814956 28.9150149,15.4871406 29.4918561,16.6403409 L29.4918561,16.6403409 C30.2638354,18.1844658 29.9610329,20.0493445 28.7401515,21.2698864 L21.9602273,28.342803 Z" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+            </g>
+        </g>
+    </g>
+</svg>

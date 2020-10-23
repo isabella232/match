@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Notifications</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Notifications" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Notifications">
+            <g transform="translate(1.000000, 1.000000)">
+                <path d="M22,26 C21.724,26 21.5,26.224 21.5,26.5 C21.5,26.776 21.724,27 22,27 C22.276,27 22.5,26.776 22.5,26.5 C22.5013333,26.224 22.2786667,26.0013333 22.0026667,26 C22.0013333,26 22.0013333,26 22,26" id="Path" stroke="#394762" stroke-width="2"></path>
+                <line x1="22" y1="23" x2="22" y2="19" id="Path" stroke="#394762" stroke-width="2"></line>
+                <path d="M29.7493333,26.576 C30.3346667,27.744 29.8613333,29.1653333 28.6933333,29.7493333 C28.364,29.9133333 28.0013333,30 27.6333333,30 L16.3653333,30 C15.0586667,30 14,28.9413333 13.9986667,27.636 C13.9986667,27.268 14.084,26.9053333 14.2493333,26.576 L19.884,15.3066667 C20.468,14.1386667 21.8893333,13.6653333 23.0573333,14.2493333 C23.5146667,14.4786667 23.8853333,14.8493333 24.1146667,15.3066667 L29.7493333,26.576 Z" id="Path" stroke="#394762" stroke-width="2"></path>
+                <path d="M9,0 C12.0373333,0 14.5,2.46266667 14.5,5.5 C14.5,8.53733333 12.0373333,11 9,11 C5.96266667,11 3.5,8.53733333 3.5,5.5 C3.5,2.46266667 5.96266667,0 9,0 Z" id="Path" stroke="#394762" stroke-width="2"></path>
+                <path d="M15.28,15.5666667 C11.732,12.0933333 6.04,12.1533333 2.56533333,15.7013333 C0.918666667,17.384 -0.00266666667,19.6453333 -5.77260284e-06,22" id="Path" stroke="#394762" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
-    "directory": "packages/match-icons-twilio"
+    "directory": "packages/match-icons/twilio"
   },
   "publishConfig": {
     "main": "dist/index.js",
@@ -20,13 +20,11 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "convert:all": "rm -rf src && svgr -d src svg",
-    "convert:new": "svgr -d src --ignore-existing svg",
-    "build": "yarn clean && yarn compile",
-    "clean": "rm -rf ./dist",
+    "convert": "svgr -d src svg",
+    "build": "yarn clean && yarn convert && yarn compile",
+    "clean": "rm -rf src dist",
     "compile": "rollup -c node:match --environment NODE_ENV:production",
     "compile:dev": "rollup -c node:match --environment NODE_ENV:development",
-    "type-check": "tsc --noEmit --composite false",
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
@@ -37,10 +35,12 @@
   },
   "devDependencies": {
     "@svgr/cli": "5.4.0",
+    "@twilio-labs/match-components": "workspace:packages/match-components",
     "@types/prop-types": "15.7.3",
     "@types/react": "16.9.51",
     "prop-types": "15.7.2",
     "react": "16.13.1",
+    "react-uid": "2.3.0",
     "rollup": "2.28.2",
     "rollup-config-match": "workspace:configs/rollup",
     "svgr-config-match": "workspace:configs/svgr",

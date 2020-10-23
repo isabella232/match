@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Tower</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Tower" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g filter="url(#filter-1)" id="Tower">
+            <g transform="translate(1.000000, 1.000000)">
+                <polygon id="Stroke-1" stroke="#394762" stroke-width="1.74375" stroke-linejoin="round" points="8.22467879 30.064 21.4300121 30.064 14.8273455 17.3667879"></polygon>
+                <line x1="14.8269576" y1="17.366497" x2="14.8269576" y2="14.8268606" id="Stroke-3" stroke="#394762" stroke-width="1.74375" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="8.22467879" y1="30.064" x2="18.2901333" y2="24.0247273" id="Stroke-4" stroke="#394762" stroke-width="1.74375" stroke-linejoin="round"></line>
+                <line x1="21.4301091" y1="30.064" x2="11.3646545" y2="24.0247273" id="Stroke-6" stroke="#394762" stroke-width="1.74375" stroke-linejoin="round"></line>
+                <path d="M5.66312727,25.7026909 C2.57076364,23.0942061 0.606157576,19.1902061 0.606157576,14.8275394 C0.606157576,6.97299394 6.97318788,0.605963636 14.8267636,0.605963636 C22.6813091,0.605963636 29.0483394,6.97299394 29.0483394,14.8275394 C29.0483394,19.1853576 27.0876121,23.0854788 24.000097,25.6939636" id="Stroke-10" stroke="#394762" stroke-width="1.74375" stroke-linecap="round"></path>
+                <path d="M7.24644848,19.9385212 C6.26026667,18.480097 5.68523636,16.720097 5.68523636,14.8272485 C5.68523636,9.77803636 9.77735758,5.68494545 14.8265697,5.68494545 C19.8757818,5.68494545 23.9688727,9.77803636 23.9688727,14.8272485 C23.9688727,16.7113697 23.3986909,18.4636121 22.4212364,19.9181576" id="Stroke-12" stroke="#394762" stroke-width="1.74375" stroke-linecap="round"></path>
+                <path d="M10.879903,15.7931636 C10.8042667,15.4838303 10.7645091,15.1599515 10.7645091,14.8273455 C10.7645091,12.582497 12.5826909,10.7633455 14.8265697,10.7633455 C17.0714182,10.7633455 18.8905697,12.582497 18.8905697,14.8273455 C18.8905697,15.1822545 18.8449939,15.5255273 18.7596606,15.8532848" id="Stroke-14" stroke="#394762" stroke-width="1.74375" stroke-linecap="round"></path>
+                <line x1="12.4500364" y1="21.9375515" x2="17.2034909" y2="21.9375515" id="Stroke-9" stroke="#394762" stroke-width="1.74375" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

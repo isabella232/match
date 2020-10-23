@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Bell</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Bell" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Bell">
+            <g transform="translate(4.000000, 1.000000)">
+                <path d="M9.39393939,27.9261364 C9.73981096,29.1043497 10.8208383,29.9136513 12.0487689,29.9136513 C13.2766996,29.9136513 14.3577269,29.1043497 14.7035985,27.9261364" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <line x1="12.0454545" y1="3.06818182" x2="12.0454545" y2="0.0852272727" id="Path" stroke="#394762" stroke-width="1.98863636"></line>
+                <path d="M12.0454545,3.06818182 C17.5369222,3.06818182 21.9886364,7.51989595 21.9886364,13.0113636 C21.9886364,22.3526515 23.9772727,23.9488636 23.9772727,23.9488636 L0.113636364,23.9488636 C0.113636364,23.9488636 2.10227273,21.4087121 2.10227273,13.0113636 C2.10227273,7.51989595 6.55398686,3.06818182 12.0454545,3.06818182 Z" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/TelephoneBook</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/TelephoneBook" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Telephone-Book">
+            <g transform="translate(4.000000, 1.000000)">
+                <path d="M24,30 L3,30 C1.34314575,30 -1.77635684e-15,28.6568542 -1.77635684e-15,27" id="Path" stroke="#394762" stroke-width="2"></path>
+                <path d="M4,0 C1.790861,0 0,1.790861 0,4 L0,27 C0,25.3431458 1.34314575,24 3,24 L23,24 C23.5522847,24 24,23.5522847 24,23 L24,1 C24,0.44771525 23.5522847,0 23,0 L4,0 Z" id="Path" stroke="#394762" stroke-width="2"></path>
+                <line x1="22" y1="30" x2="22" y2="24" id="Path" stroke="#394762" stroke-width="2"></line>
+                <path d="M11.664,17.2413333 L14.8786667,14.0666667 C15.6596664,13.2859028 16.925667,13.2859028 17.7066667,14.0666667 L18.4146667,14.7746667 C19.1954305,15.5556664 19.1954305,16.821667 18.4146667,17.6026667 L17.8013333,18.216 C17.3059059,18.7156146 16.5843894,18.9181456 15.9013333,18.7493333 L14.7386667,18.4586667 C10.2076628,17.3274831 6.66985025,13.7896706 5.53866667,9.25866667 L5.25333333,8.09866667 C5.08333014,7.41720502 5.28324194,6.69651032 5.78,6.2 L6.39333333,5.58666667 C7.17433304,4.80590279 8.44033363,4.80590279 9.22133333,5.58666667 L9.92933333,6.29333333 C10.7100972,7.07433304 10.7100972,8.34033363 9.92933333,9.12133333 L6.748,12.3213333" id="Path" stroke="#394762" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

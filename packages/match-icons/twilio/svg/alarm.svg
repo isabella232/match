@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Alarm</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Alarm" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Alarm">
+            <g transform="translate(1.000000, 1.000000)">
+                <path d="M7.59142857,3.95142857 C6.10830324,4.77500803 4.8858362,5.99796999 4.06285714,7.48142857" id="Path" stroke="#394762" stroke-width="1.875"></path>
+                <path d="M6.39285714,0 C3.29800685,0.879916917 0.879225386,3.29923889 0,6.39428571" id="Path" stroke="#394762" stroke-width="1.875"></path>
+                <line x1="4.28571429" y1="23.5714286" x2="25.7142857" y2="23.5714286" id="Path" stroke="#394762" stroke-width="1.875"></line>
+                <path d="M25.7142857,23.5714286 C25.7142857,23.5714286 23.5714286,21.7057143 23.5714286,15 C23.5714286,9.64285714 19.9114286,4.90285714 15,4.90285714 C10.0885714,4.90285714 6.42857143,9.64285714 6.42857143,15 C6.42857143,21.7414286 4.28571429,23.5714286 4.28571429,23.5714286" id="Path" stroke="#394762" stroke-width="1.875"></path>
+                <path d="M17.1428571,27.8571429 C17.1428571,29.0406102 16.1834673,30 15,30 C13.8165327,30 12.8571429,29.0406102 12.8571429,27.8571429" id="Path" stroke="#394762" stroke-width="1.875"></path>
+                <line x1="15" y1="4.90285714" x2="15" y2="2.14285714" id="Path" stroke="#394762" stroke-width="1.875"></line>
+                <path d="M22.4085714,3.95142857 C23.14529,4.36275273 23.8220794,4.87322881 24.42,5.46857143 C25.0163446,6.06615315 25.5269234,6.74355952 25.9371429,7.48142857" id="Path" stroke="#394762" stroke-width="1.875"></path>
+                <path d="M23.6071429,-2.12330153e-14 C26.7019932,0.879916917 29.1207746,3.29923889 30,6.39428571" id="Path" stroke="#394762" stroke-width="1.875"></path>
+            </g>
+        </g>
+    </g>
+</svg>

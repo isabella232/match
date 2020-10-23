@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Programming</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Programming" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Programming">
+            <g transform="translate(1.000000, 4.000000)">
+                <path d="M22,15.2693333 C22,13.28 25.5493333,12.132 29.3053333,12.0053333 C29.4810323,11.9968861 29.6541481,12.0501888 29.7946667,12.156 C29.9217638,12.2500001 29.9977039,12.3979353 30,12.556 L30,21.292 C29.9663509,21.6154277 29.6846687,21.8554444 29.36,21.8373333 C26.7436429,21.7916509 24.175749,22.5462023 22,24 C19.8253227,22.542906 17.2573463,21.7850738 14.64,21.828 C14.3155641,21.8454216 14.034293,21.6057552 14,21.2826667 L14,12.5506667 C14.0022961,12.392602 14.0782362,12.2446668 14.2053333,12.1506667 C14.3458519,12.0448555 14.5189677,11.9915528 14.6946667,12 C18.4506667,12.1333333 22,13.28 22,15.2693333 Z" id="Path" stroke="#394762" stroke-width="2"></path>
+                <line x1="22" y1="15.2693333" x2="22" y2="24.004" id="Path" stroke="#394762" stroke-width="2"></line>
+                <path d="M10,19.004 L1.33333333,19.004 C0.591768041,18.9952154 -0.00371614632,18.389608 -4.39034252e-05,17.648 L-4.39034252e-05,1.36133333 C-0.00593187487,0.617946751 0.589984,0.0095166428 1.33333333,0 L22.6666667,0 C23.4087548,0.00878672719 24.0044521,0.615206511 24.0000248,1.35733333 L24.0000248,8.144" id="Path" stroke="#394762" stroke-width="2"></path>
+                <line x1="5.21733333" y1="24.004" x2="10" y2="24.004" id="Path" stroke="#394762" stroke-width="2"></line>
+                <line x1="10" y1="19.004" x2="10" y2="24.004" id="Path" stroke="#394762" stroke-width="2"></line>
+                <polyline id="Path" stroke="#394762" stroke-width="2" points="4 5.004 8 8.004 4 11.004"></polyline>
+                <line x1="12" y1="8.004" x2="17" y2="8.004" id="Path" stroke="#394762" stroke-width="2"></line>
+            </g>
+        </g>
+    </g>
+</svg>

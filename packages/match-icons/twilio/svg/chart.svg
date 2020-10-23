@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Chart</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Chart" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Chart">
+            <g transform="translate(1.000000, 1.000000)">
+                <polygon id="Path" stroke="#394762" stroke-width="2" points="0 20 10 20 10 30 0 30"></polygon>
+                <polygon id="Path" stroke="#394762" stroke-width="2" points="10 8.8817842e-14 20 8.8817842e-14 20 10 10 10"></polygon>
+                <polygon id="Path" stroke="#394762" stroke-width="2" points="20 20 30 20 30 30 20 30"></polygon>
+                <path d="M5,20 L5,18 C5,16.8954305 5.8954305,16 7,16 L23,16 C24.1045695,16 25,16.8954305 25,18 L25,20" id="Path" stroke="#394762" stroke-width="2"></path>
+                <line x1="15" y1="10" x2="15" y2="16" id="Path" stroke="#394762" stroke-width="2"></line>
+            </g>
+        </g>
+    </g>
+</svg>

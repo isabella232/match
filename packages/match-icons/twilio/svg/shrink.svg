@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Action/16px/Shrink</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Action/16px/Shrink" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Shrink">
+            <g transform="translate(1.000000, 1.000000)">
+                <line x1="0" y1="14" x2="4.30769231" y2="9.69230769" id="Path" stroke="#000000" stroke-width="1.07692308"></line>
+                <polyline id="Path" stroke="#000000" stroke-width="1.07692308" points="0.538461538 9.69230769 4.30769231 9.69230769 4.30769231 13.4615385"></polyline>
+                <line x1="14" y1="14" x2="9.69230769" y2="9.69230769" id="Path" stroke="#000000" stroke-width="1.07692308"></line>
+                <polyline id="Path" stroke="#000000" stroke-width="1.07692308" points="13.4615385 9.69230769 9.69230769 9.69230769 9.69230769 13.4615385"></polyline>
+                <line x1="0" y1="0" x2="4.30769231" y2="4.30769231" id="Path" stroke="#000000" stroke-width="1.07692308"></line>
+                <polyline id="Path" stroke="#000000" stroke-width="1.07692308" points="0.538461538 4.30769231 4.30769231 4.30769231 4.30769231 0.538461538"></polyline>
+                <line x1="14" y1="0" x2="9.69230769" y2="4.30769231" id="Path" stroke="#000000" stroke-width="1.07692308"></line>
+                <polyline id="Path" stroke="#000000" stroke-width="1.07692308" points="13.4615385 4.30769231 9.69230769 4.30769231 9.69230769 0.538461538"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

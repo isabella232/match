@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Fingerprint</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Fingerprint" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Fingerprint">
+            <g transform="translate(5.000000, 1.000000)">
+                <path d="M0.197537879,11.0227273 C0.197537879,6.78858664 2.6413288,2.93479831 6.47124884,1.12934563 C10.3011689,-0.676107049 14.8290947,-0.108847071 18.0952652,2.58560606" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M21.3274621,7.04545455 C21.8216346,8.3131594 22.074338,9.66211021 22.0725474,11.0227273 L22.0725474,18.9772727 C22.0725474,25.0173695 17.1764603,29.9140406 11.1363636,29.9147727 C10.4694022,29.9147727 9.80380735,29.8544549 9.14772727,29.7344697" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M4.17746212,27.4157197 C1.6560628,25.3395514 0.196785081,22.2434505 0.200183451,18.9772727 L0.200183451,15.9943182" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M16.1066288,18.9772727 L16.1066288,11.0227273 C16.1066288,9.13962755 15.0426965,7.41814898 13.3584009,6.57600118 C11.6741053,5.73385338 9.65856311,5.91559471 8.15208333,7.04545455" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M6.16344697,11.0227273 L6.16344697,18.9772727 C6.16482111,20.6540758 7.01068909,22.2174035 8.41355305,23.135904 C9.81641702,24.0544045 11.5875611,24.2045196 13.125,23.5352273" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <line x1="11.1350379" y1="12.0170455" x2="11.1350379" y2="17.9829545" id="Path" stroke="#394762" stroke-width="1.98863636"></line>
+            </g>
+        </g>
+    </g>
+</svg>

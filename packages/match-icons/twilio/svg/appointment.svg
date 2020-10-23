@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Appointment</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Appointment" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Appointment">
+            <g transform="translate(1.000000, 1.000000)">
+                <path d="M9.80113636,21.5625 L1.96022727,21.5625 C0.878181818,21.5625 0,20.6805 0,19.59375 L0,19.59375 L0,3.84375 C0,2.757 0.878181818,1.875 1.96022727,1.875 L19.6022727,1.875 C20.6843182,1.875 21.5625,2.757 21.5625,3.84375 L21.5625,9.75" id="Path" stroke="#394762" stroke-width="2"></path>
+                <line x1="0" y1="7.96875" x2="21.5625" y2="7.96875" id="Path" stroke="#394762" stroke-width="2"></line>
+                <line x1="6.09375" y1="3.75" x2="6.09375" y2="0" id="Path" stroke="#394762" stroke-width="2"></line>
+                <line x1="15.46875" y1="3.75" x2="15.46875" y2="0" id="Path" stroke="#394762" stroke-width="2"></line>
+                <path d="M22.03125,14.0625 C26.4326563,14.0625 30,17.6298437 30,22.03125 C30,26.4326563 26.4326563,30 22.03125,30 C17.6298437,30 14.0625,26.4326563 14.0625,22.03125 C14.0625,17.6298437 17.6298437,14.0625 22.03125,14.0625 Z" id="Path" stroke="#394762" stroke-width="2"></path>
+                <polyline id="Path" stroke="#394762" stroke-width="2" points="26.25 22.5 22.5 22.5 22.5 18.75"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

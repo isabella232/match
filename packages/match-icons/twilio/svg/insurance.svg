@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Decorative/32px/Insurance</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icon/Decorative/32px/Insurance" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#filter-1)" id="Insurance">
+            <g transform="translate(1.000000, 1.000000)">
+                <polygon id="Path" stroke="#394762" stroke-width="1.98863636" points="8.03977273 12.0170455 21.9602273 12.0170455 21.9602273 21.9602273 8.03977273 21.9602273"></polygon>
+                <path d="M15,16.4914773 C14.7254266,16.4914773 14.5028409,16.714063 14.5028409,16.9886364 C14.5028409,17.2632097 14.7254266,17.4857955 15,17.4857955 C15.2745734,17.4857955 15.4971591,17.2632097 15.4971591,16.9886364 C15.4975124,16.8566736 15.4452468,16.7300138 15.3519346,16.6367017 C15.2586225,16.5433896 15.1319628,16.491124 15,16.4914773 L15,16.4914773" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M10.0284091,12.0170455 L10.0284091,9.03409091 C10.0284091,6.28835707 12.2542662,4.0625 15,4.0625 C17.7457338,4.0625 19.9715909,6.28835707 19.9715909,9.03409091 L19.9715909,12.0170455" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+                <path d="M15,29.9147727 C6.14924242,27.5535985 0.0852272727,22.3049242 0.0852272727,13.0113636 L0.0852272727,0.0852272727 L29.9147727,0.0852272727 L29.9147727,13.0113636 C29.9147727,22.2982955 23.8600379,27.550947 15,29.9147727 Z" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -4207,10 +4207,12 @@ __metadata:
   resolution: "@twilio-labs/match-icons-twilio@workspace:packages/match-icons/twilio"
   dependencies:
     "@svgr/cli": 5.4.0
+    "@twilio-labs/match-components": "workspace:packages/match-components"
     "@types/prop-types": 15.7.3
     "@types/react": 16.9.51
     prop-types: 15.7.2
     react: 16.13.1
+    react-uid: 2.3.0
     rollup: 2.28.2
     rollup-config-match: "workspace:configs/rollup"
     svgr-config-match: "workspace:configs/svgr"
@@ -19925,6 +19927,21 @@ fsevents@^1.2.7:
     react: ^15.3.0 || ^16.0.0
     react-dom: ^15.3.0 || ^16.0.0
   checksum: 311291a755f0a9dfca24b96711e3cb8d1996b200b3ea5f96a1f96248a52620f820842406574282db7555ea7f2573accbfbadcbaf969314ba2744474322e81cc9
+  languageName: node
+  linkType: hard
+
+"react-uid@npm:2.3.0":
+  version: 2.3.0
+  resolution: "react-uid@npm:2.3.0"
+  dependencies:
+    tslib: ^1.10.0
+  peerDependencies:
+    "@types/react": ^16.8.0
+    react: ^16.8.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 41f12f651f57666abbe4b9cf0229adf8dc43250b32711f5fb021b98d5129fdcce08dbd96ef0296bdc76856e4b7cf953dbf857dc149f9b47a9c34fae7de974044
   languageName: node
   linkType: hard
 

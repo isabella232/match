@@ -1,3 +1,5 @@
+import { ColorOptions } from "@twilio-labs/match-props";
+
 export interface IconProps {
-  color?: string;
+  color?: ColorOptions;
 }

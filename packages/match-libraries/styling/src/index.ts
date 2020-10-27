@@ -11,4 +11,15 @@ export const color = system({
   },
 });
 
+export const iconSize = system({
+  size: {
+    properties: ["width", "height"],
+    scale: "iconSize",
+    transform(val: string, scale) {
+      if (!scale || !(val in scale)) return;
+      return scale[val].rem;
+    },
+  },
+});
+
 export { ResponsiveValue } from "styled-system";

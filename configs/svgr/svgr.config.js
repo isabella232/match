@@ -9,4 +9,8 @@ module.exports = {
   replaceAttrValues: {
     ["#394762"]: "currentColor",
   },
+  svgProps: {
+    width: "100%",
+    height: "100%",
+  },
 };

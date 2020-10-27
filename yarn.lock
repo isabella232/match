@@ -4327,8 +4327,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-icons-twilio@workspace:packages/match-icons/twilio"
   dependencies:
+    "@storybook/react": 6.0.26
     "@svgr/cli": 5.4.0
     "@twilio-labs/match-components": "workspace:packages/match-components"
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle"
     "@types/prop-types": 15.7.3
     "@types/react": 16.9.51
     prop-types: 15.7.2

@@ -15,6 +15,7 @@ import {
   Border,
   BorderWidth,
   Space,
+  IconSize,
 } from "@twilio-labs/match-tokens-core";
 import { Shadow } from "./shadow";
 export const ahoyDesignTokens = {
@@ -31,4 +32,5 @@ export const ahoyDesignTokens = {
   border: new Border(),
   borderWidth: new BorderWidth(),
   space: new Space(),
+  iconSize: new IconSize(),
 };

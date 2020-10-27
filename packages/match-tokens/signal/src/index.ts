@@ -15,6 +15,7 @@ import {
   Border,
   BorderWidth,
   Space,
+  IconSize,
 } from "@twilio-labs/match-tokens-core";
 import { fontFamily } from "./font-family";
 
@@ -32,4 +33,5 @@ export const signalDesignTokens = {
   border: new Border(),
   borderWidth: new BorderWidth(),
   space: new Space(),
+  iconSize: new IconSize(),
 };

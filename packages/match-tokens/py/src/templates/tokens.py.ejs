@@ -27,3 +27,9 @@ gradient = {
     '<%=name%>': '<%=token.linearGradient%>',
 <% }); -%>
 }
+
+icon_size = {
+<% Object.entries(iconSize).forEach(([name, token]) => { -%>
+    '<%=name%>': '<%=token.rem%>',
+<% }); -%>
+}

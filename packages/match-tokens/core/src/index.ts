@@ -12,3 +12,4 @@ export * from "./button";
 export * from "./border";
 export * from "./border-width";
 export * from "./space";
+export * from "./icon-size";

@@ -6,7 +6,7 @@ const template = (filePaths) => {
     const exportName = /^\d/.test(basename)
       ? `Svg${basename}Icon`
       : `${basename}Icon`;
-    return `export { default as ${exportName}, Props as ${exportName}Props } from './${basename}'`;
+    return `export { default as ${exportName} } from './${basename}'`;
   });
   return exportEntries.join("\n");
 };

@@ -13,6 +13,7 @@ export default {
   args: {
     color: "gray80",
     size: "base",
+    decorative: false,
   },
   argTypes: {
     color: {
@@ -20,6 +21,9 @@ export default {
     },
     size: {
       control: { type: "select", options: Object.keys(DS.iconSize) },
+    },
+    decorative: {
+      control: { type: "boolean" },
     },
   },
 } as Meta;

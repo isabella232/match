@@ -27,10 +27,6 @@
     "type-check": "tsc --noEmit --composite false",
     "publish": "yarn npm publish --tolerate-republish"
   },
-  "peerDependencies": {
-    "react": "16.x",
-    "react-dom": "16.x"
-  },
   "devDependencies": {
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
     "@types/styled-system": "^5",

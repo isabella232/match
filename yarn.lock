@@ -4304,11 +4304,14 @@ __metadata:
     tslib: 2.0.3
     typescript: 4.0.3
   peerDependencies:
+    "@twilio-labs/match-props": ^0.0.0
+    "@twilio-labs/match-styling-library": ^0.0.0
     "@twilio-labs/match-themes": ^0.3.0
     "@twilio-labs/match-tokens": ^0.3.0
     prop-types: 15.x
     react: 16.x
     react-dom: 16.x
+    react-is: 16.x
     reakit: 1.x
     styled-components: 5.x
   languageName: unknown
@@ -4338,10 +4341,12 @@ __metadata:
     tslib: 2.0.3
     typescript: 4.0.3
   peerDependencies:
+    "@twilio-labs/match-components": ^0.2.0
     prop-types: 15.x
     react: 16.x
     react-dom: 16.x
     react-is: 16.x
+    react-uid: 2.x
   languageName: unknown
   linkType: soft
 
@@ -4358,6 +4363,10 @@ __metadata:
     tsconfig-match: "workspace:configs/tsconfig"
     tslib: 2.0.3
     typescript: 4.0.3
+  peerDependencies:
+    "@twilio-labs/match-styling-library": ^0.0.0
+    "@twilio-labs/match-tokens": ^0.3.0
+    prop-types: 15.x
   languageName: unknown
   linkType: soft
 
@@ -4373,9 +4382,6 @@ __metadata:
     tsconfig-match: "workspace:configs/tsconfig"
     tslib: 2.0.3
     typescript: 4.0.3
-  peerDependencies:
-    react: 16.x
-    react-dom: 16.x
   languageName: unknown
   linkType: soft
 

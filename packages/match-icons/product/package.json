@@ -1,5 +1,5 @@
 {
-  "name": "@twilio-labs/match-icons-twilio",
+  "name": "@twilio-labs/match-icons-product",
   "version": "0.0.0",
   "description": "Twilio Match Design System Icons",
   "author": "Twilio Inc.",
@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
-    "directory": "packages/match-icons/twilio"
+    "directory": "packages/match-icons/product"
   },
   "publishConfig": {
     "main": "dist/index.js",

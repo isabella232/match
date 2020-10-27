@@ -4323,14 +4323,76 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@twilio-labs/match-icons-twilio@workspace:packages/match-icons/twilio":
+"@twilio-labs/match-icons-product@workspace:packages/match-icons/product":
   version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-icons-twilio@workspace:packages/match-icons/twilio"
+  resolution: "@twilio-labs/match-icons-product@workspace:packages/match-icons/product"
+  dependencies:
+    "@babel/core": 7.12.3
+    "@storybook/react": 6.0.26
+    "@svgr/cli": 5.4.0
+    "@twilio-labs/match-components": "workspace:packages/match-components"
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle"
+    "@types/babel__core": 7.1.10
+    "@types/prop-types": 15.7.3
+    "@types/react": 16.9.51
+    prop-types: 15.7.2
+    react: 16.13.1
+    react-uid: 2.3.0
+    rollup: 2.28.2
+    rollup-config-match: "workspace:configs/rollup"
+    svgr-config-match: "workspace:configs/svgr"
+    tsconfig-match: "workspace:configs/tsconfig"
+    tslib: 2.0.3
+    typescript: 4.0.3
+  peerDependencies:
+    "@twilio-labs/match-components": ^0.2.0
+    prop-types: 15.x
+    react: 16.x
+    react-dom: 16.x
+    react-is: 16.x
+    react-uid: 2.x
+  languageName: unknown
+  linkType: soft
+
+"@twilio-labs/match-icons-sendgrid@workspace:packages/match-icons/sendgrid":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match-icons-sendgrid@workspace:packages/match-icons/sendgrid"
   dependencies:
     "@storybook/react": 6.0.26
     "@svgr/cli": 5.4.0
     "@twilio-labs/match-components": "workspace:packages/match-components"
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle"
+    "@types/prop-types": 15.7.3
+    "@types/react": 16.9.51
+    prop-types: 15.7.2
+    react: 16.13.1
+    react-uid: 2.3.0
+    rollup: 2.28.2
+    rollup-config-match: "workspace:configs/rollup"
+    svgr-config-match: "workspace:configs/svgr"
+    tsconfig-match: "workspace:configs/tsconfig"
+    tslib: 2.0.3
+    typescript: 4.0.3
+  peerDependencies:
+    "@twilio-labs/match-components": ^0.2.0
+    prop-types: 15.x
+    react: 16.x
+    react-dom: 16.x
+    react-is: 16.x
+    react-uid: 2.x
+  languageName: unknown
+  linkType: soft
+
+"@twilio-labs/match-icons-twilio@workspace:packages/match-icons/twilio":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match-icons-twilio@workspace:packages/match-icons/twilio"
+  dependencies:
+    "@babel/core": 7.12.3
+    "@storybook/react": 6.0.26
+    "@svgr/cli": 5.4.0
+    "@twilio-labs/match-components": "workspace:packages/match-components"
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle"
+    "@types/babel__core": 7.1.10
     "@types/prop-types": 15.7.3
     "@types/react": 16.9.51
     prop-types: 15.7.2

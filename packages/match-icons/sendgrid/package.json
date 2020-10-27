@@ -1,5 +1,5 @@
 {
-  "name": "@twilio-labs/match-icons-twilio",
+  "name": "@twilio-labs/match-icons-sendgrid",
   "version": "0.0.0",
   "description": "Twilio Match Design System Icons",
   "author": "Twilio Inc.",
@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
-    "directory": "packages/match-icons/twilio"
+    "directory": "packages/match-icons/sendgrid"
   },
   "publishConfig": {
     "main": "dist/index.js",
@@ -36,12 +36,10 @@
     "react-uid": "2.x"
   },
   "devDependencies": {
-    "@babel/core": "7.12.3",
     "@storybook/react": "6.0.26",
     "@svgr/cli": "5.4.0",
     "@twilio-labs/match-components": "workspace:packages/match-components",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
-    "@types/babel__core": "7.1.10",
     "@types/prop-types": "15.7.3",
     "@types/react": "16.9.51",
     "prop-types": "15.7.2",

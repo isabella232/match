@@ -1,21 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon/Decorative/32px/Global</title>
-    <defs>
-        <filter id="filter-1">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Icon/Decorative/32px/Global" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g filter="url(#filter-1)" id="Global">
-            <g transform="translate(1.000000, 1.000000)">
-                <path d="M11.3785136,29.5356 C9.351292,26.5626968 7.99670303,21.1603243 7.99670303,14.9894189 C7.99670303,8.81851364 9.351292,3.41614111 11.3785136,0.443237886" id="Path" stroke="#394762" stroke-width="1.99791883"></path>
-                <path d="M18.6003243,29.5356 C20.6275459,26.5626968 21.9821349,21.1603243 21.9821349,14.9894189 C21.9821349,8.81851364 20.6275459,3.41614111 18.6003243,0.443237886" id="Path" stroke="#394762" stroke-width="1.99791883"></path>
-                <line x1="0.0383263355" y1="13.9904595" x2="29.9738102" y2="13.9904595" id="Path" stroke="#394762" stroke-width="1.99791883"></line>
-                <line x1="3.00057399" y1="5.99878419" x2="26.976932" y2="5.99878419" id="Path" stroke="#394762" stroke-width="1.99791883"></line>
-                <line x1="1.73389345" y1="21.9821349" x2="28.2422805" y2="21.9821349" id="Path" stroke="#394762" stroke-width="1.99791883"></line>
-                <path d="M29.9738304,14.9894189 C29.979138,18.2247155 28.9322285,21.3747675 26.9902514,23.9627384 L29.9738304,29.9738102 L21.9821349,28.2422805 C14.6630922,32.1049236 5.59786848,29.3025095 1.7352254,21.9834668 C-2.12741768,14.6644242 0.674996471,5.59786848 7.99403913,1.7352254 C15.3130818,-2.12741768 24.3783055,0.674996471 28.2409486,7.99403913 C29.3797623,10.1504595 29.9738304,12.550626 29.9738304,14.9894189 L29.9738304,14.9894189 Z" id="Path" stroke="#394762" stroke-width="1.99791883"></path>
-            </g>
-        </g>
-    </g>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.3853 30.5613C10.356 27.5853 9 22.1773 9 16C9 9.82266 10.356 4.41466 12.3853 1.43866" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.6147 30.5613C21.644 27.5853 23 22.1773 23 16C23 9.82266 21.644 4.41466 19.6147 1.43866" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.03333 15H31" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.99866 7H28" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.73067 23H29.2667" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M31 16C31.0049 19.2389 29.9567 22.3916 28.0133 24.9827L31 31L23 29.2667C20.101 30.7965 16.7808 31.3347 13.547 30.799C10.3132 30.2633 7.34386 28.6832 5.09307 26.3003C2.84228 23.9173 1.43392 20.8628 1.08337 17.6037C0.732815 14.3446 1.45936 11.0605 3.1519 8.25337C4.84445 5.44629 7.40982 3.27083 10.4557 2.05967C13.5016 0.848505 16.8604 0.668309 20.0184 1.54663C23.1764 2.42496 25.9598 4.31346 27.9429 6.92334C29.9261 9.53322 30.9998 12.7208 31 15.9987V16Z" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

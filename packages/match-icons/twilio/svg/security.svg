@@ -1,18 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon/Decorative/32px/Security</title>
-    <defs>
-        <filter id="filter-1">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Icon/Decorative/32px/Security" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g filter="url(#filter-1)" id="Security">
-            <g transform="translate(1.000000, 1.000000)">
-                <path d="M30,12.2493333 C30.0013331,21.0333333 23.6613332,28.536 15,30 C6.33866679,28.536 -0.00133312305,21.0333333 0,12.2493333 L0,2 C0,0.896 0.896000198,0 2,0 L28,0 C29.1039998,0 30,0.896 30,2 L30,12.2493333 Z" id="Path" stroke="#394762" stroke-width="1.99999997"></path>
-                <path d="M15,5.625 C17.5888889,5.625 19.6875,7.72361111 19.6875,10.3125 C19.6875,12.9013889 17.5888889,15 15,15 C12.4111111,15 10.3125,12.9013889 10.3125,10.3125 C10.3125,7.72361111 12.4111111,5.625 15,5.625 Z" id="Path" stroke="#394762" stroke-width="1.99999997"></path>
-                <path d="M21.5625,21.5625 C19.6059669,17.3613033 14.8719139,15.6709395 10.9888679,17.7877777 C9.4826376,18.6096589 8.25833604,19.9328593 7.5,21.5625" id="Path" stroke="#394762" stroke-width="1.99999997"></path>
-            </g>
-        </g>
-    </g>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31 13.2493C31.0013 22.0333 24.6613 29.536 16 31C7.33867 29.536 0.998667 22.0333 1 13.2493V3C1 1.896 1.896 1 3 1H29C30.104 1 31 1.896 31 3V13.2493Z" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16 6.625C18.5889 6.625 20.6875 8.72361 20.6875 11.3125C20.6875 13.9014 18.5889 16 16 16C13.4111 16 11.3125 13.9014 11.3125 11.3125C11.3125 8.72361 13.4111 6.625 16 6.625Z" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.5625 22.5625C20.606 18.3613 15.8719 16.6709 11.9889 18.7878C10.4826 19.6097 9.25834 20.9329 8.5 22.5625" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

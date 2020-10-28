@@ -1,16 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon/Action/16px/ChevronUp</title>
-    <defs>
-        <filter id="filter-1">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Icon/Action/16px/ChevronUp" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g filter="url(#filter-1)" id="Chevron-Up">
-            <g transform="translate(1.000000, 5.000000)">
-                <path d="M0,6.83415385 L6.61876923,0.215384615 C6.71978921,0.114108938 6.85695526,0.0571913099 7,0.0571913099 C7.14304474,0.0571913099 7.28021079,0.114108938 7.38123077,0.215384615 L14,6.83415385" id="Path" stroke="#000000" stroke-width="1.75"></path>
-            </g>
-        </g>
-    </g>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 11.8342L7.61877 5.21544C7.71979 5.11417 7.85696 5.05725 8 5.05725C8.14304 5.05725 8.28021 5.11417 8.38123 5.21544L15 11.8342" stroke="#394762" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

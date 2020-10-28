@@ -1,21 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon/Decorative/32px/Fingerprint</title>
-    <defs>
-        <filter id="filter-1">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Icon/Decorative/32px/Fingerprint" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g filter="url(#filter-1)" id="Fingerprint">
-            <g transform="translate(5.000000, 1.000000)">
-                <path d="M0.197537879,11.0227273 C0.197537879,6.78858664 2.6413288,2.93479831 6.47124884,1.12934563 C10.3011689,-0.676107049 14.8290947,-0.108847071 18.0952652,2.58560606" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
-                <path d="M21.3274621,7.04545455 C21.8216346,8.3131594 22.074338,9.66211021 22.0725474,11.0227273 L22.0725474,18.9772727 C22.0725474,25.0173695 17.1764603,29.9140406 11.1363636,29.9147727 C10.4694022,29.9147727 9.80380735,29.8544549 9.14772727,29.7344697" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
-                <path d="M4.17746212,27.4157197 C1.6560628,25.3395514 0.196785081,22.2434505 0.200183451,18.9772727 L0.200183451,15.9943182" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
-                <path d="M16.1066288,18.9772727 L16.1066288,11.0227273 C16.1066288,9.13962755 15.0426965,7.41814898 13.3584009,6.57600118 C11.6741053,5.73385338 9.65856311,5.91559471 8.15208333,7.04545455" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
-                <path d="M6.16344697,11.0227273 L6.16344697,18.9772727 C6.16482111,20.6540758 7.01068909,22.2174035 8.41355305,23.135904 C9.81641702,24.0544045 11.5875611,24.2045196 13.125,23.5352273" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
-                <line x1="11.1350379" y1="12.0170455" x2="11.1350379" y2="17.9829545" id="Path" stroke="#394762" stroke-width="1.98863636"></line>
-            </g>
-        </g>
-    </g>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.99866 12C4.99865 9.9139 5.59183 7.87081 6.709 6.10908C7.82618 4.34734 9.42128 2.9396 11.3082 2.05008C13.1952 1.16056 15.2961 0.825946 17.3661 1.08527C19.436 1.34459 21.3895 2.18715 22.9987 3.51466" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26.2493 8C26.7463 9.27495 27.0005 10.6316 26.9987 12V20C26.9987 22.9172 25.8399 25.7148 23.7773 27.7777C21.7147 29.8406 18.9172 30.9996 16 31C15.3292 31 14.6598 30.9393 14 30.8187" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.00132 28.4867C7.74899 27.4555 6.74074 26.1596 6.04911 24.6921C5.35747 23.2247 4.99963 21.6222 5.00132 20V17" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.9987 20V12C20.9987 11.0714 20.7401 10.1612 20.2519 9.37135C19.7637 8.58147 19.0653 7.94313 18.2347 7.52787C17.4042 7.1126 16.4744 6.93682 15.5496 7.02021C14.6248 7.1036 13.7415 7.44287 12.9987 8" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.9987 12V20C10.9993 20.8301 11.2065 21.6471 11.6016 22.3772C11.9966 23.1073 12.5671 23.7277 13.2616 24.1824C13.9561 24.6371 14.7529 24.9119 15.5801 24.982C16.4072 25.0521 17.2388 24.9153 18 24.584" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9987 13V19" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

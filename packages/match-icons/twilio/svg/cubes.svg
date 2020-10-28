@@ -1,24 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon/Decorative/32px/Cubes</title>
-    <defs>
-        <filter id="filter-1">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Icon/Decorative/32px/Cubes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g filter="url(#filter-1)" id="Cubes">
-            <g transform="translate(2.000000, 1.000000)">
-                <polygon id="Stroke-1" stroke="#394762" stroke-width="1.56774194" points="15.2854839 12.5419355 21.1645161 9.99435484 21.1645161 2.3516129 15.2854839 4.38967742 9.40645161 2.3516129 9.40645161 9.99435484"></polygon>
-                <polyline id="Stroke-2" stroke="#394762" stroke-width="1.56774194" points="21.1645161 2.3516129 15.2854839 0 9.40645161 2.3516129"></polyline>
-                <line x1="15.2854839" y1="3.91935484" x2="15.2854839" y2="12.5419355" id="Stroke-4" stroke="#394762" stroke-width="1.56774194"></line>
-                <polygon id="Stroke-5" stroke="#394762" stroke-width="1.56774194" points="22.732164 23.5162309 27.4353898 20.9686503 27.4353898 15.3639729 22.732164 17.4020374 18.0289382 15.3639729 18.0289382 20.9686503"></polygon>
-                <polyline id="Stroke-7" stroke="#394762" stroke-width="1.56774194" points="27.4353898 15.3639729 22.732164 13.3259084 18.0289382 15.3639729"></polyline>
-                <line x1="22.3403226" y1="17.2451613" x2="22.3403226" y2="23.516129" id="Stroke-10" stroke="#394762" stroke-width="1.56774194"></line>
-                <polygon id="Stroke-11" stroke="#394762" stroke-width="1.56774194" points="7.83861169 29.7871961 15.6773214 26.8084864 15.6773214 17.3759057 7.83861169 19.8581638 -9.7983871e-05 17.3759057 -9.7983871e-05 26.8084864"></polygon>
-                <polyline id="Stroke-13" stroke="#394762" stroke-width="1.56774194" points="15.6773214 17.3759057 7.83861169 14.8936477 -9.7983871e-05 17.3759057"></polyline>
-                <line x1="7.83861169" y1="19.858412" x2="7.83861169" y2="29.7874443" id="Stroke-15" stroke="#394762" stroke-width="1.56774194"></line>
-            </g>
-        </g>
-    </g>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.2855 13.5419L23.1645 10.9944V3.35162L17.2855 5.38969L11.4064 3.35162V10.9944L17.2855 13.5419Z" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23.1645 3.35161L17.2855 1L11.4064 3.35161" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.2855 4.91937V13.542" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24.7322 24.5162L29.4354 21.9686V16.364L24.7322 18.402L20.0289 16.364V21.9686L24.7322 24.5162Z" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M29.4354 16.364L24.7322 14.3259L20.0289 16.364" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24.3403 18.2452V24.5161" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.83859 30.7872L17.6773 27.8085V18.3759L9.83859 20.8582L1.99988 18.3759V27.8085L9.83859 30.7872Z" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.6773 18.3759L9.83859 15.8937L1.99988 18.3759" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.83862 20.8584V30.7874" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

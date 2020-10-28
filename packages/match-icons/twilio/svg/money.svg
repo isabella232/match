@@ -1,17 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon/Decorative/32px/Money</title>
-    <defs>
-        <filter id="filter-1">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Icon/Decorative/32px/Money" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g filter="url(#filter-1)" id="Money">
-            <g transform="translate(10.000000, 0.000000)">
-                <line x1="6.07083333" y1="0.90396" x2="6.07083333" y2="30.8706267" id="Stroke-1" stroke="#394762" stroke-width="1.80833333"></line>
-                <path d="M0.904166667,21.05396 C0.904166667,23.9069933 3.21676667,26.2206267 6.07083333,26.2206267 C8.9249,26.2206267 11.2375,23.9069933 11.2375,21.05396 C11.2375,18.2009267 8.9249,15.8872933 6.07083333,15.8872933 C3.21676667,15.8872933 0.904166667,13.57366 0.904166667,10.7206267 C0.904166667,7.86759333 3.21676667,5.55396 6.07083333,5.55396 C8.9249,5.55396 11.2375,7.86759333 11.2375,10.7206267" id="Stroke-3" stroke="#394762" stroke-width="1.80833333"></path>
-            </g>
-        </g>
-    </g>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.0709 0.903931V30.8706" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.9042 21.054C10.9042 23.907 13.2168 26.2206 16.0708 26.2206C18.9249 26.2206 21.2375 23.907 21.2375 21.054C21.2375 18.2009 18.9249 15.8873 16.0708 15.8873C13.2168 15.8873 10.9042 13.5737 10.9042 10.7206C10.9042 7.86759 13.2168 5.55396 16.0708 5.55396C18.9249 5.55396 21.2375 7.86759 21.2375 10.7206" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

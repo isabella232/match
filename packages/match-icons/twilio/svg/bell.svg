@@ -1,18 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon/Decorative/32px/Bell</title>
-    <defs>
-        <filter id="filter-1">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Icon/Decorative/32px/Bell" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g filter="url(#filter-1)" id="Bell">
-            <g transform="translate(4.000000, 1.000000)">
-                <path d="M9.39393939,27.9261364 C9.73981096,29.1043497 10.8208383,29.9136513 12.0487689,29.9136513 C13.2766996,29.9136513 14.3577269,29.1043497 14.7035985,27.9261364" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
-                <line x1="12.0454545" y1="3.06818182" x2="12.0454545" y2="0.0852272727" id="Path" stroke="#394762" stroke-width="1.98863636"></line>
-                <path d="M12.0454545,3.06818182 C17.5369222,3.06818182 21.9886364,7.51989595 21.9886364,13.0113636 C21.9886364,22.3526515 23.9772727,23.9488636 23.9772727,23.9488636 L0.113636364,23.9488636 C0.113636364,23.9488636 2.10227273,21.4087121 2.10227273,13.0113636 C2.10227273,7.51989595 6.55398686,3.06818182 12.0454545,3.06818182 Z" id="Path" stroke="#394762" stroke-width="1.98863636"></path>
-            </g>
-        </g>
-    </g>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.3333 29C13.5027 29.5769 13.8544 30.0835 14.3357 30.4438C14.817 30.8041 15.4021 30.9989 16.0033 30.9989C16.6046 30.9989 17.1897 30.8041 17.671 30.4438C18.1523 30.0835 18.504 29.5769 18.6733 29" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 4V1" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 4C18.6522 4 21.1957 5.05357 23.0711 6.92893C24.9464 8.8043 26 11.3478 26 14C26 23.3947 28 25 28 25H4C4 25 6 22.4453 6 14C6 11.3478 7.05357 8.8043 8.92893 6.92893C10.8043 5.05357 13.3478 4 16 4V4Z" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

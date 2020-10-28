@@ -1,19 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon/Decorative/32px/CallTracking</title>
-    <defs>
-        <filter id="filter-1">
-            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.278431 0 0 0 0 0.384314 0 0 0 1.000000 0"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="Icon/Decorative/32px/CallTracking" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g filter="url(#filter-1)" id="Call-Tracking">
-            <g transform="translate(3.000000, 1.000000)">
-                <polyline id="Path" stroke="#394762" stroke-width="2" points="26 12 25.2825279 7 20 7.83767361"></polyline>
-                <path d="M25,7 L20.4841293,13.4597772 C20.1545134,13.9376238 19.5086264,14.0533416 19.040225,13.7170792 C19.037556,13.7157178 19.0362215,13.7143564 19.0335526,13.712995 L16.5380803,11.8982673 C16.0710132,11.5592822 15.4224573,11.6695545 15.0888381,12.1460396 L11,18" id="Path" stroke="#394762" stroke-width="2"></path>
-                <path d="M18,19 L18,26 C18,28.2093333 16.2093333,30 14,30 L4,30 C1.79066667,30 0,28.2093333 0,26 L0,4 C0,1.79066667 1.79066667,-1.13686838e-13 4,-1.13686838e-13 L14,-1.13686838e-13 C16.2093333,-1.13686838e-13 18,1.79066667 18,4" id="Path" stroke="#394762" stroke-width="2"></path>
-                <line x1="0" y1="23.5" x2="18" y2="23.5" id="Path" stroke="#394762" stroke-width="2"></line>
-            </g>
-        </g>
-    </g>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M29 13L28.2825 8L23 8.83767" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 8L23.4841 14.4598C23.1545 14.9376 22.5086 15.0533 22.0402 14.7171C22.0376 14.7157 22.0362 14.7144 22.0336 14.713L19.5381 12.8983C19.071 12.5593 18.4225 12.6696 18.0888 13.146L14 19" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21 20V27C21 29.2093 19.2093 31 17 31H7C4.79067 31 3 29.2093 3 27V5C3 2.79067 4.79067 1 7 1H17C19.2093 1 21 2.79067 21 5" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3 24.5H21" stroke="#394762" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

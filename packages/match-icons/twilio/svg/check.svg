@@ -1,7 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon/Content/16px/Check</title>
-    <g id="Icon/Content/16px/Check" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M12.4444444,6.02503704 L7.11144444,11.5555556 L4.44444444,8.79081481 L4.44444444,8.09911111 L5.11144444,8.09911111 L7.11144444,10.1731852 L11.7774444,5.33333333 L12.4444444,5.33333333 L12.4444444,6.02503704 Z M8,0 C3.582,0 0,3.582 0,8 C0,12.418 3.582,16 8,16 C12.418,16 16,12.418 16,8 C16,3.582 12.418,0 8,0 L8,0 Z" id="Check" fill="#394762"></path>
-    </g>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.4444 6.02504L7.11144 11.5556L4.44444 8.79081V8.09911H5.11144L7.11144 10.1732L11.7774 5.33333H12.4444V6.02504ZM8 0C3.582 0 0 3.582 0 8C0 12.418 3.582 16 8 16C12.418 16 16 12.418 16 8C16 3.582 12.418 0 8 0Z" fill="#394762"/>
 </svg>

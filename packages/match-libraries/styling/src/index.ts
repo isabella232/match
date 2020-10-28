@@ -22,4 +22,15 @@ export const iconSize = system({
   },
 });
 
+export const space = system({
+  padding: {
+    property: "padding",
+    scale: "space",
+    transform(val: string, scale) {
+      if (!scale || !(val in scale)) return;
+      return scale[val].rem;
+    },
+  },
+});
+
 export { ResponsiveValue } from "styled-system";

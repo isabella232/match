@@ -8,7 +8,6 @@ module.exports = {
   indexTemplate: require("./index-template"),
   replaceAttrValues: {
     ["#394762"]: "currentColor",
-    ["#000"]: "currentColor",
   },
   svgProps: {
     width: "100%",

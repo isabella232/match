@@ -95,3 +95,6 @@ packages/match-tokens/py/match_tokens_py.egg-info
 # Docusaurus
 .docusaurus
 .cache-loader
+
+# Icons
+packages/match-icons/**/src/*

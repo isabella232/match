@@ -182,7 +182,7 @@ const Tokens: React.FC = () => {
       Object.entries(space).filter(([key]) =>
         textSearch(`space.${key}`, filterText)
       ),
-    [filterText, borderWidth]
+    [filterText, space]
   );
 
   const hasColorTokens = Boolean(

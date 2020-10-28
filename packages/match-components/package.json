@@ -28,11 +28,14 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
+    "@twilio-labs/match-props": "^0.0.0",
+    "@twilio-labs/match-styling-library": "^0.0.0",
     "@twilio-labs/match-themes": "^0.3.0",
     "@twilio-labs/match-tokens": "^0.3.0",
     "prop-types": "15.x",
     "react": "16.x",
     "react-dom": "16.x",
+    "react-is": "16.x",
     "reakit": "1.x",
     "styled-components": "5.x"
   },
@@ -41,6 +44,8 @@
     "@emotion/core": "10.0.35",
     "@storybook/react": "6.0.26",
     "@testing-library/react": "11.0.4",
+    "@twilio-labs/match-props": "workspace:packages/match-props",
+    "@twilio-labs/match-styling-library": "workspace:packages/match-libraries/styling",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
     "@types/babel__core": "7.1.10",

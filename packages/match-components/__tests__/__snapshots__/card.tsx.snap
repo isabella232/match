@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render default values 1`] = `
+.c0 {
+  color: hsla(217.33333333333334,42.05607476635513%,20.980392156862745%,1);
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: Whitney SSm A,Whitney SSm B,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.c1 {
+  background-color: hsla(0,0%,100%,1);
+  border-radius: 0.313rem;
+  border-color: hsla(226.6666666666667,17.647058823529388%,89.99999999999999%,1);
+  border-style: solid;
+  border-width: 0rem;
+  box-shadow: 0px 8px 24px hsla(217.77777777777777,42.85714285714286%,12.352941176470589%,0.09999999999999998);
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    Card!
+  </div>
+</div>
+`;

@@ -10,13 +10,17 @@ Object {
   font-family: Whitney SSm A,Whitney SSm B,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
+.c1 {
+  padding: 0.5rem;
+}
+
 <body>
     <div>
       <div
         class="c0"
       >
         <div
-          class=""
+          class="c1"
         >
           space20
         </div>
@@ -28,7 +32,7 @@ Object {
       class="sc-bdnylx irOfaj"
     >
       <div
-        class="sc-jSFkmK iDLjKv"
+        class="sc-jSFkmK eTTQPC"
       >
         space20
       </div>

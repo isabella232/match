@@ -1,8 +1,4 @@
-import {
-  ColorOptions,
-  SpaceOptions,
-  ShadowOptions,
-} from "@twilio-labs/match-props";
+import { SpaceOptions } from "@twilio-labs/match-props";
 
 export interface BoxProps extends React.HTMLAttributes<HTMLElement> {
   padding?: SpaceOptions;
@@ -19,6 +15,4 @@ export interface BoxProps extends React.HTMLAttributes<HTMLElement> {
   marginTop?: SpaceOptions;
   marginX?: SpaceOptions;
   marginY?: SpaceOptions;
-  boxShadow?: ShadowOptions;
-  borderColor?: ColorOptions;
 }

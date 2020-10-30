@@ -9,14 +9,6 @@ export const color = system({
       return scale[val].color;
     },
   },
-  borderColor: {
-    property: "borderColor",
-    scale: "border",
-    transform(val: string, scale) {
-      if (!scale || !(val in scale)) return;
-      return scale[val].color;
-    },
-  },
 });
 
 export const iconSize = system({
@@ -138,17 +130,6 @@ export const space = system({
   marginY: {
     properties: ["marginBottom", "marginTop"],
     scale: "space",
-    transform(val: string, scale) {
-      if (!scale || !(val in scale)) return;
-      return scale[val].rem;
-    },
-  },
-});
-
-export const shadow = system({
-  boxShadow: {
-    property: "boxShadow",
-    scale: "shadow",
     transform(val: string, scale) {
       if (!scale || !(val in scale)) return;
       return scale[val].rem;

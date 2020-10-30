@@ -11,7 +11,7 @@ export const color = system({
   },
   borderColor: {
     property: "borderColor",
-    scale: "swatch",
+    scale: "border",
     transform(val: string, scale) {
       if (!scale || !(val in scale)) return;
       return scale[val].color;

@@ -2,8 +2,10 @@ import StyleDictionary from "style-dictionary";
 import path from "path";
 import pkg from "../package.json";
 import { registerFormats } from "./formats";
+import { registerTransformGroups } from "./transforms";
 
 registerFormats(StyleDictionary);
+registerTransformGroups(StyleDictionary);
 
 function getStyleDictionaryConfig(brand) {
   return {
@@ -13,7 +15,7 @@ function getStyleDictionaryConfig(brand) {
     ],
     platforms: {
       es6: {
-        transformGroup: "js",
+        transformGroup: "match/js",
         buildPath: `${brand}/`,
         files: [
           {
@@ -22,13 +24,13 @@ function getStyleDictionaryConfig(brand) {
           },
         ],
       },
-      common: {
-        transformGroup: "js",
-        buildPath: `${brand}/`,
-        files: [{}],
-      },
+      // common: {
+      //   transformGroup: "js",
+      //   buildPath: `${brand}/`,
+      //   files: [{}],
+      // },
       css: {
-        transformGroup: "css",
+        transformGroup: "match/css",
         buildPath: `${brand}/`,
         files: [
           {

@@ -1,3 +1,3 @@
-export * from "./get-token-categories";
+export * from "./get-token-groups";
 export * from "./format-group-tokens-with-template";
-export * from "./strip-category";
+export * from "./base-token-name";

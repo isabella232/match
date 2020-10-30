@@ -1,6 +1,6 @@
 import {
-  stripCategory,
-  getTokenCategories,
+  baseTokenName,
+  getTokenGroups,
   formatGroupTokensWithTemplate,
 } from "../utils";
 
@@ -9,25 +9,24 @@ export const tokenTemplate = (prop): string =>
     prop.comment ? ` // ${prop.comment}` : ""
   );
 
-export const categoryTemplate = (categoryName, props) => `
-export const ${categoryName} = {
-${props.map((prop) => `${stripCategory(prop)}: ${prop.name},`).join("\n")}
-};
-`;
+export const groupTemplate = (groupName, props) => `
+export const ${groupName} = {
+${props.map((prop) => `${baseTokenName(prop)}: ${prop.name},`).join("\n")}
+};`;
 
 export const es6TokenFormatter = (dictionary): string => {
   const singleTokens = dictionary.allProperties
     .map((prop) => tokenTemplate(prop))
     .join("\n");
 
-  const categories = getTokenCategories(dictionary.allProperties);
+  const groups = getTokenGroups(dictionary.allProperties);
 
   const groupedTokens = formatGroupTokensWithTemplate(
     dictionary.allProperties,
-    categories,
-    categoryTemplate
+    groups,
+    groupTemplate
   );
-  categories.map((group) => {
+  groups.map((group) => {
     return (
       `export const ${group} = {\n` +
       dictionary.allProperties

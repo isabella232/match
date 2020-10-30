@@ -1,6 +1,6 @@
-import { Colors } from "../../types";
+import { Colors } from "../../../types";
 
-module.exports = {
+export const color: Colors = {
   brand: { value: "rgba(0, 20, 137, 1)" },
   brandHighlight: { value: "rgba(242, 47, 70, 1)" },
   white: { value: "rgba(255, 255, 255, 1)" },
@@ -79,4 +79,4 @@ module.exports = {
   purple80: { value: "rgba(56, 14, 120, 1)" },
   purple90: { value: "rgba(34, 9, 74, 1)" },
   purple100: { value: "rgba(22, 4, 51, 1)" },
-} as Colors;
+};

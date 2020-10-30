@@ -5,6 +5,8 @@
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
   "main": "twilio/index.js",
+  "module": "twilio/index.es.js",
+  "style": "twilio/variables.css",
   "files": [
     "twilio",
     "sendgrid",
@@ -26,8 +28,10 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "devDependencies": {
+    "@types/lodash": "^4",
     "@types/node": "14.14.6",
     "csstype": "3.0.4",
+    "lodash": "4.17.20",
     "style-dictionary": "2.10.2",
     "ts-node": "9.0.0",
     "tsconfig-match": "workspace:configs/tsconfig",

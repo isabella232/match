@@ -1,3 +1,2 @@
-module.exports = {
-  color: require("./color"),
-};
+import * as color from "./color";
+export { color };

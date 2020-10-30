@@ -1,1 +1,2 @@
-module.exports = {};
+import * as color from "./color";
+export { color };

@@ -1,14 +1,15 @@
-const pluralCategoryMap = new Map(
+const pluralGroupMap = new Map(
   Object.entries({
     color: "colors",
+    backgroundColor: "backgroundColors",
   })
 );
 
-const getPluralCategoryName = (category) => {
-  const pluralName = pluralCategoryMap.get(category);
+const getPluralGroupName = (group) => {
+  const pluralName = pluralGroupMap.get(group);
   if (pluralName === undefined) {
     throw new Error(
-      `Category "${category}" does not have a matching plural name.`
+      `Token item "${group}" does not have a matching plural name.`
     );
   }
   return pluralName;
@@ -16,14 +17,14 @@ const getPluralCategoryName = (category) => {
 
 export const formatGroupTokensWithTemplate = (
   props,
-  categories,
+  groups,
   categoryTemplate
 ) =>
-  categories
-    .map((category) =>
+  groups
+    .map((group) =>
       categoryTemplate(
-        getPluralCategoryName(category),
-        props.filter((prop) => prop.attributes.category === category)
+        getPluralGroupName(group),
+        props.filter((prop) => prop.attributes.type === group)
       )
     )
     .join("\n");

@@ -10,4 +10,5 @@ export class Border {
   light = C.blue10;
   medium = C.gray40;
   darkest = C.blue100;
+  white = C.white;
 }

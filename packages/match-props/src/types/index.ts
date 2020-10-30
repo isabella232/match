@@ -9,3 +9,6 @@ export type IconSize = ResponsiveValue<IconSizeOptions>;
 
 export type SpaceOptions = keyof TwilioDesignTokens["space"];
 export type Space = ResponsiveValue<SpaceOptions>;
+
+export type ShadowOptions = keyof TwilioDesignTokens["space"];
+export type Shadow = ResponsiveValue<SpaceOptions>;

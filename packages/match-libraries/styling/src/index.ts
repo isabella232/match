@@ -9,6 +9,14 @@ export const color = system({
       return scale[val].color;
     },
   },
+  borderColor: {
+    property: "borderColor",
+    scale: "swatch",
+    transform(val: string, scale) {
+      if (!scale || !(val in scale)) return;
+      return scale[val].color;
+    },
+  },
 });
 
 export const iconSize = system({
@@ -63,6 +71,22 @@ export const space = system({
       return scale[val].rem;
     },
   },
+  paddingX: {
+    properties: ["paddingLeft", "paddingRight"],
+    scale: "space",
+    transform(val: string, scale) {
+      if (!scale || !(val in scale)) return;
+      return scale[val].rem;
+    },
+  },
+  paddingY: {
+    properties: ["paddingBottom", "paddingTop"],
+    scale: "space",
+    transform(val: string, scale) {
+      if (!scale || !(val in scale)) return;
+      return scale[val].rem;
+    },
+  },
   margin: {
     property: "margin",
     scale: "space",
@@ -98,6 +122,33 @@ export const space = system({
   marginTop: {
     property: "marginTop",
     scale: "space",
+    transform(val: string, scale) {
+      if (!scale || !(val in scale)) return;
+      return scale[val].rem;
+    },
+  },
+  marginX: {
+    properties: ["marginLeft", "marginRight"],
+    scale: "space",
+    transform(val: string, scale) {
+      if (!scale || !(val in scale)) return;
+      return scale[val].rem;
+    },
+  },
+  marginY: {
+    properties: ["marginBottom", "marginTop"],
+    scale: "space",
+    transform(val: string, scale) {
+      if (!scale || !(val in scale)) return;
+      return scale[val].rem;
+    },
+  },
+});
+
+export const shadow = system({
+  boxShadow: {
+    property: "boxShadow",
+    scale: "shadow",
     transform(val: string, scale) {
       if (!scale || !(val in scale)) return;
       return scale[val].rem;

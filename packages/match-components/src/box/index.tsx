@@ -1,5 +1,9 @@
 import * as React from "react";
-import { spaceTokenProp } from "@twilio-labs/match-props";
+import {
+  spaceTokenProp,
+  colorTokenProp,
+  shadowTokenProp,
+} from "@twilio-labs/match-props";
 import { BoxProps } from "./types";
 import { StyledBox } from "./styles";
 
@@ -13,11 +17,19 @@ Box.propTypes = {
   paddingRight: spaceTokenProp,
   paddingBottom: spaceTokenProp,
   paddingTop: spaceTokenProp,
+  paddingX: spaceTokenProp,
+  paddingY: spaceTokenProp,
   margin: spaceTokenProp,
   marginLeft: spaceTokenProp,
   marginRight: spaceTokenProp,
   marginBottom: spaceTokenProp,
   marginTop: spaceTokenProp,
+  marginX: spaceTokenProp,
+  marginY: spaceTokenProp,
+  boxShadow: shadowTokenProp,
+  borderColor: colorTokenProp,
 };
+
+Box.displayName = "Box";
 
 export { Box, BoxProps };

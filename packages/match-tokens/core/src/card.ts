@@ -1,7 +1,6 @@
-import { Border } from "./border";
-
-const border = new Border();
+import { Unit } from "./framework/prefabs/unit";
 
 export class Card {
-  border = border.white;
+  borderWidth = Unit.px(0);
+  borderRadius = Unit.px(5);
 }

@@ -1,7 +1,9 @@
-import { Border } from "@twilio-labs/match-tokens-core";
+import { Unit } from "@twilio-labs/match-tokens-core";
+import { BorderWidth } from "@twilio-labs/match-tokens-core";
 
-const border = new Border();
+const borderWidth = new BorderWidth();
 
 export class Card {
-  border = border.card;
+  borderWidth = borderWidth.thin;
+  borderRadius = Unit.px(5);
 }

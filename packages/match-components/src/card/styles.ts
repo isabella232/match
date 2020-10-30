@@ -5,9 +5,9 @@ import { Box } from "../box";
 
 const variants = {
   [CardVariant.PRIMARY]: css`
-    border-color: ${({ theme }) => theme.card.border.color};
+    border-color: ${({ theme }) => theme.border.card.color};
     border-style: solid;
-    border-width: ${({ theme }) => theme.borderWidth.thin.rem};
+    border-width: ${({ theme }) => theme.card.borderWidth.rem};
     box-shadow: ${({ theme }) => theme.shadow.card.boxShadow};
   `,
   [CardVariant.INVERSE]: css`
@@ -23,6 +23,7 @@ const variants = {
 const StyledCard = styled(Box)<CardProps>`
   ${space};
   background-color: ${({ theme }) => theme.swatch.white.color};
+  border-radius: ${({ theme }) => theme.card.borderRadius.rem};
   ${({ variant }) => variant && variants[variant]};
 `;
 

@@ -26,4 +26,4 @@ Card.defaultProps = {
   variant: CardVariant.PRIMARY,
 };
 
-export { Card, CardProps };
+export { Card, CardProps, CardVariant };

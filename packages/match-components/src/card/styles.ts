@@ -6,6 +6,8 @@ import { Box } from "../box";
 const variants = {
   [CardVariant.PRIMARY]: css`
     border-color: ${({ theme }) => theme.card.border.color};
+    border-style: solid;
+    border-width: ${({ theme }) => theme.borderWidth.thin.rem};
     box-shadow: ${({ theme }) => theme.shadow.card.boxShadow};
   `,
   [CardVariant.INVERSE]: css`
@@ -13,12 +15,14 @@ const variants = {
   `,
   [CardVariant.BORDER]: css`
     border-color: ${({ theme }) => theme.border.card.color};
+    border-style: solid;
+    border-width: ${({ theme }) => theme.borderWidth.thin.rem};
   `,
 };
 
 const StyledCard = styled(Box)<CardProps>`
   ${space};
-  border-color: ${({ theme }) => theme.card.border};
+  background-color: ${({ theme }) => theme.swatch.white.color};
   ${({ variant }) => variant && variants[variant]};
 `;
 

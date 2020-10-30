@@ -1,4 +1,4 @@
-import { SpaceOptions } from "@twilio-labs/match-props";
+import { Space } from "@twilio-labs/match-props";
 
 export enum CardVariant {
   PRIMARY = "primary",
@@ -9,23 +9,23 @@ export enum CardVariant {
 export interface CardProps extends React.HTMLAttributes<HTMLElement> {
   variant?: CardVariant;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
-  padding?: SpaceOptions;
+  padding?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
-  paddingLeft?: SpaceOptions;
+  paddingLeft?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
-  paddingRight?: SpaceOptions;
+  paddingRight?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
-  paddingBottom?: SpaceOptions;
+  paddingBottom?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
-  paddingTop?: SpaceOptions;
+  paddingTop?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
-  margin?: SpaceOptions;
+  margin?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
-  marginLeft?: SpaceOptions;
+  marginLeft?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
-  marginRight?: SpaceOptions;
+  marginRight?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
-  marginBottom?: SpaceOptions;
+  marginBottom?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
-  marginTop?: SpaceOptions;
+  marginTop?: Space;
 }

@@ -1,18 +1,18 @@
-import { SpaceOptions } from "@twilio-labs/match-props";
+import { Space } from "@twilio-labs/match-props";
 
 export interface BoxProps extends React.HTMLAttributes<HTMLElement> {
-  padding?: SpaceOptions;
-  paddingLeft?: SpaceOptions;
-  paddingRight?: SpaceOptions;
-  paddingBottom?: SpaceOptions;
-  paddingTop?: SpaceOptions;
-  paddingX?: SpaceOptions;
-  paddingY?: SpaceOptions;
-  margin?: SpaceOptions;
-  marginLeft?: SpaceOptions;
-  marginRight?: SpaceOptions;
-  marginBottom?: SpaceOptions;
-  marginTop?: SpaceOptions;
-  marginX?: SpaceOptions;
-  marginY?: SpaceOptions;
+  padding?: Space;
+  paddingLeft?: Space;
+  paddingRight?: Space;
+  paddingBottom?: Space;
+  paddingTop?: Space;
+  paddingX?: Space;
+  paddingY?: Space;
+  margin?: Space;
+  marginLeft?: Space;
+  marginRight?: Space;
+  marginBottom?: Space;
+  marginTop?: Space;
+  marginX?: Space;
+  marginY?: Space;
 }

@@ -5,5 +5,5 @@ const borderWidth = new BorderWidth();
 
 export class Card {
   borderWidth = borderWidth.thin;
-  borderRadius = Unit.px(5);
+  borderRadius = Unit.px(3);
 }

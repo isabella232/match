@@ -1,0 +1,36 @@
+{
+  "name": "@twilio-labs/match-tokens-new",
+  "version": "0.3.0",
+  "description": "A bundle containing all token libraries for use with the Twilio Match Design System.",
+  "author": "Twilio Inc.",
+  "license": "UNLICENSED",
+  "main": "twilio/index.js",
+  "files": [
+    "twilio",
+    "sendgrid",
+    "ahoy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "packages/match-tokens/new"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf ./dist",
+    "compile": "ts-node ./src/build.ts",
+    "type-check": "tsc --noEmit --composite false",
+    "publish": "yarn npm publish --tolerate-republish"
+  },
+  "devDependencies": {
+    "@types/node": "14.14.6",
+    "csstype": "3.0.4",
+    "style-dictionary": "2.10.2",
+    "ts-node": "9.0.0",
+    "tsconfig-match": "workspace:configs/tsconfig",
+    "typescript": "4.0.3"
+  }
+}

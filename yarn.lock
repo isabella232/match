@@ -4521,6 +4521,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@twilio-labs/match-tokens-new@workspace:packages/match-tokens/new":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match-tokens-new@workspace:packages/match-tokens/new"
+  dependencies:
+    "@types/node": 14.14.6
+    csstype: 3.0.4
+    style-dictionary: 2.10.2
+    ts-node: 9.0.0
+    tsconfig-match: "workspace:configs/tsconfig"
+    typescript: 4.0.3
+  languageName: unknown
+  linkType: soft
+
 "@twilio-labs/match-tokens-sendgrid@workspace:packages/match-tokens/sendgrid":
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-tokens-sendgrid@workspace:packages/match-tokens/sendgrid"
@@ -4983,6 +4996,13 @@ __metadata:
   version: 14.11.5
   resolution: "@types/node@npm:14.11.5"
   checksum: 974f9dbebf83593b3fcd3ef2266cef2be033b33ccfe24a37b265abfe1340eee0e3967824819a099ec336182758b07a816798a7cdecbaf1b5a8c714d8e663ba82
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:14.14.6":
+  version: 14.14.6
+  resolution: "@types/node@npm:14.14.6"
+  checksum: 9b06b04ab2ae3761136fb39b573f95d90e748ebcf232e126304d642e4910039a74973547635729b627a0401791a1f2491aa9aa6d4d6bb80922a0b869a2731a63
   languageName: node
   linkType: hard
 
@@ -6013,6 +6033,13 @@ __metadata:
     delegates: ^1.0.0
     readable-stream: ^2.0.6
   checksum: 2d6fdb0ddde9b8cb120b6851b42c75f6b6db78b540b579a00d144ad38cb9e1bdf1248e5454049fcf5b47ef61d1a6f2ea433a8e38984158afd441bc1e0db7a625
+  languageName: node
+  linkType: hard
+
+"arg@npm:^4.1.0":
+  version: 4.1.3
+  resolution: "arg@npm:4.1.3"
+  checksum: 81b3b40b1529c4fbf75b12f7c3e6fb2dcce9e78072063babc169de9b4f40777788f3d2b04380f659ef676a756e03ccfbfe78adf4477353bda906295fa69dab89
   languageName: node
   linkType: hard
 
@@ -9289,6 +9316,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"csstype@npm:3.0.4":
+  version: 3.0.4
+  resolution: "csstype@npm:3.0.4"
+  checksum: 90cd2ff9aced9049010c5c69470b30643761d511b4250f6ce2bbdbab23229822c325fd841be6066a94a9ba800112026e3c046be879cd44a066e8705991cdc700
+  languageName: node
+  linkType: hard
+
 "csstype@npm:^2.5.7":
   version: 2.6.13
   resolution: "csstype@npm:2.6.13"
@@ -9778,6 +9812,13 @@ __metadata:
   version: 26.5.0
   resolution: "diff-sequences@npm:26.5.0"
   checksum: 3eca32056c1149e5a02c917e56c4c87535fad80c65543b4d80df8f977e5a4ebb68ee36815da20474b475cfd7305152287a926a4cca65d822ea94a4039628aede
+  languageName: node
+  linkType: hard
+
+"diff@npm:^4.0.1":
+  version: 4.0.2
+  resolution: "diff@npm:4.0.2"
+  checksum: 81b5cd7ddde6f0ba2a532d434cfdca365aedd6cc62bb133e851e66e071d40382a30924a07c1034bd3d5a2e332146f64514b73c06fe2ebc0490a67f0c98da79fb
   languageName: node
   linkType: hard
 
@@ -15110,7 +15151,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"json5@npm:2.x, json5@npm:^2.1.1, json5@npm:^2.1.2":
+"json5@npm:2.x, json5@npm:^2.1.1, json5@npm:^2.1.2, json5@npm:^2.1.3":
   version: 2.1.3
   resolution: "json5@npm:2.1.3"
   dependencies:
@@ -16062,7 +16103,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"make-error@npm:1.x":
+"make-error@npm:1.x, make-error@npm:^1.1.1":
   version: 1.3.6
   resolution: "make-error@npm:1.3.6"
   checksum: 2c780bab8409b865e8ee86697c599a2bf2765ec64d21eb67ccda27050e039f983feacad05a0d43aba3c966ea03d305d2612e94fec45474bcbc61181f57c5bb88
@@ -22002,7 +22043,7 @@ resolve@1.17.0:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:^0.5.16, source-map-support@npm:^0.5.6, source-map-support@npm:~0.5.12, source-map-support@npm:~0.5.19":
+"source-map-support@npm:^0.5.16, source-map-support@npm:^0.5.17, source-map-support@npm:^0.5.6, source-map-support@npm:~0.5.12, source-map-support@npm:~0.5.19":
   version: 0.5.19
   resolution: "source-map-support@npm:0.5.19"
   dependencies:
@@ -22674,6 +22715,24 @@ resolve@1.17.0:
   version: 1.0.1
   resolution: "strip-url-auth@npm:1.0.1"
   checksum: 3b0b45e942e692e62bbfd0767ba28a9a85befb95e90de3cf202d08d4f7a070d5c8de69e74885fde30a89f3ce6b2f1c93fd1eb26774d06c0a29feccd9ca879953
+  languageName: node
+  linkType: hard
+
+"style-dictionary@npm:2.10.2":
+  version: 2.10.2
+  resolution: "style-dictionary@npm:2.10.2"
+  dependencies:
+    chalk: ^4.0.0
+    commander: ^5.1.0
+    fs-extra: ^8.1.0
+    glob: ^7.1.6
+    json5: ^2.1.3
+    lodash: ^4.17.15
+    resolve-cwd: ^3.0.0
+    tinycolor2: ^1.4.1
+  bin:
+    style-dictionary: bin/style-dictionary
+  checksum: d4cf2edbc8679bc2d25cc4aad237dc5760860d3b3a8d58a0b1bd6fb98a822d2d6c27ec2e40a97deb2925d15f4df079bf25407b4dfd3a766ddc5ab0839b69c919
   languageName: node
   linkType: hard
 
@@ -23745,6 +23804,26 @@ resolve@1.17.0:
     multimatch: ^4.0.0
     typescript: 3.0.1 - 3.6.4
   checksum: 6f99a3fb5163375a03c7a3b494d828cdfb9904eb4b61119d42b3ec4dc0ea943e3c97e87aae9b99828d35278ac91f0a72139286f4c6926007b5c8f60c78eaacd4
+  languageName: node
+  linkType: hard
+
+"ts-node@npm:9.0.0":
+  version: 9.0.0
+  resolution: "ts-node@npm:9.0.0"
+  dependencies:
+    arg: ^4.1.0
+    diff: ^4.0.1
+    make-error: ^1.1.1
+    source-map-support: ^0.5.17
+    yn: 3.1.1
+  peerDependencies:
+    typescript: ">=2.7"
+  bin:
+    ts-node: dist/bin.js
+    ts-node-script: dist/bin-script.js
+    ts-node-transpile-only: dist/bin-transpile.js
+    ts-script: dist/bin-script-deprecated.js
+  checksum: 49d2ab087fc4b93f0a292e426ea6d242a80d1a4809ac008758bb0170aea1a85cd4182792c1d70889285fe5328cd8bd1ffb1e5108d1c4f31c39dbe9151ea4cabe
   languageName: node
   linkType: hard
 
@@ -25632,6 +25711,13 @@ typescript@^3.7.2:
     buffer-crc32: ~0.2.3
     fd-slicer: ~1.1.0
   checksum: 6d0c4e72706ec2df6ea842d09c792e7b34badc5db3d8a893e0c70d0e464c9bf82bac4b1690f3515b5e1d96b72fceb6cc4dd96465426077ba6dddc54e7dd4d517
+  languageName: node
+  linkType: hard
+
+"yn@npm:3.1.1":
+  version: 3.1.1
+  resolution: "yn@npm:3.1.1"
+  checksum: bff63b80568d80c711670935427494dde47cdf97e8b04196b140ce0af519c81c5ee857eddad0caa8b422dd65aea0157bbfaacbb1546bebba623f0f383d5d9ae5
   languageName: node
   linkType: hard
 

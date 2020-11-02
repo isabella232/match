@@ -4,6 +4,7 @@ const pluralGroupMap = new Map(
     backgroundColor: "backgroundColors",
     borderColor: "borderColors",
     borderWidth: "borderWidths",
+    breakpoint: "breakpoints",
   })
 );
 

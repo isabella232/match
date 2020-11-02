@@ -36,6 +36,12 @@ function getStyleDictionaryConfig(brand) {
           {
             format: "css/variables",
             destination: "variables.css",
+            filter: (prop) => prop.attributes.category !== "mediaQuery",
+          },
+          {
+            format: "match/custom-media",
+            destination: "custom-media.css",
+            filter: (prop) => prop.attributes.category === "mediaQuery",
           },
         ],
       },

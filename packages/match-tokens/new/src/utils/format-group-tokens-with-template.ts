@@ -6,6 +6,7 @@ const pluralGroupMap = new Map(
     borderWidth: "borderWidths",
     breakpoint: "breakpoints",
     component: "components",
+    fontFamily: "fontFamilies",
   })
 );
 

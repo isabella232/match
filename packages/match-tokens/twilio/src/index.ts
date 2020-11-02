@@ -17,6 +17,7 @@ import {
   BorderWidth,
   Space,
   IconSize,
+  Card,
 } from "@twilio-labs/match-tokens-core";
 
 export const twilioDesignTokens = {
@@ -34,4 +35,5 @@ export const twilioDesignTokens = {
   borderWidth: new BorderWidth(),
   space: new Space(),
   iconSize: new IconSize(),
+  card: new Card(),
 };

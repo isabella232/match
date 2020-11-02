@@ -1,6 +1,7 @@
 import { Unit } from "./framework/prefabs/unit";
 
 export class Space {
+  scale0 = Unit.px(0);
   scale7 = Unit.px(4);
   scale20 = Unit.px(8);
   scale40 = Unit.px(10);

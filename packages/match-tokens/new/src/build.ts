@@ -39,6 +39,16 @@ function getStyleDictionaryConfig(brand) {
           },
         ],
       },
+      scss: {
+        transformGroup: "match/scss",
+        buildPath: `${brand}/`,
+        files: [
+          {
+            format: "scss/variables",
+            destination: "variables.scss",
+          },
+        ],
+      },
     },
   };
 }

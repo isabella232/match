@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "yarn clean && yarn compile",
-    "clean": "rm -rf ./dist",
+    "clean": "rm -rf twilio sendgrid ahoy",
     "compile": "ts-node ./src/build.ts",
     "type-check": "tsc --noEmit --composite false",
     "publish": "yarn npm publish --tolerate-republish"

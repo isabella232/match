@@ -1,2 +1,2 @@
-import * as color from "./color";
-export { color };
+export * as color from "./color";
+export * as size from "./size";

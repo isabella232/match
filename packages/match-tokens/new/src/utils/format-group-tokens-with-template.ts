@@ -2,6 +2,8 @@ const pluralGroupMap = new Map(
   Object.entries({
     color: "colors",
     backgroundColor: "backgroundColors",
+    borderColor: "borderColors",
+    borderWidth: "borderWidths",
   })
 );
 

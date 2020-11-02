@@ -5,3 +5,9 @@ export interface Colors {
     value: CSS.Property.Color;
   };
 }
+
+export interface Sizes {
+  [token: string]: {
+    value: number;
+  };
+}

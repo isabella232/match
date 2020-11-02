@@ -9,7 +9,7 @@ export const tokenTemplate = (prop): string =>
     prop.comment ? ` // ${prop.comment}` : ""
   );
 
-export const groupTemplate = (groupName, props) => `
+export const groupTemplate = (groupName, props): string => `
 export const ${groupName} = {
 ${props.map((prop) => `${baseTokenName(prop)}: ${prop.name},`).join("\n")}
 };`;

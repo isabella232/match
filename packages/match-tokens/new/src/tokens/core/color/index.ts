@@ -1,2 +1,3 @@
 export * from "./color";
-export * from "./background";
+export * from "./background-color";
+export * from "./border-color";

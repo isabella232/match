@@ -8,6 +8,7 @@ const pluralGroupMap = new Map(
     component: "components",
     fontFamily: "fontFamilies",
     fontSize: "fontSizes",
+    fontWeight: "fontWeights",
   })
 );
 

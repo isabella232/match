@@ -1,17 +1,12 @@
 import * as CSS from "csstype";
 
-// TODO: Remove declaration and use proper types once this PR is merged:
-// https://github.com/amzn/style-dictionary/pull/410
-declare module "style-dictionary";
-
-export interface Colors {
+interface Tokens<T> {
   [token: string]: {
-    value: CSS.Property.Color;
+    value: T;
   };
 }
 
-export interface Sizes {
-  [token: string]: {
-    value: number;
-  };
-}
+export type Colors = Tokens<CSS.Property.Color>;
+export type Sizes = Tokens<number>;
+export type FontWeights = Tokens<CSS.Property.FontWeight>;
+export type FontFamilies = Tokens<CSS.Property.FontFamily>;

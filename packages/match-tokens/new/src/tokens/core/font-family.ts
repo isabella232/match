@@ -1,4 +1,6 @@
-export const fontFamily = {
+import { FontFamilies } from "../../types";
+
+export const fontFamily: FontFamilies = {
   text: {
     value:
       "Whitney SSm A, Whitney SSm B, Helvetica Neue, Helvetica, Arial, sans-serif",

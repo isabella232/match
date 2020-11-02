@@ -6,3 +6,4 @@ export * from "./color";
 export * from "./component";
 export * from "./font-family";
 export * from "./font-size";
+export * from "./font-weight";

@@ -1,4 +1,4 @@
-import { Colors } from "../../../types";
+import { Colors } from "../../types";
 
 export const color: Colors = {
   brand: { value: "rgba(0, 20, 137, 1)" },

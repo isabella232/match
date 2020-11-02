@@ -1,35 +1,51 @@
 import StyleDictionary from "style-dictionary";
-import { kebabCase } from "lodash";
+import { ColorTranslator } from "colortranslator";
+import { REM_CATEGORIES, COLOR_CATEOGRIES } from "../constants";
 
-export const registerTransformGroups = (
+export const registerTransforms = (
   dictionary: typeof StyleDictionary
 ): void => {
   dictionary.registerTransform({
-    name: "name/ti/kebab",
-    type: "name",
-    transformer: function (prop, options) {
-      return kebabCase(
-        [options.prefix].concat(prop.path.slice(1, prop.path.length)).join(" ")
-      );
-    },
-  });
-  dictionary.registerTransform({
-    name: "size/pxToRem",
+    name: "match/pxToRem",
     type: "value",
-    matcher: (prop) => prop.attributes.category === "size",
+    matcher: (prop) => REM_CATEGORIES.includes(prop.attributes.category),
     transformer: (prop) =>
       `${Math.round((Number.parseInt(prop.value, 10) / 16) * 1000) / 1000}rem`,
   });
-  dictionary.registerTransformGroup({
-    name: "match/js",
-    transforms: ["attribute/cti", "name/ti/camel", "color/hex", "size/pxToRem"],
+  dictionary.registerTransform({
+    name: "match/color",
+    type: "value",
+    matcher: (prop) => COLOR_CATEOGRIES.includes(prop.attributes.category),
+    transformer: (prop) => {
+      const color = new ColorTranslator(prop.value);
+      return color.A === 1 ? color.HEX : color.RGBA;
+    },
   });
   dictionary.registerTransformGroup({
-    name: "match/css",
-    transforms: ["attribute/cti", "name/ti/kebab", "color/css", "size/pxToRem"],
+    name: "match-js",
+    transforms: [
+      "attribute/cti",
+      "name/cti/camel",
+      "match/color",
+      "match/pxToRem",
+    ],
   });
   dictionary.registerTransformGroup({
-    name: "match/scss",
-    transforms: ["attribute/cti", "name/ti/kebab", "color/css", "size/pxToRem"],
+    name: "match-css",
+    transforms: [
+      "attribute/cti",
+      "name/cti/kebab",
+      "match/color",
+      "match/pxToRem",
+    ],
+  });
+  dictionary.registerTransformGroup({
+    name: "match-scss",
+    transforms: [
+      "attribute/cti",
+      "name/cti/kebab",
+      "match/color",
+      "match/pxToRem",
+    ],
   });
 };

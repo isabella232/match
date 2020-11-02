@@ -1,2 +1,2 @@
 export const getTokenGroups = (props) =>
-  [...new Set(props.map((prop) => prop.attributes.type))].sort();
+  [...new Set(props.map((prop) => prop.attributes.category))].sort();

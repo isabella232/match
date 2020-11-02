@@ -1,4 +1,4 @@
-import { Sizes } from "../../../types";
+import { Sizes } from "../../types";
 
 export const borderWidth: Sizes = {
   thin: { value: 1 },

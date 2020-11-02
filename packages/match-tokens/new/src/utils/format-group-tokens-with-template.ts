@@ -28,7 +28,7 @@ export const formatGroupTokensWithTemplate = (
     .map((group) =>
       categoryTemplate(
         getPluralGroupName(group),
-        props.filter((prop) => prop.attributes.type === group)
+        props.filter((prop) => prop.attributes.category === group)
       )
     )
     .join("\n");

@@ -1,2 +1,2 @@
-export * as color from "./color";
-export * as alias from "./alias";
+export * from "./background-color";
+export * from "./component";

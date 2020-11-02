@@ -1,4 +1,4 @@
-import { Colors } from "../../../types";
+import { Colors } from "../../types";
 import { color } from "./color";
 
 export const borderColor: Colors = {

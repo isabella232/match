@@ -5,18 +5,22 @@ import {
 } from "../utils";
 
 export const tokenTemplate = (prop): string =>
-  `export const ${prop.name} = ${JSON.stringify(prop.value)};`.concat(
+  `const ${prop.name} = ${JSON.stringify(prop.value)};`.concat(
     prop.comment ? ` // ${prop.comment}` : ""
   );
+export const tokenExportTemplate = (prop): string => `${prop.name},`;
 
-export const groupTemplate = (groupName, props): string => `
-export const ${groupName} = {
+export const groupTemplate = (groupName, props): string => `${groupName}: {
 ${props.map((prop) => `${baseTokenName(prop)}: ${prop.name},`).join("\n")}
-};`;
+},`;
 
-export const es6TokenFormatter = (dictionary): string => {
+export const commonJsTokenFormatter = (dictionary): string => {
   const singleTokens = dictionary.allProperties
     .map((prop) => tokenTemplate(prop))
+    .join("\n");
+
+  const singleTokenExports = dictionary.allProperties
+    .map((prop) => tokenExportTemplate(prop))
     .join("\n");
 
   const groups = getTokenGroups(dictionary.allProperties);
@@ -27,5 +31,11 @@ export const es6TokenFormatter = (dictionary): string => {
     groupTemplate
   );
 
-  return [singleTokens, groupedTokens].join("\n");
+  return [
+    singleTokens,
+    "module.exports = {",
+    singleTokenExports,
+    groupedTokens,
+    "}",
+  ].join("\n");
 };

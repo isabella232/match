@@ -2,10 +2,10 @@ import StyleDictionary from "style-dictionary";
 import path from "path";
 import pkg from "../package.json";
 import { registerFormats } from "./formats";
-import { registerTransformGroups } from "./transforms";
+import { registerTransforms } from "./transforms";
 
 registerFormats(StyleDictionary);
-registerTransformGroups(StyleDictionary);
+registerTransforms(StyleDictionary);
 
 function getStyleDictionaryConfig(brand) {
   return {
@@ -14,39 +14,38 @@ function getStyleDictionaryConfig(brand) {
       path.resolve(__dirname, `tokens/${brand}/index.ts`),
     ],
     platforms: {
-      es6: {
-        transformGroup: "match/js",
+      js: {
+        transformGroup: "match-js",
         buildPath: `${brand}/`,
         files: [
           {
             format: "match/es6",
             destination: "index.es.js",
           },
+          {
+            format: "match/common",
+            destination: "index.js",
+          },
         ],
       },
-      // common: {
-      //   transformGroup: "js",
-      //   buildPath: `${brand}/`,
-      //   files: [{}],
-      // },
       css: {
-        transformGroup: "match/css",
+        transformGroup: "match-css",
         buildPath: `${brand}/`,
         files: [
           {
             format: "css/variables",
             destination: "variables.css",
-            filter: (prop) => prop.attributes.category !== "mediaQuery",
+            filter: (prop) => prop.attributes.category !== "breakpoint",
           },
           {
             format: "match/custom-media",
             destination: "custom-media.css",
-            filter: (prop) => prop.attributes.category === "mediaQuery",
+            filter: (prop) => prop.attributes.category === "breakpoint",
           },
         ],
       },
       scss: {
-        transformGroup: "match/scss",
+        transformGroup: "match-scss",
         buildPath: `${brand}/`,
         files: [
           {

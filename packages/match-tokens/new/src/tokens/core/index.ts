@@ -1,4 +1,6 @@
-export * as color from "./color";
-export * as size from "./size";
-export * as mediaQuery from "./media-query";
-export * as alias from "./alias";
+export * from "./background-color";
+export * from "./border-color";
+export * from "./border-width";
+export * from "./breakpoint";
+export * from "./color";
+export * from "./component";

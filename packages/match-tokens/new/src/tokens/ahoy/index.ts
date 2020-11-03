@@ -9,5 +9,6 @@ export {
   fontWeight,
   gradient,
   iconSize,
+  space,
 } from "../core";
 export * from "./shadow";

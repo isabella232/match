@@ -9,3 +9,4 @@ export * from "./font-size";
 export * from "./font-weight";
 export * from "./gradient";
 export * from "./icon-size";
+export * from "./space";

@@ -1,7 +1,7 @@
 import StyleDictionary from "style-dictionary";
 import { ColorTranslator } from "colortranslator";
-import { REM_CATEGORIES, COLOR_CATEOGRIES } from "../constants";
-import { pxToRem } from "../utils";
+import { REM_CATEGORIES, COLOR_CATEOGRIES } from "./constants";
+import { pxToRem } from "./utils";
 
 export const registerTransforms = (
   dictionary: typeof StyleDictionary

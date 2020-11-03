@@ -1,2 +1,19 @@
-export const REM_CATEGORIES = ["borderWidth", "fontSize", "iconSize"];
+export const REM_CATEGORIES = ["borderWidth", "fontSize", "iconSize", "space"];
 export const COLOR_CATEOGRIES = ["color", "borderColor", "backgroundColor"];
+export const GROUP_NAME_MAP = new Map(
+  Object.entries({
+    color: "colors",
+    backgroundColor: "backgroundColors",
+    borderColor: "borderColors",
+    borderWidth: "borderWidths",
+    breakpoint: "breakpoints",
+    component: "components",
+    fontFamily: "fontFamilies",
+    fontSize: "fontSizes",
+    fontWeight: "fontWeights",
+    gradient: "gradients",
+    iconSize: "iconSizes",
+    shadow: "shadows",
+    space: "space",
+  })
+);

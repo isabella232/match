@@ -1,28 +1,13 @@
-const pluralGroupMap = new Map(
-  Object.entries({
-    color: "colors",
-    backgroundColor: "backgroundColors",
-    borderColor: "borderColors",
-    borderWidth: "borderWidths",
-    breakpoint: "breakpoints",
-    component: "components",
-    fontFamily: "fontFamilies",
-    fontSize: "fontSizes",
-    fontWeight: "fontWeights",
-    gradient: "gradients",
-    iconSize: "iconSizes",
-    shadow: "shadows",
-  })
-);
+import { GROUP_NAME_MAP } from "../constants";
 
-const getPluralGroupName = (group): string => {
-  const pluralName = pluralGroupMap.get(group);
-  if (pluralName === undefined) {
+const getGroupName = (group): string => {
+  const groupName = GROUP_NAME_MAP.get(group);
+  if (groupName === undefined) {
     throw new Error(
       `Token item "${group}" does not have a matching plural name.`
     );
   }
-  return pluralName;
+  return groupName;
 };
 
 export const formatGroupTokensWithTemplate = (
@@ -33,7 +18,7 @@ export const formatGroupTokensWithTemplate = (
   groups
     .map((group) =>
       categoryTemplate(
-        getPluralGroupName(group),
+        getGroupName(group),
         props.filter((prop) => prop.attributes.category === group)
       )
     )

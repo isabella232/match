@@ -10,6 +10,7 @@ const pluralGroupMap = new Map(
     fontSize: "fontSizes",
     fontWeight: "fontWeights",
     gradient: "gradients",
+    iconSize: "iconSizes",
   })
 );
 

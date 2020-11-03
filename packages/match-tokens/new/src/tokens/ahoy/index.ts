@@ -10,5 +10,6 @@ export {
   gradient,
   iconSize,
   space,
+  textColor,
 } from "../core";
 export * from "./shadow";

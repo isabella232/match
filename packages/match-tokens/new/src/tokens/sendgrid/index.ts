@@ -13,3 +13,4 @@ export * from "./component";
 export * from "./font-family";
 export * from "./gradient";
 export * from "./shadow";
+export * from "./text-color";

@@ -1,5 +1,10 @@
 export const REM_CATEGORIES = ["borderWidth", "fontSize", "iconSize", "space"];
-export const COLOR_CATEOGRIES = ["color", "borderColor", "backgroundColor"];
+export const COLOR_CATEOGRIES = [
+  "color",
+  "borderColor",
+  "backgroundColor",
+  "textColor",
+];
 export const GROUP_NAME_MAP = new Map(
   Object.entries({
     color: "colors",
@@ -15,5 +20,6 @@ export const GROUP_NAME_MAP = new Map(
     iconSize: "iconSizes",
     shadow: "shadows",
     space: "space",
+    textColor: "textColors",
   })
 );

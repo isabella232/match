@@ -90,6 +90,7 @@ packages/match-tokens/**/lib/*
 packages/match-tokens/new/*
 !packages/match-tokens/new/package.json
 !packages/match-tokens/new/tsconfig.json
+!packages/match-tokens/new/types.d.ts
 !packages/match-tokens/new/src
 
 # PyPI

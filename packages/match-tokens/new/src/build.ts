@@ -9,10 +9,7 @@ registerTransforms(StyleDictionary);
 
 function getStyleDictionaryConfig(brand) {
   return {
-    source: [
-      path.resolve(__dirname, `tokens/core/index.ts`),
-      path.resolve(__dirname, `tokens/${brand}/index.ts`),
-    ],
+    source: [path.resolve(__dirname, `tokens/${brand}/index.ts`)],
     platforms: {
       js: {
         transformGroup: "match-js",

@@ -40,7 +40,7 @@
     "@storybook/react": "6.0.26",
     "@svgr/cli": "5.4.0",
     "@twilio-labs/match-components": "workspace:packages/match-components",
-    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/new",
     "@types/babel__core": "7.1.10",
     "@types/prop-types": "15.7.3",
     "@types/react": "16.9.51",

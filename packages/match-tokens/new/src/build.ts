@@ -16,16 +16,20 @@ function getStyleDictionaryConfig(brand) {
         buildPath: `${brand}/`,
         files: [
           {
-            format: "match/es6",
-            destination: "index.es.js",
-          },
-          {
             format: "match/common",
             destination: "index.js",
           },
           {
             format: "match/type-declaration",
             destination: "index.d.ts",
+          },
+          {
+            format: "match/es6",
+            destination: "es6.js",
+          },
+          {
+            format: "match/type-declaration",
+            destination: "es6.d.ts",
           },
         ],
       },

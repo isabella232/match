@@ -47,7 +47,7 @@
     "@twilio-labs/match-props": "workspace:packages/match-props",
     "@twilio-labs/match-styling-library": "workspace:packages/match-libraries/styling",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
-    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/new",
     "@types/babel__core": "7.1.10",
     "@types/jest-axe": "3.5.0",
     "@types/prop-types": "15.7.3",

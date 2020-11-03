@@ -18,7 +18,7 @@
     "compile": "node src/index.js"
   },
   "devDependencies": {
-    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/new",
     "ejs": "3.1.5"
   }
 }

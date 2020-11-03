@@ -1,5 +1,5 @@
 {
-  "name": "@twilio-labs/match-tokens",
+  "name": "@twilio-labs/match-tokens-old",
   "version": "0.3.0",
   "description": "A bundle containing all token libraries for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",

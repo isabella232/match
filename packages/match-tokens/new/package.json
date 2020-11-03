@@ -1,11 +1,11 @@
 {
-  "name": "@twilio-labs/match-tokens-new",
+  "name": "@twilio-labs/match-tokens",
   "version": "0.3.0",
   "description": "A bundle containing all token libraries for use with the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
   "main": "twilio/index.js",
-  "module": "twilio/index.es.js",
+  "module": "twilio/es6.js",
   "style": "twilio/variables.css",
   "types": "twilio/index.d.ts",
   "files": [

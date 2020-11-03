@@ -11,5 +11,6 @@ export {
   iconSize,
   space,
   textColor,
+  component,
 } from "../core";
 export * from "./shadow";

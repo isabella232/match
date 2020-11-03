@@ -1,6 +1,7 @@
 import { Sizes } from "../../types";
 
 export const space: Sizes = {
+  scale0: { value: 0 },
   scale7: { value: 4 },
   scale20: { value: 8 },
   scale40: { value: 10 },

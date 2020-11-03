@@ -11,3 +11,4 @@ export type Backgrounds = Tokens<CSS.Property.BackgroundImage>;
 export type Sizes = Tokens<number>;
 export type FontWeights = Tokens<CSS.Property.FontWeight>;
 export type FontFamilies = Tokens<CSS.Property.FontFamily>;
+export type Shadows = Tokens<CSS.Property.BoxShadow>;

@@ -11,10 +11,11 @@ const pluralGroupMap = new Map(
     fontWeight: "fontWeights",
     gradient: "gradients",
     iconSize: "iconSizes",
+    shadow: "shadows",
   })
 );
 
-const getPluralGroupName = (group) => {
+const getPluralGroupName = (group): string => {
   const pluralName = pluralGroupMap.get(group);
   if (pluralName === undefined) {
     throw new Error(
@@ -28,7 +29,7 @@ export const formatGroupTokensWithTemplate = (
   props,
   groups,
   categoryTemplate
-) =>
+): string =>
   groups
     .map((group) =>
       categoryTemplate(

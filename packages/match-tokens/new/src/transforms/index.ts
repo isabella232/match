@@ -1,6 +1,7 @@
 import StyleDictionary from "style-dictionary";
 import { ColorTranslator } from "colortranslator";
 import { REM_CATEGORIES, COLOR_CATEOGRIES } from "../constants";
+import { pxToRem } from "../utils";
 
 export const registerTransforms = (
   dictionary: typeof StyleDictionary
@@ -9,8 +10,7 @@ export const registerTransforms = (
     name: "match/pxToRem",
     type: "value",
     matcher: (prop) => REM_CATEGORIES.includes(prop.attributes.category),
-    transformer: (prop) =>
-      `${Math.round((Number.parseInt(prop.value, 10) / 16) * 1000) / 1000}rem`,
+    transformer: (prop) => `${pxToRem(prop.value)}rem`,
   });
   dictionary.registerTransform({
     name: "match/color",

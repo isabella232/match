@@ -7,6 +7,7 @@
   "main": "twilio/index.js",
   "module": "twilio/index.es.js",
   "style": "twilio/variables.css",
+  "types": "twilio/index.d.ts",
   "files": [
     "twilio",
     "sendgrid",

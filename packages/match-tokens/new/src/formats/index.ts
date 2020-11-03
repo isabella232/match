@@ -1,7 +1,8 @@
 import StyleDictionary from "style-dictionary";
 import { es6TokenFormatter } from "./es6";
 import { commonJsTokenFormatter } from "./common";
-import { customMediaFormatter } from "./custom-media";
+import { customMediaTokenFormatter } from "./custom-media";
+import { typeDeclarationTokenFormatter } from "./type-declaration";
 
 export const registerFormats = (dictionary: typeof StyleDictionary): void => {
   dictionary.registerFormat({
@@ -13,7 +14,11 @@ export const registerFormats = (dictionary: typeof StyleDictionary): void => {
     formatter: commonJsTokenFormatter,
   });
   dictionary.registerFormat({
+    name: "match/type-declaration",
+    formatter: typeDeclarationTokenFormatter,
+  });
+  dictionary.registerFormat({
     name: "match/custom-media",
-    formatter: customMediaFormatter,
+    formatter: customMediaTokenFormatter,
   });
 };

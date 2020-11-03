@@ -23,6 +23,10 @@ function getStyleDictionaryConfig(brand) {
             format: "match/common",
             destination: "index.js",
           },
+          {
+            format: "match/type-declaration",
+            destination: "index.d.ts",
+          },
         ],
       },
       css: {

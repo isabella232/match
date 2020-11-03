@@ -18,6 +18,7 @@ import { Text } from "./text";
 import { Shadow } from "./shadow";
 import { Gradient } from "./gradient";
 import { Button } from "./button";
+import { Card } from "./card";
 
 export const sendGridDesignTokens = {
   breakpoint: new Breakpoint(),
@@ -34,4 +35,5 @@ export const sendGridDesignTokens = {
   borderWidth: new BorderWidth(),
   space: new Space(),
   iconSize: new IconSize(),
+  card: new Card(),
 };

@@ -34,14 +34,18 @@ const Component = () => <Card>Ahoy</Card>;
 
 <Props of="Card" />
 
+Suggested spacing tokens: "scale100" | "scale180" | "scale260" | "scale340" | "scale420" | "scale540"
+
 ---
 
 ## Guidelines
 
 ### About Cards
 
-The card component is a stylized container with padding and margin options (more information in the <Anchor href="#padding-and-margins"> example below</Anchor>). It is a flexible component that can be customized to fit a variety of use cases.
+The card component is a stylized container with padding and margin options. It is a flexible component that can be customized to fit a variety of use cases.
 Cards do not handle interactive events but can have children with event handlers, such as a button or an anchor.
+
+**Note:** the order of the padding and margin props effects the generated CSS, learn more in the <Anchor href="#padding-and-margins"> padding and margin example</Anchor> below.
 
 ### Accessibility
 
@@ -73,7 +77,7 @@ The primary card is the most common variation and can be used on any light backg
 
 ### Inverse
 
-The inverse cards uses the inverse shadow and is designed to be used on dark backgrounds.
+The inverse card uses the inverse shadow and is designed to be used on dark backgrounds.
 
 ```jsx live bg=darkest
 <Card variant="inverse" padding="scale100">
@@ -93,12 +97,14 @@ The border variation does not have a shadow but has a border. While it exists fo
 
 ### Padding and Margins
 
-The padding and margin for the card can be customized using the padding and margin props. The order of these props matters! The order of the props in the component
-corresponds to the order the CSS properties are added. For instance, having paddingLeft **after** padding ensures that the left padding comes from the paddingLeft property.
+**The order of the padding and margin props will effect the padding and margins for the card!**
+
+The order of the props in the component
+corresponds to the order the CSS properties are added. For instance, having paddingLeft after padding ensures that the left padding comes from the paddingLeft property.
 
 ```jsx live
 <Card padding="scale100" paddingLeft="scale540" margin="scale100">
-  <p>There are three sub-species of wombats</p>
+  <p>There are three subspecies of wombats</p>
   <ul>
     <li>Bare-Nosed Wombat</li>
     <li>Southern Hairy-nosed</li>
@@ -111,7 +117,7 @@ However, if paddingLeft is first the left padding will come from the padding pro
 
 ```jsx live
 <Card paddingLeft="scale540" padding="scale100" margin="scale100">
-  <p>There are three sub-species of wombats</p>
+  <p>There are three subspecies of wombats</p>
   <ul>
     <li>Bare-Nosed Wombat</li>
     <li>Southern Hairy-nosed</li>

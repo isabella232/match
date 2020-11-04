@@ -11,7 +11,7 @@
 
 .playgroundEditor {
   padding: 24px 40px;
-  background: var(--swatch-gray90);
+  background: var(--color-gray-90);
 }
 
 .playgroundPreview {

@@ -9,10 +9,16 @@
     "directory": "plugins/docusaurus-tokens"
   },
   "license": "UNLICENSED",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "files": [
     "*.js"
   ],
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo",
+    "compile": "tsc",
+    "type-check": "tsc --noEmit --composite false"
+  },
   "dependencies": {
     "@twilio-labs/match-fonts": "workspace:packages/match-fonts",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/new"

@@ -21,11 +21,11 @@
 .borderExample {
   width: 168px;
   height: 48px;
-  border-color: var(--border-darkest);
+  border-color: var(--border-color-darkest);
   border-style: solid;
-  border-width: var(--border-width-light-rem);
+  border-width: var(--border-width-light);
 }
 
 .spacingExample {
-  background-color: var(--swatch-gray80);
+  background-color: var(--color-gray-80);
 }

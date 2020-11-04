@@ -1,22 +1,18 @@
-const {
-  TwilioDesignTokens,
-  SignalDesignTokens,
-  AhoyDesignTokens,
-  SendGridDesignTokens,
-} = require("@twilio-labs/match-tokens");
-const ejs = require("ejs");
-const path = require("path");
-const fs = require("fs");
+import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
+import * as SendGridDesignTokens from "@twilio-labs/match-tokens/sendgrid";
+import * as AhoyDesignTokens from "@twilio-labs/match-tokens/ahoy";
+import ejs from "ejs";
+import path from "path";
+import fs from "fs";
+import pkg from "../package.json";
 
-const pkg = require("../package.json");
 const src = "./templates";
 const dist = `../${pkg.name}`;
 
 const themes = {
-  twilio: new TwilioDesignTokens(),
-  signal: new SignalDesignTokens(),
-  ahoy: new AhoyDesignTokens(),
-  sendgrid: new SendGridDesignTokens(),
+  twilio: TwilioDesignTokens,
+  ahoy: AhoyDesignTokens,
+  sendgrid: SendGridDesignTokens,
 };
 
 if (!fs.existsSync(path.join(__dirname, dist))) {

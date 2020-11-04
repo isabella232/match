@@ -24,6 +24,9 @@ const Props: React.FC<PropsProps> = ({ of }) => {
 
     return Object.values(doc.props).map(
       ({ name, required, type, defaultValue, description }) => {
+        type.name = type.name.match(/^ResponsiveValue<.*?, Required<...>>$/)
+          ? type.name.slice(16, -16)
+          : type.name;
         const prop: ComponentProp = {
           name: name + (!required ? "?" : ""),
           type: type.raw && type.name === "enum" ? type.raw : type.name,

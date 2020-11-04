@@ -4,7 +4,7 @@ import { MatchContext } from "../../context/match";
 import { ThemeSwitcher } from "../theme-switcher";
 import { TokenFilters } from "./filters";
 import { BreakpointTokens } from "./breakpoint";
-import { SwatchTokens } from "./swatch";
+import { ColorTokens } from "./color";
 import { StringTokens } from "./string";
 import { UnitTokens } from "./unit";
 import { WeightTokens } from "./weight";
@@ -15,15 +15,7 @@ import { BorderColorTokens } from "./border-color";
 import { BorderWidthTokens } from "./border-width";
 import { SpacingTokens } from "./space";
 
-import {
-  ColorToken,
-  BreakpointToken,
-  StringToken,
-  UnitToken,
-  WeightToken,
-  ShadowToken,
-  GradientToken,
-} from "../../types/tokens";
+import { Token, NumberToken } from "../../types";
 
 const textSearch = (hayStack: string, needle: string) => {
   return (
@@ -34,40 +26,40 @@ const textSearch = (hayStack: string, needle: string) => {
 
 const Tokens: React.FC = () => {
   const {
-    breakpoint,
-    swatch,
-    fontFamily,
-    fontSize,
-    fontWeight,
-    background,
-    text,
-    shadow,
-    gradient,
-    border,
-    borderWidth,
+    breakpoints,
+    colors,
+    fontFamilies,
+    fontSizes,
+    fontWeights,
+    backgroundColors,
+    textColors,
+    shadows,
+    gradients,
+    borderColors,
+    borderWidths,
     space,
   } = useTheme();
   const {
     state: { filterText },
   } = React.useContext(MatchContext);
 
-  const breakpointTokens: BreakpointToken[] = React.useMemo(() => {
-    return Object.entries(breakpoint).filter(([key]) =>
-      textSearch(`breakpoint.${key}`, filterText)
+  const breakpointTokens: Token[] = React.useMemo(() => {
+    return Object.entries(breakpoints).filter(([key]) =>
+      textSearch(`breakpoint${key}`, filterText)
     );
-  }, [filterText, breakpoint]);
+  }, [filterText, breakpoints]);
 
-  const primaryColorTokens: ColorToken[] = React.useMemo(
+  const primaryColorTokens: Token[] = React.useMemo(
     () =>
-      Object.entries(swatch)
+      Object.entries(colors)
         .filter(([key]) => ["brand", "brandHighlight", "white"].includes(key))
-        .filter(([key]) => textSearch(`swatch.${key}`, filterText)),
-    [filterText, swatch]
+        .filter(([key]) => textSearch(`color${key}`, filterText)),
+    [filterText, colors]
   );
 
-  const secondaryColorTokens: ColorToken[] = React.useMemo(
+  const secondaryColorTokens: Token[] = React.useMemo(
     () =>
-      Object.entries(swatch)
+      Object.entries(colors)
         .filter(([key]) =>
           [
             "baseBlue",
@@ -77,13 +69,13 @@ const Tokens: React.FC = () => {
             "basePurple",
           ].includes(key)
         )
-        .filter(([key]) => textSearch(`swatch.${key}`, filterText)),
-    [filterText, swatch]
+        .filter(([key]) => textSearch(`color${key}`, filterText)),
+    [filterText, colors]
   );
 
-  const tertiaryColorTokens: ColorToken[] = React.useMemo(
+  const tertiaryColorTokens: Token[] = React.useMemo(
     () =>
-      Object.entries(swatch)
+      Object.entries(colors)
         .filter(
           ([key]) =>
             ![
@@ -97,90 +89,86 @@ const Tokens: React.FC = () => {
               "basePurple",
             ].includes(key)
         )
-        .filter(([key]) => textSearch(`swatch.${key}`, filterText)),
-    [filterText, swatch]
+        .filter(([key]) => textSearch(`color${key}`, filterText)),
+    [filterText, colors]
   );
 
-  const fontFamilyTokens: StringToken[] = React.useMemo(
+  const fontFamilyTokens: Token[] = React.useMemo(
     () =>
-      Object.entries(fontFamily).filter(([key]) =>
-        textSearch(`fontFamily.${key}`, filterText)
+      Object.entries(fontFamilies).filter(([key]) =>
+        textSearch(`fontFamily${key}`, filterText)
       ),
-    [filterText, fontFamily]
+    [filterText, fontFamilies]
   );
 
-  const fontSizeTokens: UnitToken[] = React.useMemo(
+  const fontSizeTokens: Token[] = React.useMemo(
     () =>
-      Object.entries(fontSize).filter(([key]) =>
-        textSearch(`fontSize.${key}`, filterText)
+      Object.entries(fontSizes).filter(([key]) =>
+        textSearch(`fontSize${key}`, filterText)
       ),
-    [filterText, fontSize]
+    [filterText, fontSizes]
   );
 
-  const fontWeightTokens: WeightToken[] = React.useMemo(
+  const fontWeightTokens: NumberToken[] = React.useMemo(
     () =>
-      Object.entries(fontWeight).filter(([key]) =>
-        textSearch(`fontWeight.${key}`, filterText)
+      Object.entries(fontWeights).filter(([key]) =>
+        textSearch(`fontWeight${key}`, filterText)
       ),
-    [filterText, fontWeight]
+    [filterText, fontWeights]
   );
 
-  const backgroundColorTokens: ColorToken[] = React.useMemo(
+  const backgroundColorTokens: Token[] = React.useMemo(
     () =>
-      Object.entries(background)
-        .filter(([key]) => ["white", "blue", "light", "darkest"].includes(key))
-        .filter(([key]) => textSearch(`background.${key}`, filterText)),
-    [filterText, background]
-  );
-
-  const textColorTokens: ColorToken[] = React.useMemo(
-    () =>
-      Object.entries(text)
-        .filter(([key]) =>
-          ["primary", "secondary", "tertiary", "inversePrimary"].includes(key)
-        )
-        .filter(([key]) => textSearch(`text.${key}`, filterText)),
-    [filterText, text]
-  );
-
-  const gradientTokens: GradientToken[] = React.useMemo(
-    () =>
-      Object.entries(gradient).filter(([key]) =>
-        textSearch(`gradient.${key}`, filterText)
+      Object.entries(backgroundColors).filter(([key]) =>
+        textSearch(`backgroundColor${key}`, filterText)
       ),
-    [filterText, gradient]
+    [filterText, backgroundColors]
   );
 
-  const shadowTokens: ShadowToken[] = React.useMemo(
+  const textColorTokens: Token[] = React.useMemo(
     () =>
-      Object.entries(shadow)
-        .filter(([key]) =>
-          ["card", "navigation", "image", "large", "inverse"].includes(key)
-        )
-        .filter(([key]) => textSearch(`shadow.${key}`, filterText)),
-    [filterText, shadow]
-  );
-
-  const borderTokens: ColorToken[] = React.useMemo(
-    () =>
-      Object.entries(border).filter(([key]) =>
-        textSearch(`border.${key}`, filterText)
+      Object.entries(textColors).filter(([key]) =>
+        textSearch(`textColor${key}`, filterText)
       ),
-    [filterText, border]
+    [filterText, textColors]
   );
 
-  const borderWidthTokens: UnitToken[] = React.useMemo(
+  const gradientTokens: Token[] = React.useMemo(
     () =>
-      Object.entries(borderWidth).filter(([key]) =>
-        textSearch(`borderWidth.${key}`, filterText)
+      Object.entries(gradients).filter(([key]) =>
+        textSearch(`gradient${key}`, filterText)
       ),
-    [filterText, borderWidth]
+    [filterText, gradients]
   );
 
-  const spacingTokens: UnitToken[] = React.useMemo(
+  const shadowTokens: Token[] = React.useMemo(
+    () =>
+      Object.entries(shadows).filter(([key]) =>
+        textSearch(`shadow${key}`, filterText)
+      ),
+    [filterText, shadows]
+  );
+
+  const borderTokens: Token[] = React.useMemo(
+    () =>
+      Object.entries(borderColors).filter(([key]) =>
+        textSearch(`borderColor${key}`, filterText)
+      ),
+    [filterText, borderColors]
+  );
+
+  const borderWidthTokens: Token[] = React.useMemo(
+    () =>
+      Object.entries(borderWidths).filter(([key]) =>
+        textSearch(`borderWidth${key}`, filterText)
+      ),
+    [filterText, borderWidths]
+  );
+
+  const spacingTokens: Token[] = React.useMemo(
     () =>
       Object.entries(space).filter(([key]) =>
-        textSearch(`space.${key}`, filterText)
+        textSearch(`space${key}`, filterText)
       ),
     [filterText, space]
   );
@@ -235,7 +223,7 @@ const Tokens: React.FC = () => {
             This palette defines our brand. Emphasize Twilio Red and avoid
             introducing too many secondary colors for audiences new to Twilio.
           </p>
-          <SwatchTokens tokens={primaryColorTokens} prefix="swatch" />
+          <ColorTokens tokens={primaryColorTokens} prefix="color" />
         </div>
       )}
 
@@ -246,7 +234,7 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <SwatchTokens tokens={secondaryColorTokens} prefix="swatch" />
+          <ColorTokens tokens={secondaryColorTokens} prefix="color" />
         </div>
       )}
 
@@ -257,14 +245,17 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <SwatchTokens tokens={tertiaryColorTokens} prefix="swatch" />
+          <ColorTokens tokens={tertiaryColorTokens} prefix="color" />
         </div>
       )}
 
       {backgroundColorTokens.length > 0 && (
         <div>
           <h2>Background Colors</h2>
-          <SwatchTokens tokens={backgroundColorTokens} prefix="background" />
+          <ColorTokens
+            tokens={backgroundColorTokens}
+            prefix="backgroundColor"
+          />
         </div>
       )}
 
@@ -313,7 +304,7 @@ const Tokens: React.FC = () => {
       {borderTokens.length > 0 && (
         <div>
           <h2>Borders</h2>
-          <BorderColorTokens tokens={borderTokens} prefix="border" />
+          <BorderColorTokens tokens={borderTokens} prefix="borderColor" />
         </div>
       )}
 

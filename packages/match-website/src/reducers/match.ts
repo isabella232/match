@@ -1,5 +1,5 @@
 import { ThemeVariants } from "@twilio-labs/match-themes";
-import { MatchState } from "../types/match";
+import { MatchState } from "../types";
 
 enum MatchActions {
   SetMatchTheme = "SET_MATCH_THEME",

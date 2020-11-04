@@ -16,12 +16,16 @@ export const gradient: Backgrounds = {
   redHero: {
     value: makeGradient(
       "180deg",
-      brandHighlight.RGBA,
-      brandHighlight.setA(0.93).RGBA
+      brandHighlight.setA(0).RGBA,
+      brandHighlight.setA(0.07).RGBA
     ),
   },
   blueHero: {
-    value: makeGradient("180deg", baseBlue.RGBA, baseBlue.setA(0.93).RGBA),
+    value: makeGradient(
+      "180deg",
+      baseBlue.setA(0).RGBA,
+      baseBlue.setA(0.07).RGBA
+    ),
   },
   red180: {
     value: makeGradient(
@@ -45,7 +49,7 @@ export const gradient: Backgrounds = {
     ),
   },
   blue180: {
-    value: makeGradient("180deg", blue60.setA(0.93).RGBA, blue60.setA(1).RGBA),
+    value: makeGradient("180deg", blue60.setA(0.07).RGBA, blue60.setA(0).RGBA),
   },
   purple180: {
     value: makeGradient(

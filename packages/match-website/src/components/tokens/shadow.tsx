@@ -1,41 +1,16 @@
 import * as React from "react";
-import { ShadowToken } from "../../types/tokens";
-import { ColorTranslator } from "colortranslator";
+import { camelCase } from "lodash";
 import { useTheme } from "@twilio-labs/match-themes";
+import { Token } from "../../types";
 import styles from "./styles.module.css";
 
 interface SwatchTokensProps {
-  tokens: ShadowToken[];
+  tokens: Token[];
   prefix: string;
 }
 
 const ShadowTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
-  const { background } = useTheme();
-  const parsedTokens = React.useMemo(
-    () =>
-      tokens.map(([name, token]) => {
-        //the inverse example should appear on a dark background
-        const backgroundStyle =
-          name === "inverse" ? { background: background.blue.color } : {};
-
-        return {
-          name: name,
-          value:
-            token.offset.x +
-            "px " +
-            token.offset.y +
-            "px " +
-            token.radius +
-            "px " +
-            ColorTranslator.toHEXA(token.color.color),
-          cardStyle: {
-            boxShadow: token.boxShadow,
-          },
-          backgroundStyle: backgroundStyle,
-        };
-      }),
-    [tokens, background]
-  );
+  const { backgroundColorBlue } = useTheme();
   return (
     <table>
       <thead>
@@ -46,13 +21,18 @@ const ShadowTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
         </tr>
       </thead>
       <tbody>
-        {parsedTokens.map((token) => (
-          <tr key={token.name}>
-            <td>{`${prefix}.${token.name}.boxShadow`}</td>
-            <td>{token.value}</td>
-            <td style={token.backgroundStyle}>
+        {tokens.map(([name, value]) => (
+          <tr key={name}>
+            <td>{camelCase(`${prefix} ${name}`)}</td>
+            <td>{value}</td>
+            <td
+              style={{
+                background:
+                  name === "inverse" ? backgroundColorBlue : undefined,
+              }}
+            >
               <div
-                style={token.cardStyle}
+                style={{ boxShadow: value }}
                 className={styles.rectangleExample}
               ></div>
             </td>

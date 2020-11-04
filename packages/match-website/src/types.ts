@@ -4,3 +4,6 @@ export type MatchState = {
   theme: ThemeVariants;
   filterText: string;
 };
+
+export type Token = [string, string];
+export type NumberToken = [string, number];

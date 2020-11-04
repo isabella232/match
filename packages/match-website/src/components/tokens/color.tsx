@@ -1,14 +1,13 @@
 import * as React from "react";
 import { camelCase } from "lodash";
 import { Token } from "../../types";
-import styles from "./styles.module.css";
 
-interface GradientTokensProps {
+interface ColorTokensProps {
   tokens: Token[];
   prefix: string;
 }
 
-const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
+const ColorTokens: React.FC<ColorTokensProps> = ({ tokens, prefix }) => {
   return (
     <table>
       <thead>
@@ -22,12 +21,11 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
         {tokens.map(([name, value]) => (
           <tr key={name}>
             <td>{camelCase(`${prefix} ${name}`)}</td>
-            <td>{value.slice(16, -1)}</td>
+            <td>{value}</td>
             <td>
-              <div
-                style={{ background: value }}
-                className={styles.rectangleExample}
-              ></div>
+              <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">
+                <circle cx="40" cy="21" r="20" fill={value} />
+              </svg>
             </td>
           </tr>
         ))}
@@ -36,4 +34,4 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
   );
 };
 
-export { GradientTokens };
+export { ColorTokens };

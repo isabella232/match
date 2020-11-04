@@ -1,8 +1,10 @@
 import * as React from "react";
-import { UnitToken } from "../../types/tokens";
+import { camelCase } from "lodash";
+import { remToPx } from "../../utils";
+import { Token } from "../../types";
 
 interface UnitTokensProps {
-  tokens: UnitToken[];
+  tokens: Token[];
   prefix: string;
 }
 
@@ -18,11 +20,11 @@ const UnitTokens: React.FC<UnitTokensProps> = ({ prefix, tokens }) => {
           </tr>
         </thead>
         <tbody>
-          {tokens.map(([name, token]) => (
+          {tokens.map(([name, value]) => (
             <tr key={name}>
-              <td>{`${prefix}.${name}.rem`}</td>
-              <td>{token.px}</td>
-              <td>{token.rem}</td>
+              <td>{camelCase(`${prefix} ${name}`)}</td>
+              <td>{remToPx(value)}</td>
+              <td>{value}</td>
             </tr>
           ))}
         </tbody>

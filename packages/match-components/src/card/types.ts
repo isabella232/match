@@ -8,24 +8,24 @@ export enum CardVariant {
 
 export interface CardProps extends React.HTMLAttributes<HTMLElement> {
   variant?: CardVariant;
-  /** scale0 | scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   padding?: Space;
-  /** scale0 | scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   paddingLeft?: Space;
-  /** scale0 | scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   paddingRight?: Space;
-  /** scale0 | scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   paddingBottom?: Space;
-  /** scale0 | scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   paddingTop?: Space;
-  /** scale0 | scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   margin?: Space;
-  /** scale0 | scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   marginLeft?: Space;
-  /** scale0 | scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   marginRight?: Space;
-  /** scale0 | scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   marginBottom?: Space;
-  /** scale0 | scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   marginTop?: Space;
 }

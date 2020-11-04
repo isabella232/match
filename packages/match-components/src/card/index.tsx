@@ -24,7 +24,6 @@ Card.propTypes = {
 
 Card.defaultProps = {
   variant: CardVariant.PRIMARY,
-  padding: "scale100",
 };
 
 export { Card, CardProps, CardVariant };

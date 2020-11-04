@@ -16,6 +16,12 @@ type ComponentProp = {
 const Props: React.FC<PropsProps> = ({ of }) => {
   const docgens = usePluginData("docusaurus-plugin-react-docgen-typescript");
 
+  //common props corresponding to match prop types
+  const tokenTypes = {
+    padding: "Spacing",
+    margin: "Spacing",
+  };
+
   const props: ComponentProp[] = React.useMemo(() => {
     const doc: ComponentDoc = docgens.find(
       (docgen) => docgen.displayName === of
@@ -24,9 +30,9 @@ const Props: React.FC<PropsProps> = ({ of }) => {
 
     return Object.values(doc.props).map(
       ({ name, required, type, defaultValue, description }) => {
-        type.name = type.name.match(/^ResponsiveValue<.*?, Required<...>>$/)
-          ? type.name.slice(16, -16)
-          : type.name;
+        //remove end of name starting at capital letters and check if it is a match prop type
+        const checkForType = tokenTypes[name.replace(/[A-Z][^A-Z]*$/, "")];
+        type.name = checkForType ? checkForType : type.name;
         const prop: ComponentProp = {
           name: name + (!required ? "?" : ""),
           type: type.raw && type.name === "enum" ? type.raw : type.name,

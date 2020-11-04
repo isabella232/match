@@ -11,6 +11,10 @@ export interface CardProps extends React.HTMLAttributes<HTMLElement> {
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   padding?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  paddingX?: Space;
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  paddingY?: Space;
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   paddingLeft?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   paddingRight?: Space;
@@ -20,6 +24,10 @@ export interface CardProps extends React.HTMLAttributes<HTMLElement> {
   paddingTop?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   margin?: Space;
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  marginX?: Space;
+  /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
+  marginY?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */
   marginLeft?: Space;
   /** scale100 | scale180 | scale260 | scale340 | scale420 | scale540 */

@@ -1,7 +1,6 @@
 dist
 .yarn
 .pnp.js
-.diez
 .docusaurus
 build
 packages/match-tokens/**/lib

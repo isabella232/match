@@ -26,22 +26,22 @@ export const gradient: Backgrounds = {
   red180: {
     value: makeGradient(
       "180deg",
-      brandHighlight.setA(0.93).RGBA,
-      brandHighlight.setA(1).RGBA
+      brandHighlight.setA(0.07).RGBA,
+      brandHighlight.setA(0).RGBA
     ),
   },
   orange180: {
     value: makeGradient(
       "180deg",
-      baseOrange.setA(0.93).RGBA,
-      baseOrange.setA(1).RGBA
+      baseOrange.setA(0.07).RGBA,
+      baseOrange.setA(0).RGBA
     ),
   },
   green180: {
     value: makeGradient(
       "180deg",
-      baseGreen.setA(0.93).RGBA,
-      baseGreen.setA(1).RGBA
+      baseGreen.setA(0.07).RGBA,
+      baseGreen.setA(0).RGBA
     ),
   },
   blue180: {
@@ -50,15 +50,15 @@ export const gradient: Backgrounds = {
   purple180: {
     value: makeGradient(
       "180deg",
-      basePurple.setA(0.93).RGBA,
-      basePurple.setA(1).RGBA
+      basePurple.setA(0.07).RGBA,
+      basePurple.setA(0).RGBA
     ),
   },
   darkGray: {
     value: makeGradient(
       "to bottom right",
-      gray90.setA(0.8).RGBA,
-      gray90.setA(0.3).RGBA
+      gray90.setA(0.2).RGBA,
+      gray90.setA(0.7).RGBA
     ),
   },
   lightRedBlue: {
@@ -71,8 +71,8 @@ export const gradient: Backgrounds = {
   redBlue: {
     value: makeGradient(
       "to bottom right",
-      red60.setA(0.3).RGBA,
-      blue60.setA(0.3).RGBA
+      red60.setA(0.7).RGBA,
+      blue60.setA(0.7).RGBA
     ),
   },
 };

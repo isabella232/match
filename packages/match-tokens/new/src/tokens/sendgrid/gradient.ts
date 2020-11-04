@@ -7,12 +7,12 @@ const blue10 = new ColorTranslator(color.blue10.value);
 
 export const gradient: Backgrounds = {
   blue180: {
-    value: makeGradient("180deg", blue10.setA(0.9).RGBA, blue10.setA(0.4).RGBA),
+    value: makeGradient("180deg", blue10.setA(0.1).RGBA, blue10.setA(0.6).RGBA),
   },
   lightBlue180: {
-    value: makeGradient("180deg", blue10.setA(0.9).RGBA, blue10.setA(0.7).RGBA),
+    value: makeGradient("180deg", blue10.setA(0.1).RGBA, blue10.setA(0.3).RGBA),
   },
   blue0: {
-    value: makeGradient("0deg", blue10.setA(0.9).RGBA, blue10.setA(0.2).RGBA),
+    value: makeGradient("0deg", blue10.setA(0.1).RGBA, blue10.setA(0.8).RGBA),
   },
 };

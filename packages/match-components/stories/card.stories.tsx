@@ -23,11 +23,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CardProps> = (args) => (
-  <p>
-    <Card {...args} />
-  </p>
-);
+const Template: Story<CardProps> = (args) => <Card {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

@@ -7,4 +7,5 @@ export const iconSize = system({
   },
 });
 
-export { color, space, ResponsiveValue } from "styled-system";
+export { color, space } from "styled-system";
+export type { ResponsiveValue } from "styled-system";

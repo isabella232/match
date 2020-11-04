@@ -20,7 +20,7 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
       </thead>
       <tbody>
         {tokens.map(([name, value]) => (
-          <tr key={name}>
+          <tr key={prefix + name}>
             <td>{camelCase(`${prefix} ${name}`)}</td>
             <td>{value.slice(16, -1)}</td>
             <td>

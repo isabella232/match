@@ -18,7 +18,7 @@ const BreakpointTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
         </thead>
         <tbody>
           {tokens.map(([name, value]) => (
-            <tr key={name}>
+            <tr key={"breakpoint" + name}>
               <td>{camelCase(`breakpoint ${name}`)}</td>
               <td>{value}</td>
             </tr>

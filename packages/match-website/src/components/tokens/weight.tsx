@@ -19,7 +19,7 @@ const WeightTokens: React.FC<WeightTokensProps> = ({ tokens, prefix }) => {
         </thead>
         <tbody>
           {tokens.map(([name, value]) => (
-            <tr key={name}>
+            <tr key={prefix + name}>
               <td>{camelCase(`${prefix} ${name}`)}</td>
               <td>{value}</td>
             </tr>

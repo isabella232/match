@@ -39,7 +39,7 @@ const BorderColorTokens: React.FC<BorderColorTokensProps> = ({
       </thead>
       <tbody>
         {parsedTokens.map(({ name, value, borderColor }) => (
-          <tr key={name}>
+          <tr key={prefix + name}>
             <td>{name}</td>
             <td>{value}</td>
             <td>

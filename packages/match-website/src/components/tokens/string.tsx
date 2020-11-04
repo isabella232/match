@@ -19,7 +19,7 @@ const StringTokens: React.FC<StringTokensProps> = ({ tokens, prefix }) => {
         </thead>
         <tbody>
           {tokens.map(([name, token]) => (
-            <tr key={name}>
+            <tr key={prefix + name}>
               <td>{camelCase(`${prefix} ${name}`)}</td>
               <td>{token}</td>
             </tr>

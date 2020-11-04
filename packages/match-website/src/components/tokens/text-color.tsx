@@ -48,7 +48,7 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({ tokens }) => {
       </thead>
       <tbody>
         {parsedTokens.map((token) => (
-          <tr key={name}>
+          <tr key={token.name}>
             <td>{token.name}</td>
             <td>{token.value}</td>
             <td>

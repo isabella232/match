@@ -26,7 +26,7 @@ const BorderWidthTokens: React.FC<BorderWidthTokensProps> = ({
         </thead>
         <tbody>
           {tokens.map(([name, value]) => (
-            <tr key={name}>
+            <tr key={prefix + name}>
               <td>{camelCase(`${prefix} ${name}`)}</td>
               <td>{remToPx(value)}</td>
               <td>{value}</td>

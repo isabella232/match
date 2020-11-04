@@ -63,7 +63,7 @@ module.exports = {
     ],
   ],
   plugins: [
-    path.resolve(__dirname, "./plugins/register-match-tokens"),
+    "plugin-docusaurus-tokens",
     [
       "docusaurus-plugin-react-docgen-typescript",
       {

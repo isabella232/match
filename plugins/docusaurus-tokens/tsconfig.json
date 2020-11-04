@@ -1,0 +1,4 @@
+{
+  "extends": "tsconfig-match",
+  "include": ["src/**/*"]
+}

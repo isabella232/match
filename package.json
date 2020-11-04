@@ -6,6 +6,7 @@
   "private": true,
   "workspaces": [
     "packages/**",
+    "plugins/**",
     "configs/**"
   ],
   "scripts": {
@@ -20,7 +21,7 @@
     "type-check": "yarn workspaces foreach run type-check",
     "build:all": "yarn workspaces foreach --topological-dev run build",
     "build:tokens": "yarn workspaces foreach --topological-dev --include '@twilio-labs/match-tokens*' run build",
-    "build:plugins": "yarn workspace @twilio-labs/storybook-theme-switcher build",
+    "build:plugins": "yarn workspace foreach --topoligical-dev --include 'plugin*' build",
     "build:storybook": "build-storybook -c .storybook -o ./build",
     "convert:icons": "yarn workspaces foreach --parallel --include '@twilio-labs/match-icons*' run convert",
     "version:all": "yarn version check --interactive && yarn version apply --all",
@@ -64,7 +65,6 @@
     "@testing-library/jest-dom": "5.11.4",
     "@testing-library/react": "11.0.4",
     "@twilio-labs/match-fonts": "workspace:packages/match-fonts",
-    "@twilio-labs/storybook-theme-switcher": "workspace:packages/storybook-theme-switcher",
     "@types/jest": "26.0.14",
     "@types/jest-axe": "3.5.0",
     "@types/node": "14.11.5",
@@ -93,6 +93,7 @@
     "jest-axe": "4.0.0",
     "jest-styled-components": "7.0.3",
     "lint-staged": "10.4.0",
+    "plugin-storybook-theme-switcher": "workspace:plugins/storybook-theme-switcher",
     "prettier": "2.1.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",

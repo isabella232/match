@@ -1,12 +1,12 @@
 {
-  "name": "@twilio-labs/storybook-theme-switcher",
+  "name": "plugin-storybook-theme-switcher",
   "version": "0.1.0",
   "description": "Storybook addon to change the active Match theme",
   "private": true,
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
-    "directory": "packages/storybook-theme-switcher"
+    "directory": "plugins/storybook-theme-switcher"
   },
   "license": "UNLICENSED",
   "main": "dist/preview.js",

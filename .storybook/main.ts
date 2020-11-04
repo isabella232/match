@@ -8,6 +8,6 @@ module.exports = {
       },
     },
     "@storybook/addon-a11y",
-    "@twilio-labs/storybook-theme-switcher",
+    "plugin-storybook-theme-switcher",
   ],
 };

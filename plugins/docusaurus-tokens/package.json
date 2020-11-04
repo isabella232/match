@@ -1,0 +1,24 @@
+{
+  "name": "plugin-docusaurus-tokens",
+  "version": "0.0.0",
+  "description": "Registers Match tokens for use in Docusaurus themes",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "plugins/docusaurus-tokens"
+  },
+  "license": "UNLICENSED",
+  "main": "src/index.ts",
+  "files": [
+    "*.js"
+  ],
+  "dependencies": {
+    "@twilio-labs/match-fonts": "workspace:packages/match-fonts",
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/new"
+  },
+  "devDependencies": {
+    "@docusaurus/types": "2.0.0-alpha.65",
+    "tsconfig-match": "workspace:configs/tsconfig"
+  }
+}

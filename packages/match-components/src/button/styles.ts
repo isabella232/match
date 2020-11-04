@@ -5,100 +5,100 @@ import { ButtonProps, ButtonSize, ButtonVariant } from "./types";
 const sizes = {
   [ButtonSize.NORMAL]: css`
     padding: calc(16px - 2px) calc(24px - 2px);
-    font-size: ${({ theme }) => theme.fontSize.scale100.rem};
+    font-size: ${({ theme }) => theme.fontSizeScale100};
   `,
   [ButtonSize.SMALL]: css`
     padding: calc(8px - 2px) calc(16px - 2px);
-    font-size: ${({ theme }) => theme.fontSize.scale80.rem};
+    font-size: ${({ theme }) => theme.fontSizeScale80};
   `,
 };
 
 const variants = {
   [ButtonVariant.PRIMARY]: css`
-    color: ${({ theme }) => theme.text.inversePrimary.color};
-    background: ${({ theme }) => theme.swatch.blue60.color};
-    border-color: ${({ theme }) => theme.swatch.blue60.color};
+    color: ${({ theme }) => theme.textColorInversePrimary};
+    background: ${({ theme }) => theme.colorBlue60};
+    border-color: ${({ theme }) => theme.colorBlue60};
 
     &:hover {
-      background: ${({ theme }) => theme.swatch.blue70.color};
-      border-color: ${({ theme }) => theme.swatch.blue70.color};
+      background: ${({ theme }) => theme.colorBlue70};
+      border-color: ${({ theme }) => theme.colorBlue70};
     }
 
     &:focus,
     &:active {
-      background: ${({ theme }) => theme.swatch.blue80.color};
-      border-color: ${({ theme }) => theme.swatch.blue80.color};
+      background: ${({ theme }) => theme.colorBlue80};
+      border-color: ${({ theme }) => theme.colorBlue80};
     }
   `,
   [ButtonVariant.SECONDARY]: css`
-    color: ${({ theme }) => theme.swatch.blue60.color};
-    background: ${({ theme }) => theme.swatch.white.color};
-    border-color: ${({ theme }) => theme.swatch.blue60.color};
+    color: ${({ theme }) => theme.colorBlue60};
+    background: ${({ theme }) => theme.colorWhite};
+    border-color: ${({ theme }) => theme.colorBlue60};
 
     &:hover {
-      color: ${({ theme }) => theme.text.inversePrimary.color};
-      background: ${({ theme }) => theme.swatch.blue60.color};
+      color: ${({ theme }) => theme.textColorInversePrimary};
+      background: ${({ theme }) => theme.colorBlue60};
     }
 
     &:focus,
     &:active {
-      color: ${({ theme }) => theme.text.inversePrimary.color};
-      background: ${({ theme }) => theme.swatch.blue70.color};
-      border-color: ${({ theme }) => theme.swatch.blue70.color};
+      color: ${({ theme }) => theme.textColorInversePrimary};
+      background: ${({ theme }) => theme.colorBlue70};
+      border-color: ${({ theme }) => theme.colorBlue70};
     }
   `,
   [ButtonVariant.TERTIARY]: css`
-    color: ${({ theme }) => theme.text.inversePrimary.color};
+    color: ${({ theme }) => theme.textColorInversePrimary};
     background: transparent;
-    border-color: ${({ theme }) => theme.swatch.white.color};
+    border-color: ${({ theme }) => theme.colorWhite};
 
     &:hover {
-      background: ${({ theme }) => theme.swatch.blue60.color};
-      border-color: ${({ theme }) => theme.swatch.blue60.color};
+      background: ${({ theme }) => theme.colorBlue60};
+      border-color: ${({ theme }) => theme.colorBlue60};
     }
 
     &:focus {
-      outline-color: ${({ theme }) => theme.swatch.white.color};
+      outline-color: ${({ theme }) => theme.colorWhite};
     }
 
     &:focus,
     &:active {
-      background: ${({ theme }) => theme.swatch.blue70.color};
-      border-color: ${({ theme }) => theme.swatch.blue70.color};
+      background: ${({ theme }) => theme.colorBlue70};
+      border-color: ${({ theme }) => theme.colorBlue70};
     }
 
     &:disabled {
-      color: ${({ theme }) => theme.swatch.gray100.color};
-      background: ${({ theme }) => theme.swatch.gray40.color};
-      border-color: ${({ theme }) => theme.swatch.gray40.color};
+      color: ${({ theme }) => theme.colorGray100};
+      background: ${({ theme }) => theme.colorGray40};
+      border-color: ${({ theme }) => theme.colorGray40};
     }
   `,
   [ButtonVariant.INVERSE]: css`
-    color: ${({ theme }) => theme.button.inverseText.color};
-    background: ${({ theme }) => theme.swatch.white.color};
-    border-color: ${({ theme }) => theme.swatch.white.color};
+    color: ${({ theme }) => theme.components.buttonInverseText};
+    background: ${({ theme }) => theme.colorWhite};
+    border-color: ${({ theme }) => theme.colorWhite};
 
     &:hover {
-      color: ${({ theme }) => theme.text.inversePrimary.color};
-      background: ${({ theme }) => theme.button.inverseHoverBg.color};
-      border-color: ${({ theme }) => theme.button.inverseHoverBg.color};
+      color: ${({ theme }) => theme.textColorInversePrimary};
+      background: ${({ theme }) => theme.components.buttonInverseHoverBg};
+      border-color: ${({ theme }) => theme.components.buttonInverseHoverBg};
     }
 
     &:focus {
-      outline-color: ${({ theme }) => theme.swatch.white.color};
+      outline-color: ${({ theme }) => theme.colorWhite};
     }
 
     &:focus,
     &:active {
-      color: ${({ theme }) => theme.text.inversePrimary.color};
-      background: ${({ theme }) => theme.button.inverseFocusBg.color};
-      border-color: ${({ theme }) => theme.button.inverseFocusBg.color};
+      color: ${({ theme }) => theme.textColorInversePrimary};
+      background: ${({ theme }) => theme.components.buttonInverseFocusBg};
+      border-color: ${({ theme }) => theme.components.buttonInverseFocusBg};
     }
 
     &:disabled {
-      color: ${({ theme }) => theme.swatch.gray100.color};
-      background: ${({ theme }) => theme.swatch.gray40.color};
-      border-color: ${({ theme }) => theme.swatch.gray40.color};
+      color: ${({ theme }) => theme.colorGray100};
+      background: ${({ theme }) => theme.colorGray40};
+      border-color: ${({ theme }) => theme.colorGray40};
     }
   `,
 };
@@ -107,8 +107,8 @@ const StyledButton = styled(Button).withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
 })<ButtonProps>`
   display: inline-block;
-  font-weight: ${({ theme }) => theme.fontWeight.medium.value};
-  font-family: ${({ theme }) => theme.fontFamily.text};
+  font-weight: ${({ theme }) => theme.fontWeightMedium};
+  font-family: ${({ theme }) => theme.fontFamilyText};
   text-align: center;
   text-decoration: none;
   border-style: solid;
@@ -122,15 +122,15 @@ const StyledButton = styled(Button).withConfig({
   &:focus {
     outline-width: 2px;
     outline-style: solid;
-    outline-color: ${({ theme }) => theme.swatch.blue60.color};
+    outline-color: ${({ theme }) => theme.colorBlue60};
     outline-offset: 2px;
     -moz-outline-radius: 4px;
   }
 
   &:disabled {
-    color: ${({ theme }) => theme.swatch.gray80.color};
-    background: ${({ theme }) => theme.swatch.gray10.color};
-    border-color: ${({ theme }) => theme.swatch.gray10.color};
+    color: ${({ theme }) => theme.colorGray80};
+    background: ${({ theme }) => theme.colorGray10};
+    border-color: ${({ theme }) => theme.colorGray10};
     cursor: not-allowed;
   }
 

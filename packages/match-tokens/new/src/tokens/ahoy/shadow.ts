@@ -8,5 +8,5 @@ const gray100 = new ColorTranslator(color.gray100.value);
 
 export const shadow: Shadows = {
   ...coreShadow,
-  navigation: { value: makeBoxShadow(0, 8, 32, gray100.setA(0.88).RGBA) },
+  navigation: { value: makeBoxShadow(0, 8, 32, gray100.setA(0.12).RGBA) },
 };

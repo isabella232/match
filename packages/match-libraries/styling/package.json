@@ -28,7 +28,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "devDependencies": {
-    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/new",
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/styled-system": "^5",
     "rollup": "2.28.2",
     "rollup-config-match": "workspace:configs/rollup",

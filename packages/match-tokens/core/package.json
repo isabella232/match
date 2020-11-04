@@ -1,13 +1,17 @@
 {
-  "name": "@twilio-labs/match-tokens-core",
+  "name": "@twilio-labs/match-tokens",
   "version": "0.3.0",
-  "description": "Core token library for use with the Twilio Match Design System.",
+  "description": "Token libraries for the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "twilio/index.js",
+  "module": "twilio/es6.js",
+  "style": "twilio/variables.css",
+  "types": "twilio/index.d.ts",
   "files": [
-    "dist"
+    "twilio",
+    "sendgrid",
+    "ahoy"
   ],
   "repository": {
     "type": "git",
@@ -17,27 +21,20 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "peerDependencies": {
-    "@diez/engine": "10.x"
-  },
-  "devDependencies": {
-    "@diez/cli-core": "10.6.0",
-    "@diez/engine": "10.6.0",
-    "@diez/prefabs": "10.6.0",
-    "@diez/stdlib": "10.6.0",
-    "@diez/targets": "10.6.0",
-    "@diez/web-sdk-common": "10.6.0",
-    "core-js": "3.6.5",
-    "diez": "10.6.0",
-    "semver": "7.3.2",
-    "tsconfig-match": "workspace:configs/tsconfig",
-    "typescript": "4.0.3"
-  },
   "scripts": {
     "build": "yarn clean && yarn compile",
-    "compile": "tsc",
-    "clean": "rm -rf ./dist tsconfig.tsbuildinfo",
-    "publish": "yarn npm publish --tolerate-republish",
-    "type-check": "tsc --noEmit --composite false"
+    "clean": "rm -rf twilio sendgrid ahoy",
+    "compile": "ts-node ./src/build.ts",
+    "type-check": "tsc --noEmit --composite false",
+    "publish": "yarn npm publish --tolerate-republish"
+  },
+  "devDependencies": {
+    "@types/node": "14.14.6",
+    "colortranslator": "1.3.4",
+    "csstype": "3.0.4",
+    "style-dictionary": "2.10.2",
+    "ts-node": "9.0.0",
+    "tsconfig-match": "workspace:configs/tsconfig",
+    "typescript": "4.0.3"
   }
 }

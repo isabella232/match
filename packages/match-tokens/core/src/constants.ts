@@ -1,10 +1,25 @@
-export const FONTS = {
-  whitney:
-    "Whitney SSm A, Whitney SSm B, Helvetica Neue, Helvetica, Arial, sans-serif",
-  whitneyCond: "Whitney Cond SSm A, Whitney Cond SSm B, sans-serif",
-  surveyor: "Surveyor SSm A, Surveyor SSm B",
-  firaMono: "Fira Mono, Consolas, monospace",
-  colfax: "Colfax, Helvetica, Arial, sans-serif",
-  bookmania:
-    "Bookmania-Regular, Georgia,Cambria, Times New Roman, Times, serif",
-};
+export const REM_CATEGORIES = ["borderWidth", "fontSize", "iconSize", "space"];
+export const COLOR_CATEOGRIES = [
+  "color",
+  "borderColor",
+  "backgroundColor",
+  "textColor",
+];
+export const GROUP_NAME_MAP = new Map(
+  Object.entries({
+    color: "colors",
+    backgroundColor: "backgroundColors",
+    borderColor: "borderColors",
+    borderWidth: "borderWidths",
+    breakpoint: "breakpoints",
+    component: "components",
+    fontFamily: "fontFamilies",
+    fontSize: "fontSizes",
+    fontWeight: "fontWeights",
+    gradient: "gradients",
+    iconSize: "iconSizes",
+    shadow: "shadows",
+    space: "space",
+    textColor: "textColors",
+  })
+);

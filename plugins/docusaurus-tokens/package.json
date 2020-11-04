@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@twilio-labs/match-fonts": "workspace:packages/match-fonts",
-    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/new"
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core"
   },
   "devDependencies": {
     "@docusaurus/types": "2.0.0-alpha.65",

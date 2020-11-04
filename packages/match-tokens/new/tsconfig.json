@@ -1,8 +1,0 @@
-{
-  "extends": "tsconfig-match",
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": false
-  },
-  "include": ["src/**/*", "package.json"]
-}

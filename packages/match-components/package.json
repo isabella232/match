@@ -28,7 +28,6 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-props": "^0.0.0",
     "@twilio-labs/match-themes": "^0.3.0",
     "@twilio-labs/match-tokens": "^0.3.0",
     "prop-types": "15.x",
@@ -42,7 +41,6 @@
     "@emotion/core": "10.0.35",
     "@storybook/react": "6.0.28",
     "@testing-library/react": "11.0.4",
-    "@twilio-labs/match-props": "workspace:packages/match-props",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/babel__core": "7.1.12",
@@ -68,6 +66,7 @@
     "typescript": "4.0.5"
   },
   "dependencies": {
+    "@twilio-labs/match-props": "workspace:packages/match-props",
     "reakit": "1.2.5",
     "styled-system": "5.1.5"
   }

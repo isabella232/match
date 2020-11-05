@@ -5,8 +5,7 @@ sidebar_label: Card
 slug: /components/card/
 ---
 
-import { Card } from "@twilio-labs/match-components";
-import { Anchor } from "@twilio-labs/match-components";
+import { Card, Anchor } from "@twilio-labs/match-components";
 import { Props } from "../../src/components/props";
 import { ThemeSwitcher } from "../../src/components/theme-switcher";
 
@@ -45,7 +44,7 @@ Suggested spacing tokens: "scale100" | "scale180" | "scale260" | "scale340" | "s
 The card component is a stylized container with padding and margin options. It is a flexible component that can be customized to fit a variety of use cases.
 Cards do not handle interactive events but can have children with event handlers, such as a button or an anchor.
 
-**Note:** the order of the padding and margin props effects the generated CSS, learn more in the <Anchor href="#padding-and-margins"> padding and margin example</Anchor> below.
+**Note:** the order of the padding and margin props affects the generated CSS, learn more in the <Anchor href="#padding-and-margins"> padding and margin example</Anchor> below.
 
 ### Accessibility
 
@@ -72,7 +71,7 @@ Cards can grab a users attention so make sure that the information on the card c
 The primary card is the most common variation and can be used on any light background.
 
 ```jsx live
-<Card padding="scale100">Wombats have backwards-facing pouches</Card>
+<Card padding="scale180">Wombats have backwards-facing pouches</Card>
 ```
 
 ### Inverse
@@ -80,7 +79,7 @@ The primary card is the most common variation and can be used on any light backg
 The inverse card uses the inverse shadow and is designed to be used on dark backgrounds.
 
 ```jsx live bg=darkest
-<Card variant="inverse" padding="scale100">
+<Card variant="inverse" padding="scale180">
   A group of wombats is known as a wisdom
 </Card>
 ```
@@ -90,14 +89,32 @@ The inverse card uses the inverse shadow and is designed to be used on dark back
 The border variation does not have a shadow but has a border. While it exists for all themes it is intended for use on the Ahoy theme.
 
 ```jsx live
-<Card variant="border" padding="scale100">
+<Card variant="border" padding="scale180">
   A wombat's main line of defense is their toughened posterior
 </Card>
 ```
 
-### Padding and Margins
+### Card with Anchor
 
-**The order of the padding and margin props will effect the padding and margins for the card!**
+Any components can be used as children for the card component.
+
+```jsx live
+<Card padding="scale180">
+  <h3>Wombats need your help!</h3>
+  <p>
+    The Northern Hairy-nosed Wombat is endangered. There are only 250 Northern
+    Hairy-nosed Wombats left. Luckily the Wombat Foundation is working hard to
+    save the wombats and you can help!
+  </p>
+  <Anchor href="https://www.wombatfoundation.com.au/get-involved/">
+    Help the Northern Hairy-nosed Wombats
+  </Anchor>
+</Card>
+```
+
+## Padding and Margins
+
+**The order of the padding and margin props will affect the padding and margins for the card!**
 
 The order of the props in the component
 corresponds to the order the CSS properties are added. For instance, having paddingLeft after padding ensures that the left padding comes from the paddingLeft property.

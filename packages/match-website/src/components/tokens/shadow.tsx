@@ -4,12 +4,12 @@ import { useTheme } from "@twilio-labs/match-themes";
 import { Token } from "../../types";
 import styles from "./styles.module.css";
 
-interface SwatchTokensProps {
+interface ShadowTokensProps {
   tokens: Token[];
   prefix: string;
 }
 
-const ShadowTokens: React.FC<SwatchTokensProps> = ({ tokens, prefix }) => {
+const ShadowTokens: React.FC<ShadowTokensProps> = ({ tokens, prefix }) => {
   const { backgroundColorBlue } = useTheme();
   return (
     <table>

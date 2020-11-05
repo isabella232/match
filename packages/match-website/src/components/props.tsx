@@ -13,14 +13,14 @@ type ComponentProp = {
   description: string;
 };
 
+//common props corresponding to match prop types
+const tokenTypes = {
+  padding: "Space",
+  margin: "Space",
+};
+
 const Props: React.FC<PropsProps> = ({ of }) => {
   const docgens = usePluginData("docusaurus-plugin-react-docgen-typescript");
-
-  //common props corresponding to match prop types
-  const tokenTypes = {
-    padding: "Spacing",
-    margin: "Spacing",
-  };
 
   const props: ComponentProp[] = React.useMemo(() => {
     const doc: ComponentDoc = docgens.find(
@@ -64,7 +64,7 @@ const Props: React.FC<PropsProps> = ({ of }) => {
         return prop;
       }
     );
-  }, [docgens, of]);
+  }, [docgens, of, tokenTypes]);
 
   if (props.length === 0) return <p>No component props found for {of} 😔</p>;
 

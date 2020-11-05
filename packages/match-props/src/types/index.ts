@@ -1,5 +1,5 @@
 import { colors, iconSizes, space } from "@twilio-labs/match-tokens/twilio";
-import { ResponsiveValue } from "@twilio-labs/match-styling-library";
+import { ResponsiveValue } from "styled-system";
 
 export type ColorOptions = keyof typeof colors;
 export type Color = ResponsiveValue<ColorOptions>;

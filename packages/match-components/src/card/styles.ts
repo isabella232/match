@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { space } from "@twilio-labs/match-styling-library";
+import { space } from "styled-system";
 import { CardProps, CardVariant } from "./types";
 import { Box } from "../box";
 

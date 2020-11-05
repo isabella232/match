@@ -32,7 +32,6 @@
     "react-dom": "16.14.0",
     "react-is": "16.13.1",
     "react-live": "2.2.2",
-    "reakit": "1.2.5",
     "styled-components": "5.2.0",
     "wcag-contrast": "3.0.0"
   },

@@ -22,10 +22,10 @@ describe("withTheme provider", () => {
 
   test("should render the SendGrid brand color", (): void => {
     const { colorBrand } = SendGridDesignTokens;
-    const WithSignalTheme = withTheme(ThemeVariants.SENDGRID)(
+    const WithSendGridTheme = withTheme(ThemeVariants.SENDGRID)(
       ThemeConsumerExample
     );
-    const { getByTestId } = render(<WithSignalTheme />);
+    const { getByTestId } = render(<WithSendGridTheme />);
     expect(getByTestId("color")).toHaveTextContent(colorBrand);
   });
 });

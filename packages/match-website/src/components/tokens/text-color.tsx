@@ -3,7 +3,6 @@ import { Token } from "../../types";
 import { hex, score } from "wcag-contrast";
 import { useTheme } from "@twilio-labs/match-themes";
 import styles from "./styles.module.css";
-import { camelCase } from "lodash";
 
 interface TextColorTokensProps {
   tokens: Token[];
@@ -21,7 +20,7 @@ const TextColorTokens: React.FC<TextColorTokensProps> = ({ tokens }) => {
           ? backgroundColors.darkest
           : backgroundColors.light;
         return {
-          name: camelCase(`textColor ${name}`),
+          name: `textColors.${name}`,
           value: value,
           score1: score(hex(value, bg1)),
           score2: score(hex(value, bg2)),

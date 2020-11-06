@@ -1,5 +1,4 @@
 import * as React from "react";
-import { camelCase } from "lodash";
 import { Token } from "../../types";
 import { remToPx } from "../../utils";
 import styles from "./styles.module.css";
@@ -27,7 +26,7 @@ const BorderWidthTokens: React.FC<BorderWidthTokensProps> = ({
         <tbody>
           {tokens.map(([name, value]) => (
             <tr key={prefix + name}>
-              <td>{camelCase(`${prefix} ${name}`)}</td>
+              <td>{`${prefix}.${name}`}</td>
               <td>{remToPx(value)}</td>
               <td>{value}</td>
               <td>

@@ -53,7 +53,9 @@ const Component: React.FC = () => {
 };
 ```
 
-Tokens are formatted in camelcase using group and individual names. For instance, `theme.breakpointSmall` or `theme.colorBaseBlue`.
+Individual token names are formatted in camelcase using the concatenated group and singular names. For instance, `theme.breakpointSmall` or `theme.colorBaseBlue`.
+
+Additionally, tokens or grouped into collections that may be accessed via dot notation. For instance, `theme.breakpoints.small` or `theme.colors.baseBlue`.
 
 See the complete list of token names on the [tokens page](./tokens.mdx).
 
@@ -61,7 +63,7 @@ See the complete list of token names on the [tokens page](./tokens.mdx).
 
 Every token name on Match starts with its related CSS property such as Font Weight and Breakpoint and is then followed by the token value.
 
-- JavaScript: `breakpointSmall`
+- JavaScript: `breakpointSmall` or `breakpoints.small`
 - CSS: `--breakpoint-small`
 - SASS: `$breakpoint-small`
 

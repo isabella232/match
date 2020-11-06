@@ -1,8 +1,9 @@
 import * as React from "react";
-import { WeightToken } from "../../types/tokens";
+import { camelCase } from "lodash";
+import { NumberToken } from "../../types";
 
 interface WeightTokensProps {
-  tokens: WeightToken[];
+  tokens: NumberToken[];
   prefix: string;
 }
 
@@ -17,10 +18,10 @@ const WeightTokens: React.FC<WeightTokensProps> = ({ tokens, prefix }) => {
           </tr>
         </thead>
         <tbody>
-          {tokens.map(([name, token]) => (
-            <tr key={name}>
-              <td>{`${prefix}.${name}.value`}</td>
-              <td>{token.value}</td>
+          {tokens.map(([name, value]) => (
+            <tr key={prefix + name}>
+              <td>{camelCase(`${prefix} ${name}`)}</td>
+              <td>{value}</td>
             </tr>
           ))}
         </tbody>

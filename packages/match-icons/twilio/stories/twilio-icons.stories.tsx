@@ -2,10 +2,8 @@ import * as React from "react";
 import { uid } from "react-uid";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Icon, IconProps } from "@twilio-labs/match-components";
-import { TwilioDesignTokens } from "@twilio-labs/match-tokens";
+import { colors, iconSizes } from "@twilio-labs/match-tokens";
 import * as Icons from "../src";
-
-const DS = new TwilioDesignTokens();
 
 export default {
   title: "Icons/Twilio",
@@ -17,10 +15,10 @@ export default {
   },
   argTypes: {
     color: {
-      control: { type: "select", options: Object.keys(DS.swatch) },
+      control: { type: "select", options: Object.keys(colors) },
     },
     size: {
-      control: { type: "select", options: Object.keys(DS.iconSize) },
+      control: { type: "select", options: Object.keys(iconSizes) },
     },
     decorative: {
       control: { type: "boolean" },

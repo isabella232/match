@@ -3,43 +3,43 @@ import { AnchorProps, AnchorVariant } from "./types";
 
 const variants = {
   [AnchorVariant.PRIMARY]: css`
-    color: ${({ theme }) => theme.swatch.blue60.color};
+    color: ${({ theme }) => theme.colorBlue60};
 
     &:hover {
-      color: ${({ theme }) => theme.swatch.blue70.color};
+      color: ${({ theme }) => theme.colorBlue70};
     }
 
     &:focus,
     &:active {
-      color: ${({ theme }) => theme.swatch.blue80.color};
+      color: ${({ theme }) => theme.colorBlue80};
     }
   `,
   [AnchorVariant.INVERSE]: css`
-    color: ${({ theme }) => theme.swatch.white.color};
+    color: ${({ theme }) => theme.colorWhite};
 
     &:hover {
-      color: ${({ theme }) => theme.swatch.blue30.color};
+      color: ${({ theme }) => theme.colorBlue30};
     }
 
     &:focus {
-      outline-color: ${({ theme }) => theme.swatch.white.color};
+      outline-color: ${({ theme }) => theme.colorWhite};
     }
 
     &:focus,
     &:active {
-      color: ${({ theme }) => theme.swatch.blue40.color};
+      color: ${({ theme }) => theme.colorBlue40};
     }
   `,
   [AnchorVariant.TEXT]: css`
     color: inherit;
 
     &:hover {
-      color: ${({ theme }) => theme.swatch.blue60.color};
+      color: ${({ theme }) => theme.colorBlue60};
     }
 
     &:focus,
     &:active {
-      color: ${({ theme }) => theme.swatch.blue70.color};
+      color: ${({ theme }) => theme.colorBlue70};
     }
   `,
 };
@@ -51,7 +51,7 @@ const StyledAnchor = styled("a")<AnchorProps>`
   &:focus {
     outline-width: 2px;
     outline-style: solid;
-    outline-color: ${({ theme }) => theme.swatch.blue60.color};
+    outline-color: ${({ theme }) => theme.colorBlue60};
     outline-offset: 2px;
     -moz-outline-radius: 4px;
   }

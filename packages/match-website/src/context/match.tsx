@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ThemeVariants, MatchThemeProvider } from "@twilio-labs/match-themes";
 import { MatchActionTypes, matchReducer } from "../reducers/match";
-import { MatchState } from "../types/match";
+import { MatchState } from "../types";
 
 const initialState = {
   theme: ThemeVariants.TWILIO,

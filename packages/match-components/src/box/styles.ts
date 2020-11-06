@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { space } from "@twilio-labs/match-styling-library";
+import { space } from "styled-system";
 import { BoxProps } from "./types";
 
 const StyledBox = styled("div")<BoxProps>`

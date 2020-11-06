@@ -13,10 +13,10 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const StyledBase = styled.div`
-  color: ${({ theme }) => theme.text.primary.color};
-  font-weight: ${({ theme }) => theme.fontWeight.regular.value};
-  font-size: ${({ theme }) => theme.fontSize.scale100.rem};
-  font-family: ${({ theme }) => theme.fontFamily.text};
+  color: ${({ theme }) => theme.textColorPrimary};
+  font-weight: ${({ theme }) => theme.fontWeightRegular};
+  font-size: ${({ theme }) => theme.fontSizeScale100};
+  font-family: ${({ theme }) => theme.fontFamilyText};
 `;
 
 export { GlobalStyles, StyledBase };

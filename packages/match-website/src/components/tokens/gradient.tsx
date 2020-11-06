@@ -1,54 +1,14 @@
 import * as React from "react";
-import { GradientToken } from "../../types/tokens";
-import { Color } from "@twilio-labs/match-tokens";
-import { ColorTranslator } from "colortranslator";
+import { camelCase } from "lodash";
+import { Token } from "../../types";
 import styles from "./styles.module.css";
 
 interface GradientTokensProps {
-  tokens: GradientToken[];
+  tokens: Token[];
   prefix: string;
 }
 
-type GradientStop = {
-  color: Color;
-  hex: string;
-  position: number;
-};
-
 const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
-  const parsedTokens = React.useMemo(
-    () =>
-      tokens.map(([name, token]) => {
-        const stops: GradientStop[] = token.stops.map(
-          ({ position, color }) => ({
-            hex: ColorTranslator.toHEXA(color.color),
-            position,
-            color,
-          })
-        );
-
-        // Diez doesnt have a good way to get the angle of the gradient so parse value to get angle
-        const matchedRegex = token.linearGradient.match(
-          /linear-gradient\(([\s\w]+),/
-        );
-        const angle = matchedRegex ? matchedRegex[1] : "180deg";
-        const value =
-          angle +
-          ", " +
-          stops
-            .map((stop) => `${stop.hex} ${Math.round(stop.position * 100)}%`)
-            .join(", ");
-
-        return {
-          value: value,
-          name: name,
-          style: {
-            background: token.linearGradient,
-          },
-        };
-      }),
-    [tokens]
-  );
   return (
     <table>
       <thead>
@@ -59,13 +19,13 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
         </tr>
       </thead>
       <tbody>
-        {parsedTokens.map((token) => (
-          <tr key={token.name}>
-            <td>{`${prefix}.${token.name}.linearGradient`}</td>
-            <td>{token.value}</td>
+        {tokens.map(([name, value]) => (
+          <tr key={prefix + name}>
+            <td>{camelCase(`${prefix} ${name}`)}</td>
+            <td>{value.slice(16, -1)}</td>
             <td>
               <div
-                style={token.style}
+                style={{ background: value }}
                 className={styles.rectangleExample}
               ></div>
             </td>

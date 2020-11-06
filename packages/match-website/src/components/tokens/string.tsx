@@ -1,12 +1,13 @@
 import * as React from "react";
-import { StringToken } from "../../types/tokens";
+import { camelCase } from "lodash";
+import { Token } from "../../types";
 
-interface BreakpointTokensProps {
-  tokens: StringToken[];
+interface StringTokensProps {
+  tokens: Token[];
   prefix: string;
 }
 
-const StringTokens: React.FC<BreakpointTokensProps> = ({ tokens, prefix }) => {
+const StringTokens: React.FC<StringTokensProps> = ({ tokens, prefix }) => {
   return (
     <div>
       <table>
@@ -18,8 +19,8 @@ const StringTokens: React.FC<BreakpointTokensProps> = ({ tokens, prefix }) => {
         </thead>
         <tbody>
           {tokens.map(([name, token]) => (
-            <tr key={name}>
-              <td>{`${prefix}.${name}`}</td>
+            <tr key={prefix + name}>
+              <td>{camelCase(`${prefix} ${name}`)}</td>
               <td>{token}</td>
             </tr>
           ))}

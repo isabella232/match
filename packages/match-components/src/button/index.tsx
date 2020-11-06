@@ -1,7 +1,8 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { StyledButton } from "./styles";
-import { ButtonVariant, ButtonType, ButtonSize, ButtonProps } from "./types";
+import { ButtonVariant, ButtonType, ButtonSize } from "./types";
+import type { ButtonProps } from "./types";
 
 const Button: React.FC<ButtonProps> = ({ type, ...props }) => {
   if (props.download && !props.href)
@@ -35,4 +36,5 @@ Button.defaultProps = {
   download: false,
 };
 
-export { Button, ButtonVariant, ButtonType, ButtonSize, ButtonProps };
+export { Button, ButtonVariant, ButtonType, ButtonSize };
+export type { ButtonProps };

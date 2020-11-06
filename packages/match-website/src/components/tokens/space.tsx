@@ -1,9 +1,11 @@
 import * as React from "react";
-import { UnitToken } from "../../types/tokens";
+import { camelCase } from "lodash";
+import { remToPx } from "../../utils";
+import { Token } from "../../types";
 import styles from "./styles.module.css";
 
 interface BorderWidthTokensProps {
-  tokens: UnitToken[];
+  tokens: Token[];
   prefix: string;
 }
 
@@ -23,15 +25,15 @@ const SpacingTokens: React.FC<BorderWidthTokensProps> = ({
           </tr>
         </thead>
         <tbody>
-          {tokens.map(([name, token]) => (
-            <tr key={name}>
-              <td>{`${prefix}.${name}.rem`}</td>
-              <td>{token.px}</td>
-              <td>{token.rem}</td>
+          {tokens.map(([name, value]) => (
+            <tr key={prefix + name}>
+              <td>{camelCase(`${prefix} ${name}`)}</td>
+              <td>{remToPx(value)}</td>
+              <td>{value}</td>
               <td>
                 <div
                   className={styles.spacingExample}
-                  style={{ width: token.rem, height: token.rem }}
+                  style={{ width: value, height: value }}
                 />
               </td>
             </tr>

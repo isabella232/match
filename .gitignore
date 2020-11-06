@@ -84,9 +84,12 @@ package-lock.json
 **/dist/*
 **/build/*
 
-# Diez
-.diez
-packages/match-tokens/**/lib/*
+# Match tokens
+packages/match-tokens/core/*
+!packages/match-tokens/core/package.json
+!packages/match-tokens/core/tsconfig.json
+!packages/match-tokens/core/types.d.ts
+!packages/match-tokens/core/src
 
 # PyPI
 packages/match-tokens/py/match_tokens_py/*

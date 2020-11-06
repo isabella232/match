@@ -17,7 +17,7 @@ Design tokens and theming is still a **work in progress**. Check out the roadmap
 Run the following command at the root of your project:
 
 ```
-yarn add @twilio-labs/match-tokens
+yarn add @twilio-labs/match-tokens @twilio-labs/match-themes
 ```
 
 ## How to use
@@ -36,7 +36,7 @@ You can then access tokens within a styled component using the `theme` prop.
 
 ```typescript
 const Component = styled.div`
-  background: ${({ theme }) => theme.swatch.brand.color};
+  background: ${({ theme }) => theme.colorBrand};
   text-align: center;
 `;
 ```
@@ -49,11 +49,13 @@ import { useTheme } from "@twilio-labs/match-themes";
 
 const Component: React.FC = () => {
   const theme = useTheme();
-  return <div>{theme.breakpoint.small.mediaQuery}</div>;
+  return <div>{theme.breakpointSmall}</div>;
 };
 ```
 
-Tokens are read using dot notation with the token name and token value. For instance, `theme.breakpoint.small.mediaQuery` or `theme.swatch.baseBlue.color`.
+Individual token names are formatted in camelcase using the concatenated group and singular names. For instance, `theme.breakpointSmall` or `theme.colorBaseBlue`.
+
+Additionally, tokens or grouped into collections that may be accessed via dot notation. For instance, `theme.breakpoints.small` or `theme.colors.baseBlue`.
 
 See the complete list of token names on the [tokens page](./tokens.mdx).
 
@@ -61,7 +63,7 @@ See the complete list of token names on the [tokens page](./tokens.mdx).
 
 Every token name on Match starts with its related CSS property such as Font Weight and Breakpoint and is then followed by the token value.
 
-- JavaScript: `breakpoint.small.mediaQuery`
+- JavaScript: `breakpointSmall` or `breakpoints.small`
 - CSS: `--breakpoint-small`
 - SASS: `$breakpoint-small`
 

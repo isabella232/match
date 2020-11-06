@@ -1,8 +1,0 @@
-{
-  "extends": "tsconfig-match",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src"
-  },
-  "include": ["src/**/*"]
-}

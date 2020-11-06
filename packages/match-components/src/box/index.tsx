@@ -1,6 +1,6 @@
 import * as React from "react";
 import { spaceTokenProp } from "@twilio-labs/match-props";
-import { BoxProps } from "./types";
+import type { BoxProps } from "./types";
 import { StyledBox } from "./styles";
 
 const Box: React.FC<BoxProps> = ({ ...props }) => {
@@ -26,4 +26,5 @@ Box.propTypes = {
 
 Box.displayName = "Box";
 
-export { Box, BoxProps };
+export { Box };
+export type { BoxProps };

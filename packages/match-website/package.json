@@ -18,6 +18,7 @@
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.65",
     "@mdx-js/react": "1.6.19",
     "@twilio-labs/match-components": "workspace:packages/match-components",
+    "@twilio-labs/match-props": "workspace:packages/match-props",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "clsx": "1.1.1",
@@ -32,7 +33,9 @@
     "react-dom": "16.14.0",
     "react-is": "16.13.1",
     "react-live": "2.2.2",
+    "reakit": "1.2.5",
     "styled-components": "5.2.0",
+    "styled-system": "5.1.5",
     "wcag-contrast": "3.0.0"
   },
   "browserslist": {
@@ -58,6 +61,7 @@
     "@types/react-dom": "16.9.9",
     "@types/react-is": "16.7.1",
     "@types/styled-components": "5.1.4",
+    "@types/styled-system": "^5.1.10",
     "tsconfig-match": "workspace:configs/tsconfig",
     "typescript": "4.0.5"
   }

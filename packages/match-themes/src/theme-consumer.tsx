@@ -1,22 +1,13 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { ThemeConsumer as WrappedThemeConsumer } from "styled-components";
-import {
-  TwilioDesignTokens,
-  SendGridDesignTokens,
-  SignalDesignTokens,
-  AhoyDesignTokens,
-} from "@twilio-labs/match-tokens";
+import { TwilioThemeShape, SendGridThemeShape, AhoyThemeShape } from "./types";
 
 export interface ThemeConsumerProps {
   children: ({
     theme,
   }: {
-    theme:
-      | TwilioDesignTokens
-      | SendGridDesignTokens
-      | SignalDesignTokens
-      | AhoyDesignTokens;
+    theme: TwilioThemeShape | SendGridThemeShape | AhoyThemeShape;
   }) => React.ReactNode;
 }
 

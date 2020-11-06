@@ -1,17 +1,8 @@
 import * as React from "react";
 import { ThemeContext } from "styled-components";
-import {
-  TwilioDesignTokens,
-  SendGridDesignTokens,
-  SignalDesignTokens,
-  AhoyDesignTokens,
-} from "@twilio-labs/match-tokens";
+import { TwilioThemeShape, SendGridThemeShape, AhoyThemeShape } from "./types";
 
-const useTheme = ():
-  | TwilioDesignTokens
-  | SendGridDesignTokens
-  | SignalDesignTokens
-  | AhoyDesignTokens => {
+const useTheme = (): TwilioThemeShape | SendGridThemeShape | AhoyThemeShape => {
   const context = React.useContext(ThemeContext);
   if (!context) {
     throw new Error(

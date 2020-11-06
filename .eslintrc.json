@@ -49,7 +49,7 @@
     {
       "files": [
         "packages/match-website/**/*.{ts,tsx}",
-        "packages/storybook-theme-switcher/**/*.{ts,tsx}"
+        "plugins/**/*.{ts,tsx}"
       ],
       "rules": {
         "import/prefer-default-export": "off",

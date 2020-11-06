@@ -28,8 +28,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ noDescription }) => {
     <>
       {!noDescription && (
         <p>
-          We currently serve four different themes: Twilio, SendGrid, Signal,
-          and Ahoy.
+          We currently serve three different themes: Twilio, SendGrid, and Ahoy.
         </p>
       )}
       <TabList {...tab} className={styles.tabList} aria-label="Match themes">

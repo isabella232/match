@@ -1,8 +1,9 @@
 import * as React from "react";
-import { BreakpointToken } from "../../types/tokens";
+import { camelCase } from "lodash";
+import { Token } from "../../types";
 
 interface BreakpointTokensProps {
-  tokens: BreakpointToken[];
+  tokens: Token[];
 }
 
 const BreakpointTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
@@ -16,10 +17,10 @@ const BreakpointTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
           </tr>
         </thead>
         <tbody>
-          {tokens.map(([name, token]) => (
-            <tr key={name}>
-              <td>{`breakpoint.${name}.mediaQuery`}</td>
-              <td>{token.mediaQuery}</td>
+          {tokens.map(([name, value]) => (
+            <tr key={"breakpoint" + name}>
+              <td>{camelCase(`breakpoint ${name}`)}</td>
+              <td>{value}</td>
             </tr>
           ))}
         </tbody>

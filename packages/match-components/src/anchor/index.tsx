@@ -1,7 +1,8 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { StyledAnchor } from "./styles";
-import { AnchorVariant, AnchorTarget, AnchorProps } from "./types";
+import { AnchorVariant } from "./types";
+import type { AnchorTarget, AnchorProps } from "./types";
 
 const EXTERNAL_URL_REGEX = /^(https?:)\S*$/;
 
@@ -35,4 +36,5 @@ Anchor.defaultProps = {
   noUnderline: false,
 };
 
-export { Anchor, AnchorVariant, AnchorProps, AnchorTarget };
+export { Anchor, AnchorVariant };
+export type { AnchorTarget, AnchorProps };

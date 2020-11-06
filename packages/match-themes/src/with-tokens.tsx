@@ -1,19 +1,10 @@
 import * as React from "react";
 import { ThemeProvider } from "styled-components";
-import {
-  TwilioDesignTokens,
-  SendGridDesignTokens,
-  SignalDesignTokens,
-  AhoyDesignTokens,
-} from "@twilio-labs/match-tokens";
+import { TwilioThemeShape, SendGridThemeShape, AhoyThemeShape } from "./types";
 import { GlobalStyles, StyledBase } from "./styles";
 
 const withTokens = (
-  tokens:
-    | TwilioDesignTokens
-    | SendGridDesignTokens
-    | SignalDesignTokens
-    | AhoyDesignTokens
+  tokens: TwilioThemeShape | SendGridThemeShape | AhoyThemeShape
 ) => (WrappedProvider: typeof ThemeProvider): React.FC => {
   const ThemeProviderWithTokens = ({ ...props }) => {
     return (

@@ -2,7 +2,7 @@
 
 exports[`Button snapshot 1`] = `
 .c0 {
-  color: hsla(217.33333333333334,42.05607476635513%,20.980392156862745%,1);
+  color: #1F304C;
   font-weight: 400;
   font-size: 1rem;
   font-family: Whitney SSm A,Whitney SSm B,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -27,35 +27,35 @@ exports[`Button snapshot 1`] = `
   transition-timing-function: ease-in;
   padding: calc(16px - 2px) calc(24px - 2px);
   font-size: 1rem;
-  color: hsla(0,0%,100%,1);
-  background: hsla(213.78378378378378,98.23008849557523%,44.31372549019608%,1);
-  border-color: hsla(213.78378378378378,98.23008849557523%,44.31372549019608%,1);
+  color: #FFFFFF;
+  background: #0263E0;
+  border-color: #0263E0;
 }
 
 .c1:focus {
   outline-width: 2px;
   outline-style: solid;
-  outline-color: hsla(213.78378378378378,98.23008849557523%,44.31372549019608%,1);
+  outline-color: #0263E0;
   outline-offset: 2px;
   -moz-outline-radius: 4px;
 }
 
 .c1:disabled {
-  color: hsla(219.5121951219512,26.451612903225808%,30.3921568627451%,1);
-  background: hsla(240,9.999999999999986%,96.07843137254902%,1);
-  border-color: hsla(240,9.999999999999986%,96.07843137254902%,1);
+  color: #394762;
+  background: #F4F4F6;
+  border-color: #F4F4F6;
   cursor: not-allowed;
 }
 
 .c1:hover {
-  background: hsla(221.01694915254237,95.67567567567566%,36.274509803921575%,1);
-  border-color: hsla(221.01694915254237,95.67567567567566%,36.274509803921575%,1);
+  background: #043CB5;
+  border-color: #043CB5;
 }
 
 .c1:focus,
 .c1:active {
-  background: hsla(231.24087591240877,100%,26.862745098039216%,1);
-  border-color: hsla(231.24087591240877,100%,26.862745098039216%,1);
+  background: #001489;
+  border-color: #001489;
 }
 
 <div

@@ -1,11 +1,11 @@
 import * as React from "react";
-import { ColorTranslator } from "colortranslator";
 import { useTheme } from "@twilio-labs/match-themes";
-import { ColorToken } from "../../types/tokens";
+import { camelCase } from "lodash";
+import { Token } from "../../types";
 import styles from "./styles.module.css";
 
 interface BorderColorTokensProps {
-  tokens: ColorToken[];
+  tokens: Token[];
   prefix: string;
 }
 
@@ -13,20 +13,20 @@ const BorderColorTokens: React.FC<BorderColorTokensProps> = ({
   tokens,
   prefix,
 }) => {
-  const { swatch } = useTheme();
+  const { colors } = useTheme();
   const parsedTokens = React.useMemo(
     () =>
-      tokens.map(([name, token]) => {
-        const alias = Object.entries(swatch).find(
-          ([_name, aliased]: ColorToken) => token.color === aliased.color
+      tokens.map(([name, value]) => {
+        const alias = Object.entries(colors).find(
+          ([_name, aliased]: Token) => value === aliased
         );
         return {
-          name: `${prefix}.${name}.color`,
-          value: alias ? alias[0] : ColorTranslator.toHEX(token.color),
-          borderColor: token.color,
+          name: camelCase(`${prefix} ${name}`),
+          value: alias ? alias[0] : value,
+          borderColor: value,
         };
       }),
-    [tokens, swatch, prefix]
+    [tokens, colors, prefix]
   );
   return (
     <table>
@@ -39,7 +39,7 @@ const BorderColorTokens: React.FC<BorderColorTokensProps> = ({
       </thead>
       <tbody>
         {parsedTokens.map(({ name, value, borderColor }) => (
-          <tr key={name}>
+          <tr key={prefix + name}>
             <td>{name}</td>
             <td>{value}</td>
             <td>

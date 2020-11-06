@@ -1,10 +1,17 @@
 import styled from "styled-components";
-import { color, iconSize } from "@twilio-labs/match-styling-library";
+import { color, system, compose } from "styled-system";
 import { IconProps } from "./types";
 
 const StyledIcon = styled("span")<IconProps>`
-  ${color}
-  ${iconSize}
+  ${compose(
+    color,
+    system({
+      size: {
+        properties: ["width", "height"],
+        scale: "iconSizes",
+      },
+    })
+  )}
   display: inline-block;
   line-height: 1;
 `;

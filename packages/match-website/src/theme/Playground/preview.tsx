@@ -5,7 +5,7 @@ interface PlaygroundPreviewProps {
 }
 
 const PlaygroundPreview = styled.div<PlaygroundPreviewProps>`
-  background: ${({ bg, theme }) => theme.background[bg].color};
+  background: ${({ bg, theme }) => theme.backgroundColors[bg]};
 `;
 
 PlaygroundPreview.defaultProps = {

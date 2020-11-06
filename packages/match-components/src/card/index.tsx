@@ -1,6 +1,7 @@
 import * as React from "react";
 import { spaceTokenProp } from "@twilio-labs/match-props";
-import { CardProps, CardVariant } from "./types";
+import { CardVariant } from "./types";
+import type { CardProps } from "./types";
 import { StyledCard } from "./styles";
 import * as PropTypes from "prop-types";
 
@@ -30,4 +31,5 @@ Card.defaultProps = {
   variant: CardVariant.PRIMARY,
 };
 
-export { Card, CardProps, CardVariant };
+export { Card, CardVariant };
+export type { CardProps };

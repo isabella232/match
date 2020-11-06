@@ -1,12 +1,9 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { ThemeProvider } from "styled-components";
-import {
-  TwilioDesignTokens,
-  SendGridDesignTokens,
-  SignalDesignTokens,
-  AhoyDesignTokens,
-} from "@twilio-labs/match-tokens";
+import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
+import * as SendGridDesignTokens from "@twilio-labs/match-tokens/sendgrid";
+import * as AhoyDesignTokens from "@twilio-labs/match-tokens/ahoy";
 import { ThemeVariants } from "./constants";
 import { GlobalStyles, StyledBase } from "./styles";
 
@@ -23,14 +20,12 @@ const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({
   const tokens = React.useMemo(() => {
     switch (theme) {
       case ThemeVariants.SENDGRID:
-        return new SendGridDesignTokens();
-      case ThemeVariants.SIGNAL:
-        return new SignalDesignTokens();
+        return SendGridDesignTokens;
       case ThemeVariants.AHOY:
-        return new AhoyDesignTokens();
+        return AhoyDesignTokens;
       case ThemeVariants.TWILIO:
       default:
-        return new TwilioDesignTokens();
+        return TwilioDesignTokens;
     }
   }, [theme]);
   return (
@@ -45,7 +40,6 @@ MatchThemeProvider.propTypes = {
   theme: PropTypes.oneOf([
     ThemeVariants.TWILIO,
     ThemeVariants.SENDGRID,
-    ThemeVariants.SIGNAL,
     ThemeVariants.AHOY,
   ]).isRequired,
   excludeBaseStyles: PropTypes.bool,

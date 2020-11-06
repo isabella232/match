@@ -6,7 +6,7 @@
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
   "private": true,
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
@@ -15,10 +15,15 @@
   "scripts": {
     "build": "yarn clean && yarn compile",
     "clean": "rm -rf match_tokens_py",
-    "compile": "node src/index.js"
+    "compile": "ts-node src/index.ts"
   },
   "devDependencies": {
-    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/bundle",
-    "ejs": "3.1.5"
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
+    "@types/ejs": "3.0.5",
+    "@types/node": "14.14.6",
+    "ejs": "3.1.5",
+    "ts-node": "9.0.0",
+    "tsconfig-match": "workspace:configs/tsconfig",
+    "typescript": "4.0.5"
   }
 }

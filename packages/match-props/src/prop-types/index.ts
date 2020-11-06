@@ -1,10 +1,8 @@
-import { TwilioDesignTokens } from "@twilio-labs/match-tokens";
+import { colors, space, iconSizes } from "@twilio-labs/match-tokens";
 import { tokenProp } from "./token-validator";
 
-const DS = new TwilioDesignTokens();
-
-export const colorTokenProp = tokenProp(Object.keys(DS.swatch));
-export const iconSizeTokenProp = tokenProp(Object.keys(DS.iconSize));
-export const spaceTokenProp = tokenProp(Object.keys(DS.space));
+export const colorTokenProp = tokenProp(Object.keys(colors));
+export const iconSizeTokenProp = tokenProp(Object.keys(iconSizes));
+export const spaceTokenProp = tokenProp(Object.keys(space));
 
 export { responsiveProp } from "./responsive-validator";

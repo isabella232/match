@@ -10,8 +10,12 @@ categories:
       - "fix"
       - "bugfix"
       - "bug"
+  - title: "📚 Documentation"
+    labels:
+      - "docs"
   - title: "🧰 Maintenance"
-    label: "chore"
+    labels:
+      - "chore"
 change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
 version-resolver:

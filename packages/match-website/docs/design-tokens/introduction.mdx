@@ -36,7 +36,7 @@ You can then access tokens within a styled component using the `theme` prop.
 
 ```typescript
 const Component = styled.div`
-  background: ${({ theme }) => theme.colorBrand};
+  background: ${({ theme }) => theme.colors.brand};
   text-align: center;
 `;
 ```
@@ -49,13 +49,13 @@ import { useTheme } from "@twilio-labs/match-themes";
 
 const Component: React.FC = () => {
   const theme = useTheme();
-  return <div>{theme.breakpointSmall}</div>;
+  return <div>{theme.breakpoints.small}</div>;
 };
 ```
 
-Individual token names are formatted in camelcase using the concatenated group and singular names. For instance, `theme.breakpointSmall` or `theme.colorBaseBlue`.
+Tokens are grouped into collections that may be accessed via dot notation. For instance, `theme.breakpoints.small` or `theme.colors.baseBlue`.
 
-Additionally, tokens or grouped into collections that may be accessed via dot notation. For instance, `theme.breakpoints.small` or `theme.colors.baseBlue`.
+Additionally, token names can be accessed with camelcase using the concatenated group and singular names. For instance, `theme.breakpointSmall` or `theme.colorBaseBlue`.
 
 See the complete list of token names on the [tokens page](./tokens.mdx).
 
@@ -63,7 +63,7 @@ See the complete list of token names on the [tokens page](./tokens.mdx).
 
 Every token name on Match starts with its related CSS property such as Font Weight and Breakpoint and is then followed by the token value.
 
-- JavaScript: `breakpointSmall` or `breakpoints.small`
+- JavaScript: `breakpoints.small` or `breakpointSmall`
 - CSS: `--breakpoint-small`
 - SASS: `$breakpoint-small`
 

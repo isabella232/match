@@ -1,5 +1,4 @@
 import * as React from "react";
-import { camelCase } from "lodash";
 import { Token } from "../../types";
 
 interface ColorTokensProps {
@@ -20,7 +19,7 @@ const ColorTokens: React.FC<ColorTokensProps> = ({ tokens, prefix }) => {
       <tbody>
         {tokens.map(([name, value]) => (
           <tr key={prefix + name}>
-            <td>{camelCase(`${prefix} ${name}`)}</td>
+            <td>{`${prefix}.${name}`}</td>
             <td>{value}</td>
             <td>
               <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">

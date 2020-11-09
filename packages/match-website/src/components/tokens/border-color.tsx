@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useTheme } from "@twilio-labs/match-themes";
-import { camelCase } from "lodash";
 import { Token } from "../../types";
 import styles from "./styles.module.css";
 
@@ -21,7 +20,7 @@ const BorderColorTokens: React.FC<BorderColorTokensProps> = ({
           ([_name, aliased]: Token) => value === aliased
         );
         return {
-          name: camelCase(`${prefix} ${name}`),
+          name: `${prefix}.${name}`,
           value: alias ? alias[0] : value,
           borderColor: value,
         };

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { camelCase } from "lodash";
 import { NumberToken } from "../../types";
 
 interface WeightTokensProps {
@@ -20,7 +19,7 @@ const WeightTokens: React.FC<WeightTokensProps> = ({ tokens, prefix }) => {
         <tbody>
           {tokens.map(([name, value]) => (
             <tr key={prefix + name}>
-              <td>{camelCase(`${prefix} ${name}`)}</td>
+              <td>{`${prefix}.${name}`}</td>
               <td>{value}</td>
             </tr>
           ))}

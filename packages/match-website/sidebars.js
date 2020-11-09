@@ -9,6 +9,7 @@ module.exports = {
     ["Components"]: [
       "components/anchor",
       "components/button",
+      "components/card",
       "components/visually-hidden",
     ],
     ["Instapage"]: [

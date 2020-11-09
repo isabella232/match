@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-icons-twilio",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Twilio Match Design System Icons",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -28,7 +28,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-components": "^0.2.0",
+    "@twilio-labs/match-components": "^0.3.0",
     "prop-types": "15.x",
     "react": "16.x",
     "react-dom": "16.x",

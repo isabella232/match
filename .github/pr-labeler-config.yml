@@ -1,5 +1,5 @@
-feature: "feat*"
-bug: "fix*"
-chore: ["chore*", "style*"]
-documentation: "docs*"
-enhancement: ["perf*", "refactor*", "ci*", "build*"]
+feature: [feature/*, "feat/*"]
+bug: "fix/*"
+chore: "chore/*"
+documentation: ["docs/*", "documentation/*"]
+enhancement: ["perf/*", "refactor/*", "ci/*", "build/*"]

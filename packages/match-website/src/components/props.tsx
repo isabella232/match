@@ -15,8 +15,8 @@ type ComponentProp = {
 
 //common props corresponding to match prop types
 const tokenTypes = {
-  padding: "Spaces",
-  margin: "Spaces",
+  padding: "Space",
+  margin: "Space",
 };
 
 const Props: React.FC<PropsProps> = ({ of }) => {

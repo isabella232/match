@@ -276,7 +276,7 @@ const Tokens: React.FC = () => {
       {fontFamilyTokens.length > 0 && (
         <div>
           <h2>Font Families</h2>
-          <StringTokens prefix="fontFamilys" tokens={fontFamilyTokens} />
+          <StringTokens prefix="fontFamilies" tokens={fontFamilyTokens} />
         </div>
       )}
 
@@ -318,7 +318,7 @@ const Tokens: React.FC = () => {
       {spacingTokens.length > 0 && (
         <div>
           <h2>Spacing</h2>
-          <SpacingTokens tokens={spacingTokens} prefix="spaces" />
+          <SpacingTokens tokens={spacingTokens} prefix="space" />
         </div>
       )}
     </div>

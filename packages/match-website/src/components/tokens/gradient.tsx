@@ -1,5 +1,4 @@
 import * as React from "react";
-import { camelCase } from "lodash";
 import { Token } from "../../types";
 import styles from "./styles.module.css";
 
@@ -21,7 +20,7 @@ const GradientTokens: React.FC<GradientTokensProps> = ({ tokens, prefix }) => {
       <tbody>
         {tokens.map(([name, value]) => (
           <tr key={prefix + name}>
-            <td>{camelCase(`${prefix} ${name}`)}</td>
+            <td>{`${prefix}.${name}`}</td>
             <td>{value.slice(16, -1)}</td>
             <td>
               <div

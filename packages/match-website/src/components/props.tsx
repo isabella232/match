@@ -13,6 +13,12 @@ type ComponentProp = {
   description: string;
 };
 
+//common props corresponding to match prop types
+const tokenTypes = {
+  padding: "Space",
+  margin: "Space",
+};
+
 const Props: React.FC<PropsProps> = ({ of }) => {
   const docgens = usePluginData("docusaurus-plugin-react-docgen-typescript");
 
@@ -24,6 +30,9 @@ const Props: React.FC<PropsProps> = ({ of }) => {
 
     return Object.values(doc.props).map(
       ({ name, required, type, defaultValue, description }) => {
+        //remove end of name starting at capital letters and check if it is a match prop type
+        const checkForType = tokenTypes[name.replace(/[A-Z][^A-Z]*$/, "")];
+        type.name = checkForType ? checkForType : type.name;
         const prop: ComponentProp = {
           name: name + (!required ? "?" : ""),
           type: type.raw && type.name === "enum" ? type.raw : type.name,
@@ -55,7 +64,7 @@ const Props: React.FC<PropsProps> = ({ of }) => {
         return prop;
       }
     );
-  }, [docgens, of]);
+  }, [docgens, of, tokenTypes]);
 
   if (props.length === 0) return <p>No component props found for {of} 😔</p>;
 

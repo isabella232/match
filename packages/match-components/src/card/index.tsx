@@ -12,11 +12,15 @@ const Card: React.FunctionComponent<CardProps> = ({ ...props }) => {
 Card.propTypes = {
   variant: PropTypes.oneOf(Object.values(CardVariant)),
   padding: spaceTokenProp,
+  paddingX: spaceTokenProp,
+  paddingY: spaceTokenProp,
   paddingLeft: spaceTokenProp,
   paddingRight: spaceTokenProp,
   paddingBottom: spaceTokenProp,
   paddingTop: spaceTokenProp,
   margin: spaceTokenProp,
+  marginX: spaceTokenProp,
+  marginY: spaceTokenProp,
   marginLeft: spaceTokenProp,
   marginRight: spaceTokenProp,
   marginBottom: spaceTokenProp,
@@ -25,7 +29,6 @@ Card.propTypes = {
 
 Card.defaultProps = {
   variant: CardVariant.PRIMARY,
-  padding: "scale100",
 };
 
 export { Card, CardVariant };

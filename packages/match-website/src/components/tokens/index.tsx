@@ -223,7 +223,7 @@ const Tokens: React.FC = () => {
             This palette defines our brand. Emphasize Twilio Red and avoid
             introducing too many secondary colors for audiences new to Twilio.
           </p>
-          <ColorTokens tokens={primaryColorTokens} prefix="color" />
+          <ColorTokens tokens={primaryColorTokens} prefix="colors" />
         </div>
       )}
 
@@ -234,7 +234,7 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <ColorTokens tokens={secondaryColorTokens} prefix="color" />
+          <ColorTokens tokens={secondaryColorTokens} prefix="colors" />
         </div>
       )}
 
@@ -245,7 +245,7 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <ColorTokens tokens={tertiaryColorTokens} prefix="color" />
+          <ColorTokens tokens={tertiaryColorTokens} prefix="colors" />
         </div>
       )}
 
@@ -254,7 +254,7 @@ const Tokens: React.FC = () => {
           <h2>Background Colors</h2>
           <ColorTokens
             tokens={backgroundColorTokens}
-            prefix="backgroundColor"
+            prefix="backgroundColors"
           />
         </div>
       )}
@@ -262,7 +262,7 @@ const Tokens: React.FC = () => {
       {gradientTokens.length > 0 && (
         <div>
           <h2>Gradients</h2>
-          <GradientTokens prefix="gradient" tokens={gradientTokens} />
+          <GradientTokens prefix="gradients" tokens={gradientTokens} />
         </div>
       )}
 
@@ -276,7 +276,7 @@ const Tokens: React.FC = () => {
       {fontFamilyTokens.length > 0 && (
         <div>
           <h2>Font Families</h2>
-          <StringTokens prefix="fontFamily" tokens={fontFamilyTokens} />
+          <StringTokens prefix="fontFamilies" tokens={fontFamilyTokens} />
         </div>
       )}
 
@@ -290,28 +290,28 @@ const Tokens: React.FC = () => {
       {fontWeightTokens.length > 0 && (
         <div>
           <h2>Font Weights</h2>
-          <WeightTokens prefix="fontWeight" tokens={fontWeightTokens} />
+          <WeightTokens prefix="fontWeights" tokens={fontWeightTokens} />
         </div>
       )}
 
       {shadowTokens.length > 0 && (
         <div>
           <h2>Shadows</h2>
-          <ShadowTokens prefix="shadow" tokens={shadowTokens} />
+          <ShadowTokens prefix="shadows" tokens={shadowTokens} />
         </div>
       )}
 
       {borderTokens.length > 0 && (
         <div>
           <h2>Borders</h2>
-          <BorderColorTokens tokens={borderTokens} prefix="borderColor" />
+          <BorderColorTokens tokens={borderTokens} prefix="borderColors" />
         </div>
       )}
 
       {borderWidthTokens.length > 0 && (
         <div>
           <h2>Border Widths</h2>
-          <BorderWidthTokens tokens={borderWidthTokens} prefix="borderWidth" />
+          <BorderWidthTokens tokens={borderWidthTokens} prefix="borderWidths" />
         </div>
       )}
 

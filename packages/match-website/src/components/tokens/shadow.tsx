@@ -1,5 +1,4 @@
 import * as React from "react";
-import { camelCase } from "lodash";
 import { useTheme } from "@twilio-labs/match-themes";
 import { Token } from "../../types";
 import styles from "./styles.module.css";
@@ -23,7 +22,7 @@ const ShadowTokens: React.FC<ShadowTokensProps> = ({ tokens, prefix }) => {
       <tbody>
         {tokens.map(([name, value]) => (
           <tr key={prefix + name}>
-            <td>{camelCase(`${prefix} ${name}`)}</td>
+            <td>{`${prefix}.${name}`}</td>
             <td>{value}</td>
             <td
               style={{

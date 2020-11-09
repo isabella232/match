@@ -9,11 +9,6 @@ exports[`Card should render default values 1`] = `
 }
 
 .c1 {
-  padding: 1rem;
-}
-
-.c2 {
-  padding: 1rem;
   background-color: #FFFFFF;
   border-radius: 5px;
   border-color: #E1E3EA;
@@ -26,7 +21,7 @@ exports[`Card should render default values 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2"
+    class="c1"
   >
     Card!
   </div>

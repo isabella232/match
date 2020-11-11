@@ -9,5 +9,5 @@ export const StyledGrid = styled.div<GridProps>`
 `;
 
 export const StyledCell = styled.div<CellProps>`
-  ${compose(space, flexbox, backgroundColor)}
+  ${compose(space, grid, flexbox, backgroundColor)}
 `;

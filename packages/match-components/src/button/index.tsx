@@ -36,5 +36,7 @@ Button.defaultProps = {
   download: false,
 };
 
+Button.displayName = "Button";
+
 export { Button, ButtonVariant, ButtonType, ButtonSize };
 export type { ButtonProps };

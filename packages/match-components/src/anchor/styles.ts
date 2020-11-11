@@ -44,7 +44,7 @@ const variants = {
   `,
 };
 
-const StyledAnchor = styled("a")<AnchorProps>`
+const StyledAnchor = styled.a<AnchorProps>`
   text-decoration: underline;
   cursor: pointer;
 

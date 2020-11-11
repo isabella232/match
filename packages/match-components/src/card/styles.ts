@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { space } from "styled-system";
 import { CardProps, CardVariant } from "./types";
-import { Box } from "../box";
 
 const variants = {
   [CardVariant.PRIMARY]: css`
@@ -20,7 +19,7 @@ const variants = {
   `,
 };
 
-const StyledCard = styled(Box)<CardProps>`
+const StyledCard = styled.div<CardProps>`
   ${space};
   background-color: ${({ theme }) => theme.colorWhite};
   border-radius: ${({ theme }) => theme.components.cardBorderRadius};

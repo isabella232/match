@@ -2,7 +2,7 @@ export * from "./component";
 export * from "./background-color";
 export * from "./border-color";
 export * from "./border-width";
-export * from "./breakpoint";
+export * from "./media-query";
 export * from "./color";
 export * from "./font-family";
 export * from "./font-size";

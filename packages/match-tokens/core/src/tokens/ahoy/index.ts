@@ -2,7 +2,7 @@ export {
   backgroundColor,
   borderColor,
   borderWidth,
-  breakpoint,
+  mediaQuery,
   color,
   fontFamily,
   fontSize,

@@ -32,7 +32,10 @@ export const Basic: Story = () => (
 
 export const Responsive: Story = () => (
   <Grid gridRowGap="scale100">
-    <Grid gridTemplateColumns={["1fr", "repeat(2, 1fr)", "repeat(4, 1fr)"]}>
+    <Grid
+      gridTemplateColumns={["1fr", "repeat(2, 1fr)", "repeat(4, 1fr)"]}
+      gridGap="scale100"
+    >
       <DefaultCell />
       <DefaultCell />
       <DefaultCell />

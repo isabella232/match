@@ -11,7 +11,6 @@ export const GROUP_NAME_MAP = new Map(
     backgroundColor: "backgroundColors",
     borderColor: "borderColors",
     borderWidth: "borderWidths",
-    breakpoint: "breakpoints",
     component: "components",
     fontFamily: "fontFamilies",
     fontSize: "fontSizes",
@@ -21,5 +20,6 @@ export const GROUP_NAME_MAP = new Map(
     shadow: "shadows",
     space: "space",
     textColor: "textColors",
+    mediaQuery: "mediaQueries",
   })
 );

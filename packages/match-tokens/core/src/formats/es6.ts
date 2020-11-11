@@ -14,6 +14,15 @@ export const ${groupName} = {
 ${props.map((prop) => `${baseTokenName(prop)}: ${prop.name},`).join("\n")}
 };`;
 
+export const breakpointsTemplate = (props): string => `
+export const breakpoints = [
+${props
+  .filter((prop) => prop.attributes.category === "mediaQuery")
+  .map((prop) => `"${prop.original.value}px"`)
+  .join(",\n")}
+];
+`;
+
 export const es6TokenFormatter = (dictionary): string => {
   const singleTokens = dictionary.allProperties
     .map((prop) => tokenTemplate(prop))
@@ -27,5 +36,7 @@ export const es6TokenFormatter = (dictionary): string => {
     groupTemplate
   );
 
-  return [singleTokens, groupedTokens].join("\n");
+  const breakpoints = breakpointsTemplate(dictionary.allProperties);
+
+  return [singleTokens, groupedTokens, breakpoints].join("\n");
 };

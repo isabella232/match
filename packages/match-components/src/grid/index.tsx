@@ -1,3 +1,4 @@
+import * as React from "react";
 import * as PropTypes from "prop-types";
 import {
   marginPropTypes,
@@ -7,7 +8,9 @@ import {
   responsiveProp,
 } from "@twilio-labs/match-props";
 import type { GridProps, CellProps } from "./types";
-import { StyledGrid as Grid, StyledCell as Cell } from "./styles";
+import { StyledGrid, StyledCell } from "./styles";
+
+const Grid: React.FC<GridProps> = (props) => <StyledGrid {...props} />;
 
 Grid.propTypes = {
   ...marginPropTypes,
@@ -28,6 +31,8 @@ Grid.propTypes = {
 };
 
 Grid.displayName = "Grid";
+
+const Cell: React.FC<CellProps> = (props) => <StyledCell {...props} />;
 
 Cell.propTypes = {
   ...marginPropTypes,

@@ -4,3 +4,4 @@ export * from "./anchor";
 export * from "./icon";
 export * from "./box";
 export * from "./card";
+export * from "./grid";

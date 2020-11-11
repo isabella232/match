@@ -1,5 +1,5 @@
 import * as React from "react";
-import { spaceTokenProp } from "@twilio-labs/match-props";
+import { paddingPropTypes, marginPropTypes } from "@twilio-labs/match-props";
 import { CardVariant } from "./types";
 import type { CardProps } from "./types";
 import { StyledCard } from "./styles";
@@ -10,21 +10,9 @@ const Card: React.FunctionComponent<CardProps> = ({ ...props }) => {
 };
 
 Card.propTypes = {
+  ...paddingPropTypes,
+  ...marginPropTypes,
   variant: PropTypes.oneOf(Object.values(CardVariant)),
-  padding: spaceTokenProp,
-  paddingX: spaceTokenProp,
-  paddingY: spaceTokenProp,
-  paddingLeft: spaceTokenProp,
-  paddingRight: spaceTokenProp,
-  paddingBottom: spaceTokenProp,
-  paddingTop: spaceTokenProp,
-  margin: spaceTokenProp,
-  marginX: spaceTokenProp,
-  marginY: spaceTokenProp,
-  marginLeft: spaceTokenProp,
-  marginRight: spaceTokenProp,
-  marginBottom: spaceTokenProp,
-  marginTop: spaceTokenProp,
 };
 
 Card.defaultProps = {

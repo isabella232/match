@@ -15,7 +15,8 @@ export enum ButtonSize {
   SMALL = "small",
 }
 
-export interface ButtonProps {
+export interface ButtonProps
+  extends React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   variant?: ButtonVariant;
   type?: ButtonType;
   size?: ButtonSize;

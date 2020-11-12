@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Token } from "../../types";
 
-interface BreakpointTokensProps {
+interface MediaQueryTokensProps {
   tokens: Token[];
 }
 
-const BreakpointTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
+const MediaQueryTokens: React.FC<MediaQueryTokensProps> = ({ tokens }) => {
   return (
     <div>
       <table>
@@ -17,8 +17,8 @@ const BreakpointTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
         </thead>
         <tbody>
           {tokens.map(([name, value]) => (
-            <tr key={"breakpoint" + name}>
-              <td>{`breakpoints.${name}`}</td>
+            <tr key={`mediaQueries.${name}`}>
+              <td>{`mediaQueries.${name}`}</td>
               <td>{value}</td>
             </tr>
           ))}
@@ -28,4 +28,4 @@ const BreakpointTokens: React.FC<BreakpointTokensProps> = ({ tokens }) => {
   );
 };
 
-export { BreakpointTokens };
+export { MediaQueryTokens };

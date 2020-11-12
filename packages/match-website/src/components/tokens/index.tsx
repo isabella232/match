@@ -3,7 +3,7 @@ import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
 import { ThemeSwitcher } from "../theme-switcher";
 import { TokenFilters } from "./filters";
-import { BreakpointTokens } from "./breakpoint";
+import { MediaQueryTokens } from "./media-query";
 import { ColorTokens } from "./color";
 import { StringTokens } from "./string";
 import { UnitTokens } from "./unit";
@@ -26,7 +26,7 @@ const textSearch = (hayStack: string, needle: string) => {
 
 const Tokens: React.FC = () => {
   const {
-    breakpoints,
+    mediaQueries,
     colors,
     fontFamilies,
     fontSizes,
@@ -43,17 +43,17 @@ const Tokens: React.FC = () => {
     state: { filterText },
   } = React.useContext(MatchContext);
 
-  const breakpointTokens: Token[] = React.useMemo(() => {
-    return Object.entries(breakpoints).filter(([key]) =>
-      textSearch(`breakpoint${key}`, filterText)
+  const mediaQueryTokens: Token[] = React.useMemo(() => {
+    return Object.entries(mediaQueries).filter(([key]) =>
+      textSearch(`mediaQueries.${key}`, filterText)
     );
-  }, [filterText, breakpoints]);
+  }, [filterText, mediaQueries]);
 
   const primaryColorTokens: Token[] = React.useMemo(
     () =>
       Object.entries(colors)
         .filter(([key]) => ["brand", "brandHighlight", "white"].includes(key))
-        .filter(([key]) => textSearch(`color${key}`, filterText)),
+        .filter(([key]) => textSearch(`colors.${key}`, filterText)),
     [filterText, colors]
   );
 
@@ -69,7 +69,7 @@ const Tokens: React.FC = () => {
             "basePurple",
           ].includes(key)
         )
-        .filter(([key]) => textSearch(`color${key}`, filterText)),
+        .filter(([key]) => textSearch(`colors.${key}`, filterText)),
     [filterText, colors]
   );
 
@@ -89,14 +89,14 @@ const Tokens: React.FC = () => {
               "basePurple",
             ].includes(key)
         )
-        .filter(([key]) => textSearch(`color${key}`, filterText)),
+        .filter(([key]) => textSearch(`colors.${key}`, filterText)),
     [filterText, colors]
   );
 
   const fontFamilyTokens: Token[] = React.useMemo(
     () =>
       Object.entries(fontFamilies).filter(([key]) =>
-        textSearch(`fontFamily${key}`, filterText)
+        textSearch(`fontFamilies.${key}`, filterText)
       ),
     [filterText, fontFamilies]
   );
@@ -104,7 +104,7 @@ const Tokens: React.FC = () => {
   const fontSizeTokens: Token[] = React.useMemo(
     () =>
       Object.entries(fontSizes).filter(([key]) =>
-        textSearch(`fontSize${key}`, filterText)
+        textSearch(`fontSizes.${key}`, filterText)
       ),
     [filterText, fontSizes]
   );
@@ -112,7 +112,7 @@ const Tokens: React.FC = () => {
   const fontWeightTokens: NumberToken[] = React.useMemo(
     () =>
       Object.entries(fontWeights).filter(([key]) =>
-        textSearch(`fontWeight${key}`, filterText)
+        textSearch(`fontWeights.${key}`, filterText)
       ),
     [filterText, fontWeights]
   );
@@ -120,7 +120,7 @@ const Tokens: React.FC = () => {
   const backgroundColorTokens: Token[] = React.useMemo(
     () =>
       Object.entries(backgroundColors).filter(([key]) =>
-        textSearch(`backgroundColor${key}`, filterText)
+        textSearch(`backgroundColors.${key}`, filterText)
       ),
     [filterText, backgroundColors]
   );
@@ -128,7 +128,7 @@ const Tokens: React.FC = () => {
   const textColorTokens: Token[] = React.useMemo(
     () =>
       Object.entries(textColors).filter(([key]) =>
-        textSearch(`textColor${key}`, filterText)
+        textSearch(`textColors.${key}`, filterText)
       ),
     [filterText, textColors]
   );
@@ -136,7 +136,7 @@ const Tokens: React.FC = () => {
   const gradientTokens: Token[] = React.useMemo(
     () =>
       Object.entries(gradients).filter(([key]) =>
-        textSearch(`gradient${key}`, filterText)
+        textSearch(`gradients.${key}`, filterText)
       ),
     [filterText, gradients]
   );
@@ -144,7 +144,7 @@ const Tokens: React.FC = () => {
   const shadowTokens: Token[] = React.useMemo(
     () =>
       Object.entries(shadows).filter(([key]) =>
-        textSearch(`shadow${key}`, filterText)
+        textSearch(`shadows.${key}`, filterText)
       ),
     [filterText, shadows]
   );
@@ -152,7 +152,7 @@ const Tokens: React.FC = () => {
   const borderTokens: Token[] = React.useMemo(
     () =>
       Object.entries(borderColors).filter(([key]) =>
-        textSearch(`borderColor${key}`, filterText)
+        textSearch(`borderColors.${key}`, filterText)
       ),
     [filterText, borderColors]
   );
@@ -160,7 +160,7 @@ const Tokens: React.FC = () => {
   const borderWidthTokens: Token[] = React.useMemo(
     () =>
       Object.entries(borderWidths).filter(([key]) =>
-        textSearch(`borderWidth${key}`, filterText)
+        textSearch(`borderWidths.${key}`, filterText)
       ),
     [filterText, borderWidths]
   );
@@ -168,7 +168,7 @@ const Tokens: React.FC = () => {
   const spacingTokens: Token[] = React.useMemo(
     () =>
       Object.entries(space).filter(([key]) =>
-        textSearch(`space${key}`, filterText)
+        textSearch(`space.${key}`, filterText)
       ),
     [filterText, space]
   );
@@ -180,7 +180,7 @@ const Tokens: React.FC = () => {
   );
 
   const hasAnyTokens = Boolean(
-    breakpointTokens.length +
+    mediaQueryTokens.length +
       primaryColorTokens.length +
       secondaryColorTokens.length +
       tertiaryColorTokens.length +
@@ -202,7 +202,7 @@ const Tokens: React.FC = () => {
 
       {!hasAnyTokens && <p>No tokens found for filter {`"${filterText}"`}</p>}
 
-      {breakpointTokens.length > 0 && (
+      {mediaQueryTokens.length > 0 && (
         <div>
           <h1>Breakpoints</h1>
           <p>
@@ -210,7 +210,7 @@ const Tokens: React.FC = () => {
             breakpoints provide ranges needed to ensure that your UI
             communicates valuable information for customers of all screen sizes.
           </p>
-          <BreakpointTokens tokens={breakpointTokens} />
+          <MediaQueryTokens tokens={mediaQueryTokens} />
         </div>
       )}
 

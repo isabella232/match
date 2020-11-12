@@ -1,8 +1,8 @@
-import { ColorOptions, IconSize } from "@twilio-labs/match-props";
+import { ColorOptions, IconSizeProp } from "@twilio-labs/match-props";
 
-export interface IconProps {
+export interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
   color?: ColorOptions;
-  size?: IconSize;
+  size?: IconSizeProp;
   title?: string;
   decorative?: boolean;
 }

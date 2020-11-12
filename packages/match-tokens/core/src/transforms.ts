@@ -21,6 +21,12 @@ export const registerTransforms = (
       return color.A === 1 ? color.HEX : color.RGBA;
     },
   });
+  dictionary.registerTransform({
+    name: "match/mediaQuery",
+    type: "value",
+    matcher: (prop) => prop.attributes.category === "mediaQuery",
+    transformer: (prop) => `screen and (min-width: ${prop.value}px)`,
+  });
   dictionary.registerTransformGroup({
     name: "match-js",
     transforms: [
@@ -28,6 +34,7 @@ export const registerTransforms = (
       "name/cti/camel",
       "match/color",
       "match/pxToRem",
+      "match/mediaQuery",
     ],
   });
   dictionary.registerTransformGroup({
@@ -37,6 +44,7 @@ export const registerTransforms = (
       "name/cti/kebab",
       "match/color",
       "match/pxToRem",
+      "match/mediaQuery",
     ],
   });
   dictionary.registerTransformGroup({
@@ -46,6 +54,7 @@ export const registerTransforms = (
       "name/cti/kebab",
       "match/color",
       "match/pxToRem",
+      "match/mediaQuery",
     ],
   });
 };

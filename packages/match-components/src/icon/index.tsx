@@ -1,16 +1,14 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import { colorTokenProp, iconSizeTokenProp } from "@twilio-labs/match-props";
+import { colorPropType, iconSizePropType } from "@twilio-labs/match-props";
 import { StyledIcon } from "./styles";
-import { IconProps } from "./types";
+import type { IconProps } from "./types";
 
-const Icon: React.FC<IconProps> = ({ ...props }) => {
-  return <StyledIcon {...props} />;
-};
+const Icon: React.FC<IconProps> = (props) => <StyledIcon {...props} />;
 
 Icon.propTypes = {
-  color: colorTokenProp,
-  size: iconSizeTokenProp,
+  color: colorPropType,
+  size: iconSizePropType,
   title: PropTypes.string,
   decorative: PropTypes.bool,
 };
@@ -21,4 +19,7 @@ Icon.defaultProps = {
   decorative: false,
 };
 
-export { Icon, IconProps };
+Icon.displayName = "Icon";
+
+export { Icon };
+export type { IconProps };

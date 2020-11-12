@@ -14,6 +14,15 @@ export const groupTemplate = (groupName, props): string => `${groupName}: {
 ${props.map((prop) => `${baseTokenName(prop)}: ${prop.name},`).join("\n")}
 },`;
 
+export const breakpointsTemplate = (props): string => `
+const breakpoints = [
+${props
+  .filter((prop) => prop.attributes.category === "mediaQuery")
+  .map((prop) => `"${prop.original.value}px"`)
+  .join(",\n")}
+];
+`;
+
 export const commonJsTokenFormatter = (dictionary): string => {
   const singleTokens = dictionary.allProperties
     .map((prop) => tokenTemplate(prop))
@@ -31,11 +40,15 @@ export const commonJsTokenFormatter = (dictionary): string => {
     groupTemplate
   );
 
+  const breakpoints = breakpointsTemplate(dictionary.allProperties);
+
   return [
     singleTokens,
+    breakpoints,
     "module.exports = {",
     singleTokenExports,
     groupedTokens,
+    "breakpoints",
     "}",
   ].join("\n");
 };

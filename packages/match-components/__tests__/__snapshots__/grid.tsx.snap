@@ -8,13 +8,33 @@ exports[`Spaces snapshot 1`] = `
   font-family: Whitney SSm A,Whitney SSm B,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
+.c1 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: sidebar main;
+  grid-gap: 1rem;
+}
+
+.c2 {
+  grid-area: sidebar;
+}
+
+.c3 {
+  grid-area: main;
+}
+
 <div
   class="c0"
 >
   <div
-    class=""
+    class="c1"
   >
-    Box
+    <div
+      class="c2"
+    />
+    <div
+      class="c3"
+    />
   </div>
 </div>
 `;

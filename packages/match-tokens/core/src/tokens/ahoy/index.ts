@@ -12,5 +12,6 @@ export {
   space,
   textColor,
   component,
+  lineHeight,
 } from "../core";
 export * from "./shadow";

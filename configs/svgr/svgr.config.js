@@ -1,6 +1,6 @@
 module.exports = {
   typescript: true,
-  memo: true,
+  memo: false,
   titleProp: true,
   icon: true,
   expandProps: false,

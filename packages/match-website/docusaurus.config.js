@@ -72,6 +72,7 @@ module.exports = {
         parserOptions: {
           shouldRemoveUndefinedFromOptional: true,
           shouldExtractLiteralValuesFromEnum: true,
+          shouldExtractLiteralValuesFromUnion: false,
           savePropValueAsString: true,
           propFilter: (prop) => {
             if (prop.parent) {

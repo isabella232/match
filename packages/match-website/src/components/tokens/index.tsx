@@ -14,6 +14,7 @@ import { GradientTokens } from "./gradient";
 import { BorderColorTokens } from "./border-color";
 import { BorderWidthTokens } from "./border-width";
 import { SpacingTokens } from "./space";
+import { LineHeightTokens } from "./line-height";
 
 import { Token, NumberToken } from "../../types";
 
@@ -38,6 +39,7 @@ const Tokens: React.FC = () => {
     borderColors,
     borderWidths,
     space,
+    lineHeights,
   } = useTheme();
   const {
     state: { filterText },
@@ -173,6 +175,14 @@ const Tokens: React.FC = () => {
     [filterText, space]
   );
 
+  const lineHeightTokens: Token[] = React.useMemo(
+    () =>
+      Object.entries(lineHeights).filter(([key]) =>
+        textSearch(`lineHeights.${key}`, filterText)
+      ),
+    [filterText, lineHeights]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
@@ -192,7 +202,8 @@ const Tokens: React.FC = () => {
       gradientTokens.length +
       borderTokens.length +
       borderWidthTokens.length +
-      spacingTokens.length
+      spacingTokens.length +
+      lineHeightTokens.length
   );
 
   return (
@@ -291,6 +302,13 @@ const Tokens: React.FC = () => {
         <div>
           <h2>Font Weights</h2>
           <WeightTokens prefix="fontWeights" tokens={fontWeightTokens} />
+        </div>
+      )}
+
+      {lineHeightTokens.length > 0 && (
+        <div>
+          <h2>Line Heights</h2>
+          <LineHeightTokens prefix="lineHeights" tokens={lineHeightTokens} />
         </div>
       )}
 

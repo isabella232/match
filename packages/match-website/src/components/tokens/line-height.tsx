@@ -12,41 +12,60 @@ const LineHeightTokens: React.FC<LineHeightTokensProps> = ({
   tokens,
 }) => {
   const { fontSizes } = useTheme();
-  const examples = {
-    scale100: {
-      size: fontSizes.scale60,
-      text:
-        "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
-    },
-    scale125: {
-      size: fontSizes.scale420,
-      text: "Zombie ipsum reversus ab viral inferno, nam rick",
-    },
-    scale140: {
-      size: fontSizes.scale280,
-      text: "Zombie ipsum reversus ab viral inferno, nam rick grimes malum",
-    },
-    scale160: {
-      size: fontSizes.scale180,
-      text:
-        "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata",
-    },
-    scale180: {
-      size: fontSizes.scale160,
-      text:
-        "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora",
-    },
-    scale200: {
-      size: fontSizes.scale70,
-      text:
-        "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Nigh basal ganglia tofth eliv ingdead. Is bello brains mundi z?",
-    },
-    scale220: {
-      size: fontSizes.scale60,
-      text:
-        "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Nigh basal ganglia tofth eliv ingdead. Is bello brains mundi z?",
-    },
-  };
+
+  const examples = React.useMemo(
+    () => ({
+      scale100: {
+        size: fontSizes.scale60,
+        text:
+          "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.",
+      },
+      scale125: {
+        size: fontSizes.scale420,
+        text: "Zombie ipsum reversus ab viral inferno, nam rick",
+      },
+      scale140: {
+        size: fontSizes.scale280,
+        text: "Zombie ipsum reversus ab viral inferno, nam rick grimes malum",
+      },
+      scale160: {
+        size: fontSizes.scale180,
+        text:
+          "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata",
+      },
+      scale180: {
+        size: fontSizes.scale160,
+        text:
+          "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora",
+      },
+      scale200: {
+        size: fontSizes.scale70,
+        text:
+          "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Nigh basal ganglia tofth eliv ingdead. Is bello brains mundi z?",
+      },
+      scale220: {
+        size: fontSizes.scale60,
+        text:
+          "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Nigh basal ganglia tofth eliv ingdead. Is bello brains mundi z?",
+      },
+    }),
+    [fontSizes]
+  );
+
+  const parsedTokens = React.useMemo(
+    () =>
+      tokens.map(([name, value]) => {
+        return examples[name]
+          ? {
+              name: name,
+              value: value,
+              size: examples[name].size,
+              text: examples[name].text,
+            }
+          : { name: name, value: value, size: "inherit", text: "" };
+      }),
+    [tokens, examples]
+  );
   return (
     <div>
       <table>
@@ -58,12 +77,12 @@ const LineHeightTokens: React.FC<LineHeightTokensProps> = ({
           </tr>
         </thead>
         <tbody>
-          {tokens.map(([name, value]) => (
-            <tr key={prefix + name}>
-              <td>{`${prefix}.${name}`}</td>
-              <td>{value}</td>
-              <td style={{ lineHeight: value, fontSize: examples[name].size }}>
-                {examples[name].text}
+          {parsedTokens.map((token) => (
+            <tr key={prefix + token.name}>
+              <td>{`${prefix}.${token.name}`}</td>
+              <td>{token.value}</td>
+              <td style={{ lineHeight: token.value, fontSize: token.size }}>
+                {token.text}
               </td>
             </tr>
           ))}

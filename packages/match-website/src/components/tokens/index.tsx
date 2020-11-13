@@ -6,7 +6,6 @@ import { TokenFilters } from "./filters";
 import { MediaQueryTokens } from "./media-query";
 import { ColorTokens } from "./color";
 import { StringTokens } from "./string";
-import { UnitTokens } from "./unit";
 import { WeightTokens } from "./weight";
 import { TextColorTokens } from "./text-color";
 import { ShadowTokens } from "./shadow";
@@ -15,6 +14,7 @@ import { BorderColorTokens } from "./border-color";
 import { BorderWidthTokens } from "./border-width";
 import { SpacingTokens } from "./space";
 import { LineHeightTokens } from "./line-height";
+import { FontSizeTokens } from "./font-size";
 
 import { Token, NumberToken } from "../../types";
 
@@ -294,7 +294,7 @@ const Tokens: React.FC = () => {
       {fontSizeTokens.length > 0 && (
         <div>
           <h2>Font Sizes</h2>
-          <UnitTokens tokens={fontSizeTokens} prefix="fontSize" />
+          <FontSizeTokens tokens={fontSizeTokens} prefix="fontSize" />
         </div>
       )}
 

@@ -18,7 +18,7 @@ Visual Studio Code's [Dev Container](https://code.visualstudio.com/docs/remote/c
 2. Install [Docker](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 3. Install the [Remote Development Plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
 
-When opening the `match` folder in VSCode, you will be prompted to "Reopen in a Container". If you fail to click this button, just hit `cmd + shift + p` and type `reopen` then select "Remote-Containers: Reopeon in Container". VSCode will build a Docker container with all of the Match dependencies installed and bootstrapped. Open a new terminal with `` ctrl + ` `` and run one of the following commands.
+When opening the `match` folder in VSCode, you will be prompted to "Reopen in a Container". If you fail to click this button, just hit `cmd + shift + p` and type `reopen` then select "Remote-Containers: Reopen in Container". VSCode will build a Docker container with all of the Match dependencies installed and bootstrapped. Open a new terminal with `` ctrl + ` `` and run one of the following commands.
 
 | Command                | Description                                   |
 | ---------------------- | --------------------------------------------- |

@@ -11,7 +11,6 @@ export default {
   args: {
     color: "gray80",
     size: "base",
-    decorative: false,
   },
   argTypes: {
     color: {
@@ -19,9 +18,6 @@ export default {
     },
     size: {
       control: { type: "select", options: Object.keys(iconSizes) },
-    },
-    decorative: {
-      control: { type: "boolean" },
     },
   },
 } as Meta;
@@ -36,10 +32,10 @@ export const AllIcons: Story<IconProps> = (args) => (
     }}
   >
     {Object.values(Icons)
-      .filter((Icon) => typeof Icon === "object")
+      .filter((Icon) => typeof Icon === "function")
       .map((Icon) => (
         <div key={uid(Icon)}>
-          <Icon {...args} />
+          <Icon decorative {...args} />
         </div>
       ))}
   </div>

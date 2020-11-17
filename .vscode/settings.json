@@ -17,5 +17,34 @@
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "css.validate": false
+  "css.validate": false,
+  "cSpell.enabled": true,
+  "cSpell.words": [
+    "docgen",
+    "sendgrid",
+    "twilio",
+    "semver",
+    "svgr",
+    "pypi",
+    "reakit",
+    "tsbuildinfo",
+    "noreferrer",
+    "noopener",
+    "wcag",
+    "clsx"
+  ],
+  "cSpell.allowCompoundWords": true,
+  "cSpell.enableFiletypes": ["mdx"],
+  "cSpell.ignorePaths": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/buid/**",
+    ".docusaurus",
+    ".vscode",
+    ".yarn",
+    ".devcontainer",
+    "*.lock",
+    "*.snap"
+  ],
+  "cSpell.language": "en"
 }

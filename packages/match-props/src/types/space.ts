@@ -5,35 +5,77 @@ export type SpaceOptions = keyof typeof space;
 export type SpaceProp = ResponsiveValue<SpaceOptions>;
 
 export interface PaddingProps {
-  /** Padding on all 4 sides */
+  /**
+   * Padding on all 4 sides
+   * @type Space
+   */
   padding?: SpaceProp;
-  /** Padding on the left and right */
+  /**
+   * Padding on the left and right
+   * @type Space
+   */
   paddingX?: SpaceProp;
-  /** Padding on the top and bottom */
+  /**
+   * Padding on the top and bottom
+   * @type Space
+   */
   paddingY?: SpaceProp;
-  /** Padding on the left*/
+  /**
+   * Padding on the left
+   * @type Space
+   */
   paddingLeft?: SpaceProp;
-  /** Padding on the right*/
+  /**
+   * Padding on the right
+   * @type Space
+   */
   paddingRight?: SpaceProp;
-  /** Padding on the bottom */
+  /**
+   * Padding on the bottom
+   * @type Space
+   */
   paddingBottom?: SpaceProp;
-  /** Padding on the top */
+  /**
+   * Padding on the top
+   * @type Space
+   */
   paddingTop?: SpaceProp;
 }
 
 export interface MarginProps {
-  /** Margin area on all 4 sides */
+  /**
+   * Margin area on all 4 sides
+   * @type Space
+   */
   margin?: SpaceProp;
-  /** Margin on the left and right */
+  /**
+   * Margin on the left and right
+   * @type Space
+   */
   marginX?: SpaceProp;
-  /** Margin on the top and bottom */
+  /**
+   * Margin on the top and bottom
+   * @type Space
+   */
   marginY?: SpaceProp;
-  /** Margin on the left */
+  /**
+   * Margin on the left
+   * @type Space
+   */
   marginLeft?: SpaceProp;
-  /** Margin on the right */
+  /**
+   * Margin on the right
+   * @type Space
+   */
   marginRight?: SpaceProp;
-  /** Margin on the bottom */
+  /**
+   * Margin on the bottom
+   * @type Space
+   */
   marginBottom?: SpaceProp;
-  /** Margin on the top */
+  /**
+   * Margin on the top
+   * @type Space
+   */
   marginTop?: SpaceProp;
 }

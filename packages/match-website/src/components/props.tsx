@@ -13,12 +13,6 @@ type ComponentProp = {
   description: string;
 };
 
-//common props corresponding to match prop types
-const tokenTypes = {
-  padding: "Space",
-  margin: "Space",
-};
-
 const Props: React.FC<PropsProps> = ({ of }) => {
   const docgens = usePluginData("docusaurus-plugin-react-docgen-typescript");
 
@@ -26,19 +20,28 @@ const Props: React.FC<PropsProps> = ({ of }) => {
     const doc: ComponentDoc = docgens.find(
       (docgen) => docgen.displayName === of
     );
+
     if (!doc) return [];
 
     return Object.values(doc.props).map(
       ({ name, required, type, defaultValue, description }) => {
-        //remove end of name starting at capital letters and check if it is a match prop type
-        const checkForType = tokenTypes[name.replace(/[A-Z][^A-Z]*$/, "")];
-        type.name = checkForType ? checkForType : type.name;
         const prop: ComponentProp = {
           name: name + (!required ? "?" : ""),
           type: type.raw && type.name === "enum" ? type.raw : type.name,
           default: defaultValue ? defaultValue.value : "null",
           description,
         };
+
+        /**
+         * Put quotes around string values
+         */
+        if (
+          defaultValue &&
+          type.name !== "enum" &&
+          !["true", "false", "null", "undefined"].includes(defaultValue.value)
+        ) {
+          prop.default = `'${defaultValue.value}'`;
+        }
 
         /**
          * Get and format the ENUM key as default value
@@ -64,7 +67,7 @@ const Props: React.FC<PropsProps> = ({ of }) => {
         return prop;
       }
     );
-  }, [docgens, of, tokenTypes]);
+  }, [docgens, of]);
 
   if (props.length === 0) return <p>No component props found for {of} 😔</p>;
 

@@ -18,7 +18,8 @@
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
     "jpoissonnier.vscode-styled-components",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "streetsidesoftware.code-spell-checker"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.

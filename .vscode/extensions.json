@@ -6,6 +6,7 @@
     "stylelint.vscode-stylelint",
     "jpoissonnier.vscode-styled-components",
     "editorconfig.editorconfig",
-    "vivaxy.vscode-conventional-commits"
+    "vivaxy.vscode-conventional-commits",
+    "streetsidesoftware.code-spell-checker"
   ]
 }

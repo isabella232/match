@@ -6,7 +6,7 @@ import type { ButtonProps } from "./types";
 
 const Button: React.FC<ButtonProps> = ({ type, ...props }) => {
   if (props.download && !props.href)
-    console.warn("href must be provided for a download link");
+    console.warn("[Button]: Href must be provided for a download link.");
 
   return (
     <StyledButton

@@ -40,6 +40,7 @@ const Tokens: React.FC = () => {
     borderWidths,
     space,
     lineHeights,
+    iconSizes,
   } = useTheme();
   const {
     state: { filterText },
@@ -183,6 +184,14 @@ const Tokens: React.FC = () => {
     [filterText, lineHeights]
   );
 
+  const iconSizeTokens: Token[] = React.useMemo(
+    () =>
+      Object.entries(iconSizes).filter(([key]) =>
+        textSearch(`iconSizes.${key}`, filterText)
+      ),
+    [filterText, iconSizes]
+  );
+
   const hasColorTokens = Boolean(
     primaryColorTokens.length +
       secondaryColorTokens.length +
@@ -203,7 +212,8 @@ const Tokens: React.FC = () => {
       borderTokens.length +
       borderWidthTokens.length +
       spacingTokens.length +
-      lineHeightTokens.length
+      lineHeightTokens.length +
+      iconSizeTokens.length
   );
 
   return (
@@ -215,7 +225,7 @@ const Tokens: React.FC = () => {
 
       {mediaQueryTokens.length > 0 && (
         <div>
-          <h1>Breakpoints</h1>
+          <h1 id="breakpoints">Breakpoints</h1>
           <p>
             Match takes a mobile-first approach to responsive web design. These
             breakpoints provide ranges needed to ensure that your UI
@@ -225,11 +235,11 @@ const Tokens: React.FC = () => {
         </div>
       )}
 
-      {hasColorTokens && <h1>Colors</h1>}
+      {hasColorTokens && <h1 id="colors">Colors</h1>}
 
       {primaryColorTokens.length > 0 && (
         <div>
-          <h3>Primary</h3>
+          <h3 id="primary-colors">Primary</h3>
           <p>
             This palette defines our brand. Emphasize Twilio Red and avoid
             introducing too many secondary colors for audiences new to Twilio.
@@ -240,7 +250,7 @@ const Tokens: React.FC = () => {
 
       {secondaryColorTokens.length > 0 && (
         <div>
-          <h3>Secondary</h3>
+          <h3 id="secondary-colors">Secondary</h3>
           <p>
             We use these colors to help guide attention through a layout or
             illustration.
@@ -251,7 +261,7 @@ const Tokens: React.FC = () => {
 
       {tertiaryColorTokens.length > 0 && (
         <div>
-          <h3>Tertiary</h3>
+          <h3 id="tertiary-colors">Tertiary</h3>
           <p>
             We use these colors to help guide attention through a layout or
             illustration.
@@ -262,7 +272,7 @@ const Tokens: React.FC = () => {
 
       {backgroundColorTokens.length > 0 && (
         <div>
-          <h2>Background Colors</h2>
+          <h2 id="background-colors">Background Colors</h2>
           <ColorTokens
             tokens={backgroundColorTokens}
             prefix="backgroundColors"
@@ -272,14 +282,14 @@ const Tokens: React.FC = () => {
 
       {gradientTokens.length > 0 && (
         <div>
-          <h2>Gradients</h2>
+          <h2 id="gradients">Gradients</h2>
           <GradientTokens prefix="gradients" tokens={gradientTokens} />
         </div>
       )}
 
       {textColorTokens.length > 0 && (
         <div>
-          <h2>Text Colors</h2>
+          <h2 id="text-colors">Text Colors</h2>
           <TextColorTokens tokens={textColorTokens} />
         </div>
       )}
@@ -293,50 +303,57 @@ const Tokens: React.FC = () => {
 
       {fontSizeTokens.length > 0 && (
         <div>
-          <h2>Font Sizes</h2>
+          <h2 id="font-sizes">Font Sizes</h2>
           <FontSizeTokens tokens={fontSizeTokens} prefix="fontSize" />
         </div>
       )}
 
       {fontWeightTokens.length > 0 && (
         <div>
-          <h2>Font Weights</h2>
+          <h2 id="font-weights">Font Weights</h2>
           <WeightTokens prefix="fontWeights" tokens={fontWeightTokens} />
         </div>
       )}
 
       {lineHeightTokens.length > 0 && (
         <div>
-          <h2>Line Heights</h2>
+          <h2 id="line-heights">Line Heights</h2>
           <LineHeightTokens prefix="lineHeights" tokens={lineHeightTokens} />
         </div>
       )}
 
       {shadowTokens.length > 0 && (
         <div>
-          <h2>Shadows</h2>
+          <h2 id="shadows">Shadows</h2>
           <ShadowTokens prefix="shadows" tokens={shadowTokens} />
         </div>
       )}
 
       {borderTokens.length > 0 && (
         <div>
-          <h2>Borders</h2>
+          <h2 id="borders">Borders</h2>
           <BorderColorTokens tokens={borderTokens} prefix="borderColors" />
         </div>
       )}
 
       {borderWidthTokens.length > 0 && (
         <div>
-          <h2>Border Widths</h2>
+          <h2 id="border-widths">Border Widths</h2>
           <BorderWidthTokens tokens={borderWidthTokens} prefix="borderWidths" />
         </div>
       )}
 
       {spacingTokens.length > 0 && (
         <div>
-          <h2>Spacing</h2>
+          <h2 id="spacings">Spacing</h2>
           <SpacingTokens tokens={spacingTokens} prefix="space" />
+        </div>
+      )}
+
+      {iconSizeTokens.length > 0 && (
+        <div>
+          <h2 id="icon-sizes">Icon Sizes</h2>
+          <SpacingTokens tokens={iconSizeTokens} prefix="iconSizes" />
         </div>
       )}
     </div>

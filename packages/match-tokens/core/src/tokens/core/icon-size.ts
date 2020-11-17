@@ -5,5 +5,5 @@ export const iconSize: Sizes = {
   medium: { value: 12 },
   base: { value: 16 },
   large: { value: 24 },
-  xlarge: { value: 32 },
+  xLarge: { value: 32 },
 };

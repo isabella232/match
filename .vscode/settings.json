@@ -29,7 +29,9 @@
     "reakit",
     "tsbuildinfo",
     "noreferrer",
-    "noopener"
+    "noopener",
+    "wcag",
+    "clsx"
   ],
   "cSpell.allowCompoundWords": true,
   "cSpell.enableFiletypes": ["mdx"],

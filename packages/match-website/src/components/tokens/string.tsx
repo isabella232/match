@@ -19,7 +19,7 @@ const StringTokens: React.FC<StringTokensProps> = ({ tokens, prefix }) => {
         <tbody>
           {tokens.map(([name, token]) => (
             <tr key={prefix + name}>
-              <td>{`${prefix} ${name}`}</td>
+              <td>{`${prefix}.${name}`}</td>
               <td>{token}</td>
             </tr>
           ))}

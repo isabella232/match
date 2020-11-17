@@ -21,5 +21,6 @@ export const GROUP_NAME_MAP = new Map(
     space: "space",
     textColor: "textColors",
     mediaQuery: "mediaQueries",
+    lineHeight: "lineHeights",
   })
 );

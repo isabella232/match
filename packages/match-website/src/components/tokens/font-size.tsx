@@ -2,12 +2,12 @@ import * as React from "react";
 import { remToPx } from "../../utils";
 import { Token } from "../../types";
 
-interface UnitTokensProps {
+interface FontSizeTokensProps {
   tokens: Token[];
   prefix: string;
 }
 
-const UnitTokens: React.FC<UnitTokensProps> = ({ prefix, tokens }) => {
+const FontSizeTokens: React.FC<FontSizeTokensProps> = ({ prefix, tokens }) => {
   return (
     <div>
       <table>
@@ -16,6 +16,7 @@ const UnitTokens: React.FC<UnitTokensProps> = ({ prefix, tokens }) => {
             <th>Token</th>
             <th>Value (px)</th>
             <th>Value (rem)</th>
+            <th>Example</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,7 @@ const UnitTokens: React.FC<UnitTokensProps> = ({ prefix, tokens }) => {
               <td>{`${prefix}.${name}`}</td>
               <td>{remToPx(value)}</td>
               <td>{value}</td>
+              <td style={{ fontSize: value }}>Ab</td>
             </tr>
           ))}
         </tbody>
@@ -32,4 +34,4 @@ const UnitTokens: React.FC<UnitTokensProps> = ({ prefix, tokens }) => {
   );
 };
 
-export { UnitTokens };
+export { FontSizeTokens };

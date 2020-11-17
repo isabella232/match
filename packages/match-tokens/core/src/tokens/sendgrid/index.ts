@@ -7,6 +7,7 @@ export {
   fontWeight,
   iconSize,
   space,
+  lineHeight,
 } from "../core";
 export * from "./background-color";
 export * from "./component";

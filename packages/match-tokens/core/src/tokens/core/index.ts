@@ -12,3 +12,4 @@ export * from "./icon-size";
 export * from "./shadow";
 export * from "./space";
 export * from "./text-color";
+export * from "./line-height";

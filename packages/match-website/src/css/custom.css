@@ -13,8 +13,6 @@
   --ifm-color-primary-light: var(--color-blue-30);
   --ifm-color-primary-lighter: var(--color-blue-20);
   --ifm-color-primary-lightest: var(--color-blue-10);
-  --ifm-footer-background-color: var(--background-color-darkest);
-  --ifm-footer-color: var(--text-color-inverse-primary);
 
   /* Sidebar */
   --ifm-menu-color: var(--ifm-font-color-base);

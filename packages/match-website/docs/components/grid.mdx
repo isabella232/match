@@ -50,9 +50,9 @@ const Component = () => (
 
 ### About Grids and Cells
 
-The grid component helps position and align content, creating a conistent layout. A grid can be used on the page overall, within page sections,
+The grid component helps position and align content, creating a consistent layout. A grid can be used on the page overall, within page sections,
 and within components. Grids are responsive and will resize as the browser width changes. Additionally, the grid component can be used to adjust
-the layout as the browser widthe changes.
+the layout as the browser width changes.
 
 ### Accessibility
 
@@ -69,7 +69,7 @@ There is a grid for desktop, tablet, and mobile. Each of these grids can be adde
 settings are added to layout settings in sketch.
 
 There are additional grids which are intended to be used within components, such as a card. These grids are symbols so that they can be added to any component and the width/height can be adjusted to fit any component.
-If you use a symbol grid make sure that it is visable before uploading to InVision
+If you use a symbol grid make sure that it is visible before uploading to InVision
 
 The anatomy of the grids and the layout settings for sketch can be viewed in <Anchor href="https://share.goabstract.com/f467de30-0071-46fd-93b2-a5c9af87feec">Abstract</Anchor>.
 
@@ -122,7 +122,7 @@ The example below aligns four rectangles based on the browser width. Desktop has
 
 ### Uneven Columns
 
-The prop gridTemplateColumns can be used to easily create layouts that span various amounts of columns.
+The Grid prop `gridTemplateColumns` can be used to easily create layouts that span various amounts of columns.
 
 ```jsx live
 <Grid
@@ -150,8 +150,10 @@ The prop gridTemplateColumns can be used to easily create layouts that span vari
 
 ### Uneven Rows
 
-This example also uses the Grid prop `alignItems` to make the content in each cell align to the center of the cell along the y axis.
-Some of the cells also use the prop `justifySelf` to align that cell's content to the center of the cell along the x axis.
+The Grid prop `gridTemplateRows` can be used to easily create layouts with varying row heights.
+
+This example also uses the Grid prop `alignItems` to make the content in each cell align to the center of the cell along the y-axis.
+The cells with icons also use the prop `justifySelf` to align that cell's content to the center of the cell along the x-axis.
 
 ```jsx live
 <Grid
@@ -174,14 +176,14 @@ Some of the cells also use the prop `justifySelf` to align that cell's content t
     <TerminalIcon decorative size="large" />
   </Cell>
   <Cell padding="scale100" backgroundColor="light">
-    Made for developers by developers{" "}
+    Made for developers by developers
   </Cell>
 </Grid>
 ```
 
 ### Grid Template Areas
 
-The Grid prop `gridTemplateArea` can be combined with Cell components using the `gridArea` prop to easily set a layout with varying column widths.
+The Grid prop `gridTemplateArea` can be combined with Cell components using the `gridArea` prop to easily create custom layouts.
 
 ```jsx live
 <Grid gridTemplateAreas="'a a a a' 'b c c c'" gridGap="scale260">
@@ -205,6 +207,9 @@ The Grid prop `gridTemplateArea` can be combined with Cell components using the 
 
 ### Alignment
 
+The Grid and Cell components have alignment props which can help align Cells to their desired location along the y-axis. For instance,
+`alignSelf` can set a cell to take up the entire height of the largest cell in that row or it can set the cell to align at the top, center, or bottom.
+
 ```jsx live
 <Grid gridTemplateColumns="repeat(6, 1fr)" gridGap="scale420">
   <Cell paddingY="scale420" backgroundColor="light" />
@@ -218,18 +223,21 @@ The Grid prop `gridTemplateArea` can be combined with Cell components using the 
     end
   </Cell>
   <Cell
-    alignSelf="strech"
+    alignSelf="stretch"
     backgroundColor="light"
     paddingX="scale180"
     paddingY="scale260"
   >
-    strech
+    stretch
   </Cell>
   <Cell paddingY="scale420" backgroundColor="light" />
 </Grid>
 ```
 
 ### Justification
+
+The Grid and Cell components have justification props which can help align Cells to their desired location along the x-axis. For instance,
+`justifySelf` can set a cell to take up the entire width of the longest cell in that column or it can be set to align at the left, center, or right of the longest cell.
 
 ```jsx live
 <Grid gridTemplateColumns="repeat(4, 1fr)" gridGap="scale420">
@@ -243,12 +251,12 @@ The Grid prop `gridTemplateArea` can be combined with Cell components using the 
     end
   </Cell>
   <Cell
-    justifySelf="strech"
+    justifySelf="stretch"
     backgroundColor="light"
     paddingY="scale180"
-    paddingX="scale260"
+    paddingX="scale420"
   >
-    strech
+    stretch
   </Cell>
   <Cell paddingY="scale100" backgroundColor="light" />
   <Cell paddingY="scale100" backgroundColor="light" />

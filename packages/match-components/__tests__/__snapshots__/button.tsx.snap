@@ -47,6 +47,20 @@ exports[`Button snapshot 1`] = `
   cursor: not-allowed;
 }
 
+.c1:hover .sc-dlfnbm::before {
+  -webkit-transform: rotate(-45deg) translateX(calc(0.625rem - 0.125rem)) translateY(calc(0.625rem - 0.125rem));
+  -ms-transform: rotate(-45deg) translateX(calc(0.625rem - 0.125rem)) translateY(calc(0.625rem - 0.125rem));
+  transform: rotate(-45deg) translateX(calc(0.625rem - 0.125rem)) translateY(calc(0.625rem - 0.125rem));
+}
+
+.c1:hover .sc-dlfnbm::after {
+  -webkit-transform: translateX(calc(-0.625rem / 2)) translateY(calc(-0.625rem / 2 + 0.125rem / 2)) scaleX(1.5);
+  -ms-transform: translateX(calc(-0.625rem / 2)) translateY(calc(-0.625rem / 2 + 0.125rem / 2)) scaleX(1.5);
+  transform: translateX(calc(-0.625rem / 2)) translateY(calc(-0.625rem / 2 + 0.125rem / 2)) scaleX(1.5);
+  -webkit-animation: none;
+  animation: none;
+}
+
 .c1:hover {
   background: #043CB5;
   border-color: #043CB5;

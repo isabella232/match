@@ -20,6 +20,8 @@ export interface ButtonProps
   variant?: ButtonVariant;
   type?: ButtonType;
   size?: ButtonSize;
+  /** Should the button include an animated prompt? */
+  prompt?: boolean;
   /** A URL to route to. The button's 'type' attribute will be ignored. */
   href?: string;
   /** Prevent actions from firing on the Button. */

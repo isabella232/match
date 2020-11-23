@@ -1,10 +1,15 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import { StyledButton } from "./styles";
+import { StyledButton, StyledPrompt } from "./styles";
 import { ButtonVariant, ButtonType, ButtonSize } from "./types";
 import type { ButtonProps } from "./types";
 
-const Button: React.FC<ButtonProps> = ({ type, ...props }) => {
+const Button: React.FC<ButtonProps> = ({
+  type,
+  prompt,
+  children,
+  ...props
+}) => {
   if (props.download && !props.href)
     console.warn("[Button]: Href must be provided for a download link.");
 
@@ -13,7 +18,10 @@ const Button: React.FC<ButtonProps> = ({ type, ...props }) => {
       forwardedAs={props.href ? "a" : undefined}
       type={!props.href ? type : undefined}
       {...props}
-    />
+    >
+      {children}
+      {prompt && <StyledPrompt />}
+    </StyledButton>
   );
 };
 
@@ -25,6 +33,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
   download: PropTypes.bool,
+  prompt: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -34,6 +43,7 @@ Button.defaultProps = {
   disabled: false,
   fullWidth: false,
   download: false,
+  prompt: false,
 };
 
 Button.displayName = "Button";

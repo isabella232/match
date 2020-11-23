@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { Button } from "reakit/Button";
 import { ButtonProps, ButtonSize, ButtonVariant } from "./types";
 
@@ -103,6 +103,60 @@ const variants = {
   `,
 };
 
+const blink = keyframes`
+  0%,
+  100% { opacity: 0 }
+  50% { opacity: 1 }
+`;
+
+const StyledPrompt = styled.span`
+  margin-left: 1em;
+
+  &::before {
+    display: inline-block;
+    width: ${({ theme }) => theme.iconSizes.small};
+    height: ${({ theme }) => theme.iconSizes.small};
+    border-color: currentColor;
+    border-style: solid;
+    border-width: 0;
+    border-right-width: ${({ theme }) => theme.borderWidths.light};
+    border-bottom-width: ${({ theme }) => theme.borderWidths.light};
+    transform: ${({ theme: { iconSizes, borderWidths } }) =>
+      `rotate(-45deg)
+      translateX(calc(${iconSizes.small} - ${borderWidths.light}))
+      translateY(calc(${iconSizes.small} - ${borderWidths.light}))`};
+    content: "";
+  }
+
+  &::after {
+    display: inline-block;
+    width: ${({ theme }) => theme.iconSizes.small};
+    margin-left: 0.25em;
+    border-color: currentColor;
+    border-style: solid;
+    border-width: ${({ theme }) => theme.borderWidths.light} 0 0;
+    transform: ${({ theme: { iconSizes, borderWidths } }) =>
+      `translateX(calc(-${iconSizes.small} / 2))
+      translateY(calc(-${iconSizes.small} / 2 + ${borderWidths.light} / 2))
+      scaleX(1.5)`};
+    content: "";
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    &::before {
+      transform: ${({ theme }) =>
+        `rotate(-45deg) translateY(calc(-${theme.borderWidths.light} / 2))`};
+      transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &::after {
+      transform: none;
+      transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      animation: ${blink} 1.1s infinite;
+    }
+  }
+`;
+
 const StyledButton = styled(Button).withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
 })<ButtonProps>`
@@ -134,6 +188,23 @@ const StyledButton = styled(Button).withConfig({
     cursor: not-allowed;
   }
 
+  &:hover ${StyledPrompt} {
+    &::before {
+      transform: ${({ theme: { iconSizes, borderWidths } }) =>
+        `rotate(-45deg)
+        translateX(calc(${iconSizes.small} - ${borderWidths.light}))
+        translateY(calc(${iconSizes.small} - ${borderWidths.light}))`};
+    }
+
+    &::after {
+      transform: ${({ theme: { iconSizes, borderWidths } }) =>
+        `translateX(calc(-${iconSizes.small} / 2))
+        translateY(calc(-${iconSizes.small} / 2 + ${borderWidths.light} / 2))
+        scaleX(1.5)`};
+      animation: none;
+    }
+  }
+
   ${({ fullWidth }) =>
     fullWidth &&
     css`
@@ -145,4 +216,4 @@ const StyledButton = styled(Button).withConfig({
   ${({ variant }) => variant && variants[variant]}
 `;
 
-export { StyledButton };
+export { StyledButton, StyledPrompt };

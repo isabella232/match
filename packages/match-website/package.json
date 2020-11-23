@@ -12,10 +12,11 @@
     "type-check": "tsc --noEmit --composite false"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.65",
-    "@docusaurus/preset-classic": "2.0.0-alpha.65",
-    "@docusaurus/theme-classic": "2.0.0-alpha.65",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.65",
+    "@docusaurus/core": "2.0.0-alpha.68",
+    "@docusaurus/preset-classic": "2.0.0-alpha.68",
+    "@docusaurus/theme-classic": "2.0.0-alpha.68",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.68",
+    "@docusaurus/theme-search-algolia": "2.0.0-alpha.68",
     "@mdx-js/react": "1.6.21",
     "@twilio-labs/match-components": "workspace:packages/match-components",
     "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product",
@@ -55,7 +56,7 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "v2.0.0-alpha.65",
+    "@docusaurus/module-type-aliases": "v2.0.0-alpha.68",
     "@types/gh-pages": "3.0.0",
     "@types/lodash": "^4.14.165",
     "@types/mdx-js__react": "1.5.3",

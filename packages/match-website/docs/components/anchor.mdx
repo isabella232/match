@@ -26,7 +26,7 @@ yarn add @twilio-labs/match-components
 ```jsx
 import { Anchor } from "@twilio-labs/match-components";
 
-const Component = () => <Anchor href="../index">Ahoy</Anchor>;
+const Component = () => <Anchor href="/">Ahoy</Anchor>;
 ```
 
 ### Props
@@ -45,7 +45,7 @@ use a button.
 The button component can also be used as a CTA anchor when the href prop is included. In this situation the element looks like a button but
 renders as an anchor.
 
-Learn more about the <Anchor href="../button">button component</Anchor> to determine if it will fit your needs better.
+Learn more about the <Anchor href="/docs/components/button">button component</Anchor> to determine if it will fit your needs better.
 
 ### Accessibility
 
@@ -53,7 +53,7 @@ Here are some quick accessibility tips to ensure a positive user experience for 
 
 - Avoid using only color to communicate information. Use another indicator, such as an underline.
 - Screen Reader users may choose to navigate by links instead of reading the full page, so anchor text needs to make sense without the surrounding
-  sentences or content. When this is not possible use the <Anchor href="../visually-hidden">visually hidden component</Anchor> to supply additional information to users.
+  sentences or content. When this is not possible use the <Anchor href="/docs/components/visually-hidden">visually hidden component</Anchor> to supply additional information to users.
 
 **Note**: The title attribute was not included because it is not exposed by all browsers in an accessible way, meaning that users navigating
 with assistive technology may never see that information.
@@ -78,7 +78,7 @@ text, such as ‘click here’ or ‘more’. When possible avoid using the same
 The primary link is the most common variation and can be used on any light background.
 
 ```jsx live
-<Anchor href="../button">Learn when to use a button</Anchor>
+<Anchor href="/docs/components/button">Learn when to use a button</Anchor>
 ```
 
 ### Inverse
@@ -88,7 +88,7 @@ Inverse anchors are designed to be accessible on dark backgrounds.
 **Note:** Inverse anchors are not accessible on SendGrid Blue backgrounds, use a <Anchor href="../button">button</Anchor> instead.
 
 ```jsx live bg=darkest
-<Anchor variant="inverse" href="../../design-tokens/tokens">
+<Anchor variant="inverse" href="/docs/design-tokens/tokens">
   Design Tokens
 </Anchor>
 ```

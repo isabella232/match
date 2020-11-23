@@ -24,7 +24,7 @@
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core"
   },
   "devDependencies": {
-    "@docusaurus/types": "2.0.0-alpha.65",
+    "@docusaurus/types": "2.0.0-alpha.68",
     "tsconfig-match": "workspace:configs/tsconfig"
   }
 }

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { DownloadIcon } from "@twilio-labs/match-icons-twilio";
 import { Button, ButtonProps, ButtonVariant, ButtonSize } from "../src";
 
 export default {
@@ -60,4 +61,9 @@ Inverse.args = {
 };
 Inverse.parameters = {
   backgrounds: { default: "Twilio Blue" },
+};
+
+export const IconWithText = Template.bind({});
+IconWithText.args = {
+  icon: <DownloadIcon />,
 };

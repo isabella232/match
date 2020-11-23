@@ -1,15 +1,26 @@
 import styled, { css, keyframes } from "styled-components";
 import { Button } from "reakit/Button";
+import { StyledIcon } from "../icon/styles";
 import { ButtonProps, ButtonSize, ButtonVariant } from "./types";
 
 const sizes = {
   [ButtonSize.NORMAL]: css`
     padding: calc(16px - 2px) calc(24px - 2px);
     font-size: ${({ theme }) => theme.fontSizeScale100};
+
+    ${StyledIcon} {
+      width: ${({ theme }) => theme.iconSizes.medium};
+      height: ${({ theme }) => theme.iconSizes.medium};
+    }
   `,
   [ButtonSize.SMALL]: css`
     padding: calc(8px - 2px) calc(16px - 2px);
     font-size: ${({ theme }) => theme.fontSizeScale80};
+
+    ${StyledIcon} {
+      width: ${({ theme }) => theme.iconSizes.small};
+      height: ${({ theme }) => theme.iconSizes.small};
+    }
   `,
 };
 
@@ -172,6 +183,7 @@ const StyledButton = styled(Button).withConfig({
   transition-duration: 0.2s;
   transition-property: color, background, border;
   transition-timing-function: ease-in;
+  line-height: ${({ theme }) => theme.fontSizes.scale100};
 
   &:focus {
     outline-width: 2px;
@@ -203,6 +215,12 @@ const StyledButton = styled(Button).withConfig({
         scaleX(1.5)`};
       animation: none;
     }
+  }
+
+  ${StyledIcon} {
+    color: inherit;
+    vertical-align: middle;
+    margin-left: 0.5em;
   }
 
   ${({ fullWidth }) =>

@@ -7,6 +7,7 @@ import type { ButtonProps } from "./types";
 const Button: React.FC<ButtonProps> = ({
   type,
   prompt,
+  icon,
   children,
   ...props
 }) => {
@@ -20,6 +21,8 @@ const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {children}
+      {React.isValidElement(icon) &&
+        React.cloneElement(icon, { decorative: true })}
       {prompt && <StyledPrompt />}
     </StyledButton>
   );
@@ -29,6 +32,7 @@ Button.propTypes = {
   variant: PropTypes.oneOf(Object.values(ButtonVariant)),
   type: PropTypes.oneOf(Object.values(ButtonType)),
   size: PropTypes.oneOf(Object.values(ButtonSize)),
+  icon: PropTypes.element,
   href: PropTypes.string,
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,

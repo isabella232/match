@@ -8,8 +8,9 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   favicon: "img/favicon.ico",
-  organizationName: "twilio-labs", // Usually your GitHub org/user name.
-  projectName: "match", // Usually your repo name.
+  organizationName: "twilio-labs",
+  projectName: "match",
+  noIndex: true,
   themeConfig: {
     // algolia: {
     //   apiKey: "47ecd3b21be71c5822571b9f59e52544",
@@ -18,31 +19,33 @@ module.exports = {
     //     facetFilters: [`version:2.0.0-alpha.61`],
     //   },
     // },
-    // navbar: {
-    //   title: "Match",
-    //   logo: {
-    //     alt: "Match Logo",
-    //     src: "img/logo.png",
-    //   },
-    //   items: [],
-    // },
+    colorMode: {
+      disableSwitch: true,
+    },
+    navbar: {
+      title: "Twilio Match",
+      // logo: {
+      //   alt: "Match Logo",
+      //   src: "img/logo.png",
+      // },
+      items: [
+        // {
+        //   type: "doc",
+        //   position: "left",
+        //   docId: "getting-started",
+        //   label: "Docs",
+        // },
+        {
+          href: "https://github.com/twilio-labs/match",
+          position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
+        },
+      ],
+    },
     footer: {
       style: "dark",
-      links: [
-        // {
-        //   title: "Docs",
-        //   items: [
-        //     {
-        //       label: "Style Guide",
-        //       to: "docs/",
-        //     },
-        //     {
-        //       label: "Second Doc",
-        //       to: "docs/doc2/",
-        //     },
-        //   ],
-        // },
-      ],
+      links: [],
       copyright: `Copyright ${new Date().getFullYear()} Twilio, Inc.`,
     },
   },
@@ -54,7 +57,6 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: undefined,
-          routeBasePath: "/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

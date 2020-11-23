@@ -11,12 +11,16 @@ export default {
     fullWidth: false,
     href: "",
     size: Object.values(ButtonSize).shift(),
+    prompt: false,
   },
   argTypes: {
     children: { table: { disable: true } },
     variant: { table: { disable: true } },
     size: {
       control: { type: "select", options: Object.values(ButtonSize) },
+    },
+    prompt: {
+      control: { type: "boolean" },
     },
     disabled: {
       control: { type: "boolean" },

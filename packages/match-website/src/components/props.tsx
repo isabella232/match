@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import { ComponentDoc } from "react-docgen-typescript";
 import { usePluginData } from "@docusaurus/useGlobalData";
+import { Button } from "reakit/Button";
 import styles from "./styles.module.css";
 import {
   ChevronDownIcon,
@@ -82,9 +83,8 @@ const Props: React.FC<PropsProps> = ({ of }) => {
    */
   const [isExpanded, setExpanded] = useState(false);
 
-  const handlePreview = (e) => {
-    e.preventDefault();
-    setExpanded(!isExpanded); // Here we change state
+  const handlePreview = () => {
+    setExpanded(!isExpanded); //change state
   };
 
   if (props.length === 0) return <p>No component props found for {of} 😔</p>;
@@ -101,8 +101,9 @@ const Props: React.FC<PropsProps> = ({ of }) => {
         </tr>
       </thead>
       <tbody>
-        {props.map((prop, index) => {
-          if (!expand || index < 5 || isExpanded) {
+        {props
+          .slice(0, expand && !isExpanded ? 5 : props.length)
+          .map((prop) => {
             return (
               <tr key={prop.name}>
                 <td>{prop.name}</td>
@@ -111,39 +112,31 @@ const Props: React.FC<PropsProps> = ({ of }) => {
                 <td>{prop.description}</td>
               </tr>
             );
-          }
-        })}
-        {expand && !isExpanded && (
-          <tr key="expand">
+          })}
+        {expand && (
+          <tr>
             <td colSpan={4}>
-              <button
-                className={styles.propsExpand}
-                onClick={(e) => handlePreview(e)}
-              >
-                See all {props.length} props
-                <ChevronDownIcon
-                  color="blue60"
-                  size="small"
-                  className={styles.iconExpand}
-                />
-              </button>
-            </td>
-          </tr>
-        )}
-        {expand && isExpanded && (
-          <tr key="expand">
-            <td colSpan={4}>
-              <button
-                className={styles.propsExpand}
-                onClick={(e) => handlePreview(e)}
-              >
-                See less props
-                <ChevronUpIcon
-                  color="blue60"
-                  size="small"
-                  className={styles.iconExpand}
-                />
-              </button>
+              {isExpanded ? (
+                <Button className={styles.propsExpand} onClick={handlePreview}>
+                  See less props
+                  <ChevronUpIcon
+                    color="blue60"
+                    size="small"
+                    className={styles.iconExpand}
+                    decorative
+                  />
+                </Button>
+              ) : (
+                <Button className={styles.propsExpand} onClick={handlePreview}>
+                  See all {props.length} props
+                  <ChevronDownIcon
+                    color="blue60"
+                    size="small"
+                    className={styles.iconExpand}
+                    decorative
+                  />
+                </Button>
+              )}
             </td>
           </tr>
         )}

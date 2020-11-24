@@ -1,6 +1,10 @@
 import * as React from "react";
+import { useState } from "react";
 import { ComponentDoc } from "react-docgen-typescript";
 import { usePluginData } from "@docusaurus/useGlobalData";
+import { Button } from "reakit/Button";
+import styles from "./styles.module.css";
+import { ChevronDownIcon } from "@twilio-labs/match-icons-twilio";
 
 interface PropsProps {
   of: string;
@@ -69,7 +73,19 @@ const Props: React.FC<PropsProps> = ({ of }) => {
     );
   }, [docgens, of]);
 
+  /**
+   * Toggle the expansion of the props table when the button is clicked
+   * The table will have an expansion option if there are more than 8 props
+   * If it has the expansion button, it will initially show 5 props
+   */
+  const [isExpanded, setExpanded] = useState(false);
+
+  const handlePreview = () => {
+    setExpanded(!isExpanded); //change state
+  };
+
   if (props.length === 0) return <p>No component props found for {of} 😔</p>;
+  const expand = props.length > 8 ? true : false;
 
   return (
     <table>
@@ -82,14 +98,33 @@ const Props: React.FC<PropsProps> = ({ of }) => {
         </tr>
       </thead>
       <tbody>
-        {props.map((prop) => (
-          <tr key={prop.name}>
-            <td>{prop.name}</td>
-            <td>{prop.type}</td>
-            <td>{prop.default}</td>
-            <td>{prop.description}</td>
+        {props
+          .slice(0, expand && !isExpanded ? 5 : props.length)
+          .map((prop) => {
+            return (
+              <tr key={prop.name}>
+                <td>{prop.name}</td>
+                <td>{prop.type}</td>
+                <td>{prop.default}</td>
+                <td>{prop.description}</td>
+              </tr>
+            );
+          })}
+        {expand && !isExpanded && (
+          <tr>
+            <td colSpan={4}>
+              <Button className={styles.propsExpand} onClick={handlePreview}>
+                See all {props.length} props
+                <ChevronDownIcon
+                  color="blue60"
+                  size="small"
+                  className={styles.iconExpand}
+                  decorative
+                />
+              </Button>
+            </td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );

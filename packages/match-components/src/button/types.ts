@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export enum ButtonVariant {
   PRIMARY = "primary",
   SECONDARY = "secondary",
@@ -23,7 +21,6 @@ export interface ButtonProps
   variant?: ButtonVariant;
   type?: ButtonType;
   size?: ButtonSize;
-  icon?: React.ReactElement;
   /** Should the button include an animated prompt? */
   prompt?: boolean;
   /** A URL to route to. The button's 'type' attribute will be ignored. */

@@ -35,6 +35,7 @@
     "react": "16.x",
     "react-dom": "16.x",
     "react-is": "16.x",
+    "react-uid": "2.x",
     "reakit": "1.x",
     "styled-components": "5.x",
     "styled-system": "5.x"
@@ -64,6 +65,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-is": "16.13.1",
+    "react-uid": "2.3.0",
     "reakit": "1.2.5",
     "rollup": "2.33.1",
     "rollup-config-match": "workspace:configs/rollup",

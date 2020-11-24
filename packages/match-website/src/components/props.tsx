@@ -82,16 +82,26 @@ const Props: React.FC<PropsProps> = ({ of }) => {
    * If it has the expansion button, it will initially show 5 props
    */
   const [isExpanded, setExpanded] = useState(false);
+  const [tableHeight, setTableHeight] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
 
   const handlePreview = () => {
     setExpanded(!isExpanded); //change state
+    setWindowHeight(window.pageYOffset);
   };
 
   if (props.length === 0) return <p>No component props found for {of} 😔</p>;
   const expand = props.length > 8 ? true : false;
 
   return (
-    <table>
+    <table
+      //if I get rid of this, it will no longer maintain scroll position
+      ref={(propsTable) => {
+        if (!propsTable) return;
+        setTableHeight(propsTable.getBoundingClientRect().height);
+        console.log(tableHeight);
+      }}
+    >
       <thead>
         <tr>
           <th>Name</th>
@@ -117,15 +127,21 @@ const Props: React.FC<PropsProps> = ({ of }) => {
           <tr>
             <td colSpan={4}>
               {isExpanded ? (
-                <Button className={styles.propsExpand} onClick={handlePreview}>
-                  See less props
-                  <ChevronUpIcon
-                    color="blue60"
-                    size="small"
-                    className={styles.iconExpand}
-                    decorative
-                  />
-                </Button>
+                (window.scrollTo(0, windowHeight), //sets scroll position to what it was before button press
+                (
+                  <Button
+                    className={styles.propsExpand}
+                    onClick={handlePreview}
+                  >
+                    See less props
+                    <ChevronUpIcon
+                      color="blue60"
+                      size="small"
+                      className={styles.iconExpand}
+                      decorative
+                    />
+                  </Button>
+                ))
               ) : (
                 <Button className={styles.propsExpand} onClick={handlePreview}>
                   See all {props.length} props

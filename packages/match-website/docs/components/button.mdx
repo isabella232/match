@@ -5,7 +5,6 @@ sidebar_label: Button
 slug: /components/button/
 ---
 
-import { Button } from "@twilio-labs/match-components";
 import { Props } from "../../src/components/props";
 import { ThemeSwitcher } from "../../src/components/theme-switcher";
 
@@ -63,7 +62,7 @@ Here are some quick accessibility tips to ensure a positive user experience for 
 
 Use a button to indicate that users can trigger an action.
 
-In general, align buttons to the direction of the text (e.g., left-aligned in English) for easy scannability.
+In general, align buttons to the direction of the text (e.g., left-aligned in English) for easy scanability.
 
 When moving customers through a sequence, place the primary button in the direction of the movement (e.g., a “Next” button goes on the right in an English-language flow).
 
@@ -119,4 +118,25 @@ Disabled buttons will not receive any click events. It should be obvious to the 
 
 ```jsx live
 <Button disabled>Submit</Button>
+```
+
+### Text and Icon
+
+Buttons of any variety and size may include an icon from one of the [Match icon libraries](/docs/components/icon). Always place icons to the right of the button text.
+
+```jsx live
+<Button>
+  Download
+  <DownloadIcon decorative />
+</Button>
+```
+
+### Icon Only
+
+Icon only buttons must use the `icon` size, but may be used with any variant. Be sure to include a descriptive title for your icon.
+
+```jsx live
+<Button size="icon">
+  <ExpandIcon title="expand" />
+</Button>
 ```

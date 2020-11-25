@@ -23,6 +23,15 @@ exports[`Button snapshot 1`] = `
   -moz-outline-radius: 4px;
 }
 
+.c1 .sc-dlfnbm {
+  width: 0.75em;
+  height: 0.75em;
+  margin-bottom: 0.15em;
+  margin-left: 0.75em;
+  color: inherit;
+  vertical-align: middle;
+}
+
 .c1:hover {
   color: #043CB5;
 }

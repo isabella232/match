@@ -16,7 +16,7 @@ exports[`Button snapshot 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-style: solid;
-  border-width: 2px;
+  border-width: 0.125rem;
   border-radius: 4px;
   cursor: pointer;
   -webkit-transition-duration: 0.2s;
@@ -25,7 +25,8 @@ exports[`Button snapshot 1`] = `
   transition-property: color,background,border;
   -webkit-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
-  padding: calc(16px - 2px) calc(24px - 2px);
+  line-height: 1rem;
+  padding: calc(1rem - 0.125rem) calc(1.5rem - 0.125rem);
   font-size: 1rem;
   color: #FFFFFF;
   background: #0263E0;
@@ -47,18 +48,29 @@ exports[`Button snapshot 1`] = `
   cursor: not-allowed;
 }
 
-.c1:hover .sc-dlfnbm::before {
+.c1:hover .sc-hKgILt::before {
   -webkit-transform: rotate(-45deg) translateX(calc(0.625rem - 0.125rem)) translateY(calc(0.625rem - 0.125rem));
   -ms-transform: rotate(-45deg) translateX(calc(0.625rem - 0.125rem)) translateY(calc(0.625rem - 0.125rem));
   transform: rotate(-45deg) translateX(calc(0.625rem - 0.125rem)) translateY(calc(0.625rem - 0.125rem));
 }
 
-.c1:hover .sc-dlfnbm::after {
+.c1:hover .sc-hKgILt::after {
   -webkit-transform: translateX(calc(-0.625rem / 2)) translateY(calc(-0.625rem / 2 + 0.125rem / 2)) scaleX(1.5);
   -ms-transform: translateX(calc(-0.625rem / 2)) translateY(calc(-0.625rem / 2 + 0.125rem / 2)) scaleX(1.5);
   transform: translateX(calc(-0.625rem / 2)) translateY(calc(-0.625rem / 2 + 0.125rem / 2)) scaleX(1.5);
   -webkit-animation: none;
   animation: none;
+}
+
+.c1 .sc-dlfnbm {
+  margin-left: 0.5em;
+  color: inherit;
+  vertical-align: middle;
+}
+
+.c1 .sc-dlfnbm {
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 .c1:hover {

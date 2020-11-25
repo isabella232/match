@@ -10,6 +10,7 @@ module.exports = {
       "components/anchor",
       "components/button",
       "components/card",
+      "components/grid",
       "components/icon",
       "components/visually-hidden",
     ],

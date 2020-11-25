@@ -4564,6 +4564,7 @@ __metadata:
     "@docusaurus/theme-search-algolia": 2.0.0-alpha.68
     "@mdx-js/react": 1.6.21
     "@twilio-labs/match-components": "workspace:packages/match-components"
+    "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product"
     "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio"
     "@twilio-labs/match-props": "workspace:packages/match-props"
     "@twilio-labs/match-themes": "workspace:packages/match-themes"

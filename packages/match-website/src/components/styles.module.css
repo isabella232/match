@@ -1,0 +1,21 @@
+.propsExpand {
+  margin: var(--ifm-table-cell-padding) 0px;
+  padding: 0px;
+  color: var(--color-blue-60);
+  font-size: var(--font-size-100);
+  font-family: var(--ifm-font-family-base);
+  background-color: transparent;
+  border-width: 0px;
+}
+
+.propsExpand:hover {
+  color: var(--color-blue-70);
+}
+
+.iconExpand {
+  margin-left: var(--space-scale-20);
+}
+
+.propsExpand:hover .iconExpand {
+  color: var(--color-blue-70);
+}

@@ -232,9 +232,9 @@ const StyledButton = styled(Button).withConfig({
   }
 
   ${StyledIcon} {
+    margin-left: 0.5em;
     color: inherit;
     vertical-align: middle;
-    margin-left: 0.5em;
   }
 
   ${({ fullWidth }) =>

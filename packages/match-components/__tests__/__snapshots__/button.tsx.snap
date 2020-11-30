@@ -62,13 +62,13 @@ exports[`Button snapshot 1`] = `
   animation: none;
 }
 
-.c1 .sc-dlfnbm {
+.c1 .sc-gsTCUz {
   margin-left: 0.5em;
   color: inherit;
   vertical-align: middle;
 }
 
-.c1 .sc-dlfnbm {
+.c1 .sc-gsTCUz {
   width: 0.75rem;
   height: 0.75rem;
 }

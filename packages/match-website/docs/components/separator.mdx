@@ -1,0 +1,72 @@
+---
+id: separator
+title: Separator
+sidebar_label: Separator
+slug: /components/separator/
+---
+
+import { Anchor } from "@twilio-labs/match-components";
+import { Props } from "../../src/components/props";
+import { ThemeSwitcher } from "../../src/components/theme-switcher";
+
+Separators are used to separate page sections or UI elements. They take the width of their parent container.
+
+**Sources:** <Anchor href="https://github.com/twilio-labs/match/tree/main/packages/match-components/src/separator">GitHub</Anchor>
+
+### Installation
+
+```shell
+yarn add @twilio-labs/match-components
+```
+
+### Usage
+
+```jsx
+import { Separator } from "@twilio-labs/match-components";
+
+const Component = () => <Separator />;
+```
+
+### Props
+
+<Props of="Separator" />
+
+---
+
+## Guidelines
+
+### About Separators
+
+The separator can be used to help visually divide two groups of menu items in a menu or to provide a horizontal rule between two sections of a page.
+
+### Accessibility
+
+Note: The plain divider in gray20 is not color contrast accessible and is intended for visual embellishment. Use it paired with white space to create enough visual space between elements.
+
+---
+
+## Composition
+
+Use the separator to help separate page sections with differing content
+
+---
+
+## Examples
+
+<ThemeSwitcher />
+
+### Primary
+
+The primary variant is the default, and should be used on areas where the dominant background color is close to white.
+
+```jsx live
+<Separator />
+```
+
+### Inverse
+
+The inverse variant should be used on areas where the dominant background color is dark
+
+```jsx live bg=darkest
+<Separator variant="inverse" />
+```

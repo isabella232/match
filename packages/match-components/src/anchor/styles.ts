@@ -61,7 +61,7 @@ const StyledAnchor = styled.a<AnchorProps>`
     width: 0.75em;
     height: 0.75em;
     margin-bottom: 0.15em;
-    margin-left: 0.75em;
+    margin-left: 0.5em;
     color: inherit;
     vertical-align: middle;
   }

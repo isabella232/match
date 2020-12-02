@@ -12,6 +12,7 @@ module.exports = {
       "components/card",
       "components/grid",
       "components/icon",
+      "components/separator",
       "components/visually-hidden",
     ],
     ["Instapage"]: [

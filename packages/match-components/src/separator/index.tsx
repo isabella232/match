@@ -15,5 +15,10 @@ Separator.propTypes = {
 
 Separator.displayName = "Separator";
 
+Separator.defaultProps = {
+  variant: SeparatorVariant.PRIMARY,
+  marginY: "scale20",
+};
+
 export { Separator, SeparatorVariant };
 export type { SeparatorProps };

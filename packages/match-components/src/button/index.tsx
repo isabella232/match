@@ -5,32 +5,31 @@ import { StyledButton, StyledPrompt } from "./styles";
 import { ButtonVariant, ButtonType, ButtonSize } from "./types";
 import type { ButtonProps } from "./types";
 
-const Button: React.FC<ButtonProps> = ({
-  type,
-  prompt,
-  children,
-  ...props
-}) => {
-  if (props.download && !props.href)
-    console.warn("[Button]: Href must be provided for a download link.");
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ type, prompt, children, ...props }, ref) => {
+    if (props.download && !props.href) {
+      console.warn("[Button]: Href must be provided for a download link.");
+    }
 
-  return (
-    <StyledButton
-      forwardedAs={props.href ? "a" : undefined}
-      type={!props.href ? type : undefined}
-      {...props}
-    >
-      {Array.isArray(children)
-        ? children.map((child) => {
-            if (React.isValidElement(child))
-              return React.cloneElement(child, { key: uid(child) });
-            if (typeof child === "string") return child.trim();
-          })
-        : children}
-      {prompt && <StyledPrompt />}
-    </StyledButton>
-  );
-};
+    return (
+      <StyledButton
+        ref={ref}
+        forwardedAs={props.href ? "a" : "button"}
+        type={!props.href ? type : undefined}
+        {...props}
+      >
+        {Array.isArray(children)
+          ? children.map((child) => {
+              if (React.isValidElement(child))
+                return React.cloneElement(child, { key: uid(child) });
+              if (typeof child === "string") return child.trim();
+            })
+          : children}
+        {prompt && <StyledPrompt />}
+      </StyledButton>
+    );
+  }
+);
 
 Button.propTypes = {
   variant: PropTypes.oneOf(Object.values(ButtonVariant)),

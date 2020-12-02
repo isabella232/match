@@ -30,6 +30,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
     );
   }
 );
+
 Anchor.displayName = "Anchor";
 
 Anchor.propTypes = {

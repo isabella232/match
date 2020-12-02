@@ -23,6 +23,7 @@
     "docgen",
     "sendgrid",
     "twilio",
+    "cta",
     "semver",
     "svgr",
     "pypi",
@@ -31,7 +32,9 @@
     "noreferrer",
     "noopener",
     "wcag",
-    "clsx"
+    "clsx",
+    "yarnrc",
+    "npmrc"
   ],
   "cSpell.allowCompoundWords": true,
   "cSpell.enableFiletypes": ["mdx"],

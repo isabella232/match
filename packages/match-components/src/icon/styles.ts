@@ -4,7 +4,7 @@ import { iconSize } from "@twilio-labs/match-props";
 import type { IconProps } from "./types";
 
 const StyledIcon = styled.span<IconProps>`
-  display: inline-block;
+  display: inline-flex;
   line-height: 1;
   ${compose(color, iconSize)}
 `;

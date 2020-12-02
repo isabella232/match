@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
+import { uid } from "react-uid";
 import { StyledAnchor } from "./styles";
 import { AnchorVariant } from "./types";
 import type { AnchorTarget, AnchorProps } from "./types";
@@ -15,12 +16,21 @@ const secureExternalLink = (
 };
 
 const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
-  ({ ...props }, ref) => {
+  ({ children, ...props }, ref) => {
     return (
-      <StyledAnchor ref={ref} {...secureExternalLink(props.href)} {...props} />
+      <StyledAnchor ref={ref} {...secureExternalLink(props.href)} {...props}>
+        {Array.isArray(children)
+          ? children.map((child) => {
+              if (React.isValidElement(child))
+                return React.cloneElement(child, { key: uid(child) });
+              if (typeof child === "string") return child.trim();
+            })
+          : children}
+      </StyledAnchor>
     );
   }
 );
+
 Anchor.displayName = "Anchor";
 
 Anchor.propTypes = {

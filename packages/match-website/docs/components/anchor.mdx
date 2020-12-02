@@ -5,13 +5,12 @@ sidebar_label: Anchor
 slug: /components/anchor/
 ---
 
-import { Anchor } from "@twilio-labs/match-components";
 import { Props } from "../../src/components/props";
 import { ThemeSwitcher } from "../../src/components/theme-switcher";
 
 Anchors are hyperlinks that take users to another page or a section on a page. They are found throughout the interface, both on their own line and inline with text.
 
-**Sources:** <Anchor href="https://github.com/twilio-labs/match/tree/main/packages/match-components/src/anchor">GitHub</Anchor>
+**Sources:** [GitHub](https://github.com/twilio-labs/match/tree/main/packages/match-components/src/anchor)
 
 ## Usage Guide
 
@@ -45,7 +44,7 @@ use a button.
 The button component can also be used as a CTA anchor when the href prop is included. In this situation the element looks like a button but
 renders as an anchor.
 
-Learn more about the <Anchor href="/docs/components/button">button component</Anchor> to determine if it will fit your needs better.
+Learn more about the [button component](/docs/components/button) to determine if it will fit your needs better.
 
 ### Accessibility
 
@@ -53,7 +52,7 @@ Here are some quick accessibility tips to ensure a positive user experience for 
 
 - Avoid using only color to communicate information. Use another indicator, such as an underline.
 - Screen Reader users may choose to navigate by links instead of reading the full page, so anchor text needs to make sense without the surrounding
-  sentences or content. When this is not possible use the <Anchor href="/docs/components/visually-hidden">visually hidden component</Anchor> to supply additional information to users.
+  sentences or content. When this is not possible use the [visually hidden component](/docs/components/visually-hidden) to supply additional information to users.
 
 **Note**: The title attribute was not included because it is not exposed by all browsers in an accessible way, meaning that users navigating
 with assistive technology may never see that information.
@@ -85,7 +84,7 @@ The primary link is the most common variation and can be used on any light backg
 
 Inverse anchors are designed to be accessible on dark backgrounds.
 
-**Note:** Inverse anchors are not accessible on SendGrid Blue backgrounds, use a <Anchor href="../button">button</Anchor> instead.
+**Note:** Inverse anchors are not accessible on SendGrid Blue backgrounds, use a [button](/docs/components/button) instead.
 
 ```jsx live bg=darkest
 <Anchor variant="inverse" href="/docs/design-tokens/tokens">
@@ -141,4 +140,15 @@ that the text is an anchor. Consider using an icon as an additional indicator th
     twilio.com
   </Anchor>
 </p>
+```
+
+### Icon
+
+Anchors may include an icon from one of the [Match icon libraries](/docs/components/icon). Always place icons to the right of the link text.
+
+```jsx live
+<Anchor href="https://sendgrid.com">
+  Send with confidence
+  <OutboundIcon decorative />
+</Anchor>
 ```

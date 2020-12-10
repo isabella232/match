@@ -15,6 +15,12 @@
   border-top-color: var(--color-red-60);
 }
 
+@media (max-width: 996px) {
+  .crime {
+    grid-column: 1;
+  }
+}
+
 .heading {
   display: flex;
   gap: 1ch;

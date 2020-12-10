@@ -1,0 +1,30 @@
+.virtue,
+.crime {
+  padding: 24px 24px 32px 24px;
+  background: var(--color-white);
+  border-top: 8px solid;
+  border-radius: 3px;
+  box-shadow: var(--shadow-image);
+}
+.virtue {
+  grid-column: 1;
+  border-top-color: var(--color-green-60);
+}
+.crime {
+  grid-column: 2;
+  border-top-color: var(--color-red-60);
+}
+
+.heading {
+  display: flex;
+  gap: 1ch;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.virtue > .heading svg {
+  color: var(--color-green-60);
+}
+.crime > .heading svg {
+  color: var(--color-red-60);
+}

@@ -29,6 +29,7 @@ export interface SnippetProps {
   showLineNumbers?: boolean;
   wrapLines?: boolean;
   isGrouped?: boolean;
+  maxLines?: number;
 }
 
 export interface SnippetActionsProps {
@@ -39,16 +40,16 @@ export interface SnippetActionsProps {
 
 export interface SnippetGroupProps {
   variant?: SnippetVariant;
-  children: React.ReactElement<SnippetProps>[];
+  children: Array<React.ReactElement<SnippetProps>>;
   title?: string;
-}
-
-export interface SnippetSelectorProps {
-  children: React.ReactElement<SnippetGroupProps>[];
+  githubLink?: string;
+  compact?: boolean;
 }
 
 export interface StyledSnippetProps {
   variant?: SnippetVariant;
   isSingleLine: boolean;
   verticalScrollPos?: string;
+  maxLines?: number;
+  showLineNumbers?: boolean;
 }

@@ -1,39 +1,54 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import { useTabState, Tab, TabList, TabPanel } from "reakit/Tab";
-import type { SnippetGroupProps, SnippetProps } from "./types";
+import { useTabState, TabPanel } from "reakit/Tab";
+import { useUIDSeed } from "react-uid";
+import type { SnippetGroupProps } from "./types";
 import { SnippetVariant } from "./types";
-import { StyledSnippetGroup, StyledSnippetHeader } from "./styles";
+import {
+  StyledSnippetGroup,
+  StyledSnippetHeader,
+  StyledSnippetTitle,
+  StyledTab,
+  StyledTabList,
+} from "./styles";
 import { SnippetActions } from "./snippet-actions";
 
-const SnippetGroup: React.FC<SnippetGroupProps> = ({ variant, children }) => {
+const SnippetGroup: React.FC<SnippetGroupProps> = ({
+  title,
+  variant,
+  children,
+}) => {
   const tab = useTabState();
-  const snippetTabs = React.Children.toArray(children);
-  const [code, setCode] = React.useState(snippetTabs[0].props.children);
-  const [githubLink, setGithubLink] = React.useState(
-    snippetTabs[0].props.githubLink
-  );
+  const seed = useUIDSeed();
+  const [code, setCode] = React.useState("");
+  const [githubLink, setGithubLink] = React.useState("");
 
   React.useEffect(() => {
     if (!tab.selectedId) return;
-    const activeTab = snippetTabs.find(
-      (snippetTab) => snippetTab.key === tab.selectedId
+    const activeTab = React.Children.toArray(children).find(
+      (child) =>
+        React.isValidElement(child) &&
+        tab.selectedId === seed(child.props.children)
     );
-    if (!activeTab) return;
+    if (!React.isValidElement(activeTab)) return;
     setCode(activeTab.props.children);
     setGithubLink(activeTab.props.githubLink);
-  }, [tab.selectedId]);
+  }, [tab.selectedId, children, seed]);
 
   return (
-    <StyledSnippetGroup>
+    <StyledSnippetGroup variant={variant}>
       <StyledSnippetHeader variant={variant}>
-        <TabList {...tab} aria-label="Languages">
-          {snippetTabs.map(({ key, props: { language } }) => (
-            <Tab {...tab} id={key} key={key}>
-              {language}
-            </Tab>
-          ))}
-        </TabList>
+        {title && <StyledSnippetTitle>{title}</StyledSnippetTitle>}
+        <StyledTabList {...tab} aria-label="Languages">
+          {React.Children.map(
+            children,
+            ({ props: { language, children: code } }) => (
+              <StyledTab {...tab} id={seed(code)}>
+                {language}
+              </StyledTab>
+            )
+          )}
+        </StyledTabList>
         <SnippetActions variant={variant} code={code} githubLink={githubLink} />
       </StyledSnippetHeader>
       {React.Children.map(children, (child) => (
@@ -48,10 +63,13 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({ variant, children }) => {
 SnippetGroup.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
   variant: PropTypes.oneOf(Object.values(SnippetVariant)),
+  title: PropTypes.string,
+  compact: PropTypes.bool,
 };
 
 SnippetGroup.defaultProps = {
   variant: SnippetVariant.DARK,
+  compact: false,
 };
 
 SnippetGroup.displayName = "SnippetGroup";

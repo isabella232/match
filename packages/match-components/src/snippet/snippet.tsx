@@ -19,6 +19,7 @@ import type { SnippetProps } from "./types";
 import {
   StyledSnippet,
   StyledSnippetHeader,
+  StyledSnippetTitle,
   StyledSnippetBody,
   StyledHighlighter,
 } from "./styles";
@@ -44,13 +45,15 @@ const Snippet: React.FC<SnippetProps> = ({
   githubLink,
   isGrouped,
   variant,
+  showLineNumbers,
+  maxLines,
   ...props
 }) => {
   const [verticalScrollPos, setVerticalScrollPos] = React.useState("left");
-
-  const isSingleLine = !/\r|\n/.test(children);
+  const lineCount = children.split(/\n/g).length;
+  const lineNumberWidth = lineCount.toString().length;
+  const isSingleLine = Boolean(!wrapLines && lineCount === 1);
   const isShell = Boolean(language === SnippetLanguage.SHELL);
-  const isBash = Boolean(language === SnippetLanguage.BASH);
 
   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
     if (e.currentTarget.scrollLeft === 0) {
@@ -69,8 +72,12 @@ const Snippet: React.FC<SnippetProps> = ({
     <StyledSnippet variant={variant} isSingleLine={isSingleLine}>
       {!isSingleLine && !isGrouped && (
         <StyledSnippetHeader variant={variant}>
-          <div>{title ? title : language}</div>
-          <SnippetActions code={children} githubLink={githubLink} />
+          <StyledSnippetTitle>{title ? title : language}</StyledSnippetTitle>
+          <SnippetActions
+            variant={variant}
+            code={children}
+            githubLink={githubLink}
+          />
         </StyledSnippetHeader>
       )}
       <StyledSnippetBody
@@ -79,16 +86,24 @@ const Snippet: React.FC<SnippetProps> = ({
         verticalScrollPos={verticalScrollPos}
       >
         <StyledHighlighter
+          tabIndex={0}
           isSingleLine={isSingleLine}
           variant={variant}
+          maxLines={maxLines}
           onScroll={isSingleLine ? handleScroll : undefined}
         >
           <SyntaxHighlighter
             {...props}
             language={language}
-            showLineNumbers={!isShell && !isBash && props.showLineNumbers}
-            wrapLongLines={wrapLines}
+            showLineNumbers={!isSingleLine && !isShell && showLineNumbers}
+            wrapLongLines={showLineNumbers && wrapLines}
+            wrapLines={true}
             useInlineStyles={false}
+            lineNumberStyle={{
+              paddingRight: undefined,
+              minWidth: `${lineNumberWidth}ch`,
+            }}
+            lineProps={{ style: { display: "flex" } }}
           >
             {isShell && isSingleLine && !children.startsWith("$")
               ? `$ ${children}`
@@ -113,6 +128,9 @@ Snippet.propTypes = {
   title: PropTypes.string,
   showLineNumbers: PropTypes.bool,
   wrapLines: PropTypes.bool,
+  githubLink: PropTypes.string,
+  isGrouped: PropTypes.bool,
+  maxLines: PropTypes.number,
 };
 
 Snippet.defaultProps = {

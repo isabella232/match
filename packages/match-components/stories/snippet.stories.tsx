@@ -91,10 +91,19 @@ MultiLine.args = {
   title: "Multi Line Snippet",
 };
 
-export const Group: Story<SnippetGroupProps> = (args) => (
-  <SnippetGroup {...args}>
-    <Snippet language={SnippetLanguage.JAVASCRIPT}>{jsExample}</Snippet>
-    <Snippet language={SnippetLanguage.PYTHON}>{pythonExample}</Snippet>
+export const Group: Story<SnippetGroupProps> = ({
+  variant,
+  title,
+  compact,
+  ...props
+}: SnippetGroupProps) => (
+  <SnippetGroup variant={variant} title={title} compact={compact}>
+    <Snippet {...props} language={SnippetLanguage.JAVASCRIPT}>
+      {jsExample}
+    </Snippet>
+    <Snippet {...props} language={SnippetLanguage.PYTHON}>
+      {pythonExample}
+    </Snippet>
   </SnippetGroup>
 );
 Group.args = {
@@ -103,22 +112,7 @@ Group.args = {
   compact: false,
 };
 Group.argTypes = {
-  variant: {
-    control: { type: "select", options: Object.values(SnippetVariant) },
-  },
-  title: {
-    control: { type: "text" },
-  },
   compact: {
     control: { type: "boolean" },
-  },
-  githubLink: {
-    table: { disable: true },
-  },
-  wrapLines: {
-    table: { disable: true },
-  },
-  showLineNumbers: {
-    table: { disable: true },
   },
 };

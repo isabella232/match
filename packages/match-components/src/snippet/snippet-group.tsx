@@ -4,6 +4,7 @@ import { useTabState, TabPanel } from "reakit/Tab";
 import { useUIDSeed } from "react-uid";
 import { VisuallyHidden } from "../visually-hidden";
 import { ChevronDownIcon } from "./chevron-down-icon";
+import { getLanguageNiceName } from "./get-language-nice-name";
 import type { SnippetGroupProps } from "./types";
 import { SnippetVariant } from "./types";
 import {
@@ -47,16 +48,18 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
     <StyledSnippetGroup variant={variant} compact={compact}>
       <StyledSnippetHeader variant={variant}>
         {title && <StyledSnippetTitle>{title}</StyledSnippetTitle>}
-        <StyledTabList {...tab} aria-label="Languages">
-          {React.Children.map(
-            children,
-            ({ props: { language, children: code } }) => (
-              <StyledTab {...tab} id={seed(code)}>
-                {language}
-              </StyledTab>
-            )
-          )}
-        </StyledTabList>
+        {!compact && (
+          <StyledTabList {...tab} aria-label="Languages">
+            {React.Children.map(
+              children,
+              ({ props: { title, language, children: code } }) => (
+                <StyledTab {...tab} id={seed(code)}>
+                  {title ? title : getLanguageNiceName(language)}
+                </StyledTab>
+              )
+            )}
+          </StyledTabList>
+        )}
         <StyledSnippetSelect>
           <VisuallyHidden>
             <label htmlFor={seed("language-select")}>Languages</label>
@@ -68,12 +71,14 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
           >
             {React.Children.map(
               children,
-              ({ props: { language, children: code } }) => (
-                <option value={seed(code)}>{language}</option>
+              ({ props: { title, language, children: code } }) => (
+                <option value={seed(code)}>
+                  {title ? title : getLanguageNiceName(language)}
+                </option>
               )
             )}
           </select>
-          <ChevronDownIcon decorative size="medium" color="white" />
+          <ChevronDownIcon decorative size="medium" />
         </StyledSnippetSelect>
         <SnippetActions variant={variant} code={code} githubLink={githubLink} />
       </StyledSnippetHeader>

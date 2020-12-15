@@ -13,6 +13,7 @@ import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash";
 import shell from "react-syntax-highlighter/dist/esm/languages/prism/shell-session";
 import go from "react-syntax-highlighter/dist/esm/languages/prism/go";
 import groovy from "react-syntax-highlighter/dist/esm/languages/prism/groovy";
+import { getLanguageNiceName } from "./get-language-nice-name";
 import { SnippetActions } from "./snippet-actions";
 import { SnippetLanguage, SnippetVariant } from "./types";
 import type { SnippetProps } from "./types";
@@ -72,7 +73,9 @@ const Snippet: React.FC<SnippetProps> = ({
     <StyledSnippet variant={variant} isSingleLine={isSingleLine}>
       {!isSingleLine && !isGrouped && (
         <StyledSnippetHeader variant={variant}>
-          <StyledSnippetTitle>{title ? title : language}</StyledSnippetTitle>
+          <StyledSnippetTitle>
+            {title ? title : getLanguageNiceName(language)}
+          </StyledSnippetTitle>
           <SnippetActions
             variant={variant}
             code={children}
@@ -100,6 +103,10 @@ const Snippet: React.FC<SnippetProps> = ({
             wrapLines={true}
             useInlineStyles={false}
             lineNumberStyle={{
+              display:
+                !isSingleLine && !isShell && showLineNumbers
+                  ? "inline-block"
+                  : "none",
               paddingRight: undefined,
               minWidth: `${lineNumberWidth}ch`,
             }}

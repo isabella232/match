@@ -2,12 +2,15 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { useTabState, TabPanel } from "reakit/Tab";
 import { useUIDSeed } from "react-uid";
+import { VisuallyHidden } from "../visually-hidden";
+import { ChevronDownIcon } from "./chevron-down-icon";
 import type { SnippetGroupProps } from "./types";
 import { SnippetVariant } from "./types";
 import {
   StyledSnippetGroup,
   StyledSnippetHeader,
   StyledSnippetTitle,
+  StyledSnippetSelect,
   StyledTab,
   StyledTabList,
 } from "./styles";
@@ -22,6 +25,10 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
   const seed = useUIDSeed();
   const [code, setCode] = React.useState("");
   const [githubLink, setGithubLink] = React.useState("");
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    tab.select(e.currentTarget.value);
+  };
 
   React.useEffect(() => {
     if (!tab.selectedId) return;
@@ -49,6 +56,24 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
             )
           )}
         </StyledTabList>
+        <StyledSnippetSelect>
+          <VisuallyHidden>
+            <label htmlFor={seed("language-select")}>Languages</label>
+          </VisuallyHidden>
+          <select
+            value={tab.selectedId ? tab.selectedId : undefined}
+            id={seed("language-select")}
+            onChange={handleSelectChange}
+          >
+            {React.Children.map(
+              children,
+              ({ props: { language, children: code } }) => (
+                <option value={seed(code)}>{language}</option>
+              )
+            )}
+          </select>
+          <ChevronDownIcon decorative size="medium" color="white" />
+        </StyledSnippetSelect>
         <SnippetActions variant={variant} code={code} githubLink={githubLink} />
       </StyledSnippetHeader>
       {React.Children.map(children, (child) => (

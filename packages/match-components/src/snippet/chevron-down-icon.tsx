@@ -3,7 +3,11 @@ import { useUID } from "react-uid";
 import { Icon } from "../icon";
 import type { IconProps } from "../icon";
 
-const CopyIcon: React.FC<IconProps> = ({ title, decorative, ...props }) => {
+const ChevronDownIcon: React.FC<IconProps> = ({
+  title,
+  decorative,
+  ...props
+}) => {
   const titleId = useUID();
 
   if (!decorative && !title) {
@@ -13,30 +17,27 @@ const CopyIcon: React.FC<IconProps> = ({ title, decorative, ...props }) => {
   return (
     <Icon {...props}>
       <svg
+        width="100%"
         height="100%"
         viewBox="0 0 16 16"
-        width="100%"
+        fill="none"
         role="img"
         aria-hidden={decorative}
         aria-labelledby={titleId}
       >
         {title && <title id={titleId}>{title}</title>}
-        <g
-          fill="none"
-          fillRule="evenodd"
+        <path
+          d="M1 5.058l6.619 6.619a.538.538 0 00.762 0L15 5.058"
+          stroke="currentColor"
+          strokeWidth={1.5}
           strokeLinecap="round"
           strokeLinejoin="round"
-        >
-          <g stroke="currentColor" strokeWidth={1.25}>
-            <path d="M15 15H3.692V3.692H15z" />
-            <path d="M1 11.77V2.076C1 1.482 1.482 1 2.077 1h9.692" />
-          </g>
-        </g>
+        />
       </svg>
     </Icon>
   );
 };
 
-CopyIcon.propTypes = { ...Icon.propTypes };
-CopyIcon.defaultProps = { ...Icon.defaultProps };
-export { CopyIcon };
+ChevronDownIcon.propTypes = { ...Icon.propTypes };
+ChevronDownIcon.defaultProps = { ...Icon.defaultProps };
+export { ChevronDownIcon };

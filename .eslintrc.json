@@ -34,11 +34,14 @@
     // https://basarat.gitbook.io/typescript/main-1/defaultisbad
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
+    // Allow unused vars when prefixed with an underscore
     "@typescript-eslint/no-unused-vars": [
       "error",
       { "argsIgnorePattern": "^_" }
     ],
-    "react/prop-types": ["error", { "ignore": ["children"] }]
+    "react/prop-types": ["error", { "ignore": ["children"] }],
+    // no-onchange rule is deprecated.
+    "jsx-a11y/no-onchange": "off"
   },
   "overrides": [
     {

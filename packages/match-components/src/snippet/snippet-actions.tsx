@@ -8,7 +8,6 @@ import {
   StyledSnippetActions,
   StyledTooltip,
   StyledTooltipArrow,
-  StyledCopySuccess,
 } from "./styles";
 import { CopyIcon } from "./copy-icon";
 import { GithubIcon } from "./github-icon";
@@ -20,49 +19,35 @@ const SnippetActions: React.FC<SnippetActionsProps> = ({
 }) => {
   const copyTooltip = useTooltipState();
   const githubTooltip = useTooltipState();
-  const [isCopied, setIsCopied] = React.useState(false);
-  const successRef = React.useRef<HTMLSpanElement>(null);
-
-  React.useEffect(() => {
-    if (isCopied && successRef.current) successRef.current.focus();
-  }, [isCopied]);
+  const [copyMessage, setCopyMessage] = React.useState("");
 
   const copyToClipboard = () => {
     if (!navigator || !navigator.clipboard) return;
-    navigator.clipboard
+    return navigator.clipboard
       .writeText(code)
-      .then(() => {
-        setIsCopied(true);
-        return copyTooltip.hide();
-      })
-      .catch(() => setIsCopied(false));
+      .then(() => setCopyMessage("Copied"))
+      .catch(() => setCopyMessage("Unable to copy"))
+      .finally(() => copyTooltip.hide());
   };
+
+  React.useEffect(() => {
+    if (copyMessage && !copyTooltip.visible) copyTooltip.show();
+  }, [copyMessage, copyTooltip]);
 
   return (
     <StyledSnippetActions variant={variant}>
-      {isCopied ? (
-        <StyledCopySuccess
-          ref={successRef}
-          tabIndex={-1}
-          onBlur={() => setIsCopied(false)}
-        >
-          Copied
-        </StyledCopySuccess>
-      ) : (
-        <>
-          <TooltipReference
-            {...copyTooltip}
-            as={Button}
-            onClick={copyToClipboard}
-          >
-            <CopyIcon decorative />
-          </TooltipReference>
-          <StyledTooltip {...copyTooltip}>
-            {isCopied ? "Copied" : "Copy to clipboard"}
-            <StyledTooltipArrow {...copyTooltip} />
-          </StyledTooltip>
-        </>
-      )}
+      <TooltipReference
+        {...copyTooltip}
+        as={Button}
+        onClick={copyToClipboard}
+        onMouseLeave={() => setCopyMessage("")}
+      >
+        <CopyIcon decorative />
+      </TooltipReference>
+      <StyledTooltip {...copyTooltip}>
+        <span>{copyMessage ? copyMessage : "Copy to clipboard"}</span>
+        <StyledTooltipArrow {...copyTooltip} />
+      </StyledTooltip>
       {githubLink && (
         <>
           <TooltipReference

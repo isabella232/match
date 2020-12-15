@@ -14,7 +14,7 @@ export default {
   component: Snippet,
   args: {
     ...Snippet.defaultProps,
-    title: null,
+    title: "",
     githubLink: "",
     maxLines: 10,
   },
@@ -100,6 +100,7 @@ export const Group: Story<SnippetGroupProps> = (args) => (
 Group.args = {
   title: "Grouped Snippets",
   variant: SnippetVariant.DARK,
+  compact: false,
 };
 Group.argTypes = {
   variant: {
@@ -107,6 +108,9 @@ Group.argTypes = {
   },
   title: {
     control: { type: "text" },
+  },
+  compact: {
+    control: { type: "boolean" },
   },
   githubLink: {
     table: { disable: true },

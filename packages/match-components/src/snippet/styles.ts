@@ -4,19 +4,14 @@ import { themeGet } from "@styled-system/theme-get";
 import { Tooltip, TooltipArrow } from "reakit/Tooltip";
 import { Tab, TabList } from "reakit/Tab";
 import { StyledIcon } from "../icon/styles";
-import type { StyledSnippetProps } from "./types";
+import type { StyledSnippetProps, StyledSnippetGroupProps } from "./types";
 import { SnippetVariant } from "./types";
 
 const StyledSnippetHeader = styled.div<Pick<StyledSnippetProps, "variant">>`
   display: grid;
   grid-column-gap: ${themeGet("space.scale140")};
-  grid-template-columns: auto max-content max-content;
   align-items: center;
   border-radius: 4px 4px 0 0;
-
-  @media ${themeGet("mediaQueries.medium")} {
-    grid-template-columns: auto max-content;
-  }
 
   ${variant({
     variants: {
@@ -88,17 +83,9 @@ const StyledSnippetActions = styled.div<Pick<StyledSnippetProps, "variant">>`
 `;
 
 const StyledSnippetTitle = styled.div`
-  padding: ${themeGet("space.scale140")} 0;
-  padding-left: ${themeGet("space.scale180")};
   font-weight: ${themeGet("fontWeights.medium")};
   font-size: ${themeGet("fontSizes.scale80")};
   line-height: ${themeGet("lineHeights.scale180")};
-
-  @media ${themeGet("mediaQueries.medium")} {
-    padding: ${themeGet("space.scale100")} 0;
-    padding-left: ${themeGet("space.scale260")};
-    line-height: ${themeGet("lineHeights.scale140")};
-  }
 `;
 
 const StyledSnippetBody = styled.div<StyledSnippetProps>`
@@ -291,6 +278,15 @@ const StyledHighlighter = styled.div<StyledSnippetProps>`
 const StyledSnippet = styled.div<StyledSnippetProps>`
   border-radius: 4px;
 
+  ${StyledSnippetHeader} {
+    grid-template-columns: auto max-content;
+  }
+
+  ${StyledSnippetTitle} {
+    padding: ${themeGet("space.scale100")} 0;
+    padding-left: ${themeGet("space.scale260")};
+  }
+
   ${({ isSingleLine }) =>
     isSingleLine &&
     css`
@@ -372,31 +368,54 @@ const StyledSnippetSelect = styled.div`
   }
 `;
 
-const StyledSnippetGroup = styled.div<Pick<StyledSnippetProps, "variant">>`
+const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
   ${StyledSnippet} {
     border-radius: 0 0 4px 4px;
+  }
+
+  ${StyledSnippetHeader} {
+    grid-template-columns: auto max-content max-content;
   }
 
   ${StyledTabList} {
     display: none;
   }
 
-  @media ${themeGet("mediaQueries.medium")} {
-    ${StyledSnippetTitle} {
-      grid-column-end: span 2;
-      border-style: solid;
-      border-width: 0;
-      border-bottom-width: ${themeGet("borderWidths.thin")};
-    }
-
-    ${StyledTabList} {
-      display: flex;
-    }
-
-    ${StyledSnippetSelect} {
-      display: none;
-    }
+  ${StyledSnippetTitle} {
+    padding: ${themeGet("space.scale140")} 0;
+    padding-left: ${themeGet("space.scale180")};
   }
+
+  ${({ compact }) =>
+    !compact &&
+    css`
+      @media ${themeGet("mediaQueries.medium")} {
+        ${StyledSnippetHeader} {
+          grid-template-columns: auto max-content;
+        }
+
+        ${StyledSnippetTitle} {
+          padding: ${themeGet("space.scale100")} 0;
+          padding-left: ${themeGet("space.scale260")};
+          line-height: ${themeGet("lineHeights.scale140")};
+        }
+
+        ${StyledSnippetTitle} {
+          grid-column-end: span 2;
+          border-style: solid;
+          border-width: 0;
+          border-bottom-width: ${themeGet("borderWidths.thin")};
+        }
+
+        ${StyledTabList} {
+          display: flex;
+        }
+
+        ${StyledSnippetSelect} {
+          display: none;
+        }
+      }
+    `}
 
   ${variant({
     variants: {

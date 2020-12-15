@@ -20,6 +20,7 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
   title,
   variant,
   children,
+  compact,
 }) => {
   const tab = useTabState();
   const seed = useUIDSeed();
@@ -43,7 +44,7 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
   }, [tab.selectedId, children, seed]);
 
   return (
-    <StyledSnippetGroup variant={variant}>
+    <StyledSnippetGroup variant={variant} compact={compact}>
       <StyledSnippetHeader variant={variant}>
         {title && <StyledSnippetTitle>{title}</StyledSnippetTitle>}
         <StyledTabList {...tab} aria-label="Languages">

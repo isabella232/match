@@ -46,6 +46,11 @@ export interface SnippetGroupProps {
   compact?: boolean;
 }
 
+export interface StyledSnippetGroupProps {
+  variant?: SnippetVariant;
+  compact?: boolean;
+}
+
 export interface StyledSnippetProps {
   variant?: SnippetVariant;
   isSingleLine: boolean;

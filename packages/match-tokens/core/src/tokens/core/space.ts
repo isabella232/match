@@ -6,6 +6,7 @@ export const space: Sizes = {
   scale20: { value: 8 },
   scale40: { value: 10 },
   scale60: { value: 12 },
+  scale80: { value: 14 },
   scale100: { value: 16 },
   scale140: { value: 20 },
   scale180: { value: 24 },

@@ -50,7 +50,7 @@ const Snippet: React.FC<SnippetProps> = ({
   maxLines,
   ...props
 }) => {
-  const [verticalScrollPos, setVerticalScrollPos] = React.useState("left");
+  const [horizontalScrollPos, setHorizontalScrollPos] = React.useState("left");
   const lineCount = children.split(/\n/g).length;
   const lineNumberWidth = lineCount.toString().length;
   const isSingleLine = Boolean(!wrapLines && lineCount === 1);
@@ -58,14 +58,14 @@ const Snippet: React.FC<SnippetProps> = ({
 
   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
     if (e.currentTarget.scrollLeft === 0) {
-      setVerticalScrollPos("left");
+      setHorizontalScrollPos("left");
     } else if (
       e.currentTarget.scrollLeft ===
       e.currentTarget.scrollWidth - e.currentTarget.clientWidth
     ) {
-      setVerticalScrollPos("right");
+      setHorizontalScrollPos("right");
     } else {
-      setVerticalScrollPos("middle");
+      setHorizontalScrollPos("middle");
     }
   };
 
@@ -86,11 +86,10 @@ const Snippet: React.FC<SnippetProps> = ({
       <StyledSnippetBody
         variant={variant}
         isSingleLine={isSingleLine}
-        verticalScrollPos={verticalScrollPos}
+        horizontalScrollPos={horizontalScrollPos}
       >
         <StyledHighlighter
           tabIndex={0}
-          isSingleLine={isSingleLine}
           variant={variant}
           maxLines={maxLines}
           onScroll={isSingleLine ? handleScroll : undefined}

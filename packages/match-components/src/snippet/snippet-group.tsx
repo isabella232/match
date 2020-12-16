@@ -36,11 +36,10 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
     if (!tab.selectedId) return;
     const activeTab = React.Children.toArray(children).find(
       (child) =>
-        React.isValidElement(child) &&
-        tab.selectedId === seed(child.props.children)
+        React.isValidElement(child) && tab.selectedId === seed(child.props)
     );
     if (!React.isValidElement(activeTab)) return;
-    setCode(activeTab.props.children);
+    setCode(activeTab.props);
     setGithubLink(activeTab.props.githubLink);
   }, [tab.selectedId, children, seed]);
 
@@ -50,14 +49,13 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
         {title && <StyledSnippetTitle>{title}</StyledSnippetTitle>}
         {!compact && (
           <StyledTabList {...tab} aria-label="Languages">
-            {React.Children.map(
-              children,
-              ({ props: { title, language, children: code } }) => (
-                <StyledTab {...tab} id={seed(code)}>
-                  {title ? title : getLanguageNiceName(language)}
-                </StyledTab>
-              )
-            )}
+            {React.Children.map(children, ({ props: snippetProps }) => (
+              <StyledTab {...tab} id={seed(snippetProps)}>
+                {snippetProps.title
+                  ? snippetProps.title
+                  : getLanguageNiceName(snippetProps.language)}
+              </StyledTab>
+            ))}
           </StyledTabList>
         )}
         <StyledSnippetSelect>
@@ -69,14 +67,13 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
             id={seed("language-select")}
             onChange={handleSelectChange}
           >
-            {React.Children.map(
-              children,
-              ({ props: { title, language, children: code } }) => (
-                <option value={seed(code)}>
-                  {title ? title : getLanguageNiceName(language)}
-                </option>
-              )
-            )}
+            {React.Children.map(children, ({ props: snippetProps }) => (
+              <option value={seed(snippetProps)}>
+                {snippetProps.title
+                  ? snippetProps.title
+                  : getLanguageNiceName(snippetProps.language)}
+              </option>
+            ))}
           </select>
           <ChevronDownIcon decorative size="medium" color="currentColor" />
         </StyledSnippetSelect>

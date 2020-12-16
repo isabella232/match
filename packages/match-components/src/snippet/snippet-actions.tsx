@@ -41,6 +41,7 @@ const SnippetActions: React.FC<SnippetActionsProps> = ({
         as={Button}
         onClick={copyToClipboard}
         onMouseLeave={() => setCopyMessage("")}
+        aria-labelledby={copyTooltip.baseId}
       >
         <CopyIcon decorative color="currentColor" />
       </TooltipReference>
@@ -56,6 +57,7 @@ const SnippetActions: React.FC<SnippetActionsProps> = ({
             href={githubLink}
             target="_blank"
             rel="noreferrer noopener"
+            aria-labelledby={githubTooltip.baseId}
           >
             <GithubIcon decorative color="currentColor" />
           </TooltipReference>

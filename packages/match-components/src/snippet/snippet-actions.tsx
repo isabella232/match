@@ -41,6 +41,7 @@ const SnippetActions: React.FC<SnippetActionsProps> = ({
         as={Button}
         onClick={copyToClipboard}
         onMouseLeave={() => setCopyMessage("")}
+        onBlur={() => setCopyMessage("")}
         aria-labelledby={copyTooltip.baseId}
       >
         <CopyIcon decorative color="currentColor" />

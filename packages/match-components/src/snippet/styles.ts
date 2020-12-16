@@ -458,7 +458,6 @@ const StyledTabList = styled(TabList)`
 
 const StyledSnippetSelect = styled.div`
   position: relative;
-  color: ${themeGet("colors.blue30")};
 
   ${StyledIcon} {
     position: absolute;
@@ -549,6 +548,9 @@ const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
         [StyledSnippetTitle]: {
           borderColor: "gray80",
         },
+        [StyledSnippetSelect]: {
+          color: "blue30",
+        },
         [StyledTab]: {
           color: "blue30",
           ["&[aria-selected=true]"]: {
@@ -559,6 +561,9 @@ const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
       [SnippetVariant.LIGHT]: {
         [StyledSnippetTitle]: {
           borderColor: "white",
+        },
+        [StyledSnippetSelect]: {
+          color: "gray100",
         },
         [StyledTab]: {
           color: "gray100",

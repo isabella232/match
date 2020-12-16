@@ -91,6 +91,7 @@ const Snippet: React.FC<SnippetProps> = ({
         <StyledHighlighter
           tabIndex={0}
           variant={variant}
+          language={language}
           maxLines={maxLines}
           onScroll={isSingleLine ? handleScroll : undefined}
         >
@@ -111,9 +112,7 @@ const Snippet: React.FC<SnippetProps> = ({
             }}
             lineProps={{ style: { display: "flex" } }}
           >
-            {isShell && isSingleLine && !children.startsWith("$")
-              ? `$ ${children}`
-              : children}
+            {children}
           </SyntaxHighlighter>
         </StyledHighlighter>
       </StyledSnippetBody>

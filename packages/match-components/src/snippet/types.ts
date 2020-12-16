@@ -53,6 +53,7 @@ export interface StyledSnippetGroupProps {
 
 export interface StyledSnippetProps {
   variant?: SnippetVariant;
+  language?: SnippetLanguage;
   isSingleLine?: boolean;
   horizontalScrollPos?: string;
   maxLines?: number;

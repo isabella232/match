@@ -16,7 +16,7 @@ export default {
     ...Snippet.defaultProps,
     title: "",
     githubLink: "",
-    maxLines: 10,
+    maxLines: 100,
   },
   argTypes: {
     children: { table: { disable: true } },
@@ -40,41 +40,103 @@ export default {
 
 const Template: Story<SnippetProps> = (args) => <Snippet {...args} />;
 
-const shellExample = `echo "The woods are lovely, dark and deep, But I have promises to keep, and miles to go before I sleep."`;
+const shellExample = `$ echo "The woods are lovely, dark and deep, But I have promises to keep, and miles to go before I sleep."`;
 
-const jsExample = `console.log('Rose');
-while(true) {
-  console.log('is a rose');
-}`;
+const jsExample = `const tmi = require('tmi.js');
+const client = new tmi.Client({
+  options: { debug: true },
+  connection: {
+    secure: true,
+    reconnect: true
+  },
+  identity: {
+    username: 'your_username',
+    password: process.env.TWITCH_OAUTH_TOKEN
+  },
+  channels: ['channel_name']
+});
 
-const pythonExample = `print('Rose')
-while(true):
-  print('is a rose')`;
+client.connect();
 
-const cSharpExample = `// Install the C# / .NET helper library from twilio.com/docs/csharp/install
+client.on('message', (channel, tags, message, self) => {
+  // Ignore echoed messages.
+  if(self) return;
 
-using System;
-using Twilio;
-using Twilio.Rest.Api.V2010.Account;
+  if(message.toLowerCase() === '!hello') {
+    client.say(channel, \`@$\{tags.username\}, Yo what's up\`);
+  }
+});`;
 
-class Program
+const pythonExample = `import os
+import uuid
+from dotenv import load_dotenv
+from flask import Flask
+from flask_cors import CORS
+from twilio.jwt.access_token import AccessToken
+from twilio.jwt.access_token.grants import SyncGrant
+
+load_dotenv()
+app = Flask(__name__)
+CORS(app)
+
+
+@app.route('/token', methods=['POST'])
+def token():
+    token = AccessToken(os.environ['TWILIO_ACCOUNT_SID'],
+                        os.environ['TWILIO_API_KEY_SID'],
+                        os.environ['TWILIO_API_KEY_SECRET'],
+                        grants=[SyncGrant(os.environ['TWILIO_SYNC_SERVICE_SID'])],
+                        identity=uuid.uuid4().hex)
+    return {'token': token.to_jwt().decode()}`;
+
+const cSharpExample = `using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Twilio.Jwt.AccessToken;
+
+namespace TwilioBlazorPhonecalls.Server.Controllers
 {
-    static void Main(string[] args)
+    [ApiController]
+    [Route("[controller]")]
+    public class TokenController : ControllerBase
     {
-        // Find your Account Sid and Token at twilio.com/console
-        // and set the environment variables. See http://twil.io/secure
-        string accountSid = Environment.GetEnvironmentVariable("TWILIO_ACCOUNT_SID");
-        string authToken = Environment.GetEnvironmentVariable("TWILIO_AUTH_TOKEN");
+        private readonly IConfiguration configuration;
+        public TokenController(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
 
-        TwilioClient.Init(accountSid, authToken);
+        [HttpGet]
+        public string Get()
+        {
+            string twilioAccountSid = configuration["TwilioAccountSid"];
+            string twilioApiKey = configuration["TwilioApiKey"];
+            string twilioApiSecret = configuration["TwilioApiSecret"];
+            string twiMLApplicationSid = configuration["TwiMLApplicationSid"];
 
-        var call = CallResource.Create(
-            url: new Uri("http://demo.twilio.com/docs/voice.xml"),
-            to: new Twilio.Types.PhoneNumber("+15558675310"),
-            from: new Twilio.Types.PhoneNumber("+15017122661")
-        );
+            var grants = new HashSet<IGrant>();
+            // Create a Voice grant for this token
+            grants.Add(new VoiceGrant
+            {
+                OutgoingApplicationSid = twiMLApplicationSid,
+                IncomingAllow = true
+            });
 
-        Console.WriteLine(call.Sid);
+            // Create an Access Token generator
+            var token = new Token(
+                twilioAccountSid,
+                twilioApiKey,
+                twilioApiSecret,
+                // identity will be used as the client name for incoming dials
+                identity: "blazor_client",
+                grants: grants
+            );
+
+            return token.ToJwt();
+        }
     }
 }`;
 
@@ -86,8 +148,8 @@ SingleLine.args = {
 
 export const MultiLine = Template.bind({});
 MultiLine.args = {
-  language: SnippetLanguage.CSHARP,
-  children: cSharpExample,
+  language: SnippetLanguage.JAVASCRIPT,
+  children: jsExample,
   title: "Multi Line Snippet",
 };
 
@@ -103,6 +165,9 @@ export const Group: Story<SnippetGroupProps> = ({
     </Snippet>
     <Snippet {...props} language={SnippetLanguage.PYTHON}>
       {pythonExample}
+    </Snippet>
+    <Snippet {...props} language={SnippetLanguage.CSHARP}>
+      {cSharpExample}
     </Snippet>
   </SnippetGroup>
 );

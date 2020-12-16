@@ -4,7 +4,8 @@ import { Icon } from "../icon";
 import type { IconProps } from "../icon";
 
 const GithubIcon: React.FC<IconProps> = ({ title, decorative, ...props }) => {
-  const titleId = useUID();
+  const uid = useUID();
+  const titleId = title ? uid : undefined;
 
   if (!decorative && !title) {
     console.warn("[Icon]: Title is required for non-decorative icons.");

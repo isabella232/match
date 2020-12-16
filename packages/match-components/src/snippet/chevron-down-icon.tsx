@@ -8,7 +8,8 @@ const ChevronDownIcon: React.FC<IconProps> = ({
   decorative,
   ...props
 }) => {
-  const titleId = useUID();
+  const uid = useUID();
+  const titleId = title ? uid : undefined;
 
   if (!decorative && !title) {
     console.warn("[Icon]: Title is required for non-decorative icons.");

@@ -16,7 +16,7 @@ export default {
     ...Snippet.defaultProps,
     title: "",
     githubLink: "",
-    maxLines: 100,
+    maxLines: 10,
   },
   argTypes: {
     children: { table: { disable: true } },

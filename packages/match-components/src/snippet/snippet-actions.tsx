@@ -42,7 +42,7 @@ const SnippetActions: React.FC<SnippetActionsProps> = ({
         onClick={copyToClipboard}
         onMouseLeave={() => setCopyMessage("")}
       >
-        <CopyIcon decorative />
+        <CopyIcon decorative color="currentColor" />
       </TooltipReference>
       <StyledTooltip {...copyTooltip}>
         <span>{copyMessage ? copyMessage : "Copy to clipboard"}</span>
@@ -57,7 +57,7 @@ const SnippetActions: React.FC<SnippetActionsProps> = ({
             target="_blank"
             rel="noreferrer noopener"
           >
-            <GithubIcon decorative />
+            <GithubIcon decorative color="currentColor" />
           </TooltipReference>
           <StyledTooltip {...githubTooltip}>
             Open code sample

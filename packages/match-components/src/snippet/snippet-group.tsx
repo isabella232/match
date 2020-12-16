@@ -78,7 +78,7 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
               )
             )}
           </select>
-          <ChevronDownIcon decorative size="medium" />
+          <ChevronDownIcon decorative size="medium" color="currentColor" />
         </StyledSnippetSelect>
         <SnippetActions variant={variant} code={code} githubLink={githubLink} />
       </StyledSnippetHeader>

@@ -15,7 +15,11 @@ import go from "react-syntax-highlighter/dist/esm/languages/prism/go";
 import groovy from "react-syntax-highlighter/dist/esm/languages/prism/groovy";
 import { getLanguageNiceName } from "./get-language-nice-name";
 import { SnippetActions } from "./snippet-actions";
-import { SnippetLanguage, SnippetVariant } from "./types";
+import {
+  SnippetLanguage,
+  SnippetVariant,
+  SnippetHorizontalScroll,
+} from "./types";
 import type { SnippetProps } from "./types";
 import {
   StyledSnippet,
@@ -50,7 +54,9 @@ const Snippet: React.FC<SnippetProps> = ({
   maxLines,
   ...props
 }) => {
-  const [horizontalScrollPos, setHorizontalScrollPos] = React.useState("left");
+  const [horizontalScrollPos, setHorizontalScrollPos] = React.useState(
+    SnippetHorizontalScroll.LEFT
+  );
   const lineCount = children.split(/\n/g).length;
   const lineNumberWidth = lineCount.toString().length;
   const isSingleLine = Boolean(!wrapLines && lineCount === 1);
@@ -58,14 +64,14 @@ const Snippet: React.FC<SnippetProps> = ({
 
   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
     if (e.currentTarget.scrollLeft === 0) {
-      setHorizontalScrollPos("left");
+      setHorizontalScrollPos(SnippetHorizontalScroll.LEFT);
     } else if (
       e.currentTarget.scrollLeft ===
       e.currentTarget.scrollWidth - e.currentTarget.clientWidth
     ) {
-      setHorizontalScrollPos("right");
+      setHorizontalScrollPos(SnippetHorizontalScroll.RIGHT);
     } else {
-      setHorizontalScrollPos("middle");
+      setHorizontalScrollPos(SnippetHorizontalScroll.MIDDLE);
     }
   };
 

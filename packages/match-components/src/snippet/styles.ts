@@ -4,12 +4,12 @@ import { themeGet } from "@styled-system/theme-get";
 import { Tooltip, TooltipArrow } from "reakit/Tooltip";
 import { Tab, TabList } from "reakit/Tab";
 import { StyledIcon } from "../icon/styles";
+import type { StyledSnippetProps, StyledSnippetGroupProps } from "./types";
 import {
-  StyledSnippetProps,
-  StyledSnippetGroupProps,
+  SnippetVariant,
   SnippetLanguage,
+  SnippetHorizontalScroll,
 } from "./types";
-import { SnippetVariant } from "./types";
 
 const StyledHighlighter = styled.div<StyledSnippetProps>`
   overflow-x: auto;
@@ -19,8 +19,6 @@ const StyledHighlighter = styled.div<StyledSnippetProps>`
     outline-width: 2px;
     outline-style: solid;
     outline-color: ${themeGet("colors.blue60")};
-    outline-offset: 2px;
-    -moz-outline-radius: 0 0 4px 4px;
   }
 
   ::-webkit-scrollbar {
@@ -267,6 +265,7 @@ const StyledSnippetActions = styled.div<StyledSnippetProps>`
   a,
   button {
     padding: 0;
+    color: inherit;
     line-height: 1;
     background: none;
     border: none;
@@ -284,14 +283,10 @@ const StyledSnippetActions = styled.div<StyledSnippetProps>`
   ${variant({
     variants: {
       [SnippetVariant.DARK]: {
-        [StyledIcon]: {
-          color: "gray10",
-        },
+        color: "gray10",
       },
       [SnippetVariant.LIGHT]: {
-        [StyledIcon]: {
-          color: "gray80",
-        },
+        color: "gray80",
       },
     },
   })}
@@ -328,17 +323,13 @@ const StyledSnippetBody = styled.div<StyledSnippetProps>`
         padding: ${themeGet("space.scale20")} 0;
       }
 
-      ${StyledHighlighter}:focus {
-        -moz-outline-radius: 4px;
-      }
-
       ::before,
       ::after {
         position: absolute;
         top: ${themeGet("space.scale60")};
         bottom: ${themeGet("space.scale60")};
         width: 10%;
-        transition: opacity linear 0.1s;
+        transition: opacity linear 0.15s;
         content: "";
         pointer-events: none;
       }
@@ -394,12 +385,12 @@ const StyledSnippetBody = styled.div<StyledSnippetProps>`
       variant({
         prop: "horizontalScrollPos",
         variants: {
-          left: {
+          [SnippetHorizontalScroll.LEFT]: {
             ["::before"]: {
               opacity: 0,
             },
           },
-          right: {
+          [SnippetHorizontalScroll.RIGHT]: {
             ["::after"]: {
               opacity: 0,
             },
@@ -467,19 +458,20 @@ const StyledTabList = styled(TabList)`
 
 const StyledSnippetSelect = styled.div`
   position: relative;
+  color: ${themeGet("colors.blue30")};
 
   ${StyledIcon} {
     position: absolute;
     top: 50%;
     right: 0;
-    color: ${themeGet("colors.blue30")};
     transform: translateY(-50%);
+    pointer-events: none;
   }
 
   select {
     display: block;
     padding-right: ${themeGet("space.scale100")};
-    color: ${themeGet("colors.blue30")};
+    color: inherit;
     font-size: ${themeGet("fontSizes.scale80")};
     white-space: nowrap;
     text-align: right;

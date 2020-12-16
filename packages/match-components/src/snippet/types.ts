@@ -20,6 +20,12 @@ export enum SnippetLanguage {
   GROOVY = "groovy",
 }
 
+export enum SnippetHorizontalScroll {
+  LEFT = "left",
+  MIDDLE = "middle",
+  RIGHT = "right",
+}
+
 export interface SnippetProps {
   children: string;
   variant?: SnippetVariant;
@@ -55,7 +61,7 @@ export interface StyledSnippetProps {
   variant?: SnippetVariant;
   language?: SnippetLanguage;
   isSingleLine?: boolean;
-  horizontalScrollPos?: string;
+  horizontalScrollPos?: SnippetHorizontalScroll;
   maxLines?: number;
   showLineNumbers?: boolean;
 }

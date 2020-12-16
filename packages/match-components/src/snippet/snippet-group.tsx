@@ -36,10 +36,11 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
     if (!tab.selectedId) return;
     const activeTab = React.Children.toArray(children).find(
       (child) =>
-        React.isValidElement(child) && tab.selectedId === seed(child.props)
+        React.isValidElement(child) &&
+        tab.selectedId === seed(child.props.language + child.props.title)
     );
     if (!React.isValidElement(activeTab)) return;
-    setCode(activeTab.props);
+    setCode(activeTab.props.children);
     setGithubLink(activeTab.props.githubLink);
   }, [tab.selectedId, children, seed]);
 
@@ -49,11 +50,9 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
         {title && <StyledSnippetTitle>{title}</StyledSnippetTitle>}
         {!compact && (
           <StyledTabList {...tab} aria-label="Languages">
-            {React.Children.map(children, ({ props: snippetProps }) => (
-              <StyledTab {...tab} id={seed(snippetProps)}>
-                {snippetProps.title
-                  ? snippetProps.title
-                  : getLanguageNiceName(snippetProps.language)}
+            {React.Children.map(children, ({ props: { title, language } }) => (
+              <StyledTab {...tab} id={seed(language + title)}>
+                {title ? title : getLanguageNiceName(language)}
               </StyledTab>
             ))}
           </StyledTabList>
@@ -67,11 +66,9 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
             id={seed("language-select")}
             onChange={handleSelectChange}
           >
-            {React.Children.map(children, ({ props: snippetProps }) => (
-              <option value={seed(snippetProps)}>
-                {snippetProps.title
-                  ? snippetProps.title
-                  : getLanguageNiceName(snippetProps.language)}
+            {React.Children.map(children, ({ props: { title, language } }) => (
+              <option value={seed(language + title)}>
+                {title ? title : getLanguageNiceName(language)}
               </option>
             ))}
           </select>

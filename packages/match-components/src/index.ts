@@ -5,4 +5,5 @@ export * from "./grid";
 export * from "./icon";
 export * from "./separator";
 export * from "./snippet";
+export * from "./truncate";
 export * from "./visually-hidden";

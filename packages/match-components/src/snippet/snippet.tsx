@@ -105,7 +105,7 @@ const Snippet: React.FC<SnippetProps> = ({
             {...props}
             language={language}
             showLineNumbers={!isSingleLine && !isShell && showLineNumbers}
-            wrapLongLines={!isSingleLine && wrapLines}
+            wrapLongLines={wrapLines}
             wrapLines={true}
             useInlineStyles={false}
             lineNumberStyle={{
@@ -116,7 +116,12 @@ const Snippet: React.FC<SnippetProps> = ({
               paddingRight: undefined,
               minWidth: `${lineNumberWidth}ch`,
             }}
-            lineProps={{ style: { display: "flex" } }}
+            lineProps={{
+              style: {
+                display: "flex",
+                flexWrap: wrapLines ? "wrap" : "nowrap",
+              },
+            }}
           >
             {children}
           </SyntaxHighlighter>

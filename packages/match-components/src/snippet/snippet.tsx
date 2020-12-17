@@ -105,7 +105,7 @@ const Snippet: React.FC<SnippetProps> = ({
             {...props}
             language={language}
             showLineNumbers={!isSingleLine && !isShell && showLineNumbers}
-            wrapLongLines={showLineNumbers && wrapLines}
+            wrapLongLines={!isSingleLine && wrapLines}
             wrapLines={true}
             useInlineStyles={false}
             lineNumberStyle={{

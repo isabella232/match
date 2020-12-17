@@ -225,7 +225,7 @@ const Tokens: React.FC = () => {
 
       {mediaQueryTokens.length > 0 && (
         <div>
-          <h1 id="breakpoints">Breakpoints</h1>
+          <h2 id="breakpoints">Breakpoints</h2>
           <p>
             Match takes a mobile-first approach to responsive web design. These
             breakpoints provide ranges needed to ensure that your UI
@@ -235,7 +235,7 @@ const Tokens: React.FC = () => {
         </div>
       )}
 
-      {hasColorTokens && <h1 id="colors">Colors</h1>}
+      {hasColorTokens && <h2 id="colors">Colors</h2>}
 
       {primaryColorTokens.length > 0 && (
         <div>

@@ -18,6 +18,7 @@ module.exports = {
     ],
     ["Instapage"]: [
       "instapage/how-to-use-blocks",
+      "instapage/call-out",
       "instapage/card-list",
       "instapage/cta-section",
       "instapage/customer-quote",
@@ -27,6 +28,7 @@ module.exports = {
       "instapage/hero-with-illustration",
       "instapage/hero-without-illustration",
       "instapage/intro",
+      "instapage/ittb-call-out",
       "instapage/logo-bar",
       "instapage/overview",
       "instapage/platform-benefits",

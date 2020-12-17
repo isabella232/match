@@ -1,6 +1,7 @@
 export * from "./anchor";
 export * from "./button";
 export * from "./card";
+export * from "./code";
 export * from "./grid";
 export * from "./icon";
 export * from "./separator";

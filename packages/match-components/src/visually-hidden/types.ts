@@ -13,5 +13,5 @@ export type asTags =
   | "th";
 
 export interface VisuallyHiddenProps extends React.HTMLAttributes<HTMLElement> {
-  as: asTags;
+  as?: asTags;
 }

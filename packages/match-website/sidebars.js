@@ -13,6 +13,7 @@ module.exports = {
       "components/grid",
       "components/icon",
       "components/separator",
+      "components/truncate",
       "components/visually-hidden",
     ],
     ["Instapage"]: [

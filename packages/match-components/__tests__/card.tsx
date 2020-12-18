@@ -7,11 +7,6 @@ import { Card } from "../src";
 const CardWithTheme = withTheme()(Card);
 
 describe("Card", () => {
-  test("should render default values", () => {
-    const { container } = render(<CardWithTheme>Card!</CardWithTheme>);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test("accessibility violations", async () => {
     const { container } = render(
       <CardWithTheme padding="scale100">I am a card!</CardWithTheme>

@@ -12,18 +12,16 @@ slug: /getting-started/develop/
 | Package           | Version |
 | ----------------- | ------- |
 | prop-types        | 15.x    |
-| react             | 16.x    |
-| react-dom         | 16.x    |
-| react-is          | 16.x    |
+| react             | 17.x    |
+| react-dom         | 17.x    |
+| react-is          | 17.x    |
 | react-uid         | 2.x     |
-| reakit            | 1.x     |
 | styled-components | 5.x     |
-| styled-system     | 5.x     |
 
 ### Install dependencies using yarn
 
-```shell
-yarn add prop-types react react-dom react-is reakit styled-components styled-system
+```shell npm2yarn
+npm install --save prop-types react react-dom react-is styled-components
 ```
 
 ## 2. Configure GitHub Package Registry
@@ -56,19 +54,10 @@ Install the following packages so you can consume Match’s tokens and themes to
 
 | Package                       | Version |
 | ----------------------------- | ------- |
-| @twilio-labs/match-props      | 0.1.0   |
 | @twilio-labs/match-tokens     | 0.3.0   |
 | @twilio-labs/match-themes     | 0.3.0   |
 | @twilio-labs/match-components | 0.2.0   |
 
-With Yarn:
-
-```shell
-yarn add @twilio-labs/match-props @twilio-labs/match-tokens @twilio-labs/match-themes @twilio-labs/match-components
-```
-
-With NPM:
-
-```shell
-npm install --save @twilio-labs/match-props @twilio-labs/match-tokens @twilio-labs/match-themes @twilio-labs/match-components
+```bash npm2yarn
+npm install --save @twilio-labs/match-tokens @twilio-labs/match-themes @twilio-labs/match-components
 ```

@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import { uid } from "react-uid";
 import { StyledButton, StyledPrompt } from "./styles";
 import { ButtonVariant, ButtonType, ButtonSize } from "./types";
 import type { ButtonProps } from "./types";
@@ -18,13 +17,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         type={!props.href ? type : undefined}
         {...props}
       >
-        {Array.isArray(children)
-          ? children.map((child) => {
-              if (React.isValidElement(child))
-                return React.cloneElement(child, { key: uid(child) });
-              if (typeof child === "string") return child.trim();
-            })
-          : children}
+        {React.Children.map(children, (child) =>
+          typeof child === "string" ? child.trim() : child
+        )}
         {prompt && <StyledPrompt />}
       </StyledButton>
     );

@@ -1,4 +1,3 @@
-import "jest-styled-components";
 import * as React from "react";
 import { render } from "@testing-library/react";
 import { axe } from "jest-axe";
@@ -38,13 +37,6 @@ describe("Button", () => {
     expect(getByText(/click me/i).getAttribute("rel")).toEqual(
       "noreferrer noopener"
     );
-  });
-
-  test("snapshot", () => {
-    const { container } = render(
-      <AnchorWithTheme href="https://twilio.com">Click Me</AnchorWithTheme>
-    );
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   test("accessibility violations", async () => {

@@ -1,4 +1,3 @@
-import "jest-styled-components";
 import * as React from "react";
 import { render } from "@testing-library/react";
 import { axe } from "jest-axe";

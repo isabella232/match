@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-components",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Twilio Match Design System Components",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -28,9 +28,9 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-props": "^0.1.0",
-    "@twilio-labs/match-themes": "^0.4.0",
-    "@twilio-labs/match-tokens": "^0.4.0",
+    "@twilio-labs/match-props": "^0.2.0",
+    "@twilio-labs/match-themes": "^0.5.0",
+    "@twilio-labs/match-tokens": "^0.5.0",
     "prop-types": "15.x",
     "react": "17.x",
     "react-dom": "17.x",

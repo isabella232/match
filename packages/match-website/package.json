@@ -18,7 +18,7 @@
     "@docusaurus/theme-classic": "2.0.0-alpha.70",
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.70",
     "@docusaurus/theme-search-algolia": "2.0.0-alpha.70",
-    "@mdx-js/react": "1.6.21",
+    "@mdx-js/react": "1.6.22",
     "@twilio-labs/match-components": "workspace:packages/match-components",
     "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product",
     "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio",
@@ -61,7 +61,7 @@
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",
     "@types/react-is": "17.0.0",
-    "@types/styled-components": "5.1.6",
+    "@types/styled-components": "5.1.7",
     "tsconfig-match": "workspace:configs/tsconfig",
     "typescript": "4.1.3"
   }

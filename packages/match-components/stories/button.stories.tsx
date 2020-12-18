@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { DownloadIcon, ExpandIcon } from "@twilio-labs/match-icons-twilio";
 import { Button, ButtonProps, ButtonVariant, ButtonSize } from "../src";
 
 export default {
@@ -61,18 +60,4 @@ Inverse.args = {
 };
 Inverse.parameters = {
   backgrounds: { default: "Twilio Blue" },
-};
-
-export const IconWithText = Template.bind({});
-IconWithText.args = {
-  children: ["Download ", <DownloadIcon decorative key="downloadicon" />],
-};
-
-export const IconOnly = Template.bind({});
-IconOnly.args = {
-  size: ButtonSize.ICON,
-  children: <ExpandIcon title="Expand" />,
-};
-IconOnly.argTypes = {
-  size: { control: { disable: true } },
 };

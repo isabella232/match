@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { StyledButton, StyledPrompt } from "./styles";
-import { ButtonVariant, ButtonType, ButtonSize } from "./types";
+import { ButtonVariant, ButtonSize } from "./types";
 import type { ButtonProps } from "./types";
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -28,7 +28,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.propTypes = {
   variant: PropTypes.oneOf(Object.values(ButtonVariant)),
-  type: PropTypes.oneOf(Object.values(ButtonType)),
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
   size: PropTypes.oneOf(Object.values(ButtonSize)),
   href: PropTypes.string,
   disabled: PropTypes.bool,
@@ -39,7 +39,6 @@ Button.propTypes = {
 
 Button.defaultProps = {
   variant: ButtonVariant.PRIMARY,
-  type: ButtonType.BUTTON,
   size: ButtonSize.NORMAL,
   disabled: false,
   fullWidth: false,
@@ -49,5 +48,5 @@ Button.defaultProps = {
 
 Button.displayName = "Button";
 
-export { Button, ButtonVariant, ButtonType, ButtonSize };
+export { Button, ButtonVariant, ButtonSize };
 export type { ButtonProps };

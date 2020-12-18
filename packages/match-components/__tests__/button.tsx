@@ -1,4 +1,3 @@
-import "jest-styled-components";
 import * as React from "react";
 import { render } from "@testing-library/react";
 import { axe } from "jest-axe";
@@ -18,11 +17,6 @@ describe("Button", () => {
   test("renders as a button", () => {
     const { getByText } = render(<ButtonWithTheme>Click Me</ButtonWithTheme>);
     expect(getByText(/click me/i).tagName.toLowerCase()).toBe("button");
-  });
-
-  test("snapshot", () => {
-    const { container } = render(<ButtonWithTheme>Click Me</ButtonWithTheme>);
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   test("accessibility violations", async () => {

@@ -6,4 +6,3 @@ export type MatchState = {
 };
 
 export type Token = [string, string];
-export type NumberToken = [string, number];

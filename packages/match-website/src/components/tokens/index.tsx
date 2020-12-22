@@ -3,20 +3,18 @@ import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
 import { ThemeSwitcher } from "../theme-switcher";
 import { TokenFilters } from "./filters";
-import { MediaQueryTokens } from "./media-query";
-import { ColorTokens } from "./color";
-import { StringTokens } from "./string";
-import { WeightTokens } from "./weight";
-import { TextColorTokens } from "./text-color";
 import { ShadowTokens } from "./shadow";
-import { GradientTokens } from "./gradient";
 import { BorderColorTokens } from "./border-color";
-import { BorderWidthTokens } from "./border-width";
-import { SpacingTokens } from "./space";
 import { LineHeightTokens } from "./line-height";
-import { FontSizeTokens } from "./font-size";
 
-import { Token, NumberToken } from "../../types";
+import { remToPx } from "../../utils";
+
+import styles from "./styles.module.css";
+
+import { TokenTable, TokenItem } from "./token-table";
+import { hex, score } from "wcag-contrast";
+
+import { Token } from "../../types";
 
 const textSearch = (hayStack: string, needle: string) => {
   return (
@@ -46,21 +44,33 @@ const Tokens: React.FC = () => {
     state: { filterText },
   } = React.useContext(MatchContext);
 
-  const mediaQueryTokens: Token[] = React.useMemo(() => {
-    return Object.entries(mediaQueries).filter(([key]) =>
-      textSearch(`mediaQueries.${key}`, filterText)
-    );
+  const mediaQueryTokens: TokenItem[] = React.useMemo(() => {
+    return Object.entries(mediaQueries)
+      .filter(([key]) => textSearch(`mediaQueries.${key}`, filterText))
+      .map(([key, value]) => ({
+        name: key,
+        value: value,
+      }));
   }, [filterText, mediaQueries]);
 
-  const primaryColorTokens: Token[] = React.useMemo(
+  const primaryColorTokens: TokenItem[] = React.useMemo(
     () =>
       Object.entries(colors)
         .filter(([key]) => ["brand", "brandHighlight", "white"].includes(key))
-        .filter(([key]) => textSearch(`colors.${key}`, filterText)),
+        .filter(([key]) => textSearch(`colors.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: value,
+          example: (
+            <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">
+              <circle cx="40" cy="21" r="20" fill={value} />
+            </svg>
+          ),
+        })),
     [filterText, colors]
   );
 
-  const secondaryColorTokens: Token[] = React.useMemo(
+  const secondaryColorTokens: TokenItem[] = React.useMemo(
     () =>
       Object.entries(colors)
         .filter(([key]) =>
@@ -72,11 +82,20 @@ const Tokens: React.FC = () => {
             "basePurple",
           ].includes(key)
         )
-        .filter(([key]) => textSearch(`colors.${key}`, filterText)),
+        .filter(([key]) => textSearch(`colors.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: value,
+          example: (
+            <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">
+              <circle cx="40" cy="21" r="20" fill={value} />
+            </svg>
+          ),
+        })),
     [filterText, colors]
   );
 
-  const tertiaryColorTokens: Token[] = React.useMemo(
+  const tertiaryColorTokens: TokenItem[] = React.useMemo(
     () =>
       Object.entries(colors)
         .filter(
@@ -92,55 +111,125 @@ const Tokens: React.FC = () => {
               "basePurple",
             ].includes(key)
         )
-        .filter(([key]) => textSearch(`colors.${key}`, filterText)),
+        .filter(([key]) => textSearch(`colors.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: value,
+          example: (
+            <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">
+              <circle cx="40" cy="21" r="20" fill={value} />
+            </svg>
+          ),
+        })),
     [filterText, colors]
   );
 
-  const fontFamilyTokens: Token[] = React.useMemo(
+  const fontFamilyTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(fontFamilies).filter(([key]) =>
-        textSearch(`fontFamilies.${key}`, filterText)
-      ),
+      Object.entries(fontFamilies)
+        .filter(([key]) => textSearch(`fontFamilies.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: value,
+        })),
     [filterText, fontFamilies]
   );
 
-  const fontSizeTokens: Token[] = React.useMemo(
+  const fontSizeTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(fontSizes).filter(([key]) =>
-        textSearch(`fontSizes.${key}`, filterText)
-      ),
+      Object.entries(fontSizes)
+        .filter(([key]) => textSearch(`fontSizes.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: {
+            px: remToPx(value),
+            rem: value,
+          },
+          example: <span style={{ fontSize: value }}>Ab</span>,
+        })),
     [filterText, fontSizes]
   );
 
-  const fontWeightTokens: NumberToken[] = React.useMemo(
+  const fontWeightTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(fontWeights).filter(([key]) =>
-        textSearch(`fontWeights.${key}`, filterText)
-      ),
+      Object.entries(fontWeights)
+        .filter(([key]) => textSearch(`fontWeights.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: value,
+        })),
     [filterText, fontWeights]
   );
 
-  const backgroundColorTokens: Token[] = React.useMemo(
+  const backgroundColorTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(backgroundColors).filter(([key]) =>
-        textSearch(`backgroundColors.${key}`, filterText)
-      ),
+      Object.entries(backgroundColors)
+        .filter(([key]) => textSearch(`backgroundColors.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: value,
+          example: (
+            <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">
+              <circle cx="40" cy="21" r="20" fill={value} />
+            </svg>
+          ),
+        })),
     [filterText, backgroundColors]
   );
 
-  const textColorTokens: Token[] = React.useMemo(
+  const textColorTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(textColors).filter(([key]) =>
-        textSearch(`textColors.${key}`, filterText)
-      ),
+      Object.entries(textColors)
+        .filter(([key]) => textSearch(`textColors.${key}`, filterText))
+        .map(([key, value]) => {
+          const bg1 = key.includes("inverse")
+            ? backgroundColors.blue
+            : backgroundColors.white;
+          const bg2 = key.includes("inverse")
+            ? backgroundColors.darkest
+            : backgroundColors.light;
+          return {
+            name: key,
+            value: value,
+            example: (
+              <div className={styles.textColorExample}>
+                <div
+                  style={{
+                    color: value,
+                    background: bg1,
+                  }}
+                >
+                  {score(hex(value, bg1))}
+                </div>
+                <div
+                  style={{
+                    color: value,
+                    background: bg2,
+                  }}
+                >
+                  {score(hex(value, bg2))}
+                </div>
+              </div>
+            ),
+          };
+        }),
     [filterText, textColors]
   );
 
-  const gradientTokens: Token[] = React.useMemo(
+  const gradientTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(gradients).filter(([key]) =>
-        textSearch(`gradients.${key}`, filterText)
-      ),
+      Object.entries(gradients)
+        .filter(([key]) => textSearch(`gradients.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: value.slice(16, -1),
+          example: (
+            <div
+              style={{ background: value }}
+              className={styles.rectangleExample}
+            ></div>
+          ),
+        })),
     [filterText, gradients]
   );
 
@@ -160,19 +249,43 @@ const Tokens: React.FC = () => {
     [filterText, borderColors]
   );
 
-  const borderWidthTokens: Token[] = React.useMemo(
+  const borderWidthTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(borderWidths).filter(([key]) =>
-        textSearch(`borderWidths.${key}`, filterText)
-      ),
+      Object.entries(borderWidths)
+        .filter(([key]) => textSearch(`borderWidths.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: {
+            px: remToPx(value),
+            rem: value,
+          },
+          example: (
+            <div
+              className={styles.borderExample}
+              style={{ borderWidth: value }}
+            />
+          ),
+        })),
     [filterText, borderWidths]
   );
 
-  const spacingTokens: Token[] = React.useMemo(
+  const spacingTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(space).filter(([key]) =>
-        textSearch(`space.${key}`, filterText)
-      ),
+      Object.entries(space)
+        .filter(([key]) => textSearch(`space.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: {
+            px: remToPx(value),
+            rem: value,
+          },
+          example: (
+            <div
+              className={styles.spacingExample}
+              style={{ width: value, height: value }}
+            />
+          ),
+        })),
     [filterText, space]
   );
 
@@ -184,11 +297,23 @@ const Tokens: React.FC = () => {
     [filterText, lineHeights]
   );
 
-  const iconSizeTokens: Token[] = React.useMemo(
+  const iconSizeTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(iconSizes).filter(([key]) =>
-        textSearch(`iconSizes.${key}`, filterText)
-      ),
+      Object.entries(iconSizes)
+        .filter(([key]) => textSearch(`iconSizes.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: {
+            px: remToPx(value),
+            rem: value,
+          },
+          example: (
+            <div
+              className={styles.spacingExample}
+              style={{ width: value, height: value }}
+            />
+          ),
+        })),
     [filterText, iconSizes]
   );
 
@@ -231,7 +356,7 @@ const Tokens: React.FC = () => {
             breakpoints provide ranges needed to ensure that your UI
             communicates valuable information for customers of all screen sizes.
           </p>
-          <MediaQueryTokens tokens={mediaQueryTokens} />
+          <TokenTable tokens={mediaQueryTokens} prefix="mediaQueries" />
         </div>
       )}
 
@@ -244,7 +369,7 @@ const Tokens: React.FC = () => {
             This palette defines our brand. Emphasize Twilio Red and avoid
             introducing too many secondary colors for audiences new to Twilio.
           </p>
-          <ColorTokens tokens={primaryColorTokens} prefix="colors" />
+          <TokenTable tokens={primaryColorTokens} prefix="colors" />
         </div>
       )}
 
@@ -255,7 +380,7 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <ColorTokens tokens={secondaryColorTokens} prefix="colors" />
+          <TokenTable tokens={secondaryColorTokens} prefix="colors" />
         </div>
       )}
 
@@ -266,14 +391,14 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <ColorTokens tokens={tertiaryColorTokens} prefix="colors" />
+          <TokenTable tokens={tertiaryColorTokens} prefix="colors" />
         </div>
       )}
 
       {backgroundColorTokens.length > 0 && (
         <div>
           <h2 id="background-colors">Background Colors</h2>
-          <ColorTokens
+          <TokenTable
             tokens={backgroundColorTokens}
             prefix="backgroundColors"
           />
@@ -283,35 +408,35 @@ const Tokens: React.FC = () => {
       {gradientTokens.length > 0 && (
         <div>
           <h2 id="gradients">Gradients</h2>
-          <GradientTokens prefix="gradients" tokens={gradientTokens} />
+          <TokenTable prefix="gradients" tokens={gradientTokens} />
         </div>
       )}
 
       {textColorTokens.length > 0 && (
         <div>
           <h2 id="text-colors">Text Colors</h2>
-          <TextColorTokens tokens={textColorTokens} />
+          <TokenTable tokens={textColorTokens} prefix="textColors" />
         </div>
       )}
 
       {fontFamilyTokens.length > 0 && (
         <div>
           <h2>Font Families</h2>
-          <StringTokens prefix="fontFamilies" tokens={fontFamilyTokens} />
+          <TokenTable prefix="fontFamilies" tokens={fontFamilyTokens} />
         </div>
       )}
 
       {fontSizeTokens.length > 0 && (
         <div>
           <h2 id="font-sizes">Font Sizes</h2>
-          <FontSizeTokens tokens={fontSizeTokens} prefix="fontSize" />
+          <TokenTable tokens={fontSizeTokens} prefix="fontSize" />
         </div>
       )}
 
       {fontWeightTokens.length > 0 && (
         <div>
           <h2 id="font-weights">Font Weights</h2>
-          <WeightTokens prefix="fontWeights" tokens={fontWeightTokens} />
+          <TokenTable prefix="fontWeights" tokens={fontWeightTokens} />
         </div>
       )}
 
@@ -339,21 +464,21 @@ const Tokens: React.FC = () => {
       {borderWidthTokens.length > 0 && (
         <div>
           <h2 id="border-widths">Border Widths</h2>
-          <BorderWidthTokens tokens={borderWidthTokens} prefix="borderWidths" />
+          <TokenTable tokens={borderWidthTokens} prefix="borderWidths" />
         </div>
       )}
 
       {spacingTokens.length > 0 && (
         <div>
           <h2 id="spacings">Spacing</h2>
-          <SpacingTokens tokens={spacingTokens} prefix="space" />
+          <TokenTable tokens={spacingTokens} prefix="space" />
         </div>
       )}
 
       {iconSizeTokens.length > 0 && (
         <div>
           <h2 id="icon-sizes">Icon Sizes</h2>
-          <SpacingTokens tokens={iconSizeTokens} prefix="iconSizes" />
+          <TokenTable tokens={iconSizeTokens} prefix="iconSizes" />
         </div>
       )}
     </div>

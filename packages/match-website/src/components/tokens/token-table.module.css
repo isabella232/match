@@ -1,0 +1,33 @@
+.tokenTable {
+  overflow: visible;
+}
+
+.copyWrapper {
+  position: relative;
+}
+.copyMenu {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  display: none;
+  background: white;
+  border: 1px solid #dadde1;
+}
+ul.copyMenu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.copyMenu li {
+  padding: 8px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.copyMenu li:hover,
+.copyMenu li:focus {
+  background: #f5f6f7;
+}
+
+.copyMenu.isOpen {
+  display: block;
+}

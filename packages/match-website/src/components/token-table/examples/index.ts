@@ -1,2 +1,2 @@
-export { Shadows } from "./shadows";
-export { Color } from "./color";
+export { Shadow } from "./shadow";
+export { TextColor } from "./text-color";

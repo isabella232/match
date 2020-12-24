@@ -1,13 +1,13 @@
 import React from "react";
 import { useTheme } from "@twilio-labs/match-themes";
 import styles from "./examples.module.css";
+import { TokenItem } from "../token-table";
 
-export type ShadowsProps = {
-  name: string;
-  value: string;
+export type ShadowProps = {
+  token: TokenItem;
 };
 
-export const Shadows: React.FC<ShadowsProps> = ({ name, value }) => {
+export const Shadow: React.FC<ShadowProps> = ({ token: { name, value } }) => {
   const { backgroundColorBlue } = useTheme();
 
   return (
@@ -19,7 +19,7 @@ export const Shadows: React.FC<ShadowsProps> = ({ name, value }) => {
       }}
     >
       <div
-        style={{ boxShadow: value }}
+        style={{ boxShadow: value as string }}
         className={styles.rectangleExample}
       ></div>
     </div>

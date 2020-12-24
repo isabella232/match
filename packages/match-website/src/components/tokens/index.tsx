@@ -3,15 +3,11 @@ import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
 import { ThemeSwitcher } from "../theme-switcher";
 import { TokenFilters } from "./filters";
-import { Color, Shadows } from "../token-table/examples";
 import { LineHeightTokens } from "./line-height";
 
 import { remToPx } from "../../utils";
 
-import styles from "./styles.module.css";
-
 import { TokenTable, TokenItem } from "../token-table/token-table";
-import { hex, score } from "wcag-contrast";
 
 import { Token } from "../../types";
 
@@ -60,7 +56,6 @@ const Tokens: React.FC = () => {
         .map(([key, value]) => ({
           name: key,
           value: value,
-          example: <Color value={value} />,
         })),
     [filterText, colors]
   );
@@ -81,7 +76,6 @@ const Tokens: React.FC = () => {
         .map(([key, value]) => ({
           name: key,
           value: value,
-          example: <Color value={value} />,
         })),
     [filterText, colors]
   );
@@ -106,7 +100,6 @@ const Tokens: React.FC = () => {
         .map(([key, value]) => ({
           name: key,
           value: value,
-          example: <Color value={value} />,
         })),
     [filterText, colors]
   );
@@ -132,7 +125,6 @@ const Tokens: React.FC = () => {
             px: remToPx(value),
             rem: value,
           },
-          example: <span style={{ fontSize: value }}>Ab</span>,
         })),
     [filterText, fontSizes]
   );
@@ -155,7 +147,6 @@ const Tokens: React.FC = () => {
         .map(([key, value]) => ({
           name: key,
           value: value,
-          example: <Color value={value} />,
         })),
     [filterText, backgroundColors]
   );
@@ -165,38 +156,12 @@ const Tokens: React.FC = () => {
       Object.entries(textColors)
         .filter(([key]) => textSearch(`textColors.${key}`, filterText))
         .map(([key, value]) => {
-          const bg1 = key.includes("inverse")
-            ? backgroundColors.blue
-            : backgroundColors.white;
-          const bg2 = key.includes("inverse")
-            ? backgroundColors.darkest
-            : backgroundColors.light;
           return {
             name: key,
             value: value,
-            example: (
-              <div className={styles.textColorExample}>
-                <div
-                  style={{
-                    color: value,
-                    background: bg1,
-                  }}
-                >
-                  {score(hex(value, bg1))}
-                </div>
-                <div
-                  style={{
-                    color: value,
-                    background: bg2,
-                  }}
-                >
-                  {score(hex(value, bg2))}
-                </div>
-              </div>
-            ),
           };
         }),
-    [filterText, textColors, backgroundColors]
+    [filterText, textColors]
   );
 
   const gradientTokens: TokenItem[] = React.useMemo(
@@ -206,12 +171,6 @@ const Tokens: React.FC = () => {
         .map(([key, value]) => ({
           name: key,
           value: value.slice(16, -1),
-          example: (
-            <div
-              style={{ background: value }}
-              className={styles.rectangleExample}
-            ></div>
-          ),
         })),
     [filterText, gradients]
   );
@@ -223,7 +182,6 @@ const Tokens: React.FC = () => {
         .map(([key, value]) => ({
           name: key,
           value: value,
-          example: <Shadows name={key} value={value} />,
         })),
     [filterText, shadows]
   );
@@ -238,12 +196,6 @@ const Tokens: React.FC = () => {
             Object.entries(colors).find(
               ([_colorName, colorAlias]) => value === colorAlias
             )?.[0] ?? value,
-          example: (
-            <div
-              className={styles.borderExample}
-              style={{ borderColor: value }}
-            />
-          ),
         })),
     [filterText, borderColors, colors]
   );
@@ -258,12 +210,6 @@ const Tokens: React.FC = () => {
             px: remToPx(value),
             rem: value,
           },
-          example: (
-            <div
-              className={styles.borderExample}
-              style={{ borderWidth: value }}
-            />
-          ),
         })),
     [filterText, borderWidths]
   );
@@ -278,12 +224,6 @@ const Tokens: React.FC = () => {
             px: remToPx(value),
             rem: value,
           },
-          example: (
-            <div
-              className={styles.spacingExample}
-              style={{ width: value, height: value }}
-            />
-          ),
         })),
     [filterText, space]
   );
@@ -306,12 +246,6 @@ const Tokens: React.FC = () => {
             px: remToPx(value),
             rem: value,
           },
-          example: (
-            <div
-              className={styles.spacingExample}
-              style={{ width: value, height: value }}
-            />
-          ),
         })),
     [filterText, iconSizes]
   );
@@ -368,7 +302,11 @@ const Tokens: React.FC = () => {
             This palette defines our brand. Emphasize Twilio Red and avoid
             introducing too many secondary colors for audiences new to Twilio.
           </p>
-          <TokenTable tokens={primaryColorTokens} prefix="colors" />
+          <TokenTable
+            tokens={primaryColorTokens}
+            prefix="colors"
+            exampleType="color"
+          />
         </div>
       )}
 
@@ -379,7 +317,11 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <TokenTable tokens={secondaryColorTokens} prefix="colors" />
+          <TokenTable
+            tokens={secondaryColorTokens}
+            prefix="colors"
+            exampleType="color"
+          />
         </div>
       )}
 
@@ -390,7 +332,11 @@ const Tokens: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <TokenTable tokens={tertiaryColorTokens} prefix="colors" />
+          <TokenTable
+            tokens={tertiaryColorTokens}
+            prefix="colors"
+            exampleType="color"
+          />
         </div>
       )}
 
@@ -400,6 +346,7 @@ const Tokens: React.FC = () => {
           <TokenTable
             tokens={backgroundColorTokens}
             prefix="backgroundColors"
+            exampleType="color"
           />
         </div>
       )}
@@ -407,14 +354,22 @@ const Tokens: React.FC = () => {
       {gradientTokens.length > 0 && (
         <div>
           <h2 id="gradients">Gradients</h2>
-          <TokenTable prefix="gradients" tokens={gradientTokens} />
+          <TokenTable
+            prefix="gradients"
+            tokens={gradientTokens}
+            exampleType="gradient"
+          />
         </div>
       )}
 
       {textColorTokens.length > 0 && (
         <div>
           <h2 id="text-colors">Text Colors</h2>
-          <TokenTable tokens={textColorTokens} prefix="textColors" />
+          <TokenTable
+            tokens={textColorTokens}
+            prefix="textColors"
+            exampleType="textColor"
+          />
         </div>
       )}
 
@@ -428,7 +383,11 @@ const Tokens: React.FC = () => {
       {fontSizeTokens.length > 0 && (
         <div>
           <h2 id="font-sizes">Font Sizes</h2>
-          <TokenTable tokens={fontSizeTokens} prefix="fontSize" />
+          <TokenTable
+            tokens={fontSizeTokens}
+            prefix="fontSize"
+            exampleType="fontSize"
+          />
         </div>
       )}
 
@@ -449,35 +408,55 @@ const Tokens: React.FC = () => {
       {shadowTokens.length > 0 && (
         <div>
           <h2 id="shadows">Shadows</h2>
-          <TokenTable prefix="shadows" tokens={shadowTokens} />
+          <TokenTable
+            prefix="shadows"
+            tokens={shadowTokens}
+            exampleType="shadow"
+          />
         </div>
       )}
 
       {borderTokens.length > 0 && (
         <div>
           <h2 id="borders">Borders</h2>
-          <TokenTable tokens={borderTokens} prefix="borderColors" />
+          <TokenTable
+            tokens={borderTokens}
+            prefix="borderColors"
+            exampleType="border"
+          />
         </div>
       )}
 
       {borderWidthTokens.length > 0 && (
         <div>
           <h2 id="border-widths">Border Widths</h2>
-          <TokenTable tokens={borderWidthTokens} prefix="borderWidths" />
+          <TokenTable
+            tokens={borderWidthTokens}
+            prefix="borderWidths"
+            exampleType="borderWidth"
+          />
         </div>
       )}
 
       {spacingTokens.length > 0 && (
         <div>
           <h2 id="spacings">Spacing</h2>
-          <TokenTable tokens={spacingTokens} prefix="space" />
+          <TokenTable
+            tokens={spacingTokens}
+            prefix="space"
+            exampleType="spacing"
+          />
         </div>
       )}
 
       {iconSizeTokens.length > 0 && (
         <div>
           <h2 id="icon-sizes">Icon Sizes</h2>
-          <TokenTable tokens={iconSizeTokens} prefix="iconSizes" />
+          <TokenTable
+            tokens={iconSizeTokens}
+            prefix="iconSizes"
+            exampleType="spacing"
+          />
         </div>
       )}
     </div>

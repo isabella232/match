@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Copyable } from "../copyable";
+import { Copyable } from "./copyable";
 import styles from "./token-table.module.css";
 import { CopyMenu } from "./copy-menu";
 

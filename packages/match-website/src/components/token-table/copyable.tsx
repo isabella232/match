@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion, jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
 import * as React from "react";
-import styles from "./styles.module.css";
+import styles from "./copyable.module.css";
 
 const Copyable: React.FC = ({ children }) => {
   const handleCopy = (e: React.MouseEvent<HTMLDivElement>) => {

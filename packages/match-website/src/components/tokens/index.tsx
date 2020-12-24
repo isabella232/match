@@ -3,15 +3,14 @@ import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
 import { ThemeSwitcher } from "../theme-switcher";
 import { TokenFilters } from "./filters";
-import { ShadowTokens } from "./shadow";
-import { BorderColorTokens } from "./border-color";
+import { Shadows } from "../token-table/examples";
 import { LineHeightTokens } from "./line-height";
 
 import { remToPx } from "../../utils";
 
 import styles from "./styles.module.css";
 
-import { TokenTable, TokenItem } from "./token-table";
+import { TokenTable, TokenItem } from "../token-table/token-table";
 import { hex, score } from "wcag-contrast";
 
 import { Token } from "../../types";
@@ -213,7 +212,7 @@ const Tokens: React.FC = () => {
             ),
           };
         }),
-    [filterText, textColors]
+    [filterText, textColors, backgroundColors]
   );
 
   const gradientTokens: TokenItem[] = React.useMemo(
@@ -233,20 +232,36 @@ const Tokens: React.FC = () => {
     [filterText, gradients]
   );
 
-  const shadowTokens: Token[] = React.useMemo(
+  const shadowTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(shadows).filter(([key]) =>
-        textSearch(`shadows.${key}`, filterText)
-      ),
+      Object.entries(shadows)
+        .filter(([key]) => textSearch(`shadows.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value: value,
+          example: <Shadows name={key} value={value} />,
+        })),
     [filterText, shadows]
   );
 
-  const borderTokens: Token[] = React.useMemo(
+  const borderTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(borderColors).filter(([key]) =>
-        textSearch(`borderColors.${key}`, filterText)
-      ),
-    [filterText, borderColors]
+      Object.entries(borderColors)
+        .filter(([key]) => textSearch(`borderColors.${key}`, filterText))
+        .map(([key, value]) => ({
+          name: key,
+          value:
+            Object.entries(colors).find(
+              ([_colorName, colorAlias]) => value === colorAlias
+            )?.[0] ?? value,
+          example: (
+            <div
+              className={styles.borderExample}
+              style={{ borderColor: value }}
+            />
+          ),
+        })),
+    [filterText, borderColors, colors]
   );
 
   const borderWidthTokens: TokenItem[] = React.useMemo(
@@ -450,14 +465,14 @@ const Tokens: React.FC = () => {
       {shadowTokens.length > 0 && (
         <div>
           <h2 id="shadows">Shadows</h2>
-          <ShadowTokens prefix="shadows" tokens={shadowTokens} />
+          <TokenTable prefix="shadows" tokens={shadowTokens} />
         </div>
       )}
 
       {borderTokens.length > 0 && (
         <div>
           <h2 id="borders">Borders</h2>
-          <BorderColorTokens tokens={borderTokens} prefix="borderColors" />
+          <TokenTable tokens={borderTokens} prefix="borderColors" />
         </div>
       )}
 

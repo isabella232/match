@@ -3,7 +3,7 @@ import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
 import { ThemeSwitcher } from "../theme-switcher";
 import { TokenFilters } from "./filters";
-import { Shadows } from "../token-table/examples";
+import { Color, Shadows } from "../token-table/examples";
 import { LineHeightTokens } from "./line-height";
 
 import { remToPx } from "../../utils";
@@ -60,11 +60,7 @@ const Tokens: React.FC = () => {
         .map(([key, value]) => ({
           name: key,
           value: value,
-          example: (
-            <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">
-              <circle cx="40" cy="21" r="20" fill={value} />
-            </svg>
-          ),
+          example: <Color value={value} />,
         })),
     [filterText, colors]
   );
@@ -85,11 +81,7 @@ const Tokens: React.FC = () => {
         .map(([key, value]) => ({
           name: key,
           value: value,
-          example: (
-            <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">
-              <circle cx="40" cy="21" r="20" fill={value} />
-            </svg>
-          ),
+          example: <Color value={value} />,
         })),
     [filterText, colors]
   );
@@ -114,11 +106,7 @@ const Tokens: React.FC = () => {
         .map(([key, value]) => ({
           name: key,
           value: value,
-          example: (
-            <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">
-              <circle cx="40" cy="21" r="20" fill={value} />
-            </svg>
-          ),
+          example: <Color value={value} />,
         })),
     [filterText, colors]
   );
@@ -167,11 +155,7 @@ const Tokens: React.FC = () => {
         .map(([key, value]) => ({
           name: key,
           value: value,
-          example: (
-            <svg height="42" width="150" stroke="#E1E3EA" strokeWidth="1">
-              <circle cx="40" cy="21" r="20" fill={value} />
-            </svg>
-          ),
+          example: <Color value={value} />,
         })),
     [filterText, backgroundColors]
   );

@@ -9,7 +9,7 @@ export type TextColorProps = {
 };
 
 export const TextColor: React.FC<TextColorProps> = ({
-  token: { name, value },
+  token: [name, value],
 }) => {
   const { backgroundColors } = useTheme();
   const bg1 = name.includes("inverse")

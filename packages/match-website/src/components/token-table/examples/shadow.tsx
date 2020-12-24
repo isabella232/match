@@ -7,7 +7,7 @@ export type ShadowProps = {
   token: TokenItem;
 };
 
-export const Shadow: React.FC<ShadowProps> = ({ token: { name, value } }) => {
+export const Shadow: React.FC<ShadowProps> = ({ token: [name, value] }) => {
   const { backgroundColorBlue } = useTheme();
 
   return (

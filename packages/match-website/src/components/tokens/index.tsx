@@ -40,23 +40,16 @@ const Tokens: React.FC = () => {
   } = React.useContext(MatchContext);
 
   const mediaQueryTokens: TokenItem[] = React.useMemo(() => {
-    return Object.entries(mediaQueries)
-      .filter(([key]) => textSearch(`mediaQueries.${key}`, filterText))
-      .map(([key, value]) => ({
-        name: key,
-        value: value,
-      }));
+    return Object.entries(mediaQueries).filter(([key]) =>
+      textSearch(`mediaQueries.${key}`, filterText)
+    );
   }, [filterText, mediaQueries]);
 
   const primaryColorTokens: TokenItem[] = React.useMemo(
     () =>
       Object.entries(colors)
         .filter(([key]) => ["brand", "brandHighlight", "white"].includes(key))
-        .filter(([key]) => textSearch(`colors.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: value,
-        })),
+        .filter(([key]) => textSearch(`colors.${key}`, filterText)),
     [filterText, colors]
   );
 
@@ -72,11 +65,7 @@ const Tokens: React.FC = () => {
             "basePurple",
           ].includes(key)
         )
-        .filter(([key]) => textSearch(`colors.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: value,
-        })),
+        .filter(([key]) => textSearch(`colors.${key}`, filterText)),
     [filterText, colors]
   );
 
@@ -96,22 +85,15 @@ const Tokens: React.FC = () => {
               "basePurple",
             ].includes(key)
         )
-        .filter(([key]) => textSearch(`colors.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: value,
-        })),
+        .filter(([key]) => textSearch(`colors.${key}`, filterText)),
     [filterText, colors]
   );
 
   const fontFamilyTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(fontFamilies)
-        .filter(([key]) => textSearch(`fontFamilies.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: value,
-        })),
+      Object.entries(fontFamilies).filter(([key]) =>
+        textSearch(`fontFamilies.${key}`, filterText)
+      ),
     [filterText, fontFamilies]
   );
 
@@ -119,48 +101,37 @@ const Tokens: React.FC = () => {
     () =>
       Object.entries(fontSizes)
         .filter(([key]) => textSearch(`fontSizes.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: {
+        .map(([key, value]) => [
+          key,
+          {
             px: remToPx(value),
             rem: value,
           },
-        })),
+        ]),
     [filterText, fontSizes]
   );
 
   const fontWeightTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(fontWeights)
-        .filter(([key]) => textSearch(`fontWeights.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: value,
-        })),
+      Object.entries(fontWeights).filter(([key]) =>
+        textSearch(`fontWeights.${key}`, filterText)
+      ),
     [filterText, fontWeights]
   );
 
   const backgroundColorTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(backgroundColors)
-        .filter(([key]) => textSearch(`backgroundColors.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: value,
-        })),
+      Object.entries(backgroundColors).filter(([key]) =>
+        textSearch(`backgroundColors.${key}`, filterText)
+      ),
     [filterText, backgroundColors]
   );
 
   const textColorTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(textColors)
-        .filter(([key]) => textSearch(`textColors.${key}`, filterText))
-        .map(([key, value]) => {
-          return {
-            name: key,
-            value: value,
-          };
-        }),
+      Object.entries(textColors).filter(([key]) =>
+        textSearch(`textColors.${key}`, filterText)
+      ),
     [filterText, textColors]
   );
 
@@ -168,21 +139,15 @@ const Tokens: React.FC = () => {
     () =>
       Object.entries(gradients)
         .filter(([key]) => textSearch(`gradients.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: value.slice(16, -1),
-        })),
+        .map(([key, value]) => [key, value.slice(16, -1)]),
     [filterText, gradients]
   );
 
   const shadowTokens: TokenItem[] = React.useMemo(
     () =>
-      Object.entries(shadows)
-        .filter(([key]) => textSearch(`shadows.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: value,
-        })),
+      Object.entries(shadows).filter(([key]) =>
+        textSearch(`shadows.${key}`, filterText)
+      ),
     [filterText, shadows]
   );
 
@@ -190,13 +155,12 @@ const Tokens: React.FC = () => {
     () =>
       Object.entries(borderColors)
         .filter(([key]) => textSearch(`borderColors.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value:
-            Object.entries(colors).find(
-              ([_colorName, colorAlias]) => value === colorAlias
-            )?.[0] ?? value,
-        })),
+        .map(([key, value]) => [
+          key,
+          Object.entries(colors).find(
+            ([_colorName, colorAlias]) => value === colorAlias
+          )?.[0] ?? value,
+        ]),
     [filterText, borderColors, colors]
   );
 
@@ -204,13 +168,13 @@ const Tokens: React.FC = () => {
     () =>
       Object.entries(borderWidths)
         .filter(([key]) => textSearch(`borderWidths.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: {
+        .map(([key, value]) => [
+          key,
+          {
             px: remToPx(value),
             rem: value,
           },
-        })),
+        ]),
     [filterText, borderWidths]
   );
 
@@ -218,13 +182,13 @@ const Tokens: React.FC = () => {
     () =>
       Object.entries(space)
         .filter(([key]) => textSearch(`space.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: {
+        .map(([key, value]) => [
+          key,
+          {
             px: remToPx(value),
             rem: value,
           },
-        })),
+        ]),
     [filterText, space]
   );
 
@@ -240,13 +204,13 @@ const Tokens: React.FC = () => {
     () =>
       Object.entries(iconSizes)
         .filter(([key]) => textSearch(`iconSizes.${key}`, filterText))
-        .map(([key, value]) => ({
-          name: key,
-          value: {
+        .map(([key, value]) => [
+          key,
+          {
             px: remToPx(value),
             rem: value,
           },
-        })),
+        ]),
     [filterText, iconSizes]
   );
 

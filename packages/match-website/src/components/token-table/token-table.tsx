@@ -6,15 +6,14 @@ import { CopyMenu } from "./copy-menu";
 import { Shadow, TextColor } from "./examples";
 import { useTheme } from "@twilio-labs/match-themes";
 
-export type TokenItem = {
-  name: string;
+export type TokenItem = [
+  name: string,
   value:
     | string
     | {
         [unit: string]: string;
-      };
-  example?: any;
-};
+      }
+];
 
 export type TokenTableProps = {
   tokens: TokenItem[];
@@ -38,9 +37,9 @@ const TokenTable: React.FC<TokenTableProps> = ({
   const { colors } = useTheme();
   prefix = prefix !== undefined ? `${prefix}.` : "";
   // eslint-disable-next-line unicorn/no-reduce
-  const units = tokens.reduce((unitList, tokenItem) => {
-    if (typeof tokenItem.value !== "string") {
-      for (const unitName of Object.keys(tokenItem.value)) {
+  const units = tokens.reduce((unitList, [_name, value]) => {
+    if (typeof value !== "string") {
+      for (const unitName of Object.keys(value)) {
         if (!unitList.includes(unitName)) {
           unitList.push(unitName);
         }
@@ -49,22 +48,21 @@ const TokenTable: React.FC<TokenTableProps> = ({
     return unitList;
   }, [] as string[]);
 
-  const hasExamples =
-    exampleType !== undefined ||
-    tokens.some((token) => token.example !== undefined);
+  const hasExamples = exampleType !== undefined;
 
   const generateExample = (token: TokenItem) => {
+    const [, value] = token;
     let example: any;
     switch (exampleType) {
       case "color":
         example = (
           <svg height="42" width="42" stroke="#E1E3EA" strokeWidth="1">
-            <circle cx="21" cy="21" r="20" fill={token.value as string} />
+            <circle cx="21" cy="21" r="20" fill={value as string} />
           </svg>
         );
         break;
       case "fontSize":
-        example = <span style={{ fontSize: token["rem"] as string }}>Ab</span>;
+        example = <span style={{ fontSize: value["rem"] as string }}>Ab</span>;
         break;
       case "textColor":
         example = <TextColor token={token} />;
@@ -72,7 +70,7 @@ const TokenTable: React.FC<TokenTableProps> = ({
       case "gradient":
         example = (
           <div
-            style={{ background: `linear-gradient(${token.value as string})` }}
+            style={{ background: `linear-gradient(${value as string})` }}
             className={exampleStyles.rectangleExample}
           ></div>
         );
@@ -85,8 +83,7 @@ const TokenTable: React.FC<TokenTableProps> = ({
           <div
             className={exampleStyles.borderExample}
             style={{
-              borderColor:
-                colors[token.value as string] ?? (token.value as string),
+              borderColor: colors[value as string] ?? (value as string),
             }}
           />
         );
@@ -95,7 +92,7 @@ const TokenTable: React.FC<TokenTableProps> = ({
         example = (
           <div
             className={exampleStyles.borderExample}
-            style={{ borderWidth: token.value["rem"] }}
+            style={{ borderWidth: value["rem"] }}
           />
         );
         break;
@@ -103,7 +100,7 @@ const TokenTable: React.FC<TokenTableProps> = ({
         example = (
           <div
             className={exampleStyles.spacingExample}
-            style={{ width: token.value["rem"], height: token.value["rem"] }}
+            style={{ width: value["rem"], height: value["rem"] }}
           />
         );
         break;
@@ -126,36 +123,31 @@ const TokenTable: React.FC<TokenTableProps> = ({
         </tr>
       </thead>
       <tbody>
-        {tokens.map((token) => (
-          <tr key={`${prefix}${token.name}`}>
-            <td>
-              <Copyable>{`${prefix}${token.name}`}</Copyable>
-            </td>
-            {["string", "number"].includes(typeof token.value) ? (
+        {tokens.map((token) => {
+          const [name, value] = token;
+          return (
+            <tr key={`${prefix}${name}`}>
               <td>
-                <Copyable>{token.value}</Copyable>
+                <Copyable>{`${prefix}${name}`}</Copyable>
               </td>
-            ) : (
-              Object.values(token.value).map((val, idx) => (
-                <td key={`${prefix}${token.name}.value.${units[idx]}`}>
-                  <Copyable>{val}</Copyable>
+              {["string", "number"].includes(typeof value) ? (
+                <td>
+                  <Copyable>{value}</Copyable>
                 </td>
-              ))
-            )}
-            {hasExamples &&
-              (token.example !== undefined ? (
-                <td>{token.example}</td>
               ) : (
-                <td>{generateExample(token)}</td>
-              ))}
-            <td>
-              <CopyMenu
-                name={`${prefix}${token.name}`}
-                value={token.value}
-              ></CopyMenu>
-            </td>
-          </tr>
-        ))}
+                Object.values(value).map((val, idx) => (
+                  <td key={`${prefix}${name}.value.${units[idx]}`}>
+                    <Copyable>{val}</Copyable>
+                  </td>
+                ))
+              )}
+              {hasExamples && <td>{generateExample(token)}</td>}
+              <td>
+                <CopyMenu name={`${prefix}${name}`} value={value}></CopyMenu>
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

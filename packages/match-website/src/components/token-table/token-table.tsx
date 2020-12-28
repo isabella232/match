@@ -5,6 +5,7 @@ import exampleStyles from "./examples/examples.module.css";
 import { CopyMenu } from "./copy-menu";
 import { Shadow, TextColor } from "./examples";
 import { useTheme } from "@twilio-labs/match-themes";
+import clsx from "clsx";
 
 export type TokenItem = [
   name: string,
@@ -114,12 +115,20 @@ const TokenTable: React.FC<TokenTableProps> = ({
         <tr>
           <th>Token</th>
           {units.length === 0 ? (
-            <th>Value</th>
+            <th colSpan={!hasExamples ? 2 : undefined}>Value</th>
           ) : (
-            units.map((unitName) => <th key={unitName}>Value ({unitName})</th>)
+            units.map((unitName, idx) => (
+              <th
+                key={unitName}
+                colSpan={
+                  !hasExamples && idx === units.length - 1 ? 2 : undefined
+                }
+              >
+                Value ({unitName})
+              </th>
+            ))
           )}
-          {hasExamples && <th>Example</th>}
-          <th />
+          {hasExamples && <th colSpan={2}>Example</th>}
         </tr>
       </thead>
       <tbody>
@@ -131,18 +140,32 @@ const TokenTable: React.FC<TokenTableProps> = ({
                 <Copyable>{`${prefix}${name}`}</Copyable>
               </td>
               {["string", "number"].includes(typeof value) ? (
-                <td>
+                <td
+                  className={clsx({
+                    [styles.noBorderRight]: !hasExamples,
+                  })}
+                >
                   <Copyable>{value}</Copyable>
                 </td>
               ) : (
                 Object.values(value).map((val, idx) => (
-                  <td key={`${prefix}${name}.value.${units[idx]}`}>
+                  <td
+                    key={`${prefix}${name}.value.${units[idx]}`}
+                    className={clsx({
+                      [styles.noBorderRight]:
+                        !hasExamples && idx === Object.values(value).length - 1,
+                    })}
+                  >
                     <Copyable>{val}</Copyable>
                   </td>
                 ))
               )}
-              {hasExamples && <td>{generateExample(token)}</td>}
-              <td>
+              {hasExamples && (
+                <td className={styles.noBorderRight}>
+                  {generateExample(token)}
+                </td>
+              )}
+              <td className={styles.noBorderLeft}>
                 <CopyMenu name={`${prefix}${name}`} value={value}></CopyMenu>
               </td>
             </tr>

@@ -1,7 +1,7 @@
 import * as React from "react";
-import { useEffect, useRef, useState } from "react";
-import clsx from "clsx";
+import { usePopoverState, Popover, PopoverDisclosure } from "reakit/Popover";
 import styles from "./token-table.module.css";
+import MoreIcon from "./more.svg";
 
 export type CopyMenuProps = {
   name: string;
@@ -13,30 +13,18 @@ export type CopyMenuProps = {
 };
 
 const CopyMenu: React.FC<CopyMenuProps> = ({ name, value }) => {
-  const [isCopyMenuOpen, setIsCopyMenuOpen] = useState<boolean>(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const popover = usePopoverState({
+    gutter: 0,
+    modal: true,
+    placement: "right-start",
+  });
 
   const handleCopy = (value: string) => {
     navigator.clipboard.writeText(value);
-    setIsCopyMenuOpen(false);
+    setTimeout(() => {
+      popover.hide();
+    }, 0);
   };
-  useEffect(() => {
-    const closeOnFocusLost = (e: MouseEvent | FocusEvent) => {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      if (e.target instanceof Element && !ref.current?.contains(e.target!)) {
-        setIsCopyMenuOpen(false);
-      }
-    };
-    if (isCopyMenuOpen) {
-      document.body.addEventListener("click", closeOnFocusLost);
-      document.body.addEventListener("focusin", closeOnFocusLost);
-    }
-
-    return () => {
-      document.body.removeEventListener("click", closeOnFocusLost);
-      document.body.removeEventListener("focusin", closeOnFocusLost);
-    };
-  }, [isCopyMenuOpen]);
 
   const handleKeyboard = (value: string) => (
     e: React.KeyboardEvent<HTMLLIElement>
@@ -47,68 +35,55 @@ const CopyMenu: React.FC<CopyMenuProps> = ({ name, value }) => {
   };
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div
-      ref={ref}
-      className={styles.copyWrapper}
-      onKeyDown={(e) => {
-        if (e.key === "Escape") {
-          setIsCopyMenuOpen(false);
-        }
-      }}
-    >
-      <button
-        onClick={() => {
-          setIsCopyMenuOpen(!isCopyMenuOpen);
-        }}
-        aria-expanded={isCopyMenuOpen}
+    <div className={styles.copyWrapper}>
+      <PopoverDisclosure {...popover} className={styles.moreButton}>
+        <MoreIcon />
+      </PopoverDisclosure>
+      <Popover
+        {...popover}
+        hideOnClickOutside={true}
+        hideOnEsc={true}
+        aria-label="Choose what to copy"
       >
-        ...
-      </button>
-
-      <ul
-        role="menu"
-        className={clsx(styles.copyMenu, {
-          [styles.isOpen]: isCopyMenuOpen,
-        })}
-      >
-        <li
-          role="menuitem"
-          onClick={() => {
-            handleCopy(name);
-          }}
-          onKeyDown={handleKeyboard(name)}
-          tabIndex={0}
-        >
-          Copy token name
-        </li>
-        {["string", "number"].includes(typeof value) ? (
+        <ul role="menu" className={styles.copyMenu}>
           <li
             role="menuitem"
             onClick={() => {
-              handleCopy(value as string);
+              handleCopy(name);
             }}
-            onKeyDown={handleKeyboard(value as string)}
+            onKeyDown={handleKeyboard(name)}
             tabIndex={0}
           >
-            Copy token value
+            Copy token name
           </li>
-        ) : (
-          Object.entries(value).map(([unit, value]) => (
+          {["string", "number"].includes(typeof value) ? (
             <li
-              key={`${name}.value.${unit}`}
               role="menuitem"
               onClick={() => {
-                handleCopy(value);
+                handleCopy(value as string);
               }}
-              onKeyDown={handleKeyboard(value)}
+              onKeyDown={handleKeyboard(value as string)}
               tabIndex={0}
             >
-              Copy token value ({unit})
+              Copy token value
             </li>
-          ))
-        )}
-      </ul>
+          ) : (
+            Object.entries(value).map(([unit, value]) => (
+              <li
+                key={`${name}.value.${unit}`}
+                role="menuitem"
+                onClick={() => {
+                  handleCopy(value);
+                }}
+                onKeyDown={handleKeyboard(value)}
+                tabIndex={0}
+              >
+                Copy token value ({unit})
+              </li>
+            ))
+          )}
+        </ul>
+      </Popover>
     </div>
   );
 };

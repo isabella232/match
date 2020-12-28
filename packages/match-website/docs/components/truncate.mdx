@@ -1,0 +1,98 @@
+---
+id: truncate
+title: Truncate
+sidebar_label: Truncate
+slug: /components/truncate/
+---
+
+import { ThemeSwitcher } from "../../src/components/theme-switcher";
+import { VirtueCrime, Virtue, Crime } from "../../src/components/virtue-crime";
+
+The truncate component hides text that extends past a defined area.
+
+**Sources:** [Github](https://github.com/twilio-labs/match/tree/main/packages/match-components/src/truncate)
+
+### Installation
+
+```shell
+yarn add @twilio-labs/match-components
+```
+
+### Usage
+
+```jsx
+import { Truncate } from "@twilio-labs/match-components";
+
+const Component = () => (
+  <p style={{ width: "200px" }}>
+    <Truncate>Any text that is past 200px will get truncated</Truncate>
+  </p>
+);
+```
+
+### Props
+
+No Props
+
+---
+
+## Guidelines
+
+### About Truncate
+
+The truncate component hides text that extends past the set width of the parent container. An ellipsis is added to the end of the shortened text to
+indicate that the text is shortened. The truncate component is useful for long links, breadcrumbs, and sections where there is an option to
+read more (i.e. a blog thumbnail).
+
+### Composition
+
+To truncate a string, wrap the string in the truncate component and wrap the truncate component in a parent with a **set width**.
+
+<VirtueCrime>
+  <Virtue>Truncate a long url or long breadcrumb</Virtue>
+  <Crime>
+    Do not truncate headings, titles, warnings, or other important information
+  </Crime>
+  <Virtue>Have a "read more" button when long text is truncated </Virtue>
+  <Crime>
+    Do not truncate text without an option to see all the rest of the text
+  </Crime>
+</VirtueCrime>
+
+### Accessibility
+
+Consider how truncating the text might affect readability of the content. Additionally, consider placing the full text in a title attribute so
+that it’s accessible on hover.
+
+---
+
+## Examples
+
+<ThemeSwitcher />
+
+### Text Sample
+
+The truncate component can be used to give a sample of text.
+
+```jsx live
+<Card padding="scale340" style={{ width: "400px" }}>
+  <h3>Margaret Hamilton</h3>
+  <Truncate>
+    Margaret Hamilton is credited with coining the term ‘software engineering'
+  </Truncate>
+  <Button>Read More</Button>
+</Card>
+```
+
+### Long url
+
+```jsx live
+<div style={{ width: "300px" }}>
+  Source:
+  <Anchor href="https://www.topuniversities.com/courses/computer-science-information-systems/10-amazing-female-computer-scientists-youve-probably-never-heard">
+    <Truncate>
+      https://www.topuniversities.com/courses/computer-science-information-systems/10-amazing-female-computer-scientists-youve-probably-never-heard{" "}
+    </Truncate>
+  </Anchor>
+</div>
+```

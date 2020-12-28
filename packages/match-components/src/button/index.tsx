@@ -1,33 +1,34 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { StyledButton, StyledPrompt } from "./styles";
-import { ButtonVariant, ButtonType, ButtonSize } from "./types";
+import { ButtonVariant, ButtonSize } from "./types";
 import type { ButtonProps } from "./types";
 
-const Button: React.FC<ButtonProps> = ({
-  type,
-  prompt,
-  children,
-  ...props
-}) => {
-  if (props.download && !props.href)
-    console.warn("[Button]: Href must be provided for a download link.");
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ type, prompt, children, ...props }, ref) => {
+    if (props.download && !props.href) {
+      console.warn("[Button]: Href must be provided for a download link.");
+    }
 
-  return (
-    <StyledButton
-      forwardedAs={props.href ? "a" : undefined}
-      type={!props.href ? type : undefined}
-      {...props}
-    >
-      {children}
-      {prompt && <StyledPrompt />}
-    </StyledButton>
-  );
-};
+    return (
+      <StyledButton
+        ref={ref}
+        forwardedAs={props.href ? "a" : "button"}
+        type={!props.href ? type : undefined}
+        {...props}
+      >
+        {React.Children.map(children, (child) =>
+          typeof child === "string" ? child.trim() : child
+        )}
+        {prompt && <StyledPrompt />}
+      </StyledButton>
+    );
+  }
+);
 
 Button.propTypes = {
   variant: PropTypes.oneOf(Object.values(ButtonVariant)),
-  type: PropTypes.oneOf(Object.values(ButtonType)),
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
   size: PropTypes.oneOf(Object.values(ButtonSize)),
   href: PropTypes.string,
   disabled: PropTypes.bool,
@@ -38,7 +39,6 @@ Button.propTypes = {
 
 Button.defaultProps = {
   variant: ButtonVariant.PRIMARY,
-  type: ButtonType.BUTTON,
   size: ButtonSize.NORMAL,
   disabled: false,
   fullWidth: false,
@@ -48,5 +48,5 @@ Button.defaultProps = {
 
 Button.displayName = "Button";
 
-export { Button, ButtonVariant, ButtonType, ButtonSize };
+export { Button, ButtonVariant, ButtonSize };
 export type { ButtonProps };

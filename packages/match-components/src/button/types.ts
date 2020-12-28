@@ -5,20 +5,16 @@ export enum ButtonVariant {
   INVERSE = "inverse",
 }
 
-export enum ButtonType {
-  BUTTON = "button",
-  SUBMIT = "submit",
-}
-
 export enum ButtonSize {
   NORMAL = "normal",
   SMALL = "small",
+  ICON = "icon",
 }
 
 export interface ButtonProps
   extends React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   variant?: ButtonVariant;
-  type?: ButtonType;
+  type?: "button" | "submit" | "reset";
   size?: ButtonSize;
   /** Should the button include an animated prompt? */
   prompt?: boolean;

@@ -15,12 +15,17 @@ const secureExternalLink = (
 };
 
 const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
-  ({ ...props }, ref) => {
+  ({ children, ...props }, ref) => {
     return (
-      <StyledAnchor ref={ref} {...secureExternalLink(props.href)} {...props} />
+      <StyledAnchor ref={ref} {...secureExternalLink(props.href)} {...props}>
+        {React.Children.map(children, (child) =>
+          typeof child === "string" ? child.trim() : child
+        )}
+      </StyledAnchor>
     );
   }
 );
+
 Anchor.displayName = "Anchor";
 
 Anchor.propTypes = {

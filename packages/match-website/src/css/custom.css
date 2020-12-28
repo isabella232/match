@@ -13,6 +13,7 @@
   --ifm-color-primary-light: var(--color-blue-30);
   --ifm-color-primary-lighter: var(--color-blue-20);
   --ifm-color-primary-lightest: var(--color-blue-10);
+  --ifm-link-decoration: underline;
 
   /* Sidebar */
   --ifm-menu-color: var(--ifm-font-color-base);
@@ -33,6 +34,13 @@
   --ifm-h2-font-size: var(--font-size-scale-180);
   --ifm-h3-font-size: var(--font-size-scale-140);
   --ifm-h4-font-size: var(--font-size-scale-100);
+}
+
+.navbar a,
+.menu a,
+.table-of-contents a,
+.pagination-nav a {
+  text-decoration: none;
 }
 
 .footer {

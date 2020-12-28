@@ -1,6 +1,6 @@
 {
   "name": "plugin-docusaurus-tokens",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Registers Match tokens for use in Docusaurus themes",
   "private": true,
   "repository": {
@@ -24,7 +24,8 @@
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core"
   },
   "devDependencies": {
-    "@docusaurus/types": "2.0.0-alpha.68",
-    "tsconfig-match": "workspace:configs/tsconfig"
+    "@docusaurus/types": "2.0.0-alpha.70",
+    "tsconfig-match": "workspace:configs/tsconfig",
+    "typescript": "4.1.3"
   }
 }

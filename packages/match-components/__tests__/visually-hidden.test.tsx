@@ -7,7 +7,7 @@ describe("Visually Hidden", () => {
     const { container, getByText } = render(
       <VisuallyHidden as="h2">You are here:</VisuallyHidden>
     );
-    expect(container.offsetHeight).toBe(0);
+    expect(container.clientHeight).toBe(0);
     expect(getByText(/you are here/i)).toBeVisible();
   });
 });

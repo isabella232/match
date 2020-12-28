@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { StyledIcon } from "../icon/styles";
 import { AnchorProps, AnchorVariant } from "./types";
 
 const variants = {
@@ -55,6 +56,16 @@ const StyledAnchor = styled.a<AnchorProps>`
     outline-offset: 2px;
     -moz-outline-radius: 4px;
   }
+
+  ${StyledIcon} {
+    width: 0.75em;
+    height: 0.75em;
+    margin-bottom: 0.15em;
+    margin-left: 0.5em;
+    color: inherit;
+    vertical-align: middle;
+  }
+
   ${({ noUnderline }) =>
     noUnderline &&
     css`
@@ -65,6 +76,7 @@ const StyledAnchor = styled.a<AnchorProps>`
         text-decoration: underline;
       }
     `}
+
   ${({ variant }) => variant && variants[variant]}
 `;
 

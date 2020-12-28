@@ -35,7 +35,7 @@ export const AllIcons: Story<IconProps> = (args) => (
       .filter((Icon) => typeof Icon === "function")
       .map((Icon) => (
         <div key={uid(Icon)}>
-          <Icon decorative {...args} />
+          <Icon title={Icon.name} {...args} />
         </div>
       ))}
   </div>

@@ -1,15 +1,39 @@
 import styled, { css, keyframes } from "styled-components";
 import { Button } from "reakit/Button";
+import { StyledIcon } from "../icon/styles";
 import { ButtonProps, ButtonSize, ButtonVariant } from "./types";
 
 const sizes = {
   [ButtonSize.NORMAL]: css`
-    padding: calc(16px - 2px) calc(24px - 2px);
+    padding: ${({ theme }) =>
+      `calc(${theme.space.scale100} - ${theme.borderWidths.light})
+      calc(${theme.space.scale180} - ${theme.borderWidths.light})`};
     font-size: ${({ theme }) => theme.fontSizeScale100};
+
+    ${StyledIcon} {
+      width: ${({ theme }) => theme.iconSizes.medium};
+      height: ${({ theme }) => theme.iconSizes.medium};
+    }
   `,
   [ButtonSize.SMALL]: css`
-    padding: calc(8px - 2px) calc(16px - 2px);
+    padding: ${({ theme }) =>
+      `calc(${theme.space.scale20} - ${theme.borderWidths.light})
+      calc(${theme.space.scale100} - ${theme.borderWidths.light})`};
     font-size: ${({ theme }) => theme.fontSizeScale80};
+
+    ${StyledIcon} {
+      width: ${({ theme }) => theme.iconSizes.small};
+      height: ${({ theme }) => theme.iconSizes.small};
+    }
+  `,
+  [ButtonSize.ICON]: css`
+    padding: ${({ theme }) =>
+      `calc(${theme.space.scale60} - ${theme.borderWidths.light})`};
+    ${StyledIcon} {
+      width: ${({ theme }) => theme.iconSizes.large};
+      height: ${({ theme }) => theme.iconSizes.large};
+      margin: 0;
+    }
   `,
 };
 
@@ -145,7 +169,8 @@ const StyledPrompt = styled.span`
   @media ${({ theme }) => theme.mediaQueries.medium} {
     &::before {
       transform: ${({ theme }) =>
-        `rotate(-45deg) translateY(calc(-${theme.borderWidths.light} / 2))`};
+        `rotate(-45deg)
+        translateY(calc(-${theme.borderWidths.light} / 2))`};
       transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -166,12 +191,13 @@ const StyledButton = styled(Button).withConfig({
   text-align: center;
   text-decoration: none;
   border-style: solid;
-  border-width: 2px;
+  border-width: ${({ theme }) => theme.borderWidths.light};
   border-radius: 4px;
   cursor: pointer;
   transition-duration: 0.2s;
   transition-property: color, background, border;
   transition-timing-function: ease-in;
+  line-height: ${({ theme }) => theme.fontSizes.scale100};
 
   &:focus {
     outline-width: 2px;
@@ -203,6 +229,12 @@ const StyledButton = styled(Button).withConfig({
         scaleX(1.5)`};
       animation: none;
     }
+  }
+
+  ${StyledIcon} {
+    margin-left: 0.5em;
+    color: inherit;
+    vertical-align: middle;
   }
 
   ${({ fullWidth }) =>

@@ -27,7 +27,26 @@ export type TokenTableProps = {
     | "spacing";
 };
 
-function getUnitsFromTokenList(tokens: TokenItem[]) {
+/**
+ * Given a list of tokens whose value is an object in the format `{ [unitName: string]: string }`,
+ * returns the units found for that token list. If the values are simple, returns an empty array.
+ *  @example <caption>Value has multiple units</caption>
+ *           // returns ['px','rem']
+ *           getUnitsFromTokenList([{
+ *             name: 'test',
+ *             value: {
+ *               'px': 32,
+ *               'rem': 1.25
+ *             }
+ *           }]);
+ *  @example <caption>Simple value</caption>
+ *           // returns []
+ *           getUnitsFromTokenList([{
+ *              name: 'simple',
+ *              value: 10
+ *           }]);
+ */
+function getUnitsFromTokenList(tokens: TokenItem[]): string[] {
   // eslint-disable-next-line unicorn/no-reduce
   const foundUnits = tokens.reduce((unitList, [_name, value]) => {
     if (typeof value !== "string") {

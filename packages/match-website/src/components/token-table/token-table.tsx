@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Copyable } from "./copyable";
 import styles from "./token-table.module.css";
 import exampleStyles from "./examples/examples.module.css";
 import { CopyMenu } from "./copy-menu";
@@ -136,16 +135,14 @@ const TokenTable: React.FC<TokenTableProps> = ({
           const [name, value] = token;
           return (
             <tr key={`${prefix}${name}`}>
-              <td>
-                <Copyable>{`${prefix}${name}`}</Copyable>
-              </td>
+              <td>{`${prefix}${name}`}</td>
               {["string", "number"].includes(typeof value) ? (
                 <td
                   className={clsx({
                     [styles.noBorderRight]: !hasExamples,
                   })}
                 >
-                  <Copyable>{value}</Copyable>
+                  {value}
                 </td>
               ) : (
                 Object.values(value).map((val, idx) => (
@@ -156,7 +153,7 @@ const TokenTable: React.FC<TokenTableProps> = ({
                         !hasExamples && idx === Object.values(value).length - 1,
                     })}
                   >
-                    <Copyable>{val}</Copyable>
+                    {val}
                   </td>
                 ))
               )}

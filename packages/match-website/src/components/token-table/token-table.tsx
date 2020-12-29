@@ -1,9 +1,7 @@
 import * as React from "react";
 import styles from "./token-table.module.css";
-import exampleStyles from "./examples/examples.module.css";
 import { CopyMenu } from "./copy-menu";
-import { Shadow, TextColor } from "./examples";
-import { useTheme } from "@twilio-labs/match-themes";
+import { Example } from "./examples";
 import clsx from "clsx";
 
 export type TokenItem = [
@@ -29,15 +27,9 @@ export type TokenTableProps = {
     | "spacing";
 };
 
-const TokenTable: React.FC<TokenTableProps> = ({
-  tokens,
-  prefix,
-  exampleType,
-}) => {
-  const { colors } = useTheme();
-  prefix = prefix !== undefined ? `${prefix}.` : "";
+function getUnitsFromTokenList(tokens: TokenItem[]) {
   // eslint-disable-next-line unicorn/no-reduce
-  const units = tokens.reduce((unitList, [_name, value]) => {
+  const foundUnits = tokens.reduce((unitList, [_name, value]) => {
     if (typeof value !== "string") {
       for (const unitName of Object.keys(value)) {
         if (!unitList.includes(unitName)) {
@@ -47,66 +39,18 @@ const TokenTable: React.FC<TokenTableProps> = ({
     }
     return unitList;
   }, [] as string[]);
+  return foundUnits;
+}
+
+const TokenTable: React.FC<TokenTableProps> = ({
+  tokens,
+  prefix,
+  exampleType,
+}) => {
+  prefix = prefix !== undefined ? `${prefix}.` : "";
+  const units = getUnitsFromTokenList(tokens);
 
   const hasExamples = exampleType !== undefined;
-
-  const generateExample = (token: TokenItem) => {
-    const [, value] = token;
-    let example: any;
-    switch (exampleType) {
-      case "color":
-        example = (
-          <svg height="42" width="42" stroke="#E1E3EA" strokeWidth="1">
-            <circle cx="21" cy="21" r="20" fill={value as string} />
-          </svg>
-        );
-        break;
-      case "fontSize":
-        example = <span style={{ fontSize: value["rem"] as string }}>Ab</span>;
-        break;
-      case "textColor":
-        example = <TextColor token={token} />;
-        break;
-      case "gradient":
-        example = (
-          <div
-            style={{ background: `linear-gradient(${value as string})` }}
-            className={exampleStyles.rectangleExample}
-          ></div>
-        );
-        break;
-      case "shadow":
-        example = <Shadow token={token} />;
-        break;
-      case "border":
-        example = (
-          <div
-            className={exampleStyles.borderExample}
-            style={{
-              borderColor: colors[value as string] ?? (value as string),
-            }}
-          />
-        );
-        break;
-      case "borderWidth":
-        example = (
-          <div
-            className={exampleStyles.borderExample}
-            style={{ borderWidth: value["rem"] }}
-          />
-        );
-        break;
-      case "spacing":
-        example = (
-          <div
-            className={exampleStyles.spacingExample}
-            style={{ width: value["rem"], height: value["rem"] }}
-          />
-        );
-        break;
-    }
-    return example;
-  };
 
   return (
     <table className={styles.tokenTable}>
@@ -157,9 +101,9 @@ const TokenTable: React.FC<TokenTableProps> = ({
                   </td>
                 ))
               )}
-              {hasExamples && (
+              {hasExamples && exampleType && (
                 <td className={styles.noBorderRight}>
-                  {generateExample(token)}
+                  <Example token={token} type={exampleType} />
                 </td>
               )}
               <td className={styles.noBorderLeft}>

@@ -4,7 +4,6 @@ export {
   borderWidth,
   mediaQuery,
   color,
-  fontFamily,
   fontSize,
   fontWeight,
   gradient,
@@ -14,4 +13,5 @@ export {
   component,
   lineHeight,
 } from "../core";
+export * from "./font-family";
 export * from "./shadow";

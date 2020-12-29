@@ -11,6 +11,7 @@ const StyledHeading = styled.h1`
         h1: {
           fontSize: [
             "scale280",
+            undefined,
             theme.components.headingH1SizeMedium,
             "scale420",
           ],
@@ -20,6 +21,7 @@ const StyledHeading = styled.h1`
         h2: {
           fontSize: [
             "scale220",
+            undefined,
             theme.components.headingH2SizeMedium,
             theme.components.headingH2SizeLarge,
           ],
@@ -29,6 +31,7 @@ const StyledHeading = styled.h1`
         h3: {
           fontSize: [
             theme.components.headingH3Size,
+            undefined,
             theme.components.headingH3SizeMedium,
             theme.components.headingH3SizeLarge,
           ],

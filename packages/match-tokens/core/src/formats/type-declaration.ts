@@ -9,16 +9,19 @@ export const tokenTemplate = (prop): string =>
 
 export const groupTemplate = (groupName, props): string => `
 export declare const ${groupName}: {
-${props.map((prop) => `${baseTokenName(prop)}: ${prop.name},`).join("\n")}
+${props
+  .map((prop) => `${baseTokenName(prop)}: ${JSON.stringify(prop.value)},`)
+  .join("\n")}
 };`;
 
 export const breakpointsTemplate = (props): string => `
-export declare const breakpoints = [
+export declare const breakpoints: [
+${props.map((prop) => `"${prop.original.value}px"`).join(",\n")}
+] & {
 ${props
-  .filter((prop) => prop.attributes.category === "mediaQuery")
-  .map((prop) => `"${prop.original.value}px"`)
+  .map((prop) => `${prop.attributes.type}: "${prop.original.value}px"`)
   .join(",\n")}
-];
+}
 `;
 
 export const typeDeclarationTokenFormatter = (dictionary): string => {
@@ -34,7 +37,11 @@ export const typeDeclarationTokenFormatter = (dictionary): string => {
     groupTemplate
   );
 
-  const breakpoints = breakpointsTemplate(dictionary.allProperties);
+  const breakpoints = breakpointsTemplate(
+    dictionary.allProperties.filter(
+      (prop) => prop.attributes.category === "mediaQuery"
+    )
+  );
 
   return [singleTokens, groupedTokens, breakpoints].join("\n");
 };

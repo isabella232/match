@@ -80,6 +80,7 @@ module.exports = {
           shouldExtractLiteralValuesFromUnion: false,
           savePropValueAsString: true,
           propFilter: (prop) => {
+            if (prop.description.includes("@ignore")) return false;
             if (prop.parent) {
               return !prop.parent.fileName.includes("@types/react");
             }

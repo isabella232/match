@@ -18,3 +18,25 @@
   position: relative;
   padding: 40px;
 }
+
+/** Unset global Docusaurus styles that are in conflict with the Snippet Component. */
+.playgroundPreview pre {
+  overflow: unset;
+  color: unset;
+  font: unset;
+  word-wrap: unset;
+  background: unset;
+  border-radius: 0;
+}
+
+.playgroundPreview pre code {
+  display: unset;
+  padding: unset;
+  overflow: unset;
+  color: unset;
+  font-size: unset;
+  line-height: unset;
+  word-wrap: unset;
+  word-break: unset;
+  background: unset;
+}

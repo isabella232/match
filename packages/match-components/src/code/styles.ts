@@ -6,6 +6,7 @@ import type { CodeProps } from "./types";
 
 const StyledCode = styled.code<CodeProps>`
   padding: ${themeGet("space.scale7")} ${themeGet("space.scale20")};
+  font-size: inherit;
   font-family: ${themeGet("fontFamilies.code")};
   line-height: ${themeGet("lineHeights.scale100")};
   border-style: solid;

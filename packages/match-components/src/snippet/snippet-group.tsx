@@ -45,18 +45,20 @@ const SnippetGroup: React.FC<SnippetGroupProps> = ({
   }, [tab.selectedId, children, seed]);
 
   return (
-    <StyledSnippetGroup variant={variant} compact={compact}>
+    <StyledSnippetGroup
+      variant={variant}
+      compact={compact}
+      hasTitle={Boolean(title)}
+    >
       <StyledSnippetHeader variant={variant}>
         {title && <StyledSnippetTitle>{title}</StyledSnippetTitle>}
-        {!compact && (
-          <StyledTabList {...tab} aria-label="Languages">
-            {React.Children.map(children, ({ props: { title, language } }) => (
-              <StyledTab {...tab} id={seed(language + title)}>
-                {title ? title : getLanguageNiceName(language)}
-              </StyledTab>
-            ))}
-          </StyledTabList>
-        )}
+        <StyledTabList {...tab} aria-label="Languages">
+          {React.Children.map(children, ({ props: { title, language } }) => (
+            <StyledTab {...tab} id={seed(language + title)}>
+              {title ? title : getLanguageNiceName(language)}
+            </StyledTab>
+          ))}
+        </StyledTabList>
         <StyledSnippetSelect>
           <VisuallyHidden>
             <label htmlFor={seed("language-select")}>Languages</label>

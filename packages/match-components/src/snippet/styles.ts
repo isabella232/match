@@ -231,6 +231,8 @@ const StyledTooltip = styled(Tooltip)`
 `;
 
 const StyledTooltipArrow = styled(TooltipArrow)`
+  line-height: 1;
+
   .fill {
     fill: ${themeGet("colors.blue60")};
   }
@@ -404,7 +406,7 @@ const StyledSnippet = styled.div<StyledSnippetProps>`
   border-radius: 4px;
 
   ${StyledSnippetHeader} {
-    grid-template-columns: auto max-content;
+    grid-template-columns: auto min-content;
   }
 
   ${StyledSnippetTitle} {
@@ -416,7 +418,7 @@ const StyledSnippet = styled.div<StyledSnippetProps>`
     isSingleLine &&
     css`
       display: grid;
-      grid-template-columns: auto max-content;
+      grid-template-columns: auto min-content;
     `}
 
   ${variant({
@@ -499,7 +501,7 @@ const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
   }
 
   ${StyledSnippetHeader} {
-    grid-template-columns: auto max-content max-content;
+    grid-template-columns: auto min-content min-content;
   }
 
   ${StyledTabList} {
@@ -516,7 +518,7 @@ const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
     css`
       @media ${themeGet("mediaQueries.medium")} {
         ${StyledSnippetHeader} {
-          grid-template-columns: auto max-content;
+          grid-template-columns: auto min-content;
         }
 
         ${StyledSnippetTitle} {
@@ -539,6 +541,18 @@ const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
         ${StyledSnippetSelect} {
           display: none;
         }
+      }
+    `}
+
+  ${({ compact, hasTitle }) =>
+    compact &&
+    !hasTitle &&
+    css`
+      ${StyledSnippetHeader} {
+        grid-template-columns: min-content min-content;
+        justify-content: space-between;
+        padding: ${themeGet("space.scale100")} 0;
+        padding-left: ${themeGet("space.scale260")};
       }
     `}
 

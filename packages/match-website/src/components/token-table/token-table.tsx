@@ -47,8 +47,8 @@ export type TokenTableProps = {
  *           }]);
  */
 function getUnitsFromTokenList(tokens: TokenItem[]): string[] {
-  // eslint-disable-next-line unicorn/no-reduce
-  const foundUnits = tokens.reduce((unitList, [_name, value]) => {
+  const unitList: string[] = [];
+  for (const [, value] of tokens) {
     if (typeof value !== "string") {
       for (const unitName of Object.keys(value)) {
         if (!unitList.includes(unitName)) {
@@ -56,9 +56,8 @@ function getUnitsFromTokenList(tokens: TokenItem[]): string[] {
         }
       }
     }
-    return unitList;
-  }, [] as string[]);
-  return foundUnits;
+  }
+  return unitList;
 }
 
 const TokenTable: React.FC<TokenTableProps> = ({

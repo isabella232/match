@@ -1,3 +1,5 @@
+import { MarginProps } from "@twilio-labs/match-props";
+
 export enum HeadingVariant {
   H1 = "h1",
   H2 = "h2",
@@ -7,7 +9,9 @@ export enum HeadingVariant {
   H6 = "h6",
 }
 
-export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
+export interface HeadingProps
+  extends MarginProps,
+    React.HTMLAttributes<HTMLHeadingElement> {
   /**
    * The HTML tag to use if different from HeadingVariant.
    */

@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { variant } from "styled-system";
+import { themeGet } from "@styled-system/theme-get";
 
 const StyledHeading = styled.h1`
   margin: 0;
-  font-family: ${({ theme }) => theme.fontFamilies.heading};
+  font-family: ${themeGet("fontFamilies.heading")};
 
   ${({ theme }) =>
     variant({

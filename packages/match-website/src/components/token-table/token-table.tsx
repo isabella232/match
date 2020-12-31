@@ -8,6 +8,7 @@ export type TokenItem = [
   name: string,
   value:
     | string
+    | number
     | {
         [unit: string]: string;
       }
@@ -40,24 +41,17 @@ export type TokenTableProps = {
  *             }
  *           }]);
  *  @example <caption>Simple value</caption>
- *           // returns []
+ *           // returns undefined
  *           getUnitsFromTokenList([{
  *              name: 'simple',
  *              value: 10
  *           }]);
  */
-function getUnitsFromTokenList(tokens: TokenItem[]): string[] {
-  const unitList: string[] = [];
-  for (const [, value] of tokens) {
-    if (typeof value !== "string") {
-      for (const unitName of Object.keys(value)) {
-        if (!unitList.includes(unitName)) {
-          unitList.push(unitName);
-        }
-      }
-    }
-  }
-  return unitList;
+function getUnitsFromTokenList(tokens: TokenItem[]): string[] | undefined {
+  if (tokens.length === 0) return;
+  const [, value] = tokens[0];
+  if (typeof value !== "object") return;
+  return Object.keys(value);
 }
 
 const TokenTable: React.FC<TokenTableProps> = ({
@@ -75,7 +69,7 @@ const TokenTable: React.FC<TokenTableProps> = ({
       <thead>
         <tr>
           <th>Token</th>
-          {units.length === 0 ? (
+          {!units ? (
             <th colSpan={!hasExamples ? 2 : undefined}>Value</th>
           ) : (
             units.map((unitName, idx) => (
@@ -98,7 +92,7 @@ const TokenTable: React.FC<TokenTableProps> = ({
           return (
             <tr key={`${prefix}${name}`}>
               <td>{`${prefix}${name}`}</td>
-              {["string", "number"].includes(typeof value) ? (
+              {!units ? (
                 <td
                   className={clsx({
                     [styles.noBorderRight]: !hasExamples,

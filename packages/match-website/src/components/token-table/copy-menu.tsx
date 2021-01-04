@@ -7,6 +7,7 @@ export type CopyMenuProps = {
   name: string;
   value:
     | string
+    | number
     | {
         [unit: string]: string;
       };

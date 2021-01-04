@@ -11,6 +11,7 @@ module.exports = {
       "components/button",
       "components/card",
       "components/grid",
+      "components/heading",
       "components/icon",
       "components/separator",
       "components/snippet",

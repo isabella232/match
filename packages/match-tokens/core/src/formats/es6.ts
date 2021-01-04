@@ -16,11 +16,11 @@ ${props.map((prop) => `${baseTokenName(prop)}: ${prop.name},`).join("\n")}
 
 export const breakpointsTemplate = (props): string => `
 export const breakpoints = [
-${props
-  .filter((prop) => prop.attributes.category === "mediaQuery")
-  .map((prop) => `"${prop.original.value}px"`)
-  .join(",\n")}
+${props.map((prop) => `"${prop.original.value}px"`).join(",\n")}
 ];
+${props
+  .map((prop, i) => `breakpoints.${prop.attributes.type} = breakpoints[${i}]`)
+  .join(";\n")}
 `;
 
 export const es6TokenFormatter = (dictionary): string => {
@@ -36,7 +36,11 @@ export const es6TokenFormatter = (dictionary): string => {
     groupTemplate
   );
 
-  const breakpoints = breakpointsTemplate(dictionary.allProperties);
+  const breakpoints = breakpointsTemplate(
+    dictionary.allProperties.filter(
+      (prop) => prop.attributes.category === "mediaQuery"
+    )
+  );
 
   return [singleTokens, groupedTokens, breakpoints].join("\n");
 };

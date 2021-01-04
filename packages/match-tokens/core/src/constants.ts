@@ -1,5 +1,5 @@
 export const REM_CATEGORIES = ["borderWidth", "fontSize", "iconSize", "space"];
-export const COLOR_CATEOGRIES = [
+export const COLOR_CATEGORIES = [
   "color",
   "borderColor",
   "backgroundColor",

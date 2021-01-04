@@ -1,11 +1,11 @@
 import React from "react";
 import { useTheme } from "@twilio-labs/match-themes";
 import { hex, score } from "wcag-contrast";
-import { TokenItem } from "../token-table";
+import { SimpleValueTokenItem } from "../token-table";
 import styles from "./examples.module.css";
 
 export type TextColorProps = {
-  token: TokenItem;
+  token: SimpleValueTokenItem;
 };
 
 export const TextColor: React.FC<TextColorProps> = ({

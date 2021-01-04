@@ -4,60 +4,34 @@ import { CopyMenu } from "./copy-menu";
 import { Example } from "./examples";
 import clsx from "clsx";
 
-export type TokenItem = [
+export type MultiValueTokenItem = [
   name: string,
-  value:
-    | string
-    | {
-        [unit: string]: string;
-      }
+  value: {
+    px: string;
+    rem: string;
+  }
 ];
 
-export type TokenTableProps = {
-  tokens: TokenItem[];
-  prefix?: string;
-  exampleType?:
-    | "color"
-    | "fontSize"
-    | "textColor"
-    | "gradient"
-    | "shadow"
-    | "border"
-    | "borderWidth"
-    | "spacing";
+export type SimpleValueTokenItem = [name: string, value: string | number];
+
+export type SimpleValueTokenTableProps = {
+  tokens: SimpleValueTokenItem[];
+  exampleType?: "color" | "textColor" | "shadow" | "border";
 };
 
-/**
- * Given a list of tokens whose value is an object in the format `{ [unitName: string]: string }`,
- * returns the units found for that token list. If the values are simple, returns an empty array.
- *  @example <caption>Value has multiple units</caption>
- *           // returns ['px','rem']
- *           getUnitsFromTokenList([{
- *             name: 'test',
- *             value: {
- *               'px': 32,
- *               'rem': 1.25
- *             }
- *           }]);
- *  @example <caption>Simple value</caption>
- *           // returns []
- *           getUnitsFromTokenList([{
- *              name: 'simple',
- *              value: 10
- *           }]);
- */
-function getUnitsFromTokenList(tokens: TokenItem[]): string[] {
-  const unitList: string[] = [];
-  for (const [, value] of tokens) {
-    if (typeof value !== "string") {
-      for (const unitName of Object.keys(value)) {
-        if (!unitList.includes(unitName)) {
-          unitList.push(unitName);
-        }
-      }
-    }
-  }
-  return unitList;
+export type MultiValueTokenTableProps = {
+  tokens: MultiValueTokenItem[];
+  exampleType?: "fontSize" | "gradient" | "borderWidth" | "spacing";
+};
+
+export type TokenTableProps = {
+  prefix?: string;
+} & (SimpleValueTokenTableProps | MultiValueTokenTableProps);
+
+function isMultiValueTokenItem(
+  tokenItem: MultiValueTokenItem | SimpleValueTokenItem
+): tokenItem is MultiValueTokenItem {
+  return ["string", "number"].includes(typeof tokenItem);
 }
 
 const TokenTable: React.FC<TokenTableProps> = ({
@@ -66,7 +40,7 @@ const TokenTable: React.FC<TokenTableProps> = ({
   exampleType,
 }) => {
   prefix = prefix !== undefined ? `${prefix}.` : "";
-  const units = getUnitsFromTokenList(tokens);
+  const units = isMultiValueTokenItem(tokens[0]) ? ["px", "rem"] : undefined;
 
   const hasExamples = exampleType !== undefined;
 
@@ -75,9 +49,7 @@ const TokenTable: React.FC<TokenTableProps> = ({
       <thead>
         <tr>
           <th>Token</th>
-          {units.length === 0 ? (
-            <th colSpan={!hasExamples ? 2 : undefined}>Value</th>
-          ) : (
+          {units ? (
             units.map((unitName, idx) => (
               <th
                 key={unitName}
@@ -88,48 +60,53 @@ const TokenTable: React.FC<TokenTableProps> = ({
                 Value ({unitName})
               </th>
             ))
+          ) : (
+            <th colSpan={!hasExamples ? 2 : undefined}>Value</th>
           )}
           {hasExamples && <th colSpan={2}>Example</th>}
         </tr>
       </thead>
       <tbody>
-        {tokens.map((token) => {
-          const [name, value] = token;
-          return (
-            <tr key={`${prefix}${name}`}>
-              <td>{`${prefix}${name}`}</td>
-              {["string", "number"].includes(typeof value) ? (
-                <td
-                  className={clsx({
-                    [styles.noBorderRight]: !hasExamples,
-                  })}
-                >
-                  {value}
-                </td>
-              ) : (
-                Object.values(value).map((val, idx) => (
+        {(tokens as Array<SimpleValueTokenItem | MultiValueTokenItem>).map(
+          (token) => {
+            const [name, value] = token;
+            return (
+              <tr key={`${prefix}${name}`}>
+                <td>{`${prefix}${name}`}</td>
+                {!isMultiValueTokenItem(token) ? (
                   <td
-                    key={`${prefix}${name}.value.${units[idx]}`}
                     className={clsx({
-                      [styles.noBorderRight]:
-                        !hasExamples && idx === Object.values(value).length - 1,
+                      [styles.noBorderRight]: !hasExamples,
                     })}
                   >
-                    {val}
+                    {token[1]}
                   </td>
-                ))
-              )}
-              {hasExamples && exampleType && (
-                <td className={styles.noBorderRight}>
-                  <Example token={token} type={exampleType} />
+                ) : (
+                  Object.values(token[1]).map((val, idx) => (
+                    <td
+                      key={`${prefix}${name}.value.${units![idx]}`}
+                      className={clsx({
+                        [styles.noBorderRight]:
+                          !hasExamples &&
+                          idx === Object.values(value).length - 1,
+                      })}
+                    >
+                      {val}
+                    </td>
+                  ))
+                )}
+                {hasExamples && exampleType && (
+                  <td className={styles.noBorderRight}>
+                    <Example token={token} type={exampleType} />
+                  </td>
+                )}
+                <td className={styles.noBorderLeft}>
+                  <CopyMenu name={`${prefix}${name}`} value={value}></CopyMenu>
                 </td>
-              )}
-              <td className={styles.noBorderLeft}>
-                <CopyMenu name={`${prefix}${name}`} value={value}></CopyMenu>
-              </td>
-            </tr>
-          );
-        })}
+              </tr>
+            );
+          }
+        )}
       </tbody>
     </table>
   );

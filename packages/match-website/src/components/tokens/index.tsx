@@ -7,7 +7,11 @@ import { LineHeightTokens } from "./line-height";
 
 import { remToPx } from "../../utils";
 
-import { TokenTable, TokenItem } from "../token-table/token-table";
+import {
+  TokenTable,
+  MultiValueTokenItem,
+  SimpleValueTokenItem,
+} from "../token-table/token-table";
 
 import { Token } from "../../types";
 
@@ -39,13 +43,13 @@ const Tokens: React.FC = () => {
     state: { filterText },
   } = React.useContext(MatchContext);
 
-  const mediaQueryTokens: TokenItem[] = React.useMemo(() => {
+  const mediaQueryTokens: SimpleValueTokenItem[] = React.useMemo(() => {
     return Object.entries(mediaQueries).filter(([key]) =>
       textSearch(`mediaQueries.${key}`, filterText)
     );
   }, [filterText, mediaQueries]);
 
-  const primaryColorTokens: TokenItem[] = React.useMemo(
+  const primaryColorTokens: SimpleValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(colors)
         .filter(([key]) => ["brand", "brandHighlight", "white"].includes(key))
@@ -53,7 +57,7 @@ const Tokens: React.FC = () => {
     [filterText, colors]
   );
 
-  const secondaryColorTokens: TokenItem[] = React.useMemo(
+  const secondaryColorTokens: SimpleValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(colors)
         .filter(([key]) =>
@@ -69,7 +73,7 @@ const Tokens: React.FC = () => {
     [filterText, colors]
   );
 
-  const tertiaryColorTokens: TokenItem[] = React.useMemo(
+  const tertiaryColorTokens: SimpleValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(colors)
         .filter(
@@ -89,7 +93,7 @@ const Tokens: React.FC = () => {
     [filterText, colors]
   );
 
-  const fontFamilyTokens: TokenItem[] = React.useMemo(
+  const fontFamilyTokens: SimpleValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(fontFamilies).filter(([key]) =>
         textSearch(`fontFamilies.${key}`, filterText)
@@ -97,7 +101,7 @@ const Tokens: React.FC = () => {
     [filterText, fontFamilies]
   );
 
-  const fontSizeTokens: TokenItem[] = React.useMemo(
+  const fontSizeTokens: MultiValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(fontSizes)
         .filter(([key]) => textSearch(`fontSizes.${key}`, filterText))
@@ -111,7 +115,7 @@ const Tokens: React.FC = () => {
     [filterText, fontSizes]
   );
 
-  const fontWeightTokens: TokenItem[] = React.useMemo(
+  const fontWeightTokens: SimpleValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(fontWeights).filter(([key]) =>
         textSearch(`fontWeights.${key}`, filterText)
@@ -119,7 +123,7 @@ const Tokens: React.FC = () => {
     [filterText, fontWeights]
   );
 
-  const backgroundColorTokens: TokenItem[] = React.useMemo(
+  const backgroundColorTokens: SimpleValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(backgroundColors).filter(([key]) =>
         textSearch(`backgroundColors.${key}`, filterText)
@@ -127,7 +131,7 @@ const Tokens: React.FC = () => {
     [filterText, backgroundColors]
   );
 
-  const textColorTokens: TokenItem[] = React.useMemo(
+  const textColorTokens: SimpleValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(textColors).filter(([key]) =>
         textSearch(`textColors.${key}`, filterText)
@@ -135,7 +139,7 @@ const Tokens: React.FC = () => {
     [filterText, textColors]
   );
 
-  const gradientTokens: TokenItem[] = React.useMemo(
+  const gradientTokens: MultiValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(gradients)
         .filter(([key]) => textSearch(`gradients.${key}`, filterText))
@@ -143,7 +147,7 @@ const Tokens: React.FC = () => {
     [filterText, gradients]
   );
 
-  const shadowTokens: TokenItem[] = React.useMemo(
+  const shadowTokens: SimpleValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(shadows).filter(([key]) =>
         textSearch(`shadows.${key}`, filterText)
@@ -151,7 +155,7 @@ const Tokens: React.FC = () => {
     [filterText, shadows]
   );
 
-  const borderTokens: TokenItem[] = React.useMemo(
+  const borderTokens: SimpleValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(borderColors)
         .filter(([key]) => textSearch(`borderColors.${key}`, filterText))
@@ -164,7 +168,7 @@ const Tokens: React.FC = () => {
     [filterText, borderColors, colors]
   );
 
-  const borderWidthTokens: TokenItem[] = React.useMemo(
+  const borderWidthTokens: MultiValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(borderWidths)
         .filter(([key]) => textSearch(`borderWidths.${key}`, filterText))
@@ -178,7 +182,7 @@ const Tokens: React.FC = () => {
     [filterText, borderWidths]
   );
 
-  const spacingTokens: TokenItem[] = React.useMemo(
+  const spacingTokens: MultiValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(space)
         .filter(([key]) => textSearch(`space.${key}`, filterText))
@@ -186,7 +190,8 @@ const Tokens: React.FC = () => {
           key,
           {
             px: remToPx(value),
-            rem: value,
+            rem: value as string,
+            foo: "bar", // this should result in an error, but it doesn't
           },
         ]),
     [filterText, space]
@@ -200,7 +205,7 @@ const Tokens: React.FC = () => {
     [filterText, lineHeights]
   );
 
-  const iconSizeTokens: TokenItem[] = React.useMemo(
+  const iconSizeTokens: MultiValueTokenItem[] = React.useMemo(
     () =>
       Object.entries(iconSizes)
         .filter(([key]) => textSearch(`iconSizes.${key}`, filterText))

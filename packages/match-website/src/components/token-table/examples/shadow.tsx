@@ -1,10 +1,10 @@
 import React from "react";
 import { useTheme } from "@twilio-labs/match-themes";
 import styles from "./examples.module.css";
-import { TokenItem } from "../token-table";
+import { SimpleValueTokenItem } from "../token-table";
 
 export type ShadowProps = {
-  token: TokenItem;
+  token: SimpleValueTokenItem;
 };
 
 export const Shadow: React.FC<ShadowProps> = ({ token: [name, value] }) => {

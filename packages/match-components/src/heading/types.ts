@@ -12,10 +12,10 @@ export enum HeadingVariant {
 export interface HeadingProps
   extends MarginProps,
     React.HTMLAttributes<HTMLHeadingElement> {
+  variant: HeadingVariant;
   /**
    * The HTML tag to use if different from HeadingVariant.
    */
   as?: HeadingVariant;
   id?: string;
-  variant: HeadingVariant;
 }

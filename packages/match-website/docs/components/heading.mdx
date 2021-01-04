@@ -1,0 +1,99 @@
+---
+id: heading
+title: Heading
+sidebar_label: Heading
+slug: /components/heading/
+---
+
+import { Props } from "../../src/components/props";
+import { ThemeSwitcher } from "../../src/components/theme-switcher";
+import { Virtue, Crime, VirtueCrime } from "../../src/components/virtue-crime";
+
+Headings help introduce and organize content on a page. There is typically a main heading for the page and additional headings for the subsequent sections.
+
+**Sources:** [GitHub](https://github.com/twilio-labs/match/tree/main/packages/match-components/src/heading)
+
+## Usage Guide
+
+### Installation
+
+```shell
+yarn add @twilio-labs/match-components
+```
+
+### Usage
+
+```jsx
+import { Heading } from "@twilio-labs/match-components";
+
+const Component = () => <Heading variant="h1">Ahoy</Heading>;
+```
+
+### Props
+
+<Props of="Heading" />
+
+---
+
+## Guidelines
+
+### About Headings
+
+Headings are used to create a sense of hierarchy in the page. H1s have the highest rank and introduces the page. The following ranks get more specific and divide the page into sections and subsections. Headings with an equal or higher rank start a new section, headings with a lower rank start new subsections that are part of the higher ranked section.
+
+### Accessibility
+
+Here are some quick accessibility tips to ensure a positive user experience for all users.
+
+- Do not skip heading levels. It is common for screen readers to build an outline of the page using headings and skipping a heading level could cause confusion, making a user question why a heading is missing.
+- Headings should be used in a logical order that aligns with the visual hierarchy
+
+---
+
+## Composition
+
+Many users scan websites by reading headings so the heading text should be clear, concise, and descriptive of the content that will follow that heading. Heading text of a lower ranked heading should relate to the heading text of a higher ranked heading. Overall, the headings should read like an outline of the page.
+
+<VirtueCrime>
+  <Virtue>
+    Have a single h1 that gives the user an idea of what the page is about.
+  </Virtue>
+  <Crime>Don't have multiple h1s on a page.</Crime>
+  <Virtue>
+    Headings should support the hierarchy and structure of the page.
+  </Virtue>
+  <Crime>Don’t use headings for pure stylistic purposes.</Crime>
+  <Virtue>
+    Headings should be in a logical order that can be read like an outline
+  </Virtue>
+  <Crime>Don’t using headings out of order</Crime>
+</VirtueCrime>
+
+---
+
+## Examples
+
+<ThemeSwitcher />
+
+### Hierarchy
+
+```jsx live
+<>
+  <Heading variant="h1">Heading One</Heading>
+  <Heading variant="h2">Heading Two</Heading>
+  <Heading variant="h3">Heading Three</Heading>
+  <Heading variant="h4">Heading Four</Heading>
+  <Heading variant="h5">Heading Five</Heading>
+  <Heading variant="h6">Heading Six</Heading>
+</>
+```
+
+### Heading with variant and as
+
+The underlying HTML of the Heading component matches the provided variant by default. This can be overridden with the `as` property when a certain visual style is required out of the hierarchical context.
+
+```jsx live
+<Heading variant="h3" as="h2">
+  h2 heading with h3 visual appearance
+</Heading>
+```

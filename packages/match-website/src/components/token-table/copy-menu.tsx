@@ -1,5 +1,6 @@
 import * as React from "react";
 import { usePopoverState, Popover, PopoverDisclosure } from "reakit/Popover";
+import { Tooltip } from "../tooltip/tooltip";
 import styles from "./token-table.module.css";
 import MoreIcon from "./more.svg";
 
@@ -14,6 +15,9 @@ export type CopyMenuProps = {
 };
 
 const CopyMenu: React.FC<CopyMenuProps> = ({ name, value }) => {
+  const [isTooltipVisible, setIsTooltipVisible] = React.useState<boolean>(
+    false
+  );
   const popover = usePopoverState({
     gutter: 0,
     modal: true,
@@ -22,9 +26,13 @@ const CopyMenu: React.FC<CopyMenuProps> = ({ name, value }) => {
 
   const handleCopy = (value: string) => {
     navigator.clipboard.writeText(value);
+    setIsTooltipVisible(true);
     setTimeout(() => {
       popover.hide();
     }, 0);
+    setTimeout(() => {
+      // setIsTooltipVisible(false);
+    }, 2000);
   };
 
   const handleKeyboard = (value: string) => (
@@ -37,6 +45,13 @@ const CopyMenu: React.FC<CopyMenuProps> = ({ name, value }) => {
 
   return (
     <div className={styles.copyWrapper}>
+      <Tooltip
+        visible={isTooltipVisible}
+        anchorRef={popover.unstable_referenceRef}
+        offset={8}
+      >
+        Copied!
+      </Tooltip>
       <PopoverDisclosure {...popover} className={styles.moreButton}>
         <MoreIcon />
       </PopoverDisclosure>

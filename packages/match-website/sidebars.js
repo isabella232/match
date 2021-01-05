@@ -14,6 +14,7 @@ module.exports = {
       "components/heading",
       "components/icon",
       "components/separator",
+      "components/snippet",
       "components/truncate",
       "components/visually-hidden",
     ],

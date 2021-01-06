@@ -437,11 +437,19 @@ const StyledSnippet = styled.div<StyledSnippetProps>`
 
 const StyledTab = styled(Tab)`
   padding: ${themeGet("space.scale20")};
+  font-weight: ${themeGet("fontWeights.medium")};
   font-size: ${themeGet("fontSizes.scale80")};
+  font-family: inherit;
+  letter-spacing: 0.01rem;
   background-color: transparent;
   border: 0;
   border-radius: 4px;
   cursor: pointer;
+
+  &[aria-selected="true"] {
+    font-weight: ${themeGet("fontWeights.semibold")};
+    letter-spacing: 0;
+  }
 
   &:focus {
     outline-width: 2px;
@@ -566,8 +574,9 @@ const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
           color: "blue30",
         },
         [StyledTab]: {
-          color: "blue30",
+          color: "white",
           ["&[aria-selected=true]"]: {
+            color: "blue30",
             backgroundColor: "gray90",
           },
         },

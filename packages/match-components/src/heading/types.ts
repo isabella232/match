@@ -9,6 +9,9 @@ export enum HeadingVariant {
   H6 = "h6",
 }
 
+/** asTags separate from HeadingVariant to allow future requested tags (e.g. div, p, etc.) */
+export type asTags = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
 export interface HeadingProps
   extends MarginProps,
     React.HTMLAttributes<HTMLHeadingElement> {
@@ -20,6 +23,6 @@ export interface HeadingProps
   /**
    * The HTML tag to use if different from HeadingVariant.
    */
-  as?: HeadingVariant;
+  as?: asTags;
   id?: string;
 }

@@ -39,7 +39,7 @@ export const Tooltip: React.FC<TooltipProps> = (props) => {
   });
 
   useLayoutEffect(() => {
-    setTimeout(updateAnchorPosition, 0);
+    updateAnchorPosition();
   }, [updateAnchorPosition, anchorRef, children, visible]);
 
   return (

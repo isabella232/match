@@ -31,7 +31,7 @@ const CopyMenu: React.FC<CopyMenuProps> = ({ name, value }) => {
       popover.hide();
     }, 0);
     setTimeout(() => {
-      // setIsTooltipVisible(false);
+      setIsTooltipVisible(false);
     }, 2000);
   };
 

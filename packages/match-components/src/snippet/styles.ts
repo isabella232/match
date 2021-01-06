@@ -43,6 +43,10 @@ const StyledHighlighter = styled.div<StyledSnippetProps>`
   pre {
     margin: 0;
     padding: ${themeGet("space.scale100")} ${themeGet("space.scale60")};
+    padding-left: ${({ showLineNumbers, isSingleLine, theme }) =>
+      !isSingleLine &&
+      !showLineNumbers &&
+      `calc(${theme.space.scale260} - ${theme.space.scale7})`};
   }
 
   ${({ maxLines }) =>

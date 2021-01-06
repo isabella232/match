@@ -1,0 +1,248 @@
+---
+id: snippet
+title: Snippet and Code
+sidebar_label: Snippet
+slug: /components/snippet/
+---
+
+import { Props } from "../../src/components/props";
+import { ThemeSwitcher } from "../../src/components/theme-switcher";
+
+Snippets are pieces of reusable code - used as building blocks that can be copied and added to projects to assist engineers and customers with development.
+
+**Sources:** [Github](https://github.com/twilio-labs/match/tree/main/packages/match-components/src/snippet)
+
+## Usage Guide
+
+### Installation
+
+```shell
+yarn add @twilio-labs/match-components
+```
+
+### Usage
+
+```jsx
+import { Snippet } from "@twilio-labs/match-components";
+
+const Component = () => (
+  <Snippet langauge="javascript">{`console.log("Ahoy, world!");`}</Snippet>
+);
+```
+
+### Snippet Props
+
+<Props of="Snippet" />
+
+### SnippetGroup Props
+
+<Props of="SnippetGroup" />
+
+### Code Props
+
+<Props of="Code" />
+
+---
+
+## Guidelines
+
+### About Snippets
+
+The Snippet component improves readability of embedded code samples with syntax highlighting and automatic line numbering. All provided languages support both a light and dark theme.
+
+Multiple Snippets may be combined with the SnippetGroup component. A common use case for SnippetGroups is providing a code sample in multiple languages.
+
+Inline references to computer code should use the Code component.
+
+### Accessibility
+
+Both Snippet and SnippetGroup are fully keyboard accessible. Here are some tips to ensure a positive user experience for all users:
+
+- Provide a descriptive title such as the current filename or step in a process to clarify the purpose of the Snippet.
+- Enable long line wrapping whenever possible for a better reading experience.
+
+---
+
+## Examples
+
+<ThemeSwitcher />
+
+### Single Line
+
+Single line Snippets exclude the title bar and line numbers. It is automatically detected but will default to the multi line layout if line wrapping is enabled.
+
+```jsx live
+<Snippet language="shell-session">
+  {`$ curl -G https://api.twilio.com/2010-04-01/Accounts -u '[YOUR ACCOUNT SID]:[YOUR AUTH TOKEN]'`}
+</Snippet>
+```
+
+### Multi Line
+
+A multi line snippet displays a title and line numbers by default. If no title is provided the snippet language will be used as a fallback.
+
+```jsx live
+<Snippet
+  language="php"
+  maxLines={10}
+  githubLink="https://github.com/TwilioDevEd/api-snippets/blob/master/quickstart/php/sms/send_sms/send_sms.5.x.php"
+>
+  {`<?php
+require __DIR__ . '/vendor/autoload.php';
+use Twilio\Rest\Client;
+
+// Your Account SID and Auth Token from twilio.com/console
+$account_sid = 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+$auth_token = 'your_auth_token';
+// In production, these should be environment variables. E.g.:
+// $auth_token = $_ENV["TWILIO_AUTH_TOKEN"]
+
+// A Twilio number you own with SMS capabilities
+$twilio_number = "+15017122661";
+
+$client = new Client($account_sid, $auth_token);
+$client->messages->create(
+    // Where to send a text message (your cell phone?)
+    '+15558675310',
+    array(
+        'from' => $twilio_number,
+        'body' => 'I sent this message in under 10 minutes!'
+    )
+);`}
+</Snippet>
+```
+
+### Grouped
+
+Snippets can be grouped to provide multiple languages for a code example. The title supplied to each Snippet will be used as the tab name for navigation. If no title is provided the language will be used as a fallback.
+
+```jsx live
+<SnippetGroup title="Sending SMS using the Programmable SMS API">
+  <Snippet language="javascript" title="Node.js" maxLines={10}>
+    {`// Download the helper library from https://www.twilio.com/docs/node/install
+// Your Account Sid and Auth Token from twilio.com/console
+// and set the environment variables. See http://twil.io/secure
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
+client.messages
+  .create({
+     body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+     from: '+15017122661',
+     to: '+15558675310'
+   })
+  .then(message => console.log(message.sid));
+`}
+  </Snippet>
+  <Snippet language="csharp" maxLines={10}>
+    {`// Install the C# / .NET helper library from twilio.com/docs/csharp/install
+
+using System;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Find your Account Sid and Token at twilio.com/console
+        // and set the environment variables. See http://twil.io/secure
+        string accountSid = Environment.GetEnvironmentVariable("TWILIO_ACCOUNT_SID");
+        string authToken = Environment.GetEnvironmentVariable("TWILIO_AUTH_TOKEN");
+
+        TwilioClient.Init(accountSid, authToken);
+
+        var message = MessageResource.Create(
+            body: "This is the ship that made the Kessel Run in fourteen parsecs?",
+            from: new Twilio.Types.PhoneNumber("+15017122661"),
+            to: new Twilio.Types.PhoneNumber("+15558675310")
+        );
+
+        Console.WriteLine(message.Sid);
+    }
+}
+`}
+  </Snippet>
+</SnippetGroup>
+```
+
+### Compact
+
+When placing snippet groups in a tight space, the compact property may be used to force a mobile optimized layout for all breakpoints.
+
+```jsx live
+<Grid
+  gridTemplateColumns={["1fr", "repeat(2, minmax(0, 1fr))"]}
+  gridGap="scale180"
+  alignItems="center"
+>
+  <Cell>
+    <SnippetGroup title="Outbound Call" variant="light" compact>
+      <Snippet language="ruby" maxLines={10}>
+        {`# Download the helper library from https://www.twilio.com/docs/ruby/install
+require 'rubygems'
+require 'twilio-ruby'
+
+# Your Account Sid and Auth Token from twilio.com/console
+# and set the environment variables. See http://twil.io/secure
+account_sid = ENV['TWILIO_ACCOUNT_SID']
+auth_token = ENV['TWILIO_AUTH_TOKEN']
+@client = Twilio::REST::Client.new(account_sid, auth_token)
+
+call = @client.calls.create(
+                       url: 'http://demo.twilio.com/docs/voice.xml',
+                       to: '+14155551212',
+                       from: '+15017122661'
+                     )
+
+puts call.sid
+`}
+      </Snippet>
+      <Snippet language="python" maxLines={10}>
+        {`# Download the helper library from https://www.twilio.com/docs/python/install
+import os
+from twilio.rest import Client
+
+
+# Your Account Sid and Auth Token from twilio.com/console
+# and set the environment variables. See http://twil.io/secure
+account_sid = os.environ['TWILIO_ACCOUNT_SID']
+auth_token = os.environ['TWILIO_AUTH_TOKEN']
+client = Client(account_sid, auth_token)
+
+call = client.calls.create(
+                        url='http://demo.twilio.com/docs/voice.xml',
+                        to='+14155551212',
+                        from_='+15017122661'
+                    )
+
+print(call.sid)
+`}
+      </Snippet>
+    </SnippetGroup>
+  </Cell>
+  <Cell>
+    <h3>Global reach with enterprise reliability</h3>
+    <p>
+      Engage customers around the world with 1,500 redundant partner carrier
+      connections, phone numbers in over 100 countries, and over 200 phone
+      number types, on infrastructure that’s optimized for reliable global
+      delivery at any scale.
+    </p>
+  </Cell>
+</Grid>
+```
+
+### Inline
+
+The inline Code component supports light and dark themes.
+
+```jsx live
+<div>
+  Well now
+  <Code variant="light">twilio</Code> in the morning
+  <Code>twilio</Code> in the evening...
+</div>
+```

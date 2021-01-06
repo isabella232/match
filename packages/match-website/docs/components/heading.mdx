@@ -79,13 +79,33 @@ Many users scan websites by reading headings so the heading text should be clear
 
 ```jsx live
 <>
-  <Heading variant="h1">Heading One</Heading>
-  <Heading variant="h2">Heading Two</Heading>
-  <Heading variant="h3">Heading Three</Heading>
-  <Heading variant="h4">Heading Four</Heading>
-  <Heading variant="h5">Heading Five</Heading>
+  <Heading variant="h1" marginBottom="scale100">
+    Heading One
+  </Heading>
+  <Heading variant="h2" marginBottom="scale100">
+    Heading Two
+  </Heading>
+  <Heading variant="h3" marginBottom="scale100">
+    Heading Three
+  </Heading>
+  <Heading variant="h4" marginBottom="scale100">
+    Heading Four
+  </Heading>
+  <Heading variant="h5" marginBottom="scale100">
+    Heading Five
+  </Heading>
   <Heading variant="h6">Heading Six</Heading>
 </>
+```
+
+### Inverse
+
+Include the `inverse` prop when headings are used on dark backgrounds.
+
+```jsx live bg=darkest
+<Heading variant="h1" inverse>
+  Heading One
+</Heading>
 ```
 
 ### Heading with variant and as

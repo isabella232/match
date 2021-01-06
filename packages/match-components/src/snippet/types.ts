@@ -76,3 +76,7 @@ export interface StyledSnippetProps {
   maxLines?: number;
   showLineNumbers?: boolean;
 }
+
+export interface StyledTooltipProps {
+  success?: boolean;
+}

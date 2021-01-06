@@ -4,7 +4,11 @@ import { themeGet } from "@styled-system/theme-get";
 import { Tooltip, TooltipArrow } from "reakit/Tooltip";
 import { Tab, TabList } from "reakit/Tab";
 import { StyledIcon } from "../icon/styles";
-import type { StyledSnippetProps, StyledSnippetGroupProps } from "./types";
+import type {
+  StyledSnippetProps,
+  StyledSnippetGroupProps,
+  StyledTooltipProps,
+} from "./types";
 import {
   SnippetVariant,
   SnippetLanguage,
@@ -224,7 +228,15 @@ const StyledHighlighter = styled.div<StyledSnippetProps>`
   }}
 `;
 
-const StyledTooltip = styled(Tooltip)`
+const StyledTooltipArrow = styled(TooltipArrow)`
+  line-height: 1;
+
+  .fill {
+    fill: ${themeGet("colors.blue60")};
+  }
+`;
+
+const StyledTooltip = styled(Tooltip)<StyledTooltipProps>`
   padding: ${themeGet("space.scale7")} ${themeGet("space.scale20")};
   color: ${themeGet("colors.white")};
   font-weight: ${themeGet("fontWeights.light")};
@@ -232,14 +244,17 @@ const StyledTooltip = styled(Tooltip)`
   font-family: ${themeGet("fontFamilies.text")};
   background: ${themeGet("colors.blue60")};
   border-radius: 2px;
-`;
 
-const StyledTooltipArrow = styled(TooltipArrow)`
-  line-height: 1;
+  ${({ success }) =>
+    success &&
+    css`
+      color: ${themeGet("colors.gray100")};
+      background: ${themeGet("colors.green40")};
 
-  .fill {
-    fill: ${themeGet("colors.blue60")};
-  }
+      ${StyledTooltipArrow} .fill {
+        fill: ${themeGet("colors.green40")};
+      }
+    `}
 `;
 
 const StyledSnippetHeader = styled.div<StyledSnippetProps>`

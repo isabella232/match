@@ -31,10 +31,8 @@ export const Tooltip: React.FC<TooltipProps> = (props) => {
 
   useEffect(() => {
     window.addEventListener("resize", updateAnchorPosition);
-    window.addEventListener("scroll", updateAnchorPosition);
     return () => {
       window.removeEventListener("resize", updateAnchorPosition);
-      window.removeEventListener("scroll", updateAnchorPosition);
     };
   });
 

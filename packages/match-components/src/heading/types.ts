@@ -14,6 +14,10 @@ export interface HeadingProps
     React.HTMLAttributes<HTMLHeadingElement> {
   variant: HeadingVariant;
   /**
+   * Inverts text color for use with dark backgrounds.
+   */
+  inverse?: boolean;
+  /**
    * The HTML tag to use if different from HeadingVariant.
    */
   as?: HeadingVariant;

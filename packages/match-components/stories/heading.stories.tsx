@@ -7,29 +7,25 @@ export default {
   component: Heading,
   args: {
     children: "Ahoy World!",
-    color: "inherit",
+    inverse: false,
     variant: "h1",
   },
   argTypes: {
     children: { table: { disable: true } },
-    color: { table: { disable: true } },
+    inverse: { table: { disable: true } },
     variant: {
       control: { type: "select", options: Object.values(HeadingVariant) },
     },
   },
 } as Meta;
 
-const Template: Story<HeadingProps> = ({ color, ...args }) => (
-  <div style={{ color }}>
-    <Heading {...args} />
-  </div>
-);
+const Template: Story<HeadingProps> = (args) => <Heading {...args} />;
 
 export const Primary = Template.bind({});
 
-export const Inverse: Story<HeadingProps> = Template.bind({});
+export const Inverse = Template.bind({});
 Inverse.args = {
-  color: "#fff",
+  inverse: true,
 };
 Inverse.parameters = {
   backgrounds: { default: "Darkest" },

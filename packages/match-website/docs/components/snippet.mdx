@@ -1,6 +1,6 @@
 ---
 id: snippet
-title: Snippet and Code
+title: Snippet
 sidebar_label: Snippet
 slug: /components/snippet/
 ---
@@ -38,10 +38,6 @@ const Component = () => (
 
 <Props of="SnippetGroup" />
 
-### Code Props
-
-<Props of="Code" />
-
 ---
 
 ## Guidelines
@@ -51,8 +47,6 @@ const Component = () => (
 The Snippet component improves readability of embedded code samples with syntax highlighting and automatic line numbering. All provided languages support both a light and dark theme.
 
 Multiple Snippets may be combined with the SnippetGroup component. A common use case for SnippetGroups is providing a code sample in multiple languages.
-
-Inline references to computer code should use the Code component.
 
 ### Accessibility
 
@@ -233,16 +227,4 @@ print(call.sid)
     </p>
   </Cell>
 </Grid>
-```
-
-### Inline
-
-The inline Code component supports light and dark themes.
-
-```jsx live
-<div>
-  Well now
-  <Code variant="light">twilio</Code> in the morning
-  <Code>twilio</Code> in the evening...
-</div>
 ```

@@ -21,32 +21,17 @@ const textSearch = (hayStack: string, needle: string) => {
 };
 
 const Tokens: React.FC = () => {
-  const {
-    mediaQueries,
-    colors,
-    fontFamilies,
-    fontSizes,
-    fontWeights,
-    backgroundColors,
-    textColors,
-    shadows,
-    gradients,
-    borderColors,
-    borderWidths,
-    space,
-    lineHeights,
-    iconSizes,
-  } = useTheme();
+  const theme = useTheme();
   const {
     state: { filterText },
   } = React.useContext(MatchContext);
 
   const tokens: Tokens = React.useMemo(
     () => ({
-      primaryColors: Object.entries(colors)
+      primaryColors: Object.entries(theme.colors)
         .filter(([key]) => ["brand", "brandHighlight", "white"].includes(key))
         .filter(([key]) => textSearch(`colors.${key}`, filterText)),
-      secondaryColors: Object.entries(colors)
+      secondaryColors: Object.entries(theme.colors)
         .filter(([key]) =>
           [
             "baseBlue",
@@ -57,7 +42,7 @@ const Tokens: React.FC = () => {
           ].includes(key)
         )
         .filter(([key]) => textSearch(`colors.${key}`, filterText)),
-      tertiaryColors: Object.entries(colors)
+      tertiaryColors: Object.entries(theme.colors)
         .filter(
           ([key]) =>
             ![
@@ -72,18 +57,18 @@ const Tokens: React.FC = () => {
             ].includes(key)
         )
         .filter(([key]) => textSearch(`colors.${key}`, filterText)),
-      backgroundColors: Object.entries(backgroundColors).filter(([key]) =>
+      backgroundColors: Object.entries(theme.backgroundColors).filter(([key]) =>
         textSearch(`backgroundColors.${key}`, filterText)
       ),
-      borderColors: Object.entries(borderColors)
+      borderColors: Object.entries(theme.borderColors)
         .filter(([key]) => textSearch(`borderColors.${key}`, filterText))
         .map(([key, value]) => [
           key,
-          Object.entries(colors).find(
+          Object.entries(theme.colors).find(
             ([_colorName, colorAlias]) => value === colorAlias
           )?.[0] ?? value,
         ]),
-      borderWidths: Object.entries(borderWidths)
+      borderWidths: Object.entries(theme.borderWidths)
         .filter(([key]) => textSearch(`borderWidths.${key}`, filterText))
         .map(([key, value]) => [
           key,
@@ -92,10 +77,10 @@ const Tokens: React.FC = () => {
             rem: value,
           },
         ]),
-      fontFamilies: Object.entries(fontFamilies).filter(([key]) =>
+      fontFamilies: Object.entries(theme.fontFamilies).filter(([key]) =>
         textSearch(`fontFamilies.${key}`, filterText)
       ),
-      fontSizes: Object.entries(fontSizes)
+      fontSizes: Object.entries(theme.fontSizes)
         .filter(([key]) => textSearch(`fontSizes.${key}`, filterText))
         .map(([key, value]) => [
           key,
@@ -104,13 +89,13 @@ const Tokens: React.FC = () => {
             rem: value,
           },
         ]),
-      fontWeights: Object.entries(fontWeights).filter(([key]) =>
+      fontWeights: Object.entries(theme.fontWeights).filter(([key]) =>
         textSearch(`fontWeights.${key}`, filterText)
       ),
-      gradients: Object.entries(gradients)
+      gradients: Object.entries(theme.gradients)
         .filter(([key]) => textSearch(`gradients.${key}`, filterText))
         .map(([key, value]) => [key, value.slice(16, -1)]),
-      iconSizes: Object.entries(iconSizes)
+      iconSizes: Object.entries(theme.iconSizes)
         .filter(([key]) => textSearch(`iconSizes.${key}`, filterText))
         .map(([key, value]) => [
           key,
@@ -119,16 +104,25 @@ const Tokens: React.FC = () => {
             rem: value,
           },
         ]),
-      lineHeights: Object.entries(lineHeights).filter(([key]) =>
+      lineHeights: Object.entries(theme.lineHeights).filter(([key]) =>
         textSearch(`lineHeights.${key}`, filterText)
       ),
-      mediaQueries: Object.entries(mediaQueries).filter(([key]) =>
+      mediaQueries: Object.entries(theme.mediaQueries).filter(([key]) =>
         textSearch(`mediaQueries.${key}`, filterText)
       ),
-      shadows: Object.entries(shadows).filter(([key]) =>
+      radii: Object.entries(theme.radii)
+        .filter(([key]) => textSearch(`radii.${key}`, filterText))
+        .map(([key, value]) => [
+          key,
+          {
+            px: remToPx(value),
+            rem: value,
+          },
+        ]),
+      shadows: Object.entries(theme.shadows).filter(([key]) =>
         textSearch(`shadows.${key}`, filterText)
       ),
-      space: Object.entries(space)
+      space: Object.entries(theme.space)
         .filter(([key]) => textSearch(`space.${key}`, filterText))
         .map(([key, value]) => [
           key,
@@ -137,11 +131,11 @@ const Tokens: React.FC = () => {
             rem: value,
           },
         ]),
-      textColors: Object.entries(textColors).filter(([key]) =>
+      textColors: Object.entries(theme.textColors).filter(([key]) =>
         textSearch(`textColors.${key}`, filterText)
       ),
     }),
-    [filterText]
+    [filterText, theme]
   );
 
   const hasColorTokens = Boolean(
@@ -311,6 +305,13 @@ const Tokens: React.FC = () => {
             prefix="borderWidths"
             exampleType="borderWidth"
           />
+        </div>
+      )}
+
+      {tokens.radii.length > 0 && (
+        <div>
+          <h2 id="border-radii">Border Radii</h2>
+          <TokenTable tokens={tokens.radii} prefix="radii" />
         </div>
       )}
 

@@ -37,7 +37,7 @@ const StyledHighlighter = styled.div<StyledSnippetProps>`
   ::-webkit-scrollbar-thumb {
     border-style: solid;
     border-width: 3px;
-    border-radius: 4px;
+    border-radius: ${themeGet("radii.base")};
   }
 
   ::-webkit-scrollbar-corner {
@@ -243,7 +243,7 @@ const StyledTooltip = styled(Tooltip)<StyledTooltipProps>`
   font-size: ${themeGet("fontSizes.scale60")};
   font-family: ${themeGet("fontFamilies.text")};
   background: ${themeGet("colors.blue60")};
-  border-radius: 2px;
+  border-radius: ${themeGet("radii.small")};
 
   ${({ success }) =>
     success &&
@@ -261,7 +261,8 @@ const StyledSnippetHeader = styled.div<StyledSnippetProps>`
   display: grid;
   grid-column-gap: ${themeGet("space.scale140")};
   align-items: center;
-  border-radius: 4px 4px 0 0;
+  border-top-left-radius: ${themeGet("radii.base")};
+  border-top-right-radius: ${themeGet("radii.base")};
 
   ${variant({
     variants: {
@@ -422,7 +423,7 @@ const StyledSnippetBody = styled.div<StyledSnippetProps>`
 `;
 
 const StyledSnippet = styled.div<StyledSnippetProps>`
-  border-radius: 4px;
+  border-radius: ${themeGet("radii.base")};
 
   ${StyledSnippetHeader} {
     grid-template-columns: auto min-content;
@@ -462,7 +463,7 @@ const StyledTab = styled(Tab)`
   letter-spacing: 0.01rem;
   background-color: transparent;
   border: 0;
-  border-radius: 4px;
+  border-radius: ${themeGet("radii.base")};
   cursor: pointer;
 
   &[aria-selected="true"] {
@@ -524,7 +525,8 @@ const StyledSnippetSelect = styled.div`
 
 const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
   ${StyledSnippet} {
-    border-radius: 0 0 4px 4px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
   ${StyledSnippetHeader} {

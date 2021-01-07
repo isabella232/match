@@ -11,7 +11,7 @@ const StyledCode = styled.code<CodeProps>`
   line-height: ${themeGet("lineHeights.scale100")};
   border-style: solid;
   border-width: ${themeGet("borderWidths.thin")};
-  border-radius: 2px;
+  border-radius: ${themeGet("radii.small")};
 
   ${variant({
     variants: {

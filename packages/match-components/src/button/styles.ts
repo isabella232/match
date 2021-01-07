@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
 import { Button } from "reakit/Button";
+import { themeGet } from "@styled-system/theme-get";
 import { StyledIcon } from "../icon/styles";
 import { ButtonProps, ButtonSize, ButtonVariant } from "./types";
 
@@ -192,7 +193,7 @@ const StyledButton = styled(Button).withConfig({
   text-decoration: none;
   border-style: solid;
   border-width: ${({ theme }) => theme.borderWidths.light};
-  border-radius: 4px;
+  border-radius: ${themeGet("radii.base")};
   cursor: pointer;
   transition-duration: 0.2s;
   transition-property: color, background, border;

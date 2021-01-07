@@ -65,7 +65,10 @@ const LineHeightTokens: React.FC<LineHeightTokensProps> = ({
               <td>
                 {examples[name] && (
                   <div
-                    style={{ lineHeight: value, fontSize: examples[name].size }}
+                    style={{
+                      lineHeight: value as string,
+                      fontSize: examples[name].size,
+                    }}
                   >
                     {examples[name].text}
                   </div>

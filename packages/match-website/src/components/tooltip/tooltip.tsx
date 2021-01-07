@@ -1,9 +1,4 @@
-import React, {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useState,
-} from "react";
+import React, { useLayoutEffect, useState } from "react";
 import clsx from "clsx";
 import styles from "./tooltip.module.css";
 
@@ -20,39 +15,25 @@ export const Tooltip: React.FC<TooltipProps> = (props) => {
         transform: `translateY(-${offset}px)`,
       }
     : {};
-  const [bbox, setBbox] = useState<DOMRect>();
-
-  const updateAnchorPosition = useCallback(() => {
-    if (anchorRef.current && visible) {
-      const anchorBbox = anchorRef.current.getBoundingClientRect();
-      setBbox(anchorBbox);
-    }
-  }, [anchorRef, visible]);
-
-  useEffect(() => {
-    window.addEventListener("resize", updateAnchorPosition);
-    return () => {
-      window.removeEventListener("resize", updateAnchorPosition);
-    };
-  });
+  const [anchorRect, setAnchorRect] = useState<DOMRect>();
 
   useLayoutEffect(() => {
-    updateAnchorPosition();
-  }, [updateAnchorPosition, anchorRef, children, visible]);
+    if (anchorRef.current && visible) {
+      setAnchorRect(anchorRef.current.getBoundingClientRect());
+    }
+  }, [anchorRef, visible]);
 
   return (
     <div
       className={styles.anchor}
       style={{
-        width: bbox?.width,
-        height: bbox?.height,
-        left: bbox?.left,
-        top: bbox?.top,
+        width: anchorRect?.width,
+        height: anchorRect?.height,
       }}
     >
       <div
         className={clsx(styles.Tooltip, {
-          [styles.visible]: visible && bbox !== undefined,
+          [styles.visible]: visible && anchorRect !== undefined,
         })}
         style={tooltipStyle}
       >

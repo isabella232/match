@@ -6,12 +6,11 @@ export type MatchState = {
 };
 
 export type Token = [
-  string,
-  (
+  name: string,
+  value:
     | string
     | number
     | {
         [unit: string]: string;
       }
-  )
 ];

@@ -3,12 +3,8 @@ import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
 import { ThemeSwitcher } from "../theme-switcher";
 import { TokenFilters } from "./filters";
-import { LineHeightTokens } from "./line-height";
-
 import { remToPx } from "../../utils";
-
 import { TokenTable } from "../token-table/token-table";
-
 import { Token } from "../../types";
 
 type Tokens = { [category: string]: Token[] };
@@ -271,7 +267,7 @@ const Tokens: React.FC = () => {
       {tokens.lineHeights.length > 0 && (
         <div>
           <h2 id="line-heights">Line Heights</h2>
-          <LineHeightTokens prefix="lineHeights" tokens={tokens.lineHeights} />
+          <TokenTable prefix="lineHeights" tokens={tokens.lineHeights} />
         </div>
       )}
 

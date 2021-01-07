@@ -1,12 +1,12 @@
 import React from "react";
 
-import { TokenItem } from "../token-table";
+import { Token } from "../../../types";
 import { Shadow, TextColor } from ".";
 import { useTheme } from "@twilio-labs/match-themes";
 import styles from "./examples.module.css";
 
 export type ExampleProps = {
-  token: TokenItem;
+  token: Token;
   type:
     | "color"
     | "fontSize"

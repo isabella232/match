@@ -1,0 +1,33 @@
+.Tooltip {
+  position: fixed;
+  display: none;
+  width: max-content;
+  margin-bottom: 5px;
+  padding: 4px 8px;
+  color: #e6e7eb;
+  background: #394762;
+  border-radius: 4px;
+}
+.Tooltip::after {
+  position: absolute;
+  bottom: -4px;
+  left: calc(50% - 4px);
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #394762;
+  transform: rotate(45deg);
+  content: "";
+}
+.Tooltip.visible {
+  display: block;
+}
+
+.anchor {
+  position: absolute;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  transform: translateY(-100%);
+  pointer-events: none;
+}

@@ -3,19 +3,10 @@ import styles from "./token-table.module.css";
 import { CopyMenu } from "./copy-menu";
 import { Example } from "./examples";
 import clsx from "clsx";
-
-export type TokenItem = [
-  name: string,
-  value:
-    | string
-    | number
-    | {
-        [unit: string]: string;
-      }
-];
+import { Token } from "../../types";
 
 export type TokenTableProps = {
-  tokens: TokenItem[];
+  tokens: Token[];
   prefix?: string;
   exampleType?:
     | "color"
@@ -47,7 +38,7 @@ export type TokenTableProps = {
  *              value: 10
  *           }]);
  */
-function getUnitsFromTokenList(tokens: TokenItem[]): string[] | undefined {
+function getUnitsFromTokenList(tokens: Token[]): string[] | undefined {
   if (tokens.length === 0) return;
   const [, value] = tokens[0];
   if (typeof value !== "object") return;

@@ -29,4 +29,5 @@
   align-items: flex-end;
   justify-content: center;
   transform: translateY(-100%);
+  pointer-events: none;
 }

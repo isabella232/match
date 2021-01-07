@@ -24,12 +24,10 @@ const CopyMenu: React.FC<CopyMenuProps> = ({ name, value }) => {
     placement: "right-start",
   });
 
-  const handleCopy = (value: string) => {
-    navigator.clipboard.writeText(value);
+  const handleCopy = async (value: string) => {
+    await navigator.clipboard.writeText(value);
+    popover.hide();
     setIsTooltipVisible(true);
-    setTimeout(() => {
-      popover.hide();
-    }, 0);
     setTimeout(() => {
       setIsTooltipVisible(false);
     }, 2000);

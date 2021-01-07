@@ -4116,6 +4116,7 @@ __metadata:
     "@twilio-labs/match-themes": "workspace:packages/match-themes"
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core"
     "@types/babel__core": 7.1.12
+    "@types/htmlparser2": 3.10.2
     "@types/jest-axe": 3.5.1
     "@types/prop-types": 15.7.3
     "@types/react": 17.0.0
@@ -4126,6 +4127,8 @@ __metadata:
     "@types/styled-system__theme-get": 5.0.1
     core-js: 3.8.1
     csstype: 3.0.5
+    domhandler: 4.0.0
+    htmlparser2: 6.0.0
     jest: 26.6.3
     jest-axe: 4.1.0
     prop-types: 15.7.2
@@ -4440,6 +4443,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/domutils@npm:*":
+  version: 1.7.3
+  resolution: "@types/domutils@npm:1.7.3"
+  dependencies:
+    domhandler: ^2.4.0
+  checksum: 5873ab385358fc45b6aa8c89df36d0389f69c2071bc3bc042a60fd7c094e5bd2ac213bcfd07da42026a8e0be30865a871ac326e1656f2c87ad41f43506c11bfa
+  languageName: node
+  linkType: hard
+
 "@types/ejs@npm:3.0.5":
   version: 3.0.5
   resolution: "@types/ejs@npm:3.0.5"
@@ -4551,6 +4563,17 @@ __metadata:
   version: 5.1.1
   resolution: "@types/html-minifier-terser@npm:5.1.1"
   checksum: 1e750b93e1240a6a3bc6d2748a4f09215c9557b8f6655ee57d1e88c7afcc171e2998a1e97a771c64ef8eeadc9db5623f9e08e09574a549cb74549cdbad5a73b7
+  languageName: node
+  linkType: hard
+
+"@types/htmlparser2@npm:3.10.2":
+  version: 3.10.2
+  resolution: "@types/htmlparser2@npm:3.10.2"
+  dependencies:
+    "@types/domutils": "*"
+    "@types/node": "*"
+    domhandler: ^2.4.0
+  checksum: bb083c953e2172d9e1645c4705ea612bd1bc77611b8d57d873da911586be6be0792043f859ed80992e3a50448ca11db29199d5507e2b24b8b3af99533e23c02d
   languageName: node
   linkType: hard
 
@@ -9704,6 +9727,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dom-serializer@npm:^1.0.1":
+  version: 1.2.0
+  resolution: "dom-serializer@npm:1.2.0"
+  dependencies:
+    domelementtype: ^2.0.1
+    domhandler: ^4.0.0
+    entities: ^2.0.0
+  checksum: 77e3bff86555c853af8a5f87f7433bdaf47fd377ed201b74c465c08445daf3832380acfe25276e6806ffad87ea42e57d4fb992021aef83c5dfae2d352b90860b
+  languageName: node
+  linkType: hard
+
 "dom-serializer@npm:~0.1.0":
   version: 0.1.1
   resolution: "dom-serializer@npm:0.1.1"
@@ -9735,7 +9769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"domelementtype@npm:^2.0.1":
+"domelementtype@npm:^2.0.1, domelementtype@npm:^2.1.0":
   version: 2.1.0
   resolution: "domelementtype@npm:2.1.0"
   checksum: c3e63b6c94bf74d6375e12370f612d1cd61c0d3bc21b46684d93c797b3924de2e84278b0b5cdf3dce21f64ee94c34a005994f373c0e420759ae1856f075f0f57
@@ -9751,7 +9785,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"domhandler@npm:^2.3.0":
+"domhandler@npm:4.0.0, domhandler@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "domhandler@npm:4.0.0"
+  dependencies:
+    domelementtype: ^2.1.0
+  checksum: 22cc8e1335728a7c49434d1d12ff1563aea758c26c8ebf50fcf9e28ceb2bd0e5a15518d69abdb5db37aa7c0c347c8f68d323d12fc744a68853fb7641cbdcec89
+  languageName: node
+  linkType: hard
+
+"domhandler@npm:^2.3.0, domhandler@npm:^2.4.0":
   version: 2.4.2
   resolution: "domhandler@npm:2.4.2"
   dependencies:
@@ -9777,6 +9820,17 @@ __metadata:
     dom-serializer: 0
     domelementtype: 1
   checksum: a5b2f01fb3ff626073e3c3b43fedcff34073fb059b1235ee31cd0b5690d826304f41bc3fd117f95d754a1666ac3a57d224b408d83dd4f1c4525fd5b636d8df6f
+  languageName: node
+  linkType: hard
+
+"domutils@npm:^2.4.4":
+  version: 2.4.4
+  resolution: "domutils@npm:2.4.4"
+  dependencies:
+    dom-serializer: ^1.0.1
+    domelementtype: ^2.0.1
+    domhandler: ^4.0.0
+  checksum: abee29c1aade78506fb9ccb7bd7a2720fb18a87f230a7f7f2e3438458c27dee03b8abad4f3e448ed39da86d2a573e8bc7323d8dd0f2a473f26a455c017e303ce
   languageName: node
   linkType: hard
 
@@ -12615,6 +12669,18 @@ fsevents@~2.1.2:
   peerDependencies:
     webpack: ^4.0.0 || ^5.0.0
   checksum: df4dd38bd886aaac4cdcfa40f80fd35eb310810c8cad5bf1f7b8ca91550ad7d9f277c80dd4015fd2b0ef235d0384e9708b92a9c39f33d1b09090ca6fd8fdb53b
+  languageName: node
+  linkType: hard
+
+"htmlparser2@npm:6.0.0":
+  version: 6.0.0
+  resolution: "htmlparser2@npm:6.0.0"
+  dependencies:
+    domelementtype: ^2.0.1
+    domhandler: ^4.0.0
+    domutils: ^2.4.4
+    entities: ^2.0.0
+  checksum: 03819682d894316d1f8d1a11c9212bdf9c8b2e7a2adc0e19262ac8105d0a4d0577caa1f40bf52ac4876961720342e9f12b86dbf2488f0a8263cf278c03129833
   languageName: node
   linkType: hard
 

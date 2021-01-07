@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import { compose, space, variant } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
+import type { HeadingProps } from "./types";
 
-const StyledHeading = styled.h1`
+const StyledHeading = styled.h1<HeadingProps>`
   margin: 0;
+  color: ${({ inverse }) =>
+    inverse
+      ? themeGet("textColors.inversePrimary")
+      : themeGet("textColors.primary")};
   font-family: ${themeGet("fontFamilies.heading")};
 
-  ${({ theme }) =>
+  ${({ theme, inverse }) =>
     compose(
       space,
       variant({
@@ -32,6 +37,7 @@ const StyledHeading = styled.h1`
             fontWeight: theme.components.headingH2Weight,
           },
           h3: {
+            color: !inverse && theme.components.headingH3Color,
             fontSize: [
               theme.components.headingH3Size,
               undefined,

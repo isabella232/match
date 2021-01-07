@@ -9,5 +9,6 @@ export const heading = {
   h3SizeMedium: { value: "{fontSize.scale160.value}" },
   h3SizeLarge: { value: "{fontSize.scale160.value}" },
   h3LineHeight: { value: "{lineHeight.scale180.value}" },
+  h3Color: { value: "{textColor.primary.value}" },
   h4Weight: { value: "{fontWeight.medium.value}" },
 };

@@ -13,6 +13,7 @@ Heading.propTypes = {
   ...marginPropTypes,
   id: PropTypes.string,
   variant: PropTypes.oneOf(Object.values(HeadingVariant)).isRequired,
+  inverse: PropTypes.bool,
   as: PropTypes.oneOf(Object.values(HeadingVariant)),
 };
 

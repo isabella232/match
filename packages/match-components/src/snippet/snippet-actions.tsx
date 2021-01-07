@@ -46,7 +46,7 @@ const SnippetActions: React.FC<SnippetActionsProps> = ({
       >
         <CopyIcon decorative color="currentColor" />
       </TooltipReference>
-      <StyledTooltip {...copyTooltip}>
+      <StyledTooltip success={copyMessage === "Copied"} {...copyTooltip}>
         <span>{copyMessage ? copyMessage : "Copy to clipboard"}</span>
         <StyledTooltipArrow {...copyTooltip} />
       </StyledTooltip>

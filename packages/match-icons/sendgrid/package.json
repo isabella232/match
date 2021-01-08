@@ -47,11 +47,11 @@
     "prop-types": "15.7.2",
     "react": "17.0.1",
     "react-uid": "2.3.1",
-    "rollup": "2.35.1",
+    "rollup": "2.36.1",
     "rollup-config-match": "workspace:configs/rollup",
     "svgr-config-match": "workspace:configs/svgr",
     "tsconfig-match": "workspace:configs/tsconfig",
-    "tslib": "2.0.3",
+    "tslib": "2.1.0",
     "typescript": "4.1.3"
   }
 }

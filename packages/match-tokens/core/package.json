@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-tokens",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Token libraries for the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",

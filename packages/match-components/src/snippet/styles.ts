@@ -236,7 +236,9 @@ const StyledTooltipArrow = styled(TooltipArrow)`
   }
 `;
 
-const StyledTooltip = styled(Tooltip)<StyledTooltipProps>`
+const StyledTooltip = styled(Tooltip).withConfig({
+  shouldForwardProp: (prop) => !['success'].includes(prop),
+})<StyledTooltipProps>`
   padding: ${themeGet("space.scale7")} ${themeGet("space.scale20")};
   color: ${themeGet("colors.white")};
   font-weight: ${themeGet("fontWeights.light")};

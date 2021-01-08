@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { space } from "styled-system";
+import { themeGet } from "@styled-system/theme-get";
 import { CardProps, CardVariant } from "./types";
 
 const variants = {
@@ -22,7 +23,7 @@ const variants = {
 const StyledCard = styled.div<CardProps>`
   ${space};
   background-color: ${({ theme }) => theme.colorWhite};
-  border-radius: ${({ theme }) => theme.components.cardBorderRadius};
+  border-radius: ${themeGet("components.cardBorderRadius")};
   ${({ variant }) => variant && variants[variant]};
 `;
 

@@ -1,3 +1,4 @@
 {
-  "extends": "tsconfig-match"
+  "extends": "tsconfig-match",
+  "exclude": ["node_modules", "dist", "build"]
 }

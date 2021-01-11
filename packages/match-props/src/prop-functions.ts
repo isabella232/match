@@ -7,6 +7,13 @@ export const backgroundColor = system({
   },
 });
 
+export const textColor = system({
+  color: {
+    property: "color",
+    scale: "textColors",
+  },
+});
+
 export const iconSize = system({
   size: {
     properties: ["width", "height"],

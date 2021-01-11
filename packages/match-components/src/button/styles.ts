@@ -99,14 +99,14 @@ const variants = {
     }
   `,
   [ButtonVariant.INVERSE]: css`
-    color: ${({ theme }) => theme.components.buttonInverseText};
+    color: ${({ theme }) => theme.components.button.inverseText};
     background: ${({ theme }) => theme.colorWhite};
     border-color: ${({ theme }) => theme.colorWhite};
 
     &:hover {
       color: ${({ theme }) => theme.textColorInversePrimary};
-      background: ${({ theme }) => theme.components.buttonInverseHoverBg};
-      border-color: ${({ theme }) => theme.components.buttonInverseHoverBg};
+      background: ${({ theme }) => theme.components.button.inverseHoverBg};
+      border-color: ${({ theme }) => theme.components.button.inverseHoverBg};
     }
 
     &:focus {
@@ -116,8 +116,8 @@ const variants = {
     &:focus,
     &:active {
       color: ${({ theme }) => theme.textColorInversePrimary};
-      background: ${({ theme }) => theme.components.buttonInverseFocusBg};
-      border-color: ${({ theme }) => theme.components.buttonInverseFocusBg};
+      background: ${({ theme }) => theme.components.button.inverseFocusBg};
+      border-color: ${({ theme }) => theme.components.button.inverseFocusBg};
     }
 
     &:disabled {

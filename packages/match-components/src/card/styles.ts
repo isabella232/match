@@ -7,7 +7,7 @@ const variants = {
   [CardVariant.PRIMARY]: css`
     border-color: ${({ theme }) => theme.borderColorCard};
     border-style: solid;
-    border-width: ${({ theme }) => theme.components.cardBorderWidth};
+    border-width: ${({ theme }) => theme.components.card.borderWidth};
     box-shadow: ${({ theme }) => theme.shadowCard};
   `,
   [CardVariant.INVERSE]: css`
@@ -23,7 +23,7 @@ const variants = {
 const StyledCard = styled.div<CardProps>`
   ${space};
   background-color: ${({ theme }) => theme.colorWhite};
-  border-radius: ${themeGet("components.cardBorderRadius")};
+  border-radius: ${themeGet("components.card.borderRadius")};
   ${({ variant }) => variant && variants[variant]};
 `;
 

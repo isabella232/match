@@ -8,10 +8,16 @@ export enum ParagraphVariant {
   X_LARGE = "xLarge",
 }
 
+export type ParagraphAlignment = "left" | "center";
+
 export interface ParagraphProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
     MarginProps {
   variant?: ParagraphVariant;
+  /**
+   * 'primary', 'secondary', 'tertiary', 'inversePrimary', 'inherit'
+   * @type TextColor
+   */
   color?: TextColorOptions;
-  textAlign?: "left" | "center";
+  textAlign?: ParagraphAlignment;
 }

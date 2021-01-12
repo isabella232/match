@@ -20,7 +20,6 @@ Paragraph.displayName = "Paragraph";
 
 Paragraph.defaultProps = {
   variant: ParagraphVariant.MEDIUM,
-  margin: "scale0",
   textAlign: "left",
 };
 

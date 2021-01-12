@@ -6,6 +6,7 @@ import { ParagraphVariant } from "./types";
 import { themeGet } from "@styled-system/theme-get";
 
 const StyledParagraph = styled.p<ParagraphProps>`
+  margin: 0;
   color: ${themeGet("components.paragraph.color")};
   font-weight: ${themeGet("fontWeights.regular")};
 

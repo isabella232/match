@@ -11,46 +11,46 @@ const StyledHeading = styled.h1<HeadingProps>`
       : themeGet("textColors.primary")};
   font-family: ${themeGet("fontFamilies.heading")};
 
-  ${({ theme, inverse }) =>
+  ${({
+    theme: {
+      components: { heading },
+    },
+    inverse,
+  }) =>
     compose(
       space,
       variant({
         variants: {
           h1: {
-            fontSize: [
-              "scale280",
-              undefined,
-              theme.components.headingH1SizeMedium,
-              "scale420",
-            ],
+            fontSize: ["scale280", undefined, heading.h1SizeMedium, "scale420"],
             lineHeight: "scale125",
-            fontWeight: theme.components.headingH1Weight,
+            fontWeight: heading.h1Weight,
           },
           h2: {
             fontSize: [
               "scale220",
               undefined,
-              theme.components.headingH2SizeMedium,
-              theme.components.headingH2SizeLarge,
+              heading.h2SizeMedium,
+              heading.h2SizeLarge,
             ],
             lineHeight: "scale140",
-            fontWeight: theme.components.headingH2Weight,
+            fontWeight: heading.h2Weight,
           },
           h3: {
-            color: !inverse && theme.components.headingH3Color,
+            color: !inverse && heading.h3Color,
             fontSize: [
-              theme.components.headingH3Size,
+              heading.h3Size,
               undefined,
-              theme.components.headingH3SizeMedium,
-              theme.components.headingH3SizeLarge,
+              heading.h3SizeMedium,
+              heading.h3SizeLarge,
             ],
-            lineHeight: theme.components.headingH3LineHeight,
-            fontWeight: theme.components.headingH3Weight,
+            lineHeight: heading.h3LineHeight,
+            fontWeight: heading.h3Weight,
           },
           h4: {
             fontSize: "scale120",
             lineHeight: "scale180",
-            fontWeight: theme.components.headingH4Weight,
+            fontWeight: heading.h4Weight,
           },
           h5: {
             fontSize: "scale100",

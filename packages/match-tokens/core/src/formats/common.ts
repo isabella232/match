@@ -1,6 +1,6 @@
 import {
   baseTokenName,
-  getTokenGroups,
+  getUniqueAttributes,
   formatGroupTokensWithTemplate,
 } from "../utils";
 
@@ -12,6 +12,21 @@ export const tokenExportTemplate = (prop): string => `${prop.name},`;
 
 export const groupTemplate = (groupName, props): string => `${groupName}: {
 ${props.map((prop) => `${baseTokenName(prop)}: ${prop.name},`).join("\n")}
+},`;
+
+export const componentsTemplate = (props) => `components: {
+${getUniqueAttributes(props, "type")
+  .map((componentName) =>
+    `${componentName}: {\n`
+      .concat(
+        props
+          .filter((prop) => prop.attributes.type === componentName)
+          .map((prop) => `${prop.attributes.item}: ${prop.name}`)
+          .join(",\n")
+      )
+      .concat("\n}")
+  )
+  .join(",\n")}
 },`;
 
 export const breakpointsTemplate = (props): string => `
@@ -32,12 +47,17 @@ export const commonJsTokenFormatter = (dictionary): string => {
     .map((prop) => tokenExportTemplate(prop))
     .join("\n");
 
-  const groups = getTokenGroups(dictionary.allProperties);
-
   const groupedTokens = formatGroupTokensWithTemplate(
-    dictionary.allProperties,
-    groups,
+    dictionary.allProperties.filter(
+      (prop) => prop.attributes.category !== "component"
+    ),
     groupTemplate
+  );
+
+  const components = componentsTemplate(
+    dictionary.allProperties.filter(
+      (prop) => prop.attributes.category === "component"
+    )
   );
 
   const breakpoints = breakpointsTemplate(
@@ -52,6 +72,7 @@ export const commonJsTokenFormatter = (dictionary): string => {
     "module.exports = {",
     singleTokenExports,
     groupedTokens,
+    components,
     "breakpoints",
     "}",
   ].join("\n");

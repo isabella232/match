@@ -6,6 +6,7 @@ module.exports = {
       "getting-started/develop",
     ],
     ["Design Tokens"]: ["design-tokens/introduction", "design-tokens/tokens"],
+    ["Foundation"]: ["foundation/icons-list"],
     ["Components"]: [
       "components/anchor",
       "components/button",

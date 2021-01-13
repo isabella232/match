@@ -1,10 +1,11 @@
 import React from "react";
 import { ThemeSwitcher } from "../theme-switcher";
 import { MatchContext } from "../../context/match";
-import * as twilioIcons from "@twilio-labs/match-icons-twilio";
 import * as productIcons from "@twilio-labs/match-icons-product";
 import * as sendgridIcons from "@twilio-labs/match-icons-sendgrid";
+import * as twilioIcons from "@twilio-labs/match-icons-twilio";
 import { iconMetadata } from "./icon-metadata";
+import type { Icon } from "@twilio-labs/match-components";
 import styles from "./icons.module.css";
 import { ThemeVariants } from "@twilio-labs/match-themes";
 
@@ -14,7 +15,9 @@ export const Icons: React.FC = () => {
   const {
     state: { theme },
   } = React.useContext(MatchContext);
-  let icons: typeof twilioIcons;
+  let icons: {
+    [iconName: string]: typeof Icon;
+  };
   switch (theme) {
     case ThemeVariants.TWILIO:
     default:
@@ -27,7 +30,7 @@ export const Icons: React.FC = () => {
 
   const categories: {
     [key: string]: {
-      [iconName: string]: typeof twilioIcons.AddIcon;
+      [iconName: string]: typeof Icon;
     };
   } = {
     Action: {},

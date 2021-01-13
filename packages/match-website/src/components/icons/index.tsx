@@ -1,31 +1,78 @@
 import React from "react";
+import { ThemeSwitcher } from "../theme-switcher";
+import { MatchContext } from "../../context/match";
+import * as twilioIcons from "@twilio-labs/match-icons-twilio";
+import * as productIcons from "@twilio-labs/match-icons-product";
+import * as sendgridIcons from "@twilio-labs/match-icons-sendgrid";
+import { iconMetadata } from "./icon-metadata";
 import styles from "./icons.module.css";
-
-export type IconsProps = {
-  icons: {
-    [iconName: string]: React.ComponentType;
-  };
-};
+import { ThemeVariants } from "@twilio-labs/match-themes";
 
 const softHyphen = "­"; // there is a soft hyphen (U+00AD, aka &shy;) in here
 
-export const Icons: React.FC<IconsProps> = ({ icons }) => {
+export const Icons: React.FC = () => {
+  const {
+    state: { theme },
+  } = React.useContext(MatchContext);
+  let icons: typeof twilioIcons;
+  switch (theme) {
+    case ThemeVariants.TWILIO:
+    default:
+      icons = Object.assign(twilioIcons, productIcons);
+      break;
+    case ThemeVariants.SENDGRID:
+      icons = Object.assign(sendgridIcons, productIcons);
+      break;
+  }
+
+  const categories: {
+    [key: string]: {
+      [iconName: string]: typeof twilioIcons.AddIcon;
+    };
+  } = {
+    Action: {},
+    Content: {},
+    Decorative: {},
+    Product: {},
+  };
+
+  Object.entries(icons).forEach(([iconName, iconComponent]) => {
+    const metadata = iconMetadata[iconName];
+    if (metadata) {
+      categories[metadata.category][iconName] = iconComponent;
+    } else {
+      console.error(`Metadata not found for icon "${iconName}"`);
+    }
+  }, {});
+
   return (
-    <div className={styles.Icons}>
-      {Object.entries(icons).map(([name, Icon]) => {
-        return (
-          <div className={styles.iconCell} key={name}>
-            <div className={styles.title}>
-              {name
-                .replace(/icon$/i, "")
-                .replace(/([A-Z])([a-z]+)/g, `$1$2${softHyphen}`)}
-            </div>
-            <div className={styles.icon}>
-              <Icon />
-            </div>
-          </div>
-        );
-      })}
+    <div>
+      <ThemeSwitcher noDescription />
+      <div>
+        {Object.entries(categories).map(([categoryName, childIcons]) => {
+          return (
+            <React.Fragment key={`theme-${categoryName}`}>
+              <h2>{categoryName}</h2>
+              <div className={styles.iconList}>
+                {Object.entries(childIcons).map(([name, Icon]) => {
+                  return (
+                    <div className={styles.iconCell} key={name}>
+                      <div className={styles.title}>
+                        {name
+                          .replace(/icon$/i, "")
+                          .replace(/([A-Z])([a-z]+)/g, `$1$2${softHyphen}`)}
+                      </div>
+                      <div className={styles.icon}>
+                        <Icon title={name} />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </React.Fragment>
+          );
+        })}
+      </div>
     </div>
   );
 };

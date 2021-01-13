@@ -81,7 +81,6 @@ export const iconMetadata: iconMetadataType = {
   RetailIcon: { category: "Decorative" },
   SecurityIcon: { category: "Decorative" },
   SimIcon: { category: "Decorative" },
-  Smartphone1Icon: { category: "Decorative" }, // known as "Wireless" in Figma
   SmartphoneIcon: { category: "Decorative" },
   SmileIcon: { category: "Decorative" },
   SpaceshipIcon: { category: "Decorative" },
@@ -92,6 +91,7 @@ export const iconMetadata: iconMetadataType = {
   UserSignalIcon: { category: "Decorative" },
   WarningIcon: { category: "Decorative" },
   WifiIcon: { category: "Decorative" },
+  WirelessIcon: { category: "Decorative" },
   // Product
   AddOnsIcon: { category: "Product" },
   AuthyIcon: { category: "Product" },

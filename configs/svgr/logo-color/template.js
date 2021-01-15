@@ -1,4 +1,4 @@
-const formatTitle = require("./format-title");
+const formatTitle = require("../logo/format-title");
 
 const template = (
   { template },
@@ -7,21 +7,21 @@ const template = (
 ) => template.smart({ plugins: ["jsx", "typescript"] }).ast`
 ${imports}
 import { useUID } from "react-uid";
-import { Logo } from "@twilio-labs/match-components";
-import type { LogoProps } from "@twilio-labs/match-components";
+import { ColorLogo } from "@twilio-labs/match-components";
+import type { ColorLogoProps } from "@twilio-labs/match-components";
 
-function ${componentName}(props: LogoProps) {
+function ${componentName}(props: ColorLogoProps) {
   const title = "${formatTitle(componentName.name)}";
   const titleId = useUID();
-  return <Logo {...props} children={${jsx}} />;
+  return <ColorLogo {...props} children={${jsx}} />;
 };
 
 ${componentName}.propTypes = {
-  ...Logo.propTypes
+  ...ColorLogo.propTypes
 }
 
 ${componentName}.defaultProps = {
-  ...Logo.defaultProps
+  ...ColorLogo.defaultProps
 }
 
 ${exports}

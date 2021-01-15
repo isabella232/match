@@ -9,13 +9,11 @@ export default {
   component: Logo,
   args: {
     color: "gray90",
-    maxHeight: "24px",
   },
   argTypes: {
     color: {
       control: { type: "select", options: ["gray90", "gray70", "white"] },
     },
-    maxHeight: { control: { type: "text" } },
   },
 } as Meta;
 

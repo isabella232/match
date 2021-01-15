@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { color, compose, system } from "styled-system";
 import type { LogoProps, ColorLogoProps } from "./types";
 
-const StyledLogo = styled.span<LogoProps>`
+const StyledLogo = styled.span.withConfig({
+  shouldForwardProp: (prop, validate) =>
+    !["color"].includes(prop) && validate(prop),
+})<LogoProps>`
   svg {
     ${compose(color, system({ maxHeight: true }))}
   }

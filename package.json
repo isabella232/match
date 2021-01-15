@@ -10,7 +10,7 @@
     "configs/**"
   ],
   "scripts": {
-    "bootstrap": "yarn build:tokens && yarn convert:icons && yarn build:plugins",
+    "bootstrap": "yarn build:tokens && yarn convert:icons && yarn convert:logos && yarn build:plugins",
     "start:all": "concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -p 6006",
     "start:website": "yarn workspace @twilio-labs/match-website dev",

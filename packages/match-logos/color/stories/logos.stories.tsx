@@ -5,11 +5,11 @@ import { ColorLogo } from "@twilio-labs/match-components";
 import * as ColorLogos from "../src";
 
 export default {
-  title: "ColorLogos/Color",
+  title: "Logos/Color",
   component: ColorLogo,
 } as Meta;
 
-export const AllColorLogos: Story = () => (
+export const AllLogos: Story = () => (
   <div
     style={{
       display: "grid",

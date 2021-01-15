@@ -7,9 +7,4 @@ module.exports = {
   replaceAttrValues: {
     ["#1F304C"]: "currentColor",
   },
-  svgProps: {
-    ...config.svgProps,
-    width: "100%",
-    height: "auto",
-  },
 };

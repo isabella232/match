@@ -6,5 +6,7 @@ module.exports = {
   expandProps: false,
   svgProps: {
     role: "img",
+    width: "100%",
+    height: "100%",
   },
 };

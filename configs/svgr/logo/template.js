@@ -1,4 +1,5 @@
-const formatTitle = require("./format-title");
+const logoTitle = require("../utils/logo-title");
+const niceName = require("../utils/nice-name");
 
 const template = (
   { template },
@@ -11,14 +12,12 @@ import { Logo } from "@twilio-labs/match-components";
 import type { LogoProps } from "@twilio-labs/match-components";
 
 function ${componentName}(props: LogoProps) {
-  const title = "${formatTitle(componentName.name)}";
+  const title = "${logoTitle(componentName.name)}";
   const titleId = useUID();
   return <Logo {...props} children={${jsx}} />;
 };
 
-${componentName}.propTypes = {
-  ...Logo.propTypes
-}
+${componentName}.displayName = "${niceName(componentName.name, "Logo")}";
 
 ${componentName}.defaultProps = {
   ...Logo.defaultProps

@@ -1,4 +1,4 @@
-const formatTitle = (componentName) => {
+const logoTitle = (componentName) => {
   // trim "Svg"
   let title = componentName.slice(3);
 
@@ -17,4 +17,4 @@ const formatTitle = (componentName) => {
   }
 };
 
-module.exports = formatTitle;
+module.exports = logoTitle;

@@ -21,7 +21,7 @@ export const AllLogos: Story<LogoProps> = (args) => (
   <div
     style={{
       display: "grid",
-      gridTemplateColumns: "repeat(5, 1fr)",
+      gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
       gridGap: "2rem",
       justifyItems: "center",
       alignItems: "center",

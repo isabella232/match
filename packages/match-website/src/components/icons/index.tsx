@@ -69,7 +69,14 @@ export const Icons: React.FC = () => {
                           .replace(/([A-Z])([a-z]+)/g, `$1$2${softHyphen}`)}
                       </div>
                       <div className={styles.icon}>
-                        <Icon title={name} size="large" />
+                        <Icon
+                          title={name}
+                          size={
+                            ["Product", "Decorative"].includes(categoryName)
+                              ? "large"
+                              : "base"
+                          }
+                        />
                       </div>
                     </div>
                   );

@@ -1,3 +1,4 @@
+import { getUniqueAttributes } from ".";
 import { GROUP_NAME_MAP } from "../constants";
 
 const getGroupName = (group): string => {
@@ -12,10 +13,9 @@ const getGroupName = (group): string => {
 
 export const formatGroupTokensWithTemplate = (
   props,
-  groups,
   categoryTemplate
 ): string =>
-  groups
+  getUniqueAttributes(props, "category")
     .map((group) =>
       categoryTemplate(
         getGroupName(group),

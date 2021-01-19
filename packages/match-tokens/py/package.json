@@ -1,6 +1,6 @@
 {
   "name": "match_tokens_py",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Match token library for Python",
   "homepage": "https://match.twilio.design",
   "author": "Twilio Inc.",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/ejs": "3.0.5",
-    "@types/node": "14.14.14",
+    "@types/node": "14.14.20",
     "ejs": "3.1.5",
     "ts-node": "9.1.1",
     "tsconfig-match": "workspace:configs/tsconfig",

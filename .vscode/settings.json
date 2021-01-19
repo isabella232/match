@@ -31,6 +31,7 @@
     "reakit",
     "semver",
     "sendgrid",
+    "squircle",
     "svgr",
     "tsbuildinfo",
     "twilio",

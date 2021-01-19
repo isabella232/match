@@ -101,3 +101,4 @@ packages/match-tokens/py/match_tokens_py.egg-info
 
 # Icons
 packages/match-icons/**/src/*
+packages/match-logos/**/src/*

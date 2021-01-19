@@ -1,6 +1,7 @@
 export * from "./component";
 export * from "./background-color";
 export * from "./border-color";
+export * from "./border-radius";
 export * from "./border-width";
 export * from "./media-query";
 export * from "./color";

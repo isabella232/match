@@ -1,5 +1,6 @@
 export {
   borderColor,
+  borderRadius,
   borderWidth,
   mediaQuery,
   color,

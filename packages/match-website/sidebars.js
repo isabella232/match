@@ -15,6 +15,7 @@ module.exports = {
       "components/grid",
       "components/heading",
       "components/icon",
+      "components/paragraph",
       "components/separator",
       "components/snippet",
       "components/truncate",

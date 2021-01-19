@@ -1,4 +1,10 @@
-export const REM_CATEGORIES = ["borderWidth", "fontSize", "iconSize", "space"];
+export const REM_CATEGORIES = [
+  "borderRadius",
+  "borderWidth",
+  "fontSize",
+  "iconSize",
+  "space",
+];
 export const COLOR_CATEGORIES = [
   "color",
   "borderColor",
@@ -10,6 +16,7 @@ export const GROUP_NAME_MAP = new Map(
     color: "colors",
     backgroundColor: "backgroundColors",
     borderColor: "borderColors",
+    borderRadius: "radii",
     borderWidth: "borderWidths",
     component: "components",
     fontFamily: "fontFamilies",

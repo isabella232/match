@@ -5,6 +5,8 @@ export * from "./code";
 export * from "./grid";
 export * from "./heading";
 export * from "./icon";
+export * from "./logo";
+export * from "./paragraph";
 export * from "./separator";
 export * from "./snippet";
 export * from "./truncate";

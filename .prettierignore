@@ -3,6 +3,6 @@ dist
 .pnp.js
 .docusaurus
 build
-packages/match-tokens/**/lib
 packages/match-icons/**/src
+packages/match-logos/**/src
 *.ejs

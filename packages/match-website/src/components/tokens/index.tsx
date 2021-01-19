@@ -3,13 +3,11 @@ import { useTheme } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
 import { ThemeSwitcher } from "../theme-switcher";
 import { TokenFilters } from "./filters";
-import { LineHeightTokens } from "./line-height";
-
 import { remToPx } from "../../utils";
-
-import { TokenTable, TokenItem } from "../token-table/token-table";
-
+import { TokenTable } from "../token-table/token-table";
 import { Token } from "../../types";
+
+type Tokens = { [category: string]: Token[] };
 
 const textSearch = (hayStack: string, needle: string) => {
   return (
@@ -19,43 +17,17 @@ const textSearch = (hayStack: string, needle: string) => {
 };
 
 const Tokens: React.FC = () => {
-  const {
-    mediaQueries,
-    colors,
-    fontFamilies,
-    fontSizes,
-    fontWeights,
-    backgroundColors,
-    textColors,
-    shadows,
-    gradients,
-    borderColors,
-    borderWidths,
-    space,
-    lineHeights,
-    iconSizes,
-  } = useTheme();
+  const theme = useTheme();
   const {
     state: { filterText },
   } = React.useContext(MatchContext);
 
-  const mediaQueryTokens: TokenItem[] = React.useMemo(() => {
-    return Object.entries(mediaQueries).filter(([key]) =>
-      textSearch(`mediaQueries.${key}`, filterText)
-    );
-  }, [filterText, mediaQueries]);
-
-  const primaryColorTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(colors)
+  const tokens: Tokens = React.useMemo(
+    () => ({
+      primaryColors: Object.entries(theme.colors)
         .filter(([key]) => ["brand", "brandHighlight", "white"].includes(key))
         .filter(([key]) => textSearch(`colors.${key}`, filterText)),
-    [filterText, colors]
-  );
-
-  const secondaryColorTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(colors)
+      secondaryColors: Object.entries(theme.colors)
         .filter(([key]) =>
           [
             "baseBlue",
@@ -66,12 +38,7 @@ const Tokens: React.FC = () => {
           ].includes(key)
         )
         .filter(([key]) => textSearch(`colors.${key}`, filterText)),
-    [filterText, colors]
-  );
-
-  const tertiaryColorTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(colors)
+      tertiaryColors: Object.entries(theme.colors)
         .filter(
           ([key]) =>
             ![
@@ -86,87 +53,18 @@ const Tokens: React.FC = () => {
             ].includes(key)
         )
         .filter(([key]) => textSearch(`colors.${key}`, filterText)),
-    [filterText, colors]
-  );
-
-  const fontFamilyTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(fontFamilies).filter(([key]) =>
-        textSearch(`fontFamilies.${key}`, filterText)
-      ),
-    [filterText, fontFamilies]
-  );
-
-  const fontSizeTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(fontSizes)
-        .filter(([key]) => textSearch(`fontSizes.${key}`, filterText))
-        .map(([key, value]) => [
-          key,
-          {
-            px: remToPx(value),
-            rem: value,
-          },
-        ]),
-    [filterText, fontSizes]
-  );
-
-  const fontWeightTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(fontWeights).filter(([key]) =>
-        textSearch(`fontWeights.${key}`, filterText)
-      ),
-    [filterText, fontWeights]
-  );
-
-  const backgroundColorTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(backgroundColors).filter(([key]) =>
+      backgroundColors: Object.entries(theme.backgroundColors).filter(([key]) =>
         textSearch(`backgroundColors.${key}`, filterText)
       ),
-    [filterText, backgroundColors]
-  );
-
-  const textColorTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(textColors).filter(([key]) =>
-        textSearch(`textColors.${key}`, filterText)
-      ),
-    [filterText, textColors]
-  );
-
-  const gradientTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(gradients)
-        .filter(([key]) => textSearch(`gradients.${key}`, filterText))
-        .map(([key, value]) => [key, value.slice(16, -1)]),
-    [filterText, gradients]
-  );
-
-  const shadowTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(shadows).filter(([key]) =>
-        textSearch(`shadows.${key}`, filterText)
-      ),
-    [filterText, shadows]
-  );
-
-  const borderTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(borderColors)
+      borderColors: Object.entries(theme.borderColors)
         .filter(([key]) => textSearch(`borderColors.${key}`, filterText))
         .map(([key, value]) => [
           key,
-          Object.entries(colors).find(
+          Object.entries(theme.colors).find(
             ([_colorName, colorAlias]) => value === colorAlias
           )?.[0] ?? value,
         ]),
-    [filterText, borderColors, colors]
-  );
-
-  const borderWidthTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(borderWidths)
+      borderWidths: Object.entries(theme.borderWidths)
         .filter(([key]) => textSearch(`borderWidths.${key}`, filterText))
         .map(([key, value]) => [
           key,
@@ -175,13 +73,11 @@ const Tokens: React.FC = () => {
             rem: value,
           },
         ]),
-    [filterText, borderWidths]
-  );
-
-  const spacingTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(space)
-        .filter(([key]) => textSearch(`space.${key}`, filterText))
+      fontFamilies: Object.entries(theme.fontFamilies).filter(([key]) =>
+        textSearch(`fontFamilies.${key}`, filterText)
+      ),
+      fontSizes: Object.entries(theme.fontSizes)
+        .filter(([key]) => textSearch(`fontSizes.${key}`, filterText))
         .map(([key, value]) => [
           key,
           {
@@ -189,20 +85,13 @@ const Tokens: React.FC = () => {
             rem: value,
           },
         ]),
-    [filterText, space]
-  );
-
-  const lineHeightTokens: Token[] = React.useMemo(
-    () =>
-      Object.entries(lineHeights).filter(([key]) =>
-        textSearch(`lineHeights.${key}`, filterText)
+      fontWeights: Object.entries(theme.fontWeights).filter(([key]) =>
+        textSearch(`fontWeights.${key}`, filterText)
       ),
-    [filterText, lineHeights]
-  );
-
-  const iconSizeTokens: TokenItem[] = React.useMemo(
-    () =>
-      Object.entries(iconSizes)
+      gradients: Object.entries(theme.gradients)
+        .filter(([key]) => textSearch(`gradients.${key}`, filterText))
+        .map(([key, value]) => [key, value.slice(16, -1)]),
+      iconSizes: Object.entries(theme.iconSizes)
         .filter(([key]) => textSearch(`iconSizes.${key}`, filterText))
         .map(([key, value]) => [
           key,
@@ -211,31 +100,48 @@ const Tokens: React.FC = () => {
             rem: value,
           },
         ]),
-    [filterText, iconSizes]
+      lineHeights: Object.entries(theme.lineHeights).filter(([key]) =>
+        textSearch(`lineHeights.${key}`, filterText)
+      ),
+      mediaQueries: Object.entries(theme.mediaQueries).filter(([key]) =>
+        textSearch(`mediaQueries.${key}`, filterText)
+      ),
+      radii: Object.entries(theme.radii)
+        .filter(([key]) => textSearch(`radii.${key}`, filterText))
+        .map(([key, value]) => [
+          key,
+          {
+            px: remToPx(value),
+            rem: value,
+          },
+        ]),
+      shadows: Object.entries(theme.shadows).filter(([key]) =>
+        textSearch(`shadows.${key}`, filterText)
+      ),
+      space: Object.entries(theme.space)
+        .filter(([key]) => textSearch(`space.${key}`, filterText))
+        .map(([key, value]) => [
+          key,
+          {
+            px: remToPx(value),
+            rem: value,
+          },
+        ]),
+      textColors: Object.entries(theme.textColors).filter(([key]) =>
+        textSearch(`textColors.${key}`, filterText)
+      ),
+    }),
+    [filterText, theme]
   );
 
   const hasColorTokens = Boolean(
-    primaryColorTokens.length +
-      secondaryColorTokens.length +
-      tertiaryColorTokens.length
+    tokens.primaryColors.length +
+      tokens.secondaryColors.length +
+      tokens.tertiaryColors.length
   );
 
-  const hasAnyTokens = Boolean(
-    mediaQueryTokens.length +
-      primaryColorTokens.length +
-      secondaryColorTokens.length +
-      tertiaryColorTokens.length +
-      fontFamilyTokens.length +
-      fontSizeTokens.length +
-      fontWeightTokens.length +
-      backgroundColorTokens.length +
-      textColorTokens.length +
-      gradientTokens.length +
-      borderTokens.length +
-      borderWidthTokens.length +
-      spacingTokens.length +
-      lineHeightTokens.length +
-      iconSizeTokens.length
+  const hasAnyTokens = Object.values(tokens).some(
+    (tokenArray) => tokenArray.length > 0
   );
 
   return (
@@ -245,7 +151,7 @@ const Tokens: React.FC = () => {
 
       {!hasAnyTokens && <p>No tokens found for filter {`"${filterText}"`}</p>}
 
-      {mediaQueryTokens.length > 0 && (
+      {tokens.mediaQueries.length > 0 && (
         <div>
           <h2 id="breakpoints">Breakpoints</h2>
           <p>
@@ -253,13 +159,13 @@ const Tokens: React.FC = () => {
             breakpoints provide ranges needed to ensure that your UI
             communicates valuable information for customers of all screen sizes.
           </p>
-          <TokenTable tokens={mediaQueryTokens} prefix="mediaQueries" />
+          <TokenTable tokens={tokens.mediaQueries} prefix="mediaQueries" />
         </div>
       )}
 
       {hasColorTokens && <h2 id="colors">Colors</h2>}
 
-      {primaryColorTokens.length > 0 && (
+      {tokens.primaryColors.length > 0 && (
         <div>
           <h3 id="primary-colors">Primary</h3>
           <p>
@@ -267,14 +173,14 @@ const Tokens: React.FC = () => {
             introducing too many secondary colors for audiences new to Twilio.
           </p>
           <TokenTable
-            tokens={primaryColorTokens}
+            tokens={tokens.primaryColors}
             prefix="colors"
             exampleType="color"
           />
         </div>
       )}
 
-      {secondaryColorTokens.length > 0 && (
+      {tokens.secondaryColors.length > 0 && (
         <div>
           <h3 id="secondary-colors">Secondary</h3>
           <p>
@@ -282,14 +188,14 @@ const Tokens: React.FC = () => {
             illustration.
           </p>
           <TokenTable
-            tokens={secondaryColorTokens}
+            tokens={tokens.secondaryColors}
             prefix="colors"
             exampleType="color"
           />
         </div>
       )}
 
-      {tertiaryColorTokens.length > 0 && (
+      {tokens.tertiaryColors.length > 0 && (
         <div>
           <h3 id="tertiary-colors">Tertiary</h3>
           <p>
@@ -297,123 +203,130 @@ const Tokens: React.FC = () => {
             illustration.
           </p>
           <TokenTable
-            tokens={tertiaryColorTokens}
+            tokens={tokens.tertiaryColors}
             prefix="colors"
             exampleType="color"
           />
         </div>
       )}
 
-      {backgroundColorTokens.length > 0 && (
+      {tokens.backgroundColors.length > 0 && (
         <div>
           <h2 id="background-colors">Background Colors</h2>
           <TokenTable
-            tokens={backgroundColorTokens}
+            tokens={tokens.backgroundColors}
             prefix="backgroundColors"
             exampleType="color"
           />
         </div>
       )}
 
-      {gradientTokens.length > 0 && (
+      {tokens.gradients.length > 0 && (
         <div>
           <h2 id="gradients">Gradients</h2>
           <TokenTable
             prefix="gradients"
-            tokens={gradientTokens}
+            tokens={tokens.gradients}
             exampleType="gradient"
           />
         </div>
       )}
 
-      {textColorTokens.length > 0 && (
+      {tokens.textColors.length > 0 && (
         <div>
           <h2 id="text-colors">Text Colors</h2>
-          <TokenTable tokens={textColorTokens} exampleType="textColor" />
+          <TokenTable tokens={tokens.textColors} exampleType="textColor" />
         </div>
       )}
 
-      {fontFamilyTokens.length > 0 && (
+      {tokens.fontFamilies.length > 0 && (
         <div>
           <h2>Font Families</h2>
-          <TokenTable prefix="fontFamilies" tokens={fontFamilyTokens} />
+          <TokenTable prefix="fontFamilies" tokens={tokens.fontFamilies} />
         </div>
       )}
 
-      {fontSizeTokens.length > 0 && (
+      {tokens.fontSizes.length > 0 && (
         <div>
           <h2 id="font-sizes">Font Sizes</h2>
           <TokenTable
-            tokens={fontSizeTokens}
+            tokens={tokens.fontSizes}
             prefix="fontSize"
             exampleType="fontSize"
           />
         </div>
       )}
 
-      {fontWeightTokens.length > 0 && (
+      {tokens.fontWeights.length > 0 && (
         <div>
           <h2 id="font-weights">Font Weights</h2>
-          <TokenTable prefix="fontWeights" tokens={fontWeightTokens} />
+          <TokenTable prefix="fontWeights" tokens={tokens.fontWeights} />
         </div>
       )}
 
-      {lineHeightTokens.length > 0 && (
+      {tokens.lineHeights.length > 0 && (
         <div>
           <h2 id="line-heights">Line Heights</h2>
-          <LineHeightTokens prefix="lineHeights" tokens={lineHeightTokens} />
+          <TokenTable prefix="lineHeights" tokens={tokens.lineHeights} />
         </div>
       )}
 
-      {shadowTokens.length > 0 && (
+      {tokens.shadows.length > 0 && (
         <div>
           <h2 id="shadows">Shadows</h2>
           <TokenTable
             prefix="shadows"
-            tokens={shadowTokens}
+            tokens={tokens.shadows}
             exampleType="shadow"
           />
         </div>
       )}
 
-      {borderTokens.length > 0 && (
+      {tokens.borderColors.length > 0 && (
         <div>
           <h2 id="borders">Borders</h2>
           <TokenTable
-            tokens={borderTokens}
+            tokens={tokens.borderColors}
             prefix="borderColors"
             exampleType="border"
           />
         </div>
       )}
 
-      {borderWidthTokens.length > 0 && (
+      {tokens.borderWidths.length > 0 && (
         <div>
           <h2 id="border-widths">Border Widths</h2>
           <TokenTable
-            tokens={borderWidthTokens}
+            tokens={tokens.borderWidths}
             prefix="borderWidths"
             exampleType="borderWidth"
           />
         </div>
       )}
 
-      {spacingTokens.length > 0 && (
+      {tokens.radii.length > 0 && (
+        <div>
+          <h2 id="border-radii">Border Radii</h2>
+          <TokenTable tokens={tokens.radii} prefix="radii" />
+        </div>
+      )}
+
+      {tokens.space.length > 0 && (
         <div>
           <h2 id="spacings">Spacing</h2>
           <TokenTable
-            tokens={spacingTokens}
+            tokens={tokens.space}
             prefix="space"
             exampleType="spacing"
           />
         </div>
       )}
 
-      {iconSizeTokens.length > 0 && (
+      {tokens.iconSizes.length > 0 && (
         <div>
           <h2 id="icon-sizes">Icon Sizes</h2>
           <TokenTable
-            tokens={iconSizeTokens}
+            tokens={tokens.iconSizes}
             prefix="iconSizes"
             exampleType="spacing"
           />

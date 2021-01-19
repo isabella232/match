@@ -18,6 +18,7 @@
     "prettier:write": "prettier --write '**/*.{ts,tsx,js,json,md,mdx,yml}'",
     "lint:js": "eslint '**/*.{ts,tsx,js}'",
     "lint:css": "stylelint './**/*.{tsx,css}' && stylelint './**/styles.ts'",
+    "lint:css:fix": "stylelint './**/*.css' --fix",
     "type-check": "yarn workspaces foreach run type-check",
     "build:all": "yarn workspaces foreach --topological-dev run build",
     "build:tokens": "yarn workspace @twilio-labs/match-tokens build",

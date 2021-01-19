@@ -54,7 +54,10 @@ export const Icons: React.FC = () => {
       <div>
         {Object.entries(categories).map(([categoryName, childIcons]) => {
           return (
-            <React.Fragment key={`theme-${categoryName}`}>
+            <div
+              className={styles.iconListWrapper}
+              key={`theme-${categoryName}`}
+            >
               <h2>{categoryName}</h2>
               <div className={styles.iconList}>
                 {Object.entries(childIcons).map(([name, Icon]) => {
@@ -66,13 +69,13 @@ export const Icons: React.FC = () => {
                           .replace(/([A-Z])([a-z]+)/g, `$1$2${softHyphen}`)}
                       </div>
                       <div className={styles.icon}>
-                        <Icon title={name} />
+                        <Icon title={name} size="large" />
                       </div>
                     </div>
                   );
                 })}
               </div>
-            </React.Fragment>
+            </div>
           );
         })}
       </div>

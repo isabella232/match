@@ -155,29 +155,3 @@ export const iconMetadata: iconMetadataType = {
   TemplatesIcon: { category: "Decorative" },
   TestingIcon: { category: "Decorative" },
 };
-
-// export const sendgridIconMetadata: iconMetadataType = {
-//   // Action
-//   ChevronDownIcon: { category: "Action" },
-//   ChevronUpIcon: { category: "Action" },
-//   CloseIcon: { category: "Action" },
-//   // Content
-//   BulletCheckIcon: { category: "Content" },
-//   BulletMinusIcon: { category: "Content" },
-//   CheckIcon: { category: "Content" },
-//   // Decorative
-//   AbTestingIcon: { category: "Decorative" },
-//   AutomationIcon: { category: "Decorative" },
-//   ChartIcon: { category: "Decorative" },
-//   CloudIcon: { category: "Decorative" },
-//   DesignIcon: { category: "Decorative" },
-//   EmailApiIcon: { category: "Decorative" },
-//   EmailIcon: { category: "Decorative" },
-//   ExpertServicesIcon: { category: "Decorative" },
-//   ListIcon: { category: "Decorative" },
-//   MarketingIcon: { category: "Decorative" },
-//   SignUpIcon: { category: "Decorative" },
-//   StatsIcon: { category: "Decorative" },
-//   TemplatesIcon: { category: "Decorative" },
-//   TestingIcon: { category: "Decorative" },
-// };

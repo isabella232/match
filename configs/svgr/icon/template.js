@@ -1,3 +1,5 @@
+const niceName = require("../utils/nice-name");
+
 const template = (
   { template },
   opts,
@@ -19,9 +21,7 @@ function ${componentName}({ title, decorative, ...props }: IconProps) {
   return <Icon {...props} children={${jsx}} />;
 };
 
-${componentName}.propTypes = {
-  ...Icon.propTypes
-}
+${componentName}.displayName = "${niceName(componentName.name, "Icon")}";
 
 ${componentName}.defaultProps = {
   ...Icon.defaultProps

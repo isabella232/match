@@ -6,5 +6,6 @@ build
 .docusaurus
 .cache
 packages/match-icons/**/src
+packages/match-logos/**/src
 packages/match-tokens/core/*
 !packages/match-tokens/core/src

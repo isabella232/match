@@ -4146,6 +4146,7 @@ __metadata:
     typescript: 4.1.3
   peerDependencies:
     "@styled-system/theme-get": 5.x
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
     "@twilio-labs/match-props": ^0.3.0
     "@twilio-labs/match-themes": ^0.5.1
     "@twilio-labs/match-tokens": ^0.6.0
@@ -4453,6 +4454,7 @@ __metadata:
     "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product"
     "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid"
     "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio"
+    "@twilio-labs/match-primitives": "workspace:packages/match-primitives"
     "@twilio-labs/match-props": "workspace:packages/match-props"
     "@twilio-labs/match-themes": "workspace:packages/match-themes"
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core"

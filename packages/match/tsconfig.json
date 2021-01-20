@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig-match",
+  "compilerOptions": {
+    "outDir": "./",
+    "rootDir": "./src",
+    "module": "CommonJS"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["components", "themes", "tokens"]
+}

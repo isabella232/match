@@ -4143,6 +4143,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
+    "@styled-system/theme-get": 5.x
     "@twilio-labs/match-props": ^0.3.0
     "@twilio-labs/match-themes": ^0.5.1
     "@twilio-labs/match-tokens": ^0.6.0
@@ -4150,8 +4151,11 @@ __metadata:
     react: 17.x
     react-dom: 17.x
     react-is: 17.x
+    react-syntax-highlighter: 15.x
     react-uid: 2.x
+    reakit: 1.x
     styled-components: 5.x
+    styled-system: 5.x
   languageName: unknown
   linkType: soft
 
@@ -4396,6 +4400,7 @@ __metadata:
     "@docusaurus/theme-live-codeblock": 2.0.0-alpha.70
     "@docusaurus/theme-search-algolia": 2.0.0-alpha.70
     "@mdx-js/react": 1.6.22
+    "@styled-system/theme-get": 5.1.2
     "@twilio-labs/match-components": "workspace:packages/match-components"
     "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product"
     "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid"
@@ -4405,27 +4410,75 @@ __metadata:
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core"
     "@types/gh-pages": 3.0.0
     "@types/node": 14.14.20
+    "@types/prop-types": 15.7.3
     "@types/react": 17.0.0
     "@types/react-dom": 17.0.0
     "@types/react-is": 17.0.0
+    "@types/react-syntax-highlighter": 13.5.0
     "@types/styled-components": 5.1.7
+    "@types/styled-system": 5.1.10
     clsx: 1.1.1
     colortranslator: 1.3.5
     docusaurus-plugin-react-docgen-typescript: 0.0.1
     gh-pages: 3.1.0
     plugin-docusaurus-tokens: "workspace:plugins/docusaurus-tokens"
     pnp-webpack-plugin: 1.6.4
+    prop-types: 15.7.2
     react: 17.0.1
     react-docgen-typescript: 1.20.5
     react-dom: 17.0.1
     react-is: 17.0.1
     react-live: 2.2.3
+    react-syntax-highlighter: 15.4.3
     react-uid: 2.3.1
     reakit: 1.3.4
     styled-components: 5.2.1
+    styled-system: 5.1.5
     tsconfig-match: "workspace:configs/tsconfig"
     typescript: 4.1.3
     wcag-contrast: 3.0.0
+  languageName: unknown
+  linkType: soft
+
+"@twilio-labs/match@workspace:packages/match":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match@workspace:packages/match"
+  dependencies:
+    "@babel/core": 7.12.10
+    "@emotion/core": 11.0.0
+    "@storybook/react": 6.1.11
+    "@styled-system/theme-get": 5.1.2
+    "@twilio-labs/match-components": "workspace:packages/match-components"
+    "@twilio-labs/match-props": "workspace:packages/match-props"
+    "@twilio-labs/match-themes": "workspace:packages/match-themes"
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core"
+    "@types/babel__core": 7.1.12
+    "@types/prop-types": 15.7.3
+    "@types/react": 17.0.0
+    "@types/react-dom": 17.0.0
+    "@types/react-syntax-highlighter": 13.5.0
+    "@types/styled-components": 5.1.7
+    "@types/styled-system": 5.1.10
+    "@types/styled-system__theme-get": 5.0.1
+    prop-types: 15.7.2
+    react: 17.0.1
+    react-dom: 17.0.1
+    react-is: 17.0.1
+    react-syntax-highlighter: 15.4.3
+    react-uid: 2.3.1
+    reakit: 1.3.4
+    styled-components: 5.2.1
+    styled-system: 5.1.5
+    tsconfig-match: "workspace:configs/tsconfig"
+    tslib: 2.1.0
+    typescript: 4.1.3
+  peerDependencies:
+    prop-types: 15.x
+    react: 17.x
+    react-dom: 17.x
+    react-is: 17.x
+    react-uid: 2.x
+    styled-components: 5.x
   languageName: unknown
   linkType: soft
 

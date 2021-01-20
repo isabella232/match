@@ -8,7 +8,7 @@
 
     // ECMAScript targets
     "target": "ES6",
-    "lib": ["ES2017", "DOM", "DOM.Iterable", "ScriptHost"],
+    "lib": ["ES2018", "DOM", "DOM.Iterable", "ScriptHost"],
 
     // These settings are optional
     "declarationMap": true,

@@ -8,8 +8,8 @@ const template = (
 ) => template.smart({ plugins: ["jsx", "typescript"] }).ast`
 ${imports}
 import { useUID } from "react-uid";
-import { ColorLogo } from "@twilio-labs/match-components";
-import type { ColorLogoProps } from "@twilio-labs/match-components";
+import { ColorLogo } from "@twilio-labs/match-primitives";
+import type { ColorLogoProps } from "@twilio-labs/match-primitives";
 
 function ${componentName}(props: ColorLogoProps) {
   const title = "${logoTitle(componentName.name)}";

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { uid } from "react-uid";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Logo, LogoProps } from "@twilio-labs/match-components";
+import { Logo, LogoProps } from "@twilio-labs/match-primitives";
 import * as Logos from "../src";
 
 export default {

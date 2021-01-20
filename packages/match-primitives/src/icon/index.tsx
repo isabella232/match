@@ -21,5 +21,5 @@ Icon.defaultProps = {
 
 Icon.displayName = "Icon";
 
-export { Icon };
+export { Icon, StyledIcon };
 export type { IconProps };

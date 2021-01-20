@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { StyledIcon } from "../icon/styles";
+import { StyledIcon } from "@twilio-labs/match-primitives";
 import { AnchorProps, AnchorVariant } from "./types";
 
 const variants = {

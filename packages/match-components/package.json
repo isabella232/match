@@ -29,6 +29,7 @@
   },
   "peerDependencies": {
     "@styled-system/theme-get": "5.x",
+    "@twilio-labs/match-primitives": "^1.0.0-alpha.1",
     "@twilio-labs/match-props": "^0.3.0",
     "@twilio-labs/match-themes": "^0.5.1",
     "@twilio-labs/match-tokens": "^0.6.0",
@@ -48,6 +49,8 @@
     "@storybook/react": "6.1.11",
     "@styled-system/theme-get": "5.1.2",
     "@testing-library/react": "11.2.3",
+    "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio",
+    "@twilio-labs/match-primitives": "workspace:packages/match-primitives",
     "@twilio-labs/match-props": "workspace:packages/match-props",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { uid } from "react-uid";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { ColorLogo } from "@twilio-labs/match-components";
+import { ColorLogo } from "@twilio-labs/match-primitives";
 import * as ColorLogos from "../src";
 
 export default {

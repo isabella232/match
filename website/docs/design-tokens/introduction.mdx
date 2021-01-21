@@ -17,7 +17,7 @@ Design tokens and theming is still a **work in progress**. Check out the roadmap
 Run the following command at the root of your project:
 
 ```
-yarn add @twilio-labs/match-tokens @twilio-labs/match-themes
+yarn add @twilio-labs/match
 ```
 
 ## How to use
@@ -26,7 +26,7 @@ To use Twilio design tokens, import the appropriate theme provider in the root o
 
 ```typescript
 import * as React from "react";
-import { TwilioTheme } from "@twilio-labs/match-themes";
+import { TwilioTheme } from "@twilio-labs/match/themes";
 
 const App: React.FC = ({ children }) => <TwilioTheme>{children}</TwilioTheme>;
 export { App };
@@ -45,7 +45,7 @@ Or within a component using the `useTheme` hook.
 
 ```typescript
 import * as React from "react";
-import { useTheme } from "@twilio-labs/match-themes";
+import { useTheme } from "@twilio-labs/match/themes";
 
 const Component: React.FC = () => {
   const theme = useTheme();

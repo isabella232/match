@@ -5,7 +5,7 @@ import * as productIcons from "@twilio-labs/match-icons-product";
 import * as sendgridIcons from "@twilio-labs/match-icons-sendgrid";
 import * as twilioIcons from "@twilio-labs/match-icons-twilio";
 import { iconMetadata } from "./icon-metadata";
-import type { Icon } from "@twilio-labs/match-components";
+import type { Icon } from "@twilio-labs/match-primitives";
 import styles from "./icons.module.css";
 import { ThemeVariants } from "@twilio-labs/match-themes";
 

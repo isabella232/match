@@ -1,6 +1,6 @@
 import * as React from "react";
 import OriginalLayoutProviders from "@theme-original/LayoutProviders";
-import { MatchProvider } from "@twilio-labs/match-website/src/context/match";
+import { MatchProvider } from "match-website/src/context/match";
 
 const LayoutProviders: React.FC<any> = (props) => (
   <MatchProvider>

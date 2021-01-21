@@ -1,5 +1,5 @@
 {
-  "name": "@twilio-labs/match-website",
+  "name": "match-website",
   "version": "0.4.0",
   "private": true,
   "scripts": {

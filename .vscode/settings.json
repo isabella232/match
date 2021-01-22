@@ -23,6 +23,7 @@
     "clsx",
     "cta",
     "docgen",
+    "figma",
     "ittb",
     "noopener",
     "noreferrer",
@@ -39,9 +40,7 @@
     "yarnrc"
   ],
   "cSpell.allowCompoundWords": true,
-  "cSpell.enableFiletypes": [
-    "mdx"
-  ],
+  "cSpell.enableFiletypes": ["mdx"],
   "cSpell.ignorePaths": [
     "**/node_modules/**",
     "**/dist/**",

@@ -109,8 +109,8 @@ packages/match-tokens/core/*
 packages/match-icons/**/src
 packages/match-icons/bundle/*
 !packages/match-icons/bundle/src
-!packages/match-icons/package.json
-!packages/match-icons/tsconfig.json
+!packages/match-icons/bundle/package.json
+!packages/match-icons/bundle/tsconfig.json
 
 # Logos
 packages/match-logos/**/src

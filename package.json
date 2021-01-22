@@ -11,7 +11,7 @@
     "website"
   ],
   "scripts": {
-    "bootstrap": "yarn build:tokens && yarn convert:icons && yarn build:logos && yarn build:plugins",
+    "bootstrap": "yarn build:tokens && yarn build:icons && yarn build:logos && yarn build:plugins",
     "start:all": "concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -p 6006",
     "start:website": "yarn workspace match-website dev",

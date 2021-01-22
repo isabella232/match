@@ -1,0 +1,154 @@
+---
+id: anchor
+title: Anchor
+sidebar_label: Anchor
+slug: /components/anchor/
+---
+
+import { Props } from "../../src/components/props";
+import { ThemeSwitcher } from "../../src/components/theme-switcher";
+
+Anchors are hyperlinks that take users to another page or a section on a page. They are found throughout the interface, both on their own line and inline with text.
+
+**Sources:** [GitHub](https://github.com/twilio-labs/match/tree/main/packages/match-components/src/anchor)
+
+## Usage Guide
+
+### Installation
+
+```shell
+yarn add @twilio-labs/match
+```
+
+### Usage
+
+```jsx
+import { Anchor } from "@twilio-labs/match/components";
+
+const Component = () => <Anchor href="/">Ahoy</Anchor>;
+```
+
+### Props
+
+<Props of="Anchor" />
+
+---
+
+## Guidelines
+
+### Anchors vs Buttons
+
+All actions outside of linking to another URL should use a button. For example, actions such as submitting a form or closing a module should
+use a button.
+
+The button component can also be used as a CTA anchor when the href prop is included. In this situation the element looks like a button but
+renders as an anchor.
+
+Learn more about the [button component](/docs/components/button) to determine if it will fit your needs better.
+
+### Accessibility
+
+Here are some quick accessibility tips to ensure a positive user experience for all users:
+
+- Avoid using only color to communicate information. Use another indicator, such as an underline.
+- Screen Reader users may choose to navigate by links instead of reading the full page, so anchor text needs to make sense without the surrounding
+  sentences or content. When this is not possible use the [visually hidden component](/docs/components/visually-hidden) to supply additional information to users.
+
+**Note**: The title attribute was not included because it is not exposed by all browsers in an accessible way, meaning that users navigating
+with assistive technology may never see that information.
+
+---
+
+## Composition
+
+Anchors inherit font size and alignment from their parent container.
+
+Make sure to always include a valid href and anchor text that conveys the function, purpose, or destination of the anchor. Avoid ambiguous anchor
+text, such as ‘click here’ or ‘more’. When possible avoid using the same anchor text for anchors that take users to different content.
+
+---
+
+## Examples
+
+<ThemeSwitcher />
+
+### Primary
+
+The primary link is the most common variation and can be used on any light background.
+
+```jsx live
+<Anchor href="/docs/components/button">Learn when to use a button</Anchor>
+```
+
+### Inverse
+
+Inverse anchors are designed to be accessible on dark backgrounds.
+
+**Note:** Inverse anchors are not accessible on SendGrid Blue backgrounds, use a [button](/docs/components/button) instead.
+
+```jsx live bg=darkest
+<Anchor variant="inverse" href="/docs/design-tokens/tokens">
+  Design Tokens
+</Anchor>
+```
+
+### Text
+
+Text anchors inherit their parent's color for the default state. This variation should be used sparingly and should be used in instances
+where it is obvious that it is a hyperlink, such as a reference in a list of references.
+
+```jsx live
+<Anchor
+  variant="text"
+  href="https://www.twilio.com/blog/introducing-trust-hub-now-in-beta"
+>
+  Introducing Trust Hub - Now in Beta
+</Anchor>
+```
+
+### External Link
+
+If an external anchor is used for the href prop, the target and rel will automatically be set for security purposes.
+
+`target = "\_blank"`
+
+`rel = "noreferrer noopener"`
+
+```jsx live
+<Anchor href="https://twilio.com/flex">Twilio Flex</Anchor>
+```
+
+However, the target and rel property can be overridden using the target and rel props
+
+```jsx live
+<Anchor href="https://twilio.com/messaging" target="_self" rel="noopener">
+  Twilio Messaging
+</Anchor>
+```
+
+### Primary, No Underline
+
+Every anchor variation has an option to get rid of the underline. Anchors without an underline should only be used when it is obvious
+that the text is an anchor. Consider using an icon as an additional indicator that the text is an anchor for anchors without an underline.
+
+```jsx live
+<p>
+  Sources:
+  <Anchor href="https://sendgrid.com" noUnderline>
+    sendgrid.com
+  </Anchor>, <Anchor href="https://twilio.com" noUnderline>
+    twilio.com
+  </Anchor>
+</p>
+```
+
+### Icon
+
+Anchors may include an icon from one of the [Match icon libraries](/docs/components/icon). Always place icons to the right of the link text.
+
+```jsx live
+<Anchor href="https://sendgrid.com">
+  Send with confidence
+  <OutboundIcon decorative />
+</Anchor>
+```

@@ -7,8 +7,8 @@ const template = (
 ) => template.smart({ plugins: ["jsx", "typescript"] }).ast`
 ${imports}
 import { useUID } from "react-uid";
-import { Icon } from "@twilio-labs/match-components";
-import type { IconProps } from "@twilio-labs/match-components";
+import { Icon } from "@twilio-labs/match-primitives";
+import type { IconProps } from "@twilio-labs/match-primitives";
 
 function ${componentName}({ title, decorative, ...props }: IconProps) {
   const uid = useUID();

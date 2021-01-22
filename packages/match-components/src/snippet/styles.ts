@@ -3,7 +3,7 @@ import { variant, compose } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
 import { Tooltip, TooltipArrow } from "reakit/Tooltip";
 import { Tab, TabList } from "reakit/Tab";
-import { StyledIcon } from "../icon/styles";
+import { StyledIcon } from "@twilio-labs/match-primitives";
 import type {
   StyledSnippetProps,
   StyledSnippetGroupProps,
@@ -237,7 +237,7 @@ const StyledTooltipArrow = styled(TooltipArrow)`
 `;
 
 const StyledTooltip = styled(Tooltip).withConfig({
-  shouldForwardProp: (prop) => !['success'].includes(prop),
+  shouldForwardProp: (prop) => !["success"].includes(prop),
 })<StyledTooltipProps>`
   padding: ${themeGet("space.scale7")} ${themeGet("space.scale20")};
   color: ${themeGet("colors.white")};

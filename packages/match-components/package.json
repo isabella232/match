@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-components",
-  "version": "0.5.0",
+  "version": "1.0.0-alpha.1",
   "description": "Twilio Match Design System Components",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -28,21 +28,29 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-props": "^0.3.0",
-    "@twilio-labs/match-themes": "^0.5.1",
-    "@twilio-labs/match-tokens": "^0.6.0",
+    "@styled-system/theme-get": "5.x",
+    "@twilio-labs/match-primitives": "^1.0.0-alpha.1",
+    "@twilio-labs/match-props": "^1.0.0-alpha.1",
+    "@twilio-labs/match-themes": "^1.0.0-alpha.1",
+    "@twilio-labs/match-tokens": "^1.0.0-alpha.1",
     "prop-types": "15.x",
     "react": "17.x",
     "react-dom": "17.x",
     "react-is": "17.x",
+    "react-syntax-highlighter": "15.x",
     "react-uid": "2.x",
-    "styled-components": "5.x"
+    "reakit": "1.x",
+    "styled-components": "5.x",
+    "styled-system": "5.x"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
     "@emotion/core": "11.0.0",
     "@storybook/react": "6.1.11",
+    "@styled-system/theme-get": "5.1.2",
     "@testing-library/react": "11.2.3",
+    "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio",
+    "@twilio-labs/match-primitives": "workspace:packages/match-primitives",
     "@twilio-labs/match-props": "workspace:packages/match-props",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
@@ -65,16 +73,13 @@
     "react-is": "17.0.1",
     "react-syntax-highlighter": "15.4.3",
     "react-uid": "2.3.1",
+    "reakit": "1.3.4",
     "rollup": "2.36.1",
     "rollup-config-match": "workspace:configs/rollup",
     "styled-components": "5.2.1",
+    "styled-system": "5.1.5",
     "tsconfig-match": "workspace:configs/tsconfig",
     "tslib": "2.1.0",
     "typescript": "4.1.3"
-  },
-  "dependencies": {
-    "@styled-system/theme-get": "5.1.2",
-    "reakit": "1.3.4",
-    "styled-system": "5.1.5"
   }
 }

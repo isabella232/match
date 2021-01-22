@@ -1,7 +1,7 @@
 import * as React from "react";
 import { uid } from "react-uid";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Icon, IconProps } from "@twilio-labs/match-components";
+import { Icon, IconProps } from "@twilio-labs/match-primitives";
 import { colors, iconSizes } from "@twilio-labs/match-tokens";
 import * as Icons from "../src";
 

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { OutboundIcon } from "@twilio-labs/match-icons-twilio";
 import { Anchor, AnchorProps, AnchorVariant } from "../src";
 
 export default {
@@ -51,4 +52,24 @@ External.args = {
   variant: AnchorVariant.PRIMARY,
   href: "https://twilio.com",
   children: "Default for an External Link in Text Variant",
+};
+
+export const PrimaryIcon = Template.bind({});
+PrimaryIcon.args = {
+  children: ["Ahoy ", <OutboundIcon decorative key="outboundicon" />],
+};
+
+export const InverseIcon = Template.bind({});
+InverseIcon.args = {
+  variant: AnchorVariant.INVERSE,
+  children: ["Ahoy ", <OutboundIcon decorative key="outboundicon" />],
+};
+InverseIcon.parameters = {
+  backgrounds: { default: "Darkest" },
+};
+
+export const TextIcon = Template.bind({});
+TextIcon.args = {
+  variant: AnchorVariant.TEXT,
+  children: ["Ahoy ", <OutboundIcon decorative key="outboundicon" />],
 };

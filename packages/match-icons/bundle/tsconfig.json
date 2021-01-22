@@ -1,0 +1,11 @@
+{
+  "extends": "tsconfig-match",
+  "compilerOptions": {
+    "composite": false,
+    "outDir": "./",
+    "rootDir": "./src",
+    "module": "CommonJS"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["twilio", "sendgrid", "product"]
+}

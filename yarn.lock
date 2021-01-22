@@ -6,30 +6,30 @@ __metadata:
   cacheKey: 7
 
 "@algolia/autocomplete-core@npm:^1.0.0-alpha.35":
-  version: 1.0.0-alpha.38
-  resolution: "@algolia/autocomplete-core@npm:1.0.0-alpha.38"
+  version: 1.0.0-alpha.39
+  resolution: "@algolia/autocomplete-core@npm:1.0.0-alpha.39"
   dependencies:
-    "@algolia/autocomplete-shared": 1.0.0-alpha.38
-  checksum: 318f0b185a466b070efe78c08c45424de456dc33ff079de3d26beb52ce46c037539745f0e31694306c06e55683901057a22f401f74b46a5d61847fdd80b425ca
+    "@algolia/autocomplete-shared": 1.0.0-alpha.39
+  checksum: bc01426d73f4f10b922d6e4a8f011f1d65c059160a99a507c4af425e18df436fb262cc4e85f902b93842276a5c202915f92851f7eb9a140c01dedf9960941ddf
   languageName: node
   linkType: hard
 
 "@algolia/autocomplete-preset-algolia@npm:^1.0.0-alpha.35":
-  version: 1.0.0-alpha.38
-  resolution: "@algolia/autocomplete-preset-algolia@npm:1.0.0-alpha.38"
+  version: 1.0.0-alpha.39
+  resolution: "@algolia/autocomplete-preset-algolia@npm:1.0.0-alpha.39"
   dependencies:
-    "@algolia/autocomplete-shared": 1.0.0-alpha.38
+    "@algolia/autocomplete-shared": 1.0.0-alpha.39
   peerDependencies:
     "@algolia/client-search": ^4.5.1
     algoliasearch: ^4.5.1
-  checksum: ad5fb62e36a188400d7b5e8ef6898876b94b0da19b1c9e54ddea28db74ac24887c27d8a45e5c516f93737dc27580af8359e7e50723b785db6b877d7782663b01
+  checksum: bcfdf411f9dbb3bdbe43de12c2966c735c3bbc51b9b659a3e512ecfe099e4f277dfc826172d2635883ed19e2c77886befe046628128fd696b0460d1ac38da44d
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-shared@npm:1.0.0-alpha.38":
-  version: 1.0.0-alpha.38
-  resolution: "@algolia/autocomplete-shared@npm:1.0.0-alpha.38"
-  checksum: f0d9f52697ffc9d85fbccf2669a40f67944571be991ba34de5a440ce83b6af2d21c9e714d489414fd8dd9fd3d22e751cd0c9f4c4835b585254c2fb1450af4268
+"@algolia/autocomplete-shared@npm:1.0.0-alpha.39":
+  version: 1.0.0-alpha.39
+  resolution: "@algolia/autocomplete-shared@npm:1.0.0-alpha.39"
+  checksum: 67e63e49ec31d3cb8788b83f2fdd9ae4823264ac8a564791fd0a3f23042807ba4976e24d19dc28ef9c0eb6d439f855ee727eca2d1e04eca13d50ac772f58ec1a
   languageName: node
   linkType: hard
 
@@ -4694,13 +4694,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/history@npm:*":
-  version: 4.7.8
-  resolution: "@types/history@npm:4.7.8"
-  checksum: 54020371a412e949d0a329cc325253f16daf5b33e2e485135d39d3b30d3f9a8e323b00ce1162da82387c8ecf0397a8da49ad36ab309f06284326c064092879c7
-  languageName: node
-  linkType: hard
-
 "@types/hoist-non-react-statics@npm:*":
   version: 3.3.1
   resolution: "@types/hoist-non-react-statics@npm:3.3.1"
@@ -4936,12 +4929,11 @@ __metadata:
   linkType: hard
 
 "@types/reach__router@npm:^1.3.5":
-  version: 1.3.6
-  resolution: "@types/reach__router@npm:1.3.6"
+  version: 1.3.7
+  resolution: "@types/reach__router@npm:1.3.7"
   dependencies:
-    "@types/history": "*"
     "@types/react": "*"
-  checksum: 3983784961f62b732852b49a0cf37c17a1944b3eb3df9df8726913a9d9caf8ab53f88481902d204ae59ffdc9993d26b0517ae7fac8ef5f322184e3cb9cfb7b4c
+  checksum: a17679f85c6f39a94cacbac62fff7b976adadd660ee9a8e2c5ab58036520869d4875b2707f7dd097f9eb14756b2041462d3615dfbb1efa61b37327f377866c61
   languageName: node
   linkType: hard
 
@@ -7796,9 +7788,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30000981, caniuse-lite@npm:^1.0.30001035, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001157, caniuse-lite@npm:^1.0.30001173":
-  version: 1.0.30001178
-  resolution: "caniuse-lite@npm:1.0.30001178"
-  checksum: 313a8c784ac57db4423f90a19987ca6f9ad3ed51dc240264f6786c9b8f99a96b193c5b8ffb0a43fc6a85ca79b75ed8ed7c8c6e8cc221bdb50d86c89e496bd225
+  version: 1.0.30001179
+  resolution: "caniuse-lite@npm:1.0.30001179"
+  checksum: 04707a2d8a37796a9abb6b0d7d7466818cbe968d1cff133a6d355989c0c683065c64403716e69c13e9cd23c6eb346711a51e9b067b831b2564fbc0ef64f63645
   languageName: node
   linkType: hard
 
@@ -11258,11 +11250,11 @@ __metadata:
   linkType: hard
 
 "feed@npm:^4.2.1":
-  version: 4.2.1
-  resolution: "feed@npm:4.2.1"
+  version: 4.2.2
+  resolution: "feed@npm:4.2.2"
   dependencies:
     xml-js: ^1.6.11
-  checksum: b782f0df7d110d82b01d0717cc32b12c756347af2f965776589980d06b2267354125f4b83c6050020c5c2c65987dba796b20a82e94b609fe081038d255006eae
+  checksum: ed335621ab68a8f9af85838d53d94e2c878647f206c44068779c7df69e6fadb4e91c753354c580522a65150738bd1eaa422dd056379a6fa2a77e453f8ea8f411
   languageName: node
   linkType: hard
 
@@ -18989,15 +18981,16 @@ fsevents@~2.1.2:
   linkType: hard
 
 "promise.allsettled@npm:^1.0.0":
-  version: 1.0.3
-  resolution: "promise.allsettled@npm:1.0.3"
+  version: 1.0.4
+  resolution: "promise.allsettled@npm:1.0.4"
   dependencies:
     array.prototype.map: ^1.0.3
     call-bind: ^1.0.2
     define-properties: ^1.1.3
     es-abstract: ^1.18.0-next.2
+    get-intrinsic: ^1.0.2
     iterate-value: ^1.0.2
-  checksum: 54bd9681730a91dedc38b4afc09413e60582cdab7071fff733971ba8a3e24e11b86b20110f6c54139c00484391e5fc9be1585c8abfcffacc4cf980c50638757a
+  checksum: fb5e6e5ddd769f58e560fa144cfd287845e6564b1b9f50baddc9314cbdcb54051dd4df29d20539d5d86bdf2e187c7cf985ae34ab35289e2af80e9cabb664dbf9
   languageName: node
   linkType: hard
 
@@ -20065,13 +20058,13 @@ fsevents@~2.1.2:
   linkType: hard
 
 "refractor@npm:^3.1.0, refractor@npm:^3.2.0":
-  version: 3.3.0
-  resolution: "refractor@npm:3.3.0"
+  version: 3.3.1
+  resolution: "refractor@npm:3.3.1"
   dependencies:
     hastscript: ^6.0.0
     parse-entities: ^2.0.0
     prismjs: ~1.23.0
-  checksum: b049bccaa018990865dd5aa42f6546dc5b97b173469f4b83cf1dbc5e3e7c7b7230665528379808667bed093d728e548d22f6a8334c96c429c50c5b676e13bd7d
+  checksum: de632f0f594e17809255a8188d63b87533e6e4889f6c59e7e79c63183714e45af33500f88168139adeb494c52af662d5dcb0dd0e126392a138077bc1a30550a5
   languageName: node
   linkType: hard
 
@@ -20118,11 +20111,11 @@ fsevents@~2.1.2:
   linkType: hard
 
 "regexp-tree@npm:^0.1.21, regexp-tree@npm:~0.1.1":
-  version: 0.1.22
-  resolution: "regexp-tree@npm:0.1.22"
+  version: 0.1.23
+  resolution: "regexp-tree@npm:0.1.23"
   bin:
     regexp-tree: bin/regexp-tree
-  checksum: 76119b15b573b0850414b11b6fcf123b6607214ff8a9a22d7dd55969670853c0867b9ea580a7e7f7f404801bfad9c456d8aa1406878b65c8617eb23faf78fc52
+  checksum: b4cc85f60f69621d91e5f9f40914143b979f049be13adcba4a62348f12d9af338a9ae10c4c1c9fffb8958e1956d35bf30f638e7002291261e1222a2973f09f3c
   languageName: node
   linkType: hard
 

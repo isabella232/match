@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
-    "@storybook/react": "6.1.11",
+    "@storybook/react": "6.1.15",
     "@svgr/cli": "5.5.0",
     "@twilio-labs/match-primitives": "workspace:packages/match-primitives",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
@@ -47,7 +47,7 @@
     "prop-types": "15.7.2",
     "react": "17.0.1",
     "react-uid": "2.3.1",
-    "rollup": "2.36.1",
+    "rollup": "2.38.0",
     "rollup-config-match": "workspace:configs/rollup",
     "svgr-config-match": "workspace:configs/svgr",
     "tsconfig-match": "workspace:configs/tsconfig",

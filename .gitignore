@@ -107,4 +107,10 @@ packages/match-tokens/py/match_tokens_py.egg-info
 
 # Icons
 packages/match-icons/**/src/*
-packages/match-logos/**/src/*
+
+# Logos
+packages/match-logos/**/src
+packages/match-logos/bundle/*
+!packages/match-logos/bundle/src
+!packages/match-logos/bundle/package.json
+!packages/match-logos/bundle/tsconfig.json

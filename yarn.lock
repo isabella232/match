@@ -4270,9 +4270,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@twilio-labs/match-logos@workspace:packages/match-logos/core":
+"@twilio-labs/match-logos-mono@workspace:packages/match-logos/mono":
   version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-logos@workspace:packages/match-logos/core"
+  resolution: "@twilio-labs/match-logos-mono@workspace:packages/match-logos/mono"
   dependencies:
     "@babel/core": 7.12.10
     "@storybook/react": 6.1.11
@@ -4287,6 +4287,33 @@ __metadata:
     rollup: 2.36.1
     rollup-config-match: "workspace:configs/rollup"
     svgr-config-match: "workspace:configs/svgr"
+    tsconfig-match: "workspace:configs/tsconfig"
+    tslib: 2.1.0
+    typescript: 4.1.3
+  peerDependencies:
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
+    prop-types: 15.x
+    react: 17.x
+    react-dom: 17.x
+    react-is: 17.x
+    react-uid: 2.x
+  languageName: unknown
+  linkType: soft
+
+"@twilio-labs/match-logos@workspace:packages/match-logos/bundle":
+  version: 0.0.0-use.local
+  resolution: "@twilio-labs/match-logos@workspace:packages/match-logos/bundle"
+  dependencies:
+    "@babel/core": 7.12.10
+    "@twilio-labs/match-logos-color": "workspace:packages/match-logos/color"
+    "@twilio-labs/match-logos-mono": "workspace:packages/match-logos/mono"
+    "@twilio-labs/match-primitives": "workspace:packages/match-primitives"
+    "@types/babel__core": 7.1.12
+    "@types/prop-types": 15.7.3
+    "@types/react": 17.0.0
+    prop-types: 15.7.2
+    react: 17.0.1
+    react-uid: 2.3.1
     tsconfig-match: "workspace:configs/tsconfig"
     tslib: 2.1.0
     typescript: 4.1.3
@@ -4453,7 +4480,6 @@ __metadata:
     "@twilio-labs/match-icons-product": ^1.0.0-alpha.1
     "@twilio-labs/match-icons-sendgrid": ^1.0.0-alpha.1
     "@twilio-labs/match-icons-twilio": ^1.0.0-alpha.1
-    "@twilio-labs/match-logos": ^1.0.0-alpha.1
     "@twilio-labs/match-logos-color": ^1.0.0-alpha.1
     prop-types: 15.x
     react: 17.x
@@ -4467,8 +4493,6 @@ __metadata:
     "@twilio-labs/match-icons-sendgrid":
       optional: true
     "@twilio-labs/match-icons-twilio":
-      optional: true
-    "@twilio-labs/match-logos":
       optional: true
     "@twilio-labs/match-logos-color":
       optional: true
@@ -15665,6 +15689,7 @@ fsevents@~2.1.2:
     "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product"
     "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid"
     "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio"
+    "@twilio-labs/match-logos": "workspace:packages/match-logos/bundle"
     "@twilio-labs/match-primitives": "workspace:packages/match-primitives"
     "@twilio-labs/match-props": "workspace:packages/match-props"
     "@twilio-labs/match-themes": "workspace:packages/match-themes"

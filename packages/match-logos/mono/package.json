@@ -1,7 +1,7 @@
 {
-  "name": "@twilio-labs/match-logos",
+  "name": "@twilio-labs/match-logos-mono",
   "version": "1.0.0-alpha.1",
-  "description": "Twilio Match Design System Logos",
+  "description": "Twilio Match Design System Monochromatic Logos",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
   "main": "src/index.tsx",
@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
-    "directory": "packages/match-logos/core"
+    "directory": "packages/match-logos/mono"
   },
   "publishConfig": {
     "main": "dist/index.js",

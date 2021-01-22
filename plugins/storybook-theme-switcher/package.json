@@ -1,6 +1,6 @@
 {
   "name": "plugin-storybook-theme-switcher",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Storybook addon to change the active Match theme",
   "private": true,
   "repository": {

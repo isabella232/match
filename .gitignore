@@ -84,6 +84,14 @@ package-lock.json
 **/dist/*
 **/build/*
 
+# Docusaurus
+.docusaurus
+.cache-loader
+
+# PyPI
+packages/match-tokens/py/match_tokens_py/*
+packages/match-tokens/py/match_tokens_py.egg-info
+
 # Match bundle
 packages/match/*
 !packages/match/src
@@ -97,16 +105,12 @@ packages/match-tokens/core/*
 !packages/match-tokens/core/types.d.ts
 !packages/match-tokens/core/src
 
-# PyPI
-packages/match-tokens/py/match_tokens_py/*
-packages/match-tokens/py/match_tokens_py.egg-info
-
-# Docusaurus
-.docusaurus
-.cache-loader
-
 # Icons
-packages/match-icons/**/src/*
+packages/match-icons/**/src
+packages/match-icons/bundle/*
+!packages/match-icons/bundle/src
+!packages/match-icons/package.json
+!packages/match-icons/tsconfig.json
 
 # Logos
 packages/match-logos/**/src

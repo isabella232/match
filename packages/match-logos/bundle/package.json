@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "yarn clean && yarn compile",
-    "clean": "rm -rf components themes tokens",
+    "clean": "rm -rf color mono",
     "compile": "tsc",
     "type-check": "tsc --noEmit --composite false",
     "publish": "yarn npm publish --tolerate-republish"

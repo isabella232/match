@@ -1,7 +1,7 @@
 {
   "name": "@twilio-labs/match-icons-sendgrid",
   "version": "1.0.0-alpha.1",
-  "description": "Twilio Match Design System Icons",
+  "description": "Twilio Match Design System SendGrid Icons",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
   "main": "src/index.tsx",

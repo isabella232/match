@@ -73,8 +73,8 @@ module.exports = {
       "docusaurus-plugin-react-docgen-typescript",
       {
         src: [
-          path.resolve(__dirname, "../match-components/src/**/*.tsx"),
-          path.resolve("../match-primitives/src/**/*.tsx"),
+          path.resolve(__dirname, "../packages/match-components/src/**/*.tsx"),
+          path.resolve("../packages/match-primitives/src/**/*.tsx"),
         ],
         global: true,
         parserOptions: {

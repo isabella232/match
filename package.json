@@ -29,7 +29,7 @@
     "build:storybook": "build-storybook -c .storybook -o ./build",
     "version:all": "yarn version check --interactive && yarn version apply --all",
     "publish:all": "yarn workspaces foreach --topological-dev run publish",
-    "test": "jest",
+    "test": "jest --runInBand",
     "test:watch": "jest --watch",
     "test:ci": "jest --ci",
     "yarn:update": "yarn set version latest && yarn plugin import typescript && yarn plugin import version && yarn plugin import interactive-tools && yarn plugin import workspace-tools"

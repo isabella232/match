@@ -6,6 +6,10 @@ export interface LogoProps extends React.HTMLAttributes<HTMLSpanElement> {
    * @type Color
    */
   color?: ColorOptions;
+  /**
+   * Maximum height of the SVG.
+   * @type string
+   */
   maxHeight?: CSSUnitProp;
 }
 

@@ -7,6 +7,8 @@ import {
   ExpandIcon,
   DownloadIcon,
 } from "@twilio-labs/match-icons-twilio";
+import {AirbnbLogo} from "@twilio-labs/match-logos-mono";
+import {ChimeLogo} from '@twilio-labs/match-logos-color'
 
 const ReactLiveScope = {
   React,
@@ -17,6 +19,8 @@ const ReactLiveScope = {
   OutboundIcon,
   ExpandIcon,
   DownloadIcon,
+  AirbnbLogo,
+  ChimeLogo
 };
 
 export default ReactLiveScope;

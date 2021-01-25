@@ -235,7 +235,11 @@ const Tokens: React.FC = () => {
       {tokens.textColors.length > 0 && (
         <div>
           <h2 id="text-colors">Text Colors</h2>
-          <TokenTable prefix="textColors" tokens={tokens.textColors} exampleType="textColor" />
+          <TokenTable
+            prefix="textColors"
+            tokens={tokens.textColors}
+            exampleType="textColor"
+          />
         </div>
       )}
 

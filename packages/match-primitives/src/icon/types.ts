@@ -1,6 +1,12 @@
-import { ColorOptions, IconSizeProp } from "@twilio-labs/match-props";
+import {
+  ColorOptions,
+  IconSizeProp,
+  MarginProps,
+} from "@twilio-labs/match-props";
 
-export interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
+export interface IconProps
+  extends MarginProps,
+    React.HTMLAttributes<HTMLSpanElement> {
   /**
    * 'white', 'baseRed', 'blue50', 'blue60', 'blue80', 'baseGreen', 'baseOrange', 'basePurple', 'gray80', 'gray90', 'gray100'
    * @type Color

@@ -4,6 +4,7 @@ export * from "./card";
 export * from "./code";
 export * from "./grid";
 export * from "./heading";
+export * from "./input";
 export * from "./paragraph";
 export * from "./separator";
 export * from "./snippet";

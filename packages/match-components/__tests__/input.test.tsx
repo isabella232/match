@@ -1,6 +1,6 @@
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
-import userEvent from '@testing-library/user-event';
+import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { withTheme } from "@twilio-labs/match-themes";
 import { Input } from "../src";
@@ -32,10 +32,12 @@ const InputWithValidation: React.FC = () => {
 describe("Input", () => {
   test("validation api", () => {
     render(<InputWithValidation />);
-    userEvent.type(screen.getByTestId('email'), 'foo');
-    expect(screen.getByRole('alert')).toHaveTextContent(/email format is invalid/i);
-    userEvent.type(screen.getByTestId('email'), '@bar.com');
-    expect(screen.queryByRole('alert')).toBeNull();
+    userEvent.type(screen.getByTestId("email"), "foo");
+    expect(screen.getByRole("alert")).toHaveTextContent(
+      /email format is invalid/i
+    );
+    userEvent.type(screen.getByTestId("email"), "@bar.com");
+    expect(screen.queryByRole("alert")).toBeNull();
   });
 
   test("helper message", () => {

@@ -30,7 +30,7 @@ const Input: React.FC<InputProps> = ({
         <StyledLabel
           id={seed(`${name}_label`)}
           htmlFor={seed(`${name}_input`)}
-          inputDisabled={disabled}
+          inputDisabled={Boolean(disabled)}
         >
           {required && <StyledRequired />}
           {label}
@@ -85,6 +85,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  type: "text",
   size: InputSize.NORMAL,
 };
 

@@ -1,10 +1,10 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { compose, variant, space } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
-import type { StyledInputProps } from "./types";
+import type { StyledInputProps, StyledLabelProps } from "./types";
 import { InputSize } from "./types";
 
-const StyledLabel = styled.label`
+const StyledLabel = styled.label<StyledLabelProps>`
   display: block;
   margin-bottom: ${themeGet("space.scale7")};
   color: ${({ inputDisabled }) =>

@@ -7,6 +7,7 @@ export default {
   component: Input,
   args: {
     name: "example",
+    type: "text",
     size: InputSize.NORMAL,
     placeholder: "Placeholder text",
     label: "Label",
@@ -19,6 +20,12 @@ export default {
   argTypes: {
     name: {
       table: { disable: true },
+    },
+    type: {
+      control: {
+        type: "select",
+        options: ["text", "email", "tel", "number", "password"],
+      },
     },
     size: {
       control: { type: "select", options: Object.values(InputSize) },

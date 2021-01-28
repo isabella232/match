@@ -48,7 +48,7 @@ const StyledInput = styled.input<StyledInputProps>`
   width: 100%;
   padding-right: ${themeGet("space.scale100")};
   padding-left: ${themeGet("space.scale100")};
-  color: ${themeGet("textColors.primary")};
+  color: ${themeGet("components.input.inputColor")};
   font-weight: ${themeGet("fontWeights.regular")};
   font-size: ${themeGet("fontSizes.scale80")};
   line-height: ${themeGet("lineHeights.scale200")};
@@ -67,7 +67,7 @@ const StyledInput = styled.input<StyledInputProps>`
   }
 
   :disabled {
-    color: ${themeGet("textColors.tertiary")};
+    color: ${themeGet("components.input.inputDisabledColor")};
     background: ${themeGet("colors.gray10")};
     border-color: ${themeGet("colors.gray10")};
     pointer-events: none;

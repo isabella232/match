@@ -5,7 +5,9 @@ export enum InputSize {
   SMALL = "small",
 }
 
-export interface InputProps extends MarginProps {
+export interface InputProps
+  extends MarginProps,
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   name: string;
   label: string;
   type?: "text" | "email" | "tel" | "url" | "number" | "password";

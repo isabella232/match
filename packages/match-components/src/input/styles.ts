@@ -79,11 +79,13 @@ const StyledInput = styled.input<StyledInputProps>`
     outline: none;
   }
 
-  &[aria-invalid="true"],
   :invalid {
+    box-shadow: none;
+  }
+
+  &[aria-invalid="true"] {
     border-color: ${themeGet("colors.red60")};
     border-width: ${themeGet("borderWidths.light")};
-    box-shadow: none;
   }
 
   ${({ theme: { space: sp, borderWidths: bw } }) =>
@@ -92,14 +94,14 @@ const StyledInput = styled.input<StyledInputProps>`
       variants: {
         [InputSize.NORMAL]: {
           py: "scale60",
-          ["&:focus, &[aria-invalid='true'], &:invalid"]: {
+          ["&:focus, &[aria-invalid='true']"]: {
             py: `calc(${sp.scale60} - ${bw.light} + ${bw.thin})`,
             px: `calc(${sp.scale100} - ${bw.light} + ${bw.thin})`,
           },
         },
         [InputSize.SMALL]: {
           py: "scale7",
-          ["&:focus, &[aria-invalid='true'], &:invalid"]: {
+          ["&:focus, &[aria-invalid='true']"]: {
             py: `calc(${sp.scale7} - ${bw.light} + ${bw.thin})`,
             px: `calc(${sp.scale100} - ${bw.light} + ${bw.thin})`,
           },

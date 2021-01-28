@@ -7,13 +7,13 @@ export enum InputSize {
 
 export interface InputProps extends MarginProps {
   name: string;
+  label: string;
   type?: "text" | "email" | "tel" | "url" | "number" | "password";
   size?: InputSize;
   required?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
-  fullWidth?: boolean;
-  label?: string;
+  hideLabel?: boolean;
   placeholder?: string;
   helper?: string;
   error?: string;

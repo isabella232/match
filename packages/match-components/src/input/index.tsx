@@ -21,12 +21,13 @@ const Input: React.FC<InputProps> = ({
   name,
   disabled,
   required,
+  hideLabel,
   ...props
 }) => {
   const seed = useUIDSeed();
   return (
     <div>
-      {Boolean(label) && (
+      {!hideLabel && (
         <StyledLabel
           id={seed(`${name}_label`)}
           htmlFor={seed(`${name}_input`)}
@@ -39,7 +40,8 @@ const Input: React.FC<InputProps> = ({
       <StyledInput
         id={seed(`${name}_input`)}
         name={name}
-        aria-labelledby={Boolean(label) ? seed(`${name}_label`) : undefined}
+        aria-label={hideLabel ? label : undefined}
+        aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
         aria-describedby={
           Boolean(helper || error) ? seed(`${name}_message`) : undefined
         }
@@ -73,12 +75,13 @@ Input.displayName = "Input";
 Input.propTypes = {
   ...marginPropTypes,
   name: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["text", "email", "tel", "number", "password"]),
+  label: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(["text", "email", "tel", "number", "url", "password"]),
   size: PropTypes.oneOf(Object.values(InputSize)),
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
-  fullWidth: PropTypes.bool,
+  hideLabel: PropTypes.bool,
   placeholder: PropTypes.string,
   helper: PropTypes.string,
   error: PropTypes.string,

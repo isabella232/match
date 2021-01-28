@@ -16,6 +16,7 @@ export default {
     required: false,
     readOnly: false,
     disabled: false,
+    hideLabel: false,
   },
   argTypes: {
     name: {
@@ -24,7 +25,7 @@ export default {
     type: {
       control: {
         type: "select",
-        options: ["text", "email", "tel", "number", "password"],
+        options: ["text", "email", "tel", "url", "number", "password"],
       },
     },
     size: {
@@ -49,6 +50,9 @@ export default {
       control: { type: "boolean" },
     },
     disabled: {
+      control: { type: "boolean" },
+    },
+    hideLabel: {
       control: { type: "boolean" },
     },
   },

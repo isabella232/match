@@ -9,6 +9,7 @@ import {
   StyledHelper,
   StyledError,
   StyledRequired,
+  StyledInputWrapper,
 } from "./styles";
 import { InputSize } from "./types";
 import type { InputProps } from "./types";
@@ -22,11 +23,26 @@ const Input: React.FC<InputProps> = ({
   disabled,
   required,
   hideLabel,
+  margin,
+  marginY,
+  marginX,
+  marginRight,
+  marginLeft,
+  marginBottom,
+  marginTop,
   ...props
 }) => {
   const seed = useUIDSeed();
   return (
-    <div>
+    <StyledInputWrapper
+      margin={margin}
+      marginY={marginY}
+      marginX={marginX}
+      marginRight={marginRight}
+      marginLeft={marginLeft}
+      marginBottom={marginBottom}
+      marginTop={marginTop}
+    >
       {!hideLabel && (
         <StyledLabel
           id={seed(`${name}_label`)}
@@ -66,7 +82,7 @@ const Input: React.FC<InputProps> = ({
           {error}
         </StyledError>
       )}
-    </div>
+    </StyledInputWrapper>
   );
 };
 

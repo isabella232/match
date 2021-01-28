@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { compose, variant, space } from "styled-system";
+import { variant, space } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
+import { MarginProps } from "@twilio-labs/match-props";
 import type { StyledInputProps, StyledLabelProps } from "./types";
 import { InputSize } from "./types";
 
@@ -84,28 +85,36 @@ const StyledInput = styled.input<StyledInputProps>`
   }
 
   ${({ theme: { space: sp, borderWidths: bw } }) =>
-    compose(
-      space,
-      variant({
-        prop: "inputSize",
-        variants: {
-          [InputSize.NORMAL]: {
-            py: "scale60",
-            ["&:focus, &[aria-invalid='true']"]: {
-              py: `calc(${sp.scale60} - ${bw.light} + ${bw.thin})`,
-              px: `calc(${sp.scale100} - ${bw.light} + ${bw.thin})`,
-            },
-          },
-          [InputSize.SMALL]: {
-            py: "scale7",
-            ["&:focus, &[aria-invalid='true']"]: {
-              py: `calc(${sp.scale7} - ${bw.light} + ${bw.thin})`,
-              px: `calc(${sp.scale100} - ${bw.light} + ${bw.thin})`,
-            },
+    variant({
+      prop: "inputSize",
+      variants: {
+        [InputSize.NORMAL]: {
+          py: "scale60",
+          ["&:focus, &[aria-invalid='true']"]: {
+            py: `calc(${sp.scale60} - ${bw.light} + ${bw.thin})`,
+            px: `calc(${sp.scale100} - ${bw.light} + ${bw.thin})`,
           },
         },
-      })
-    )};
+        [InputSize.SMALL]: {
+          py: "scale7",
+          ["&:focus, &[aria-invalid='true']"]: {
+            py: `calc(${sp.scale7} - ${bw.light} + ${bw.thin})`,
+            px: `calc(${sp.scale100} - ${bw.light} + ${bw.thin})`,
+          },
+        },
+      },
+    })};
 `;
 
-export { StyledInput, StyledLabel, StyledHelper, StyledError, StyledRequired };
+const StyledInputWrapper = styled.div<MarginProps>`
+  ${space}
+`;
+
+export {
+  StyledInput,
+  StyledLabel,
+  StyledHelper,
+  StyledError,
+  StyledRequired,
+  StyledInputWrapper,
+};

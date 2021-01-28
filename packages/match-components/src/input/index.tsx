@@ -20,7 +20,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       label,
       helper,
       size,
-      error,
       name,
       disabled,
       required,
@@ -32,11 +31,27 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       marginLeft,
       marginBottom,
       marginTop,
+      onChange,
       ...props
     },
     ref
   ) => {
     const seed = useUIDSeed();
+    const [error, setError] = React.useState("");
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (typeof onChange === "function") onChange(e);
+      const { validity, validationMessage } = e.currentTarget;
+      if (validity.customError) {
+        setError(validationMessage);
+      } else if (validity.tooShort) {
+        setError(
+          `${label} must be at least ${e.currentTarget.minLength} characters long.`
+        );
+      } else {
+        setError("");
+      }
+    };
     return (
       <StyledInputWrapper
         margin={margin}
@@ -71,6 +86,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           disabled={disabled}
           required={required}
           inputSize={size}
+          onChange={handleChange}
           {...props}
         />
         {Boolean(!error && helper) && (
@@ -107,6 +123,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   helper: PropTypes.string,
   error: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 Input.defaultProps = {

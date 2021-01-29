@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import { marginPropTypes } from "@twilio-labs/match-props";
 import { useUIDSeed } from "react-uid";
-import { ErrorIcon } from "./error-icon";
+import { marginPropTypes } from "@twilio-labs/match-props";
+import { ErrorIcon } from "@twilio-labs/match-primitives";
 import {
   StyledInput,
   StyledLabel,

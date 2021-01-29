@@ -1,1 +1,1 @@
-export * from "@twilio-labs/match-logos-color"
+export * from "@twilio-labs/match-logos-color";

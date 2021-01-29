@@ -1,8 +1,8 @@
-dist
 .yarn
 .pnp.js
 .docusaurus
+dist
 build
+generated
 packages/match-icons/**/src
-packages/match-logos/**/src
 *.ejs

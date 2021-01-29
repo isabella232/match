@@ -1,7 +1,7 @@
 {
-  "name": "@twilio-labs/match-logos-color",
-  "version": "1.0.0-alpha.1",
-  "description": "Twilio Match Design System Full Color Logos",
+  "name": "@twilio-labs/match-logos-brand",
+  "version": "1.0.0-alpha.0",
+  "description": "Twilio Match Design System Brand Logos",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
   "main": "generated/index.tsx",
@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
-    "directory": "packages/match-logos/color"
+    "directory": "packages/match-logos/brand"
   },
   "publishConfig": {
     "main": "dist/index.js",

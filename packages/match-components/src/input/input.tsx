@@ -2,19 +2,17 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
-import { ErrorIcon } from "@twilio-labs/match-primitives";
+import { Label, ErrorIcon } from "@twilio-labs/match-primitives";
 import {
   StyledInput,
-  StyledLabel,
   StyledHelper,
   StyledError,
-  StyledRequired,
   StyledInputWrapper,
 } from "./styles";
-import { InputSize } from "./types";
+import { InputSize } from "./constants";
 import type { InputProps } from "./types";
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
       label,
@@ -48,14 +46,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         marginTop={marginTop}
       >
         {!hideLabel && (
-          <StyledLabel
+          <Label
             id={seed(`${name}_label`)}
             htmlFor={seed(`${name}_input`)}
-            inputDisabled={Boolean(disabled)}
+            disabled={Boolean(disabled)}
+            required={Boolean(required)}
           >
-            {required && <StyledRequired />}
             {label}
-          </StyledLabel>
+          </Label>
         )}
         <StyledInput
           ref={ref}
@@ -113,6 +111,3 @@ Input.defaultProps = {
   type: "text",
   size: InputSize.NORMAL,
 };
-
-export { Input, InputSize };
-export type { InputProps };

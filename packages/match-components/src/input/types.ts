@@ -1,9 +1,5 @@
 import { MarginProps } from "@twilio-labs/match-props";
-
-export enum InputSize {
-  NORMAL = "normal",
-  SMALL = "small",
-}
+import { InputSize } from "./constants";
 
 export interface InputProps
   extends MarginProps,
@@ -23,8 +19,4 @@ export interface InputProps
 
 export interface StyledInputProps extends Pick<InputProps, "readOnly"> {
   inputSize?: InputSize;
-}
-
-export interface StyledLabelProps {
-  inputDisabled: boolean;
 }

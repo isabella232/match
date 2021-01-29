@@ -32,6 +32,7 @@ export const HelpText: React.FC<HelpTextProps> = ({
 HelpText.displayName = "HelpText";
 
 HelpText.propTypes = {
+  children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(Object.values(HelpTextVariant)),
 };
 

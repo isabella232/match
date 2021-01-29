@@ -19,6 +19,7 @@ export const Label: React.FC<LabelProps> = ({
 Label.displayName = "Label";
 
 Label.propTypes = {
+  children: PropTypes.node.isRequired,
   required: PropTypes.bool.isRequired,
   disabled: PropTypes.bool.isRequired,
 };

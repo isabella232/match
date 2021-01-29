@@ -3,7 +3,7 @@ import { useUID } from "react-uid";
 import { Icon } from "../icon";
 import type { IconProps } from "../icon";
 
-const ErrorIcon: React.FC<IconProps> = ({ title, decorative, ...props }) => {
+const ErrorIcon: React.FC<IconProps> = ({ title, decorative, ...props }: IconProps) => {
   const uid = useUID();
   const titleId = title ? uid : undefined;
 

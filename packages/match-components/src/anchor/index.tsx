@@ -29,6 +29,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 Anchor.displayName = "Anchor";
 
 Anchor.propTypes = {
+  children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(Object.values(AnchorVariant)),
   href: PropTypes.string.isRequired,
   target: PropTypes.oneOf(["_self", "_blank", "_parent", "_top"]),

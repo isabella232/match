@@ -2,13 +2,12 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
-import { Label, ErrorIcon } from "@twilio-labs/match-primitives";
 import {
-  StyledInput,
-  StyledHelper,
-  StyledError,
-  StyledInputWrapper,
-} from "./styles";
+  Label,
+  HelpText,
+  HelpTextVariant,
+} from "@twilio-labs/match-primitives";
+import { StyledInput, StyledInputWrapper } from "./styles";
 import { InputSize } from "./constants";
 import type { InputProps } from "./types";
 
@@ -71,19 +70,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           inputSize={size}
           {...props}
         />
-        {Boolean(!error && helper) && (
-          <StyledHelper id={seed(`${name}_message`)}>{helper}</StyledHelper>
-        )}
-        {Boolean(error) && (
-          <StyledError id={seed(`${name}_message`)} role="alert">
-            <ErrorIcon
-              marginRight="scale7"
-              size="medium"
-              color="red60"
-              title="Validation error"
-            />
-            {error}
-          </StyledError>
+        {Boolean(helper || error) && (
+          <HelpText
+            id={seed(`${name}_message`)}
+            variant={Boolean(error) ? HelpTextVariant.ERROR : undefined}
+          >
+            {Boolean(error) ? error : helper}
+          </HelpText>
         )}
       </StyledInputWrapper>
     );

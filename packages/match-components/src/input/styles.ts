@@ -5,22 +5,6 @@ import { MarginProps } from "@twilio-labs/match-props";
 import type { StyledInputProps } from "./types";
 import { InputSize } from "./constants";
 
-export const StyledHelper = styled.div`
-  margin-top: ${themeGet("space.scale7")};
-  color: ${themeGet("textColors.tertiary")};
-  font-weight: ${themeGet("components.input.helperFontWeight")};
-  font-size: ${themeGet("fontSizes.scale60")};
-  line-height: ${themeGet("lineHeights.scale180")};
-`;
-
-export const StyledError = styled.div`
-  margin-top: ${themeGet("space.scale7")};
-  color: ${themeGet("colors.red60")};
-  font-weight: ${themeGet("fontWeights.medium")};
-  font-size: ${themeGet("fontSizes.scale60")};
-  line-height: ${themeGet("lineHeights.scale180")};
-`;
-
 export const StyledInput = styled.input<StyledInputProps>`
   display: block;
   width: 100%;

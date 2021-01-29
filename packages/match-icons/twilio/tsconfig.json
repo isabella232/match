@@ -2,7 +2,7 @@
   "extends": "tsconfig-match",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./generated"
   },
-  "include": ["src/**/*"]
+  "include": ["generated/**/*"]
 }

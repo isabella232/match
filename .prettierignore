@@ -4,5 +4,4 @@
 dist
 build
 generated
-packages/match-icons/**/src
 *.ejs

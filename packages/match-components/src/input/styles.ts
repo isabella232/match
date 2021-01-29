@@ -1,20 +1,37 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variant, space } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
 import type { StyledInputProps, StyledLabelProps } from "./types";
 import { InputSize } from "./types";
 
+const StyledRequired = styled.span`
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-right: ${themeGet("space.scale7")};
+  vertical-align: middle;
+  background-color: ${themeGet("colors.red60")};
+  border-radius: 50%;
+`;
+
 const StyledLabel = styled.label<StyledLabelProps>`
   display: block;
   margin-bottom: ${themeGet("space.scale7")};
-  color: ${({ inputDisabled }) =>
-    inputDisabled
-      ? themeGet("textColors.tertiary")
-      : themeGet("textColors.primary")};
+  color: ${themeGet("textColors.primary")};
   font-weight: ${themeGet("components.input.labelFontWeight")};
   font-size: ${themeGet("fontSizes.scale80")};
   line-height: ${themeGet("lineHeights.scale160")};
+
+  ${({ inputDisabled }) =>
+    inputDisabled &&
+    css`
+      color: ${themeGet("textColors.tertiary")};
+
+      ${StyledRequired} {
+        background-color: ${themeGet("colors.gray60")};
+      }
+    `}
 `;
 
 const StyledHelper = styled.div`
@@ -33,16 +50,6 @@ const StyledError = styled.div`
   line-height: ${themeGet("lineHeights.scale180")};
 `;
 
-const StyledRequired = styled.span`
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  margin-right: ${themeGet("space.scale7")};
-  vertical-align: middle;
-  background-color: ${themeGet("colors.red60")};
-  border-radius: 50%;
-`;
-
 const StyledInput = styled.input<StyledInputProps>`
   display: block;
   width: 100%;
@@ -51,6 +58,7 @@ const StyledInput = styled.input<StyledInputProps>`
   color: ${themeGet("components.input.inputColor")};
   font-weight: ${themeGet("fontWeights.regular")};
   font-size: ${themeGet("fontSizes.scale80")};
+  font-family: ${themeGet("fontFamilies.text")};
   line-height: ${themeGet("lineHeights.scale200")};
   border-color: ${themeGet("borderColors.medium")};
   border-style: solid;

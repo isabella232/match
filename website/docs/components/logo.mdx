@@ -8,7 +8,7 @@ slug: /components/logo/
 import { Props } from "../../src/components/props";
 import { Virtue, Crime, VirtueCrime } from "../../src/components/virtue-crime";
 
-Logos are visual representations of Twilio customers.
+A logo is a visual representation of a brand. This component includes both Twilio and customer logos. Twilio product logos can be found in the [icon component](./icon.mdx).
 
 **Sources:** [Github](https://github.com/twilio-labs/match/blob/main/packages/match-logos)
 
@@ -16,7 +16,7 @@ Logos are visual representations of Twilio customers.
 
 ### Installation
 
-There are currently 2 supported logo packages. `@twilio-labs/match-logos-mono` and `@twilio-labs/match-logos-color`. These may be installed individually or bundled together as `@twilio-labs/match-logos`.
+There are currently 3 supported logo packages. `@twilio-labs/match-logos-brand`, `@twilio-labs/match-logos-mono` and `@twilio-labs/match-logos-color`. These may be installed individually or bundled together as `@twilio-labs/match-logos`.
 
 ```shell
 yarn add @twilio-labs/match-logos
@@ -32,17 +32,17 @@ import { ChimeLogo } from "@twilio-labs/match-logos/mono";
 const Component = () => <ChimeLogo />;
 ```
 
-### Props
+### Monochromatic Logo Props
 
 <Props of="Logo" />
+
+### Color and Brand Logo Props
+
+<Props of="ColorLogo" />
 
 ---
 
 ## Guidelines
-
-### About Logos
-
-Logos are used to represent Twilio’s customers. Logos for Twilio’s products can be found in the [icon component](./icon.mdx).
 
 ### Accessibility
 
@@ -52,7 +52,13 @@ All Logos include an accessible title by default. When grouping logos together, 
 
 ## Composition
 
-Logos are provided in both monochromatic and full color versions. Full color logos may not be modified. Monochromatic logos may be assigned a color token of "gray90", "gray70", or "white".
+### Twilio Logos
+
+Preferred logo colors are red on light backgrounds and white on dark backgrounds. Black is an option in some cases. Please follow the [Twilio brand guidelines](https://www.twilio.com/brand/elements/logos).
+
+### Customer Logos
+
+Customer Logos are provided in both monochromatic and full color versions. Full color logos may not be modified. Monochromatic logos may be assigned a color token of "gray90", "gray70", or "white".
 
 <VirtueCrime>
   <Virtue>Stick to the recommended colors or the original logo colors.</Virtue>
@@ -79,13 +85,17 @@ Monochromatic logos may be assigned a color token.
 The size may be adjusted by setting the `maxHeight` prop with any valid css unit in px, rem, or em.
 
 ```jsx live
-<>
-  <ChimeLogo maxHeight="1.5em" />
-  <br />
-  <ChimeLogo maxHeight="2rem" />
-  <br />
-  <ChimeLogo maxHeight="40px" />
-</>
+<Grid gridGap="scale7">
+  <Cell>
+    <ChimeLogo maxHeight="1.5em" />
+  </Cell>
+  <Cell>
+    <ChimeLogo maxHeight="2rem" />
+  </Cell>
+  <Cell>
+    <ChimeLogo maxHeight="40px" />
+  </Cell>
+</Grid>
 ```
 
 The `maxHeight` prop accepts [responsive values](https://styled-system.com/responsive-styles#responsive-styles).

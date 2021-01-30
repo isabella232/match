@@ -2,10 +2,10 @@ import * as React from "react";
 import { uid } from "react-uid";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { ColorLogo } from "@twilio-labs/match-primitives";
-import * as ColorLogos from "../generated";
+import * as BrandLogos from "../generated";
 
 export default {
-  title: "Logos/Color",
+  title: "Logos/Brand",
   component: ColorLogo,
 } as Meta;
 
@@ -19,11 +19,11 @@ export const AllLogos: Story = () => (
       alignItems: "center",
     }}
   >
-    {Object.values(ColorLogos)
-      .filter((ColorLogo) => typeof ColorLogo === "function")
-      .map((ColorLogo) => (
-        <div key={uid(ColorLogo)}>
-          <ColorLogo />
+    {Object.values(BrandLogos)
+      .filter((BrandLogo) => typeof BrandLogo === "function")
+      .map((BrandLogo) => (
+        <div key={uid(BrandLogo)}>
+          <BrandLogo maxHeight="2.5rem" />
         </div>
       ))}
   </div>

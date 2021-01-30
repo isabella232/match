@@ -33,7 +33,7 @@ jobs:
       # Bootstrap Match
       - name: Install Node dependencies
         run: yarn install --immutable
-      - name: Build Tokens
+      - name: Bootstrap
         run: yarn bootstrap
 
       # Test

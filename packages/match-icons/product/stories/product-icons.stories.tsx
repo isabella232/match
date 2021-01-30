@@ -3,7 +3,7 @@ import { uid } from "react-uid";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Icon, IconProps } from "@twilio-labs/match-primitives";
 import { colors, iconSizes } from "@twilio-labs/match-tokens";
-import * as Icons from "../src";
+import * as Icons from "../generated";
 
 export default {
   title: "Icons/Product",

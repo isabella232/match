@@ -1,1 +1,1 @@
-export * from "@twilio-labs/match-logos-mono"
+export * from "@twilio-labs/match-logos-mono";

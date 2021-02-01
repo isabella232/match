@@ -4,7 +4,7 @@
   "description": "Twilio Match Design System Product Icons",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
-  "main": "src/index.tsx",
+  "main": "generated/index.tsx",
   "files": [
     "dist"
   ],
@@ -20,9 +20,9 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "convert": "svgr -d src svg",
+    "convert": "svgr -d generated svg",
     "build": "yarn clean && yarn convert && yarn compile",
-    "clean": "rm -rf src dist",
+    "clean": "rm -rf generated dist",
     "compile": "rollup -c node:match --environment NODE_ENV:production",
     "compile:dev": "rollup -c node:match --environment NODE_ENV:development",
     "publish": "yarn npm publish --tolerate-republish"

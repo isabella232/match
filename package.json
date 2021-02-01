@@ -11,7 +11,7 @@
     "website"
   ],
   "scripts": {
-    "bootstrap": "yarn build:tokens && yarn build:icons && yarn build:logos && yarn build:plugins",
+    "bootstrap": "yarn build:tokens && yarn convert:icons && yarn convert:logos && yarn build:plugins",
     "start:all": "concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -p 6006",
     "start:website": "yarn workspace match-website dev",
@@ -27,6 +27,8 @@
     "build:logos": "yarn workspaces foreach --topological-dev --parallel --include '@twilio-labs/match-logos*' run build",
     "build:plugins": "yarn workspaces foreach --topological-dev --parallel --include 'plugin*' run build",
     "build:storybook": "build-storybook -c .storybook -o ./build",
+    "convert:icons": "yarn workspaces foreach --topological-dev --parallel --include '@twilio-labs/match-icons*' run convert",
+    "convert:logos": "yarn workspaces foreach --topological-dev --parallel --include '@twilio-labs/match-logos*' run convert",
     "version:all": "yarn version check --interactive && yarn version apply --all",
     "publish:all": "yarn workspaces foreach --topological-dev run publish",
     "test": "jest --runInBand",

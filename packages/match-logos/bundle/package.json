@@ -46,6 +46,7 @@
     "typescript": "4.1.3"
   },
   "dependencies": {
+    "@twilio-labs/match-logos-brand": "workspace:packages/match-logos/brand",
     "@twilio-labs/match-logos-color": "workspace:packages/match-logos/color",
     "@twilio-labs/match-logos-mono": "workspace:packages/match-logos/mono"
   }

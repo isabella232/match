@@ -11,7 +11,7 @@ Logo.propTypes = {
 };
 
 Logo.defaultProps = {
-  color: "gray80",
+  color: "gray90",
   maxHeight: "24px",
 };
 

@@ -1,8 +1,10 @@
 const logoTitle = (componentName) => {
   // trim "Svg"
-  let title = componentName.slice(3);
+  let title = componentName.slice(3).toLowerCase();
 
-  switch (title.toLowerCase()) {
+  if (title.startsWith("twilio")) return "Twilio";
+
+  switch (title) {
     case "ing":
     case "qvc":
       return title.toUpperCase();

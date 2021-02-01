@@ -8,6 +8,7 @@ export type AnchorTarget = "_self" | "_blank" | "_parent" | "_top";
 
 export interface AnchorProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  children: React.ReactNode;
   variant?: AnchorVariant;
   /** A URL to route to. */
   href: string;

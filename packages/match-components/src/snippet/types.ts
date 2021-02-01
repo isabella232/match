@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export enum SnippetVariant {
   DARK = "dark",
   LIGHT = "light",

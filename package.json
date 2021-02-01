@@ -32,7 +32,7 @@
     "version:all": "yarn version check --interactive && yarn version apply --all",
     "publish:all": "yarn workspaces foreach --topological-dev run publish",
     "test": "jest --runInBand",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --runInBand --watch",
     "test:ci": "jest --ci",
     "yarn:update": "yarn set version latest && yarn plugin import typescript && yarn plugin import version && yarn plugin import interactive-tools && yarn plugin import workspace-tools"
   },
@@ -50,7 +50,7 @@
     "*.{js,ts,tsx}": [
       "eslint"
     ],
-    "*.{tsx,css}": [
+    "*.{css}": [
       "stylelint"
     ],
     "styles.ts": [
@@ -132,6 +132,7 @@
     "last 2 FirefoxAndroid versions",
     "last 2 ChromeAndroid versions",
     "last 2 iOS versions",
+    "not op_mini all",
     "not IE <= 11",
     "not IE_Mob <= 11",
     "not dead"

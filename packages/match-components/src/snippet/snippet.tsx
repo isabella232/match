@@ -139,6 +139,7 @@ const Snippet: React.FC<SnippetProps> = ({
 };
 
 Snippet.propTypes = {
+  children: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(Object.values(SnippetVariant)),
   language: PropTypes.oneOf(Object.values(SnippetLanguage)).isRequired,
   title: PropTypes.string,

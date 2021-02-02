@@ -41,7 +41,7 @@ const Component = () => (
 
 ### About Inputs
 
-Inputs are interactive form controls that accept a single line of text from a user. By default, Inputs accept any combination of letters number and symbols. They can be given constraints by setting the `type` attribute to one of number, tel, url, or email. Inputs with specific types may also provide customized keyboard layouts in browsers and devices that support dynamic keyboards.
+Inputs are interactive form controls that accept a single line of text from a user. By default, inputs accept any combination of letters number and symbols. They can be given constraints by setting the `type` attribute to one of number, tel, url, or email. Inputs with specific types may also provide customized keyboard layouts in browsers and devices that support dynamic keyboards.
 
 ### Accessibility
 
@@ -49,7 +49,7 @@ Here are some quick accessibility tips to ensure a positive user experience for 
 
 - Always include a descriptive label for each Input.
 - Do not use placeholder text as a replacement for labels.
-- Use the most appropriate Input type for the data requested (e.g. text, email, or url).
+- Use the most appropriate input type for the data requested (e.g. text, email, or url).
 - Use `helper` to provide information on how to pass the Input's validation.
 - Use `error` to provide information on how to correct invalid data.
 
@@ -66,7 +66,7 @@ When an Input contains invalid data, provide an `error` message with instruction
 <VirtueCrime>
   <Virtue>
     Only use placeholder text when clarifying examples are required. Try not to
-    overuse it.
+    overuse it as it can cause clutter and confusion for a user.
   </Virtue>
   <Crime>Don't use placeholder text for every field.</Crime>
   <Virtue>
@@ -131,7 +131,7 @@ Disabled form fields cannot be interacted with. Use a read-only field for showin
 
 ### Read-only Input
 
-Read-only inputs can be focused but cannot be edited. Use a read-only Input when a user should be able to select and copy the text within.
+Read-only inputs can be focused but cannot be edited. Use a read-only Input when a user should be able to select and copy the text within. An example of when to use a read-only input may be displaying a user's responses after a form has been submitted.
 
 ```jsx live
 <Input

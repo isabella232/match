@@ -17,7 +17,7 @@ import {
 } from "..";
 import { RichTextProps } from "./types";
 
-const RichText: React.FC<RichTextProps> = ({ children, inverse }) => {
+export const RichText: React.FC<RichTextProps> = ({ children, inverse }) => {
   const options: HTMLReactParserOptions = {
     replace: (domNode: Element) => {
       if (domNode.attribs) {
@@ -76,5 +76,3 @@ RichText.propTypes = {
   inverse: PropTypes.bool,
 };
 
-export { RichText };
-export type { RichTextProps };

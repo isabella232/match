@@ -6,7 +6,7 @@ export * from "./grid";
 export * from "./heading";
 export * from "./input";
 export * from "./paragraph";
-export * from "./rtf";
+export * from "./richtext";
 export * from "./separator";
 export * from "./snippet";
 export * from "./truncate";

@@ -1,1 +1,1 @@
-module.exports = require("svgr-config-match");
+module.exports = require("svgr-config-match/icon");

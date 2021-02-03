@@ -1,0 +1,105 @@
+---
+id: logo
+title: Logo
+sidebar_label: Logo
+slug: /components/logo/
+---
+
+import { Props } from "../../src/components/props";
+import { Virtue, Crime, VirtueCrime } from "../../src/components/virtue-crime";
+
+A logo is a visual representation of a brand. This component includes both Twilio and customer logos. Twilio product logos can be found in the [icon component](./icon.mdx).
+
+**Sources:** [Github](https://github.com/twilio-labs/match/blob/main/packages/match-logos)
+
+## Usage Guide
+
+### Installation
+
+There are currently 3 supported logo packages. `@twilio-labs/match-logos-brand`, `@twilio-labs/match-logos-mono` and `@twilio-labs/match-logos-color`. These may be installed individually or bundled together as `@twilio-labs/match-logos`.
+
+```shell
+yarn add @twilio-labs/match-logos
+```
+
+### Usage
+
+Logos are imported individually from their respective packages.
+
+```jsx
+import { ChimeLogo } from "@twilio-labs/match-logos/mono";
+
+const Component = () => <ChimeLogo />;
+```
+
+### Monochromatic Logo Props
+
+<Props of="Logo" />
+
+### Color and Brand Logo Props
+
+<Props of="ColorLogo" />
+
+---
+
+## Guidelines
+
+### Accessibility
+
+All Logos include an accessible title by default. When grouping logos together, put a header on the group (i.e. "Examples of Twilio customers"). The header may be wrapped in the [VisuallyHidden component](./visually-hidden.mdx).
+
+---
+
+## Composition
+
+### Twilio Logos
+
+Preferred logo colors are red on light backgrounds and white on dark backgrounds. Black is an option in some cases. Please follow the [Twilio brand guidelines](https://www.twilio.com/brand/elements/logos).
+
+### Customer Logos
+
+Customer Logos are provided in both monochromatic and full color versions. Full color logos may not be modified. Monochromatic logos may be assigned a color token of "gray90", "gray70", or "white".
+
+<VirtueCrime>
+  <Virtue>Stick to the recommended colors or the original logo colors.</Virtue>
+  <Crime>
+    Change the color of another company's logos to Twilio brand colors (Twilio
+    red or blue).
+  </Crime>
+</VirtueCrime>
+
+---
+
+## Examples
+
+### Logo Color
+
+Monochromatic logos may be assigned a color token.
+
+```jsx live
+<AirbnbLogo color="gray70" />
+```
+
+### Logo Size
+
+The size may be adjusted by setting the `maxHeight` prop with any valid css unit in px, rem, or em.
+
+```jsx live
+<Grid gridGap="scale7">
+  <Cell>
+    <ChimeLogo maxHeight="1.5em" />
+  </Cell>
+  <Cell>
+    <ChimeLogo maxHeight="2rem" />
+  </Cell>
+  <Cell>
+    <ChimeLogo maxHeight="40px" />
+  </Cell>
+</Grid>
+```
+
+The `maxHeight` prop accepts [responsive values](https://styled-system.com/responsive-styles#responsive-styles).
+
+```jsx live
+<ChimeLogo maxHeight={["1rem", "1.5rem"]} />
+```

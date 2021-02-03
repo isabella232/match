@@ -39,7 +39,6 @@
       "error",
       { "argsIgnorePattern": "^_" }
     ],
-    "react/prop-types": ["error", { "ignore": ["children"] }],
     // no-onchange rule is deprecated.
     "jsx-a11y/no-onchange": "off"
   },
@@ -53,10 +52,7 @@
       }
     },
     {
-      "files": [
-        "packages/match-website/**/*.{ts,tsx}",
-        "plugins/**/*.{ts,tsx}"
-      ],
+      "files": ["website/**/*.{ts,tsx}", "plugins/**/*.{ts,tsx}"],
       "rules": {
         "import/prefer-default-export": "off",
         "import/no-default-export": "off",

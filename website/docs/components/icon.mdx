@@ -1,0 +1,101 @@
+---
+id: icon
+title: Icon
+sidebar_label: Icon
+slug: /components/icon/
+---
+
+import { Props } from "../../src/components/props";
+
+Icons are visual symbols and indicators that support an action or function in an user interface. They can also be used to enhance or represent content.
+
+**Sources:** [Github](https://github.com/twilio-labs/match/blob/main/packages/match-icons)
+
+## Usage Guide
+
+### Installation
+
+There are currently 3 supported icon packages. `@twilio-labs/match-icons-twilio`, `@twilio-labs/match-icons-sendgrid`, and the universal `@twilio-labs/match-icons-product`. These may be installed individually or bundled together as `@twilio-labs/match-icons`.
+
+```shell
+yarn add @twilio-labs/match-icons
+```
+
+### Usage
+
+Icons are imported individually from their respective packages.
+
+```jsx
+import { ChatIcon } from "@twilio-labs/match-icons/twilio";
+
+const Component = () => <ChatIcon decorative />;
+```
+
+### Props
+
+<Props of="Icon" />
+
+---
+
+## Guidelines
+
+### About Icons
+
+Informative icons may be used to clarify actions a user may take or draw attention to specific UI elements. Decorative icons do not add information to the page and are included for visual enhancements only.
+
+### Accessibility
+
+Here are some quick accessibility tips to ensure a positive user experience for all users:
+
+- Always include a title for icons that are not purely decorative.
+- Titles should provide additional context to the icon rather than describe the image.
+- Pair icons with descriptive text whenever possible.
+- Icons should not be interactive. They may be used within an interactive components, such as the Button.
+
+---
+
+## Examples
+
+### Icon Color
+
+The default icon color may be altered using a [color token](../design-tokens/tokens.mdx#colors).
+
+```jsx live
+<ChatIcon decorative color="basePurple" />
+```
+
+### Icon Size
+
+The size may be adjusted with an [icon size token](../design-tokens/tokens.mdx#icon-sizes).
+
+```jsx live
+<>
+  <ChatIcon decorative size="small" />
+  <br />
+  <ChatIcon decorative size="medium" />
+  <br />
+  <ChatIcon decorative size="base" />
+  <br />
+  <ChatIcon decorative size="large" />
+  <br />
+  <ChatIcon decorative size="xLarge" />
+</>
+```
+
+Icon size accepts [responsive values](https://styled-system.com/responsive-styles#responsive-styles).
+
+```jsx live
+<ChatIcon decorative size={["large", "medium"]} />
+```
+
+### Decorative Icons
+
+Titles are required for accessibility compliance unless the icon is specifically designated as decorative.
+
+```jsx live
+<>
+  <ChatIcon title="Talk to me!" />
+  <br />
+  <ChatIcon decorative />
+</>
+```

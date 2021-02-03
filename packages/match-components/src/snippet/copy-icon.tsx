@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useUID } from "react-uid";
-import { Icon } from "../icon";
-import type { IconProps } from "../icon";
+import { Icon } from "@twilio-labs/match-primitives";
+import type { IconProps } from "@twilio-labs/match-primitives";
 
 const CopyIcon: React.FC<IconProps> = ({ title, decorative, ...props }) => {
   const uid = useUID();

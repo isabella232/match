@@ -83,6 +83,27 @@ package-lock.json
 # Build files
 **/dist/*
 **/build/*
+**/generated/*
+
+# Docusaurus
+.docusaurus
+.cache-loader
+
+# PyPI
+packages/match-tokens/py/match_tokens_py/*
+packages/match-tokens/py/match_tokens_py.egg-info
+
+# Bundles
+**/bundle/*
+!**/bundle/src
+!**/bundle/package.json
+!**/bundle/tsconfig.json
+
+# Match Super Bundle
+packages/match/*
+!packages/match/src
+!packages/match/package.json
+!packages/match/tsconfig.json
 
 # Match tokens
 packages/match-tokens/core/*
@@ -90,14 +111,3 @@ packages/match-tokens/core/*
 !packages/match-tokens/core/tsconfig.json
 !packages/match-tokens/core/types.d.ts
 !packages/match-tokens/core/src
-
-# PyPI
-packages/match-tokens/py/match_tokens_py/*
-packages/match-tokens/py/match_tokens_py.egg-info
-
-# Docusaurus
-.docusaurus
-.cache-loader
-
-# Icons
-packages/match-icons/**/src/*

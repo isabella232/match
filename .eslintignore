@@ -3,7 +3,8 @@
 node_modules
 dist
 build
+generated
 .docusaurus
 .cache
-packages/match-tokens/**/lib
-packages/match-icons/**/src
+packages/match-tokens/core/*
+!packages/match-tokens/core/src

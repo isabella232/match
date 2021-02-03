@@ -1,0 +1,30 @@
+.iconListWrapper + .iconListWrapper {
+  margin-top: var(--space-scale-420);
+}
+
+.iconList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 22px 30px;
+}
+
+.iconCell {
+  margin: 1px; /* cancels out the thicker border when hovering */
+  padding: 18px;
+  border: 1px solid #e1e3ea;
+  border-radius: 4px;
+  user-select: none; /* copying is only supported with the buttons */
+}
+
+/* .iconCell:hover {
+  margin: 0;
+  border: 2px solid #0263e0;
+} */
+
+.title {
+  font-size: 12px;
+}
+
+.icon {
+  padding-top: 25px;
+}

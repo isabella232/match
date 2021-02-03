@@ -1,10 +1,10 @@
 {
   "name": "@twilio-labs/match-icons-sendgrid",
-  "version": "0.2.0",
-  "description": "Twilio Match Design System Icons",
+  "version": "1.0.0-alpha.1",
+  "description": "Twilio Match Design System SendGrid Icons",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
-  "main": "src/index.tsx",
+  "main": "generated/index.tsx",
   "files": [
     "dist"
   ],
@@ -20,15 +20,15 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "convert": "svgr -d src svg",
+    "convert": "svgr -d generated svg",
     "build": "yarn clean && yarn convert && yarn compile",
-    "clean": "rm -rf src dist",
+    "clean": "rm -rf generated dist",
     "compile": "rollup -c node:match --environment NODE_ENV:production",
     "compile:dev": "rollup -c node:match --environment NODE_ENV:development",
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-components": "^0.4.0",
+    "@twilio-labs/match-primitives": "^1.0.0-alpha.1",
     "prop-types": "15.x",
     "react": "17.x",
     "react-dom": "17.x",
@@ -37,9 +37,9 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
-    "@storybook/react": "6.1.11",
+    "@storybook/react": "6.1.15",
     "@svgr/cli": "5.5.0",
-    "@twilio-labs/match-components": "workspace:packages/match-components",
+    "@twilio-labs/match-primitives": "workspace:packages/match-primitives",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/babel__core": "7.1.12",
     "@types/prop-types": "15.7.3",
@@ -47,11 +47,11 @@
     "prop-types": "15.7.2",
     "react": "17.0.1",
     "react-uid": "2.3.1",
-    "rollup": "2.35.1",
+    "rollup": "2.38.0",
     "rollup-config-match": "workspace:configs/rollup",
     "svgr-config-match": "workspace:configs/svgr",
     "tsconfig-match": "workspace:configs/tsconfig",
-    "tslib": "2.0.3",
+    "tslib": "2.1.0",
     "typescript": "4.1.3"
   }
 }

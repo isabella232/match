@@ -1,6 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
 import { Button } from "reakit/Button";
-import { StyledIcon } from "../icon/styles";
+import { themeGet } from "@styled-system/theme-get";
+import { StyledIcon } from "@twilio-labs/match-primitives";
 import { ButtonProps, ButtonSize, ButtonVariant } from "./types";
 
 const sizes = {
@@ -98,14 +99,14 @@ const variants = {
     }
   `,
   [ButtonVariant.INVERSE]: css`
-    color: ${({ theme }) => theme.components.buttonInverseText};
+    color: ${({ theme }) => theme.components.button.inverseText};
     background: ${({ theme }) => theme.colorWhite};
     border-color: ${({ theme }) => theme.colorWhite};
 
     &:hover {
       color: ${({ theme }) => theme.textColorInversePrimary};
-      background: ${({ theme }) => theme.components.buttonInverseHoverBg};
-      border-color: ${({ theme }) => theme.components.buttonInverseHoverBg};
+      background: ${({ theme }) => theme.components.button.inverseHoverBg};
+      border-color: ${({ theme }) => theme.components.button.inverseHoverBg};
     }
 
     &:focus {
@@ -115,8 +116,8 @@ const variants = {
     &:focus,
     &:active {
       color: ${({ theme }) => theme.textColorInversePrimary};
-      background: ${({ theme }) => theme.components.buttonInverseFocusBg};
-      border-color: ${({ theme }) => theme.components.buttonInverseFocusBg};
+      background: ${({ theme }) => theme.components.button.inverseFocusBg};
+      border-color: ${({ theme }) => theme.components.button.inverseFocusBg};
     }
 
     &:disabled {
@@ -192,7 +193,7 @@ const StyledButton = styled(Button).withConfig({
   text-decoration: none;
   border-style: solid;
   border-width: ${({ theme }) => theme.borderWidths.light};
-  border-radius: 4px;
+  border-radius: ${themeGet("radii.base")};
   cursor: pointer;
   transition-duration: 0.2s;
   transition-property: color, background, border;

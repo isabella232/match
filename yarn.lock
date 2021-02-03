@@ -4120,6 +4120,7 @@ __metadata:
     "@types/styled-system__theme-get": 5.0.1
     core-js: 3.8.3
     csstype: 3.0.6
+    downshift: 6.1.0
     jest: 26.6.3
     jest-axe: 4.1.0
     prop-types: 15.7.2
@@ -10011,7 +10012,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"downshift@npm:^6.0.6":
+"downshift@npm:6.1.0, downshift@npm:^6.0.6":
   version: 6.1.0
   resolution: "downshift@npm:6.1.0"
   dependencies:

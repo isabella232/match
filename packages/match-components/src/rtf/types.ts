@@ -1,3 +1,4 @@
-export interface RTFProps {
+export interface RichTextProps {
   children: string;
+  inverse?: boolean;
 }

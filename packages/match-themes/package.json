@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-themes",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Twilio Match Design System Themes",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -28,7 +28,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-tokens": "^1.0.0-alpha.1",
+    "@twilio-labs/match-tokens": "^1.0.0-alpha.2",
     "prop-types": "15.x",
     "react": "17.x",
     "react-dom": "17.x",
@@ -37,10 +37,10 @@
   },
   "devDependencies": {
     "@emotion/core": "11.0.0",
-    "@testing-library/react": "11.2.3",
+    "@testing-library/react": "11.2.5",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/prop-types": "15.7.3",
-    "@types/react": "17.0.0",
+    "@types/react": "17.0.1",
     "@types/react-dom": "17.0.0",
     "@types/styled-components": "5.1.7",
     "core-js": "3.8.3",
@@ -48,7 +48,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-is": "17.0.1",
-    "rollup": "2.38.0",
+    "rollup": "2.38.5",
     "rollup-config-match": "workspace:configs/rollup",
     "styled-components": "5.2.1",
     "tsconfig-match": "workspace:configs/tsconfig",

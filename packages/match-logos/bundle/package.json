@@ -33,11 +33,11 @@
     "react-uid": "2.x"
   },
   "devDependencies": {
-    "@babel/core": "7.12.10",
+    "@babel/core": "7.12.13",
     "@twilio-labs/match-primitives": "workspace:packages/match-primitives",
     "@types/babel__core": "7.1.12",
     "@types/prop-types": "15.7.3",
-    "@types/react": "17.0.0",
+    "@types/react": "17.0.1",
     "prop-types": "15.7.2",
     "react": "17.0.1",
     "react-uid": "2.3.1",

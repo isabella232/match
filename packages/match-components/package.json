@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-components",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Twilio Match Design System Components",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -29,10 +29,10 @@
   },
   "peerDependencies": {
     "@styled-system/theme-get": "5.x",
-    "@twilio-labs/match-primitives": "^1.0.0-alpha.1",
-    "@twilio-labs/match-props": "^1.0.0-alpha.1",
-    "@twilio-labs/match-themes": "^1.0.0-alpha.1",
-    "@twilio-labs/match-tokens": "^1.0.0-alpha.1",
+    "@twilio-labs/match-primitives": "^1.0.0-alpha.2",
+    "@twilio-labs/match-props": "^1.0.0-alpha.2",
+    "@twilio-labs/match-themes": "^1.0.0-alpha.2",
+    "@twilio-labs/match-tokens": "^1.0.0-alpha.2",
     "html-react-parser": "1.x",
     "prop-types": "15.x",
     "react": "17.x",

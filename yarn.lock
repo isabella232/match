@@ -5171,10 +5171,10 @@ __metadata:
     typescript: 4.1.3
   peerDependencies:
     "@styled-system/theme-get": 5.x
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
-    "@twilio-labs/match-props": ^1.0.0-alpha.1
-    "@twilio-labs/match-themes": ^1.0.0-alpha.1
-    "@twilio-labs/match-tokens": ^1.0.0-alpha.1
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
+    "@twilio-labs/match-props": ^1.0.0-alpha.2
+    "@twilio-labs/match-themes": ^1.0.0-alpha.2
+    "@twilio-labs/match-tokens": ^1.0.0-alpha.2
     html-react-parser: 1.x
     prop-types: 15.x
     react: 17.x
@@ -5216,7 +5216,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
@@ -5247,7 +5247,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
@@ -5278,7 +5278,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
@@ -5308,7 +5308,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
@@ -5338,7 +5338,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
@@ -5368,7 +5368,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
@@ -5398,7 +5398,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
@@ -5426,7 +5426,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.1
+    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
@@ -5472,9 +5472,9 @@ __metadata:
     typescript: 4.1.3
   peerDependencies:
     "@styled-system/theme-get": 5.x
-    "@twilio-labs/match-props": ^1.0.0-alpha.1
-    "@twilio-labs/match-themes": ^1.0.0-alpha.1
-    "@twilio-labs/match-tokens": ^1.0.0-alpha.1
+    "@twilio-labs/match-props": ^1.0.0-alpha.2
+    "@twilio-labs/match-themes": ^1.0.0-alpha.2
+    "@twilio-labs/match-tokens": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
@@ -5501,7 +5501,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-tokens": ^1.0.0-alpha.1
+    "@twilio-labs/match-tokens": ^1.0.0-alpha.2
     prop-types: 15.x
     styled-system: 5.x
   languageName: unknown
@@ -5530,7 +5530,7 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-tokens": ^1.0.0-alpha.1
+    "@twilio-labs/match-tokens": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
@@ -5588,8 +5588,8 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-icons": ^1.0.0-alpha.1
-    "@twilio-labs/match-logos": ^1.0.0-alpha.1
+    "@twilio-labs/match-icons": ^1.0.0-alpha.2
+    "@twilio-labs/match-logos": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x

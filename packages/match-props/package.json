@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-props",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Prop utilities for Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -28,7 +28,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-tokens": "^1.0.0-alpha.1",
+    "@twilio-labs/match-tokens": "^1.0.0-alpha.2",
     "prop-types": "15.x",
     "styled-system": "5.x"
   },

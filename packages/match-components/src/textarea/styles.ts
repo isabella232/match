@@ -1,24 +1,48 @@
-import styled from "styled-components";
-import { variant, space } from "styled-system";
+import styled, { css } from "styled-components";
+import { space } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
-import type { StyledInputProps } from "./types";
-import { InputSize } from "./constants";
+import type { StyledTextareaProps } from "./types";
 
-export const StyledInput = styled.input<StyledInputProps>`
+export const StyledTextarea = styled.textarea.withConfig({
+  shouldForwardProp: (prop, validate) =>
+    !["rows"].includes(prop) && validate(prop),
+})<StyledTextareaProps>`
   display: block;
   width: 100%;
-  padding-right: ${themeGet("space.scale100")};
-  padding-left: ${themeGet("space.scale100")};
+  margin: 0;
+  padding: ${themeGet("space.scale60")} ${themeGet("space.scale100")};
   color: ${themeGet("components.form.inputColor")};
   font-weight: ${themeGet("fontWeights.regular")};
   font-size: ${themeGet("fontSizes.scale80")};
   font-family: ${themeGet("fontFamilies.text")};
-  line-height: ${themeGet("lineHeights.scale200")};
+  line-height: ${themeGet("components.form.textareaLineHeight")};
   border-color: ${themeGet("borderColors.medium")};
   border-style: solid;
   border-width: ${themeGet("borderWidths.thin")};
   border-radius: ${themeGet("radii.base")};
+  resize: vertical;
+
+  ${({
+    rows,
+    theme: {
+      components: {
+        form: { textareaLineHeight },
+      },
+      space: sp,
+      borderWidths: bw,
+    },
+  }) => css`
+    height: calc(
+      ${rows}em * ${textareaLineHeight} + ${sp.scale100} * 2 + ${bw.thin} * 2
+    );
+    min-height: calc(
+      3em * ${textareaLineHeight} + ${sp.scale100} * 2 + ${bw.thin} * 2
+    );
+    max-height: calc(
+      10em * ${textareaLineHeight} + ${sp.scale100} * 2 + ${bw.thin} * 2
+    );
+  `};
 
   ::placeholder {
     color: ${themeGet("textColors.tertiary")};
@@ -51,28 +75,13 @@ export const StyledInput = styled.input<StyledInputProps>`
     border-width: ${themeGet("borderWidths.light")};
   }
 
-  ${({ theme: { space: sp, borderWidths: bw } }) =>
-    variant({
-      prop: "inputSize",
-      variants: {
-        [InputSize.NORMAL]: {
-          py: "scale60",
-          ["&:focus, &[aria-invalid='true']"]: {
-            py: `calc(${sp.scale60} - ${bw.light} + ${bw.thin})`,
-            px: `calc(${sp.scale100} - ${bw.light} + ${bw.thin})`,
-          },
-        },
-        [InputSize.SMALL]: {
-          py: "scale7",
-          ["&:focus, &[aria-invalid='true']"]: {
-            py: `calc(${sp.scale7} - ${bw.light} + ${bw.thin})`,
-            px: `calc(${sp.scale100} - ${bw.light} + ${bw.thin})`,
-          },
-        },
-      },
-    })};
+  :focus,
+  &[aria-invalid="true"] {
+    padding: ${({ theme: { space: sp, borderWidths: bw } }) =>
+      `calc(${sp.scale60} - ${bw.light} + ${bw.thin}) calc(${sp.scale100} - ${bw.light} + ${bw.thin})`};
+  }
 `;
 
-export const StyledInputWrapper = styled.div<MarginProps>`
+export const StyledTextareaWrapper = styled.div<MarginProps>`
   ${space}
 `;

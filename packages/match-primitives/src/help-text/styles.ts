@@ -12,14 +12,14 @@ export const StyledHelpText = styled.div<HelpTextProps>`
   ${({
     theme: {
       textColors,
-      components: { input },
+      components: { form },
     },
   }) =>
     variant({
       variants: {
         [HelpTextVariant.NORMAL]: {
           color: textColors.tertiary,
-          fontWeight: input.helperFontWeight,
+          fontWeight: form.helperFontWeight,
         },
         [HelpTextVariant.ERROR]: {
           color: "red60",

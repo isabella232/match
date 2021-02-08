@@ -5,7 +5,7 @@ export interface TextareaProps
     React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string;
   label: string;
-  value?: string;
+  defaultValue?: string;
   /** Sets the input as required. */
   required?: boolean;
   /** Disables the input. */
@@ -22,7 +22,7 @@ export interface TextareaProps
   error?: string;
   minLength?: number;
   maxLength?: number;
-  rows?: number;
+  rows?: 3|4|5|6|7|8|9|10;
 }
 
 export interface StyledTextareaProps {

@@ -7,7 +7,7 @@ import {
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
-import { StyledTextarea, StyledTextareaWrapper } from "./styles";
+import { StyledTextarea, StyledTextareaContainer, StyledTextareaWrapper } from "./styles";
 import type { TextareaProps } from "./types";
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
@@ -53,22 +53,24 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             {label}
           </Label>
         )}
-        <StyledTextarea
-          ref={ref}
-          id={seed(`${name}_input`)}
-          name={name}
-          aria-label={hideLabel ? label : undefined}
-          aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
-          aria-describedby={
-            Boolean(helper || error) ? seed(`${name}_message`) : undefined
-          }
-          aria-invalid={Boolean(error)}
-          aria-disabled={disabled}
-          disabled={disabled}
-          required={required}
-          rows={rows || 3}
-          {...props}
-        />
+        <StyledTextareaContainer>
+          <StyledTextarea
+            ref={ref}
+            id={seed(`${name}_input`)}
+            name={name}
+            aria-label={hideLabel ? label : undefined}
+            aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
+            aria-describedby={
+              Boolean(helper || error) ? seed(`${name}_message`) : undefined
+            }
+            aria-invalid={Boolean(error)}
+            aria-disabled={disabled}
+            disabled={disabled}
+            required={required}
+            rows={rows || 3}
+            {...props}
+          />
+        </StyledTextareaContainer>
         {Boolean(helper || error) && (
           <HelpText
             id={seed(`${name}_message`)}
@@ -96,7 +98,7 @@ Textarea.propTypes = {
   placeholder: PropTypes.string,
   helper: PropTypes.string,
   error: PropTypes.string,
-  rows: PropTypes.number,
+  rows: PropTypes.oneOf([3,4,5,6,7,8,9,10]),
 };
 
 Textarea.defaultProps = {

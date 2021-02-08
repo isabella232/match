@@ -2,7 +2,7 @@ import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Textarea, TextareaProps } from "../src";
 
-const value = `
+const defaultValue = `
 I opened my eyes
 And looked up at the rain,
 And it dripped in my head
@@ -12,10 +12,10 @@ Is the slishity-slosh of the rain in my head.
 `.trim();
 
 export default {
-  value,
   title: "Components/Textarea",
   component: Textarea,
   args: {
+    defaultValue,
     name: "example",
     placeholder: "Placeholder text",
     label: "Label",
@@ -28,7 +28,7 @@ export default {
     hideLabel: false,
   },
   argTypes: {
-    value: {
+    defaultValue: {
       table: { disable: true },
     },
     name: {

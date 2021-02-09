@@ -90,7 +90,10 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             {label}
           </Label>
         )}
-        <StyledTextareaContainer>
+        <StyledTextareaContainer
+          hasError={Boolean(error)}
+          disabled={Boolean(disabled)}
+        >
           <StyledTextarea
             ref={ref}
             id={seed(`${name}_input`)}

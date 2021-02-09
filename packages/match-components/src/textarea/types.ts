@@ -27,6 +27,12 @@ export interface TextareaProps
   resize?: TextareaResizeOptions;
 }
 
+export interface StyledTextareaContainerProps {
+  hasError: boolean;
+  readOnly: boolean;
+  disabled: boolean;
+}
+
 export interface StyledTextareaProps {
   rows: number;
   resize?: TextareaResizeOptions;

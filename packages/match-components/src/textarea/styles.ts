@@ -2,12 +2,44 @@ import styled, { css } from "styled-components";
 import { space } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
-import type { StyledTextareaProps } from "./types";
+import type {
+  StyledTextareaProps,
+  StyledTextareaContainerProps,
+} from "./types";
 import { TextareaResizeOptions } from "./constants";
 
-export const StyledTextareaContainer = styled.div`
+export const StyledTextareaContainer = styled.div<StyledTextareaContainerProps>`
   position: relative;
-  padding: ${themeGet("borderWidths.thin")};
+  overflow: hidden;
+  border: 1px solid blue;
+  border-color: ${themeGet("borderColors.medium")};
+  border-style: solid;
+  border-width: ${themeGet("borderWidths.thin")};
+  border-radius: ${themeGet("radii.base")};
+
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      margin: calc(
+        ${themeGet("borderWidths.thin")} - ${themeGet("borderWidths.light")}
+      );
+      border-color: ${themeGet("colors.red60")};
+      border-width: ${themeGet("borderWidths.light")};
+    `}
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      border-color: ${themeGet("colors.gray10")};
+    `}
+
+  :focus-within {
+    margin: calc(
+      ${themeGet("borderWidths.thin")} - ${themeGet("borderWidths.light")}
+    );
+    border-color: ${themeGet("borderColors.focusPrimary")};
+    border-width: ${themeGet("borderWidths.light")};
+  }
 `;
 
 export const StyledTextarea = styled.textarea.withConfig({
@@ -25,11 +57,8 @@ export const StyledTextarea = styled.textarea.withConfig({
   font-family: ${themeGet("fontFamilies.text")};
   line-height: ${themeGet("components.form.textareaLineHeight")};
   border: none;
-  border-radius: ${themeGet("radii.base")};
   resize: ${({ resize }) =>
     resize === TextareaResizeOptions.MANUAL ? "vertical" : "none"};
-  box-shadow: ${themeGet("borderColors.medium")} 0 0 0
-    ${themeGet("borderWidths.thin")};
 
   ${({
     rows,
@@ -55,27 +84,17 @@ export const StyledTextarea = styled.textarea.withConfig({
   :disabled {
     color: ${themeGet("components.form.inputDisabledColor")};
     background: ${themeGet("colors.gray10")};
-    box-shadow: ${themeGet("colors.gray10")} 0 0 0
-      ${themeGet("borderWidths.thin")};
     pointer-events: none;
     resize: none;
     overflow: hidden;
   }
 
   :focus {
-    box-shadow: ${themeGet("borderColors.focusPrimary")} 0 0 0
-      ${themeGet("borderWidths.light")};
     outline: none;
   }
 
   :invalid {
-    box-shadow: ${themeGet("borderColors.medium")} 0 0 0
-      ${themeGet("borderWidths.thin")};
-  }
-
-  &[aria-invalid="true"] {
-    box-shadow: ${themeGet("colors.red60")} 0 0 0
-      ${themeGet("borderWidths.light")};
+    box-shadow: none;
   }
 `;
 

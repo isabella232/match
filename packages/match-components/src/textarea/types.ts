@@ -29,7 +29,6 @@ export interface TextareaProps
 
 export interface StyledTextareaContainerProps {
   hasError: boolean;
-  readOnly: boolean;
   disabled: boolean;
 }
 

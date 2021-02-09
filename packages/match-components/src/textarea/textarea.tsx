@@ -156,5 +156,5 @@ Textarea.propTypes = {
 
 Textarea.defaultProps = {
   rows: 3,
-  resize: TextareaResizeOptions.SMART,
+  resize: TextareaResizeOptions.MANUAL,
 };

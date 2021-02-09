@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Twilio Match Design System",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -26,8 +26,8 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-icons": "^1.0.0-alpha.1",
-    "@twilio-labs/match-logos": "^1.0.0-alpha.1",
+    "@twilio-labs/match-icons": "^1.0.0-alpha.2",
+    "@twilio-labs/match-logos": "^1.0.0-alpha.2",
     "prop-types": "15.x",
     "react": "17.x",
     "react-dom": "17.x",
@@ -36,12 +36,12 @@
     "styled-components": "5.x"
   },
   "devDependencies": {
-    "@babel/core": "7.12.10",
+    "@babel/core": "7.12.13",
     "@emotion/core": "11.0.0",
-    "@storybook/react": "6.1.15",
+    "@storybook/react": "6.1.17",
     "@types/babel__core": "7.1.12",
     "@types/prop-types": "15.7.3",
-    "@types/react": "17.0.0",
+    "@types/react": "17.0.1",
     "@types/react-dom": "17.0.0",
     "@types/react-syntax-highlighter": "13.5.0",
     "@types/styled-components": "5.1.7",

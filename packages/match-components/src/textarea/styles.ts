@@ -58,6 +58,8 @@ export const StyledTextarea = styled.textarea.withConfig({
     box-shadow: ${themeGet("colors.gray10")} 0 0 0
       ${themeGet("borderWidths.thin")};
     pointer-events: none;
+    resize: none;
+    overflow: hidden;
   }
 
   :focus {

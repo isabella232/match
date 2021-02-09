@@ -67,7 +67,8 @@ export const StyledTextarea = styled.textarea.withConfig({
   }
 
   :invalid {
-    box-shadow: none;
+    box-shadow: ${themeGet("borderColors.medium")} 0 0 0
+      ${themeGet("borderWidths.thin")};
   }
 
   &[aria-invalid="true"] {

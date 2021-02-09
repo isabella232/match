@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Textarea, TextareaProps } from "../src";
+import { Textarea, TextareaProps, TextareaResizeOptions } from "../src";
 
 const defaultValue = `
 I opened my eyes
@@ -15,13 +15,13 @@ export default {
   title: "Components/Textarea",
   component: Textarea,
   args: {
+    ...Textarea.defaultProps,
     defaultValue,
     name: "example",
     placeholder: "Placeholder text",
     label: "Label",
     helper: "Helper text.",
     error: "",
-    rows: 3,
     required: false,
     readOnly: false,
     disabled: false,
@@ -48,6 +48,12 @@ export default {
     },
     rows: {
       control: { type: "number", options: { min: 3, max: 10 } },
+    },
+    resize: {
+      control: {
+        type: "select",
+        options: Object.values(TextareaResizeOptions),
+      },
     },
     required: {
       control: { type: "boolean" },

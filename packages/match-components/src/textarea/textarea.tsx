@@ -7,7 +7,13 @@ import {
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
-import { StyledTextarea, StyledTextareaContainer, StyledTextareaWrapper } from "./styles";
+import {
+  StyledTextarea,
+  StyledShadowTextarea,
+  StyledTextareaContainer,
+  StyledTextareaWrapper,
+} from "./styles";
+import { TextareaResizeOptions } from "./constants";
 import type { TextareaProps } from "./types";
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
@@ -17,10 +23,13 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       helper,
       error,
       name,
+      defaultValue,
       disabled,
       required,
       hideLabel,
-      rows,
+      rows = 3,
+      resize,
+      onChange = () => {},
       margin,
       marginY,
       marginX,
@@ -32,7 +41,35 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     },
     ref
   ) => {
+    const [height, setHeight] = React.useState<number>(0);
+    const shadowRef = React.useRef<HTMLTextAreaElement>(null);
     const seed = useUIDSeed();
+
+    const resizeTextarea = () => {
+      if (shadowRef.current) {
+        setHeight(shadowRef.current.scrollHeight);
+      }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      if (shadowRef.current && resize === TextareaResizeOptions.SMART) {
+        shadowRef.current.value = e.currentTarget.value;
+        resizeTextarea();
+      }
+      onChange(e);
+    };
+
+    React.useEffect(() => {
+      if (resize === TextareaResizeOptions.SMART) {
+        resizeTextarea();
+        window.addEventListener("resize", resizeTextarea);
+      } else {
+        setHeight(0);
+        window.removeEventListener("resize", resizeTextarea);
+      }
+      return () => window.removeEventListener("resize", resizeTextarea);
+    }, [resize]);
+
     return (
       <StyledTextareaWrapper
         margin={margin}
@@ -67,9 +104,23 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             aria-disabled={disabled}
             disabled={disabled}
             required={required}
-            rows={rows || 3}
+            rows={rows}
+            resize={resize}
+            onChange={handleChange}
+            style={{ height: Boolean(height) ? `${height}px` : undefined }}
+            defaultValue={defaultValue}
             {...props}
           />
+          {resize === TextareaResizeOptions.SMART && (
+            <StyledShadowTextarea
+              disabled
+              aria-hidden={true}
+              tabIndex={-1}
+              ref={shadowRef}
+              rows={rows}
+              defaultValue={defaultValue}
+            />
+          )}
         </StyledTextareaContainer>
         {Boolean(helper || error) && (
           <HelpText
@@ -90,7 +141,7 @@ Textarea.propTypes = {
   ...marginPropTypes,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  value: PropTypes.string,
+  defaultValue: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
@@ -98,9 +149,12 @@ Textarea.propTypes = {
   placeholder: PropTypes.string,
   helper: PropTypes.string,
   error: PropTypes.string,
-  rows: PropTypes.oneOf([3,4,5,6,7,8,9,10]),
+  rows: PropTypes.oneOf([3, 4, 5, 6, 7, 8, 9, 10]),
+  resize: PropTypes.oneOf(Object.values(TextareaResizeOptions)),
+  onChange: PropTypes.func,
 };
 
 Textarea.defaultProps = {
   rows: 3,
+  resize: TextareaResizeOptions.SMART,
 };

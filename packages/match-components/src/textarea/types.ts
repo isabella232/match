@@ -1,11 +1,11 @@
 import { MarginProps } from "@twilio-labs/match-props";
+import { TextareaResizeOptions } from "./constants";
 
 export interface TextareaProps
   extends MarginProps,
     React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string;
   label: string;
-  defaultValue?: string;
   /** Sets the input as required. */
   required?: boolean;
   /** Disables the input. */
@@ -22,9 +22,12 @@ export interface TextareaProps
   error?: string;
   minLength?: number;
   maxLength?: number;
-  rows?: 3|4|5|6|7|8|9|10;
+  /** Default number of rows to display. */
+  rows?: 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  resize?: TextareaResizeOptions;
 }
 
 export interface StyledTextareaProps {
   rows: number;
+  resize?: TextareaResizeOptions;
 }

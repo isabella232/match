@@ -8,7 +8,6 @@
   "eslint.packageManager": "yarn",
   "stylelint.stylelintPath": ".yarn/sdks/stylelint/lib/index.js",
   "npm.packageManager": "yarn",
-  "prettier.packageManager": "yarn",
   "stylelint.packageManager": "yarn",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

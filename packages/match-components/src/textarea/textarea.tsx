@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { useUIDSeed } from "react-uid";
+import { useField } from "formik";
 import { marginPropTypes } from "@twilio-labs/match-props";
 import {
   Label,
@@ -21,7 +22,6 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     {
       label,
       helper,
-      error,
       name,
       defaultValue,
       disabled,
@@ -29,7 +29,10 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       hideLabel,
       rows = 3,
       resize,
-      onChange = () => {},
+      validate: validateOverride,
+      noValidate,
+      minLength,
+      maxLength,
       margin,
       marginY,
       marginX,
@@ -43,7 +46,6 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ) => {
     const [height, setHeight] = React.useState<number>(0);
     const shadowRef = React.useRef<HTMLTextAreaElement>(null);
-    const seed = useUIDSeed();
 
     const resizeTextarea = () => {
       if (shadowRef.current) {
@@ -51,17 +53,35 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       }
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      if (shadowRef.current && resize === TextareaResizeOptions.SMART) {
-        shadowRef.current.value = e.currentTarget.value;
-        resizeTextarea();
+    const validate = (value: string) => {
+      if (noValidate) return;
+      if (validateOverride) return validateOverride(value);
+      if (required && !Boolean(value)) {
+        return "This field is required";
       }
-      onChange(e);
+      if (minLength && minLength > value.length) {
+        return `Must be at least ${minLength} characters long`;
+      }
+      if (maxLength && maxLength < value.length) {
+        return `Must be less than ${maxLength} characters long`;
+      }
     };
+
+    const seed = useUIDSeed();
+    const [field, meta] = useField({
+      name,
+      as: "textarea",
+      validate,
+      disabled,
+      required,
+      ...props,
+    });
+
+    const hasError = meta.touched && Boolean(meta.error);
+    const hasHelper = Boolean(helper);
 
     React.useEffect(() => {
       if (resize === TextareaResizeOptions.SMART) {
-        resizeTextarea();
         window.addEventListener("resize", resizeTextarea);
       } else {
         setHeight(0);
@@ -69,6 +89,12 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       }
       return () => window.removeEventListener("resize", resizeTextarea);
     }, [resize]);
+
+    React.useEffect(() => {
+      if (resize === TextareaResizeOptions.SMART) {
+        resizeTextarea();
+      }
+    }, [resize, field.value]);
 
     return (
       <StyledTextareaWrapper
@@ -91,27 +117,25 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           </Label>
         )}
         <StyledTextareaContainer
-          hasError={Boolean(error)}
+          hasError={hasError}
           disabled={Boolean(disabled)}
         >
           <StyledTextarea
             ref={ref}
             id={seed(`${name}_input`)}
-            name={name}
             aria-label={hideLabel ? label : undefined}
             aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
             aria-describedby={
-              Boolean(helper || error) ? seed(`${name}_message`) : undefined
+              hasHelper || hasError ? seed(`${name}_message`) : undefined
             }
-            aria-invalid={Boolean(error)}
+            aria-invalid={hasError}
             aria-disabled={disabled}
             disabled={disabled}
             required={required}
             rows={rows}
             resize={resize}
-            onChange={handleChange}
             style={{ height: Boolean(height) ? `${height}px` : undefined }}
-            defaultValue={defaultValue}
+            {...field}
             {...props}
           />
           {resize === TextareaResizeOptions.SMART && (
@@ -121,16 +145,16 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               tabIndex={-1}
               ref={shadowRef}
               rows={rows}
-              defaultValue={defaultValue}
+              value={field.value}
             />
           )}
         </StyledTextareaContainer>
-        {Boolean(helper || error) && (
+        {(hasHelper || hasError) && (
           <HelpText
             id={seed(`${name}_message`)}
-            variant={Boolean(error) ? HelpTextVariant.ERROR : undefined}
+            variant={hasError ? HelpTextVariant.ERROR : undefined}
           >
-            {Boolean(error) ? error : helper}
+            {hasError ? meta.error : helper}
           </HelpText>
         )}
       </StyledTextareaWrapper>
@@ -144,17 +168,18 @@ Textarea.propTypes = {
   ...marginPropTypes,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  defaultValue: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   hideLabel: PropTypes.bool,
   placeholder: PropTypes.string,
   helper: PropTypes.string,
-  error: PropTypes.string,
   rows: PropTypes.oneOf([3, 4, 5, 6, 7, 8, 9, 10]),
   resize: PropTypes.oneOf(Object.values(TextareaResizeOptions)),
-  onChange: PropTypes.func,
+  minLength: PropTypes.number,
+  maxLength: PropTypes.number,
+  validate: PropTypes.func,
+  noValidate: PropTypes.bool,
 };
 
 Textarea.defaultProps = {

@@ -7,20 +7,29 @@ import {
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
+import { useField } from "formik";
 import { StyledInput, StyledInputWrapper } from "./styles";
 import { InputSize } from "./constants";
 import type { InputProps } from "./types";
 
+/* eslint-disable-next-line unicorn/better-regex */
+const emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
+      name,
+      type,
       label,
+      hideLabel,
       helper,
       size,
-      name,
       disabled,
       required,
-      hideLabel,
+      minLength,
+      maxLength,
+      validate: validateOverride,
+      noValidate,
       margin,
       marginY,
       marginX,
@@ -28,27 +37,39 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       marginLeft,
       marginBottom,
       marginTop,
-      onChange,
       ...props
     },
     ref
   ) => {
-    const seed = useUIDSeed();
-    const [error, setError] = React.useState("");
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      if (typeof onChange === "function") onChange(e);
-      const { validity, validationMessage } = e.currentTarget;
-      if (validity.customError) {
-        setError(validationMessage);
-      } else if (validity.tooShort) {
-        setError(
-          `${label} must be at least ${e.currentTarget.minLength} characters long.`
-        );
-      } else {
-        setError("");
+    const validate = (value: string) => {
+      if (noValidate) return;
+      if (validateOverride) return validateOverride(value);
+      if (required && !Boolean(value)) {
+        return "This field is required";
+      }
+      if (minLength && minLength > value.length) {
+        return `Must be at least ${minLength} characters long`;
+      }
+      if (maxLength && maxLength < value.length) {
+        return `Must be less than ${maxLength} characters long`;
+      }
+      if (type === "email" && !emailRegEx.test(value)) {
+        return "Must be a valid email";
       }
     };
+
+    const seed = useUIDSeed();
+    const [field, meta] = useField({
+      name,
+      type,
+      validate,
+      required,
+      disabled,
+      ...props,
+    });
+    const hasError = meta.touched && Boolean(meta.error);
+    const hasHelper = Boolean(helper);
+
     return (
       <StyledInputWrapper
         margin={margin}
@@ -72,26 +93,25 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <StyledInput
           ref={ref}
           id={seed(`${name}_input`)}
-          name={name}
           aria-label={hideLabel ? label : undefined}
           aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
           aria-describedby={
-            Boolean(helper || error) ? seed(`${name}_message`) : undefined
+            hasHelper || hasError ? seed(`${name}_message`) : undefined
           }
-          aria-invalid={Boolean(error)}
+          aria-invalid={hasError}
           aria-disabled={disabled}
           disabled={disabled}
           required={required}
           inputSize={size}
-          onChange={handleChange}
+          {...field}
           {...props}
         />
-        {Boolean(helper || error) && (
+        {(hasHelper || hasError) && (
           <HelpText
             id={seed(`${name}_message`)}
-            variant={Boolean(error) ? HelpTextVariant.ERROR : undefined}
+            variant={hasError ? HelpTextVariant.ERROR : undefined}
           >
-            {Boolean(error) ? error : helper}
+            {hasError ? meta.error : helper}
           </HelpText>
         )}
       </StyledInputWrapper>
@@ -114,7 +134,10 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   helper: PropTypes.string,
   error: PropTypes.string,
-  onChange: PropTypes.func,
+  minLength: PropTypes.number,
+  maxLength: PropTypes.number,
+  validate: PropTypes.func,
+  noValidate: PropTypes.bool,
 };
 
 Input.defaultProps = {

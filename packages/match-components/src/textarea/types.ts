@@ -18,13 +18,13 @@ export interface TextareaProps
   placeholder?: string;
   /** Supporting validation instructions.  */
   helper?: string;
-  /** Error message to display when invalid. */
-  error?: string;
   minLength?: number;
   maxLength?: number;
   /** Default number of rows to display. */
   rows?: 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   resize?: TextareaResizeOptions;
+  validate?: (value: string) => string | undefined;
+  noValidate?: boolean;
 }
 
 export interface StyledTextareaContainerProps {

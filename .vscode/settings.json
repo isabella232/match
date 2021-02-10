@@ -36,7 +36,8 @@
     "tsbuildinfo",
     "twilio",
     "wcag",
-    "yarnrc"
+    "yarnrc",
+    "formik"
   ],
   "cSpell.allowCompoundWords": true,
   "cSpell.enableFiletypes": ["mdx"],

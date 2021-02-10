@@ -22,6 +22,10 @@ export interface InputProps
   helper?: string;
   /** Error message to display when invalid. */
   error?: string;
+  validate?: (value: string) => string | undefined;
+  noValidate?: boolean;
+  minLength?: number;
+  maxLength?: number;
 }
 
 export interface StyledInputProps extends Pick<InputProps, "readOnly"> {

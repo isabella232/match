@@ -64,6 +64,7 @@ export const Validation: Story = () => {
           /**
            * Disables the built in validation.
            */
+          noValidate
         />
         <Textarea
           name="bio"

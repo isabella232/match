@@ -13,6 +13,7 @@ export enum ButtonSize {
 
 export interface ButtonProps
   extends React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
+  children: React.ReactNode;
   variant?: ButtonVariant;
   type?: "button" | "submit" | "reset";
   size?: ButtonSize;

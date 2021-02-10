@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useUID } from "react-uid";
-import { Icon } from "@twilio-labs/match-primitives";
-import type { IconProps } from "@twilio-labs/match-primitives";
+import { Icon } from "../icon";
+import type { IconProps } from "../icon";
 
-const ErrorIcon: React.FC<IconProps> = ({ title, decorative, ...props }) => {
+const ErrorIcon: React.FC<IconProps> = ({ title, decorative, ...props }: IconProps) => {
   const uid = useUID();
   const titleId = title ? uid : undefined;
 

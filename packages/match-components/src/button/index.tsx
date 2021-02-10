@@ -27,6 +27,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.propTypes = {
+  children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(Object.values(ButtonVariant)),
   type: PropTypes.oneOf(["button", "submit", "reset"]),
   size: PropTypes.oneOf(Object.values(ButtonSize)),

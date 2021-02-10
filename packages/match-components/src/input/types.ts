@@ -1,9 +1,5 @@
 import { MarginProps } from "@twilio-labs/match-props";
-
-export enum InputSize {
-  NORMAL = "normal",
-  SMALL = "small",
-}
+import { InputSize } from "./constants";
 
 export interface InputProps
   extends MarginProps,
@@ -12,19 +8,22 @@ export interface InputProps
   label: string;
   type?: "text" | "email" | "tel" | "url" | "number" | "password";
   size?: InputSize;
+  /** Sets the input as required. */
   required?: boolean;
+  /** Disables the input. */
   disabled?: boolean;
+  /** Sets the input as readonly. */
   readOnly?: boolean;
+  /** Visually hides the label. */
   hideLabel?: boolean;
+  /** Sets the input's placeholder text. */
   placeholder?: string;
+  /** Supporting validation instructions.  */
   helper?: string;
+  /** Error message to display when invalid. */
   error?: string;
 }
 
 export interface StyledInputProps extends Pick<InputProps, "readOnly"> {
   inputSize?: InputSize;
-}
-
-export interface StyledLabelProps {
-  inputDisabled: boolean;
 }

@@ -2,7 +2,7 @@ import * as React from "react";
 import { uid } from "react-uid";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { ColorLogo } from "@twilio-labs/match-primitives";
-import * as ColorLogos from "../src";
+import * as ColorLogos from "../generated";
 
 export default {
   title: "Logos/Color",

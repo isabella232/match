@@ -2,55 +2,18 @@ import styled from "styled-components";
 import { variant, space } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
-import type { StyledInputProps, StyledLabelProps } from "./types";
-import { InputSize } from "./types";
+import type { StyledInputProps } from "./types";
+import { InputSize } from "./constants";
 
-const StyledLabel = styled.label<StyledLabelProps>`
-  display: block;
-  margin-bottom: ${themeGet("space.scale7")};
-  color: ${({ inputDisabled }) =>
-    inputDisabled
-      ? themeGet("textColors.tertiary")
-      : themeGet("textColors.primary")};
-  font-weight: ${themeGet("components.input.labelFontWeight")};
-  font-size: ${themeGet("fontSizes.scale80")};
-  line-height: ${themeGet("lineHeights.scale160")};
-`;
-
-const StyledHelper = styled.div`
-  margin-top: ${themeGet("space.scale7")};
-  color: ${themeGet("textColors.tertiary")};
-  font-weight: ${themeGet("components.input.helperFontWeight")};
-  font-size: ${themeGet("fontSizes.scale60")};
-  line-height: ${themeGet("lineHeights.scale180")};
-`;
-
-const StyledError = styled.div`
-  margin-top: ${themeGet("space.scale7")};
-  color: ${themeGet("colors.red60")};
-  font-weight: ${themeGet("fontWeights.medium")};
-  font-size: ${themeGet("fontSizes.scale60")};
-  line-height: ${themeGet("lineHeights.scale180")};
-`;
-
-const StyledRequired = styled.span`
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  margin-right: ${themeGet("space.scale7")};
-  vertical-align: middle;
-  background-color: ${themeGet("colors.red60")};
-  border-radius: 50%;
-`;
-
-const StyledInput = styled.input<StyledInputProps>`
+export const StyledInput = styled.input<StyledInputProps>`
   display: block;
   width: 100%;
   padding-right: ${themeGet("space.scale100")};
   padding-left: ${themeGet("space.scale100")};
-  color: ${themeGet("components.input.inputColor")};
+  color: ${themeGet("components.form.inputColor")};
   font-weight: ${themeGet("fontWeights.regular")};
   font-size: ${themeGet("fontSizes.scale80")};
+  font-family: ${themeGet("fontFamilies.text")};
   line-height: ${themeGet("lineHeights.scale200")};
   border-color: ${themeGet("borderColors.medium")};
   border-style: solid;
@@ -67,7 +30,7 @@ const StyledInput = styled.input<StyledInputProps>`
   }
 
   :disabled {
-    color: ${themeGet("components.input.inputDisabledColor")};
+    color: ${themeGet("components.form.inputDisabledColor")};
     background: ${themeGet("colors.gray10")};
     border-color: ${themeGet("colors.gray10")};
     pointer-events: none;
@@ -110,15 +73,6 @@ const StyledInput = styled.input<StyledInputProps>`
     })};
 `;
 
-const StyledInputWrapper = styled.div<MarginProps>`
+export const StyledInputWrapper = styled.div<MarginProps>`
   ${space}
 `;
-
-export {
-  StyledInput,
-  StyledLabel,
-  StyledHelper,
-  StyledError,
-  StyledRequired,
-  StyledInputWrapper,
-};

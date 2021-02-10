@@ -16,7 +16,7 @@ export const StyledLabel = styled.label<LabelProps>`
   display: block;
   margin-bottom: ${themeGet("space.scale7")};
   color: ${themeGet("textColors.primary")};
-  font-weight: ${themeGet("components.input.labelFontWeight")};
+  font-weight: ${themeGet("components.form.labelFontWeight")};
   font-size: ${themeGet("fontSizes.scale80")};
   line-height: ${themeGet("lineHeights.scale160")};
 

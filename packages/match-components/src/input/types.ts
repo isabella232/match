@@ -24,6 +24,11 @@ export interface InputProps
   error?: string;
 }
 
+export interface StyledInputContainerProps {
+  hasError: boolean;
+  disabled: boolean;
+}
+
 export interface StyledInputProps extends Pick<InputProps, "readOnly"> {
   inputSize?: InputSize;
 }

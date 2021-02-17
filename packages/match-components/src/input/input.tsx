@@ -7,7 +7,11 @@ import {
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
-import { StyledInput, StyledInputWrapper } from "./styles";
+import {
+  StyledInput,
+  StyledInputContainer,
+  StyledInputWrapper,
+} from "./styles";
 import { InputSize } from "./constants";
 import type { InputProps } from "./types";
 
@@ -54,22 +58,27 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {label}
           </Label>
         )}
-        <StyledInput
-          ref={ref}
-          id={seed(`${name}_input`)}
-          name={name}
-          aria-label={hideLabel ? label : undefined}
-          aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
-          aria-describedby={
-            Boolean(helper || error) ? seed(`${name}_message`) : undefined
-          }
-          aria-invalid={Boolean(error)}
-          aria-disabled={disabled}
-          disabled={disabled}
-          required={required}
-          inputSize={size}
-          {...props}
-        />
+        <StyledInputContainer
+          hasError={Boolean(error)}
+          disabled={Boolean(disabled)}
+        >
+          <StyledInput
+            ref={ref}
+            id={seed(`${name}_input`)}
+            name={name}
+            aria-label={hideLabel ? label : undefined}
+            aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
+            aria-describedby={
+              Boolean(helper || error) ? seed(`${name}_message`) : undefined
+            }
+            aria-invalid={Boolean(error)}
+            aria-disabled={disabled}
+            disabled={disabled}
+            required={required}
+            inputSize={size}
+            {...props}
+          />
+        </StyledInputContainer>
         {Boolean(helper || error) && (
           <HelpText
             id={seed(`${name}_message`)}

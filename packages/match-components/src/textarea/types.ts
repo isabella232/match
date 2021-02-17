@@ -20,9 +20,14 @@ export interface TextareaProps
   helper?: string;
   /** Error message to display when invalid. */
   error?: string;
+  /** Minimum character count. */
   minLength?: number;
+  /** Maximum character count. */
   maxLength?: number;
-  /** Default number of rows to display. */
+  /**
+   * Default number of rows to display (3-10).
+   * @type number
+   */
   rows?: 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   resize?: TextareaResizeOptions;
 }

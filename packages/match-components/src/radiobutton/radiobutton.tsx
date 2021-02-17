@@ -4,16 +4,18 @@ import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
 import { StyledRadio, StyledRadioWrapper, HiddenRadio } from "./styles";
 import { RadioSize } from "./constants";
-import type { RadioButtonProps } from "./types";
+import type { RadioProps } from "./types";
 
-export const Radio = React.forwardRef<HTMLInputElement, RadioButtonProps>(
+export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   (
     {
+      size,
       helper,
       error,
       name,
       disabled,
       checked,
+      readOnly,
       margin,
       marginY,
       marginX,
@@ -48,9 +50,11 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioButtonProps>(
           aria-invalid={Boolean(error)}
           aria-disabled={disabled}
           checked={checked}
-          disabled={disabled}
+          disabled={Boolean(disabled || readOnly)}
+          readOnly={readOnly}
+          {...props}
         />
-        <StyledRadio {...props} />
+        <StyledRadio radioSize={size} {...props} />
       </StyledRadioWrapper>
     );
   }

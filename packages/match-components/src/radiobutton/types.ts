@@ -1,7 +1,7 @@
 import { MarginProps } from "@twilio-labs/match-props";
 import { RadioSize } from "./constants";
 
-export interface RadioButtonProps
+export interface RadioProps
   extends MarginProps,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   name: string;

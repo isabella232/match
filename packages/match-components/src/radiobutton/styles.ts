@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
 import { space } from "styled-system";
+import { RadioProps } from "./types";
 
-export const StyledRadio = styled.span`
+export const StyledRadio = styled.span<RadioProps>`
   position: relative;
   display: inline-block;
   width: 16px;
@@ -17,7 +18,7 @@ export const StyledRadio = styled.span`
 
 export const HiddenRadio = styled.input.withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
-})`
+})<RadioProps>`
   position: absolute;
   opacity: 0;
 
@@ -62,6 +63,13 @@ export const HiddenRadio = styled.input.withConfig({
     + ${StyledRadio} {
       background-color: ${themeGet("colors.gray30")};
       border-color: ${themeGet("colors.gray30")};
+
+      ${({ readOnly }) =>
+        readOnly &&
+        css`
+          background-color: ${themeGet("colors.gray10")};
+          border-color: ${themeGet("borderColors.card")};
+        `}
     }
 
     :checked + ${StyledRadio}::after {
@@ -70,9 +78,15 @@ export const HiddenRadio = styled.input.withConfig({
       height: 6px;
       margin-bottom: 6px;
       margin-left: 3px;
-      background: ${themeGet("colors.gray10")};
+      background-color: ${themeGet("colors.gray10")};
       border-radius: 50%;
       content: "";
+
+      ${({ readOnly }) =>
+        readOnly &&
+        css`
+          background-color: ${themeGet("colors.gray30")};
+        `}
     }
   }
 `;

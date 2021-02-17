@@ -11,7 +11,6 @@ import { TextareaResizeOptions } from "./constants";
 export const StyledTextareaContainer = styled.div<StyledTextareaContainerProps>`
   position: relative;
   overflow: hidden;
-  border: 1px solid blue;
   border-color: ${themeGet("borderColors.medium")};
   border-style: solid;
   border-width: ${themeGet("borderWidths.thin")};

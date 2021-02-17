@@ -1,24 +1,37 @@
 import styled, { css } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
-import { space } from "styled-system";
-import { RadioProps } from "./types";
+import { space, variant } from "styled-system";
+import { RadioSize } from "./constants";
+import { StyledRadioProps } from "./types";
 
-export const StyledRadio = styled.span<RadioProps>`
+export const StyledRadio = styled.span<StyledRadioProps>`
   position: relative;
   display: inline-block;
-  width: 16px;
-  height: 16px;
   background-color: ${themeGet("backgroundColors.light")};
   border-color: ${themeGet("borderColors.medium")};
   border-style: solid;
   border-width: ${themeGet("borderWidths.light")};
   border-radius: 50%;
+
+  ${variant({
+    prop: "radioSize",
+    variants: {
+      [RadioSize.NORMAL]: {
+        width: "16px",
+        height: "16px",
+      },
+      [RadioSize.SMALL]: {
+        width: "14px",
+        height: "14px",
+      },
+    },
+  })};
 `;
 
 export const HiddenRadio = styled.input.withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
-})<RadioProps>`
+})<StyledRadioProps>`
   position: absolute;
   opacity: 0;
 
@@ -28,13 +41,22 @@ export const HiddenRadio = styled.input.withConfig({
 
     &::after {
       display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
       width: 6px;
       height: 6px;
-      margin-bottom: 6px;
-      margin-left: 3px;
+      transform: translate(-50%, -50%);
       background-color: ${themeGet("colors.white")};
       border-radius: 50%;
       content: "";
+
+      ${({ radioSize }) =>
+        Boolean(radioSize == RadioSize.SMALL) &&
+        css`
+          width: 5.25px;
+          height: 5.25px;
+        `}
     }
   }
 
@@ -73,15 +95,6 @@ export const HiddenRadio = styled.input.withConfig({
     }
 
     :checked + ${StyledRadio}::after {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      margin-bottom: 6px;
-      margin-left: 3px;
-      background-color: ${themeGet("colors.gray10")};
-      border-radius: 50%;
-      content: "";
-
       ${({ readOnly }) =>
         readOnly &&
         css`

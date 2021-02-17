@@ -52,6 +52,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
           checked={checked}
           disabled={Boolean(disabled || readOnly)}
           readOnly={readOnly}
+          radioSize={size}
           {...props}
         />
         <StyledRadio radioSize={size} {...props} />

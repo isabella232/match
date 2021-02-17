@@ -19,3 +19,7 @@ export interface RadioProps
   /** Error message to display when invalid. */
   error?: string;
 }
+
+export interface StyledRadioProps extends RadioProps {
+  radioSize?: RadioSize;
+}

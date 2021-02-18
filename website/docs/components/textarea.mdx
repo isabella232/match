@@ -1,0 +1,163 @@
+---
+id: textarea
+title: Textarea
+sidebar_label: Textarea
+slug: /components/textarea/
+---
+
+import { Props } from "../../src/components/props";
+import { ThemeSwitcher } from "../../src/components/theme-switcher";
+import { Virtue, Crime, VirtueCrime } from "../../src/components/virtue-crime";
+
+The textarea component allows users to input multiple lines of text.
+
+**Sources:** [Github](https://github.com/twilio-labs/match/tree/main/packages/match-components/src/textarea)
+
+## Usage Guide
+
+### Installation
+
+```shell
+yarn add @twilio-labs/match
+```
+
+### Usage
+
+```jsx
+import { Textarea } from "@twilio-labs/match/components";
+
+const Component = () => (
+  <Textarea name="message" label="Message" />
+);
+```
+
+### Props
+
+<Props of="Textarea" />
+
+---
+
+## Guidelines
+
+### About Textareas
+
+Textareas are interactive form controls that accept multiple lines of text from a user. They accept any combination of letters, number, symbols and line breaks.
+
+### Accessibility
+
+Here are some quick accessibility tips to ensure a positive user experience for all users.
+
+- Always include a descriptive label for each Textarea.
+- Do not use placeholder text as a replacement for labels.
+- Always allow textareas to be resized manually or automatically.
+- Use `helper` to provide information on how to pass the Textarea's validation.
+- Use `error` to provide information on how to correct invalid data.
+
+---
+
+## Composition
+
+All Textareas must include a label. A label may be visually hidden only if the purpose of the Textarea is abundantly apparent. The `hideLabel` prop will remove the label entirely and apply an `aria-label` to the textarea element for screen readers.
+
+Labels should be short and descriptive with any instructional text belonging in `helper`. Keep supplemental helper text concise and relevant to the textarea's validation requirements.
+
+When an Textarea contains invalid data, provide an `error` message with instructional cues on how to make the correction. Any `helper` text provided with the Textarea will be replaced by the `error`. Be sure to repeat any relevant information that would have been lost.
+
+<VirtueCrime>
+  <Virtue>
+    Use a textarea for a longer entry and a text input for short entries.
+  </Virtue>
+  <Crime>Don’t use a textarea for a short text entry.</Crime>
+  <Virtue>
+    Only use placeholder text when clarification is required, try not to overuse it.
+  </Virtue>
+  <Crime>
+    Don’t use placeholder text for every field.
+  </Crime>
+  <Virtue>
+    Use help text to provide additional information to the user that could help prevent errors.
+  </Virtue>
+  <Crime>
+    Don’t use placeholder text to provide error preventing information.
+  </Crime>
+  <Virtue>
+    Make sure every textarea has a label.
+  </Virtue>
+  <Crime>
+    Don’t use placeholder or help text in place of a label.
+  </Crime>
+  <Virtue>
+    Use disabled to show a user that an input can not be interacted with yet.
+  </Virtue>
+  <Crime>
+    Don’t use disabled to show information in an input that cannot be edited.
+  </Crime>
+</VirtueCrime>
+
+---
+
+## Examples
+
+<ThemeSwitcher />
+
+### Textarea with Help Text
+
+Labels and help text are controlled via the Textarea component props in order to ensure consistency and accessibility best practices.
+
+```jsx live
+<Textarea
+  name="message"
+  label="Message"
+  helper="Write a brief message"
+  minLength={100}
+  required
+/>
+```
+
+### Textarea with Error
+
+Providing any error message will mark the field as invalid. Note that `helper` text is replaced by `error` text.
+
+```jsx live
+<Textarea
+  name="message"
+  label="Message"
+  helper="Write a brief message"
+  error="Must be at least 100 characters."
+  minLength={100}
+  required
+/>
+```
+
+### Disabled Textarea
+
+Disabled form fields cannot be interacted with. Use a read-only field for showing static information which cannot be edited.
+
+```jsx live
+<Textarea name="message" label="Message" disabled />
+```
+
+### Read-only Textarea
+
+Read-only textareas can be focused but cannot be edited. Use a read-only Textarea when a user should be able to select and copy the text within. An example of when to use a read-only textarea may be displaying a user's responses after a form has been submitted.
+
+```jsx live
+<Textarea
+  readOnly
+  name="message"
+  label="Message"
+  defaultValue="Gentlemen? In re yours of the 5th inst., yours to hand and beg to rep., brackets, that we have gone over the ground carefully and we seem to believe, i.e., to wit., e.g., in lieu, that despite all our precautionary measures which have been involved, we seem to believe that it is hardly necessary for us to proceed unless we receive an ipso facto that is not negligible at this moment. Hoping this finds you, I beg to remain, as of June 9, cordially yours, Regards."
+/>
+```
+
+## Smart Resize
+
+Smart resize will dynamically adjust the texarea's height as a user types. Height is constrained to a minimum of 3 visible rows and a maximum of 10.
+
+```jsx live
+<Textarea
+  name="message"
+  label="Message"
+  resize="smart"
+/>
+```

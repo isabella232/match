@@ -20,6 +20,7 @@ module.exports = {
       "components/paragraph",
       "components/separator",
       "components/snippet",
+      "components/textarea",
       "components/truncate",
       "components/visually-hidden",
     ],

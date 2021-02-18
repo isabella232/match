@@ -5,6 +5,11 @@ import { space, variant } from "styled-system";
 import { RadioSize } from "./constants";
 import { StyledRadioProps, HiddenRadioProps } from "./types";
 
+export const StyledRadioLabel = styled.span`
+  margin-left: ${themeGet("space.scale60")};
+  font-weight: ${themeGet("fontWeights.regular")};
+`;
+
 export const StyledRadio = styled.span<StyledRadioProps>`
   position: relative;
   display: inline-block;
@@ -26,10 +31,18 @@ export const StyledRadio = styled.span<StyledRadioProps>`
       [RadioSize.NORMAL]: {
         width: "16px",
         height: "16px",
+        [StyledRadioLabel]: {
+          fontSize: "scale100",
+          lineHeight: "scale220",
+        },
       },
       [RadioSize.SMALL]: {
         width: "14px",
         height: "14px",
+        [StyledRadioLabel]: {
+          fontSize: "scale80",
+          lineHeight: "scale180",
+        },
       },
     },
   })};
@@ -112,4 +125,5 @@ export const HiddenRadio = styled.input.withConfig({
 
 export const StyledRadioWrapper = styled.label<MarginProps>`
   ${space}
+  vertical-align:middle;
 `;

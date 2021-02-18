@@ -2,7 +2,12 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
-import { StyledRadio, StyledRadioWrapper, HiddenRadio } from "./styles";
+import {
+  StyledRadio,
+  StyledRadioWrapper,
+  HiddenRadio,
+  StyledRadioLabel,
+} from "./styles";
 import { RadioSize } from "./constants";
 import type { RadioProps } from "./types";
 
@@ -13,6 +18,8 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
       additional,
       error,
       name,
+      children,
+      value,
       disabled,
       checked,
       readOnly,
@@ -43,6 +50,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
           ref={ref}
           id={seed(`${name}_input`)}
           name={name}
+          value={value}
           aria-labelledby={seed(`${name}_label`)}
           aria-describedby={
             Boolean(additional) ? seed(`${name}_message`) : undefined
@@ -56,6 +64,11 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
           {...props}
         />
         <StyledRadio radioSize={size} hasError={Boolean(error)} />
+        <StyledRadioLabel>
+          {React.Children.map(children, (child) =>
+            typeof child === "string" ? child.trim() : child
+          )}
+        </StyledRadioLabel>
       </StyledRadioWrapper>
     );
   }
@@ -66,7 +79,7 @@ Radio.displayName = "Radio";
 Radio.propTypes = {
   ...marginPropTypes,
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   value: PropTypes.string.isRequired,
   size: PropTypes.oneOf(Object.values(RadioSize)),
   disabled: PropTypes.bool,

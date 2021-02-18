@@ -4,8 +4,8 @@ import { RadioSize } from "./constants";
 export interface RadioProps
   extends MarginProps,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
+  children: React.ReactNode;
   name: string;
-  label: string;
   value: string;
   size?: RadioSize;
   /** Disables the radio button. */

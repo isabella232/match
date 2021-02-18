@@ -3,7 +3,7 @@ import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
 import { space, variant } from "styled-system";
 import { RadioSize } from "./constants";
-import { StyledRadioProps } from "./types";
+import { StyledRadioProps, HiddenRadioProps } from "./types";
 
 export const StyledRadio = styled.span<StyledRadioProps>`
   position: relative;
@@ -13,6 +13,12 @@ export const StyledRadio = styled.span<StyledRadioProps>`
   border-style: solid;
   border-width: ${themeGet("borderWidths.light")};
   border-radius: 50%;
+
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      border-color: ${themeGet("borderColors.error")};
+    `}
 
   ${variant({
     prop: "radioSize",
@@ -31,7 +37,7 @@ export const StyledRadio = styled.span<StyledRadioProps>`
 
 export const HiddenRadio = styled.input.withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
-})<StyledRadioProps>`
+})<HiddenRadioProps>`
   position: absolute;
   opacity: 0;
 

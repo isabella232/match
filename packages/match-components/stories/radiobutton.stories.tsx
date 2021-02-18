@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Radio, RadioButtonProps, RadioSize } from "../src";
+import { Radio, RadioProps, RadioSize } from "../src";
 
 export default {
   title: "Components/Radio Button",
@@ -9,9 +9,8 @@ export default {
     name: "example",
     value: "example",
     label: "Label",
-    helper: "Helper text.",
-    error: "",
-    required: false,
+    additional: "Additional",
+    error: false,
     readOnly: false,
     disabled: false,
     size: RadioSize.NORMAL,
@@ -23,13 +22,10 @@ export default {
     label: {
       control: { type: "text" },
     },
-    helper: {
+    additional: {
       control: { type: "text" },
     },
     error: {
-      control: { type: "text" },
-    },
-    required: {
       control: { type: "boolean" },
     },
     readOnly: {
@@ -44,7 +40,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<RadioButtonProps> = (args) => (
+const Template: Story<RadioProps> = (args) => (
   <div>
     <Radio value="1" {...args} />
   </div>

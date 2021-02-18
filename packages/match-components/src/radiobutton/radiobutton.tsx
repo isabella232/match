@@ -10,7 +10,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   (
     {
       size,
-      helper,
+      additional,
       error,
       name,
       disabled,
@@ -45,7 +45,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
           name={name}
           aria-labelledby={seed(`${name}_label`)}
           aria-describedby={
-            Boolean(helper || error) ? seed(`${name}_message`) : undefined
+            Boolean(additional) ? seed(`${name}_message`) : undefined
           }
           aria-invalid={Boolean(error)}
           aria-disabled={disabled}
@@ -55,7 +55,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
           radioSize={size}
           {...props}
         />
-        <StyledRadio radioSize={size} {...props} />
+        <StyledRadio radioSize={size} hasError={Boolean(error)} />
       </StyledRadioWrapper>
     );
   }
@@ -69,11 +69,10 @@ Radio.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   size: PropTypes.oneOf(Object.values(RadioSize)),
-  required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
-  helper: PropTypes.string,
-  error: PropTypes.string,
+  additional: PropTypes.string,
+  error: PropTypes.bool,
   checked: PropTypes.bool,
 };
 

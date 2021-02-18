@@ -8,18 +8,21 @@ export interface RadioProps
   label: string;
   value: string;
   size?: RadioSize;
-  /** Sets the input as required. */
-  required?: boolean;
-  /** Disables the input. */
+  /** Disables the radio button. */
   disabled?: boolean;
-  /** Sets the input as readonly. */
+  /** Sets the radio button as readonly. */
   readOnly?: boolean;
-  /** Supporting validation instructions.  */
-  helper?: string;
-  /** Error message to display when invalid. */
-  error?: string;
+  /** Supporting information  */
+  additional?: string;
+  /** Marks that the radio button has an error*/
+  error?: boolean;
 }
 
-export interface StyledRadioProps extends RadioProps {
+export interface HiddenRadioProps extends RadioProps {
+  radioSize?: RadioSize;
+}
+
+export interface StyledRadioProps {
+  hasError: boolean;
   radioSize?: RadioSize;
 }

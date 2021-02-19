@@ -65,7 +65,13 @@ export const Group: Story<RadioGroupProps> = ({
   groupLabel,
   ...props
 }: RadioGroupProps) => (
-  <RadioGroup name="group" value="apples" groupLabel={groupLabel} {...props}>
+  <RadioGroup
+    name="group"
+    value="apples"
+    groupLabel={groupLabel}
+    vertical
+    {...props}
+  >
     <Radio name="group" value="apples" label="apples" />
     <Radio name="group" value="bananas" label="bananas" />
     <Radio name="group" value="oranges" label="oranges" />

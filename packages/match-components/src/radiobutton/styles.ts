@@ -7,12 +7,22 @@ import {
   StyledRadioProps,
   StyledRadioWrapperProps,
   HiddenRadioProps,
+  RadioGroupProps,
 } from "./types";
 
-export const StyledRadioGroup = styled.div`
+export const StyledRadioGroup = styled.div<RadioGroupProps>`
   display: grid;
-  grid-column-gap: ${themeGet("space.scale260")};
   row-gap: ${themeGet("space.scale20")};
+  ${({ vertical }) =>
+    vertical &&
+    css`
+      grid-column-gap: ${themeGet("space.scale260")};
+      grid-template-columns: 1fr;
+
+      @media ${themeGet("mediaQueries.medium")} {
+        grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+      }
+    `}
 `;
 
 export const StyledRadioGroupWrapper = styled.div<MarginProps>`
@@ -22,6 +32,7 @@ export const StyledRadioGroupWrapper = styled.div<MarginProps>`
 export const StyledRadioLabel = styled.span`
   margin-left: ${themeGet("space.scale60")};
   font-weight: ${themeGet("components.form.radioWeight")};
+  vertical-align: middle;
 `;
 
 export const StyledRadioAdditional = styled.p`
@@ -32,6 +43,7 @@ export const StyledRadioAdditional = styled.p`
 export const StyledRadio = styled.span<StyledRadioProps>`
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   background-color: ${themeGet("backgroundColors.light")};
   border-color: ${themeGet("borderColors.medium")};
   border-style: solid;

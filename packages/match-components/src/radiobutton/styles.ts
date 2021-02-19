@@ -7,7 +7,13 @@ import { StyledRadioProps, HiddenRadioProps } from "./types";
 
 export const StyledRadioLabel = styled.span`
   margin-left: ${themeGet("space.scale60")};
-  font-weight: ${themeGet("fontWeights.regular")};
+  font-weight: ${themeGet("components.form.radioWeight")};
+`;
+
+export const StyledRadioAdditional = styled.p`
+  margin-top: 0px;
+  margin-left: 28px;
+  color: ${themeGet("components.form.radioAdditionalColor")};
 `;
 
 export const StyledRadio = styled.span<StyledRadioProps>`
@@ -35,6 +41,10 @@ export const StyledRadio = styled.span<StyledRadioProps>`
           fontSize: "scale100",
           lineHeight: "scale220",
         },
+        [StyledRadioAdditional]: {
+          fontSize: "scale80",
+          lineHeight: "scale140",
+        },
       },
       [RadioSize.SMALL]: {
         width: "14px",
@@ -42,6 +52,10 @@ export const StyledRadio = styled.span<StyledRadioProps>`
         [StyledRadioLabel]: {
           fontSize: "scale80",
           lineHeight: "scale180",
+        },
+        [StyledRadioAdditional]: {
+          fontSize: "scale60",
+          lineHeight: "scale125",
         },
       },
     },
@@ -85,8 +99,13 @@ export const HiddenRadio = styled.input.withConfig({
     }
 
     :checked + ${StyledRadio} {
-      background-color: ${themeGet("colors.blue70")};
-      border-color: ${themeGet("colors.blue70")};
+      //prevent hover from working when disabled
+      ${({ disabled }) =>
+        !disabled &&
+        css`
+          background-color: ${themeGet("colors.blue70")};
+          border-color: ${themeGet("colors.blue70")};
+        `}
     }
   }
 
@@ -123,7 +142,7 @@ export const HiddenRadio = styled.input.withConfig({
   }
 `;
 
-export const StyledRadioWrapper = styled.label<MarginProps>`
+export const StyledRadioWrapper = styled.div<MarginProps>`
   ${space}
   vertical-align:middle;
 `;

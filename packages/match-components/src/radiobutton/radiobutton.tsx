@@ -7,6 +7,7 @@ import {
   StyledRadioWrapper,
   HiddenRadio,
   StyledRadioLabel,
+  StyledRadioAdditional,
 } from "./styles";
 import { RadioSize } from "./constants";
 import type { RadioProps } from "./types";
@@ -18,7 +19,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
       additional,
       error,
       name,
-      children,
+      label,
       value,
       disabled,
       checked,
@@ -45,30 +46,32 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
         marginBottom={marginBottom}
         marginTop={marginTop}
       >
-        <HiddenRadio
-          type="radio"
-          ref={ref}
-          id={seed(`${name}_input`)}
-          name={name}
-          value={value}
-          aria-labelledby={seed(`${name}_label`)}
-          aria-describedby={
-            Boolean(additional) ? seed(`${name}_message`) : undefined
-          }
-          aria-invalid={Boolean(error)}
-          aria-disabled={disabled}
-          checked={checked}
-          disabled={Boolean(disabled || readOnly)}
-          readOnly={readOnly}
-          radioSize={size}
-          {...props}
-        />
-        <StyledRadio radioSize={size} hasError={Boolean(error)} />
-        <StyledRadioLabel>
-          {React.Children.map(children, (child) =>
-            typeof child === "string" ? child.trim() : child
-          )}
-        </StyledRadioLabel>
+        <label>
+          <HiddenRadio
+            type="radio"
+            ref={ref}
+            id={seed(`${name}_input`)}
+            name={name}
+            value={value}
+            aria-labelledby={seed(`${name}_label`)}
+            aria-describedby={
+              Boolean(additional) ? seed(`${name}_message`) : undefined
+            }
+            label={label}
+            aria-invalid={Boolean(error)}
+            aria-disabled={disabled}
+            checked={checked}
+            disabled={Boolean(disabled || readOnly)}
+            readOnly={readOnly}
+            radioSize={size}
+            {...props}
+          />
+          <StyledRadio radioSize={size} hasError={Boolean(error)} />
+          <StyledRadioLabel>{label}</StyledRadioLabel>
+        </label>
+        {Boolean(additional) && (
+          <StyledRadioAdditional>{additional}</StyledRadioAdditional>
+        )}
       </StyledRadioWrapper>
     );
   }
@@ -79,7 +82,7 @@ Radio.displayName = "Radio";
 Radio.propTypes = {
   ...marginPropTypes,
   name: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   size: PropTypes.oneOf(Object.values(RadioSize)),
   disabled: PropTypes.bool,

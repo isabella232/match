@@ -8,6 +8,7 @@ export default {
   args: {
     name: "example",
     value: "example",
+    label: "Label",
     additional: "Additional",
     error: false,
     readOnly: false,
@@ -18,8 +19,8 @@ export default {
     name: {
       table: { disable: true },
     },
-    value: {
-      table: { disable: true },
+    label: {
+      control: { type: "text" },
     },
     additional: {
       control: { type: "text" },
@@ -41,9 +42,7 @@ export default {
 
 const Template: Story<RadioProps> = (args) => (
   <div>
-    <Radio value="1" {...args}>
-      Label
-    </Radio>
+    <Radio value="1" {...args} />
   </div>
 );
 

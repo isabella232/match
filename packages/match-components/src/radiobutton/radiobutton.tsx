@@ -8,9 +8,59 @@ import {
   HiddenRadio,
   StyledRadioLabel,
   StyledRadioAdditional,
+  StyledRadioGroupWrapper,
+  StyledRadioGroup,
 } from "./styles";
 import { RadioSize } from "./constants";
-import type { RadioProps } from "./types";
+import type { RadioProps, RadioGroupProps } from "./types";
+
+export const RadioGroup = React.forwardRef<
+  HTMLFieldSetElement,
+  RadioGroupProps
+>(
+  ({
+    children,
+    margin,
+    marginY,
+    marginX,
+    marginRight,
+    marginLeft,
+    marginBottom,
+    marginTop,
+    ...props
+  }) => {
+    return (
+      <StyledRadioGroupWrapper
+        margin={margin}
+        marginY={marginY}
+        marginX={marginX}
+        marginRight={marginRight}
+        marginLeft={marginLeft}
+        marginBottom={marginBottom}
+        marginTop={marginTop}
+      >
+        <StyledRadioGroup {...props}>{children}</StyledRadioGroup>
+      </StyledRadioGroupWrapper>
+    );
+  }
+);
+
+RadioGroup.displayName = "RadioGroup";
+
+RadioGroup.propTypes = {
+  ...marginPropTypes,
+  children: PropTypes.node.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  groupLabel: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(Object.values(RadioSize)),
+  required: PropTypes.bool,
+  disabled: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  error: PropTypes.string,
+  helper: PropTypes.string,
+  vertical: PropTypes.bool,
+};
 
 export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   (

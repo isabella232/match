@@ -5,6 +5,16 @@ import { space, variant } from "styled-system";
 import { RadioSize } from "./constants";
 import { StyledRadioProps, HiddenRadioProps } from "./types";
 
+export const StyledRadioGroup = styled.div`
+  display: grid;
+  grid-column-gap: ${themeGet("space.scale260")};
+  row-gap: ${themeGet("space.scale20")};
+`;
+
+export const StyledRadioGroupWrapper = styled.div<MarginProps>`
+  ${space}
+`;
+
 export const StyledRadioLabel = styled.span`
   margin-left: ${themeGet("space.scale60")};
   font-weight: ${themeGet("components.form.radioWeight")};
@@ -144,5 +154,4 @@ export const HiddenRadio = styled.input.withConfig({
 
 export const StyledRadioWrapper = styled.div<MarginProps>`
   ${space}
-  vertical-align:middle;
 `;

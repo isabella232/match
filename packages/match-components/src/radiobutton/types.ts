@@ -51,5 +51,8 @@ export interface HiddenRadioProps extends RadioProps {
 
 export interface StyledRadioProps {
   hasError: boolean;
+}
+
+export interface StyledRadioWrapperProps {
   radioSize?: RadioSize;
 }

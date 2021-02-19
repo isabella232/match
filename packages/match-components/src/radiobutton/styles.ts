@@ -3,7 +3,11 @@ import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
 import { space, variant } from "styled-system";
 import { RadioSize } from "./constants";
-import { StyledRadioProps, HiddenRadioProps } from "./types";
+import {
+  StyledRadioProps,
+  StyledRadioWrapperProps,
+  HiddenRadioProps,
+} from "./types";
 
 export const StyledRadioGroup = styled.div`
   display: grid;
@@ -22,7 +26,6 @@ export const StyledRadioLabel = styled.span`
 
 export const StyledRadioAdditional = styled.p`
   margin-top: 0px;
-  margin-left: 28px;
   color: ${themeGet("components.form.radioAdditionalColor")};
 `;
 
@@ -40,36 +43,6 @@ export const StyledRadio = styled.span<StyledRadioProps>`
     css`
       border-color: ${themeGet("borderColors.error")};
     `}
-
-  ${variant({
-    prop: "radioSize",
-    variants: {
-      [RadioSize.NORMAL]: {
-        width: "16px",
-        height: "16px",
-        [StyledRadioLabel]: {
-          fontSize: "scale100",
-          lineHeight: "scale220",
-        },
-        [StyledRadioAdditional]: {
-          fontSize: "scale80",
-          lineHeight: "scale140",
-        },
-      },
-      [RadioSize.SMALL]: {
-        width: "14px",
-        height: "14px",
-        [StyledRadioLabel]: {
-          fontSize: "scale80",
-          lineHeight: "scale180",
-        },
-        [StyledRadioAdditional]: {
-          fontSize: "scale60",
-          lineHeight: "scale125",
-        },
-      },
-    },
-  })};
 `;
 
 export const HiddenRadio = styled.input.withConfig({
@@ -152,6 +125,46 @@ export const HiddenRadio = styled.input.withConfig({
   }
 `;
 
-export const StyledRadioWrapper = styled.div<MarginProps>`
+interface CombinedRadioWrapperProps
+  extends StyledRadioWrapperProps,
+    MarginProps {}
+
+export const StyledRadioWrapper = styled.div<CombinedRadioWrapperProps>`
   ${space}
+
+  ${variant({
+    prop: "radioSize",
+    variants: {
+      [RadioSize.NORMAL]: {
+        [StyledRadio]: {
+          width: "16px",
+          height: "16px",
+        },
+        [StyledRadioLabel]: {
+          fontSize: "scale100",
+          lineHeight: "scale220",
+        },
+        [StyledRadioAdditional]: {
+          fontSize: "scale80",
+          lineHeight: "scale140",
+          pl: "28px",
+        },
+      },
+      [RadioSize.SMALL]: {
+        [StyledRadio]: {
+          width: "14px",
+          height: "14px",
+        },
+        [StyledRadioLabel]: {
+          fontSize: "scale80",
+          lineHeight: "scale180",
+        },
+        [StyledRadioAdditional]: {
+          fontSize: "scale60",
+          lineHeight: "scale125",
+          pl: "26px",
+        },
+      },
+    },
+  })};
 `;

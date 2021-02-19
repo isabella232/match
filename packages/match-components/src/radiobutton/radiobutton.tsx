@@ -95,6 +95,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
         marginLeft={marginLeft}
         marginBottom={marginBottom}
         marginTop={marginTop}
+        radioSize={size}
       >
         <label>
           <HiddenRadio
@@ -116,7 +117,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
             radioSize={size}
             {...props}
           />
-          <StyledRadio radioSize={size} hasError={Boolean(error)} />
+          <StyledRadio hasError={Boolean(error)} />
           <StyledRadioLabel>{label}</StyledRadioLabel>
         </label>
         {Boolean(additional) && (

@@ -2,6 +2,7 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
+import { HelpText, HelpTextVariant } from "@twilio-labs/match-primitives";
 import {
   StyledRadio,
   StyledRadioWrapper,
@@ -20,6 +21,9 @@ export const RadioGroup = React.forwardRef<
 >(
   ({
     children,
+    helper,
+    error,
+    name,
     margin,
     marginY,
     marginX,
@@ -29,6 +33,7 @@ export const RadioGroup = React.forwardRef<
     marginTop,
     ...props
   }) => {
+    const seed = useUIDSeed();
     return (
       <StyledRadioGroupWrapper
         margin={margin}
@@ -39,7 +44,18 @@ export const RadioGroup = React.forwardRef<
         marginBottom={marginBottom}
         marginTop={marginTop}
       >
+        {Boolean(helper) && (
+          <HelpText id={seed(`${name}_message`)}>{helper}</HelpText>
+        )}
         <StyledRadioGroup {...props}>{children}</StyledRadioGroup>
+        {Boolean(error) && (
+          <HelpText
+            id={seed(`${name}_message`)}
+            variant={HelpTextVariant.ERROR}
+          >
+            {error}
+          </HelpText>
+        )}
       </StyledRadioGroupWrapper>
     );
   }

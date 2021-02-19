@@ -65,13 +65,7 @@ export const Group: Story<RadioGroupProps> = ({
   groupLabel,
   ...props
 }: RadioGroupProps) => (
-  <RadioGroup
-    name="group"
-    value="apples"
-    groupLabel={groupLabel}
-    vertical
-    {...props}
-  >
+  <RadioGroup name="group" value="apples" groupLabel={groupLabel} {...props}>
     <Radio name="group" value="apples" label="apples" />
     <Radio name="group" value="bananas" label="bananas" />
     <Radio name="group" value="oranges" label="oranges" />
@@ -81,6 +75,8 @@ Group.args = {
   groupLabel: "Select your favorite fruit:",
   required: false,
   vertical: false,
+  error: "",
+  helper: "",
 };
 Group.argTypes = {
   groupLabel: {

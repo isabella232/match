@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { withTheme } from "@twilio-labs/match-themes";
-import { Formik, Form } from "formik";
+import { Formik } from "formik";
 import { Input } from "../src";
 
 const InputWithTheme = withTheme()(Input);
@@ -21,15 +21,13 @@ describe("Input", () => {
   test("error message", async () => {
     const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <Form>
-          <InputWithTheme
-            data-testid="example"
-            name="example"
-            label="Example"
-            helper="helper"
-            validate={() => "error message"}
-          />
-        </Form>
+        <InputWithTheme
+          data-testid="example"
+          name="example"
+          label="Example"
+          helper="helper"
+          validate={() => "error message"}
+        />
       </Formik>
     );
     await userEvent.type(screen.getByTestId("example"), "foo");

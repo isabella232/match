@@ -22,7 +22,9 @@ export interface InputProps
   helper?: string;
   /** Error message to display when invalid. */
   error?: string;
+  /** Overrides built in validation. */
   validate?: (value: string) => string | undefined;
+  /** Disables built in validation. */
   noValidate?: boolean;
   minLength?: number;
   maxLength?: number;

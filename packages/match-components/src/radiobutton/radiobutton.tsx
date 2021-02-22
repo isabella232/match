@@ -20,86 +20,6 @@ import {
 import { RadioSize } from "./constants";
 import type { RadioProps, RadioGroupProps } from "./types";
 
-export const RadioGroup = React.forwardRef<
-  HTMLFieldSetElement,
-  RadioGroupProps
->(
-  ({
-    children,
-    helper,
-    error,
-    name,
-    required,
-    disabled,
-    groupLabel,
-    size,
-    vertical,
-    margin,
-    marginY,
-    marginX,
-    marginRight,
-    marginLeft,
-    marginBottom,
-    marginTop,
-  }) => {
-    const seed = useUIDSeed();
-    return (
-      <StyledRadioGroupWrapper
-        margin={margin}
-        marginY={marginY}
-        marginX={marginX}
-        marginRight={marginRight}
-        marginLeft={marginLeft}
-        marginBottom={marginBottom}
-        marginTop={marginTop}
-      >
-        <Label
-          id={seed(`${name}_label`)}
-          disabled={Boolean(disabled)}
-          required={Boolean(required)}
-          legend
-          size={
-            Boolean(size == RadioSize.NORMAL)
-              ? LabelSize.NORMAL
-              : LabelSize.SMALL
-          }
-        >
-          {groupLabel}
-        </Label>
-        {Boolean(helper) && (
-          <HelpText id={seed(`${name}_message`)}>{helper}</HelpText>
-        )}
-        <StyledRadioGroup vertical={vertical}>{children}</StyledRadioGroup>
-        {Boolean(error) && (
-          <HelpText
-            id={seed(`${name}_message`)}
-            variant={HelpTextVariant.ERROR}
-          >
-            {error}
-          </HelpText>
-        )}
-      </StyledRadioGroupWrapper>
-    );
-  }
-);
-
-RadioGroup.displayName = "RadioGroup";
-
-RadioGroup.propTypes = {
-  ...marginPropTypes,
-  children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  groupLabel: PropTypes.string.isRequired,
-  size: PropTypes.oneOf(Object.values(RadioSize)),
-  required: PropTypes.bool,
-  disabled: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  error: PropTypes.string,
-  helper: PropTypes.string,
-  vertical: PropTypes.bool,
-};
-
 export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   (
     {
@@ -183,4 +103,94 @@ Radio.propTypes = {
 
 Radio.defaultProps = {
   size: RadioSize.NORMAL,
+};
+
+export const RadioGroup = React.forwardRef<
+  HTMLFieldSetElement,
+  RadioGroupProps
+>(
+  ({
+    children,
+    helper,
+    error,
+    name,
+    required,
+    disabled,
+    groupLabel,
+    size,
+    vertical,
+    readOnly,
+    margin,
+    marginY,
+    marginX,
+    marginRight,
+    marginLeft,
+    marginBottom,
+    marginTop,
+  }) => {
+    const seed = useUIDSeed();
+    return (
+      <StyledRadioGroupWrapper
+        margin={margin}
+        marginY={marginY}
+        marginX={marginX}
+        marginRight={marginRight}
+        marginLeft={marginLeft}
+        marginBottom={marginBottom}
+        marginTop={marginTop}
+      >
+        <Label
+          id={seed(`${name}_label`)}
+          disabled={Boolean(disabled)}
+          required={Boolean(required)}
+          legend
+          size={
+            Boolean(size == RadioSize.NORMAL)
+              ? LabelSize.NORMAL
+              : LabelSize.SMALL
+          }
+        >
+          {groupLabel}
+        </Label>
+        {Boolean(helper) && (
+          <HelpText id={seed(`${name}_message`)}>{helper}</HelpText>
+        )}
+        <StyledRadioGroup vertical={vertical}>
+          {React.Children.map(children, (child) =>
+            React.cloneElement(child, {
+              disabled: disabled,
+              size: size,
+              readOnly: readOnly,
+              error: Boolean(error),
+            })
+          )}
+        </StyledRadioGroup>
+        {Boolean(error) && (
+          <HelpText
+            id={seed(`${name}_message`)}
+            variant={HelpTextVariant.ERROR}
+          >
+            {error}
+          </HelpText>
+        )}
+      </StyledRadioGroupWrapper>
+    );
+  }
+);
+
+RadioGroup.displayName = "RadioGroup";
+
+RadioGroup.propTypes = {
+  ...marginPropTypes,
+  children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  groupLabel: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(Object.values(RadioSize)),
+  required: PropTypes.bool,
+  disabled: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  error: PropTypes.string,
+  helper: PropTypes.string,
+  vertical: PropTypes.bool,
 };

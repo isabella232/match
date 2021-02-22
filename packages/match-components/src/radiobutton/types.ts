@@ -57,6 +57,6 @@ export interface RadioGroupProps
   vertical?: boolean;
 }
 
-export interface StyledRadioGroupProps {
+export interface StyledRadioGroupProps extends MarginProps {
   vertical?: boolean;
 }

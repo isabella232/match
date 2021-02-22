@@ -16,6 +16,7 @@ import {
   StyledRadioAdditional,
   StyledRadioGroupWrapper,
   StyledRadioGroup,
+  StyledRadioLabelWrapper,
 } from "./styles";
 import { RadioSize } from "./constants";
 import type { RadioProps, RadioGroupProps } from "./types";
@@ -55,29 +56,32 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
         marginTop={marginTop}
         radioSize={size}
       >
-        <label>
-          <HiddenRadio
-            type="radio"
-            ref={ref}
-            id={seed(`${name}_input`)}
-            name={name}
-            value={value}
-            aria-labelledby={seed(`${name}_label`)}
-            aria-describedby={
-              Boolean(additional) ? seed(`${name}_message`) : undefined
-            }
-            label={label}
-            aria-invalid={Boolean(error)}
-            aria-disabled={disabled}
-            checked={checked}
-            disabled={Boolean(disabled || readOnly)}
-            readOnly={readOnly}
-            radioSize={size}
-            {...props}
-          />
-          <StyledRadio hasError={Boolean(error)} />
+        <StyledRadioLabelWrapper>
+          <div>
+            <HiddenRadio
+              type="radio"
+              ref={ref}
+              id={seed(`${name}_input`)}
+              name={name}
+              value={value}
+              aria-labelledby={seed(`${name}_label`)}
+              aria-describedby={
+                Boolean(additional) ? seed(`${name}_message`) : undefined
+              }
+              label={label}
+              aria-invalid={Boolean(error)}
+              aria-disabled={disabled}
+              checked={checked}
+              disabled={Boolean(disabled || readOnly)}
+              readOnly={readOnly}
+              radioSize={size}
+              {...props}
+            />
+            <StyledRadio hasError={Boolean(error)} />
+          </div>
+
           <StyledRadioLabel>{label}</StyledRadioLabel>
-        </label>
+        </StyledRadioLabelWrapper>
         {Boolean(additional) && (
           <StyledRadioAdditional>{additional}</StyledRadioAdditional>
         )}

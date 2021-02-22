@@ -10,20 +10,28 @@ import {
   StyledRadioGroupProps,
 } from "./types";
 
+//Wraps around and sets up a grid for all radio buttons in radio group
 export const StyledRadioGroup = styled.div<StyledRadioGroupProps>`
-  margin-top: ${themeGet("space.scale100")};
-
+  margin-top: ${themeGet("space.scale60")};
+  > *:not(:last-child) {
+    margin-bottom: ${themeGet("space.scale20")};
+  }
   ${({ vertical }) =>
     vertical &&
     css`
       display: flex;
-
-      > * {
-        margin-right: ${themeGet("space.scale260")};
+      flex-direction: column;
+      @media ${themeGet("mediaQueries.medium")} {
+        flex-direction: row;
+        margin-bottom: ${themeGet("space.scale0")};
+        > * {
+          margin-right: ${themeGet("space.scale260")};
+        }
       }
     `}
 `;
 
+//Wraps the entire radio group, including group label
 export const StyledRadioGroupWrapper = styled.fieldset<MarginProps>`
   ${space}
   padding: ${themeGet("space.scale0")};
@@ -36,11 +44,17 @@ export const StyledRadioLabel = styled.span`
   vertical-align: middle;
 `;
 
+// Aligns the radio button and the label for that button
+export const StyledRadioLabelWrapper = styled.label`
+  display: flex;
+`;
+
 export const StyledRadioAdditional = styled.p`
   margin-top: 0px;
   color: ${themeGet("components.form.radioAdditionalColor")};
 `;
 
+//Styled input that oes on top of the hidden one
 export const StyledRadio = styled.span<StyledRadioProps>`
   position: relative;
   display: inline-block;
@@ -58,6 +72,7 @@ export const StyledRadio = styled.span<StyledRadioProps>`
     `}
 `;
 
+//The actual input tag, which gets hidden
 export const HiddenRadio = styled.input.withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
 })<HiddenRadioProps>`
@@ -138,11 +153,8 @@ export const HiddenRadio = styled.input.withConfig({
   }
 `;
 
-interface CombinedRadioWrapperProps
-  extends StyledRadioWrapperProps,
-    MarginProps {}
-
-export const StyledRadioWrapper = styled.div<CombinedRadioWrapperProps>`
+//Wraps an entire radio button
+export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
   ${space}
 
   ${variant({
@@ -152,6 +164,7 @@ export const StyledRadioWrapper = styled.div<CombinedRadioWrapperProps>`
         [StyledRadio]: {
           width: "16px",
           height: "16px",
+          marginTop: "6px",
         },
         [StyledRadioLabel]: {
           fontSize: "scale100",
@@ -167,6 +180,7 @@ export const StyledRadioWrapper = styled.div<CombinedRadioWrapperProps>`
         [StyledRadio]: {
           width: "14px",
           height: "14px",
+          marginTop: "2px",
         },
         [StyledRadioLabel]: {
           fontSize: "scale80",

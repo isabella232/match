@@ -255,7 +255,7 @@ const Tokens: React.FC = () => {
           <h2 id="font-sizes">Font Sizes</h2>
           <TokenTable
             tokens={tokens.fontSizes}
-            prefix="fontSize"
+            prefix="fontSizes"
             exampleType="fontSize"
           />
         </div>

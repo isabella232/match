@@ -19,25 +19,25 @@ describe("Textarea", () => {
   });
 
   test("error message", async () => {
-    const { queryByText, getByRole } = render(
+    const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
         <TextareaWithTheme
           data-testid="example"
           name="example"
           label="Example"
           helper="helper"
-          minLength={10}
+          validate={() => "error message"}
         />
       </Formik>
     );
-    await userEvent.type(screen.getByTestId("example"), "hi");
+    await userEvent.type(screen.getByTestId("example"), "foo");
     await userEvent.tab();
     await waitFor(() =>
-      expect(getByRole("alert")).toHaveTextContent(
-        /must be at least 10 characters/i
-      )
+      expect(screen.getByRole("alert")).toHaveTextContent(/error message/i)
     );
-    expect(queryByText(/helper/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/helper/i)).not.toBeInTheDocument();
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 
   test("accessibility violations", async () => {

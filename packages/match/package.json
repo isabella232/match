@@ -37,13 +37,13 @@
     "styled-components": "5.x"
   },
   "devDependencies": {
-    "@babel/core": "7.12.13",
+    "@babel/core": "7.12.17",
     "@emotion/core": "11.0.0",
     "@storybook/react": "6.1.17",
     "@types/babel__core": "7.1.12",
     "@types/prop-types": "15.7.3",
-    "@types/react": "17.0.1",
-    "@types/react-dom": "17.0.0",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.1",
     "@types/react-syntax-highlighter": "13.5.0",
     "@types/styled-components": "5.1.7",
     "@types/styled-system": "5.1.10",
@@ -62,6 +62,7 @@
   "dependencies": {
     "@styled-system/theme-get": "5.1.2",
     "@twilio-labs/match-components": "workspace:packages/match-components",
+    "@twilio-labs/match-hooks": "workspace:packages/match-hooks",
     "@twilio-labs/match-primitives": "workspace:packages/match-primitives",
     "@twilio-labs/match-props": "workspace:packages/match-props",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",

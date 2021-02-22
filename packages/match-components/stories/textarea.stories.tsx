@@ -17,7 +17,6 @@ export default {
   component: Textarea,
   args: {
     ...Textarea.defaultProps,
-    defaultValue,
     name: "example",
     placeholder: "Placeholder text",
     label: "Label",
@@ -28,9 +27,6 @@ export default {
     hideLabel: false,
   },
   argTypes: {
-    defaultValue: {
-      table: { disable: true },
-    },
     name: {
       table: { disable: true },
     },
@@ -68,7 +64,7 @@ export default {
 } as Meta;
 
 const Template: Story<TextareaProps> = (args) => (
-  <Formik validateOnBlur initialValues={{ example: "" }} onSubmit={() => {}}>
+  <Formik initialValues={{ example: defaultValue }} onSubmit={() => {}}>
     <Textarea minLength={20} {...args} />
   </Formik>
 );

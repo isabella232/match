@@ -3,42 +3,43 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { withTheme } from "@twilio-labs/match-themes";
-import { Formik } from "formik";
+import { Formik, Form } from "formik";
 import { Input } from "../src";
 
 const InputWithTheme = withTheme()(Input);
 
 describe("Input", () => {
   test("helper message", () => {
-    const { getByText } = render(
+    render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
         <InputWithTheme name="example" label="Example" helper="helper" />
       </Formik>
     );
-    expect(getByText(/helper/i)).toBeVisible();
+    expect(screen.getByText(/helper/i)).toBeVisible();
   });
 
   test("error message", async () => {
-    const { queryByText, getByRole } = render(
+    const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <InputWithTheme
-          data-testid="example"
-          name="example"
-          label="Example"
-          helper="helper"
-          error="error"
-          minLength={10}
-        />
+        <Form>
+          <InputWithTheme
+            data-testid="example"
+            name="example"
+            label="Example"
+            helper="helper"
+            validate={() => "error message"}
+          />
+        </Form>
       </Formik>
     );
-    await userEvent.type(screen.getByTestId("example"), "hi");
+    await userEvent.type(screen.getByTestId("example"), "foo");
     await userEvent.tab();
     await waitFor(() =>
-      expect(getByRole("alert")).toHaveTextContent(
-        /must be at least 10 characters/i
-      )
+      expect(screen.getByRole("alert")).toHaveTextContent(/error message/i)
     );
-    expect(queryByText(/helper/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/helper/i)).not.toBeInTheDocument();
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 
   test("accessibility violations", async () => {

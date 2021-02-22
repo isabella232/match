@@ -18,6 +18,8 @@ export default {
     readOnly: false,
     disabled: false,
     hideLabel: false,
+    minLength: 0,
+    maxLength: 255,
   },
   argTypes: {
     name: {
@@ -56,11 +58,17 @@ export default {
     hideLabel: {
       control: { type: "boolean" },
     },
+    minLength: {
+      control: { type: "number" },
+    },
+    maxLength: {
+      control: { type: "number" },
+    },
   },
 } as Meta;
 
 const Template: Story<InputProps> = (args) => (
-  <Formik validateOnBlur initialValues={{ example: "" }} onSubmit={() => {}}>
+  <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
     <Input {...args} />
   </Formik>
 );

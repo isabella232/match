@@ -2,6 +2,7 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
+import { useMergedRefs } from "@twilio-labs/match-hooks";
 import {
   Label,
   HelpText,
@@ -15,9 +16,6 @@ import {
 } from "./styles";
 import { InputSize } from "./constants";
 import type { InputProps } from "./types";
-
-/* eslint-disable-next-line unicorn/better-regex */
-const emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
@@ -45,20 +43,34 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
+    const innerRef = React.useRef<HTMLInputElement>(null);
+    const mergedRefs = useMergedRefs<HTMLInputElement>(innerRef, ref);
+
     const validate = (value: string) => {
-      if (noValidate) return;
+      if (noValidate || !innerRef.current) return;
+
       if (validateOverride) return validateOverride(value);
-      if (required && !Boolean(value)) {
+
+      const { validity } = innerRef.current;
+
+      if (validity.valueMissing) {
         return "This field is required";
       }
-      if (minLength && minLength > value.length) {
+
+      if (validity.tooShort) {
         return `Must be at least ${minLength} characters long`;
       }
-      if (maxLength && maxLength < value.length) {
+
+      if (validity.tooLong) {
         return `Must be less than ${maxLength} characters long`;
       }
-      if (type === "email" && !emailRegEx.test(value)) {
+
+      if (validity.typeMismatch && type === "email") {
         return "Must be a valid email";
+      }
+
+      if (validity.typeMismatch && type === "url") {
+        return "Must be a valid URL";
       }
     };
 
@@ -69,6 +81,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       validate,
       required,
       disabled,
+      minLength,
+      maxLength,
       ...props,
     });
     const hasError = meta.touched && Boolean(meta.error);
@@ -96,8 +110,14 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         <StyledInputContainer hasError={hasError} disabled={Boolean(disabled)}>
           <StyledInput
-            ref={ref}
             id={seed(`${name}_input`)}
+            ref={mergedRefs}
+            type={type}
+            disabled={disabled}
+            required={required}
+            inputSize={size}
+            minLength={minLength}
+            maxLength={maxLength}
             aria-label={hideLabel ? label : undefined}
             aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
             aria-describedby={
@@ -105,9 +125,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             }
             aria-invalid={hasError}
             aria-disabled={disabled}
-            disabled={disabled}
-            required={required}
-            inputSize={size}
             {...field}
             {...props}
           />

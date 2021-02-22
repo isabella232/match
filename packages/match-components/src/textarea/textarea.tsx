@@ -8,6 +8,7 @@ import {
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
+import { useMergedRefs } from "@twilio-labs/match-hooks";
 import {
   StyledTextarea,
   StyledShadowTextarea,
@@ -23,7 +24,6 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       label,
       helper,
       name,
-      defaultValue,
       disabled,
       required,
       hideLabel,
@@ -44,6 +44,8 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     },
     ref
   ) => {
+    const innerRef = React.useRef<HTMLTextAreaElement>(null);
+    const mergedRef = useMergedRefs<HTMLTextAreaElement>(innerRef, ref);
     const [height, setHeight] = React.useState<number>(0);
     const shadowRef = React.useRef<HTMLTextAreaElement>(null);
 
@@ -54,15 +56,21 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     };
 
     const validate = (value: string) => {
-      if (noValidate) return;
+      if (noValidate || !innerRef.current) return;
+
       if (validateOverride) return validateOverride(value);
-      if (required && !Boolean(value)) {
+
+      const { validity } = innerRef.current;
+
+      if (validity.valueMissing) {
         return "This field is required";
       }
-      if (minLength && minLength > value.length) {
+
+      if (validity.tooShort) {
         return `Must be at least ${minLength} characters long`;
       }
-      if (maxLength && maxLength < value.length) {
+
+      if (validity.tooLong) {
         return `Must be less than ${maxLength} characters long`;
       }
     };
@@ -74,6 +82,8 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       validate,
       disabled,
       required,
+      minLength,
+      maxLength,
       ...props,
     });
 
@@ -121,8 +131,14 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           disabled={Boolean(disabled)}
         >
           <StyledTextarea
-            ref={ref}
             id={seed(`${name}_input`)}
+            ref={mergedRef}
+            disabled={disabled}
+            required={required}
+            rows={rows}
+            resize={resize}
+            minLength={minLength}
+            maxLength={maxLength}
             aria-label={hideLabel ? label : undefined}
             aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
             aria-describedby={
@@ -130,10 +146,6 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             }
             aria-invalid={hasError}
             aria-disabled={disabled}
-            disabled={disabled}
-            required={required}
-            rows={rows}
-            resize={resize}
             style={{ height: Boolean(height) ? `${height}px` : undefined }}
             {...field}
             {...props}

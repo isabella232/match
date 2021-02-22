@@ -33,6 +33,7 @@ export const RadioGroup = React.forwardRef<
     disabled,
     groupLabel,
     size,
+    vertical,
     margin,
     marginY,
     marginX,
@@ -40,7 +41,6 @@ export const RadioGroup = React.forwardRef<
     marginLeft,
     marginBottom,
     marginTop,
-    ...props
   }) => {
     const seed = useUIDSeed();
     return (
@@ -69,7 +69,7 @@ export const RadioGroup = React.forwardRef<
         {Boolean(helper) && (
           <HelpText id={seed(`${name}_message`)}>{helper}</HelpText>
         )}
-        <StyledRadioGroup {...props}>{children}</StyledRadioGroup>
+        <StyledRadioGroup vertical={vertical}>{children}</StyledRadioGroup>
         {Boolean(error) && (
           <HelpText
             id={seed(`${name}_message`)}
@@ -87,7 +87,7 @@ RadioGroup.displayName = "RadioGroup";
 
 RadioGroup.propTypes = {
   ...marginPropTypes,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   groupLabel: PropTypes.string.isRequired,

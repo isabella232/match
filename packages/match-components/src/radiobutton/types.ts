@@ -1,30 +1,6 @@
 import { MarginProps } from "@twilio-labs/match-props";
 import { RadioSize } from "./constants";
 
-export interface RadioGroupProps
-  extends MarginProps,
-    Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
-  children: React.ReactNode;
-  name: string;
-  value: string;
-  /** Sets the label for the group*/
-  groupLabel: string;
-  /** Sets the size of the radio group */
-  size?: RadioSize;
-  /** Sets the group to be required*/
-  required?: boolean;
-  /** Sets the group to disables*/
-  disabled?: boolean;
-  /** Sets the error message for a group*/
-  error?: string;
-  /** Sets the radio button as readonly. */
-  readOnly?: boolean;
-  /** Sets the group to disables*/
-  helper?: string;
-  /** Sets the alignment to vertical */
-  vertical?: boolean;
-}
-
 export interface RadioProps
   extends MarginProps,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
@@ -55,4 +31,32 @@ export interface StyledRadioProps {
 
 export interface StyledRadioWrapperProps {
   radioSize?: RadioSize;
+}
+
+export interface RadioGroupProps
+  extends MarginProps,
+    Omit<React.FieldsetHTMLAttributes<HTMLFieldSetElement>, "size"> {
+  children: Array<React.ReactElement<RadioProps>>;
+  name: string;
+  value: string;
+  /** Sets the label for the group*/
+  groupLabel: string;
+  /** Sets the size of the radio group */
+  size?: RadioSize;
+  /** Sets the group to be required*/
+  required?: boolean;
+  /** Sets the group to disables*/
+  disabled?: boolean;
+  /** Sets the error message for a group*/
+  error?: string;
+  /** Sets the radio button as readonly. */
+  readOnly?: boolean;
+  /** Sets the group to disables*/
+  helper?: string;
+  /** Sets the alignment to vertical */
+  vertical?: boolean;
+}
+
+export interface StyledRadioGroupProps {
+  vertical?: boolean;
 }

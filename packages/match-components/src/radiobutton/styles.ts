@@ -7,13 +7,15 @@ import {
   StyledRadioProps,
   StyledRadioWrapperProps,
   HiddenRadioProps,
-  RadioGroupProps,
+  StyledRadioGroupProps,
 } from "./types";
 
-export const StyledRadioGroup = styled.fieldset<RadioGroupProps>`
+export const StyledRadioGroup = styled.fieldset<StyledRadioGroupProps>`
   display: grid;
   row-gap: ${themeGet("space.scale20")};
-  padding: 0px;
+  margin-top: ${themeGet("space.scale100")};
+  margin-right: ${themeGet("space.scale0")};
+  padding: ${themeGet("space.scale0")};
   border-width: 0px;
 
   ${({ vertical }) =>

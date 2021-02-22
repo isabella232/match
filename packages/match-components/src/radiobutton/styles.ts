@@ -10,28 +10,24 @@ import {
   StyledRadioGroupProps,
 } from "./types";
 
-export const StyledRadioGroup = styled.fieldset<StyledRadioGroupProps>`
-  display: grid;
-  row-gap: ${themeGet("space.scale20")};
+export const StyledRadioGroup = styled.div<StyledRadioGroupProps>`
   margin-top: ${themeGet("space.scale100")};
-  margin-right: ${themeGet("space.scale0")};
-  padding: ${themeGet("space.scale0")};
-  border-width: 0px;
 
   ${({ vertical }) =>
     vertical &&
     css`
-      grid-column-gap: ${themeGet("space.scale260")};
-      grid-template-columns: 1fr;
+      display: flex;
 
-      @media ${themeGet("mediaQueries.medium")} {
-        grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+      > * {
+        margin-right: ${themeGet("space.scale260")};
       }
     `}
 `;
 
-export const StyledRadioGroupWrapper = styled.div<MarginProps>`
+export const StyledRadioGroupWrapper = styled.fieldset<MarginProps>`
   ${space}
+  padding: ${themeGet("space.scale0")};
+  border-width: 0px;
 `;
 
 export const StyledRadioLabel = styled.span`

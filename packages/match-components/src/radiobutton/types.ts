@@ -35,7 +35,7 @@ export interface StyledRadioWrapperProps {
 
 export interface RadioGroupProps
   extends MarginProps,
-    Omit<React.FieldsetHTMLAttributes<HTMLFieldSetElement>, "size"> {
+    Omit<React.HTMLAttributes<HTMLElement>, "size"> {
   children: Array<React.ReactElement<RadioProps>>;
   name: string;
   value: string;

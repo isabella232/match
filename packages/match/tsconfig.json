@@ -7,5 +7,5 @@
     "module": "CommonJS"
   },
   "include": ["src/**/*"],
-  "exclude": ["components", "themes", "tokens"]
+  "exclude": ["components", "themes", "tokens", "icons", "logos"]
 }

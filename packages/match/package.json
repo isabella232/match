@@ -8,7 +8,9 @@
   "files": [
     "components",
     "themes",
-    "tokens"
+    "tokens",
+    "icons",
+    "logos"
   ],
   "repository": {
     "type": "git",
@@ -20,14 +22,12 @@
   },
   "scripts": {
     "build": "yarn clean && yarn compile",
-    "clean": "rm -rf components themes tokens",
+    "clean": "rm -rf components themes tokens icons logos",
     "compile": "tsc",
     "type-check": "tsc --noEmit --composite false",
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-icons": "^1.0.0-alpha.2",
-    "@twilio-labs/match-logos": "^1.0.0-alpha.2",
     "formik": "2.x",
     "prop-types": "15.x",
     "react": "17.x",
@@ -63,6 +63,12 @@
     "@styled-system/theme-get": "5.1.2",
     "@twilio-labs/match-components": "workspace:packages/match-components",
     "@twilio-labs/match-hooks": "workspace:packages/match-hooks",
+    "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product",
+    "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid",
+    "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio",
+    "@twilio-labs/match-logos-brand": "workspace:packages/match-logos/brand",
+    "@twilio-labs/match-logos-color": "workspace:packages/match-logos/color",
+    "@twilio-labs/match-logos-mono": "workspace:packages/match-logos/mono",
     "@twilio-labs/match-primitives": "workspace:packages/match-primitives",
     "@twilio-labs/match-props": "workspace:packages/match-props",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
@@ -73,12 +79,6 @@
     "styled-system": "5.1.5"
   },
   "peerDependenciesMeta": {
-    "@twilio-labs/match-icons": {
-      "optional": true
-    },
-    "@twilio-labs/match-logos": {
-      "optional": true
-    },
     "formik": {
       "optional": true
     }

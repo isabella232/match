@@ -14,7 +14,7 @@ const variants = {
     box-shadow: ${({ theme }) => theme.shadowInverse};
   `,
   [CardVariant.BORDER]: css`
-    border-color: ${({ theme }) => theme.borderCard};
+    border-color: ${({ theme }) => theme.borderColorCard};
     border-style: solid;
     border-width: ${({ theme }) => theme.borderWidthThin};
   `,

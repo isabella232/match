@@ -10,9 +10,12 @@ import {
   RadioGroupProps,
 } from "./types";
 
-export const StyledRadioGroup = styled.div<RadioGroupProps>`
+export const StyledRadioGroup = styled.fieldset<RadioGroupProps>`
   display: grid;
   row-gap: ${themeGet("space.scale20")};
+  padding: 0px;
+  border-width: 0px;
+
   ${({ vertical }) =>
     vertical &&
     css`

@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
-import type { LabelProps } from "./types";
+import type { StyledLabelProps } from "./types";
+import { LabelSize } from "./constants";
+import { variant } from "styled-system";
 
 export const StyledRequired = styled.span`
   display: inline-block;
@@ -12,13 +14,25 @@ export const StyledRequired = styled.span`
   border-radius: 50%;
 `;
 
-export const StyledLabel = styled.label<LabelProps>`
+export const StyledLabel = styled.label<StyledLabelProps>`
   display: block;
   margin-bottom: ${themeGet("space.scale7")};
   color: ${themeGet("textColors.primary")};
   font-weight: ${themeGet("components.form.labelFontWeight")};
-  font-size: ${themeGet("fontSizes.scale80")};
-  line-height: ${themeGet("lineHeights.scale160")};
+
+  ${variant({
+    prop: "labelSize",
+    variants: {
+      [LabelSize.NORMAL]: {
+        fontSize: "scale100",
+        lineHeight: "scale180",
+      },
+      [LabelSize.SMALL]: {
+        fontSize: "scale80",
+        lineHeight: "scale160",
+      },
+    },
+  })};
 
   ${({ disabled }) =>
     disabled &&

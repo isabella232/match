@@ -114,13 +114,13 @@ export const RadioGroup = React.forwardRef<
   RadioGroupProps
 >(
   ({
-    children,
     helper,
     error,
     name,
     required,
     disabled,
     groupLabel,
+    children,
     size,
     vertical,
     readOnly,
@@ -142,12 +142,13 @@ export const RadioGroup = React.forwardRef<
         marginLeft={marginLeft}
         marginBottom={marginBottom}
         marginTop={marginTop}
+        name={name}
       >
         <Label
           id={seed(`${name}_label`)}
           disabled={Boolean(disabled)}
           required={Boolean(required)}
-          legend
+          as="legend"
           size={
             Boolean(size == RadioSize.NORMAL)
               ? LabelSize.NORMAL

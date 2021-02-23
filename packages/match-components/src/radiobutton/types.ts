@@ -29,7 +29,7 @@ export interface StyledRadioProps {
   hasError: boolean;
 }
 
-export interface StyledRadioWrapperProps {
+export interface StyledRadioWrapperProps extends MarginProps {
   radioSize?: RadioSize;
 }
 
@@ -57,6 +57,6 @@ export interface RadioGroupProps
   vertical?: boolean;
 }
 
-export interface StyledRadioGroupProps extends MarginProps {
+export interface StyledRadioGroupProps {
   vertical?: boolean;
 }

@@ -9,6 +9,8 @@ export const StyledRequired = styled.span`
   width: 4px;
   height: 4px;
   margin-right: ${themeGet("space.scale7")};
+  /* make dot look more centered with margin bottom*/
+  margin-bottom: 3px;
   vertical-align: middle;
   background-color: ${themeGet("colors.red60")};
   border-radius: 50%;

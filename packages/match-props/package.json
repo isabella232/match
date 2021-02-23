@@ -36,7 +36,7 @@
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/prop-types": "15.7.3",
     "@types/styled-system": "^5.1.10",
-    "core-js": "3.8.3",
+    "core-js": "3.9.0",
     "prop-types": "15.7.2",
     "rollup": "2.38.5",
     "rollup-config-match": "workspace:configs/rollup",

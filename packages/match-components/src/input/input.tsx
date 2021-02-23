@@ -2,11 +2,13 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
+import { useMergedRefs } from "@twilio-labs/match-hooks";
 import {
   Label,
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
+import { useField } from "formik";
 import {
   StyledInput,
   StyledInputContainer,
@@ -18,14 +20,18 @@ import type { InputProps } from "./types";
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
+      name,
+      type,
       label,
+      hideLabel,
       helper,
       size,
-      error,
-      name,
       disabled,
       required,
-      hideLabel,
+      minLength,
+      maxLength,
+      validate: validateOverride,
+      noValidate,
       margin,
       marginY,
       marginX,
@@ -37,7 +43,51 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
+    const innerRef = React.useRef<HTMLInputElement>(null);
+    const mergedRefs = useMergedRefs<HTMLInputElement>(innerRef, ref);
+
+    const validate = (value: string) => {
+      if (noValidate || !innerRef.current) return;
+
+      if (validateOverride) return validateOverride(value);
+
+      const { validity } = innerRef.current;
+
+      if (validity.valueMissing) {
+        return "This field is required";
+      }
+
+      if (validity.tooShort) {
+        return `Must be at least ${minLength} characters long`;
+      }
+
+      if (validity.tooLong) {
+        return `Must be less than ${maxLength} characters long`;
+      }
+
+      if (validity.typeMismatch && type === "email") {
+        return "Must be a valid email";
+      }
+
+      if (validity.typeMismatch && type === "url") {
+        return "Must be a valid URL";
+      }
+    };
+
     const seed = useUIDSeed();
+    const [field, meta] = useField({
+      name,
+      type,
+      validate,
+      required,
+      disabled,
+      minLength,
+      maxLength,
+      ...props,
+    });
+    const hasError = meta.touched && Boolean(meta.error);
+    const hasHelper = Boolean(helper);
+
     return (
       <StyledInputWrapper
         margin={margin}
@@ -58,33 +108,33 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {label}
           </Label>
         )}
-        <StyledInputContainer
-          hasError={Boolean(error)}
-          disabled={Boolean(disabled)}
-        >
+        <StyledInputContainer hasError={hasError} disabled={Boolean(disabled)}>
           <StyledInput
-            ref={ref}
             id={seed(`${name}_input`)}
-            name={name}
-            aria-label={hideLabel ? label : undefined}
-            aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
-            aria-describedby={
-              Boolean(helper || error) ? seed(`${name}_message`) : undefined
-            }
-            aria-invalid={Boolean(error)}
-            aria-disabled={disabled}
+            ref={mergedRefs}
+            type={type}
             disabled={disabled}
             required={required}
             inputSize={size}
+            minLength={minLength}
+            maxLength={maxLength}
+            aria-label={hideLabel ? label : undefined}
+            aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
+            aria-describedby={
+              hasHelper || hasError ? seed(`${name}_message`) : undefined
+            }
+            aria-invalid={hasError}
+            aria-disabled={disabled}
+            {...field}
             {...props}
           />
         </StyledInputContainer>
-        {Boolean(helper || error) && (
+        {(hasHelper || hasError) && (
           <HelpText
             id={seed(`${name}_message`)}
-            variant={Boolean(error) ? HelpTextVariant.ERROR : undefined}
+            variant={hasError ? HelpTextVariant.ERROR : undefined}
           >
-            {Boolean(error) ? error : helper}
+            {hasError ? meta.error : helper}
           </HelpText>
         )}
       </StyledInputWrapper>
@@ -107,6 +157,10 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   helper: PropTypes.string,
   error: PropTypes.string,
+  minLength: PropTypes.number,
+  maxLength: PropTypes.number,
+  validate: PropTypes.func,
+  noValidate: PropTypes.bool,
 };
 
 Input.defaultProps = {

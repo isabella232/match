@@ -1,73 +1,55 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { withTheme } from "@twilio-labs/match-themes";
+import { Formik } from "formik";
 import { Input } from "../src";
 
 const InputWithTheme = withTheme()(Input);
 
-const InputWithValidation: React.FC = () => {
-  const [error, setError] = React.useState("");
-  const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { validity } = e.currentTarget;
-    if (validity.typeMismatch) {
-      setError("Email format is invalid");
-    } else {
-      setError("");
-    }
-  };
-  return (
-    <InputWithTheme
-      data-testid="email"
-      name="email"
-      type="email"
-      label="Email"
-      error={error}
-      onChange={onInputChange}
-    />
-  );
-};
-
 describe("Input", () => {
-  test("validation api", () => {
-    render(<InputWithValidation />);
-    userEvent.type(screen.getByTestId("email"), "foo");
-    expect(screen.getByRole("alert")).toHaveTextContent(
-      /email format is invalid/i
-    );
-    userEvent.type(screen.getByTestId("email"), "@bar.com");
-    expect(screen.queryByRole("alert")).toBeNull();
-  });
-
   test("helper message", () => {
-    const { getByText } = render(
-      <InputWithTheme name="example" label="Example" helper="helper" />
+    render(
+      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
+        <InputWithTheme name="example" label="Example" helper="helper" />
+      </Formik>
     );
-    expect(getByText(/helper/i)).toBeVisible();
+    expect(screen.getByText(/helper/i)).toBeVisible();
   });
 
-  test("error message", () => {
-    const { queryByText, getByRole } = render(
-      <InputWithTheme
-        name="example"
-        label="Example"
-        helper="helper"
-        error="error"
-      />
+  test("error message", async () => {
+    const { container } = render(
+      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
+        <InputWithTheme
+          data-testid="example"
+          name="example"
+          label="Example"
+          helper="helper"
+          validate={() => "error message"}
+        />
+      </Formik>
     );
-    expect(queryByText(/helper/i)).toBeNull();
-    expect(getByRole("alert")).toHaveTextContent(/error/i);
+    await userEvent.type(screen.getByTestId("example"), "foo");
+    await userEvent.tab();
+    await waitFor(() =>
+      expect(screen.getByRole("alert")).toHaveTextContent(/error message/i)
+    );
+    expect(screen.queryByText(/helper/i)).not.toBeInTheDocument();
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 
   test("accessibility violations", async () => {
     const { container } = render(
-      <InputWithTheme
-        name="name"
-        label="Name"
-        placeholder="Your Name"
-        helper="Enter your name."
-      />
+      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
+        <InputWithTheme
+          name="example"
+          label="Name"
+          placeholder="Your Name"
+          helper="Enter your name."
+        />
+      </Formik>
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -75,13 +57,15 @@ describe("Input", () => {
 
   test("readonly accessibility violations", async () => {
     const { container } = render(
-      <InputWithTheme
-        readOnly
-        name="name"
-        label="Name"
-        placeholder="Your Name"
-        helper="Enter your name."
-      />
+      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
+        <InputWithTheme
+          readOnly
+          name="example"
+          label="Name"
+          placeholder="Your Name"
+          helper="Enter your name."
+        />
+      </Formik>
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -89,27 +73,15 @@ describe("Input", () => {
 
   test("disabled accessibility violations", async () => {
     const { container } = render(
-      <InputWithTheme
-        disabled
-        name="name"
-        label="Name"
-        placeholder="Your Name"
-        helper="Enter your name."
-      />
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-
-  test("error accessibility violations", async () => {
-    const { container } = render(
-      <InputWithTheme
-        error="You must enter your name."
-        name="name"
-        label="Name"
-        placeholder="Your Name"
-        helper="Enter your name."
-      />
+      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
+        <InputWithTheme
+          disabled
+          name="example"
+          label="Name"
+          placeholder="Your Name"
+          helper="Enter your name."
+        />
+      </Formik>
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

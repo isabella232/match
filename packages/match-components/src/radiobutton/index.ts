@@ -1,3 +1,4 @@
 export * from "./constants";
-export * from "./radiobutton";
+export * from "./radio";
+export * from "./radio-group";
 export type { RadioProps, RadioGroupProps } from "./types";

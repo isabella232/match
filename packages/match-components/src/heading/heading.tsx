@@ -2,10 +2,10 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { marginPropTypes } from "@twilio-labs/match-props";
 import type { HeadingProps } from "./types";
-import { HeadingVariant } from "./types";
+import { HeadingVariant } from "./constants";
 import { StyledHeading } from "./styles";
 
-const Heading: React.FC<HeadingProps> = ({ variant, as, ...props }) => (
+export const Heading: React.FC<HeadingProps> = ({ variant, as, ...props }) => (
   <StyledHeading as={as ? as : variant} variant={variant} {...props} />
 );
 
@@ -18,6 +18,3 @@ Heading.propTypes = {
 };
 
 Heading.displayName = "Heading";
-
-export type { HeadingProps };
-export { Heading, HeadingVariant };

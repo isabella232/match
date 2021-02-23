@@ -7,7 +7,7 @@ export * from "./grid";
 export * from "./heading";
 export * from "./input";
 export * from "./paragraph";
-export * from "./radiobutton";
+export * from "./radioGroup";
 export * from "./richtext";
 export * from "./separator";
 export * from "./snippet";

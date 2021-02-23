@@ -173,6 +173,7 @@ export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
         [StyledRadioAdditional]: {
           fontSize: "scale80",
           lineHeight: "scale140",
+          fontWeight: "regular",
           pl: "28px",
         },
       },
@@ -188,7 +189,8 @@ export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
         },
         [StyledRadioAdditional]: {
           fontSize: "scale60",
-          lineHeight: "scale125",
+          lineHeight: "scale180",
+          fontWeight: "medium",
           pl: "26px",
         },
       },

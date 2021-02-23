@@ -30,6 +30,6 @@ Label.propTypes = {
 };
 
 Label.defaultProps = {
-  size: LabelSize.SMALL,
+  size: LabelSize.NORMAL,
   as: "label",
 };

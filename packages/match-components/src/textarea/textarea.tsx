@@ -5,6 +5,7 @@ import { useField } from "formik";
 import { marginPropTypes } from "@twilio-labs/match-props";
 import {
   Label,
+  LabelSize,
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
@@ -122,6 +123,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             htmlFor={seed(`${name}_input`)}
             disabled={Boolean(disabled)}
             required={Boolean(required)}
+            size={LabelSize.SMALL}
           >
             {label}
           </Label>

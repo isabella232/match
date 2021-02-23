@@ -2,7 +2,7 @@ import * as React from "react";
 import { ThemeVariants } from "./constants";
 import { MatchThemeProvider } from "./theme-provider";
 
-const withTheme = (theme: ThemeVariants = ThemeVariants.TWILIO) => <
+export const withTheme = (theme: ThemeVariants = ThemeVariants.TWILIO) => <
   /* eslint-disable-next-line @typescript-eslint/ban-types */
   OriginalProps extends {}
 >(
@@ -17,5 +17,3 @@ const withTheme = (theme: ThemeVariants = ThemeVariants.TWILIO) => <
   };
   return ComponentWithTheme;
 };
-
-export { withTheme };

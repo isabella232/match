@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { TwilioThemeShape, SendGridThemeShape, AhoyThemeShape } from "./types";
 import { GlobalStyles, StyledBase } from "./styles";
 
-const withTokens = (
+export const withTokens = (
   tokens: TwilioThemeShape | SendGridThemeShape | AhoyThemeShape
 ) => (WrappedProvider: typeof ThemeProvider): React.FC => {
   const ThemeProviderWithTokens = ({ ...props }) => {
@@ -16,5 +16,3 @@ const withTokens = (
   };
   return ThemeProviderWithTokens;
 };
-
-export { withTokens };

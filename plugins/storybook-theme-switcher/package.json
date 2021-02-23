@@ -1,6 +1,6 @@
 {
   "name": "plugin-storybook-theme-switcher",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Storybook addon to change the active Match theme",
   "private": true,
   "repository": {
@@ -22,10 +22,10 @@
     "type-check": "tsc --noEmit --composite false"
   },
   "dependencies": {
-    "@storybook/addons": "6.1.17",
-    "@storybook/api": "6.1.17",
-    "@storybook/components": "6.1.17",
-    "@storybook/theming": "6.1.17",
+    "@storybook/addons": "6.1.19",
+    "@storybook/api": "6.1.19",
+    "@storybook/components": "6.1.19",
+    "@storybook/theming": "6.1.19",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "core-js": "3.9.0"
   },
@@ -39,7 +39,7 @@
     "react-is": "17.0.1",
     "tsconfig-match": "workspace:configs/tsconfig",
     "tslib": "2.1.0",
-    "typescript": "4.1.3"
+    "typescript": "4.1.5"
   },
   "peerDependencies": {
     "react": "*",

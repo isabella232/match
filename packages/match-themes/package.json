@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-themes",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Twilio Match Design System Themes",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -28,7 +28,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-tokens": "^1.0.0-alpha.2",
+    "@twilio-labs/match-tokens": "^1.0.0-alpha.3",
     "prop-types": "15.x",
     "react": "17.x",
     "react-dom": "17.x",
@@ -48,11 +48,11 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-is": "17.0.1",
-    "rollup": "2.38.5",
+    "rollup": "2.39.1",
     "rollup-config-match": "workspace:configs/rollup",
     "styled-components": "5.2.1",
     "tsconfig-match": "workspace:configs/tsconfig",
     "tslib": "2.1.0",
-    "typescript": "4.1.3"
+    "typescript": "4.1.5"
   }
 }

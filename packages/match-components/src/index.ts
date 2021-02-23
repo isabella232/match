@@ -8,7 +8,7 @@ export * from "./heading";
 export * from "./input";
 export * from "./paragraph";
 export * from "./radioGroup";
-export * from "./richtext";
+export * from "./rich-text";
 export * from "./separator";
 export * from "./snippet";
 export * from "./textarea";

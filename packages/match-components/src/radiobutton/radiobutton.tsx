@@ -113,25 +113,28 @@ export const RadioGroup = React.forwardRef<
   HTMLFieldSetElement,
   RadioGroupProps
 >(
-  ({
-    helper,
-    error,
-    name,
-    required,
-    disabled,
-    groupLabel,
-    children,
-    size,
-    vertical,
-    readOnly,
-    margin,
-    marginY,
-    marginX,
-    marginRight,
-    marginLeft,
-    marginBottom,
-    marginTop,
-  }) => {
+  (
+    {
+      helper,
+      error,
+      name,
+      required,
+      disabled,
+      groupLabel,
+      children,
+      size,
+      vertical,
+      readOnly,
+      margin,
+      marginY,
+      marginX,
+      marginRight,
+      marginLeft,
+      marginBottom,
+      marginTop,
+    },
+    ref
+  ) => {
     const seed = useUIDSeed();
     return (
       <StyledRadioGroupWrapper
@@ -143,6 +146,7 @@ export const RadioGroup = React.forwardRef<
         marginBottom={marginBottom}
         marginTop={marginTop}
         name={name}
+        ref={ref}
       >
         <Label
           id={seed(`${name}_label`)}
@@ -171,10 +175,7 @@ export const RadioGroup = React.forwardRef<
           )}
         </StyledRadioGroup>
         {Boolean(error) && (
-          <HelpText
-            id={seed(`${name}_message`)}
-            variant={HelpTextVariant.ERROR}
-          >
+          <HelpText id={seed(`${name}_error`)} variant={HelpTextVariant.ERROR}>
             {error}
           </HelpText>
         )}

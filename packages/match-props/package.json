@@ -38,11 +38,11 @@
     "@types/styled-system": "^5.1.10",
     "core-js": "3.9.0",
     "prop-types": "15.7.2",
-    "rollup": "2.38.5",
+    "rollup": "2.39.1",
     "rollup-config-match": "workspace:configs/rollup",
     "styled-system": "5.1.5",
     "tsconfig-match": "workspace:configs/tsconfig",
     "tslib": "2.1.0",
-    "typescript": "4.1.3"
+    "typescript": "4.1.5"
   }
 }

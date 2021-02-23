@@ -70,6 +70,7 @@
     {
       "files": ["*.stories.{ts,tsx}"],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "import/no-default-export": "off",
         "react/prop-types": "off"
       }
@@ -80,6 +81,7 @@
         "jest": true
       },
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "import/no-default-export": "off"
       }
     }

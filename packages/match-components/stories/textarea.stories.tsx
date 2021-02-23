@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { Formik } from "formik";
 import { Textarea, TextareaProps, TextareaResizeOptions } from "../src";
 
 const defaultValue = `
@@ -16,21 +17,16 @@ export default {
   component: Textarea,
   args: {
     ...Textarea.defaultProps,
-    defaultValue,
     name: "example",
     placeholder: "Placeholder text",
     label: "Label",
     helper: "Helper text.",
-    error: "",
     required: false,
     readOnly: false,
     disabled: false,
     hideLabel: false,
   },
   argTypes: {
-    defaultValue: {
-      table: { disable: true },
-    },
     name: {
       table: { disable: true },
     },
@@ -41,9 +37,6 @@ export default {
       control: { type: "text" },
     },
     helper: {
-      control: { type: "text" },
-    },
-    error: {
       control: { type: "text" },
     },
     rows: {
@@ -70,6 +63,10 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TextareaProps> = (args) => <Textarea {...args} />;
+const Template: Story<TextareaProps> = (args) => (
+  <Formik initialValues={{ example: defaultValue }} onSubmit={() => {}}>
+    <Textarea minLength={20} {...args} />
+  </Formik>
+);
 
 export const Primary = Template.bind({});

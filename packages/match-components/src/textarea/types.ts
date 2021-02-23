@@ -18,8 +18,6 @@ export interface TextareaProps
   placeholder?: string;
   /** Supporting validation instructions.  */
   helper?: string;
-  /** Error message to display when invalid. */
-  error?: string;
   /** Minimum character count. */
   minLength?: number;
   /** Maximum character count. */
@@ -30,6 +28,10 @@ export interface TextareaProps
    */
   rows?: 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   resize?: TextareaResizeOptions;
+  /** Overrides built in validation */
+  validate?: (value: string) => string | undefined;
+  /** Disables built in validation */
+  noValidate?: boolean;
 }
 
 export interface StyledTextareaContainerProps {

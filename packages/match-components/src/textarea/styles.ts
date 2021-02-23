@@ -41,20 +41,17 @@ export const StyledTextareaContainer = styled.div<StyledTextareaContainerProps>`
   }
 `;
 
-export const StyledTextarea = styled.textarea.withConfig({
-  shouldForwardProp: (prop, validate) =>
-    !["rows"].includes(prop) && validate(prop),
-})<StyledTextareaProps>`
+export const StyledTextarea = styled.textarea<StyledTextareaProps>`
   display: block;
   width: 100%;
   margin: 0;
-  background: ${themeGet("backgroundColors.white")};
   padding: ${themeGet("space.scale60")} ${themeGet("space.scale100")};
   color: ${themeGet("components.form.inputColor")};
   font-weight: ${themeGet("fontWeights.regular")};
   font-size: ${themeGet("fontSizes.scale80")};
   font-family: ${themeGet("fontFamilies.text")};
   line-height: ${themeGet("components.form.textareaLineHeight")};
+  background: ${themeGet("backgroundColors.white")};
   border: none;
   resize: ${({ resize }) =>
     resize === TextareaResizeOptions.MANUAL ? "vertical" : "none"};

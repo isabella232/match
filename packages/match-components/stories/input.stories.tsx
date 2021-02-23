@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { Formik } from "formik";
 import { Input, InputProps, InputSize } from "../src";
 
 export default {
@@ -17,6 +18,8 @@ export default {
     readOnly: false,
     disabled: false,
     hideLabel: false,
+    minLength: 0,
+    maxLength: 255,
   },
   argTypes: {
     name: {
@@ -55,9 +58,19 @@ export default {
     hideLabel: {
       control: { type: "boolean" },
     },
+    minLength: {
+      control: { type: "number" },
+    },
+    maxLength: {
+      control: { type: "number" },
+    },
   },
 } as Meta;
 
-const Template: Story<InputProps> = (args) => <Input {...args} />;
+const Template: Story<InputProps> = (args) => (
+  <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
+    <Input {...args} />
+  </Formik>
+);
 
 export const Primary = Template.bind({});

@@ -20,7 +20,7 @@
   "devDependencies": {
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/ejs": "3.0.5",
-    "@types/node": "14.14.25",
+    "@types/node": "14.14.31",
     "ejs": "3.1.5",
     "ts-node": "9.1.1",
     "tsconfig-match": "workspace:configs/tsconfig",

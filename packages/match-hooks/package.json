@@ -1,17 +1,17 @@
 {
-  "name": "@twilio-labs/match-icons-twilio",
-  "version": "1.0.0-alpha.2",
-  "description": "Twilio Match Design System Twilio Icons",
+  "name": "@twilio-labs/match-hooks",
+  "version": "1.0.0-alpha.0",
+  "description": "Twilio Match Design System React Hooks",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
-  "main": "generated/index.tsx",
+  "main": "src/index.ts",
   "files": [
     "dist"
   ],
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
-    "directory": "packages/match-icons/twilio"
+    "directory": "packages/match-hooks"
   },
   "publishConfig": {
     "main": "dist/index.js",
@@ -20,36 +20,24 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "convert": "svgr -d generated svg",
-    "build": "yarn clean && yarn convert && yarn compile",
-    "clean": "rm -rf generated dist",
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf ./dist",
     "compile": "rollup -c node:match --environment NODE_ENV:production",
     "compile:dev": "rollup -c node:match --environment NODE_ENV:development",
+    "type-check": "tsc --noEmit --composite false",
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-primitives": "^1.0.0-alpha.2",
-    "prop-types": "15.x",
-    "react": "17.x",
-    "react-dom": "17.x",
-    "react-is": "17.x",
-    "react-uid": "2.x"
+    "react": "17.x"
   },
   "devDependencies": {
     "@babel/core": "7.12.17",
-    "@storybook/react": "6.1.17",
-    "@svgr/cli": "5.5.0",
-    "@twilio-labs/match-primitives": "workspace:packages/match-primitives",
-    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/babel__core": "7.1.12",
-    "@types/prop-types": "15.7.3",
     "@types/react": "17.0.2",
-    "prop-types": "15.7.2",
+    "core-js": "3.9.0",
     "react": "17.0.1",
-    "react-uid": "2.3.1",
     "rollup": "2.38.5",
     "rollup-config-match": "workspace:configs/rollup",
-    "svgr-config-match": "workspace:configs/svgr",
     "tsconfig-match": "workspace:configs/tsconfig",
     "tslib": "2.1.0",
     "typescript": "4.1.3"

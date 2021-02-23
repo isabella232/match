@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-icons-sendgrid",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Twilio Match Design System SendGrid Icons",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -28,7 +28,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-primitives": "^1.0.0-alpha.2",
+    "@twilio-labs/match-primitives": "^1.0.0-alpha.3",
     "prop-types": "15.x",
     "react": "17.x",
     "react-dom": "17.x",

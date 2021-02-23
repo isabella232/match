@@ -5287,36 +5287,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@twilio-labs/match-icons@workspace:packages/match-icons/bundle":
-  version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-icons@workspace:packages/match-icons/bundle"
-  dependencies:
-    "@babel/core": 7.12.13
-    "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product"
-    "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid"
-    "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio"
-    "@twilio-labs/match-logos-color": "workspace:packages/match-logos/color"
-    "@twilio-labs/match-logos-mono": "workspace:packages/match-logos/mono"
-    "@twilio-labs/match-primitives": "workspace:packages/match-primitives"
-    "@types/babel__core": 7.1.12
-    "@types/prop-types": 15.7.3
-    "@types/react": 17.0.1
-    prop-types: 15.7.2
-    react: 17.0.1
-    react-uid: 2.3.1
-    tsconfig-match: "workspace:configs/tsconfig"
-    tslib: 2.1.0
-    typescript: 4.1.3
-  peerDependencies:
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
-    prop-types: 15.x
-    react: 17.x
-    react-dom: 17.x
-    react-is: 17.x
-    react-uid: 2.x
-  languageName: unknown
-  linkType: soft
-
 "@twilio-labs/match-logos-brand@workspace:packages/match-logos/brand":
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-logos-brand@workspace:packages/match-logos/brand"
@@ -5394,34 +5364,6 @@ __metadata:
     rollup: 2.38.5
     rollup-config-match: "workspace:configs/rollup"
     svgr-config-match: "workspace:configs/svgr"
-    tsconfig-match: "workspace:configs/tsconfig"
-    tslib: 2.1.0
-    typescript: 4.1.3
-  peerDependencies:
-    "@twilio-labs/match-primitives": ^1.0.0-alpha.2
-    prop-types: 15.x
-    react: 17.x
-    react-dom: 17.x
-    react-is: 17.x
-    react-uid: 2.x
-  languageName: unknown
-  linkType: soft
-
-"@twilio-labs/match-logos@workspace:packages/match-logos/bundle":
-  version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-logos@workspace:packages/match-logos/bundle"
-  dependencies:
-    "@babel/core": 7.12.13
-    "@twilio-labs/match-logos-brand": "workspace:packages/match-logos/brand"
-    "@twilio-labs/match-logos-color": "workspace:packages/match-logos/color"
-    "@twilio-labs/match-logos-mono": "workspace:packages/match-logos/mono"
-    "@twilio-labs/match-primitives": "workspace:packages/match-primitives"
-    "@types/babel__core": 7.1.12
-    "@types/prop-types": 15.7.3
-    "@types/react": 17.0.1
-    prop-types: 15.7.2
-    react: 17.0.1
-    react-uid: 2.3.1
     tsconfig-match: "workspace:configs/tsconfig"
     tslib: 2.1.0
     typescript: 4.1.3
@@ -5562,6 +5504,12 @@ __metadata:
     "@storybook/react": 6.1.17
     "@styled-system/theme-get": 5.1.2
     "@twilio-labs/match-components": "workspace:packages/match-components"
+    "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product"
+    "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid"
+    "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio"
+    "@twilio-labs/match-logos-brand": "workspace:packages/match-logos/brand"
+    "@twilio-labs/match-logos-color": "workspace:packages/match-logos/color"
+    "@twilio-labs/match-logos-mono": "workspace:packages/match-logos/mono"
     "@twilio-labs/match-primitives": "workspace:packages/match-primitives"
     "@twilio-labs/match-props": "workspace:packages/match-props"
     "@twilio-labs/match-themes": "workspace:packages/match-themes"
@@ -5588,19 +5536,12 @@ __metadata:
     tslib: 2.1.0
     typescript: 4.1.3
   peerDependencies:
-    "@twilio-labs/match-icons": ^1.0.0-alpha.2
-    "@twilio-labs/match-logos": ^1.0.0-alpha.2
     prop-types: 15.x
     react: 17.x
     react-dom: 17.x
     react-is: 17.x
     react-uid: 2.x
     styled-components: 5.x
-  peerDependenciesMeta:
-    "@twilio-labs/match-icons":
-      optional: true
-    "@twilio-labs/match-logos":
-      optional: true
   languageName: unknown
   linkType: soft
 

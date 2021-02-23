@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { Formik } from "formik";
 import {
   Radio,
   RadioProps,
@@ -12,7 +13,7 @@ export default {
   title: "Components/Radio Button",
   component: Radio,
   args: {
-    name: "example",
+    name: "group",
     value: "example",
     label: "Label",
     additional: "Additional",
@@ -30,7 +31,9 @@ export default {
 
 const Template: Story<RadioProps> = (args) => (
   <div>
-    <Radio value="1" {...args} />
+    <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
+      <Radio value="1" {...args} />
+    </Formik>
   </div>
 );
 
@@ -65,15 +68,22 @@ export const Group: Story<RadioGroupProps> = ({
   groupLabel,
   ...props
 }: RadioGroupProps) => (
-  <RadioGroup name="group" value="apples" groupLabel={groupLabel} {...props}>
-    <Radio name="group" value="apples" label="apples" />
-    <Radio name="group" value="bananas" label="bananas" />
-    <Radio name="group" value="oranges" label="oranges" />
-  </RadioGroup>
+  <Formik
+    initialValues={{ group: "" }}
+    validateOnMount
+    initialTouched={{ group: true }}
+    onSubmit={() => {}}
+  >
+    <RadioGroup name="group" groupLabel={groupLabel} {...props}>
+      <Radio name="group" value="apples" label="apples" />
+      <Radio name="group" value="bananas" label="bananas" />
+      <Radio name="group" value="oranges" label="oranges" />
+    </RadioGroup>
+  </Formik>
 );
 Group.args = {
   groupLabel: "Select your favorite fruit:",
-  required: false,
+  required: true,
   vertical: false,
   error: "",
   helper: "",

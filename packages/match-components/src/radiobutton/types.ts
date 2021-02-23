@@ -17,8 +17,12 @@ export interface RadioProps
   additional?: string;
   /** Marks that the radio button has an error*/
   error?: boolean;
+  /** Sets the group to be required*/
+  required?: boolean;
   /** Marks the radio button as checked*/
   checked?: boolean;
+  /** Disables built in validation. */
+  noValidate?: boolean;
 }
 
 export interface HiddenRadioProps extends RadioProps {
@@ -38,7 +42,6 @@ export interface RadioGroupProps
     Omit<React.HTMLAttributes<HTMLElement>, "size"> {
   children: Array<React.ReactElement<RadioProps>>;
   name: string;
-  value: string;
   /** Sets the label for the group*/
   groupLabel: string;
   /** Sets the size of the radio group */
@@ -55,6 +58,8 @@ export interface RadioGroupProps
   helper?: string;
   /** Sets the alignment to vertical */
   vertical?: boolean;
+  /** Disables built in validation. */
+  noValidate?: boolean;
 }
 
 export interface StyledRadioGroupProps {

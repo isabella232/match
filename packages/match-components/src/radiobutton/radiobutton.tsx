@@ -2,6 +2,7 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
+import { useField, useFormikContext } from "formik";
 import {
   Label,
   LabelSize,
@@ -27,12 +28,14 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
       size,
       additional,
       error,
+      required,
       name,
       label,
       value,
       disabled,
       checked,
       readOnly,
+      noValidate,
       margin,
       marginY,
       marginX,
@@ -45,6 +48,22 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     ref
   ) => {
     const seed = useUIDSeed();
+    const validate = (value: string) => {
+      if (noValidate) return;
+      if (required && !value) {
+        return "This field is required";
+      }
+    };
+    const [field, meta] = useField({
+      name,
+      disabled,
+      value,
+      type: "radio",
+      validate,
+      ...props,
+    });
+    console.log(field.value);
+    const hasError = meta.touched && Boolean(meta.error);
     return (
       <StyledRadioWrapper
         margin={margin}
@@ -62,8 +81,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
               type="radio"
               ref={ref}
               id={seed(`${name}_input`)}
-              name={name}
-              value={value}
               aria-labelledby={seed(`${name}_label`)}
               aria-describedby={
                 Boolean(additional) ? seed(`${name}_message`) : undefined
@@ -75,9 +92,10 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
               disabled={Boolean(disabled || readOnly)}
               readOnly={readOnly}
               radioSize={size}
+              {...field}
               {...props}
             />
-            <StyledRadio hasError={Boolean(error)} />
+            <StyledRadio hasError={hasError} />
           </div>
 
           <StyledRadioLabel>{label}</StyledRadioLabel>
@@ -100,9 +118,11 @@ Radio.propTypes = {
   size: PropTypes.oneOf(Object.values(RadioSize)),
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
+  required: PropTypes.bool,
   additional: PropTypes.string,
   error: PropTypes.bool,
   checked: PropTypes.bool,
+  noValidate: PropTypes.bool,
 };
 
 Radio.defaultProps = {
@@ -125,6 +145,7 @@ export const RadioGroup = React.forwardRef<
       size,
       vertical,
       readOnly,
+      noValidate,
       margin,
       marginY,
       marginX,
@@ -135,6 +156,9 @@ export const RadioGroup = React.forwardRef<
     },
     ref
   ) => {
+    const { touched, errors } = useFormikContext();
+    const hasError = touched[name] && errors[name];
+
     const seed = useUIDSeed();
     return (
       <StyledRadioGroupWrapper
@@ -171,12 +195,15 @@ export const RadioGroup = React.forwardRef<
               size: size,
               readOnly: readOnly,
               error: Boolean(error),
+              required: required,
+              name: name,
+              noValidate: noValidate,
             })
           )}
         </StyledRadioGroup>
-        {Boolean(error) && (
+        {hasError && (
           <HelpText id={seed(`${name}_error`)} variant={HelpTextVariant.ERROR}>
-            {error}
+            {errors[name]}
           </HelpText>
         )}
       </StyledRadioGroupWrapper>
@@ -190,7 +217,6 @@ RadioGroup.propTypes = {
   ...marginPropTypes,
   children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
   groupLabel: PropTypes.string.isRequired,
   size: PropTypes.oneOf(Object.values(RadioSize)),
   required: PropTypes.bool,
@@ -199,4 +225,5 @@ RadioGroup.propTypes = {
   error: PropTypes.string,
   helper: PropTypes.string,
   vertical: PropTypes.bool,
+  noValidate: PropTypes.bool,
 };

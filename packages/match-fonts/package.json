@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-fonts",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "private": true,
   "main": "fonts.css",
   "style": "fonts.css",

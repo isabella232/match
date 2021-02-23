@@ -75,4 +75,3 @@ RichText.propTypes = {
   children: PropTypes.string.isRequired,
   inverse: PropTypes.bool,
 };
-

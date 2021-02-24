@@ -17,8 +17,6 @@ export interface RadioProps
   additional?: string;
   /** Sets the group to be required*/
   required?: boolean;
-  /** Marks the radio button as checked*/
-  checked?: boolean;
   /** Overrides built in validation. */
   validate?: (value: string) => string | undefined;
   /** Disables built in validation. */
@@ -54,8 +52,8 @@ export interface RadioGroupProps
   readOnly?: boolean;
   /** Sets the group to disables*/
   helper?: string;
-  /** Sets the alignment to vertical */
-  vertical?: boolean;
+  /** Sets the alignment to horizontal */
+  horizontal?: boolean;
   /** Overrides built in validation. */
   validate?: (value: string) => string | undefined;
   /** Disables built in validation. */
@@ -63,5 +61,5 @@ export interface RadioGroupProps
 }
 
 export interface StyledRadioGroupProps {
-  vertical?: boolean;
+  horizontal?: boolean;
 }

@@ -24,7 +24,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
       label,
       value,
       disabled,
-      checked,
       readOnly,
       validate: validateOverride,
       noValidate,
@@ -82,7 +81,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
               label={label}
               aria-invalid={hasError}
               aria-disabled={disabled}
-              checked={checked}
               disabled={Boolean(disabled || readOnly)}
               readOnly={readOnly}
               radioSize={size}
@@ -114,7 +112,6 @@ Radio.propTypes = {
   readOnly: PropTypes.bool,
   required: PropTypes.bool,
   additional: PropTypes.string,
-  checked: PropTypes.bool,
   validate: PropTypes.func,
   noValidate: PropTypes.bool,
 };

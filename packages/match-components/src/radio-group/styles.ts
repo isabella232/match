@@ -16,8 +16,8 @@ export const StyledRadioGroup = styled.div<StyledRadioGroupProps>`
   > *:not(:last-child) {
     margin-bottom: ${themeGet("space.scale20")};
   }
-  ${({ vertical }) =>
-    vertical &&
+  ${({ horizontal }) =>
+    horizontal &&
     css`
       display: flex;
       flex-direction: column;

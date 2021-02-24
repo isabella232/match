@@ -26,7 +26,7 @@ export const RadioGroup = React.forwardRef<
       groupLabel,
       children,
       size,
-      vertical,
+      horizontal,
       readOnly,
       validate,
       noValidate,
@@ -55,6 +55,8 @@ export const RadioGroup = React.forwardRef<
         marginTop={marginTop}
         name={name}
         ref={ref}
+        disabled={disabled}
+        aria-describedby={hasError ? seed(`${name}_error`) : undefined}
       >
         <Label
           id={seed(`${name}_label`)}
@@ -72,7 +74,7 @@ export const RadioGroup = React.forwardRef<
         {Boolean(helper) && (
           <HelpText id={seed(`${name}_message`)}>{helper}</HelpText>
         )}
-        <StyledRadioGroup vertical={vertical}>
+        <StyledRadioGroup horizontal={horizontal}>
           {React.Children.map(children, (child) =>
             React.cloneElement(child, {
               disabled: disabled,
@@ -107,7 +109,7 @@ RadioGroup.propTypes = {
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   helper: PropTypes.string,
-  vertical: PropTypes.bool,
+  horizontal: PropTypes.bool,
   validate: PropTypes.func,
   noValidate: PropTypes.bool,
 };

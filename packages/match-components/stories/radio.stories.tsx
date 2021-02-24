@@ -11,7 +11,7 @@ export default {
     size: RadioSize.NORMAL,
     groupLabel: "Select your favorite fruit:",
     required: false,
-    vertical: false,
+    horizontal: false,
     disabled: false,
     readOnly: false,
     helper: "",
@@ -26,7 +26,7 @@ export default {
     required: {
       control: { type: "boolean" },
     },
-    vertical: {
+    horizontal: {
       control: { type: "boolean" },
     },
     helper: {
@@ -98,7 +98,7 @@ export const AdditionalText: Story<RadioGroupProps> = ({
 AdditionalText.args = {
   groupLabel: "Who inspires you most?",
   required: true,
-  vertical: false,
+  horizontal: false,
   helper:
     "Choose the individual who you aspire to be like or enjoy reading about!",
 };
@@ -123,6 +123,6 @@ export const Error: Story<RadioGroupProps> = ({
 Error.args = {
   groupLabel: "Select your favorite fruit:",
   required: true,
-  vertical: false,
+  horizontal: false,
   helper: "",
 };

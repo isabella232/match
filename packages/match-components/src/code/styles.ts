@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { variant } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
-import { CodeVariant } from "./types";
+import { CodeVariant } from "./constants";
 import type { CodeProps } from "./types";
 
 const StyledCode = styled.code<CodeProps>`

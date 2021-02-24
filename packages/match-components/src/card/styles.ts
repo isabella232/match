@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
 import { space } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
-import { CardProps, CardVariant } from "./types";
+import { CardVariant } from "./constants";
+import type { CardProps } from "./types";
 
 const variants = {
   [CardVariant.PRIMARY]: css`

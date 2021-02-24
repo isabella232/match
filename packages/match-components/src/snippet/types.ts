@@ -1,33 +1,13 @@
-export enum SnippetVariant {
-  DARK = "dark",
-  LIGHT = "light",
-}
-
-export enum SnippetLanguage {
-  JAVASCRIPT = "javascript",
-  CSHARP = "csharp",
-  PHP = "php",
-  RUBY = "ruby",
-  PYTHON = "python",
-  JAVA = "java",
-  JSON = "json",
-  C = "c",
-  BASH = "bash",
-  SHELL = "shell-session",
-  GO = "go",
-  GROOVY = "groovy",
-}
-
-export enum SnippetHorizontalScroll {
-  LEFT = "left",
-  MIDDLE = "middle",
-  RIGHT = "right",
-}
+import {
+  SnippetVariant,
+  SnippetLanguage,
+  SnippetHorizontalScroll,
+} from "./constants";
 
 export interface SnippetProps {
   children: string;
-  variant?: SnippetVariant;
-  language: SnippetLanguage;
+  variant?: `${SnippetVariant}`;
+  language: `${SnippetLanguage}`;
   /** Filename or snippet name. */
   title?: string;
   /** Link to full GitHub or Gist source code. */
@@ -48,11 +28,11 @@ export interface SnippetProps {
 export interface SnippetActionsProps {
   code: string;
   githubLink?: string;
-  variant?: SnippetVariant;
+  variant?: `${SnippetVariant}`;
 }
 
 export interface SnippetGroupProps {
-  variant?: SnippetVariant;
+  variant?: `${SnippetVariant}`;
   children: Array<React.ReactElement<SnippetProps>>;
   /** File name or snippet name. */
   title?: string;
@@ -61,14 +41,14 @@ export interface SnippetGroupProps {
 }
 
 export interface StyledSnippetGroupProps {
-  variant?: SnippetVariant;
+  variant?: `${SnippetVariant}`;
   compact?: boolean;
   hasTitle?: boolean;
 }
 
 export interface StyledSnippetProps {
-  variant?: SnippetVariant;
-  language?: SnippetLanguage;
+  variant?: `${SnippetVariant}`;
+  language?: `${SnippetLanguage}`;
   isSingleLine?: boolean;
   horizontalScrollPos?: SnippetHorizontalScroll;
   maxLines?: number;

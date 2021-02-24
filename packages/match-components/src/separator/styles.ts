@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { space } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
 import { Separator } from "reakit/Separator";
-import { SeparatorProps } from ".";
-import { SeparatorVariant } from "./types";
+import type { SeparatorProps } from "./types";
+import { SeparatorVariant } from "./constants";
 
-const StyledSeparator = styled(Separator).withConfig({
+export const StyledSeparator = styled(Separator).withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
 })<SeparatorProps>`
   ${space};
@@ -15,5 +15,3 @@ const StyledSeparator = styled(Separator).withConfig({
   opacity: ${({ variant }) =>
     variant === SeparatorVariant.INVERSE ? "0.5" : "1"};
 `;
-
-export { StyledSeparator };

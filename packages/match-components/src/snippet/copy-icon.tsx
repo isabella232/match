@@ -3,7 +3,11 @@ import { useUID } from "react-uid";
 import { Icon } from "@twilio-labs/match-primitives";
 import type { IconProps } from "@twilio-labs/match-primitives";
 
-const CopyIcon: React.FC<IconProps> = ({ title, decorative, ...props }) => {
+export const CopyIcon: React.FC<IconProps> = ({
+  title,
+  decorative,
+  ...props
+}) => {
   const uid = useUID();
   const titleId = title ? uid : undefined;
 
@@ -40,4 +44,3 @@ const CopyIcon: React.FC<IconProps> = ({ title, decorative, ...props }) => {
 
 CopyIcon.propTypes = { ...Icon.propTypes };
 CopyIcon.defaultProps = { ...Icon.defaultProps };
-export { CopyIcon };

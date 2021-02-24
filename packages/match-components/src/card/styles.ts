@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
 import { space } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
-import { CardProps, CardVariant } from "./types";
+import { CardVariant } from "./constants";
+import type { CardProps } from "./types";
 
 const variants = {
   [CardVariant.PRIMARY]: css`
@@ -20,11 +21,9 @@ const variants = {
   `,
 };
 
-const StyledCard = styled.div<CardProps>`
+export const StyledCard = styled.div<CardProps>`
   ${space};
   background-color: ${({ theme }) => theme.colorWhite};
   border-radius: ${themeGet("components.card.borderRadius")};
   ${({ variant }) => variant && variants[variant]};
 `;
-
-export { StyledCard };

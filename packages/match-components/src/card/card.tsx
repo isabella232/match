@@ -1,11 +1,11 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { paddingPropTypes, marginPropTypes } from "@twilio-labs/match-props";
-import { CardVariant } from "./types";
+import { CardVariant } from "./constants";
 import type { CardProps } from "./types";
 import { StyledCard } from "./styles";
 
-const Card: React.FC<CardProps> = (props) => <StyledCard {...props} />;
+export const Card: React.FC<CardProps> = (props) => <StyledCard {...props} />;
 
 Card.propTypes = {
   ...paddingPropTypes,
@@ -18,6 +18,3 @@ Card.defaultProps = {
 };
 
 Card.displayName = "Card";
-
-export { Card, CardVariant };
-export type { CardProps };

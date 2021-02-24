@@ -19,7 +19,7 @@ import {
   SnippetLanguage,
   SnippetVariant,
   SnippetHorizontalScroll,
-} from "./types";
+} from "./constants";
 import type { SnippetProps } from "./types";
 import {
   StyledSnippet,
@@ -42,7 +42,7 @@ SyntaxHighlighter.registerLanguage(SnippetLanguage.SHELL, shell);
 SyntaxHighlighter.registerLanguage(SnippetLanguage.GO, go);
 SyntaxHighlighter.registerLanguage(SnippetLanguage.GROOVY, groovy);
 
-const Snippet: React.FC<SnippetProps> = ({
+export const Snippet: React.FC<SnippetProps> = ({
   children,
   title,
   language,
@@ -157,5 +157,3 @@ Snippet.defaultProps = {
 };
 
 Snippet.displayName = "Snippet";
-
-export { Snippet };

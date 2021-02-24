@@ -4,14 +4,14 @@ import * as SendGridDesignTokens from "@twilio-labs/match-tokens/sendgrid";
 import * as AhoyDesignTokens from "@twilio-labs/match-tokens/ahoy";
 import { withTokens } from "./with-tokens";
 
-const TwilioTheme = withTokens(TwilioDesignTokens)(ThemeProvider);
-const SendGridTheme = withTokens(SendGridDesignTokens)(ThemeProvider);
-const AhoyTheme = withTokens(AhoyDesignTokens)(ThemeProvider);
+export const TwilioTheme = withTokens(TwilioDesignTokens)(ThemeProvider);
+export const SendGridTheme = withTokens(SendGridDesignTokens)(ThemeProvider);
+export const AhoyTheme = withTokens(AhoyDesignTokens)(ThemeProvider);
 
-export { ThemeVariants } from "./constants";
-export { MatchThemeProvider } from "./theme-provider";
-export { StyledBase } from "./styles";
-export { withTheme } from "./with-theme";
-export { ThemeConsumer } from "./theme-consumer";
-export { useTheme } from "./use-theme";
-export { TwilioTheme, SendGridTheme, AhoyTheme };
+export * from "./constants";
+export * from "./theme-provider";
+export * from "./styles";
+export * from "./with-theme";
+export * from "./theme-consumer";
+export * from "./use-theme";
+export * from "./types";

@@ -2,7 +2,7 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { TooltipReference, useTooltipState } from "reakit/Tooltip";
 import { Button } from "reakit/Button";
-import { SnippetVariant } from "./types";
+import { SnippetVariant } from "./constants";
 import type { SnippetActionsProps } from "./types";
 import {
   StyledSnippetActions,
@@ -12,7 +12,7 @@ import {
 import { CopyIcon } from "./copy-icon";
 import { GithubIcon } from "./github-icon";
 
-const SnippetActions: React.FC<SnippetActionsProps> = ({
+export const SnippetActions: React.FC<SnippetActionsProps> = ({
   code,
   githubLink,
   variant,
@@ -77,5 +77,3 @@ SnippetActions.propTypes = {
   code: PropTypes.string.isRequired,
   githubLink: PropTypes.string,
 };
-
-export { SnippetActions };

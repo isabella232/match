@@ -1,12 +1,8 @@
 import { MarginProps } from "@twilio-labs/match-props";
-
-export enum SeparatorVariant {
-  PRIMARY = "primary",
-  INVERSE = "inverse",
-}
+import { SeparatorVariant } from "./constants";
 
 export interface SeparatorProps
   extends React.HTMLAttributes<HTMLHRElement>,
     MarginProps {
-  variant?: SeparatorVariant;
+  variant?: `${SeparatorVariant}`;
 }

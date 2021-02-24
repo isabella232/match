@@ -27,7 +27,7 @@ export interface TextareaProps
    * @type number
    */
   rows?: 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
-  resize?: TextareaResizeOptions;
+  resize?: `${TextareaResizeOptions}`;
   /** Overrides built in validation */
   validate?: (value: string) => string | undefined;
   /** Disables built in validation */
@@ -41,5 +41,5 @@ export interface StyledTextareaContainerProps {
 
 export interface StyledTextareaProps {
   rows: number;
-  resize?: TextareaResizeOptions;
+  resize?: `${TextareaResizeOptions}`;
 }

@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { StyledIcon } from "@twilio-labs/match-primitives";
-import { AnchorProps, AnchorVariant } from "./types";
+import { AnchorVariant } from "./constants";
+import type { AnchorProps } from "./types";
 
 const variants = {
   [AnchorVariant.PRIMARY]: css`

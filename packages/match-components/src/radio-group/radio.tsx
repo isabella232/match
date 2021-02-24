@@ -19,7 +19,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     {
       size,
       additional,
-      error,
       required,
       name,
       label,
@@ -27,6 +26,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
       disabled,
       checked,
       readOnly,
+      validate: validateOverride,
       noValidate,
       margin,
       marginY,
@@ -42,6 +42,9 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     const seed = useUIDSeed();
     const validate = (value: string) => {
       if (noValidate) return;
+
+      if (validateOverride) return validateOverride(value);
+
       if (required && !value) {
         return "This field is required";
       }
@@ -77,7 +80,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
                 Boolean(additional) ? seed(`${name}_message`) : undefined
               }
               label={label}
-              aria-invalid={Boolean(error)}
+              aria-invalid={hasError}
               aria-disabled={disabled}
               checked={checked}
               disabled={Boolean(disabled || readOnly)}
@@ -111,8 +114,8 @@ Radio.propTypes = {
   readOnly: PropTypes.bool,
   required: PropTypes.bool,
   additional: PropTypes.string,
-  error: PropTypes.bool,
   checked: PropTypes.bool,
+  validate: PropTypes.func,
   noValidate: PropTypes.bool,
 };
 

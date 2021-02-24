@@ -15,12 +15,12 @@ export interface RadioProps
   readOnly?: boolean;
   /** Supporting information  */
   additional?: string;
-  /** Marks that the radio button has an error*/
-  error?: boolean;
   /** Sets the group to be required*/
   required?: boolean;
   /** Marks the radio button as checked*/
   checked?: boolean;
+  /** Overrides built in validation. */
+  validate?: (value: string) => string | undefined;
   /** Disables built in validation. */
   noValidate?: boolean;
 }
@@ -50,14 +50,14 @@ export interface RadioGroupProps
   required?: boolean;
   /** Sets the group to disables*/
   disabled?: boolean;
-  /** Sets the error message for a group*/
-  error?: string;
   /** Sets the radio button as readonly. */
   readOnly?: boolean;
   /** Sets the group to disables*/
   helper?: string;
   /** Sets the alignment to vertical */
   vertical?: boolean;
+  /** Overrides built in validation. */
+  validate?: (value: string) => string | undefined;
   /** Disables built in validation. */
   noValidate?: boolean;
 }

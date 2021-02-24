@@ -20,7 +20,6 @@ export const RadioGroup = React.forwardRef<
   (
     {
       helper,
-      error,
       name,
       required,
       disabled,
@@ -29,6 +28,7 @@ export const RadioGroup = React.forwardRef<
       size,
       vertical,
       readOnly,
+      validate,
       noValidate,
       margin,
       marginY,
@@ -78,9 +78,9 @@ export const RadioGroup = React.forwardRef<
               disabled: disabled,
               size: size,
               readOnly: readOnly,
-              error: Boolean(error),
               required: required,
               name: name,
+              validate: validate,
               noValidate: noValidate,
             })
           )}
@@ -106,8 +106,8 @@ RadioGroup.propTypes = {
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
-  error: PropTypes.string,
   helper: PropTypes.string,
   vertical: PropTypes.bool,
+  validate: PropTypes.func,
   noValidate: PropTypes.bool,
 };

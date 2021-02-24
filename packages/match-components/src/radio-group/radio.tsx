@@ -54,7 +54,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
       validate,
       ...props,
     });
-    console.log(field.value);
     const hasError = meta.touched && Boolean(meta.error);
     return (
       <StyledRadioWrapper

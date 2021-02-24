@@ -2,7 +2,8 @@ import styled, { css, keyframes } from "styled-components";
 import { Button } from "reakit/Button";
 import { themeGet } from "@styled-system/theme-get";
 import { StyledIcon } from "@twilio-labs/match-primitives";
-import { ButtonProps, ButtonSize, ButtonVariant } from "./types";
+import { ButtonSize, ButtonVariant } from "./constants";
+import type { ButtonProps } from "./types";
 
 const sizes = {
   [ButtonSize.NORMAL]: css`

@@ -4,7 +4,7 @@ import { themeGet } from "@styled-system/theme-get";
 import { CodeVariant } from "./constants";
 import type { CodeProps } from "./types";
 
-const StyledCode = styled.code<CodeProps>`
+export const StyledCode = styled.code<CodeProps>`
   padding: ${themeGet("space.scale7")} ${themeGet("space.scale20")};
   font-size: inherit;
   font-family: ${themeGet("fontFamilies.code")};
@@ -28,5 +28,3 @@ const StyledCode = styled.code<CodeProps>`
     },
   })}
 `;
-
-export { StyledCode };

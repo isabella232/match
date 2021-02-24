@@ -21,11 +21,9 @@ const variants = {
   `,
 };
 
-const StyledCard = styled.div<CardProps>`
+export const StyledCard = styled.div<CardProps>`
   ${space};
   background-color: ${({ theme }) => theme.colorWhite};
   border-radius: ${themeGet("components.card.borderRadius")};
   ${({ variant }) => variant && variants[variant]};
 `;
-
-export { StyledCard };

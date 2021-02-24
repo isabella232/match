@@ -135,7 +135,7 @@ const blink = keyframes`
   50% { opacity: 1 }
 `;
 
-const StyledPrompt = styled.span`
+export const StyledPrompt = styled.span`
   margin-left: 1em;
 
   &::before {
@@ -184,7 +184,7 @@ const StyledPrompt = styled.span`
   }
 `;
 
-const StyledButton = styled(Button).withConfig({
+export const StyledButton = styled(Button).withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
 })<ButtonProps>`
   display: inline-block;
@@ -249,5 +249,3 @@ const StyledButton = styled(Button).withConfig({
   ${({ size }) => size && sizes[size]}
   ${({ variant }) => variant && variants[variant]}
 `;
-
-export { StyledButton, StyledPrompt };

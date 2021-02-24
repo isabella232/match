@@ -6,7 +6,7 @@ import { VisuallyHidden } from "../visually-hidden";
 import { ChevronDownIcon } from "./chevron-down-icon";
 import { getLanguageNiceName } from "./get-language-nice-name";
 import type { SnippetGroupProps } from "./types";
-import { SnippetVariant } from "./types";
+import { SnippetVariant } from "./constants";
 import {
   StyledSnippetGroup,
   StyledSnippetHeader,
@@ -17,7 +17,7 @@ import {
 } from "./styles";
 import { SnippetActions } from "./snippet-actions";
 
-const SnippetGroup: React.FC<SnippetGroupProps> = ({
+export const SnippetGroup: React.FC<SnippetGroupProps> = ({
   title,
   variant,
   children,
@@ -100,5 +100,3 @@ SnippetGroup.defaultProps = {
 };
 
 SnippetGroup.displayName = "SnippetGroup";
-
-export { SnippetGroup };

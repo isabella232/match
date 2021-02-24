@@ -4,7 +4,7 @@ import { themeGet } from "@styled-system/theme-get";
 import { HeadingVariant } from "./constants";
 import type { HeadingProps } from "./types";
 
-const StyledHeading = styled.h1<HeadingProps>`
+export const StyledHeading = styled.h1<HeadingProps>`
   margin: 0;
   color: ${({ inverse }) =>
     inverse
@@ -67,5 +67,3 @@ const StyledHeading = styled.h1<HeadingProps>`
       })
     )}
 `;
-
-export { StyledHeading };

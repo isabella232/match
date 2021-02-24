@@ -46,7 +46,7 @@ const variants = {
   `,
 };
 
-const StyledAnchor = styled.a<AnchorProps>`
+export const StyledAnchor = styled.a<AnchorProps>`
   text-decoration: underline;
   cursor: pointer;
 
@@ -80,5 +80,3 @@ const StyledAnchor = styled.a<AnchorProps>`
 
   ${({ variant }) => variant && variants[variant]}
 `;
-
-export { StyledAnchor };

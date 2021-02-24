@@ -1,4 +1,4 @@
-import { SnippetLanguage } from "./types";
+import { SnippetLanguage } from "./constants";
 
 const niceNameMap = {
   [SnippetLanguage.JAVASCRIPT]: "JavaScript",
@@ -15,9 +15,7 @@ const niceNameMap = {
   [SnippetLanguage.GROOVY]: "Groovy",
 };
 
-const getLanguageNiceName = (language: SnippetLanguage): string => {
+export const getLanguageNiceName = (language: `${SnippetLanguage}`): string => {
   if (language in niceNameMap) return niceNameMap[language];
   return language;
 };
-
-export { getLanguageNiceName };

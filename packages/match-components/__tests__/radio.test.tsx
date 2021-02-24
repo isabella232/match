@@ -68,22 +68,6 @@ describe("Radio", () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
-
-  test("radio error accessibility violations", async () => {
-    const { container } = render(
-      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioWithTheme
-          error
-          name="example"
-          value="example"
-          label="example"
-          additional="Additional Text"
-        />
-      </Formik>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
 });
 
 const RadioGroupWithTheme = withTheme()(RadioGroup);
@@ -92,27 +76,20 @@ describe("Radio Group", () => {
   test("helper message", () => {
     const { getByText } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioGroupWithTheme
-          name="example"
-          groupLabel="Example"
-          helper="helper"
-        >
+        <RadioGroupWithTheme groupLabel="Example" helper="helper">
           <Radio
-            error
             name="example"
             value="apples"
             label="apples"
             additional="An apple a day keeps the doctor away"
           />
           <Radio
-            error
             name="example"
             value="bananas"
             label="bananas"
             additional="Goals are like bananas, they come in bunches"
           />
           <Radio
-            error
             name="example"
             value="oranges"
             label="oranges"
@@ -132,11 +109,7 @@ describe("Radio Group", () => {
         initialTouched={{ group: true }}
         onSubmit={() => {}}
       >
-        <RadioGroup
-          groupLabel="Select your favorite fruit:"
-          name="example"
-          required
-        >
+        <RadioGroup groupLabel="Select your favorite fruit:" required>
           <Radio name="example" value="apples" label="apples" />
           <Radio name="example" value="bananas" label="bananas" />
           <Radio name="example" value="oranges" label="oranges" />
@@ -149,27 +122,20 @@ describe("Radio Group", () => {
   test("accessibility violations", async () => {
     const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioGroupWithTheme
-          name="example"
-          groupLabel="Example"
-          helper="helper"
-        >
+        <RadioGroupWithTheme groupLabel="Example" helper="helper">
           <Radio
-            error
             name="example"
             value="apples"
             label="apples"
             additional="An apple a day keeps the doctor away"
           />
           <Radio
-            error
             name="example"
             value="bananas"
             label="bananas"
             additional="Goals are like bananas, they come in bunches"
           />
           <Radio
-            error
             name="example"
             value="oranges"
             label="oranges"
@@ -185,28 +151,20 @@ describe("Radio Group", () => {
   test("readonly accessibility violations", async () => {
     const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioGroupWithTheme
-          name="example"
-          groupLabel="Example"
-          helper="helper"
-          readOnly
-        >
+        <RadioGroupWithTheme groupLabel="Example" helper="helper" readOnly>
           <Radio
-            error
             name="example"
             value="apples"
             label="apples"
             additional="An apple a day keeps the doctor away"
           />
           <Radio
-            error
             name="example"
             value="bananas"
             label="bananas"
             additional="Goals are like bananas, they come in bunches"
           />
           <Radio
-            error
             name="example"
             value="oranges"
             label="oranges"
@@ -222,28 +180,20 @@ describe("Radio Group", () => {
   test("disabled accessibility violations", async () => {
     const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioGroupWithTheme
-          name="example"
-          groupLabel="Example"
-          helper="helper"
-          disabled
-        >
+        <RadioGroupWithTheme groupLabel="Example" helper="helper" disabled>
           <Radio
-            error
             name="example"
             value="apples"
             label="apples"
             additional="An apple a day keeps the doctor away"
           />
           <Radio
-            error
             name="example"
             value="bananas"
             label="bananas"
             additional="Goals are like bananas, they come in bunches"
           />
           <Radio
-            error
             name="example"
             value="oranges"
             label="oranges"
@@ -264,12 +214,7 @@ describe("Radio Group", () => {
         initialTouched={{ example: true }}
         onSubmit={() => {}}
       >
-        <RadioGroupWithTheme
-          name="example"
-          groupLabel="Example"
-          helper="helper"
-          required
-        >
+        <RadioGroupWithTheme groupLabel="Example" helper="helper" required>
           <Radio
             name="example"
             value="apples"

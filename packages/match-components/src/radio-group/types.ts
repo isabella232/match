@@ -39,7 +39,6 @@ export interface RadioGroupProps
   extends MarginProps,
     Omit<React.HTMLAttributes<HTMLElement>, "size"> {
   children: Array<React.ReactElement<RadioProps>>;
-  name: string;
   /** Sets the label for the group*/
   groupLabel: string;
   /** Sets the size of the radio group */

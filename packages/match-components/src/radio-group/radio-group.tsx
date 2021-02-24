@@ -20,7 +20,6 @@ export const RadioGroup = React.forwardRef<
   (
     {
       helper,
-      name,
       required,
       disabled,
       groupLabel,
@@ -40,10 +39,21 @@ export const RadioGroup = React.forwardRef<
     },
     ref
   ) => {
+    const name = children[0].props.name;
+    children.map((child) => {
+      if (child.props.name != name) {
+        console.warn(
+          "[RadioGroup]: All Radios within a group should use the same name"
+        );
+      }
+    });
     const { touched, errors } = useFormikContext();
     const hasError = touched[name] && errors[name];
 
     const seed = useUIDSeed();
+    const describedby =
+      (hasError ? seed(`${name}_error`) + "," : "") +
+      (Boolean(helper) ? seed(`${name}_helper`) : "").replace(/,\s*$/, "");
     return (
       <StyledRadioGroupWrapper
         margin={margin}
@@ -56,7 +66,7 @@ export const RadioGroup = React.forwardRef<
         name={name}
         ref={ref}
         disabled={disabled}
-        aria-describedby={hasError ? seed(`${name}_error`) : undefined}
+        aria-describedby={Boolean(describedby == "") ? undefined : describedby}
       >
         <Label
           id={seed(`${name}_label`)}
@@ -72,7 +82,7 @@ export const RadioGroup = React.forwardRef<
           {groupLabel}
         </Label>
         {Boolean(helper) && (
-          <HelpText id={seed(`${name}_message`)}>{helper}</HelpText>
+          <HelpText id={seed(`${name}_helper`)}>{helper}</HelpText>
         )}
         <StyledRadioGroup horizontal={horizontal}>
           {React.Children.map(children, (child) =>
@@ -102,7 +112,6 @@ RadioGroup.displayName = "RadioGroup";
 RadioGroup.propTypes = {
   ...marginPropTypes,
   children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
-  name: PropTypes.string.isRequired,
   groupLabel: PropTypes.string.isRequired,
   size: PropTypes.oneOf(Object.values(RadioSize)),
   required: PropTypes.bool,

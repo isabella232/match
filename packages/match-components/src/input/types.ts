@@ -36,5 +36,5 @@ export interface StyledInputContainerProps {
 }
 
 export interface StyledInputProps extends Pick<InputProps, "readOnly"> {
-  inputSize?: InputSize;
+  inputSize?: `${InputSize}`;
 }

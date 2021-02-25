@@ -104,9 +104,9 @@ describe("Radio Group", () => {
   test("error message", () => {
     const { getByRole } = render(
       <Formik
-        initialValues={{ group: "" }}
+        initialValues={{ example: "" }}
         validateOnMount
-        initialTouched={{ group: true }}
+        initialTouched={{ example: true }}
         onSubmit={() => {}}
       >
         <RadioGroup groupLabel="Select your favorite fruit:" required>
@@ -117,6 +117,27 @@ describe("Radio Group", () => {
       </Formik>
     );
     expect(getByRole("alert")).toHaveTextContent(/"this field is required"/i);
+  });
+
+  test("error message with custom validation", () => {
+    const { getByRole } = render(
+      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
+        <RadioGroup
+          groupLabel="Select your favorite fruit:"
+          required
+          validate={(value) => {
+            if (value === "apples") {
+              return "yeah right";
+            }
+          }}
+        >
+          <Radio name="example" value="apples" label="apples" checked />
+          <Radio name="example" value="bananas" label="bananas" />
+          <Radio name="example" value="oranges" label="oranges" />
+        </RadioGroup>
+      </Formik>
+    );
+    expect(getByRole("alert")).toHaveTextContent(/"yeah right"/i);
   });
 
   test("accessibility violations", async () => {

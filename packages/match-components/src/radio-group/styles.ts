@@ -120,7 +120,8 @@ export const HiddenRadio = styled.input.withConfig({
     }
   }
 
-  &:focus {
+  &:focus,
+  &:active {
     + ${StyledRadio} {
       border-color: ${themeGet("borderColors.focusPrimary")};
     }

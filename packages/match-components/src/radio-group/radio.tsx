@@ -90,10 +90,14 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
             <StyledRadio hasError={hasError} />
           </div>
 
-          <StyledRadioLabel>{label}</StyledRadioLabel>
+          <StyledRadioLabel id={seed(`${name}_label`)}>
+            {label}
+          </StyledRadioLabel>
         </StyledRadioLabelWrapper>
         {Boolean(additional) && (
-          <StyledRadioAdditional>{additional}</StyledRadioAdditional>
+          <StyledRadioAdditional id={seed(`${name}_additional`)}>
+            {additional}
+          </StyledRadioAdditional>
         )}
       </StyledRadioWrapper>
     );

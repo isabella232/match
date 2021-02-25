@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
-import { space, variant } from "styled-system";
+import { compose, space, variant } from "styled-system";
 import { RadioSize } from "./constants";
 import {
   StyledRadioProps,
@@ -132,6 +132,7 @@ export const HiddenRadio = styled.input.withConfig({
 
   :disabled {
     + ${StyledRadio} {
+      pointer-events: none;
       background-color: ${themeGet("colors.gray30")};
       border-color: ${themeGet("colors.gray30")};
 
@@ -155,45 +156,46 @@ export const HiddenRadio = styled.input.withConfig({
 
 //Wraps an entire radio button
 export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
-  ${space}
-
-  ${variant({
-    prop: "radioSize",
-    variants: {
-      [RadioSize.NORMAL]: {
-        [StyledRadio]: {
-          width: "16px",
-          height: "16px",
-          marginTop: "6px",
+  ${compose(
+    space,
+    variant({
+      prop: "radioSize",
+      variants: {
+        [RadioSize.NORMAL]: {
+          [StyledRadio]: {
+            width: "16px",
+            height: "16px",
+            marginTop: "6px",
+          },
+          [StyledRadioLabel]: {
+            fontSize: "scale100",
+            lineHeight: "scale220",
+          },
+          [StyledRadioAdditional]: {
+            fontSize: "scale80",
+            lineHeight: "scale140",
+            fontWeight: "regular",
+            pl: "28px",
+          },
         },
-        [StyledRadioLabel]: {
-          fontSize: "scale100",
-          lineHeight: "scale220",
-        },
-        [StyledRadioAdditional]: {
-          fontSize: "scale80",
-          lineHeight: "scale140",
-          fontWeight: "regular",
-          pl: "28px",
+        [RadioSize.SMALL]: {
+          [StyledRadio]: {
+            width: "14px",
+            height: "14px",
+            marginTop: "2px",
+          },
+          [StyledRadioLabel]: {
+            fontSize: "scale80",
+            lineHeight: "scale180",
+          },
+          [StyledRadioAdditional]: {
+            fontSize: "scale60",
+            lineHeight: "scale180",
+            fontWeight: "medium",
+            pl: "26px",
+          },
         },
       },
-      [RadioSize.SMALL]: {
-        [StyledRadio]: {
-          width: "14px",
-          height: "14px",
-          marginTop: "2px",
-        },
-        [StyledRadioLabel]: {
-          fontSize: "scale80",
-          lineHeight: "scale180",
-        },
-        [StyledRadioAdditional]: {
-          fontSize: "scale60",
-          lineHeight: "scale180",
-          fontWeight: "medium",
-          pl: "26px",
-        },
-      },
-    },
-  })};
+    })
+  )}
 `;

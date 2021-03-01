@@ -7,7 +7,7 @@ export interface InputProps
   name: string;
   label: string;
   type?: "text" | "email" | "tel" | "url" | "number" | "password";
-  size?: InputSize;
+  size?: `${InputSize}`;
   /** Sets the input as required. */
   required?: boolean;
   /** Disables the input. */
@@ -36,5 +36,5 @@ export interface StyledInputContainerProps {
 }
 
 export interface StyledInputProps extends Pick<InputProps, "readOnly"> {
-  inputSize?: InputSize;
+  inputSize?: `${InputSize}`;
 }

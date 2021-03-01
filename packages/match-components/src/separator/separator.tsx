@@ -2,9 +2,10 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { marginPropTypes } from "@twilio-labs/match-props";
 import { StyledSeparator } from "./styles";
-import { SeparatorProps, SeparatorVariant } from "./types";
+import { SeparatorVariant } from "./constants";
+import type { SeparatorProps } from "./types";
 
-const Separator: React.FC<SeparatorProps> = (props) => (
+export const Separator: React.FC<SeparatorProps> = (props) => (
   <StyledSeparator {...props} />
 );
 
@@ -19,6 +20,3 @@ Separator.defaultProps = {
   variant: SeparatorVariant.PRIMARY,
   marginY: "scale20",
 };
-
-export { Separator, SeparatorVariant };
-export type { SeparatorProps };

@@ -11,7 +11,7 @@ export interface ThemeConsumerProps {
   }) => React.ReactNode;
 }
 
-const ThemeConsumer = ({
+export const ThemeConsumer = ({
   children,
   ...props
 }: ThemeConsumerProps): React.ReactElement => {
@@ -28,5 +28,3 @@ const ThemeConsumer = ({
 ThemeConsumer.propTypes = {
   children: PropTypes.func,
 };
-
-export { ThemeConsumer };

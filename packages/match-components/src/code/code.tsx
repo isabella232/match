@@ -1,10 +1,10 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import { CodeVariant } from "./types";
+import { CodeVariant } from "./constants";
 import type { CodeProps } from "./types";
 import { StyledCode } from "./styles";
 
-const Code: React.FC<CodeProps> = (props) => <StyledCode {...props} />;
+export const Code: React.FC<CodeProps> = (props) => <StyledCode {...props} />;
 
 Code.displayName = "Code";
 
@@ -15,6 +15,3 @@ Code.propTypes = {
 Code.defaultProps = {
   variant: CodeVariant.DARK,
 };
-
-export { Code, CodeVariant };
-export type { CodeProps };

@@ -1,19 +1,13 @@
-export enum AnchorVariant {
-  PRIMARY = "primary",
-  INVERSE = "inverse",
-  TEXT = "text",
-}
-
-export type AnchorTarget = "_self" | "_blank" | "_parent" | "_top";
+import { AnchorVariant, AnchorTarget } from "./constants";
 
 export interface AnchorProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
-  variant?: AnchorVariant;
+  variant?: `${AnchorVariant}`;
   /** A URL to route to. */
   href: string;
   /** Defaults to '_blank' for external links */
-  target?: AnchorTarget;
+  target?: `${AnchorTarget}`;
   /** Defaults to 'noreferrer noopener' for external links  */
   rel?: string;
   /** Removes the underline from the anchor  */

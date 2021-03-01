@@ -13,9 +13,9 @@ import {
   SnippetVariant,
   SnippetLanguage,
   SnippetHorizontalScroll,
-} from "./types";
+} from "./constants";
 
-const StyledHighlighter = styled.div<StyledSnippetProps>`
+export const StyledHighlighter = styled.div<StyledSnippetProps>`
   overflow-x: auto;
   scrollbar-width: thin;
 
@@ -228,7 +228,7 @@ const StyledHighlighter = styled.div<StyledSnippetProps>`
   }}
 `;
 
-const StyledTooltipArrow = styled(TooltipArrow)`
+export const StyledTooltipArrow = styled(TooltipArrow)`
   line-height: 1;
 
   .fill {
@@ -236,7 +236,7 @@ const StyledTooltipArrow = styled(TooltipArrow)`
   }
 `;
 
-const StyledTooltip = styled(Tooltip).withConfig({
+export const StyledTooltip = styled(Tooltip).withConfig({
   shouldForwardProp: (prop) => !["success"].includes(prop),
 })<StyledTooltipProps>`
   padding: ${themeGet("space.scale7")} ${themeGet("space.scale20")};
@@ -259,7 +259,7 @@ const StyledTooltip = styled(Tooltip).withConfig({
     `}
 `;
 
-const StyledSnippetHeader = styled.div<StyledSnippetProps>`
+export const StyledSnippetHeader = styled.div<StyledSnippetProps>`
   display: grid;
   grid-column-gap: ${themeGet("space.scale140")};
   align-items: center;
@@ -280,7 +280,7 @@ const StyledSnippetHeader = styled.div<StyledSnippetProps>`
   })}
 `;
 
-const StyledSnippetActions = styled.div<StyledSnippetProps>`
+export const StyledSnippetActions = styled.div<StyledSnippetProps>`
   display: flex;
   align-items: center;
   padding-right: ${themeGet("space.scale180")};
@@ -316,13 +316,13 @@ const StyledSnippetActions = styled.div<StyledSnippetProps>`
   })}
 `;
 
-const StyledSnippetTitle = styled.div`
+export const StyledSnippetTitle = styled.div`
   font-weight: ${themeGet("fontWeights.medium")};
   font-size: ${themeGet("fontSizes.scale80")};
   line-height: ${themeGet("lineHeights.scale180")};
 `;
 
-const StyledSnippetBody = styled.div<StyledSnippetProps>`
+export const StyledSnippetBody = styled.div<StyledSnippetProps>`
   padding: ${themeGet("space.scale7")};
   overflow: hidden;
   font-weight: ${themeGet("fontWeights.regular")};
@@ -424,7 +424,7 @@ const StyledSnippetBody = styled.div<StyledSnippetProps>`
     )}
 `;
 
-const StyledSnippet = styled.div<StyledSnippetProps>`
+export const StyledSnippet = styled.div<StyledSnippetProps>`
   border-radius: ${themeGet("radii.base")};
 
   ${StyledSnippetHeader} {
@@ -457,7 +457,7 @@ const StyledSnippet = styled.div<StyledSnippetProps>`
   })}
 `;
 
-const StyledTab = styled(Tab)`
+export const StyledTab = styled(Tab)`
   padding: ${themeGet("space.scale20")};
   font-weight: ${themeGet("fontWeights.medium")};
   font-size: ${themeGet("fontSizes.scale80")};
@@ -482,13 +482,13 @@ const StyledTab = styled(Tab)`
   }
 `;
 
-const StyledTabList = styled(TabList)`
+export const StyledTabList = styled(TabList)`
   display: flex;
   gap: ${themeGet("space.scale180")};
   padding: ${themeGet("space.scale60")} ${themeGet("space.scale180")};
 `;
 
-const StyledSnippetSelect = styled.div`
+export const StyledSnippetSelect = styled.div`
   position: relative;
 
   ${StyledIcon} {
@@ -525,7 +525,7 @@ const StyledSnippetSelect = styled.div`
   }
 `;
 
-const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
+export const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
   ${StyledSnippet} {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -621,18 +621,3 @@ const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
     },
   })}
 `;
-
-export {
-  StyledSnippet,
-  StyledSnippetBody,
-  StyledHighlighter,
-  StyledSnippetHeader,
-  StyledSnippetTitle,
-  StyledTooltip,
-  StyledTooltipArrow,
-  StyledSnippetActions,
-  StyledSnippetSelect,
-  StyledTab,
-  StyledTabList,
-  StyledSnippetGroup,
-};

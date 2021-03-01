@@ -12,7 +12,7 @@ export interface MatchThemeProviderProps {
   excludeBaseStyles?: boolean;
 }
 
-const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({
+export const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({
   theme,
   excludeBaseStyles,
   ...props
@@ -49,5 +49,3 @@ MatchThemeProvider.defaultProps = {
   theme: ThemeVariants.TWILIO,
   excludeBaseStyles: false,
 };
-
-export { MatchThemeProvider };

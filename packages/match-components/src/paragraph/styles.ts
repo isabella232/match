@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { compose, variant, space, typography } from "styled-system";
 import { textColor } from "@twilio-labs/match-props";
 import type { ParagraphProps } from "./types";
-import { ParagraphVariant } from "./types";
+import { ParagraphVariant } from "./constants";
 import { themeGet } from "@styled-system/theme-get";
 
-const StyledParagraph = styled.p<ParagraphProps>`
+export const StyledParagraph = styled.p<ParagraphProps>`
   margin: 0;
   color: ${themeGet("components.paragraph.color")};
   font-weight: ${themeGet("fontWeights.regular")};
@@ -46,5 +46,3 @@ const StyledParagraph = styled.p<ParagraphProps>`
       })
     )}
 `;
-
-export { StyledParagraph };

@@ -2,10 +2,10 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import { marginPropTypes, textColorPropType } from "@twilio-labs/match-props";
 import { StyledParagraph } from "./styles";
-import { ParagraphVariant } from "./types";
+import { ParagraphVariant } from "./constants";
 import type { ParagraphProps } from "./types";
 
-const Paragraph: React.FC<ParagraphProps> = (props) => (
+export const Paragraph: React.FC<ParagraphProps> = (props) => (
   <StyledParagraph {...props} />
 );
 
@@ -22,6 +22,3 @@ Paragraph.defaultProps = {
   variant: ParagraphVariant.MEDIUM,
   textAlign: "left",
 };
-
-export { Paragraph, ParagraphVariant };
-export type { ParagraphProps };

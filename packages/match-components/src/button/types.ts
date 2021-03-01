@@ -1,22 +1,11 @@
-export enum ButtonVariant {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-  TERTIARY = "tertiary",
-  INVERSE = "inverse",
-}
-
-export enum ButtonSize {
-  NORMAL = "normal",
-  SMALL = "small",
-  ICON = "icon",
-}
+import { ButtonVariant, ButtonSize, ButtonType } from "./constants";
 
 export interface ButtonProps
   extends React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   children: React.ReactNode;
-  variant?: ButtonVariant;
-  type?: "button" | "submit" | "reset";
-  size?: ButtonSize;
+  variant?: `${ButtonVariant}`;
+  type?: `${ButtonType}`;
+  size?: `${ButtonSize}`;
   /** Should the button include an animated prompt? */
   prompt?: boolean;
   /** A URL to route to. The button's 'type' attribute will be ignored. */

@@ -1,10 +1,10 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import { StyledButton, StyledPrompt } from "./styles";
-import { ButtonVariant, ButtonSize } from "./types";
+import { ButtonVariant, ButtonSize, ButtonType } from "./constants";
 import type { ButtonProps } from "./types";
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ type, prompt, children, ...props }, ref) => {
     if (props.download && !props.href) {
       console.warn("[Button]: Href must be provided for a download link.");
@@ -29,7 +29,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(Object.values(ButtonVariant)),
-  type: PropTypes.oneOf(["button", "submit", "reset"]),
+  type: PropTypes.oneOf(Object.values(ButtonType)),
   size: PropTypes.oneOf(Object.values(ButtonSize)),
   href: PropTypes.string,
   disabled: PropTypes.bool,
@@ -48,6 +48,3 @@ Button.defaultProps = {
 };
 
 Button.displayName = "Button";
-
-export { Button, ButtonVariant, ButtonSize };
-export type { ButtonProps };

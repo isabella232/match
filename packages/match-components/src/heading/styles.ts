@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { compose, space, variant } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
+import { HeadingVariant } from "./constants";
 import type { HeadingProps } from "./types";
 
-const StyledHeading = styled.h1<HeadingProps>`
+export const StyledHeading = styled.h1<HeadingProps>`
   margin: 0;
   color: ${({ inverse }) =>
     inverse
@@ -21,12 +22,12 @@ const StyledHeading = styled.h1<HeadingProps>`
       space,
       variant({
         variants: {
-          h1: {
+          [HeadingVariant.H1]: {
             fontSize: ["scale280", undefined, heading.h1SizeMedium, "scale420"],
             lineHeight: "scale125",
             fontWeight: heading.h1Weight,
           },
-          h2: {
+          [HeadingVariant.H2]: {
             fontSize: [
               "scale220",
               undefined,
@@ -36,7 +37,7 @@ const StyledHeading = styled.h1<HeadingProps>`
             lineHeight: "scale140",
             fontWeight: heading.h2Weight,
           },
-          h3: {
+          [HeadingVariant.H3]: {
             color: !inverse && heading.h3Color,
             fontSize: [
               heading.h3Size,
@@ -47,17 +48,17 @@ const StyledHeading = styled.h1<HeadingProps>`
             lineHeight: heading.h3LineHeight,
             fontWeight: heading.h3Weight,
           },
-          h4: {
+          [HeadingVariant.H4]: {
             fontSize: "scale120",
             lineHeight: "scale180",
             fontWeight: heading.h4Weight,
           },
-          h5: {
+          [HeadingVariant.H5]: {
             fontSize: "scale100",
             lineHeight: "scale220",
             fontWeight: "bold",
           },
-          h6: {
+          [HeadingVariant.H6]: {
             fontSize: "scale80",
             lineHeight: "scale220",
             fontWeight: "bold",
@@ -66,5 +67,3 @@ const StyledHeading = styled.h1<HeadingProps>`
       })
     )}
 `;
-
-export { StyledHeading };

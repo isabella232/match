@@ -3,7 +3,11 @@ import { useUID } from "react-uid";
 import { Icon } from "@twilio-labs/match-primitives";
 import type { IconProps } from "@twilio-labs/match-primitives";
 
-const GithubIcon: React.FC<IconProps> = ({ title, decorative, ...props }) => {
+export const GithubIcon: React.FC<IconProps> = ({
+  title,
+  decorative,
+  ...props
+}) => {
   const uid = useUID();
   const titleId = title ? uid : undefined;
 
@@ -37,4 +41,3 @@ const GithubIcon: React.FC<IconProps> = ({ title, decorative, ...props }) => {
 
 GithubIcon.propTypes = { ...Icon.propTypes };
 GithubIcon.defaultProps = { ...Icon.defaultProps };
-export { GithubIcon };

@@ -106,12 +106,6 @@ export const StyledRadio = styled.span<StyledRadioProps>`
       border-color: ${themeGet("colors.gray30")};
     `}
 
-  ${({ hasError }) =>
-    hasError &&
-    css`
-      border-color: ${themeGet("borderColors.error")};
-    `}
-
     ${({ checked }) =>
     checked &&
     css`
@@ -162,6 +156,12 @@ export const StyledRadio = styled.span<StyledRadioProps>`
       &::after {
         background-color: ${themeGet("colors.gray10")};
       }
+    `}
+
+    ${({ hasError }) =>
+    hasError &&
+    css`
+      border-color: ${themeGet("borderColors.error")};
     `}
 `;
 

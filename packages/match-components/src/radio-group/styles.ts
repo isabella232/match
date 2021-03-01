@@ -37,7 +37,6 @@ export const StyledRadioGroupWrapper = styled.fieldset<MarginProps>`
 `;
 
 export const StyledRadioLabel = styled.label`
-  margin-left: ${themeGet("space.scale60")};
   font-weight: ${themeGet("components.form.radioWeight")};
   vertical-align: middle;
 `;
@@ -45,6 +44,10 @@ export const StyledRadioLabel = styled.label`
 export const StyledRadioAdditional = styled.p`
   margin-top: 0px;
   color: ${themeGet("components.form.radioAdditionalColor")};
+`;
+
+export const StyledRadioTextWrapper = styled.div`
+  margin-left: ${themeGet("space.scale60")};
 `;
 
 export const StyledRadio = styled.span<StyledRadioProps>`
@@ -162,13 +165,11 @@ export const StyledRadio = styled.span<StyledRadioProps>`
     `}
 `;
 
-export const HiddenRadio = styled.input.withConfig({
-  shouldForwardProp: (prop, validate) => validate(prop),
-})<HiddenRadioProps>`
+export const HiddenRadio = styled.input<HiddenRadioProps>`
   position: absolute;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  width: 17px;
-  height: 17px;
 `;
 
 export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
@@ -192,7 +193,6 @@ export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
             fontSize: "scale80",
             lineHeight: "scale140",
             fontWeight: "regular",
-            pl: "28px",
           },
         },
         [RadioSize.SMALL]: {
@@ -209,7 +209,6 @@ export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
             fontSize: "scale60",
             lineHeight: "scale180",
             fontWeight: "medium",
-            pl: "26px",
           },
         },
       },

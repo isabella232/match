@@ -9,6 +9,7 @@ import {
   HiddenRadio,
   StyledRadioLabel,
   StyledRadioAdditional,
+  StyledRadioTextWrapper,
 } from "./styles";
 import { RadioSize } from "./constants";
 import type { RadioProps } from "./types";
@@ -94,7 +95,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
             />
           </StyledRadio>
         </div>
-        <div>
+        <StyledRadioTextWrapper>
           <StyledRadioLabel
             id={seed(`${name}_label`)}
             htmlFor={seed(`${name}_input`)}
@@ -106,7 +107,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
               {additional}
             </StyledRadioAdditional>
           )}
-        </div>
+        </StyledRadioTextWrapper>
       </StyledRadioWrapper>
     );
   }

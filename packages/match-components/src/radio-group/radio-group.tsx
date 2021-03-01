@@ -51,9 +51,11 @@ export const RadioGroup = React.forwardRef<
     const hasError = touched[name] && errors[name];
 
     const seed = useUIDSeed();
-    const describedby =
-      (hasError ? seed(`${name}_error`) + "," : "") +
-      (Boolean(helper) ? seed(`${name}_helper`) : "").replace(/,\s*$/, "");
+
+    const describedby: string[] = [];
+    hasError && describedby.push(seed(`${name}_error`));
+    Boolean(helper) && describedby.push(seed(`${name}_helper`));
+
     return (
       <StyledRadioGroupWrapper
         margin={margin}
@@ -66,7 +68,7 @@ export const RadioGroup = React.forwardRef<
         name={name}
         ref={ref}
         disabled={disabled}
-        aria-describedby={Boolean(describedby == "") ? undefined : describedby}
+        aria-describedby={describedby.join(" ")}
       >
         <Label
           id={seed(`${name}_label`)}

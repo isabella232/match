@@ -4709,6 +4709,7 @@ __metadata:
     "@types/styled-system__theme-get": 5.0.1
     core-js: 3.9.0
     csstype: 3.0.6
+    flagpack-core: 1.0.0
     formik: 2.2.6
     html-react-parser: 1.2.4
     jest: 26.6.3
@@ -4734,6 +4735,7 @@ __metadata:
     "@twilio-labs/match-props": ^1.0.0-alpha.4
     "@twilio-labs/match-themes": ^1.0.0-alpha.4
     "@twilio-labs/match-tokens": ^1.0.0-alpha.3
+    flagpack-core: 1.x
     formik: 2.x
     html-react-parser: 1.x
     prop-types: 15.x
@@ -5105,6 +5107,7 @@ __metadata:
     "@types/styled-components": 5.1.7
     "@types/styled-system": 5.1.10
     "@types/styled-system__theme-get": 5.0.1
+    flagpack-core: 1.0.0
     formik: 2.2.6
     html-react-parser: 1.2.4
     prop-types: 15.7.2
@@ -12094,6 +12097,13 @@ __metadata:
   dependencies:
     semver-regex: ^3.1.2
   checksum: 05174128349e522f0746cc343a509f2ce1c8c765e24968ff2ac6f82fda4e4c680f5f71c6a781ce28406d19addc32a205116ac14ee83cb2e336635dd803f56cbd
+  languageName: node
+  linkType: hard
+
+"flagpack-core@npm:1.0.0":
+  version: 1.0.0
+  resolution: "flagpack-core@npm:1.0.0"
+  checksum: 2fa1fc66430dda8f4c9008150e9f23e9a0e3486a67de73abab2c51945cbe811c4c5cc662e5a66a199fd82bde59964c2ef617a350c8df3bb668e0f6c11791aa1f
   languageName: node
   linkType: hard
 

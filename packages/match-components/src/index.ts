@@ -1,6 +1,7 @@
 export * from "./anchor";
 export * from "./button";
 export * from "./card";
+export * from "./checkbox";
 export * from "./code";
 export * from "./form";
 export * from "./grid";

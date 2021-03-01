@@ -29,6 +29,10 @@ export interface HiddenRadioProps extends RadioProps {
 
 export interface StyledRadioProps {
   hasError: boolean;
+  disabled?: boolean;
+  readOnly?: boolean;
+  checked?: boolean;
+  radioSize?: RadioSize;
 }
 
 export interface StyledRadioWrapperProps extends MarginProps {

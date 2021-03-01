@@ -10,7 +10,6 @@ import {
   StyledRadioGroupProps,
 } from "./types";
 
-//Wraps around and sets up a grid for all radio buttons in radio group
 export const StyledRadioGroup = styled.div<StyledRadioGroupProps>`
   margin-top: ${themeGet("space.scale60")};
   > *:not(:last-child) {
@@ -31,22 +30,16 @@ export const StyledRadioGroup = styled.div<StyledRadioGroupProps>`
     `}
 `;
 
-//Wraps the entire radio group, including group label
 export const StyledRadioGroupWrapper = styled.fieldset<MarginProps>`
   ${space}
   padding: ${themeGet("space.scale0")};
   border-width: 0px;
 `;
 
-export const StyledRadioLabel = styled.span`
+export const StyledRadioLabel = styled.label`
   margin-left: ${themeGet("space.scale60")};
   font-weight: ${themeGet("components.form.radioWeight")};
   vertical-align: middle;
-`;
-
-// Aligns the radio button and the label for that button
-export const StyledRadioLabelWrapper = styled.label`
-  display: flex;
 `;
 
 export const StyledRadioAdditional = styled.p`
@@ -54,7 +47,6 @@ export const StyledRadioAdditional = styled.p`
   color: ${themeGet("components.form.radioAdditionalColor")};
 `;
 
-//Styled input that oes on top of the hidden one
 export const StyledRadio = styled.span<StyledRadioProps>`
   position: relative;
   display: inline-block;
@@ -65,98 +57,122 @@ export const StyledRadio = styled.span<StyledRadioProps>`
   border-width: ${themeGet("borderWidths.light")};
   border-radius: 50%;
 
+  &:hover {
+    /* prevent hover for disabled and read only checked */
+    ${({ disabled, readOnly }) =>
+      !disabled &&
+      !readOnly &&
+      css`
+        background-color: ${themeGet("colors.gray20")};
+      `}
+
+    ${({ checked, disabled, readOnly }) =>
+      checked &&
+      !disabled &&
+      !readOnly &&
+      css`
+        background-color: ${themeGet("colors.blue70")};
+        border-color: ${themeGet("colors.blue70")};
+      `}
+  }
+
+  &:focus-within,
+  &:active {
+    border-color: ${themeGet("borderColors.focusPrimary")};
+
+    ${({ checked }) =>
+      checked &&
+      css`
+        border-color: ${themeGet("colors.blue50")};
+      `}
+  }
+
+  ${({ readOnly, disabled }) =>
+    readOnly &&
+    !disabled &&
+    css`
+      background-color: ${themeGet("colors.gray10")};
+      border-color: ${themeGet("borderColors.card")};
+    `}
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      pointer-events: none;
+      background-color: ${themeGet("colors.gray30")};
+      border-color: ${themeGet("colors.gray30")};
+    `}
+
   ${({ hasError }) =>
     hasError &&
     css`
       border-color: ${themeGet("borderColors.error")};
     `}
+
+    ${({ checked }) =>
+    checked &&
+    css`
+      background-color: ${themeGet("colors.blue60")};
+      border-color: ${themeGet("colors.blue60")};
+
+      &::after {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 6px;
+        height: 6px;
+        transform: translate(-50%, -50%);
+        background-color: ${themeGet("colors.white")};
+        border-radius: 50%;
+        content: "";
+      }
+    `}
+
+    ${({ checked, radioSize }) =>
+    checked &&
+    Boolean(radioSize == RadioSize.SMALL) &&
+    css`
+      width: 5.25px;
+      height: 5.25px;
+    `}
+
+    ${({ checked, readOnly, disabled }) =>
+    checked &&
+    readOnly &&
+    !disabled &&
+    css`
+      background-color: ${themeGet("colors.gray10")};
+      border-color: ${themeGet("borderColors.card")};
+      &::after {
+        background-color: ${themeGet("colors.gray30")};
+      }
+    `}
+
+    ${({ checked, disabled }) =>
+    checked &&
+    disabled &&
+    css`
+      pointer-events: none;
+      background-color: ${themeGet("colors.gray30")};
+      border-color: ${themeGet("colors.gray30")};
+      &::after {
+        background-color: ${themeGet("colors.gray10")};
+      }
+    `}
 `;
 
-//The actual input tag, which gets hidden
 export const HiddenRadio = styled.input.withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
 })<HiddenRadioProps>`
   position: absolute;
   opacity: 0;
-
-  :checked + ${StyledRadio} {
-    background-color: ${themeGet("colors.blue60")};
-    border-color: ${themeGet("colors.blue60")};
-
-    &::after {
-      display: inline-block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 6px;
-      height: 6px;
-      transform: translate(-50%, -50%);
-      background-color: ${themeGet("colors.white")};
-      border-radius: 50%;
-      content: "";
-
-      ${({ radioSize }) =>
-        Boolean(radioSize == RadioSize.SMALL) &&
-        css`
-          width: 5.25px;
-          height: 5.25px;
-        `}
-    }
-  }
-
-  &:hover {
-    + ${StyledRadio} {
-      background-color: ${themeGet("colors.gray20")};
-    }
-
-    :checked + ${StyledRadio} {
-      //prevent hover from working when disabled
-      ${({ disabled }) =>
-        !disabled &&
-        css`
-          background-color: ${themeGet("colors.blue70")};
-          border-color: ${themeGet("colors.blue70")};
-        `}
-    }
-  }
-
-  &:focus,
-  &:active {
-    + ${StyledRadio} {
-      border-color: ${themeGet("borderColors.focusPrimary")};
-    }
-
-    :checked + ${StyledRadio} {
-      border-color: ${themeGet("colors.blue50")};
-    }
-  }
-
-  :disabled {
-    + ${StyledRadio} {
-      pointer-events: none;
-      background-color: ${themeGet("colors.gray30")};
-      border-color: ${themeGet("colors.gray30")};
-
-      ${({ readOnly }) =>
-        readOnly &&
-        css`
-          background-color: ${themeGet("colors.gray10")};
-          border-color: ${themeGet("borderColors.card")};
-        `}
-    }
-
-    :checked + ${StyledRadio}::after {
-      ${({ readOnly }) =>
-        readOnly &&
-        css`
-          background-color: ${themeGet("colors.gray30")};
-        `}
-    }
-  }
+  width: 17px;
+  height: 17px;
 `;
 
-//Wraps an entire radio button
 export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
+  display: flex;
   ${compose(
     space,
     variant({

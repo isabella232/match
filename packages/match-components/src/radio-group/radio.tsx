@@ -9,7 +9,6 @@ import {
   HiddenRadio,
   StyledRadioLabel,
   StyledRadioAdditional,
-  StyledRadioLabelWrapper,
 } from "./styles";
 import { RadioSize } from "./constants";
 import type { RadioProps } from "./types";
@@ -68,15 +67,21 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
         marginTop={marginTop}
         radioSize={size}
       >
-        <StyledRadioLabelWrapper>
-          <div>
+        <div>
+          <StyledRadio
+            hasError={hasError}
+            disabled={disabled}
+            readOnly={readOnly}
+            checked={field.checked}
+            radioSize={size}
+          >
             <HiddenRadio
               type="radio"
               ref={ref}
               id={seed(`${name}_input`)}
               aria-labelledby={seed(`${name}_label`)}
               aria-describedby={
-                Boolean(additional) ? seed(`${name}_message`) : undefined
+                Boolean(additional) ? seed(`${name}_additional`) : undefined
               }
               label={label}
               aria-invalid={hasError}
@@ -87,18 +92,21 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
               {...field}
               {...props}
             />
-            <StyledRadio hasError={hasError} />
-          </div>
-
-          <StyledRadioLabel id={seed(`${name}_label`)}>
+          </StyledRadio>
+        </div>
+        <div>
+          <StyledRadioLabel
+            id={seed(`${name}_label`)}
+            htmlFor={seed(`${name}_input`)}
+          >
             {label}
           </StyledRadioLabel>
-        </StyledRadioLabelWrapper>
-        {Boolean(additional) && (
-          <StyledRadioAdditional id={seed(`${name}_additional`)}>
-            {additional}
-          </StyledRadioAdditional>
-        )}
+          {Boolean(additional) && (
+            <StyledRadioAdditional id={seed(`${name}_additional`)}>
+              {additional}
+            </StyledRadioAdditional>
+          )}
+        </div>
       </StyledRadioWrapper>
     );
   }

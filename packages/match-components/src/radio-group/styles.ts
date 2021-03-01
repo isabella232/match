@@ -32,6 +32,7 @@ export const StyledRadioGroup = styled.div<StyledRadioGroupProps>`
 
 export const StyledRadioGroupWrapper = styled.fieldset<MarginProps>`
   ${space}
+  margin: ${themeGet("space.scale0")};
   padding: ${themeGet("space.scale0")};
   border-width: 0px;
 `;

@@ -19,6 +19,7 @@ export const StyledRequired = styled.span`
 export const StyledLabel = styled.label<StyledLabelProps>`
   display: block;
   margin-bottom: ${themeGet("space.scale7")};
+  padding: ${themeGet("space.scale0")};
   color: ${themeGet("textColors.primary")};
   font-weight: ${themeGet("components.form.labelFontWeight")};
 

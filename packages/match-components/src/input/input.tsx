@@ -5,6 +5,7 @@ import { marginPropTypes } from "@twilio-labs/match-props";
 import { useMergedRefs } from "@twilio-labs/match-hooks";
 import {
   Label,
+  LabelSize,
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
@@ -104,6 +105,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             htmlFor={seed(`${name}_input`)}
             disabled={Boolean(disabled)}
             required={Boolean(required)}
+            size={LabelSize.SMALL}
           >
             {label}
           </Label>

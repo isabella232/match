@@ -88,8 +88,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
               aria-invalid={hasError}
               aria-disabled={disabled}
               disabled={Boolean(disabled || readOnly)}
-              readOnly={readOnly}
-              radioSize={size}
               {...field}
               {...props}
             />

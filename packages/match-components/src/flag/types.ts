@@ -6,6 +6,7 @@ export interface FlagProps
     React.ImgHTMLAttributes<HTMLImageElement> {
   size?: `${FlagSize}`;
   code: string;
+  decorative?: boolean;
 }
 
 export interface StyledFlagProps {

@@ -23,10 +23,6 @@ export interface RadioProps
   noValidate?: boolean;
 }
 
-export interface HiddenRadioProps extends RadioProps {
-  radioSize?: RadioSize;
-}
-
 export interface StyledRadioProps {
   hasError: boolean;
   disabled?: boolean;

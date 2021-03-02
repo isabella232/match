@@ -6,7 +6,6 @@ import { RadioSize } from "./constants";
 import {
   StyledRadioProps,
   StyledRadioWrapperProps,
-  HiddenRadioProps,
   StyledRadioGroupProps,
 } from "./types";
 
@@ -166,7 +165,7 @@ export const StyledRadio = styled.span<StyledRadioProps>`
     `}
 `;
 
-export const HiddenRadio = styled.input<HiddenRadioProps>`
+export const HiddenRadio = styled.input`
   position: absolute;
   top: -${themeGet("borderWidths.light")};
   left: -${themeGet("borderWidths.light")};

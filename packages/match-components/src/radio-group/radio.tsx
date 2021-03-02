@@ -84,7 +84,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
               aria-describedby={
                 Boolean(additional) ? seed(`${name}_additional`) : undefined
               }
-              label={label}
               aria-invalid={hasError}
               aria-disabled={disabled}
               disabled={Boolean(disabled || readOnly)}

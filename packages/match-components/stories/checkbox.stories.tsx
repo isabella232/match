@@ -65,22 +65,26 @@ export const CheckedCheckbox = Template.bind({});
 CheckedCheckbox.args = {
   checked: true,
 };
-CheckedCheckbox.argTypes = SingleCheckbox.argTypes
+CheckedCheckbox.argTypes = SingleCheckbox.argTypes;
 
 export const DisabledCheckbox = Template.bind({});
 DisabledCheckbox.args = {
   disabled: true,
+  label:
+    "Really really really really really really really really really really really really really really really really long label",
+  additional:
+    "Really really really really really really really really really really really really really really really really long help text",
 };
-DisabledCheckbox.argTypes = SingleCheckbox.argTypes
+DisabledCheckbox.argTypes = SingleCheckbox.argTypes;
 
 export const ReadonlyCheckbox = Template.bind({});
 ReadonlyCheckbox.args = {
   readOnly: true,
 };
-ReadonlyCheckbox.argTypes = SingleCheckbox.argTypes
+ReadonlyCheckbox.argTypes = SingleCheckbox.argTypes;
 
 export const ErrorCheckbox = Template.bind({});
 ErrorCheckbox.args = {
   error: true,
 };
-ErrorCheckbox.argTypes = SingleCheckbox.argTypes
+ErrorCheckbox.argTypes = SingleCheckbox.argTypes;

@@ -4,17 +4,20 @@ import {
   Checkbox,
   CheckboxSize,
   CheckboxGroup,
-  CheckboxGroupProps
+  CheckboxGroupProps,
 } from "../src";
 
 export default {
-  title: "Components/CheckboxGroup",
+  title: "Components/Checkbox",
   component: Checkbox,
   args: {
     name: "Example Checkbox Group",
     label: "Label",
     additional: "Additional Text",
     size: CheckboxSize.NORMAL,
+    required: true,
+    readOnly: false,
+    disabled: false,
   },
   argTypes: {
     name: {
@@ -25,26 +28,41 @@ export default {
 
 const Template: Story<CheckboxGroupProps> = (args) => (
   <CheckboxGroup {...args}>
-    <Checkbox name="checking" value={"value1"} label={'test label 1'} additional={'Additional text'} />
-    <Checkbox name="checking" value={"value2"} label={'test label 2'} additional={'Additional text'} />
-    <Checkbox name="checking" value={"value3"} label={'test label 3'} additional={'Additional text'} />
+    <Checkbox
+      name="checking"
+      value={"value1"}
+      label={"test label 1"}
+      additional={"Additional text"}
+    />
+    <Checkbox
+      name="checking"
+      value={"value2"}
+      label={"test label 2"}
+      additional={"Additional text"}
+    />
+    <Checkbox
+      name="checking"
+      value={"value3"}
+      label={"test label 3"}
+      additional={"Additional text"}
+    />
   </CheckboxGroup>
 );
 
-export const CheckboxGroupStory = Template.bind({});
-CheckboxGroupStory.args = {
-  label: "Label",
-  additional: "Additional Text",
+export const Group = Template.bind({});
+Group.args = {
+  label: "Subscribe to sub-processor notifications for:",
+  additional: "Select one or more options",
   error: false,
 };
-CheckboxGroupStory.argTypes = {
+Group.argTypes = {
   label: {
     control: { type: "text" },
   },
   additional: {
     control: { type: "text" },
   },
-  checked: {
+  required: {
     control: { type: "boolean" },
   },
   error: {

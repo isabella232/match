@@ -1,31 +1,52 @@
+/*
+  TODO
+  - Use dynamic line height
+  - Replace checkmark icon
+  - focused state
+*/
+
 import styled, { css } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
-import { MarginProps } from "@twilio-labs/match-props";
-import { space, variant } from "styled-system";
-import { CheckboxSize } from "./constants";
+// import { MarginProps } from "@twilio-labs/match-props";
+import { HelpText } from "@twilio-labs/match-primitives";
+// import { space, variant } from "styled-system";
+// import { CheckboxSize } from "./constants";
 import {
   CheckboxProps,
-  StyledCheckboxProps,
+  // StyledCheckboxProps,
   StyledCheckboxWrapperProps,
   StyledCheckboxLabelProps,
   // HiddenCheckboxProps,
-  StyledCheckboxGroupProps,
+  // StyledCheckboxGroupProps,
 } from "./types";
 
-//Wraps around and sets up a grid for all radio buttons in radio group
-export const StyledCheckbox = styled.div<CheckboxProps>`
-  margin: 12px;
-  position: relative;
-  box-sizing: border-box;
+export const StyledCheckboxWrapper = styled.div<StyledCheckboxWrapperProps>`
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: min-content auto;
+  margin: 8px 0;
+  font-size: ${themeGet("fontSizes.scale100")};
+  line-height: 28px;
+`;
 
+export const StyledCheckbox = styled.div<CheckboxProps>`
+  position: relative;
+  display: grid;
+  grid-template-areas: "checkbox";
+  /* Let checkbox and input share the grid area */
+  & > * {
+    grid-area: checkbox;
+  }
+
+  box-sizing: border-box;
   width: 1em;
   height: 1rem;
-
+  margin-top: 5px;
   background: ${themeGet("colors.gray10")};
   border: 2px solid ${themeGet("colors.gray40")};
   border-radius: 3px;
 
-  // Hover
+  /* Hover */
   &:hover {
     background-color: ${themeGet("colors.gray20")};
     ${({ checked }) => {
@@ -37,106 +58,81 @@ export const StyledCheckbox = styled.div<CheckboxProps>`
     }}
   }
 
-  // Hover
+  /* Hover */
   :hover {
     background-color: ${themeGet("colors.gray20")};
   }
 
-  // Active + Focus
+  /* Active + Focus */
   :active,
   :focus {
     border-color: ${themeGet("colors.blue60")};
   }
-  /* ${({ focused }) =>
-    focused &&
-      css`
-        border-color: ${themeGet("colors.blue60")};
-      `
-  } */
 
-  // Checked
+  /* Checked */
   ${({ checked, readOnly }) =>
     checked &&
-      css`
-        &:before {
-          content: "✓";
-          position: absolute;
-          width: 8px;
-          height: 8px;
-          top: 0px;
-          left: 0px;
-          color:  ${readOnly ? themeGet("colors.gray30") : themeGet("colors.white")};
-        }
+    css`
+      &:before {
+        content: "✓";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        top: 0px;
+        left: 0px;
+        color: ${readOnly
+          ? themeGet("colors.gray30")
+          : themeGet("colors.white")};
+      }
 
-        background-color: ${themeGet("colors.blue60")};
-        border-color: ${themeGet("colors.blue60")};
+      background-color: ${themeGet("colors.blue60")};
+      border-color: ${themeGet("colors.blue60")};
 
-        // Hover
-        :hover {
-          background-color: ${themeGet("colors.blue70")};
-        }
-      `
-  }
+      /* Hover */
+      :hover {
+        background-color: ${themeGet("colors.blue70")};
+      }
+    `}
 
-  // Disabled
+  /* Disabled */
   ${({ disabled }) =>
     disabled &&
-      css`
+    css`
+      background-color: ${themeGet("colors.gray30")};
+      border-color: ${themeGet("colors.gray30")};
+    `}
 
-        background-color: ${themeGet("colors.gray30")};
-        border-color: ${themeGet("colors.gray30")};
-
-      `
-  }
-
-  // Readonly
+  /* Readonly */
   ${({ readOnly }) =>
     readOnly &&
-      css`
-        // Disable hover effects
-        pointer-events: none;
-        background-color: ${themeGet("colors.gray10")};
-        border-color: ${themeGet("colors.gray20")};
-      `
-  }
+    css`
+      /* Disable hover effects */
+      pointer-events: none;
+      background-color: ${themeGet("colors.gray10")};
+      border-color: ${themeGet("colors.gray20")};
+    `}
 
-  // Errored
+  /* Errored */
   ${({ error }) =>
     error &&
-      css`
-        border-color: ${themeGet("colors.red60")};
-      `
-  }
-
+    css`
+      border-color: ${themeGet("colors.red60")};
+    `}
 `;
 
 export const HiddenInput = styled.input<HiddenInputProps>`
-  // Under the custom checkbox
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
+  /* z-index: -1; */
+  /* position: absolute; */
   width: 100%;
   height: 100%;
   margin: 0;
-`;
-
-export const StyledCheckboxWrapper = styled.div<StyledCheckboxWrapperProps>`
-  font-size: 16px;
-  line-height: 28px;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  opacity: 0;
 `;
 
 export const StyledCheckboxLabel = styled.div<StyledCheckboxLabelProps>`
-
-  margin-top: 7px;
-  max-width: 100%;
-
   display: flex;
   flex-direction: column;
-
+  max-width: 100%;
 
   label {
     color: ${themeGet("colors.gray90")};
@@ -144,15 +140,35 @@ export const StyledCheckboxLabel = styled.div<StyledCheckboxLabelProps>`
   }
 
   span {
-    font-weight: ${themeGet("fontWeights.regular")};
     color: ${themeGet("colors.gray70")};
-    font-size: 14px;
+    font-weight: ${themeGet("fontWeights.regular")};
+    font-size: ${themeGet("fontSizes.scale80")};
     line-height: 21px;
   }
 `;
 
-export const StyledCheckboxGroup = styled.fieldset<StyledCheckboxGroupProps>``
+export const StyledCheckboxGroup = styled.fieldset<StyledCheckboxGroupProps>`
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  border: none;
+  min-inline-size: min-content;
 
-export const StyledCheckboxGroupLegend = styled.legend<StyledCheckboxGroupProps>``
+  legend {
+    margin-bottom: 8px;
+    font-weight: ${themeGet("fontWeights.regular")};
+  }
+`;
 
-export const StyledCheckboxGroupWrapper = styled.div<StyledCheckboxGroupProps>``
+export const StyledHelpText = styled(HelpText)`
+  margin: 0 0 8px 0;
+  color: ${themeGet("colors.gray60")};
+  font-weight: ${themeGet("fontWeights.regular")};
+  font-size: ${themeGet("fontSizes.scale80")};
+  line-height: 20px;
+`;
+
+export const StyledCheckboxGroupWrapper = styled.div<StyledCheckboxGroupProps>``;

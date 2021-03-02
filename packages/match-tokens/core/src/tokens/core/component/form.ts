@@ -4,4 +4,6 @@ export const form = {
   inputColor: { value: "{textColor.primary.value}" },
   inputDisabledColor: { value: "{textColor.tertiary.value}" },
   textareaLineHeight: { value: "{lineHeight.scale220.value}" },
+  radioAdditionalColor: { value: "{textColor.secondary.value}" },
+  radioWeight: { value: "{fontWeight.medium.value}" },
 };

@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-// import { useField } from "formik";
+import { useField } from "formik";
 import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
 import {
@@ -33,8 +33,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
       size,
       label,
       additional,
-      // validate: validateOverride,
-      // noValidate,
+      validate: validateOverride,
+      noValidate,
       margin,
       marginY,
       marginX,
@@ -47,22 +47,19 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     ref
   ) => {
     const seed = useUIDSeed();
-    // const validate = (value: string) => {
-    //   if (noValidate) return;
-    //   if (validateOverride) return validateOverride(value);
-    //   if (required && !value) {
-    //     return "This field is required";
-    //   }
-    // };
-    // const [field, meta] = useField({
-    //   name,
-    //   disabled,
-    //   value,
-    //   type: "checkbox",
-    //   validate,
-    //   ...props,
-    // });
-    // const hasError = meta.touched && Boolean(meta.error);
+    const validate = (value: string) => {
+      if (noValidate) return;
+      if (validateOverride) return validateOverride(value);
+    };
+    const [field, meta] = useField({
+      name,
+      disabled,
+      value,
+      type: "checkbox",
+      validate,
+      ...props,
+    });
+    const hasError = meta.touched && Boolean(meta.error);
 
     return (
       <StyledCheckboxWrapper
@@ -85,12 +82,12 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           aria-describedby={
             Boolean(additional) ? seed(`${name}_additional`) : undefined
           }
-          // aria-invalid={hasError}
+          aria-invalid={hasError}
           aria-disabled={disabled}
           disabled={disabled}
           readOnly={readOnly}
-          // hasError={hasError}
-          // checked={field.checked}
+          hasError={hasError}
+          checked={field.checked}
           size={size}
           {...props}
         >
@@ -99,7 +96,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             disabled={disabled}
             name={name}
             value={value}
-            // {...field}
+            {...field}
           />
         </StyledCheckbox>
         <StyledCheckboxLabel>

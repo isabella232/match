@@ -17,7 +17,7 @@ import {
   StyledCheckboxWrapperProps,
   StyledCheckboxLabelProps,
   // HiddenCheckboxProps,
-  // StyledCheckboxGroupProps,
+  StyledCheckboxGroupProps,
 } from "./types";
 
 export const StyledCheckboxWrapper = styled.div<StyledCheckboxWrapperProps>`
@@ -98,6 +98,8 @@ export const StyledCheckbox = styled.div<CheckboxProps>`
   ${({ disabled }) =>
     disabled &&
     css`
+      /* Disable hover effects on readonly */
+      pointer-events: none;
       background-color: ${themeGet("colors.gray30")};
       border-color: ${themeGet("colors.gray30")};
     `}
@@ -106,7 +108,7 @@ export const StyledCheckbox = styled.div<CheckboxProps>`
   ${({ readOnly }) =>
     readOnly &&
     css`
-      /* Disable hover effects */
+      /* Disable hover effects on readonly */
       pointer-events: none;
       background-color: ${themeGet("colors.gray10")};
       border-color: ${themeGet("colors.gray20")};
@@ -171,4 +173,4 @@ export const StyledHelpText = styled(HelpText)`
   line-height: 20px;
 `;
 
-export const StyledCheckboxGroupWrapper = styled.div<StyledCheckboxGroupProps>``;
+export const StyledCheckboxGroupWrapper = styled.div``;

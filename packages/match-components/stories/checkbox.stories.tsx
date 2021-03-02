@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { Formik } from "formik";
 import {
   Checkbox,
   CheckboxProps,
@@ -30,9 +31,9 @@ export default {
 } as Meta;
 
 const Template: Story<CheckboxProps> = (args) => (
-  <div>
+  <Formik initialValues={{}} onSubmit={() => {}}>
     <Checkbox {...args} />
-  </div>
+  </Formik>
 );
 
 export const SingleCheckbox = Template.bind({});
@@ -88,3 +89,16 @@ ErrorCheckbox.args = {
   error: true,
 };
 ErrorCheckbox.argTypes = SingleCheckbox.argTypes;
+
+// export const Error: Story<CheckboxProps> = (args: CheckboxProps) => (
+//   <Formik
+//     initialValues={{}}
+//     validateOnMount
+//     onSubmit={() => {}}
+//   >
+//     <Checkbox {...args} />
+//   </Formik>
+// );
+// Error.args = {
+
+// };

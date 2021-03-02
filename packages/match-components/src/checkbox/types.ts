@@ -17,6 +17,10 @@ export interface CheckboxProps
   readOnly?: boolean;
   /** Supporting information  */
   additional?: string;
+  /** Overrides built in validation. */
+  validate?: (value: string) => string | undefined;
+  /** Disables built in validation. */
+  noValidate?: boolean;
   /** Marks the checkbox as checked*/
   checked?: boolean;
 }

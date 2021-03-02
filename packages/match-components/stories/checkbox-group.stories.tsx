@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { Formik } from "formik";
 import {
   Checkbox,
   CheckboxSize,
@@ -27,26 +28,28 @@ export default {
 } as Meta;
 
 const Template: Story<CheckboxGroupProps> = (args) => (
-  <CheckboxGroup {...args}>
-    <Checkbox
-      name="checking"
-      value={"value1"}
-      label={"test label 1"}
-      additional={"Additional text"}
-    />
-    <Checkbox
-      name="checking"
-      value={"value2"}
-      label={"test label 2"}
-      additional={"Additional text"}
-    />
-    <Checkbox
-      name="checking"
-      value={"value3"}
-      label={"test label 3"}
-      additional={"Additional text"}
-    />
-  </CheckboxGroup>
+  <Formik initialValues={{}} onSubmit={() => {}}>
+    <CheckboxGroup {...args}>
+      <Checkbox
+        name="checking"
+        value={"value1"}
+        label={"test label 1"}
+        additional={"Additional text"}
+      />
+      <Checkbox
+        name="checking"
+        value={"value2"}
+        label={"test label 2"}
+        additional={"Additional text"}
+      />
+      <Checkbox
+        name="checking"
+        value={"value3"}
+        label={"test label 3"}
+        additional={"Additional text"}
+      />
+    </CheckboxGroup>
+  </Formik>
 );
 
 export const Group = Template.bind({});

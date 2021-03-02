@@ -69,6 +69,7 @@ export const RadioGroup = React.forwardRef<
         ref={ref}
         disabled={disabled}
         aria-describedby={describedby.join(" ")}
+        aria-labelledby={seed(`${name}_label`)}
       >
         <Label
           id={seed(`${name}_label`)}

@@ -168,8 +168,6 @@ export const StyledRadio = styled.span<StyledRadioProps>`
 
 export const HiddenRadio = styled.input<HiddenRadioProps>`
   position: absolute;
-  width: 100%;
-  height: 100%;
   margin: 0;
   opacity: 0;
 `;
@@ -187,6 +185,12 @@ export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
             height: "16px",
             marginTop: "6px",
           },
+          [HiddenRadio]: {
+            width: "17px",
+            height: "17px",
+            top: "-3px",
+            left: "-3px",
+          },
           [StyledRadioLabel]: {
             fontSize: "scale100",
             lineHeight: "scale220",
@@ -202,6 +206,12 @@ export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
             width: "14px",
             height: "14px",
             marginTop: "2px",
+          },
+          [HiddenRadio]: {
+            width: "15px",
+            height: "15px",
+            top: "-3px",
+            left: "-3px",
           },
           [StyledRadioLabel]: {
             fontSize: "scale80",

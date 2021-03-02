@@ -5,6 +5,16 @@ declare module "flagpack-core" {
     alpha3: string;
     numeric: number;
   }>;
+
   declare function isoToCountryCode(isoCode: string, keyToGet?: string): string;
-  export function imageUrl(assetCode: string, size: string): string;
+
+  declare function imageUrl(assetCode: string, size: string): string;
+
+  declare const flags: {
+    [alpha2: string]: {
+      s: string;
+      m: string;
+      l: string;
+    };
+  };
 }

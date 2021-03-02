@@ -15,7 +15,8 @@ export default {
     name: "example name",
     value: "example",
     label: "Label",
-    additional: "Additional",
+    additional: "Additional Text",
+    checked: false,
     error: false,
     readOnly: false,
     disabled: false,
@@ -30,22 +31,21 @@ export default {
 
 const Template: Story<CheckboxProps> = (args) => (
   <div>
-    <Checkbox value="1" {...args} />
+    <Checkbox {...args} />
   </div>
 );
 
 export const SingleCheckbox = Template.bind({});
-SingleCheckbox.args = {
-  label: "Label",
-  additional: "additional",
-  error: false,
-};
+
 SingleCheckbox.argTypes = {
   label: {
     control: { type: "text" },
   },
   additional: {
     control: { type: "text" },
+  },
+  checked: {
+    control: { type: "boolean" },
   },
   error: {
     control: { type: "boolean" },
@@ -60,3 +60,27 @@ SingleCheckbox.argTypes = {
     control: { type: "select", options: Object.values(CheckboxSize) },
   },
 };
+
+export const CheckedCheckbox = Template.bind({});
+CheckedCheckbox.args = {
+  checked: true,
+};
+CheckedCheckbox.argTypes = SingleCheckbox.argTypes
+
+export const DisabledCheckbox = Template.bind({});
+DisabledCheckbox.args = {
+  disabled: true,
+};
+DisabledCheckbox.argTypes = SingleCheckbox.argTypes
+
+export const ReadonlyCheckbox = Template.bind({});
+ReadonlyCheckbox.args = {
+  readOnly: true,
+};
+ReadonlyCheckbox.argTypes = SingleCheckbox.argTypes
+
+export const ErrorCheckbox = Template.bind({});
+ErrorCheckbox.args = {
+  error: true,
+};
+ErrorCheckbox.argTypes = SingleCheckbox.argTypes

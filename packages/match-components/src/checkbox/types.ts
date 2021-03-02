@@ -5,8 +5,8 @@ export interface CheckboxProps
   extends MarginProps,
     Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   name: string;
-  label: string;
   value: string;
+  label?: string;
   /** Whether the field is required */
   required?: boolean;
   /** Sets the size of the checkbox */
@@ -23,6 +23,13 @@ export interface CheckboxProps
 
 export interface StyledCheckboxProps {
   hasError: boolean;
+  disabled?: boolean;
+  readonly?: boolean;
+}
+
+export interface HiddenInputProps {
+  name: string;
+  value: string;
 }
 
 export interface StyledCheckboxWrapperProps extends MarginProps {
@@ -30,5 +37,15 @@ export interface StyledCheckboxWrapperProps extends MarginProps {
 }
 
 export interface StyledCheckboxLabelProps extends MarginProps {
+  additional?: string,
+  label?: string
+}
+
+export interface CheckboxGroupProps extends MarginProps {
+  name?: string;
   size?: CheckboxSize;
+  disabled?: boolean;
+  readonly?: boolean;
+  label?: string
+  additional?: string,
 }

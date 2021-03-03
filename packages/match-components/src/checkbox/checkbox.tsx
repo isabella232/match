@@ -14,11 +14,9 @@ import {
   StyledCheckboxWrapper,
   HiddenInput,
   StyledCheckboxLabel,
-  // StyledCheckboxAdditional,
   StyledHelpText,
   StyledCheckboxGroup,
-  // StyledCheckboxGroupWrapper,
-  // StyledCheckboxLabelWrapper,
+  StyledCheckboxGroupInnerWrapper,
 } from "./styles";
 import { CheckboxSize } from "./constants";
 import type { CheckboxProps, CheckboxGroupProps } from "./types";
@@ -138,6 +136,7 @@ export const CheckboxGroup = React.forwardRef<
   (
     {
       name,
+      horizontal,
       children,
       disabled,
       readOnly,
@@ -218,17 +217,19 @@ export const CheckboxGroup = React.forwardRef<
             {additional}
           </StyledHelpText>
         )}
-        {React.Children.map(children, (child) =>
-          React.cloneElement(child, {
-            name: name,
-            size: size,
-            disabled: disabled,
-            readOnly: readOnly,
-            required: required,
-            validate: validate,
-            noValidate: noValidate,
-          })
-        )}
+        <StyledCheckboxGroupInnerWrapper horizontal={horizontal}>
+          {React.Children.map(children, (child) =>
+            React.cloneElement(child, {
+              name: name,
+              size: size,
+              disabled: disabled,
+              readOnly: readOnly,
+              required: required,
+              validate: validate,
+              noValidate: noValidate,
+            })
+          )}
+        </StyledCheckboxGroupInnerWrapper>
 
         {hasError && (
           <HelpText id={seed(`${name}_error`)} variant={HelpTextVariant.ERROR}>

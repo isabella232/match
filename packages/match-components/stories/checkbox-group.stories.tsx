@@ -19,6 +19,7 @@ export default {
     required: true,
     readOnly: false,
     disabled: false,
+    horizontal: false,
   },
   argTypes: {
     name: {
@@ -67,7 +68,7 @@ Group.argTypes = {
   required: {
     control: { type: "boolean" },
   },
-  error: {
+  horizontal: {
     control: { type: "boolean" },
   },
   readOnly: {

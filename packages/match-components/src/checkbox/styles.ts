@@ -17,6 +17,7 @@ import {
   StyledCheckboxLabelProps,
   HiddenInputProps,
   CheckboxGroupProps,
+  CheckboxGroupInnerWrapperProps,
 } from "./types";
 
 export const StyledCheckboxWrapper = styled.div<StyledCheckboxWrapperProps>`
@@ -164,3 +165,19 @@ export const StyledHelpText = styled(HelpText)`
 `;
 
 export const StyledCheckboxGroupWrapper = styled.div``;
+
+export const StyledCheckboxGroupInnerWrapper = styled.div<CheckboxGroupInnerWrapperProps>`
+  display: flex;
+  flex-direction: column;
+  ${({ horizontal }) =>
+    horizontal &&
+    css`
+      flex-direction: row;
+      & > * {
+        margin-right: 32px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    `}
+`;

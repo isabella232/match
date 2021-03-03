@@ -52,3 +52,7 @@ export interface CheckboxGroupProps extends MarginProps {
   /** Disables built in validation. */
   noValidate?: boolean;
 }
+
+export interface CheckboxGroupInnerWrapperProps {
+  horizontal?: boolean;
+}

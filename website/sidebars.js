@@ -18,6 +18,7 @@ module.exports = {
       "components/input",
       "components/logo",
       "components/paragraph",
+      "components/radio-group",
       "components/separator",
       "components/snippet",
       "components/textarea",

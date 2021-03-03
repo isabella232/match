@@ -1,13 +1,13 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import { useField } from "formik";
+import { useField, useFormikContext } from "formik";
 import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
 import {
   Label,
   LabelSize,
-  // HelpText,
-  // HelpTextVariant,
+  HelpText,
+  HelpTextVariant,
 } from "@twilio-labs/match-primitives";
 import {
   StyledCheckbox,
@@ -16,12 +16,13 @@ import {
   StyledCheckboxLabel,
   // StyledCheckboxAdditional,
   StyledHelpText,
-  StyledCheckboxGroupWrapper,
   StyledCheckboxGroup,
+  // StyledCheckboxGroupWrapper,
   // StyledCheckboxLabelWrapper,
 } from "./styles";
 import { CheckboxSize } from "./constants";
 import type { CheckboxProps, CheckboxGroupProps } from "./types";
+import { CheckmarkIcon } from "./checkmark-icon";
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   (
@@ -75,9 +76,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
         <StyledCheckbox
           ref={ref}
           role="checkbox"
-          aria-checked="false"
+          aria-checked={field.checked}
           tabindex="0"
-          id={seed(`${name}_input`)}
           aria-labelledby={seed(`${name}_label`)}
           aria-describedby={
             Boolean(additional) ? seed(`${name}_additional`) : undefined
@@ -91,7 +91,11 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           size={size}
           {...props}
         >
+          {field.checked && (
+            <CheckmarkIcon decorative size={size} color="inherit" />
+          )}
           <HiddenInput
+            id={seed(`${name}_input`)}
             type="checkbox"
             disabled={disabled}
             name={name}
@@ -141,6 +145,8 @@ export const CheckboxGroup = React.forwardRef<
       size,
       additional,
       label,
+      validate: validateOverride,
+      noValidate,
       // margin,
       // marginY,
       // marginX,
@@ -152,9 +158,21 @@ export const CheckboxGroup = React.forwardRef<
     },
     ref
   ) => {
-    const seed = useUIDSeed();
     name = name ? name : children && children[0].props.name;
+    const seed = useUIDSeed();
+    const { touched, errors } = useFormikContext();
+    const hasError = touched[name] && errors[name];
+    const validate = (value: string) => {
+      if (noValidate) return;
+      if (validateOverride) return validateOverride(value);
+    };
+
     const values: Array<string> = [];
+    const describedby: string[] = [];
+
+    hasError && describedby.push(seed(`${name}_error`));
+    Boolean(additional) && describedby.push(seed(`${name}_helper`));
+
     children &&
       children.map((child) => {
         // Checkboxes should have the same name
@@ -174,39 +192,50 @@ export const CheckboxGroup = React.forwardRef<
       });
 
     return (
-      <StyledCheckboxGroupWrapper>
-        <StyledCheckboxGroup ref={ref} {...props}>
-          <Label
-            id={seed(`${name}_label`)}
-            disabled={Boolean(disabled)}
-            required={Boolean(required)}
-            as="legend"
-            size={
-              Boolean(size == CheckboxSize.NORMAL)
-                ? LabelSize.NORMAL
-                : LabelSize.SMALL
-            }
-          >
-            {label}
-          </Label>
-          {Boolean(additional) && (
-            <StyledHelpText id={seed(`${name}_additional`)}>
-              {additional}
-            </StyledHelpText>
-          )}
-          {React.Children.map(children, (child) =>
-            React.cloneElement(child, {
-              name: name,
-              size: size,
-              disabled: disabled,
-              readOnly: readOnly,
-              required: required,
-              // validate: validate,
-              // noValidate: noValidate,
-            })
-          )}
-        </StyledCheckboxGroup>
-      </StyledCheckboxGroupWrapper>
+      <StyledCheckboxGroup
+        ref={ref}
+        name={name}
+        disabled={disabled}
+        aria-describedby={describedby.join(" ")}
+        aria-labelledby={seed(`${name}_label`)}
+        {...props}
+      >
+        <Label
+          id={seed(`${name}_label`)}
+          disabled={Boolean(disabled)}
+          required={Boolean(required)}
+          as="legend"
+          size={
+            Boolean(size == CheckboxSize.NORMAL)
+              ? LabelSize.NORMAL
+              : LabelSize.SMALL
+          }
+        >
+          {label}
+        </Label>
+        {Boolean(additional) && (
+          <StyledHelpText id={seed(`${name}_additional`)}>
+            {additional}
+          </StyledHelpText>
+        )}
+        {React.Children.map(children, (child) =>
+          React.cloneElement(child, {
+            name: name,
+            size: size,
+            disabled: disabled,
+            readOnly: readOnly,
+            required: required,
+            validate: validate,
+            noValidate: noValidate,
+          })
+        )}
+
+        {hasError && (
+          <HelpText id={seed(`${name}_error`)} variant={HelpTextVariant.ERROR}>
+            {errors[name]}
+          </HelpText>
+        )}
+      </StyledCheckboxGroup>
     );
   }
 );

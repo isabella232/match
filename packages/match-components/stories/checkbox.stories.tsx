@@ -17,7 +17,6 @@ export default {
     value: "example",
     label: "Label",
     additional: "Additional Text",
-    checked: false,
     error: false,
     readOnly: false,
     disabled: false,
@@ -45,9 +44,6 @@ SingleCheckbox.argTypes = {
   additional: {
     control: { type: "text" },
   },
-  checked: {
-    control: { type: "boolean" },
-  },
   error: {
     control: { type: "boolean" },
   },
@@ -63,42 +59,30 @@ SingleCheckbox.argTypes = {
 };
 
 export const CheckedCheckbox = Template.bind({});
-CheckedCheckbox.args = {
-  checked: true,
-};
+
 CheckedCheckbox.argTypes = SingleCheckbox.argTypes;
 
-export const DisabledCheckbox = Template.bind({});
-DisabledCheckbox.args = {
+export const AnchorInLabel = Template.bind({});
+AnchorInLabel.args = {
+  disabled: true,
+  label: 'This text <a href="https://www.twilio.com/">has a link</a>',
+  additional: "Additional text cannot contain links, should it?",
+};
+AnchorInLabel.argTypes = SingleCheckbox.argTypes;
+
+export const LongLabel = Template.bind({});
+LongLabel.args = {
   disabled: true,
   label:
     "Really really really really really really really really really really really really really really really really long label",
   additional:
     "Really really really really really really really really really really really really really really really really long help text",
 };
-DisabledCheckbox.argTypes = SingleCheckbox.argTypes;
+LongLabel.argTypes = SingleCheckbox.argTypes;
 
-export const ReadonlyCheckbox = Template.bind({});
-ReadonlyCheckbox.args = {
-  readOnly: true,
-};
-ReadonlyCheckbox.argTypes = SingleCheckbox.argTypes;
-
-export const ErrorCheckbox = Template.bind({});
-ErrorCheckbox.args = {
-  error: true,
-};
-ErrorCheckbox.argTypes = SingleCheckbox.argTypes;
-
-// export const Error: Story<CheckboxProps> = (args: CheckboxProps) => (
-//   <Formik
-//     initialValues={{}}
-//     validateOnMount
-//     onSubmit={() => {}}
-//   >
-//     <Checkbox {...args} />
-//   </Formik>
-// );
-// Error.args = {
-
-// };
+export const Error: Story<CheckboxProps> = (args: CheckboxProps) => (
+  <Formik initialValues={{}} validateOnMount onSubmit={() => {}}>
+    <Checkbox {...args} />
+  </Formik>
+);
+Error.args = {};

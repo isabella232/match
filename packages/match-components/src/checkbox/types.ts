@@ -47,4 +47,8 @@ export interface CheckboxGroupProps extends MarginProps {
   readOnly?: boolean;
   required?: boolean;
   additional?: string;
+  /** Overrides built in validation. */
+  validate?: (value: string) => string | undefined;
+  /** Disables built in validation. */
+  noValidate?: boolean;
 }

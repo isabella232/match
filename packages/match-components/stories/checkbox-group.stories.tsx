@@ -56,7 +56,6 @@ export const Group = Template.bind({});
 Group.args = {
   label: "Subscribe to sub-processor notifications for:",
   additional: "Select one or more options",
-  error: false,
 };
 Group.argTypes = {
   label: {

@@ -87,7 +87,7 @@ export const RadioGroup = React.forwardRef<
         {Boolean(helper) && (
           <HelpText id={seed(`${name}_helper`)}>{helper}</HelpText>
         )}
-        <StyledRadioGroup horizontal={horizontal}>
+        <StyledRadioGroup horizontal={horizontal} hasError={hasError}>
           {React.Children.map(children, (child) =>
             React.cloneElement(child, {
               disabled: disabled,

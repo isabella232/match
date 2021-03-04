@@ -27,6 +27,12 @@ export const StyledRadioGroup = styled.div<StyledRadioGroupProps>`
         }
       }
     `}
+
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      margin-bottom: ${themeGet("space.scale20")};
+    `}
 `;
 
 export const StyledRadioGroupWrapper = styled.fieldset<MarginProps>`

@@ -38,7 +38,6 @@ export const StyledRadioGroupWrapper = styled.fieldset<MarginProps>`
 
 export const StyledRadioLabel = styled.label`
   font-weight: ${themeGet("components.form.radioWeight")};
-  vertical-align: middle;
 `;
 
 export const StyledRadioAdditional = styled.p`
@@ -53,7 +52,6 @@ export const StyledRadioTextWrapper = styled.div`
 export const StyledRadio = styled.span<StyledRadioProps>`
   position: relative;
   display: inline-block;
-  vertical-align: middle;
   background-color: ${themeGet("backgroundColors.light")};
   border-color: ${themeGet("borderColors.medium")};
   border-style: solid;
@@ -203,7 +201,7 @@ export const StyledRadioWrapper = styled.div<StyledRadioWrapperProps>`
           [StyledRadio]: {
             width: "14px",
             height: "14px",
-            marginTop: "2px",
+            marginTop: "4px",
           },
           [StyledRadioLabel]: {
             fontSize: "scale80",

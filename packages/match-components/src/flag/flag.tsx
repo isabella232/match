@@ -23,13 +23,9 @@ export const Flag: React.FC<FlagProps> = ({
     ? codeList.find(({ alpha2 }) => alpha2 === countryCode)?.countryName
     : undefined;
   return (
-    <StyledFlag
-      flagSize={size}
-      src={url}
-      alt={alt}
-      aria-hidden={Boolean(decorative)}
-      {...props}
-    />
+    <StyledFlag flagSize={size}>
+      <img src={url} alt={alt} aria-hidden={Boolean(decorative)} {...props} />
+    </StyledFlag>
   );
 };
 

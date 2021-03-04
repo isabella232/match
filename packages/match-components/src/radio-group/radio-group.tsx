@@ -125,3 +125,7 @@ RadioGroup.propTypes = {
   validate: PropTypes.func,
   noValidate: PropTypes.bool,
 };
+
+RadioGroup.defaultProps = {
+  size: RadioSize.NORMAL,
+};

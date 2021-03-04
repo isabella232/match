@@ -47,7 +47,7 @@ export const StyledRadioLabel = styled.label`
 `;
 
 export const StyledRadioAdditional = styled.p`
-  margin-top: 0px;
+  margin: ${themeGet("space.scale0")};
   color: ${themeGet("components.form.radioAdditionalColor")};
 `;
 

@@ -44,7 +44,7 @@ export const StyledInput = styled.input<StyledInputProps>`
   padding-right: ${themeGet("space.scale100")};
   padding-left: ${themeGet("space.scale100")};
   color: ${themeGet("components.form.inputColor")};
-  font-weight: ${themeGet("fontWeights.regular")};
+  font-weight: ${themeGet("fontWeights.medium")};
   font-size: ${themeGet("fontSizes.scale80")};
   font-family: ${themeGet("fontFamilies.text")};
   line-height: ${themeGet("lineHeights.scale200")};

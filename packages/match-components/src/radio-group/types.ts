@@ -61,4 +61,5 @@ export interface RadioGroupProps
 
 export interface StyledRadioGroupProps {
   horizontal?: boolean;
+  hasError?: boolean;
 }

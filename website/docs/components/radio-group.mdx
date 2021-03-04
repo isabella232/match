@@ -182,7 +182,25 @@ The prop `helper` can be used on the Radio Group to supply additional informatio
 
 ### Error on RadioGroup
 
-A required Radio Group will automatically check to make sure one of the options is selected upon submitting. This can be overridden using the `validate` prop. Validation can be turned off using the `noValidate` prop.
+A required Radio Group will automatically check to make sure one of the options is selected upon submitting.
+
+```jsx live
+<Formik
+  initialValues={{ email: "" }}
+  validateOnMount
+  initialTouched={{ email: true }}
+  onSubmit={() => {}}
+>
+  <RadioGroup groupLabel="How many emails do you send every month?" required>
+    <Radio name="email" value="1" label="0 - 5,000" />
+    <Radio name="email" value="2" label="5,001 - 15,000" />
+    <Radio name="email" value="3" label="25,001 - 50,000" />
+    <Radio name="email" value="4" label="Over 50,000" />
+  </RadioGroup>
+</Formik>
+```
+
+This can be overridden using the `validate` prop. Validation can be turned off using the `noValidate` prop.
 
 ```jsx live
 <Formik

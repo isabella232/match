@@ -27,6 +27,12 @@ export const StyledRadioGroup = styled.div<StyledRadioGroupProps>`
         }
       }
     `}
+
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      margin-bottom: ${themeGet("space.scale20")};
+    `}
 `;
 
 export const StyledRadioGroupWrapper = styled.fieldset<MarginProps>`
@@ -41,7 +47,7 @@ export const StyledRadioLabel = styled.label`
 `;
 
 export const StyledRadioAdditional = styled.p`
-  margin-top: 0px;
+  margin: ${themeGet("space.scale0")};
   color: ${themeGet("components.form.radioAdditionalColor")};
 `;
 

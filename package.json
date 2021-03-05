@@ -8,13 +8,15 @@
     "configs/**",
     "packages/**",
     "plugins/**",
-    "website"
+    "website",
+    "website-new"
   ],
   "scripts": {
     "bootstrap": "yarn build:tokens && yarn convert:icons && yarn convert:logos && yarn build:plugins",
     "start:all": "concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -p 6006",
     "start:website": "yarn workspace match-website dev",
+    "start:website-new": "yarn workspace match-website-new start",
     "prettier": "prettier --list-different '**/*.{ts,tsx,js,json,md,mdx,yml}'",
     "prettier:write": "prettier --write '**/*.{ts,tsx,js,json,md,mdx,yml}'",
     "lint:js": "eslint '**/*.{ts,tsx,js}'",

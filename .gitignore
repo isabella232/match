@@ -89,6 +89,10 @@ package-lock.json
 .docusaurus
 .cache-loader
 
+# gatsby files
+.cache
+website-new/public
+
 # PyPI
 packages/match-tokens/py/match_tokens_py/*
 packages/match-tokens/py/match_tokens_py.egg-info

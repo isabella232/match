@@ -73,6 +73,7 @@
     "@twilio-labs/match-props": "workspace:packages/match-props",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
+    "flagpack-core": "1.0.0",
     "html-react-parser": "1.2.4",
     "react-syntax-highlighter": "15.4.3",
     "reakit": "1.3.5",

@@ -6,6 +6,6 @@
     "rootDir": "./src",
     "module": "CommonJS"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../match-components/types.d.ts"],
   "exclude": ["components", "themes", "tokens", "icons", "logos"]
 }

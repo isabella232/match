@@ -2,6 +2,7 @@ export * from "./anchor";
 export * from "./button";
 export * from "./card";
 export * from "./code";
+export * from "./flag";
 export * from "./form";
 export * from "./grid";
 export * from "./heading";

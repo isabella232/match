@@ -15401,6 +15401,19 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-postcss@npm:4.0.0":
+  version: 4.0.0
+  resolution: "gatsby-plugin-postcss@npm:4.0.0"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    postcss-loader: ^4.1.0
+  peerDependencies:
+    gatsby: ^3.0.0-next.0
+    postcss: ^8.0.5
+  checksum: ac53c2946e13d0738134b935d20c12a5dfc0ad1e3e4c09526cacfed217d5c01e0c4fbd0ef0f5974dbb2b7fee1ec088e51cb9bb70083c7badab372f3f87c77d13
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-react-helmet@npm:4.0.0":
   version: 4.0.0
   resolution: "gatsby-plugin-react-helmet@npm:4.0.0"
@@ -20602,6 +20615,7 @@ fsevents@^1.2.7:
     gatsby-legacy-polyfills: 1.0.0
     gatsby-link: 3.0.1
     gatsby-plugin-mdx: 2.0.0
+    gatsby-plugin-postcss: 4.0.0
     gatsby-plugin-react-helmet: 4.0.0
     gatsby-plugin-sharp: 3.0.0
     gatsby-react-router-scroll: 4.0.1
@@ -20612,6 +20626,7 @@ fsevents@^1.2.7:
     lodash: 4.17.21
     mitt: 2.1.0
     platform: 1.3.6
+    postcss-custom-media: 8.0.0
     prop-types: 15.7.2
     query-string: 6.14.1
     react: 17.0.1
@@ -23621,6 +23636,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"postcss-custom-media@npm:8.0.0":
+  version: 8.0.0
+  resolution: "postcss-custom-media@npm:8.0.0"
+  peerDependencies:
+    postcss: ^8.1.0
+  checksum: d5dfd5d35158bc1af2512f0c2ce24ee298550e40fc54151a8282d9b03b4238e5ab452676baca484e8af76924abdabfbfe589f95601647087b8c3e9ee07dd7ba6
+  languageName: node
+  linkType: hard
+
 "postcss-custom-media@npm:^7.0.8":
   version: 7.0.8
   resolution: "postcss-custom-media@npm:7.0.8"
@@ -23864,6 +23888,22 @@ fsevents@^1.2.7:
     postcss-load-config: ^2.0.0
     schema-utils: ^1.0.0
   checksum: 50b2d8892d9b2cc6d9c81990ffb839d1716d3f571fcac7bd0dd3208447a016ce5c776b5f7de9eeb575ee5f7329221d5e22c9d1e41d56eb76ed87ce4401f90d4f
+  languageName: node
+  linkType: hard
+
+"postcss-loader@npm:^4.1.0":
+  version: 4.2.0
+  resolution: "postcss-loader@npm:4.2.0"
+  dependencies:
+    cosmiconfig: ^7.0.0
+    klona: ^2.0.4
+    loader-utils: ^2.0.0
+    schema-utils: ^3.0.0
+    semver: ^7.3.4
+  peerDependencies:
+    postcss: ^7.0.0 || ^8.0.1
+    webpack: ^4.0.0 || ^5.0.0
+  checksum: 685a54e5768171d27ada47f304b7a375ac5ec768844e70238bb88089636494efa29ec082525efaac889f7dfac0fbea55cf0f4680c12597b7b80cabf442390c46
   languageName: node
   linkType: hard
 

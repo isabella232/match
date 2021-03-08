@@ -1,0 +1,12 @@
+.examples {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  margin: 2rem 0;
+}
+
+@media (--media-query-medium) {
+  .examples {
+    grid-template-columns: 1fr 1fr;
+  }
+}

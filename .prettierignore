@@ -3,5 +3,6 @@
 .docusaurus
 dist
 build
+public
 generated
 *.ejs

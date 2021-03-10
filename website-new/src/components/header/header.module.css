@@ -1,0 +1,5 @@
+.siteHeader {
+  grid-area: header;
+  padding: var(--space-scale-140);
+  background: var(--color-white);
+}

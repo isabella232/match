@@ -1,5 +1,5 @@
 .thing {
-  background: var(--color-base-purple);
-  color: var(--text-color-inverse-primary);
   padding: var(--space-scale-20);
+  color: var(--text-color-inverse-primary);
+  background: var(--color-base-purple);
 }

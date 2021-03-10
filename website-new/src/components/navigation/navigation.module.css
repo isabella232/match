@@ -1,0 +1,5 @@
+.siteNavigation {
+  grid-area: navigation;
+  padding: var(--space-scale-140);
+  background: var(--color-white);
+}

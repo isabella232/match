@@ -1,5 +1,16 @@
-.layout {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-scale-540);
+.mainContent {
+  grid-area: main;
+}
+
+@media (--media-query-large) {
+  .layout {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "navigation main"
+      "navigation footer";
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+  }
 }

@@ -1,0 +1,5 @@
+.siteFooter {
+  grid-area: footer;
+  padding: var(--space-scale-140);
+  background: var(--color-white);
+}

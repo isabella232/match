@@ -3,12 +3,11 @@ import { Link } from "gatsby";
 import { Layout } from "../components/layout";
 import { Button } from "@twilio-labs/match-components";
 import { Example } from "../components/example";
-import { examples } from "./index.module.css";
 
 const Home: React.FC = () => (
   <Layout>
     <h1>Welcome to Match!</h1>
-    <div className={examples}>
+    <div>
       <div>
         <p>Here's an example of a Match component:</p>
         <Button>Click me!</Button>

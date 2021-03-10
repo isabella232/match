@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { codeList } from "flagpack-core";
-import { Flag, FlagProps, FlagSize } from "../src";
+import { Flag, FlagProps, FlagSize } from "../src/flag";
 
 export default {
   title: "Components/Flag",

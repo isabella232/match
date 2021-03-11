@@ -2,6 +2,8 @@ import * as React from "react";
 import { MatchProvider } from "../../context/match";
 import "@twilio-labs/match-fonts";
 import "@twilio-labs/match-tokens/twilio/variables.css";
+import "./variables.css";
+import "./global.css";
 import { Header } from "../header";
 import { Footer } from "../footer";
 import { Navigation } from "../navigation";

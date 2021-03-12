@@ -9,7 +9,8 @@ module.exports = {
       resolve: "gatsby-plugin-postcss",
       options: {
         postCssPlugins: [
-          require("postcss-custom-media")({
+          require("postcss-preset-env")({
+            stage: 1,
             importFrom: require.resolve(
               "@twilio-labs/match-tokens/twilio/custom-media.css"
             ),
@@ -17,7 +18,6 @@ module.exports = {
         ],
       },
     },
-    "gatsby-remark-images",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -39,8 +39,15 @@ module.exports = {
         // ]
       },
     },
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaultQuality: 80,
+      },
+    },
+    "gatsby-plugin-image",
+    "gatsby-remark-images",
     "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
   ],
 };

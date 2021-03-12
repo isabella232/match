@@ -20392,7 +20392,7 @@ fsevents@^1.2.7:
     mitt: 2.1.0
     platform: 1.3.6
     postcss: 8.2.8
-    postcss-custom-media: 8.0.0
+    postcss-preset-env: 6.7.0
     prop-types: 15.7.2
     query-string: 6.14.1
     react: 17.0.1
@@ -23421,15 +23421,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postcss-custom-media@npm:8.0.0":
-  version: 8.0.0
-  resolution: "postcss-custom-media@npm:8.0.0"
-  peerDependencies:
-    postcss: ^8.1.0
-  checksum: d5dfd5d35158bc1af2512f0c2ce24ee298550e40fc54151a8282d9b03b4238e5ab452676baca484e8af76924abdabfbfe589f95601647087b8c3e9ee07dd7ba6
-  languageName: node
-  linkType: hard
-
 "postcss-custom-media@npm:^7.0.8":
   version: 7.0.8
   resolution: "postcss-custom-media@npm:7.0.8"
@@ -24062,7 +24053,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postcss-preset-env@npm:^6.7.0":
+"postcss-preset-env@npm:6.7.0, postcss-preset-env@npm:^6.7.0":
   version: 6.7.0
   resolution: "postcss-preset-env@npm:6.7.0"
   dependencies:

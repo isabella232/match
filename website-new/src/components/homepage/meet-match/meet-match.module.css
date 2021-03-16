@@ -1,0 +1,97 @@
+.meetMatch {
+  padding-top: var(--space-scale-340);
+  padding-bottom: var(--space-scale-420);
+}
+
+.pasteLink {
+  font-size: var(--font-size-scale-80);
+  line-height: var(--line-height-scale-220);
+  text-align: center;
+
+  & > span {
+    display: block;
+  }
+
+  & .gatsbyImg {
+    display: inline-block;
+    margin-top: -2px;
+    margin-right: 0.4em;
+    vertical-align: middle;
+  }
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro h1 {
+  margin: 0 0 var(--space-scale-180);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-scale-340);
+  line-height: var(--line-height-scale-125);
+}
+
+.intro p {
+  margin: 0;
+  font-size: var(--font-size-scale-80);
+  line-height: var(--line-height-scale-220);
+}
+
+.getStarted {
+  grid-row-gap: var(--space-scale-140);
+  margin-bottom: var(--space-scale-260);
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  & figure {
+    margin: 0;
+  }
+
+  & .gatsbyImg {
+    max-height: 160px;
+    margin-bottom: var(--space-scale-60);
+    border-radius: 8px;
+  }
+
+  & figure:last-of-type .gatsbyImg {
+    max-height: 200px;
+  }
+
+  & figcaption {
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-scale-220);
+  }
+}
+
+@media (--media-query-medium) {
+  .meetMatch {
+    padding-top: var(--space-scale-740);
+    padding-bottom: var(--space-scale-660);
+  }
+
+  .pasteLink > span {
+    display: inline;
+  }
+
+  .intro h1 {
+    font-size: 64px;
+  }
+
+  .intro p {
+    padding: 0 5%;
+    font-size: var(--font-size-scale-90);
+  }
+
+  .getStarted {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: var(--space-scale-340);
+  }
+
+  .getStarted .gatsbyImg,
+  .getStarted figure:last-of-type .gatsbyImg {
+    max-height: unset;
+  }
+}

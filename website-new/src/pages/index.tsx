@@ -1,25 +1,18 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import { Layout } from "../components/layout";
-import { Button } from "@twilio-labs/match-components";
-import { Example } from "../components/example";
+import { MeetMatch } from "../components/homepage/meet-match";
+import { ComponentLibrary } from "../components/homepage/component-library";
+import { Developers } from "../components/homepage/developers";
+import { FigmaLibrary } from "../components/homepage/figma-library";
+import { Resources } from "../components/homepage/resources";
 
 const Home: React.FC = () => (
   <Layout>
-    <h1>Welcome to Match!</h1>
-    <div>
-      <div>
-        <p>Here's an example of a Match component:</p>
-        <Button>Click me!</Button>
-      </div>
-      <div>
-        <p>Here's an example of a Match Docs component:</p>
-        <Example>Example</Example>
-      </div>
-    </div>
-    <p>
-      Docs can be found <Link to="/docs">here</Link>.
-    </p>
+    <MeetMatch />
+    <ComponentLibrary />
+    <Developers />
+    <FigmaLibrary />
+    <Resources />
   </Layout>
 );
 

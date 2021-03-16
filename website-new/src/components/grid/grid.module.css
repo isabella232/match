@@ -1,0 +1,16 @@
+.grid {
+  display: grid;
+  grid-column-gap: var(--space-scale-100);
+}
+
+@media (--media-query-medium) {
+  .grid {
+    grid-column-gap: var(--space-scale-260);
+  }
+}
+
+@media (--media-query-large) {
+  .content {
+    grid-column-gap: var(--space-scale-420);
+  }
+}

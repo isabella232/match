@@ -1,0 +1,7 @@
+.separator {
+  width: 3px;
+  height: var(--space-scale-540);
+  margin: var(--space-scale-260) auto;
+  background: var(--color-blue-30);
+  border: none;
+}

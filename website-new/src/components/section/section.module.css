@@ -1,0 +1,32 @@
+.section {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+  max-width: var(--match-content-width);
+  margin: 0 var(--space-scale-180);
+}
+
+.content.colSpan10 {
+  max-width: var(--match-10-column-width);
+}
+
+.content.colSpan8 {
+  max-width: var(--match-8-column-width);
+}
+
+@media (--media-query-medium) {
+  .content {
+    margin-right: var(--space-scale-260);
+    margin-left: var(--space-scale-260);
+  }
+}
+
+@media (--media-query-large) {
+  .content {
+    margin-right: var(--space-scale-420);
+    margin-left: var(--space-scale-420);
+  }
+}

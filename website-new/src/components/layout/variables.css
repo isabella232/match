@@ -1,3 +1,5 @@
 :root {
   --match-content-width: 1296px;
+  --match-10-column-width: 992px;
+  --match-8-column-width: 784px;
 }

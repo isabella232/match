@@ -6,6 +6,7 @@
   .layout {
     display: grid;
     grid-template-areas:
+      "violator violator"
       "header header"
       "navigation main"
       "navigation footer";

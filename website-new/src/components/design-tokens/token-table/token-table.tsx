@@ -59,7 +59,7 @@ const TokenTable: React.FC<TokenTableProps> = ({ tokens }) => {
       <thead>
         <tr>
           <th>Token</th>
-          <th colSpan={!hasExamples ? 2 : undefined}>Value</th>
+          <th>Value</th>
           {/* {!units ? (
           ) : (
             units.map((unitName, idx) => (
@@ -81,7 +81,9 @@ const TokenTable: React.FC<TokenTableProps> = ({ tokens }) => {
           const { group, name, value } = token;
           return (
             <tr key={`${group}.${name}`}>
-              <td>{`${group}.${name}`}</td>
+              <td>
+                <var>{`${group}.${name}`}</var>
+              </td>
               <td
                 className={clsx({
                   [noBorderRight]: !hasExamples,

@@ -1,43 +1,48 @@
 .tokenTable {
-  overflow: visible;
-}
+  width: 100%;
+  margin-bottom: var(--space-scale-420);
+  font-weight: var(--font-weight-thin);
+  font-size: var(--font-size-scale-80);
+  line-height: var(--line-height-scale-220);
+  border: var(--border-width-thin) solid var(--border-color-card);
+  border-radius: var(--border-radius-base);
+  border-collapse: separate;
+  border-spacing: 0;
 
-.noBorderRight {
-  border-right: none;
-}
+  & th {
+    padding: var(--space-scale-60) var(--space-scale-140);
+    color: var(--color-gray-90);
+    font-weight: var(--font-weight-semibold);
+    text-align: left;
+  }
 
-.noBorderLeft {
-  border-left: none;
-}
+  & td {
+    padding: var(--space-scale-100) var(--space-scale-140);
+  }
 
-.copyWrapper {
-  position: relative;
-}
-.copyMenu {
-  z-index: 1;
-  background: white;
-  border: 1px solid #dadde1;
-}
-button.moreButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-ul.copyMenu {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-.copyMenu li {
-  padding: 8px;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.copyMenu li:hover,
-.copyMenu li:focus {
-  background: #f5f6f7;
-}
+  & th + th {
+    border-left: var(--border-width-thin) solid transparent;
+  }
 
-.copyMenu.isOpen {
-  display: block;
+  & td + td {
+    border-left: var(--border-width-thin) solid var(--border-color-card);
+  }
+
+  & tr + tr td,
+  & thead + tbody tr td {
+    border-top: var(--border-width-thin) solid var(--border-color-card);
+  }
+
+  & thead th:first-child {
+    padding-left: var(--space-scale-180);
+  }
+
+  & var {
+    padding: 2px 7px;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-code);
+    font-style: normal;
+    background: var(--color-gray-10);
+    border-radius: var(--border-radius-base);
+  }
 }

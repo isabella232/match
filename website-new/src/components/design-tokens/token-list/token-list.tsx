@@ -51,26 +51,6 @@ export const TokenList: React.FC = () => {
     });
   }, [collection]);
 
-  // React.useEffect(() => {
-  //   if (filterText.includes(".") && !filterText.endsWith(".")) {
-  //     const [group, token] = filterText.split(".");
-  //     console.log(
-  //       fuse.search({
-  //         $and: [
-  //           {
-  //             group,
-  //           },
-  //           {
-  //             token,
-  //           },
-  //         ],
-  //       })
-  //     );
-  //   } else {
-  //     console.log(fuse.search(filterText));
-  //   }
-  // }, [fuse, filterText]);
-
   const tokens: Tokens = React.useMemo(() => {
     let list = collection;
 
@@ -78,14 +58,7 @@ export const TokenList: React.FC = () => {
       const [group, name] = filterText.split(".");
       list = fuse
         .search({
-          $and: [
-            {
-              group,
-            },
-            {
-              name,
-            },
-          ],
+          $and: [{ group }, { name }],
         })
         .map(({ item }) => item);
     } else if (filterText) {
@@ -126,7 +99,7 @@ export const TokenList: React.FC = () => {
       backgroundColors: list.filter(
         ({ group }) => group === "backgroundColors"
       ),
-      borderColors: [],
+      borderColors: list.filter(({ group }) => group === "borderColors"),
       // Old border color logic
       // Object.entries(theme.borderColors).map(([key, value]) => [
       //   key,
@@ -138,7 +111,7 @@ export const TokenList: React.FC = () => {
       fontFamilies: list.filter(({ group }) => group === "fontFamilies"),
       fontSizes: list.filter(({ group }) => group === "fontSizes"),
       fontWeights: list.filter(({ group }) => group === "fontWeights"),
-      gradients: [],
+      gradients: list.filter(({ group }) => group === "gradients"),
       // old logic...
       // Object.entries(theme.gradients).map(([key, value]) => [
       //   key,

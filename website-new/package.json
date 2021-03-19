@@ -29,6 +29,7 @@
     "css.escape": "1.5.1",
     "event-source-polyfill": "1.0.22",
     "formik": "2.2.6",
+    "fuse.js": "6.4.6",
     "gatsby": "3.0.4",
     "gatsby-legacy-polyfills": "1.0.0",
     "gatsby-link": "3.0.1",
@@ -67,7 +68,8 @@
     "shallow-compare": "1.2.2",
     "stack-trace": "0.0.10",
     "styled-components": "5.2.1",
-    "styled-system": "5.1.5"
+    "styled-system": "5.1.5",
+    "wcag-contrast": "3.0.0"
   },
   "devDependencies": {
     "@types/mdx-js__react": "1",
@@ -78,6 +80,7 @@
     "@types/react-syntax-highlighter": "13.5.0",
     "@types/styled-components": "5.1.7",
     "@types/styled-system": "5.1.10",
+    "@types/wcag-contrast": "^3",
     "tsconfig-match": "workspace:configs/tsconfig",
     "typescript": "4.1.5"
   }

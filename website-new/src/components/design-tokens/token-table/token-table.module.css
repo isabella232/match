@@ -18,6 +18,7 @@
 
   & td {
     padding: var(--space-scale-100) var(--space-scale-140);
+    overflow: hidden;
   }
 
   & th + th {
@@ -44,5 +45,12 @@
     font-style: normal;
     background: var(--color-gray-10);
     border-radius: var(--border-radius-base);
+  }
+}
+
+@media (--media-query-large) {
+  /* Force uniform width on examples column */
+  .tokenTable thead th:nth-of-type(3) {
+    width: 285px;
   }
 }

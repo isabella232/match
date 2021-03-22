@@ -1,58 +1,52 @@
 import * as React from "react";
-import clsx from "clsx";
-import {
-  tokenTable,
-  noBorderRight,
-  noBorderLeft,
-} from "./token-table.module.css";
-// import { CopyMenu } from "./copy-menu";
+import { VisuallyHidden } from "reakit";
+import { tokenTable } from "./token-table.module.css";
 import { Example } from "../examples";
+import { remToPx } from "../../../utils";
 import { Token } from "../../../types";
 
 export type TokenTableProps = {
   tokens: Token[];
-  prefix?: string;
-  exampleType?:
-    | "color"
-    | "fontSize"
-    | "textColor"
-    | "gradient"
-    | "shadow"
-    | "border"
-    | "borderWidth"
-    | "spacing";
 };
 
-/**
- * Given a list of tokens whose value is an object in the format `{ [unitName: string]: string }`,
- * returns the units found for that token list. If the values are simple, returns an empty array.
- *  @example <caption>Value has multiple units</caption>
- *           // returns ['px','rem']
- *           getUnitsFromTokenList([{
- *             name: 'test',
- *             value: {
- *               'px': 32,
- *               'rem': 1.25
- *             }
- *           }]);
- *  @example <caption>Simple value</caption>
- *           // returns undefined
- *           getUnitsFromTokenList([{
- *              name: 'simple',
- *              value: 10
- *           }]);
- */
-// function getUnitsFromTokenList(tokens: Token[]): string[] | undefined {
-//   if (tokens.length === 0) return;
-//   const [, value] = tokens[0];
-//   if (typeof value !== "object") return;
-//   return Object.keys(value);
-// }
+const formatValue = (token: Token): React.ReactNode => {
+  switch (token.group) {
+    case "fontSizes":
+    case "borderWidths":
+    case "space":
+    case "radii":
+    case "iconSizes":
+      return (
+        <>
+          {remToPx(token.value)}
+          <br />
+          {token.value}
+        </>
+      );
+    case "gradients":
+      // Return the contents of linear-gradient(...)
+      return token.value.slice(16, -1);
+    default:
+      return token.value;
+  }
+};
 
-const TokenTable: React.FC<TokenTableProps> = ({ tokens }) => {
-  // const units = getUnitsFromTokenList(tokens);
-
-  const hasExamples = ["colors"].includes(tokens[0].group);
+export const TokenTable: React.FC<TokenTableProps> = ({ tokens }) => {
+  const hasExamples = [
+    "colors",
+    "backgroundColors",
+    "gradients",
+    "textColors",
+    "fontFamilies",
+    "fontSizes",
+    "fontWeights",
+    "shadows",
+    "borderColors",
+    "borderWidths",
+    "radii",
+    "space",
+    "iconSizes",
+  ].includes(tokens[0].group);
 
   return (
     <table className={tokenTable}>
@@ -60,52 +54,22 @@ const TokenTable: React.FC<TokenTableProps> = ({ tokens }) => {
         <tr>
           <th>Token</th>
           <th>Value</th>
-          {/* {!units ? (
-          ) : (
-            units.map((unitName, idx) => (
-              <th
-                key={unitName}
-                colSpan={
-                  !hasExamples && idx === units.length - 1 ? 2 : undefined
-                }
-              >
-                Value ({unitName})
-              </th>
-            ))
-          )} */}
-          {hasExamples && <th colSpan={2}>Example</th>}
+          {hasExamples && (
+            <th>
+              <VisuallyHidden>Example</VisuallyHidden>
+            </th>
+          )}
         </tr>
       </thead>
       <tbody>
         {tokens.map((token) => {
-          const { group, name, value } = token;
+          const { group, name } = token;
           return (
             <tr key={`${group}.${name}`}>
               <td>
                 <var>{`${group}.${name}`}</var>
               </td>
-              <td
-                className={clsx({
-                  [noBorderRight]: !hasExamples,
-                })}
-              >
-                {value}
-              </td>
-              {/* {!units ? (
-
-              ) : (
-                Object.values(value).map((val, idx) => (
-                  <td
-                    key={`${prefix}${name}.value.${units[idx]}`}
-                    className={clsx({
-                      [noBorderRight]:
-                        !hasExamples && idx === Object.values(value).length - 1,
-                    })}
-                  >
-                    {val}
-                  </td>
-                ))
-              )} */}
+              <td>{formatValue(token)}</td>
               {hasExamples && (
                 <td>
                   <Example token={token} />
@@ -118,5 +82,3 @@ const TokenTable: React.FC<TokenTableProps> = ({ tokens }) => {
     </table>
   );
 };
-
-export { TokenTable };

@@ -3,7 +3,6 @@ import { useTheme } from "@twilio-labs/match-themes";
 import Fuse from "fuse.js";
 import { MatchContext } from "../../../context/match";
 import { TokenFilters } from "../filters/filters";
-import { remToPx } from "../../../utils";
 import { TokenTable } from "../token-table/token-table";
 import { Token } from "../../../types";
 
@@ -100,23 +99,11 @@ export const TokenList: React.FC = () => {
         ({ group }) => group === "backgroundColors"
       ),
       borderColors: list.filter(({ group }) => group === "borderColors"),
-      // Old border color logic
-      // Object.entries(theme.borderColors).map(([key, value]) => [
-      //   key,
-      //   Object.entries(theme.colors).find(
-      //     ([_colorName, colorAlias]) => value === colorAlias
-      //   )?.[0] ?? value,
-      // ]),
       borderWidths: list.filter(({ group }) => group === "borderWidths"),
       fontFamilies: list.filter(({ group }) => group === "fontFamilies"),
       fontSizes: list.filter(({ group }) => group === "fontSizes"),
       fontWeights: list.filter(({ group }) => group === "fontWeights"),
       gradients: list.filter(({ group }) => group === "gradients"),
-      // old logic...
-      // Object.entries(theme.gradients).map(([key, value]) => [
-      //   key,
-      //   value.slice(16, -1),
-      // ]),
       iconSizes: list.filter(({ group }) => group === "iconSizes"),
       lineHeights: list.filter(({ group }) => group === "lineHeights"),
       mediaQueries: list.filter(({ group }) => group === "mediaQueries"),
@@ -175,11 +162,7 @@ export const TokenList: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <TokenTable
-            tokens={tokens.secondaryColors}
-            prefix="colors"
-            exampleType="color"
-          />
+          <TokenTable tokens={tokens.secondaryColors} />
         </div>
       )}
 
@@ -190,138 +173,98 @@ export const TokenList: React.FC = () => {
             We use these colors to help guide attention through a layout or
             illustration.
           </p>
-          <TokenTable
-            tokens={tokens.tertiaryColors}
-            prefix="colors"
-            exampleType="color"
-          />
+          <TokenTable tokens={tokens.tertiaryColors} />
         </div>
       )}
 
       {tokens.backgroundColors.length > 0 && (
         <div>
           <h2 id="background-colors">Background Colors</h2>
-          <TokenTable
-            tokens={tokens.backgroundColors}
-            prefix="backgroundColors"
-            exampleType="color"
-          />
+          <TokenTable tokens={tokens.backgroundColors} />
         </div>
       )}
 
       {tokens.gradients.length > 0 && (
         <div>
           <h2 id="gradients">Gradients</h2>
-          <TokenTable
-            prefix="gradients"
-            tokens={tokens.gradients}
-            exampleType="gradient"
-          />
+          <TokenTable tokens={tokens.gradients} />
         </div>
       )}
 
       {tokens.textColors.length > 0 && (
         <div>
           <h2 id="text-colors">Text Colors</h2>
-          <TokenTable
-            prefix="textColors"
-            tokens={tokens.textColors}
-            exampleType="textColor"
-          />
+          <TokenTable tokens={tokens.textColors} />
         </div>
       )}
 
       {tokens.fontFamilies.length > 0 && (
         <div>
           <h2>Font Families</h2>
-          <TokenTable prefix="fontFamilies" tokens={tokens.fontFamilies} />
+          <TokenTable tokens={tokens.fontFamilies} />
         </div>
       )}
 
       {tokens.fontSizes.length > 0 && (
         <div>
           <h2 id="font-sizes">Font Sizes</h2>
-          <TokenTable
-            tokens={tokens.fontSizes}
-            prefix="fontSizes"
-            exampleType="fontSize"
-          />
+          <TokenTable tokens={tokens.fontSizes} />
         </div>
       )}
 
       {tokens.fontWeights.length > 0 && (
         <div>
           <h2 id="font-weights">Font Weights</h2>
-          <TokenTable prefix="fontWeights" tokens={tokens.fontWeights} />
+          <TokenTable tokens={tokens.fontWeights} />
         </div>
       )}
 
       {tokens.lineHeights.length > 0 && (
         <div>
           <h2 id="line-heights">Line Heights</h2>
-          <TokenTable prefix="lineHeights" tokens={tokens.lineHeights} />
+          <TokenTable tokens={tokens.lineHeights} />
         </div>
       )}
 
       {tokens.shadows.length > 0 && (
         <div>
           <h2 id="shadows">Shadows</h2>
-          <TokenTable
-            prefix="shadows"
-            tokens={tokens.shadows}
-            exampleType="shadow"
-          />
+          <TokenTable tokens={tokens.shadows} />
         </div>
       )}
 
       {tokens.borderColors.length > 0 && (
         <div>
           <h2 id="borders">Borders</h2>
-          <TokenTable
-            tokens={tokens.borderColors}
-            prefix="borderColors"
-            exampleType="border"
-          />
+          <TokenTable tokens={tokens.borderColors} />
         </div>
       )}
 
       {tokens.borderWidths.length > 0 && (
         <div>
           <h2 id="border-widths">Border Widths</h2>
-          <TokenTable
-            tokens={tokens.borderWidths}
-            prefix="borderWidths"
-            exampleType="borderWidth"
-          />
+          <TokenTable tokens={tokens.borderWidths} />
         </div>
       )}
 
       {tokens.radii.length > 0 && (
         <div>
           <h2 id="border-radii">Border Radii</h2>
-          <TokenTable tokens={tokens.radii} prefix="radii" />
+          <TokenTable tokens={tokens.radii} />
         </div>
       )}
 
       {tokens.space.length > 0 && (
         <div>
           <h2 id="spacings">Spacing</h2>
-          <TokenTable
-            tokens={tokens.space}
-            prefix="space"
-            exampleType="spacing"
-          />
+          <TokenTable tokens={tokens.space} />
         </div>
       )}
 
       {tokens.iconSizes.length > 0 && (
         <div>
           <h2 id="icon-sizes">Icon Sizes</h2>
-          <TokenTable
-            tokens={tokens.iconSizes}
-            prefix="iconSizes"
-            exampleType="spacing"
-          />
+          <TokenTable tokens={tokens.iconSizes} />
         </div>
       )}
     </div>

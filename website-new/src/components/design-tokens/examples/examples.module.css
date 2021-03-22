@@ -1,39 +1,76 @@
-.rectangleExample {
-  width: 193px;
-  height: 96px;
-  background: #ffffff;
+.example,
+.colorExample,
+.gradientExample,
+.textColorExample,
+.shadowExample,
+.borderExample {
+  max-width: 165px;
+  margin: 0 auto;
 }
 
-.textColorExample {
-  display: inline;
+.gradientExample,
+.shadowExample,
+.borderExample,
+.radiusExample {
+  min-width: var(--space-scale-500);
+  height: var(--space-scale-500);
+  border-radius: var(--border-radius-base);
 }
 
-.textColorExample > div {
-  display: inline-block;
-  width: 56px;
-  height: 40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  border-radius: var(--border-radius-medium);
+.colorExample {
+  min-width: var(--space-scale-340);
+  height: var(--space-scale-340);
+  border-radius: var(--border-radius-base);
+
+  &[data-token="white"] {
+    border: var(--border-width-thin) solid var(--border-color-card);
+  }
 }
 
-.textColorExample > div + div {
-  margin-left: 2px;
-}
-
-.themeSwitcher p {
-  display: none;
+.shadowExample {
+  background: var(--color-white);
 }
 
 .borderExample {
-  width: 168px;
-  height: 48px;
   border-color: var(--border-color-darkest);
   border-style: solid;
-  border-width: var(--border-width-light);
+  border-width: var(--border-width-medium);
+}
+
+.radiusExample {
+  background: var(--color-base-purple);
+
+  &[data-token="squircle"] {
+    max-width: var(--space-scale-500);
+  }
+}
+
+.textColorExample {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  border: var(--border-width-thin) solid var(--border-color-card);
+  border-radius: var(--border-radius-base);
+
+  & > div {
+    padding: 1em 0;
+    text-align: center;
+  }
+
+  & > div + div {
+    border-left: var(--border-width-thin) solid var(--border-color-card);
+  }
+
+  &.inverse > div + div {
+    border-color: var(--border-color-darkest);
+  }
+}
+
+.fontWeightExample {
+  font-size: var(--font-size-scale-140);
+  line-height: 1;
 }
 
 .spacingExample {
-  background-color: var(--color-gray-80);
+  background-color: var(--color-blue-60);
 }

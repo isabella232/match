@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-props",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Prop utilities for Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -28,7 +28,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-tokens": "^1.0.0-alpha.3",
+    "@twilio-labs/match-tokens": "^1.0.0-alpha.4",
     "prop-types": "15.x",
     "styled-system": "5.x"
   },
@@ -36,13 +36,13 @@
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/prop-types": "15.7.3",
     "@types/styled-system": "^5.1.10",
-    "core-js": "3.9.0",
+    "core-js": "3.9.1",
     "prop-types": "15.7.2",
-    "rollup": "2.39.1",
+    "rollup": "2.42.4",
     "rollup-config-match": "workspace:configs/rollup",
     "styled-system": "5.1.5",
     "tsconfig-match": "workspace:configs/tsconfig",
     "tslib": "2.1.0",
-    "typescript": "4.1.5"
+    "typescript": "4.2.3"
   }
 }

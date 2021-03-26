@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-themes",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Twilio Match Design System Themes",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -28,7 +28,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-tokens": "^1.0.0-alpha.3",
+    "@twilio-labs/match-tokens": "^1.0.0-alpha.4",
     "prop-types": "15.x",
     "react": "17.x",
     "react-dom": "17.x",
@@ -40,19 +40,19 @@
     "@testing-library/react": "11.2.5",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/prop-types": "15.7.3",
-    "@types/react": "17.0.2",
-    "@types/react-dom": "17.0.1",
-    "@types/styled-components": "5.1.7",
-    "core-js": "3.9.0",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.3",
+    "@types/styled-components": "5.1.9",
+    "core-js": "3.9.1",
     "prop-types": "15.7.2",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-is": "17.0.1",
-    "rollup": "2.39.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-is": "17.0.2",
+    "rollup": "2.42.4",
     "rollup-config-match": "workspace:configs/rollup",
     "styled-components": "5.2.1",
     "tsconfig-match": "workspace:configs/tsconfig",
     "tslib": "2.1.0",
-    "typescript": "4.1.5"
+    "typescript": "4.2.3"
   }
 }

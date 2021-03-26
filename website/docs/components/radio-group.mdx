@@ -26,7 +26,7 @@ yarn add @twilio-labs/match
 
 ```jsx
 import { Formik } from "formik";
-import { Input, Form } from "@twilio-labs/match/components";
+import { Radio, RadioGroup } from "@twilio-labs/match/components";
 
 const Component = () => (
   <Formik initialValues={{ email: "" }} onSubmit={() => {}}>
@@ -73,7 +73,7 @@ Helper text can be used on the Radio Group to expand on the instruction or the q
 
 A Radio Group can be set as required. Setting it to required adds the required indicator next to the group label and adds validation to make sure that one of the radio buttons is selected upon submitting the form. If a radio group is "optional" users will not be able to unselect an option. If you need to give users a way to unselect an option consider adding a clear button or use a different form field.
 
-Make sure all Radios use the same `name`.
+Make sure all `Radio`s within a `RadioGroup` use the same `name`.
 
 <VirtueCrime>
   <Virtue>

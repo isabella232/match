@@ -1,0 +1,50 @@
+import * as React from "react";
+import clsx from "clsx";
+// import { useTheme } from "@twilio-labs/match-themes";
+// import { MatchContext } from "../../context/match";
+import { PageHeaderProps } from "./types";
+
+import twilioIcon from "../../images/icons/twilio-logo.svg";
+import sendgridIcon from "../../images/icons/sendgrid-logo.svg";
+
+import {
+  header,
+  content,
+  breadcrumbStyle,
+  descriptionStyle,
+  current,
+  themeSwitcher,
+  active,
+} from "./header.module.css";
+export const Header: React.FC<PageHeaderProps> = ({
+  label,
+  description,
+  breadcrumbs,
+  className,
+}) => {
+  // const theme = useTheme();
+  // const {
+  //   state: { filterText },
+  // } = React.useContext(MatchContext);
+  return (
+    <div className={clsx(header, className)}>
+      <div className={content}>
+        <div className={breadcrumbStyle}>
+          {breadcrumbs && breadcrumbs.map((crumb) => crumb)}
+          <span className={current}>{label || "Match"}</span>
+        </div>
+        <h1>{label || "Match"}</h1>
+        {description && <div className={descriptionStyle}>{description}</div>}
+      </div>
+      <div className={themeSwitcher}>
+        <span>Switch theme</span>
+        <a href="/" className={true && active}>
+          <img src={twilioIcon} alt="" /> Twilio
+        </a>
+        <a href="/">
+          <img src={sendgridIcon} alt="" /> Sendgrid
+        </a>
+      </div>
+    </div>
+  );
+};

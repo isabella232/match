@@ -6,5 +6,6 @@ module.exports = {
   indexTemplate: require("./index-template"),
   replaceAttrValues: {
     ["#1F304C"]: "currentColor",
+    ["#1f304c"]: "currentColor",
   },
 };

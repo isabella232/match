@@ -5,12 +5,9 @@ export type MatchState = {
   filterText: string;
 };
 
-export type Token = [
-  name: string,
-  value:
-    | string
-    | number
-    | {
-        [unit: string]: string;
-      }
-];
+export type Token = {
+  group: string;
+  name: string;
+  value: string;
+  tags: string[];
+};

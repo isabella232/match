@@ -53,7 +53,7 @@
       "eslint"
     ],
     "*.{css}": [
-      "stylelint"
+      "stylelint --fix"
     ],
     "styles.ts": [
       "stylelint"

@@ -1,6 +1,9 @@
 import { graphql } from "gatsby";
 import * as React from "react";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
+import { Layout } from "../components/layout";
+import { Section } from "../components/section";
+import { mdxContent } from "./doc.module.css";
 
 export const pageQuery = graphql`
   query DocPageQuery($id: String!) {
@@ -15,5 +18,11 @@ export const pageQuery = graphql`
 `;
 
 export default function Page({ data: { mdx } }) {
-  return <MDXRenderer>{mdx.body}</MDXRenderer>;
+  return (
+    <Layout>
+      <Section columns={10} contentClassName={mdxContent}>
+        <MDXRenderer>{mdx.body}</MDXRenderer>
+      </Section>
+    </Layout>
+  );
 }

@@ -1,10 +1,10 @@
 import * as React from "react";
-// import { useTheme } from "@twilio-labs/match-themes";
-// import { MatchContext } from "../../../context/match";
+import { useTheme } from "@twilio-labs/match-themes";
+import { MatchContext } from "../../../context/match";
 import { TokenFilters } from "../filters/filters";
 import * as productIcons from "@twilio-labs/match-icons-product";
 import * as twilioIcons from "@twilio-labs/match-icons-twilio";
-// import * as sendgridIcons from "@twilio-labs/match-icons-sendgrid";
+import * as sendgridIcons from "@twilio-labs/match-icons-sendgrid";
 import type { Icon } from "@twilio-labs/match-primitives";
 import { iconMetadata } from "../../icons/icon-metadata";
 import { Header } from "../../page-header";
@@ -21,10 +21,10 @@ import {
 
 export const Icons: React.FC = () => {
   const title = "Icon list";
-  // const theme = useTheme();
-  // const {
-  //   state: { filterText },
-  // } = React.useContext(MatchContext);
+  const theme = useTheme();
+  const {
+    state: { filterText },
+  } = React.useContext(MatchContext);
 
   // const collection = React.useMemo(() => {
   //   const list = [];
@@ -96,6 +96,9 @@ export const Icons: React.FC = () => {
       />
 
       <TokenFilters />
+
+      {!hasAnyTokens && <p>No tokens found for filter {`"${filterText}"`}</p>}
+
 
       {Object.entries(categories).map(([categoryName, childIcons]) => {
         return (

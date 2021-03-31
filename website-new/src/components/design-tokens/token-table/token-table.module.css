@@ -1,5 +1,6 @@
 .tokenTable {
   width: 100%;
+  margin-top: var(--space-scale-180);
   margin-bottom: var(--space-scale-420);
   font-weight: var(--font-weight-thin);
   font-size: var(--font-size-scale-80);
@@ -18,7 +19,6 @@
 
   & td {
     padding: var(--space-scale-100) var(--space-scale-140);
-    overflow: hidden;
   }
 
   & th + th {
@@ -38,6 +38,10 @@
     padding-left: var(--space-scale-180);
   }
 
+  & tbody tr td:nth-of-type(3) {
+    overflow: hidden;
+  }
+
   & var {
     padding: 2px 7px;
     font-weight: var(--font-weight-regular);
@@ -49,8 +53,14 @@
 }
 
 @media (--media-query-large) {
-  /* Force uniform width on examples column */
-  .tokenTable thead th:nth-of-type(3) {
-    width: 285px;
+  /* Force uniform widths on Token and Example columns */
+  .tokenTable {
+    & thead tr th:nth-of-type(3) {
+      min-width: 30%;
+    }
+
+    & thead tr th:first-of-type {
+      min-width: 30%;
+    }
   }
 }

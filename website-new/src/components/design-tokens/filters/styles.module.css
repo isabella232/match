@@ -1,12 +1,103 @@
 .container {
-  /* margin-top: -8px; */
-  margin-bottom: 40px;
+  display: grid;
+  grid-row-gap: var(--space-scale-140);
+  margin-bottom: var(--space-scale-540);
 }
 
-.container input {
+.control {
+  position: relative;
+
+  & input,
+  & button,
+  & a {
+    color: var(--text-color-tertiary);
+    font-size: var(--font-size-scale-80);
+    line-height: var(--line-height-scale-160);
+    text-align: left;
+    text-decoration: none;
+  }
+
+  & > input,
+  & > button {
+    width: 100%;
+    padding: var(--space-scale-60);
+    background: var(--color-white);
+    border: var(--border-width-thin) solid var(--color-gray-20);
+    border-radius: var(--border-radius-medium);
+
+    &:hover {
+      border-color: var(--color-gray-60);
+    }
+
+    &:focus {
+      border-color: var(--border-color-focus-primary);
+      outline: none;
+      box-shadow: 0 0 0 1px var(--border-color-focus-primary);
+    }
+  }
+
+  & img {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: block;
+    transform: translateY(-50%);
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+.control.search {
+  & > input {
+    padding-left: var(--space-scale-260);
+  }
+
+  & img {
+    left: var(--space-scale-60);
+  }
+}
+
+.control.dropdown {
+  & [aria-expanded="true"] {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  & img {
+    right: var(--space-scale-140);
+  }
+}
+
+.control .dropdownMenu {
+  z-index: 2;
+  display: grid;
+  grid-row-gap: var(--space-scale-60);
+  justify-items: flex-start;
   width: 100%;
-  padding: 1rem;
-  font-size: 14px;
-  border: 1px solid var(--color-gray-20);
-  border-radius: var(--border-radius-medium);
+  padding: var(--space-scale-60);
+  background: var(--color-white);
+  border: var(--border-width-thin) solid var(--border-color-card);
+  border-top: 0;
+  border-bottom-right-radius: var(--border-radius-medium);
+  border-bottom-left-radius: var(--border-radius-medium);
+  outline: none;
+
+  & a:hover,
+  & a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+
+  & button {
+    padding: 0;
+    background: none;
+    border: none;
+  }
+}
+
+@media (--media-query-medium) {
+  .container {
+    grid-column-gap: var(--space-scale-140);
+    grid-template-columns: 2fr 1fr;
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Twilio Match Design System",
   "author": "Twilio Inc.",
   "license": "UNLICENSED",
@@ -37,27 +37,27 @@
     "styled-components": "5.x"
   },
   "devDependencies": {
-    "@babel/core": "7.13.1",
+    "@babel/core": "7.13.10",
     "@emotion/core": "11.0.0",
-    "@storybook/react": "6.1.19",
-    "@types/babel__core": "7.1.12",
+    "@storybook/react": "6.1.21",
+    "@types/babel__core": "7.1.14",
     "@types/prop-types": "15.7.3",
-    "@types/react": "17.0.2",
-    "@types/react-dom": "17.0.1",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.3",
     "@types/react-syntax-highlighter": "13.5.0",
-    "@types/styled-components": "5.1.7",
+    "@types/styled-components": "5.1.9",
     "@types/styled-system": "5.1.10",
     "@types/styled-system__theme-get": "5.0.1",
     "formik": "2.2.6",
     "prop-types": "15.7.2",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-is": "17.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-is": "17.0.2",
     "react-uid": "2.3.1",
     "styled-components": "5.2.1",
     "tsconfig-match": "workspace:configs/tsconfig",
     "tslib": "2.1.0",
-    "typescript": "4.1.5"
+    "typescript": "4.2.3"
   },
   "dependencies": {
     "@styled-system/theme-get": "5.1.2",
@@ -76,7 +76,7 @@
     "flagpack-core": "1.0.0",
     "html-react-parser": "1.2.4",
     "react-syntax-highlighter": "15.4.3",
-    "reakit": "1.3.5",
+    "reakit": "1.3.6",
     "styled-system": "5.1.5"
   },
   "peerDependenciesMeta": {

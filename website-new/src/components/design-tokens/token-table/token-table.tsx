@@ -4,6 +4,7 @@ import { tokenTable } from "./token-table.module.css";
 import { Example } from "../examples";
 import { remToPx } from "../../../utils";
 import { Token } from "../../../types";
+import { Copy } from "./copy";
 
 export type TokenTableProps = {
   tokens: Token[];
@@ -25,7 +26,10 @@ const formatValue = (token: Token): React.ReactNode => {
       );
     case "gradients":
       // Return the contents of linear-gradient(...)
-      return token.value.slice(16, -1);
+      // With added spaces between commas
+      return token.value.slice(16, -1).replace(/(,)(\d)/g, `$1 $2`);
+    case "shadows":
+      return token.value.replace(/(,)(\d)/g, `$1 $2`);
     default:
       return token.value;
   }
@@ -63,13 +67,21 @@ export const TokenTable: React.FC<TokenTableProps> = ({ tokens }) => {
       </thead>
       <tbody>
         {tokens.map((token) => {
-          const { group, name } = token;
+          const { group, name, value } = token;
           return (
             <tr key={`${group}.${name}`}>
               <td>
-                <var>{`${group}.${name}`}</var>
+                <Copy value={`${group}.${name}`}>
+                  <var>
+                    {group}
+                    <wbr />
+                    {`.${name}`}
+                  </var>
+                </Copy>
               </td>
-              <td>{formatValue(token)}</td>
+              <td>
+                <Copy value={value}>{formatValue(token)}</Copy>
+              </td>
               {hasExamples && (
                 <td>
                   <Example token={token} />

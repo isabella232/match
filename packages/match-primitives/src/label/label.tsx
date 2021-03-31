@@ -7,14 +7,16 @@ import { LabelSize } from "./constants";
 export const Label: React.FC<LabelProps> = ({
   children,
   required,
+  requiredStyleAtEnd,
   as,
   size,
   ...props
 }) => {
   return (
     <StyledLabel required={required} as={as} labelSize={size} {...props}>
-      {required && <StyledRequired />}
+      {required && !requiredStyleAtEnd && <StyledRequired />}
       {children}
+      {required && requiredStyleAtEnd && <StyledRequired />}
     </StyledLabel>
   );
 };
@@ -24,6 +26,7 @@ Label.displayName = "Label";
 Label.propTypes = {
   children: PropTypes.node.isRequired,
   required: PropTypes.bool.isRequired,
+  requiredStyleAtEnd: PropTypes.bool,
   disabled: PropTypes.bool.isRequired,
   size: PropTypes.oneOf(Object.values(LabelSize)),
   as: PropTypes.oneOf(["label", "legend"] as asTags[]),

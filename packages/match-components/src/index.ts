@@ -1,6 +1,7 @@
 export * from "./anchor";
 export * from "./button";
 export * from "./card";
+export * from "./checkbox";
 export * from "./code";
 /**
  * Flag component breaks docusaurus 🦖💔

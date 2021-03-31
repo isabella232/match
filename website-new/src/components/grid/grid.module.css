@@ -10,7 +10,7 @@
 }
 
 @media (--media-query-large) {
-  .content {
+  .grid {
     grid-column-gap: var(--space-scale-420);
   }
 }

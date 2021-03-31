@@ -47,22 +47,13 @@
 
 .textColorExample {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   overflow: hidden;
   border: var(--border-width-thin) solid var(--border-color-card);
   border-radius: var(--border-radius-base);
 
   & > div {
-    padding: 1em 0;
+    padding: 1em;
     text-align: center;
-  }
-
-  & > div + div {
-    border-left: var(--border-width-thin) solid var(--border-color-card);
-  }
-
-  &.inverse > div + div {
-    border-color: var(--border-color-darkest);
   }
 }
 
@@ -73,4 +64,18 @@
 
 .spacingExample {
   background-color: var(--color-blue-60);
+}
+
+@media (--media-query-medium) {
+  .textColorExample {
+    grid-template-columns: repeat(2, 1fr);
+
+    & > div + div {
+      border-left: var(--border-width-thin) solid var(--border-color-card);
+    }
+
+    &.inverse > div + div {
+      border-color: var(--border-color-darkest);
+    }
+  }
 }

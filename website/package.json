@@ -1,6 +1,6 @@
 {
   "name": "match-website",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "scripts": {
     "dev": "docusaurus start",
@@ -12,12 +12,12 @@
     "type-check": "tsc --noEmit --composite false"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.70",
-    "@docusaurus/preset-classic": "2.0.0-alpha.70",
-    "@docusaurus/remark-plugin-npm2yarn": "2.0.0-alpha.70",
-    "@docusaurus/theme-classic": "2.0.0-alpha.70",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.70",
-    "@docusaurus/theme-search-algolia": "2.0.0-alpha.70",
+    "@docusaurus/core": "2.0.0-alpha.72",
+    "@docusaurus/preset-classic": "2.0.0-alpha.72",
+    "@docusaurus/remark-plugin-npm2yarn": "2.0.0-alpha.72",
+    "@docusaurus/theme-classic": "2.0.0-alpha.72",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.72",
+    "@docusaurus/theme-search-algolia": "2.0.0-alpha.72",
     "@mdx-js/react": "1.6.22",
     "@styled-system/theme-get": "5.1.2",
     "@twilio-labs/match-components": "workspace:packages/match-components",
@@ -31,21 +31,21 @@
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "clsx": "1.1.1",
-    "colortranslator": "1.3.5",
+    "colortranslator": "1.5.1",
     "docusaurus-plugin-react-docgen-typescript": "0.0.1",
     "formik": "2.2.6",
     "gh-pages": "3.1.0",
     "html-react-parser": "1.2.4",
     "plugin-docusaurus-tokens": "workspace:plugins/docusaurus-tokens",
     "pnp-webpack-plugin": "1.6.4",
-    "react": "17.0.1",
+    "react": "17.0.2",
     "react-docgen-typescript": "1.21.0",
-    "react-dom": "17.0.1",
-    "react-is": "17.0.1",
+    "react-dom": "17.0.2",
+    "react-is": "17.0.2",
     "react-live": "2.2.3",
     "react-syntax-highlighter": "15.4.3",
     "react-uid": "2.3.1",
-    "reakit": "1.3.5",
+    "reakit": "1.3.6",
     "styled-components": "5.2.1",
     "styled-system": "5.1.5",
     "wcag-contrast": "3.0.0"
@@ -64,18 +64,18 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-alpha.70",
+    "@docusaurus/module-type-aliases": "2.0.0-alpha.72",
     "@types/gh-pages": "3.0.0",
-    "@types/node": "14.14.31",
+    "@types/node": "14.14.36",
     "@types/prop-types": "15.7.3",
-    "@types/react": "17.0.2",
-    "@types/react-dom": "17.0.1",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.3",
     "@types/react-is": "17.0.0",
     "@types/react-syntax-highlighter": "13.5.0",
-    "@types/styled-components": "5.1.7",
+    "@types/styled-components": "5.1.9",
     "@types/styled-system": "5.1.10",
     "prop-types": "15.7.2",
     "tsconfig-match": "workspace:configs/tsconfig",
-    "typescript": "4.1.5"
+    "typescript": "4.2.3"
   }
 }

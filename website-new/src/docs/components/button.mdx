@@ -7,6 +7,24 @@ slug: /docs/components/button/
 
 ## Code
 
+### Installation
+
+```bash
+yarn add @twilio-labs/match
+```
+
+### Usage
+
+```jsx
+import { Button } from "@twilio-labs/match/components";
+
+const Component = () => (
+  <Button variant="secondary" size="small" onClick={() => {}}>
+    Ahoy
+  </Button>
+);
+```
+
 ### Props
 
 | Prop       | Type          | Default   | Description                                                                        |
@@ -19,3 +37,76 @@ slug: /docs/components/button/
 | disabled?  | boolean       | false     | Prevent actions from firing on the Button.                                         |
 | fullWidth? | boolean       | false     | Sets the button width to 100% of the parent container.                             |
 | download?  | boolean       | false     | Should the link trigger a download dialog? Must be used with the 'href' attribute. |
+
+---
+
+## Examples
+
+### Primary
+
+Primary buttons indicate the most important action a user may take on the current screen.
+
+```jsx live
+<Button>Ahoy</Button>
+```
+
+### Secondary
+
+Secondary buttons indicate a recommended action for a user, but is not the most important one available on the current screen.
+
+```jsx live
+<Button variant="secondary">Ahoy</Button>
+```
+
+### Tertiary
+
+Tertiary buttons are used for actions that are not as equally important in the user experience. They are used in cases where the secondary button is not accessible due to the background color, such as darker colors.
+
+```jsx live bg=darkest
+<Button variant="tertiary">Ahoy</Button>
+```
+
+### Inverse
+
+Inverse buttons are formatted for use on top of various background colors, where the hover and active state of the primary or secondary buttons may clash against the background.
+
+```jsx live bg=blue
+<Button variant="inverse">Ahoy</Button>
+```
+
+### Prompt
+
+All variants support the animated prompt icon.
+
+```jsx live
+<Button prompt>Ahoy</Button>
+```
+
+### Disabled
+
+Disabled buttons will not receive any click events. It should be obvious to the user why the button might be disabled (e.g. it follows an empty text field).
+
+```jsx live
+<Button disabled>Submit</Button>
+```
+
+### Text and Icon
+
+Buttons of any variety and size may include an icon from one of the [Match icon libraries](/docs/components/icon). Always place icons to the right of the button text.
+
+```jsx live
+<Button>
+  Download
+  <DownloadIcon decorative />
+</Button>
+```
+
+### Icon Only
+
+Icon only buttons must use the `icon` size, but may be used with any variant. Be sure to include a descriptive title for your icon.
+
+```jsx live
+<Button size="icon">
+  <ExpandIcon title="expand" />
+</Button>
+```

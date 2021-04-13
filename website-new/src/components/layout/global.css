@@ -4,3 +4,13 @@ body {
   font-size: var(--font-size-scale-100);
   font-family: var(--font-family-text);
 }
+
+body.noscroll {
+  overflow: hidden;
+}
+
+@media (--media-query-large) {
+  body.noscroll {
+    overflow: visible;
+  }
+}

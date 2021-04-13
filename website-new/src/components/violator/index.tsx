@@ -1,8 +1,12 @@
 import * as React from "react";
 import clsx from "clsx";
-import type { ViolatorProps } from "./types";
 import { icon, violator, wrapper } from "./violator.module.css";
 import iconArrow from "../../images/icons/arrow-diagonal.svg";
+
+interface ViolatorProps extends React.HTMLAttributes<HTMLElement> {
+  text?: string;
+  url?: string;
+}
 
 export const Violator: React.FC<ViolatorProps> = ({
   className,

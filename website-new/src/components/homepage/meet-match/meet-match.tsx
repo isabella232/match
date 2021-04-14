@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { Section } from "../../section";
 import { Grid } from "../../grid";
-import { ArrowLink } from "../../arrow-link";
+import { ArrowLink } from "../../common/arrow-link";
 import { SectionHeader } from "../section-header";
 import { Separator } from "../separator";
 import {

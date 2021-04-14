@@ -1,0 +1,107 @@
+.header {
+  margin: 0 calc(-1 * var(--space-scale-180));
+  margin-bottom: 48px;
+  background: var(--color-blue-100);
+  color: var(--color-white);
+  & a {
+    color: var(--color-white);
+    text-decoration-color: var(--color-white);
+    transition: text-decoration-color 200ms ease-in, color 200ms ease-in;
+  }
+
+  & a:hover {
+    color: var(--color-gray-30);
+    text-decoration-color: transparent;
+  }
+  & h1 {
+    font-size: var(--font-size-scale-420);
+    line-height: 54px;
+  }
+
+  & .descriptionStyle {
+    font-size: var(--font-size-scale-100);
+    line-height: var(--line-height-scale-220);
+  }
+}
+
+.content {
+  padding: 48px;
+}
+
+@media (--media-query-large) {
+  .content {
+    padding: 48px 100px;
+  }
+}
+
+.breadcrumbStyle {
+  margin-bottom: 48px;
+  & a {
+    color: var(--color-white);
+    text-decoration-color: transparent;
+    &::after {
+      content: "/";
+      margin: 0 4px;
+    }
+  }
+
+  & a:hover {
+    color: var(--color-gray-30);
+    /* text-decoration-color: var(--color-white); */
+  }
+  & .current {
+    color: var(--color-green-30);
+    font-weight: var(--font-weight-medium);
+  }
+}
+
+.themeSwitcher {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-top: var(--border-width-thin) solid var(--color-gray-80);
+  padding: 0 28px;
+  & > * {
+    padding: 20px;
+  }
+  & span {
+    border-right: var(--border-width-thin) solid var(--color-gray-80);
+  }
+
+  & button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    overflow: visible;
+
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    display: inline-flex;
+    text-decoration: none;
+    position: relative;
+    &.active::after {
+      content: "";
+      position: absolute;
+      left: 20px;
+      bottom: 0;
+      right: 20px;
+      height: 3px;
+      border-bottom: 4px solid var(--color-blue-40);
+    }
+
+    & img {
+      margin: 0 8px;
+    }
+  }
+}
+
+@media (--media-query-large) {
+  .themeSwitcher {
+    padding: 0 80px;
+  }
+}

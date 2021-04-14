@@ -2,11 +2,13 @@ import * as React from "react";
 import { Tooltip } from "../tooltip";
 
 export interface CopyProps {
+  token?: string;
   value: string;
   children: React.ReactNode;
+  className?: string;
 }
 
-export const Copy: React.FC<CopyProps> = ({ value, ...props }) => {
+export const Copy: React.FC<CopyProps> = ({ token, value, ...props }) => {
   const [copyMessage, setCopyMessage] = React.useState<string | null>(null);
 
   const copyToClipboard = () => {
@@ -18,9 +20,9 @@ export const Copy: React.FC<CopyProps> = ({ value, ...props }) => {
 
   return (
     <Tooltip
-      tip={copyMessage || "Copy"}
+      tip={copyMessage || (token ? `Copy ${token}` : "Copy")}
       onClick={copyToClipboard}
-      onKeyDown={(e) => e.key === "Enter" && copyToClipboard()}
+      onKeyDown={e => e.key === "Enter" && copyToClipboard()}
       onBlur={() => setCopyMessage(null)}
       {...props}
     />

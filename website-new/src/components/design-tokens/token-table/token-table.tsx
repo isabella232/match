@@ -4,7 +4,7 @@ import { tokenTable } from "./token-table.module.css";
 import { Example } from "../examples";
 import { remToPx } from "../../../utils";
 import { Token } from "../../../types";
-import { Copy } from "./copy";
+import { Copy } from "../../common/copy";
 
 export type TokenTableProps = {
   tokens: Token[];

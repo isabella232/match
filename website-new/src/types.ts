@@ -1,3 +1,4 @@
+import { Icon } from "@twilio-labs/match-primitives";
 import { ThemeVariants } from "@twilio-labs/match-themes";
 
 export type MatchState = {
@@ -10,4 +11,10 @@ export type Token = {
   name: string;
   value: string;
   tags: string[];
+};
+
+export type IconItem = {
+  category: string;
+  name: string;
+  icon: typeof Icon;
 };

@@ -8,25 +8,37 @@ import { tabList } from "./styles.module.css";
 const ThemeSwitcher: React.FC = () => {
   const {
     dispatch,
-    state: { theme },
+    state: { theme }
   } = React.useContext(MatchContext);
-  const tab = useTabState({ selectedId: theme });
-  console.log(theme, tab.selectedId, tab.currentId);
 
-  React.useEffect(() => {
-    if (!tab.selectedId || theme === tab.selectedId) return;
+  const tab = useTabState({ selectedId: theme });
+
+  // Handle theme change onClick
+  const handleThemeChange = (theme: string) => {
+    if (!theme) return;
     dispatch({
       type: MatchActions.SetMatchTheme,
-      payload: tab.selectedId as ThemeVariants,
+      payload: theme as ThemeVariants
     });
-  }, [tab.selectedId, dispatch]);
+  };
+
+  // Listen for theme changes from elsewhere (multiple <ThemeSwitcher/>s)
+  React.useEffect(() => {
+    if (!tab.selectedId || theme === tab.selectedId) return;
+    tab.setSelectedId(theme);
+  }, [theme, tab]);
 
   return (
     <TabList {...tab} className={tabList} aria-label="Match themes">
       {Object.entries(ThemeVariants).map(([key, val]) => {
         if (val === "Ahoy") return;
         return (
-          <Tab {...tab} key={key} id={val}>
+          <Tab
+            {...tab}
+            key={key}
+            id={val}
+            onClick={() => handleThemeChange(val)}
+          >
             {val}
           </Tab>
         );

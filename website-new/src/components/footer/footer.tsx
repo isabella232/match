@@ -1,4 +1,5 @@
 import * as React from "react";
+import clsx from "clsx";
 import { Link } from "gatsby";
 import { Section } from "../section";
 import logoSvg from "./images/logo.svg";
@@ -10,8 +11,12 @@ import {
   support,
 } from "./footer.module.css";
 
-export const Footer: React.FC = () => (
-  <Section className={section} columns={10}>
+export interface FooterProps {
+  className?: string;
+}
+
+export const Footer: React.FC<FooterProps> = ({ className }) => (
+  <Section className={clsx(section, className)} columns={10}>
     <footer className={footer}>
       <div>
         <div className={logo}>

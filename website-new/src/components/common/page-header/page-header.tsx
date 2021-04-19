@@ -15,24 +15,24 @@ import {
   descriptionStyle,
   current,
   themeSwitcher,
-  active
+  active,
 } from "./header.module.css";
 export const Header: React.FC<PageHeaderProps> = ({
   label,
   description,
   breadcrumbs,
-  className
+  className,
 }) => {
   const {
     dispatch,
-    state: { theme }
+    state: { theme },
   } = React.useContext(MatchContext);
 
   const setTheme = (theme: string) => {
     if (!theme) return;
     dispatch({
       type: MatchActions.SetMatchTheme,
-      payload: theme as ThemeVariants
+      payload: theme as ThemeVariants,
     });
   };
 
@@ -40,7 +40,7 @@ export const Header: React.FC<PageHeaderProps> = ({
     <div className={clsx(header, className)}>
       <div className={content}>
         <div className={breadcrumbStyle}>
-          {breadcrumbs && breadcrumbs.map(crumb => crumb)}
+          {breadcrumbs && breadcrumbs.map((crumb) => crumb)}
           <span className={current}>{label || "Match"}</span>
         </div>
         <h1>{label || "Match"}</h1>

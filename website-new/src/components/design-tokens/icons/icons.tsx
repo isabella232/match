@@ -19,7 +19,7 @@ import {
   iconList,
   iconWrapper,
   iconStyle,
-  inlineCode
+  inlineCode,
 } from "./icons.module.css";
 
 type IconsType = { [category: string]: IconItem[] };
@@ -28,7 +28,7 @@ export const Icons: React.FC = () => {
   const pageTitle = "Icon list";
 
   const {
-    state: { filterText, theme }
+    state: { filterText, theme },
   } = React.useContext(MatchContext);
 
   // Parse out icon categories
@@ -56,7 +56,7 @@ export const Icons: React.FC = () => {
         list.push({
           name: iconName,
           category: metadata.category,
-          icon: iconComponent
+          icon: iconComponent,
         });
       } else {
         console.error(`Metadata not found for icon "${iconName}"`);
@@ -69,7 +69,7 @@ export const Icons: React.FC = () => {
   const fuse = React.useMemo(() => {
     return new Fuse(collection, {
       threshold: 0.2,
-      keys: ["category", "name"]
+      keys: ["category", "name"],
     });
   }, [collection]);
 
@@ -89,7 +89,7 @@ export const Icons: React.FC = () => {
   }, [filterText, collection, fuse]);
 
   const hasAnyIcons = Object.values(icons).some(
-    iconArray => iconArray.length > 0
+    (iconArray) => iconArray.length > 0
   );
 
   return (
@@ -108,7 +108,7 @@ export const Icons: React.FC = () => {
           </a>,
           <a href="/" key={"foundations"}>
             Foundations
-          </a>
+          </a>,
         ]}
       />
 
@@ -134,7 +134,7 @@ export const Icons: React.FC = () => {
                 </Copy>
               </p>
               <div className={grid}>
-                {childIcons.map(meta => {
+                {childIcons.map((meta) => {
                   const name = meta.name;
                   const Icon = meta.icon;
                   return (

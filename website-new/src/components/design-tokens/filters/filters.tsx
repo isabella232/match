@@ -11,7 +11,7 @@ import {
   control,
   search,
   dropdown,
-  dropdownMenu
+  dropdownMenu,
 } from "./styles.module.css";
 
 export interface IconFiltersProps {
@@ -21,18 +21,18 @@ export interface IconFiltersProps {
 
 export const IconFilters: React.FC<IconFiltersProps> = ({
   icons,
-  hasAnyIcons
+  hasAnyIcons,
 }) => {
   const menu = useMenuState();
   const {
     dispatch,
-    state: { filterText }
+    state: { filterText },
   } = React.useContext(MatchContext);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     dispatch({
       type: MatchActions.SetFilterText,
-      payload: e.currentTarget.value
+      payload: e.currentTarget.value,
     });
   };
 
@@ -96,18 +96,18 @@ const formatCategoryName = (category: string): string => {
 
 export const TokenFilters: React.FC<TokenFiltersProps> = ({
   tokens,
-  hasAnyTokens
+  hasAnyTokens,
 }) => {
   const menu = useMenuState();
   const {
     dispatch,
-    state: { filterText }
+    state: { filterText },
   } = React.useContext(MatchContext);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     dispatch({
       type: MatchActions.SetFilterText,
-      payload: e.currentTarget.value
+      payload: e.currentTarget.value,
     });
   };
 

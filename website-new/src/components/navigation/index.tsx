@@ -7,7 +7,7 @@ import {
   open,
   link,
   icon,
-  siteNavFooter
+  siteNavFooter,
 } from "./navigation.module.css";
 
 import iconGettingStarted from "../../images/icons/getting-started.svg";

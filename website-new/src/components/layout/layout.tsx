@@ -10,7 +10,12 @@ import { Violator } from "../violator";
 import { Header } from "../header";
 import { Footer } from "../footer";
 import { Navigation } from "../navigation";
-import { layout, mainContent, navOpen } from "./layout.module.css";
+import {
+  layout,
+  footerContent,
+  mainContent,
+  navOpen,
+} from "./layout.module.css";
 import { Table } from "../markdown/table";
 import { Code } from "../markdown/code";
 
@@ -62,7 +67,7 @@ export const Layout: React.FC = ({ children }) => {
           <Header isNavOpen={isNavOpen} handleMenuClick={handleMenuClick} />
           <Navigation isOpen={isNavOpen} />
           <main className={mainContent}>{children}</main>
-          <Footer />
+          <Footer className={footerContent} />
         </div>
       </MDXProvider>
     </MatchProvider>

@@ -22,7 +22,7 @@ export const Copy: React.FC<CopyProps> = ({ token, value, ...props }) => {
     <Tooltip
       tip={copyMessage || (token ? `Copy ${token}` : "Copy")}
       onClick={copyToClipboard}
-      onKeyDown={e => e.key === "Enter" && copyToClipboard()}
+      onKeyDown={(e) => e.key === "Enter" && copyToClipboard()}
       onBlur={() => setCopyMessage(null)}
       {...props}
     />

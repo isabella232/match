@@ -37,7 +37,6 @@ export const Accordion: React.FC<AccordionProps> = ({
   return (
     <ul className={clsx(accordion, className)} {...props}>
       {React.Children.map(children, (child, index) => {
-        console.log(index);
         if (React.isValidElement(child)) {
           const key = `accordionGroup${index}`;
           return React.cloneElement(child, {

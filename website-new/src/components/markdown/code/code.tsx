@@ -5,7 +5,7 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import prismTheme from "prism-react-renderer/themes/nightOwl";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { Formik } from "formik";
-import { StyledBase, ThemeVariants } from "@twilio-labs/match-themes";
+import { StyledBase } from "@twilio-labs/match-themes";
 import * as components from "@twilio-labs/match-components";
 import {
   ChatIcon,
@@ -16,8 +16,7 @@ import {
 } from "@twilio-labs/match-icons-twilio";
 import { AirbnbLogo } from "@twilio-labs/match-logos-mono";
 import { ChimeLogo } from "@twilio-labs/match-logos-color";
-import { MatchActions } from "../../../reducers/match";
-import { MatchContext } from "../../../context/match";
+import { ThemeSwitcher } from "../../theme-switcher";
 import type { CodeProps, PreviewProps } from "./types";
 import {
   snippet,
@@ -40,19 +39,6 @@ export const Code: React.FC<CodeProps> = ({
   bg = "white",
   live = false,
 }) => {
-  const {
-    dispatch,
-    state: { theme },
-  } = React.useContext(MatchContext);
-
-  const setTheme = (theme: string) => {
-    if (!theme) return;
-    dispatch({
-      type: MatchActions.SetMatchTheme,
-      payload: theme as ThemeVariants,
-    });
-  };
-
   if (live) {
     return (
       <LiveProvider
@@ -74,14 +60,7 @@ export const Code: React.FC<CodeProps> = ({
       >
         <StyledPreview className={livePreview} bg={bg}>
           <div className={themeSwitcher}>
-            <button
-              className={theme}
-              onClick={() =>
-                theme === "Twilio" ? setTheme("SendGrid") : setTheme("Twilio")
-              }
-            >
-              SendGrid | Twilio
-            </button>
+            <ThemeSwitcher />
           </div>
           <StyledBase className={previewContent}>
             <LivePreview />

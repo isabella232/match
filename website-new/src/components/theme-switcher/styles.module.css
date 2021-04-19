@@ -1,0 +1,36 @@
+.tabList {
+    & button {
+        padding: 5px 8px;
+        color: var(--color-gray-60);
+        font-weight: var(--font-weight-regular);
+        font-size: var(--font-size-scale-60);
+        line-height: var(--line-height-scale-100);
+        background: transparent;
+        border: var(--border-width-thin) solid var(--color-gray-40);
+        cursor: pointer;
+        &+button {
+            border-left: none;
+            border-top-right-radius: var(--border-radius-medium);
+            border-bottom-right-radius: var(--border-radius-medium);
+        }
+        &:first-child {
+            border-right: none;
+            border-top-left-radius: var(--border-radius-medium);
+            border-bottom-left-radius: var(--border-radius-medium);
+        }
+        &:hover {
+            color: var(--color-blue-60);
+            border-color: var(--color-blue-60);
+        }
+        &:focus {
+            outline-style: solid;
+            outline-color: var(--color-blue-60);
+            outline-offset: 1px;
+        }
+        &[aria-selected="true"] {
+            color: var(--color-white);
+            background-color: var(--color-blue-60);
+            border-color: var(--color-blue-60);
+        }
+    }
+}

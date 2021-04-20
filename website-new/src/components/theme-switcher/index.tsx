@@ -1,14 +1,19 @@
 import * as React from "react";
+import clsx from "clsx";
 import { ThemeVariants } from "@twilio-labs/match-themes";
 import { useTabState, Tab, TabList } from "reakit/Tab";
 import { MatchActions } from "../../reducers/match";
 import { MatchContext } from "../../context/match";
-import { tabList } from "./styles.module.css";
+import { tabList, inverse } from "./styles.module.css";
 
-const ThemeSwitcher: React.FC = () => {
+interface ThemeSwitcherProps {
+  bg: string;
+}
+
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ bg }) => {
   const {
     dispatch,
-    state: { theme }
+    state: { theme },
   } = React.useContext(MatchContext);
 
   const tab = useTabState({ selectedId: theme });
@@ -18,7 +23,7 @@ const ThemeSwitcher: React.FC = () => {
     if (!theme) return;
     dispatch({
       type: MatchActions.SetMatchTheme,
-      payload: theme as ThemeVariants
+      payload: theme as ThemeVariants,
     });
   };
 
@@ -29,7 +34,11 @@ const ThemeSwitcher: React.FC = () => {
   }, [theme, tab]);
 
   return (
-    <TabList {...tab} className={tabList} aria-label="Match themes">
+    <TabList
+      {...tab}
+      className={clsx(tabList, Boolean(bg !== "white") && inverse)}
+      aria-label="Match themes"
+    >
       {Object.entries(ThemeVariants).map(([key, val]) => {
         if (val === "Ahoy") return;
         return (

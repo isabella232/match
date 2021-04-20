@@ -1,12 +1,12 @@
 .tabList {
     & button {
         padding: 5px 8px;
-        color: var(--color-gray-60);
+        color: var(--color-blue-60);
         font-weight: var(--font-weight-regular);
         font-size: var(--font-size-scale-60);
         line-height: var(--line-height-scale-100);
         background: transparent;
-        border: var(--border-width-thin) solid var(--color-gray-40);
+        border: var(--border-width-thin) solid var(--color-blue-60);
         cursor: pointer;
         &+button {
             border-left: none;
@@ -19,8 +19,7 @@
             border-bottom-left-radius: var(--border-radius-medium);
         }
         &:hover {
-            color: var(--color-blue-60);
-            border-color: var(--color-blue-60);
+            background-color: var(--color-gray-20);
         }
         &:focus {
             outline-style: solid;
@@ -30,7 +29,20 @@
         &[aria-selected="true"] {
             color: var(--color-white);
             background-color: var(--color-blue-60);
-            border-color: var(--color-blue-60);
+        }
+    }
+    &.inverse button {
+        color: var(--color-white);
+        border-color: var(--color-white);
+        &:hover {
+            background-color: var(--color-blue-90);
+        }
+        &:focus {
+            outline-color: var(--color-white);
+        }
+        &[aria-selected="true"] {
+            color: var(--color-blue-60);
+            background-color: var(--color-white);
         }
     }
 }

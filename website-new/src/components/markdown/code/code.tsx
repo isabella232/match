@@ -60,7 +60,7 @@ export const Code: React.FC<CodeProps> = ({
       >
         <StyledPreview className={livePreview} bg={bg}>
           <div className={themeSwitcher}>
-            <ThemeSwitcher />
+            <ThemeSwitcher bg={bg} />
           </div>
           <StyledBase className={previewContent}>
             <LivePreview />

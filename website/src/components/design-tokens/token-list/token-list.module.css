@@ -1,0 +1,31 @@
+.tokenList {
+  & > h2,
+  & > h3 {
+    scroll-margin-top: 128px;
+  }
+
+  & > h2 {
+    margin: 0 0 var(--space-scale-60);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-scale-180);
+    line-height: var(--line-height-scale-100);
+  }
+
+  & > h3 {
+    margin: 0 0 var(--space-scale-7);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-scale-80);
+    line-height: var(--line-height-scale-220);
+  }
+
+  & > p {
+    margin: 0 0 var(--space-scale-180);
+    color: var(--text-color-tertiary);
+    font-size: var(--font-size-scale-80);
+    line-height: var(--line-height-scale-220);
+  }
+
+  & > *:last-child {
+    margin: 0;
+  }
+}

@@ -1,0 +1,87 @@
+.mdxContent {
+  margin-top: var(--space-scale-340);
+  margin-bottom: 100px;
+  color: var(--color-gray-90);
+  font-weight: var(--font-weight-regular);
+  & h2,
+  & h3 {
+    margin-top: 0;
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-scale-140);
+  }
+  & h2 {
+    margin-top: var(--space-scale-540);
+    margin-bottom: var(--space-scale-140);
+    font-size: 32px;
+  }
+  & h3 {
+    margin-top: var(--space-scale-180);
+    margin-bottom: var(--space-scale-60);
+    font-size: var(--font-size-scale-180);
+  }
+  & hr {
+    height: 1px;
+    margin: var(--space-scale-420) 0;
+    background: var(--color-gray-20);
+    border: 0;
+  }
+  & p {
+    margin: var(--space-scale-100) 0;
+    font-size: var(--font-size-scale-100);
+    line-height: var(--line-height-scale-220);
+  }
+  & ol {
+    padding: 0 20px;
+    font-size: var(--font-size-scale-100);
+    line-height: var(--line-height-scale-220);
+  }
+  & ol,
+  & ul {
+    margin: var(--space-scale-100) 0;
+    padding: 0;
+    padding-left: var(--space-scale-140);
+    font-size: var(--font-size-scale-100);
+    line-height: var(--line-height-scale-220);
+    & li + li {
+      margin-top: var(--space-scale-20);
+    }
+  }
+  & pre {
+    margin: 16px 0 36px;
+  }
+  & code {
+    padding: 2px 8px;
+    background: var(--color-gray-10);
+    border: 1px solid var(--color-gray-20);
+    border-radius: 2px;
+  }
+  & td {
+    font-size: var(--font-size-scale-100);
+    & a::after {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 8px;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.75 11.25L11.25 0.75M11.25 0.75H3.375M11.25 0.75V8.625' stroke='%23043CB5' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      transform: scale(0.8);
+      content: "";
+    }
+  }
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (--media-query-medium) {
+  .mdxContent {
+    & > h3 {
+      margin-bottom: 28px;
+    }
+    & > hr {
+      margin: var(--space-scale-540) 0;
+    }
+  }
+}

@@ -12,6 +12,11 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[css]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
+  },
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true

@@ -19,10 +19,11 @@ import { RichTextProps } from "./types";
 
 export const RichText: React.FC<RichTextProps> = ({ children, inverse }) => {
   const options: HTMLReactParserOptions = {
-    replace: (domNode: Element) => {
-      if (domNode.attribs) {
-        const { children, attribs } = domNode;
-        const name = domNode.name.toUpperCase();
+    replace: (domNode) => {
+      const element = domNode as Element;
+      if (element.attribs) {
+        const { children, attribs } = element;
+        const name = element.name.toUpperCase();
         switch (name) {
           case "A":
             return (

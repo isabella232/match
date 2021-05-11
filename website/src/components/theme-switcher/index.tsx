@@ -1,44 +1,72 @@
 import * as React from "react";
+import clsx from "clsx";
 import { ThemeVariants } from "@twilio-labs/match-themes";
 import { useTabState, Tab, TabList } from "reakit/Tab";
+import twilioIcon from "../../images/logos/twilio.svg";
+import sendgridIcon from "../../images/logos/sendgrid.svg";
 import { MatchActions } from "../../reducers/match";
 import { MatchContext } from "../../context/match";
-import styles from "./styles.module.css";
+import { tabList, snippet, inverseSnippet, header } from "./styles.module.css";
 
 interface ThemeSwitcherProps {
-  noDescription?: boolean;
+  variant: "snippet" | "inverseSnippet" | "header";
 }
 
-const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ noDescription }) => {
+const icons = {
+  [ThemeVariants.TWILIO]: twilioIcon,
+  [ThemeVariants.SENDGRID]: sendgridIcon,
+};
+
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ variant }) => {
   const {
     dispatch,
     state: { theme },
   } = React.useContext(MatchContext);
+
   const tab = useTabState({ selectedId: theme });
 
-  React.useEffect(() => {
-    if (!tab.selectedId || theme === tab.selectedId) return;
+  // Handle theme change onClick
+  const handleThemeChange = (theme: string) => {
+    if (!theme) return;
     dispatch({
       type: MatchActions.SetMatchTheme,
-      payload: tab.selectedId as ThemeVariants,
+      payload: theme as ThemeVariants,
     });
-  }, [theme, tab.selectedId, dispatch]);
+  };
+
+  // Listen for theme changes from elsewhere (multiple <ThemeSwitcher/>s)
+  React.useEffect(() => {
+    if (!tab.selectedId || theme === tab.selectedId) return;
+    tab.setSelectedId(theme);
+  }, [theme, tab]);
 
   return (
-    <>
-      {!noDescription && (
-        <p>
-          We currently serve three different themes: Twilio, SendGrid, and Ahoy.
-        </p>
-      )}
-      <TabList {...tab} className={styles.tabList} aria-label="Match themes">
-        {Object.entries(ThemeVariants).map(([key, val]) => (
-          <Tab {...tab} key={key} id={val}>
+    <TabList
+      {...tab}
+      className={clsx(tabList, {
+        [inverseSnippet]: variant === "inverseSnippet",
+        [snippet]: variant === "snippet",
+        [header]: variant === "header",
+      })}
+      aria-label="Match themes"
+    >
+      {Object.entries(ThemeVariants).map(([key, val]) => {
+        if (val === "Ahoy") return;
+        return (
+          <Tab
+            {...tab}
+            key={key}
+            id={val}
+            onClick={() => handleThemeChange(val)}
+          >
+            {variant === "header" && (
+              <img src={icons[val]} alt="" aria-hidden="true" />
+            )}
             {val}
           </Tab>
-        ))}
-      </TabList>
-    </>
+        );
+      })}
+    </TabList>
   );
 };
 

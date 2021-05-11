@@ -1,0 +1,58 @@
+---
+id: separator
+title: Separator
+section: Components
+description: Separators are used to separate page sections or UI elements. They take the width of their parent container.
+figma: https://www.figma.com/file/oYazzpZ4XWFUlwD1pDHNms/Core-Components?node-id=82%3A0
+github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/separator
+---
+
+## Code
+
+### Usage
+
+```jsx
+import { Separator } from "@twilio-labs/match/components";
+
+const Component = () => <Separator />;
+```
+
+### Props
+
+| Prop     | Type             | Default   | Description          |
+| -------- | ---------------- | --------- | -------------------- |
+| variant? | SeparatorVariant | 'primary' | 'primary', 'inverse' |
+
+Also supports [margin](/components/#margin-props) props.
+
+---
+
+## Guidelines
+
+### About Separators
+
+The separator can be used to help visually divide small elements, such as menu items, or larger items like two sections of a page.
+
+### Accessibility
+
+Note: The plain divider in gray20 is not color contrast accessible and is intended for visual embellishment. Use it paired with white space to create enough visual space between elements.
+
+---
+
+## Examples
+
+### Primary
+
+The primary separator is the default and should be used on light or white backgrounds.
+
+```jsx live fullWidth
+<Separator />
+```
+
+### Inverse
+
+The inverse separator should be used on dark colored backgrounds.
+
+```jsx live bg=darkest fullWidth
+<Separator variant="inverse" />
+```

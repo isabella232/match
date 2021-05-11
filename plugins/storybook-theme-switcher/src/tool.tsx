@@ -50,7 +50,9 @@ const ThemeSwitcherTool: React.FC = () => {
     <WithTooltip
       placement="top"
       trigger="click"
-      tooltip={({ onHide }) => <TooltipLinkList links={toLinks(onHide)} />}
+      tooltip={({ onHide }: { onHide: () => void }) => (
+        <TooltipLinkList links={toLinks(onHide)} />
+      )}
       closeOnClick
     >
       <IconButtonWithLabel key="match-theme" title="Switch active theme">

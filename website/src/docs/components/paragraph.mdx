@@ -1,0 +1,110 @@
+---
+id: paragraph
+title: Paragraph
+section: Components
+description: Paragraphs are lines or blocks of text.
+figma: https://www.figma.com/file/oYazzpZ4XWFUlwD1pDHNms/Core-Components?node-id=340%3A764
+github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/paragraph
+---
+
+import { Guidelines, Do, DoNot } from "../../components/guidelines";
+
+## Code
+
+### Usage
+
+```jsx
+import { Paragraph } from "@twilio-labs/match/components";
+
+const Component = () => <Paragraph>Ahoy, world!</Paragraph>;
+```
+
+### Props
+
+| Prop       | Type             | Default  | Description                                                     |
+| ---------- | ---------------- | -------- | --------------------------------------------------------------- |
+| variant?   | ParagraphVariant | 'medium' | 'small', 'medium', 'large', 'xLarge', 'xSmall'                  |
+| color?     | TextColor        | null     | 'primary', 'secondary', 'tertiary', 'inversePrimary', 'inherit' |
+| textAlign? | string           | 'left'   | 'center', 'left'                                                |
+
+Also supports [margin](/components/#margin-props) props.
+
+---
+
+## Guidelines
+
+### About Paragraphs
+
+Paragraphs are blocks of thematically related text typically distinguished from adjacent content with margins.
+
+### Accessibility
+
+Paragraph text should be visually distinct and legible. Text color should always meet AA accessibility standard (4.5:1). Use vertical margins to distinguish sequential Paragraphs.
+
+---
+
+## Composition
+
+Most of the text blocks on a page will use Paragraphs. Paragraphs provide legible defaults for font size, line height and color.
+
+<Guidelines>
+  <Do>Keep paragraph line lengths around 50-75 characters.</Do>
+  <DoNot>
+    Let paragraphs take up the full width of the page or wrap too much.
+  </DoNot>
+  <Do>
+    Use sentence case but add visual hierarchy with color, font weight, and
+    size.
+  </Do>
+  <DoNot>
+    Avoid using all caps. Text in all caps is harder to read for all users, but
+    especially for some with disabilities.
+  </DoNot>
+  <Do>
+    Focus on what your user really needs to know. Use bullets when listing items
+    instead of listing in a paragraph.
+  </Do>
+  <DoNot>
+    Avoid multiple paragraphs of text. UI content should be clear and concise.
+  </DoNot>
+</Guidelines>
+
+---
+
+## Examples
+
+### Variants
+
+```jsx live
+<>
+  <Paragraph variant="xSmall" marginBottom="scale180">
+    ’Twas brillig, and the slithy toves Did gyre and gimble in the wabe: All
+    mimsy were the borogoves, And the mome raths outgrabe.
+  </Paragraph>
+  <Paragraph variant="small" marginBottom="scale180">
+    “Beware the Jabberwock, my son! The jaws that bite, the claws that catch!
+    Beware the Jubjub bird, and shun The frumious Bandersnatch!”
+  </Paragraph>
+  <Paragraph variant="medium" marginBottom="scale180">
+    He took his vorpal sword in hand; Long time the manxome foe he sought — So
+    rested he by the Tumtum tree And stood awhile in thought.
+  </Paragraph>
+  <Paragraph variant="large" marginBottom="scale180">
+    And, as in uffish thought he stood, The Jabberwock, with eyes of flame, Came
+    whiffling through the tulgey wood, And burbled as it came!
+  </Paragraph>
+  <Paragraph variant="xLarge">
+    One, two! One, two! And through and through The vorpal blade went
+    snicker-snack! He left it dead, and with its head He went galumphing back.
+  </Paragraph>
+</>
+```
+
+### Inverse
+
+```jsx live bg=darkest
+<Paragraph color="inversePrimary">
+  “And hast thou slain the Jabberwock? Come to my arms, my beamish boy! O
+  frabjous day! Callooh! Callay!” He chortled in his joy.
+</Paragraph>
+```

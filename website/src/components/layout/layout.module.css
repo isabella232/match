@@ -1,0 +1,37 @@
+.layout {
+  min-height: 100vh;
+  font-weight: var(--font-weight-medium);
+  /* Prevent a page shift when header goes from sticky to fixed */
+  &.navOpen {
+    margin-top: 64px;
+  }
+}
+
+.mainContent {
+  transition: margin 0.2s ease-out;
+}
+
+@media (--media-query-large) {
+  .layout {
+    &.navOpen {
+      margin-top: 0;
+      & .mainContent {
+        margin-left: 280px;
+      }
+      & .footerContent {
+        margin-left: 280px;
+      }
+    }
+  }
+}
+
+@media (--media-query-x-large) {
+  .layout {
+    & .mainContent {
+      margin-left: 280px;
+    }
+    & .footerContent {
+      margin-left: 280px;
+    }
+  }
+}

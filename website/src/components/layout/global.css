@@ -1,0 +1,20 @@
+body {
+  color: var(--text-color-primary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-scale-100);
+  font-family: var(--font-family-text);
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+a {
+  color: var(--color-blue-60);
+}
+
+@media (--media-query-large) {
+  body.noscroll {
+    overflow: visible;
+  }
+}

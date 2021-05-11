@@ -1,0 +1,200 @@
+---
+id: textarea
+title: Textarea
+section: Components
+description: The textarea component allows users to input multiple lines of text.
+figma: https://www.figma.com/file/oYazzpZ4XWFUlwD1pDHNms/Core-Components?node-id=1166%3A3032
+github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/textarea
+---
+
+import { Guidelines, Do, DoNot } from "../../components/guidelines";
+
+## Code
+
+### Usage
+
+```jsx
+import { Formik } from "formik";
+import { Textarea, Form } from "@twilio-labs/match/components";
+
+const Component = () => (
+  <Formik initialValues={{ message: "" }} onSubmit={() => {}}>
+    <Form>
+      <Textarea name="message" label="Message" />
+    </Form>
+  </Formik>
+);
+```
+
+### Props
+
+| Prop         | Type                      | Default  | Description                               |
+| ------------ | ------------------------- | -------- | ----------------------------------------- |
+| name         | string                    | null     |                                           |
+| label        | string                    | null     |                                           |
+| required?    | boolean                   | null     | Sets the input as required.               |
+| disabled?    | boolean                   | null     | Disables the input.                       |
+| readOnly?    | boolean                   | null     | Sets the input as readonly.               |
+| hideLabel?   | boolean                   | null     | Visually hides the label.                 |
+| placeholder? | string                    | null     | Sets the input's placeholder text.        |
+| helper?      | string                    | null     | Supporting validation instructions.       |
+| minLength?   | number                    | null     | Minimum character count.                  |
+| maxLength?   | number                    | null     | Maximum character count.                  |
+| rows?        | number                    | 3        | Default number of rows to display (3-10). |
+| resize?      | TextareaResizeOptions     | 'manual' | 'manual', 'smart'                         |
+| validate?    | (value: string) => string | null     | Overrides built in validation.            |
+| noValidate?  | boolean                   | null     | Disables built in validation.             |
+
+Also supports [margin](/components/#margin-props) props.
+
+---
+
+## Guidelines
+
+### About Textareas
+
+Textareas are interactive form controls that accept multiple lines of text from a user. They accept any combination of letters, number, symbols and line breaks.
+
+### Accessibility
+
+Here are some quick accessibility tips to ensure a positive user experience for all users.
+
+- Always include a descriptive label for each Textarea.
+- Do not use placeholder text as a replacement for labels.
+- Always allow textareas to be resized manually or automatically.
+- Use `helper` to provide information on how to pass the Textarea's validation.
+- Use error messages to provide information on how to correct invalid data.
+
+---
+
+## Composition
+
+All Textareas must include a label. A label may be visually hidden only if the purpose of the Textarea is abundantly apparent. The `hideLabel` prop will remove the label entirely and apply an `aria-label` to the textarea element for screen readers.
+
+Labels should be short and descriptive with any instructional text belonging in `helper`. Keep supplemental helper text concise and relevant to the textarea's validation requirements.
+
+When a Textarea contains invalid data, provide an error message with instructional cues on how to make the correction. Any `helper` text provided with the Textarea will be replaced by the validation error. Be sure to repeat any relevant information that would have been lost.
+
+Textarea should only be used on a white background.
+
+<Guidelines>
+  <Do>
+    <ul>
+      <li>
+        Use a textarea for a longer entry and a text input for short entries.
+      </li>
+      <li>
+        Only use placeholder text when clarification is required, try not to
+        overuse it.
+      </li>
+      <li>
+        Use help text to provide additional information to the user that could
+        help prevent errors.
+      </li>
+      <li>Make sure every textarea has a label.</li>
+      <li>
+        Use disabled to show a user that an input can not be interacted with
+        yet.
+      </li>
+    </ul>
+  </Do>
+  <DoNot>
+    <ul>
+      <li>Don’t use a textarea for a short text entry.</li>
+      <li>Don’t use placeholder text for every field.</li>
+      <li>
+        Don’t use placeholder text to provide error preventing information.
+      </li>
+      <li>Don’t use placeholder or help text in place of a label.</li>
+      <li>
+        Don’t use disabled to show information in an input that cannot be
+        edited.
+      </li>
+    </ul>
+  </DoNot>
+</Guidelines>
+
+---
+
+## Examples
+
+### Textarea with Help Text
+
+Labels and help text are controlled via the Textarea component props in order to ensure consistency and accessibility best practices.
+
+```jsx live fullWidth
+<Formik initialValues={{ message: "" }} onSubmit={() => {}}>
+  <Form>
+    <Textarea
+      name="message"
+      label="Message"
+      helper="Write a brief message"
+      required
+    />
+  </Form>
+</Formik>
+```
+
+### Textarea with Error
+
+Textareas come with basic [constraint validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) enabled by default. You may override the built in validation with the `validate` prop, or completely disable with `noValidate`. For more advanced validation please read the [Formik documentation](https://formik.org/docs/guides/validation). Note that `helper` text is replaced by the validation error.
+
+```jsx live fullWidth
+<Formik
+  validateOnMount
+  initialTouched={{ message: true }}
+  initialValues={{ message: "" }}
+  onSubmit={() => {}}
+>
+  <Form>
+    <Textarea
+      name="message"
+      label="Message"
+      helper="Write a brief message"
+      required
+    />
+  </Form>
+</Formik>
+```
+
+### Disabled Textarea
+
+Disabled form fields cannot be interacted with. Use a read-only field for showing static information which cannot be edited.
+
+```jsx live fullWidth
+<Formik initialValues={{ message: "" }} onSubmit={() => {}}>
+  <Form>
+    <Textarea name="message" label="Message" disabled />
+  </Form>
+</Formik>
+```
+
+### Read-only Textarea
+
+Read-only textareas can be focused but cannot be edited. Use a read-only Textarea when a user should be able to select and copy the text within. An example of when to use a read-only textarea may be displaying a user's responses after a form has been submitted.
+
+```jsx live fullWidth
+<Formik
+  initialValues={{
+    message:
+      "Gentlemen? In re yours of the 5th inst., yours to hand and beg to rep., brackets, that we have gone over the ground carefully and we seem to believe, i.e., to wit., e.g., in lieu, that despite all our precautionary measures which have been involved, we seem to believe that it is hardly necessary for us to proceed unless we receive an ipso facto that is not negligible at this moment. Hoping this finds you, I beg to remain, as of June 9, cordially yours, Regards.",
+  }}
+  onSubmit={() => {}}
+>
+  <Form>
+    <Textarea readOnly name="message" label="Message" />
+  </Form>
+</Formik>
+```
+
+## Smart Resize
+
+Smart resize will dynamically adjust the texarea's height as a user types. Height is constrained to a minimum of 3 visible rows and a maximum of 10.
+
+```jsx live fullWidth
+<Formik initialValues={{ message: "" }} onSubmit={() => {}}>
+  <Form>
+    <Textarea name="message" label="Message" resize="smart" />
+  </Form>
+</Formik>
+```

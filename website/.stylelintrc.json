@@ -6,6 +6,8 @@
     "stylelint-config-prettier"
   ],
   "rules": {
-    "plugin/declaration-block-no-ignored-properties": true
+    "plugin/declaration-block-no-ignored-properties": true,
+    "font-family-no-missing-generic-family-keyword": null,
+    "no-descending-specificity": null
   }
 }

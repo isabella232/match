@@ -1,0 +1,54 @@
+---
+id: code
+title: Code
+section: Components
+description: The Code component visually distinguishes inline text as a fragment of computer code.
+figma: https://www.figma.com/file/oYazzpZ4XWFUlwD1pDHNms/Core-Components?node-id=212%3A535
+github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/code
+---
+
+## Code
+
+### Usage
+
+```jsx
+import { Code } from "@twilio-labs/match/components";
+
+const Component = () => <Code>ahoy()</Code>;
+```
+
+### Props
+
+| Prop     | Type        | Default | Description     |
+| -------- | ----------- | ------- | --------------- |
+| variant? | CodeVariant | 'dark'  | 'dark', 'light' |
+
+---
+
+## Guidelines
+
+### About Code
+
+The Code component emphasizes short, inline pieces of computer code such as variable names, commands and function calls. For multiline code samples and bash shell prompts, see the [Snippet component](./snippet.mdx).
+
+---
+
+## Examples
+
+### Dark
+
+```jsx live
+<Paragraph>
+  The best way to learn about the Twilio CLI is to simply run the{" "}
+  <Code>twilio</Code> command.
+</Paragraph>
+```
+
+### Light
+
+```jsx live
+<Paragraph>
+  See something that looks interesting? Try running{" "}
+  <Code variant="light">twilio api</Code>.
+</Paragraph>
+```

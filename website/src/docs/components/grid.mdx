@@ -1,0 +1,236 @@
+---
+id: grid
+title: Grid and Cell
+section: Components
+description: The grid and cell components are the foundation for positioning elements on the screen.
+figma: https://www.figma.com/file/oYazzpZ4XWFUlwD1pDHNms/Core-Components?node-id=29%3A26
+github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/grid
+---
+
+## Code
+
+### Usage
+
+```jsx
+import { Grid, Cell } from "@twilio-labs/match/components";
+
+const Component = () => (
+  <Grid gridTemplateColumns="1fr 1fr" gridGap="scale100">
+    <Cell padding="scale260">Twilio</Cell>
+    <Cell padding="scale260">SendGrid</Cell>
+  </Grid>
+);
+```
+
+### Grid Props
+
+| Prop                 | Type   | Default | Description                                                                                             |
+| -------------------- | ------ | ------- | ------------------------------------------------------------------------------------------------------- |
+| gridGap?             | Space  | null    | Sets the gap between rows and columns. Suggested values: 'space420', 'space260', 'space180', 'space100' |
+| gridRowGap?          | Space  | null    | Sets the gap between rows. Suggested values: 'space420', 'space260', 'space180', 'space100'             |
+| gridColumnGap?       | Space  | null    | Sets the gap between columns. Suggested values: 'space420', 'space260', 'space180', 'space100'          |
+| gridAutoFlow?        | string | null    | Specifies how auto-placed items get placed in the grid                                                  |
+| gridAutoRows?        | string | null    | Specifies the size of an implicitly-created grid row track or pattern of tracks                         |
+| gridAutoColumns?     | string | null    | Specifies the size of an implicitly-created grid column track or pattern of tracks                      |
+| gridTemplateRows?    | string | null    | Defines the line names and track sizing functions of the grid rows                                      |
+| gridTemplateColumns? | string | null    | Defines the line names and track sizing functions of the grid columns                                   |
+| gridTemplateAreas?   | string | null    | Specifies named grid areas, establishing the cells in the grid and assigning them names                 |
+| alignItems?          | string | null    | Sets the align-self value for all children                                                              |
+| alignContent?        | string | null    | Sets the distribution of space between and around the grid’s children along the cross/block axis        |
+| justifyItems?        | string | null    | Sets the justify-self value for all children                                                            |
+| justifyContent?      | string | null    | Sets distribution of space between and around the grid’s children along the main-axis/inline axis       |
+
+Also supports [padding](/components/#padding-props) and [margin](/components/#margin-props) props.
+
+### Cell Props
+
+| Prop             | Type             | Default | Description                                                                       |
+| ---------------- | ---------------- | ------- | --------------------------------------------------------------------------------- |
+| alignSelf?       | string           | null    | Aligns the cell in the grid along the appropriate axis                            |
+| justifySelf?     | string           | null    | Sets the justification of the cell in the grid along the appropriate axis         |
+| order?           | int              | null    | Set the order of the cells. Cells in the same grid are sorted in ascending order. |
+| gridColumn?      | string           | null    | Specifies the cell’s size and location within the column of a grid                |
+| gridRow?         | string           | null    | Specifies the cell’s size and location within the row of a grid                   |
+| gridArea?        | string           | null    | Specifies cell's size and location within a grid                                  |
+| backgroundColor? | BackgroundColors | null    | Sets the cell's background color                                                  |
+
+Also supports [padding](/components/#padding-props) and [margin](/components/#margin-props) props.
+
+---
+
+## Guidelines
+
+### About Grids and Cells
+
+The grid component helps position and align content, creating a consistent layout. A grid can be used on the page overall, within page sections,
+and within components. Grids are responsive and will resize as the browser width changes. Additionally, the grid component can be used to adjust
+the layout as the browser width changes.
+
+### Accessibility
+
+- The cells should be in a logical order based upon content. Ensure that the semantic order of content remains logical if the visual order of content is
+  changed. Additionally, ensure that the keyboard tab order of cells remains consistent with the visual order of cells.
+- Do not get rid of semantic elements to create a simpler layout. For example, do not get rid of ul to use li as cells.
+  Semantic elements are critical for screen reader users
+
+## Composition
+
+### Design
+
+There is a grid for desktop, tablet, and mobile. Each of these grids can be added to any frame using the "layout grid" in the right hand menus.
+
+### Development
+
+The grid and cell components use [styled-system](https://styled-system.com/) as a means for exposing customizable css as components props.
+The exposed props follow [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) allowing for a comprehensive coverage for a variety of layout use cases.
+
+---
+
+## Examples
+
+### Responsive
+
+The grid component can be used to make a responsive layout. Any prop can use the notation [value, value, value] and the first value would correspond to mobile,
+the second value, would correspond to tablet, and the third value would correspond to desktop.
+
+The example below aligns four rectangles based on the browser width. Desktop has 4 rectangles across in a single row with 48px gaps. Tablet has 2 rows with
+2 rectangles across and 32px gaps. Mobile has 4 rows, each with a single rectangle and 16px gaps.
+
+```jsx live
+<Grid
+  gridTemplateColumns={[null, "1fr", "repeat(2, minmax(0, 1fr))"]}
+  gridGap={["scale100", "scale260", "scale420"]}
+>
+  <Cell>
+    <Card variant="border" padding="scale100">
+      Best-in-class channel APIs to keep the conversation going across channels
+    </Card>
+  </Cell>
+  <Cell>
+    <Card variant="border" padding="scale100">
+      Global reach and unrivaled scale that supports over 8 million developers
+    </Card>
+  </Cell>
+</Grid>
+```
+
+### Uneven Columns
+
+The Grid prop `gridTemplateColumns` can be used to easily create layouts that span various amounts of columns.
+
+This example also uses the Grid prop `alignItems` to make the content in each cell align to the center of the cell along the y-axis.
+The cells with icons also use the prop `justifySelf` to align that cell's content to the center of the cell along the x-axis.
+
+```jsx live
+<Grid
+  gridTemplateColumns="1fr 6fr"
+  gridColumnGap="scale180"
+  gridRowGap="scale100"
+  alignItems="center"
+>
+  <Cell justifySelf="center">
+    <ChatIcon decorative size="xLarge" />
+  </Cell>
+  <Cell padding="scale100" backgroundColor="light">
+    <Paragraph>
+      Twilio provides a simple entry point into the telephony world, and helps
+      your business avoid many of the traditional complexities.
+    </Paragraph>
+  </Cell>
+  <Cell justifySelf="center">
+    <TerminalIcon decorative size="large" />
+  </Cell>
+  <Cell padding="scale100" backgroundColor="light">
+    <Paragraph>Made for developers by developers</Paragraph>
+  </Cell>
+</Grid>
+```
+
+### Grid Template Areas
+
+The Grid prop `gridTemplateArea` can be combined with Cell components using the `gridArea` prop to easily create custom layouts.
+
+```jsx live
+<Grid
+  gridTemplateAreas="'a a a a' 'b c c c'"
+  gridGap="scale260"
+  alignItems="center"
+>
+  <Cell gridArea="a" justifySelf="center">
+    <Heading variant="h2">Programmable SMS</Heading>
+  </Cell>
+  <Cell gridArea="b">
+    <Card padding="scale260">
+      <Paragraph marginBottom="scale100">
+        Developer Digest, a monthly dose of all things code
+      </Paragraph>
+      <Button size="small">Subscribe</Button>
+    </Card>
+  </Cell>
+  <Cell gridArea="c" padding="scale100">
+    <Paragraph>
+      Twilio makes sending and receiving SMS easy. Find the documentation,
+      sample code, and developer tools you need to build exactly what you want,
+      fast. Let’s get building.
+    </Paragraph>
+  </Cell>
+</Grid>
+```
+
+### Alignment
+
+The Grid and Cell components have alignment props which can help align Cells to their desired location along the y-axis. For instance,
+`alignSelf` can set a cell to take up the entire height of the largest cell in that row or it can set the cell to align at the top, center, or bottom.
+
+```jsx live
+<Grid gridTemplateColumns="repeat(4, minmax(0, 1fr))" gridGap="scale100">
+  <Cell alignSelf="start" backgroundColor="light" paddingX="scale180">
+    start
+  </Cell>
+  <Cell alignSelf="center" backgroundColor="light" paddingX="scale180">
+    center
+  </Cell>
+  <Cell alignSelf="end" backgroundColor="light" paddingX="scale180">
+    end
+  </Cell>
+  <Cell
+    alignSelf="stretch"
+    backgroundColor="light"
+    paddingX="scale180"
+    paddingY="scale260"
+  >
+    stretch
+  </Cell>
+</Grid>
+```
+
+### Justification
+
+The Grid and Cell components have justification props which can help align Cells to their desired location along the x-axis. For instance,
+`justifySelf` can set a cell to take up the entire width of the longest cell in that column or it can be set to align at the left, center, or right of the longest cell.
+
+```jsx live
+<Grid gridTemplateColumns="repeat(4, 1fr)" gridGap="scale180">
+  <Cell justifySelf="start" backgroundColor="light" padding="scale100">
+    start
+  </Cell>
+  <Cell justifySelf="center" backgroundColor="light" padding="scale100">
+    center
+  </Cell>
+  <Cell justifySelf="end" backgroundColor="light" padding="scale100">
+    end
+  </Cell>
+  <Cell
+    justifySelf="stretch"
+    backgroundColor="light"
+    paddingY="scale100"
+    paddingX="scale420"
+  >
+    stretch
+  </Cell>
+  <Cell paddingY="scale100" backgroundColor="light" />
+  <Cell paddingY="scale100" backgroundColor="light" />
+  <Cell paddingY="scale100" backgroundColor="light" />
+  <Cell paddingY="scale100" backgroundColor="light" />
+</Grid>
+```

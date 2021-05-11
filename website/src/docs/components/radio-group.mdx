@@ -1,0 +1,283 @@
+---
+id: radio-group
+title: Radio Group
+section: Components
+description: Radio groups allow users to choose only one selection from a group of at least two options.
+image: ../../images/docs/components/radio.png
+figma: https://www.figma.com/file/oYazzpZ4XWFUlwD1pDHNms/Core-Components?node-id=1263%3A2762
+github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/radio-group
+---
+
+import { Guidelines, Do, DoNot } from "../../components/guidelines";
+
+## Code
+
+### Installation
+
+```shell
+yarn add @twilio-labs/match formik
+```
+
+### Usage
+
+```jsx
+import { Formik } from "formik";
+import { Radio, RadioGroup } from "@twilio-labs/match/components";
+
+const Component = () => (
+  <Formik initialValues={{ email: "" }} onSubmit={() => {}}>
+    <RadioGroup groupLabel="How many emails do you send every month?" required>
+      <Radio name="email" value="1" label="0 - 5,000" />
+      <Radio name="email" value="2" label="5,001 - 15,000" />
+      <Radio name="email" value="3" label="25,001 - 50,000" />
+      <Radio name="email" value="4" label="Over 50,000" />
+    </RadioGroup>
+  </Formik>
+);
+```
+
+### Radio Group Props
+
+| Prop        | Type                      | Default  | Description                       |
+| ----------- | ------------------------- | -------- | --------------------------------- |
+| groupLabel  | string                    | null     | Sets the label for the group      |
+| size?       | RadioSize                 | 'normal' | 'normal', 'small'                 |
+| required?   | boolean                   | null     | Sets the group to be required     |
+| disabled?   | boolean                   | null     | Sets the group to disables        |
+| readOnly?   | boolean                   | null     | Sets the radio button as readonly |
+| helper?     | string                    | null     | Supporting information            |
+| horizontal? | boolean                   | null     | Sets the alignment to horizontal  |
+| validate?   | (value: string) => string | null     | Overrides built in validation     |
+| noValidate? | boolean                   | null     | Disables built in validation      |
+
+Also supports [margin](/components/#margin-props) props.
+
+### Radio Props
+
+| Prop        | Type                      | Default  | Description                       |
+| ----------- | ------------------------- | -------- | --------------------------------- |
+| name        | string                    | null     |                                   |
+| label       | string                    | null     |                                   |
+| value       | string                    | null     |                                   |
+| size?       | RadioSize                 | 'normal' | 'normal', 'small'                 |
+| disabled?   | boolean                   | null     | Disables the radio button         |
+| readOnly?   | boolean                   | null     | Sets the radio button as readonly |
+| additional? | string                    | null     | Supporting information            |
+| required?   | boolean                   | null     | Sets the group to be required     |
+| validate?   | (value: string) => string | null     | Overrides built in validation     |
+| noValidate? | boolean                   | null     | Disables built in validation      |
+
+Also supports [margin](/components/#margin-props) props.
+
+---
+
+## Guidelines
+
+### About Inputs
+
+Radio groups are used in forms when a user has to select a single option from two or more options. Options should be presented in a logical order and there should be no more than 10 options.
+
+### Accessibility
+
+- Use the label prop to convey an option.
+- Use helper text to provide extra context when needed.
+- Labels should be presented after the radio button.
+- Keep labels and helper text brief and descriptive for users using assistive technology, so they can understand the question clearly.
+
+---
+
+## Composition
+
+All radio groups should have a group label, that indicates the question the user will be answering by selecting a radio button. Additionally, all individual radio buttons must have a label that informs the user what option is associated with that radio button. Both group labels and labels should be short and descriptive.
+
+Helper text can be used on the Radio Group to expand on the instruction or the question being asked. Additional text can be used on individual Radio components to expand on the option or the meaning of the label. Keep supplemental text concise and relevant to the Radio Group and Radio buttons.
+
+A Radio Group can be set as required. Setting it to required adds the required indicator next to the group label and adds validation to make sure that one of the radio buttons is selected upon submitting the form. If a radio group is "optional" users will not be able to unselect an option. If you need to give users a way to unselect an option consider adding a clear button or use a different form field.
+
+Make sure all `Radio`s within a `RadioGroup` use the same `name`.
+
+<Guidelines>
+  <Do>
+    <ul>
+      <li>
+        Use radio buttons in a radio group with at least two or more choices -
+        where a user must select one option only.
+      </li>
+      <li>
+        List options in a logical order that makes sense to your users such as
+        in order of the most common selections or in numerical order.
+      </li>
+      <li>
+        Consider using the select component when list options exceed around 10
+        choices.
+      </li>
+    </ul>
+  </Do>
+  <DoNot>
+    <ul>
+      <li>Don't use a radio button on its own.</li>
+      <li>
+        Don't randomize the list options in a way that users will find
+        confusing.
+      </li>
+      <li>Don't have a long list of radio buttons that may overwhelm users.</li>
+    </ul>
+  </DoNot>
+</Guidelines>
+
+---
+
+## Examples
+
+### Vertically Stacked Radio Group
+
+The default Radio Group is vertically stacked. This style of Radio Group works well for longer content.
+
+```jsx live
+<Formik initialValues={{ email: "" }} onSubmit={() => {}}>
+  <RadioGroup groupLabel="How many emails do you send every month?" required>
+    <Radio name="email" value="1" label="0 - 5,000" />
+    <Radio name="email" value="2" label="5,001 - 15,000" />
+    <Radio name="email" value="3" label="25,001 - 50,000" />
+    <Radio name="email" value="4" label="Over 50,000" />
+  </RadioGroup>
+</Formik>
+```
+
+### Horizontal Radio Group
+
+The prop `horizontal` can be used to align options horizontally. Horizontal Radio Groups work best when labels are numbers/ranges or a single word. Additional text should not be used for Radios that are part of a horizontal Radio Group.
+
+```jsx live
+<Formik initialValues={{ newsletter: "" }} onSubmit={() => {}}>
+  <RadioGroup
+    groupLabel="How often would you like newsletters delivered to your inbox?"
+    horizontal
+  >
+    <Radio name="newsletter" value="weekly" label="Weekly" />
+    <Radio name="newsletter" value="bi" label="Bi-Weekly" />
+    <Radio name="newsletter" value="monthly" label="Monthly" />
+    <Radio name="newsletter" value="never" label="Never!" />
+  </RadioGroup>
+</Formik>
+```
+
+### Helper text and additional text
+
+The prop `helper` can be used on the Radio Group to supply additional information that is relevant to the entire group. The prop `additional` can be used on an individual Radio to provide supplemental information for that option.
+
+```jsx live
+<Formik initialValues={{ group: "" }} onSubmit={() => {}}>
+  <RadioGroup
+    groupLabel="Who inspires you the most?"
+    helper="Choose one individual who you aspire to be like or who you enjoy reading about!"
+  >
+    <Radio
+      name="group"
+      value="mlk"
+      label="Martin Luther King Jr"
+      additional="Civil rights activist"
+    />
+    <Radio
+      name="group"
+      value="mandela"
+      label="Nelson Mandela"
+      additional="Civil rights leader and former president of South Africa"
+    />
+    <Radio
+      name="group"
+      value="einstein"
+      label="Albert Einstein"
+      additional="Theoretical physicist"
+    />
+    <Radio
+      name="group"
+      value="lincoln"
+      label="Abraham Lincoln"
+      additional="Leader of the Union and former US president"
+    />
+    <Radio
+      name="group"
+      value="calcutta"
+      label="St. Teresa of Calcutta"
+      additional="Nobel laureate and charitable work"
+    />
+  </RadioGroup>
+</Formik>
+```
+
+### Error on RadioGroup
+
+A required Radio Group will automatically check to make sure one of the options is selected upon submitting.
+
+```jsx live
+<Formik
+  initialValues={{ email: "" }}
+  validateOnMount
+  initialTouched={{ email: true }}
+  onSubmit={() => {}}
+>
+  <RadioGroup groupLabel="How many emails do you send every month?" required>
+    <Radio name="email" value="1" label="0 - 5,000" />
+    <Radio name="email" value="2" label="5,001 - 15,000" />
+    <Radio name="email" value="3" label="25,001 - 50,000" />
+    <Radio name="email" value="4" label="Over 50,000" />
+  </RadioGroup>
+</Formik>
+```
+
+This can be overridden using the `validate` prop. Validation can be turned off using the `noValidate` prop.
+
+```jsx live
+<Formik
+  validateOnMount
+  initialValues={{ food: "salad" }}
+  initialTouched={{ food: true }}
+  onSubmit={() => {}}
+>
+  <RadioGroup
+    groupLabel="Select your favorite food:"
+    required
+    validate={value => {
+      if (value === "salad") {
+        return "Yeah right!";
+      }
+    }}
+  >
+    <Radio name="food" value="sushi" label="Sushi 🍱" />
+    <Radio name="food" value="pizza" label="Pizza 🍕" />
+    <Radio name="food" value="tacos" label="Tacos 🌮" />
+    <Radio name="food" value="salad" label="Salad 🥗" />
+  </RadioGroup>
+</Formik>
+```
+
+### Disabled Radio Group
+
+A Radio Group may be disabled using the `disabled` prop on the Radio Group. There is no need to set each Radio as disabled as the Radio Group will automatically set each as disabled.
+
+```jsx live
+<Formik initialValues={{ email: "" }} onSubmit={() => {}}>
+  <RadioGroup groupLabel="How many emails do you send every month?" disabled>
+    <Radio name="email" value="1" label="0 - 5,000" />
+    <Radio name="email" value="2" label="5,001 - 15,000" />
+    <Radio name="email" value="3" label="25,001 - 50,000" />
+    <Radio name="email" value="4" label="Over 50,000" />
+  </RadioGroup>
+</Formik>
+```
+
+### Read Only Radio Group
+
+Setting `readOnly` on the Radio Group will sets every Radio to disabled so it can not be interacted with and styles the Radio to correspond with other read only form elements. An example of when to use a read-only Radio Group may be displaying a user's responses on a confirmation page.
+
+```jsx live
+<Formik initialValues={{ email: "" }} onSubmit={() => {}}>
+  <RadioGroup groupLabel="How many emails do you send every month?" readOnly>
+    <Radio name="email" value="1" label="0 - 5,000" />
+    <Radio name="email" value="2" label="5,001 - 15,000" />
+    <Radio name="email" value="3" label="25,001 - 50,000" />
+    <Radio name="email" value="4" label="Over 50,000" />
+  </RadioGroup>
+</Formik>
+```

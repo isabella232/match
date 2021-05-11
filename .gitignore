@@ -85,9 +85,9 @@ package-lock.json
 **/build/*
 **/generated/*
 
-# Docusaurus
-.docusaurus
-.cache-loader
+# gatsby files
+.cache
+public
 
 # PyPI
 packages/match-tokens/py/match_tokens_py/*

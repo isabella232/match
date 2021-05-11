@@ -49,12 +49,17 @@
       }
     },
     {
-      "files": ["website/**/*.{ts,tsx}", "plugins/**/*.{ts,tsx}"],
+      "files": [
+        "website/**/*.{ts,tsx}",
+        "website-new/**/*.{ts,tsx}",
+        "plugins/**/*.{ts,tsx}"
+      ],
       "rules": {
         "import/prefer-default-export": "off",
         "import/no-default-export": "off",
         "react/prop-types": "off",
         "react/display-name": "off",
+        "react/no-unescaped-entities": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "unicorn/consistent-function-scoping": "off",
         "unicorn/no-null": "off",

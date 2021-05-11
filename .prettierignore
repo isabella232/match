@@ -1,7 +1,8 @@
 .yarn
 .pnp.js
-.docusaurus
+.cache
 dist
 build
+public
 generated
 *.ejs

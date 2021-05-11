@@ -1,0 +1,14 @@
+.arrowLink {
+  color: inherit;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+
+  & span {
+    text-decoration: underline;
+  }
+
+  & img {
+    margin-left: 0.4em;
+    vertical-align: middle;
+  }
+}

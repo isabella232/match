@@ -1,0 +1,138 @@
+---
+id: button
+title: Button
+section: Components
+description: A button communicates actions users can take with a single click or tap. They are found throughout the interface, typically in dialogues, cards, forms, and modals.
+figma: https://www.figma.com/file/oYazzpZ4XWFUlwD1pDHNms/Core-Components?node-id=14%3A26
+github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/button
+---
+
+## Code
+
+### Usage
+
+```jsx
+import { Button } from "@twilio-labs/match/components";
+
+const Component = () => (
+  <Button variant="secondary" size="small" onClick={() => {}}>
+    Ahoy
+  </Button>
+);
+```
+
+### Props
+
+| Prop       | Type          | Default   | Description                                                                        |
+| ---------- | ------------- | --------- | ---------------------------------------------------------------------------------- |
+| variant?   | ButtonVariant | 'primary' | 'primary', 'inverse', 'secondary', 'tertiary'                                      |
+| type?      | ButtonType    | null      | 'button', 'submit', 'reset'                                                        |
+| size?      | ButtonSize    | 'normal'  | 'normal', 'small', 'icon'                                                          |
+| prompt?    | boolean       | false     | Should the button include an animated prompt?                                      |
+| href?      | string        | null      | A URL to route to. The button's 'type' attribute will be ignored.                  |
+| disabled?  | boolean       | false     | Prevent actions from firing on the Button.                                         |
+| fullWidth? | boolean       | false     | Sets the button width to 100% of the parent container.                             |
+| download?  | boolean       | false     | Should the link trigger a download dialog? Must be used with the 'href' attribute. |
+
+---
+
+## Guidelines
+
+### About Buttons
+
+The Button component enables users to trigger an event such as submitting a form, opening a modal and confirming or canceling an action. Buttons make it clear what users should do to continue with their main flow. They may be used as CTA's to guide a user through a desired journey.
+
+Prioritize the actions on a page using button sizes and types to clarify which are the most important. If you have many actions, consider using button links to offer less important ones.
+
+### Accessibility
+
+Here are some quick accessibility tips to ensure a positive user experience for all users.
+
+- Choose button text that clearly describes the action that is about to happen
+- Use anchors that look like buttons sparingly. Voice dictation users may encounter issues when trying to activate them. A user may say, “Click the read more button”, but the dictation software won’t respond since it can’t tell what the anchor looks like visually. Use an alternative where possible, such as an anchor with an icon or with a larger font size.
+- Avoid using only color to communicate information. Use another indicator such as an icon or button copy for users to be certain of the action and the next step.
+- Avoid small font sizes and blinking / moving text within the button. Font sizes also affect whether it meets AA / AAA under WCAG guidelines.
+- The area for clicking and tapping the button must have enough space within and around the button for usability on all devices.
+
+---
+
+## Composition
+
+Use a button to indicate that users can trigger an action.
+
+In general, align buttons to the direction of the text (e.g., left-aligned in English) for easy scanability.
+
+When moving customers through a sequence, place the primary button in the direction of the movement (e.g., a “Next” button goes on the right in an English-language flow).
+
+---
+
+## Examples
+
+### Primary
+
+Primary buttons indicate the most important action a user may take on the current screen.
+
+```jsx live
+<Button>Ahoy</Button>
+```
+
+### Secondary
+
+Secondary buttons indicate a recommended action for a user, but is not the most important one available on the current screen.
+
+```jsx live
+<Button variant="secondary">Ahoy</Button>
+```
+
+### Tertiary
+
+Tertiary buttons are used for actions that are not as equally important in the user experience. They are used in cases where the secondary button is not accessible due to the background color, such as darker colors.
+
+```jsx live bg=darkest
+<Button variant="tertiary">Ahoy</Button>
+```
+
+### Inverse
+
+Inverse buttons are formatted for use on top of various background colors, where the hover and active state of the primary or secondary buttons may clash against the background.
+
+```jsx live bg=blue
+<Button variant="inverse">Ahoy</Button>
+```
+
+### Prompt
+
+All variants support the animated prompt icon.
+
+```jsx live
+<Button prompt>Ahoy</Button>
+```
+
+### Disabled
+
+Disabled buttons will not receive any click events. It should be obvious to the user why the button might be disabled (e.g. it follows an empty text field).
+
+```jsx live
+<Button disabled>Submit</Button>
+```
+
+### Text and Icon
+
+Buttons of any variety and size may include an icon from one of the [Match icon libraries](/docs/components/icon). Always place icons to the right of the button text.
+
+```jsx live
+<Button>
+  Download
+  <DownloadIcon decorative />
+</Button>
+```
+
+### Icon Only
+
+Icon only buttons must use the `icon` size, but may be used with any variant. Be sure to include a descriptive title for your icon.
+
+```jsx live
+<Button size="icon">
+  <ExpandIcon title="expand" />
+</Button>
+```

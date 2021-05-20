@@ -29,7 +29,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "devDependencies": {
-    "@types/node": "14.14.44",
+    "@types/node": "14.17.0",
     "colortranslator": "1.7.1",
     "csstype": "3.0.8",
     "style-dictionary": "2.10.3",

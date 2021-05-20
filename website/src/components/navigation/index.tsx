@@ -8,7 +8,7 @@ import {
   open,
   link,
   icon,
-  siteNavFooter
+  siteNavFooter,
 } from "./navigation.module.css";
 
 import iconGettingStarted from "../../images/icons/getting-started.svg";
@@ -22,7 +22,7 @@ const sections = {
   ["Getting Started"]: iconGettingStarted,
   ["Design Tokens"]: iconDesignTokens,
   ["Components"]: iconComponents,
-  ["Utilities"]: iconUtilities
+  ["Utilities"]: iconUtilities,
 };
 
 interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
@@ -70,7 +70,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   ...props
 }) => {
   const {
-    allMdx: { edges: pages }
+    allMdx: { edges: pages },
   } = useStaticQuery<NavQueryResult>(NavQuery);
   return (
     <aside
@@ -85,8 +85,8 @@ export const Navigation: React.FC<NavigationProps> = ({
                 .filter(
                   ({
                     node: {
-                      fields: { section }
-                    }
+                      fields: { section },
+                    },
                   }) => section === heading
                 )
                 .map(({ node: { fields } }) => (

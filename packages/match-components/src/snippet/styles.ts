@@ -117,15 +117,18 @@ export const StyledHighlighter = styled.div<StyledSnippetProps>`
               [".comment, .prolog"]: {
                 color: "#B8EBA4", // pastel green
               },
-              [".punctuation, .operator, .entity, .namespace, .attr-value, .attr-equals"]: {
-                color: "gray40",
-              },
-              [".property, .tag, .boolean, .number, .constant, .symbol, .inserted, .unit"]: {
-                color: "#92F6FF", // seafoam
-              },
-              [".selector, .attr-name, .string, .char, .builtin, .deleted, .atrule"]: {
-                color: "orange50",
-              },
+              [".punctuation, .operator, .entity, .namespace, .attr-value, .attr-equals"]:
+                {
+                  color: "gray40",
+                },
+              [".property, .tag, .boolean, .number, .constant, .symbol, .inserted, .unit"]:
+                {
+                  color: "#92F6FF", // seafoam
+                },
+              [".selector, .attr-name, .string, .char, .builtin, .deleted, .atrule"]:
+                {
+                  color: "orange50",
+                },
               [".rule, .module, .control-flow"]: {
                 color: "purple30",
               },
@@ -138,23 +141,27 @@ export const StyledHighlighter = styled.div<StyledSnippetProps>`
               [".regex"]: {
                 color: "red40",
               },
-              [".doctype, .doctype-tag, .name, .operator.arrow, .keyword, .important, .entity"]: {
-                color: "blue30",
-              },
+              [".doctype, .doctype-tag, .name, .operator.arrow, .keyword, .important, .entity"]:
+                {
+                  color: "blue30",
+                },
             },
             [SnippetVariant.LIGHT]: {
               [".comment, .prolog"]: {
                 color: "green90",
               },
-              [".punctuation, .operator, .entity, .namespace, .attr-value, .attr-equals"]: {
-                color: "blue90",
-              },
-              [".property, .tag, .boolean, .number, .constant, .symbol, .inserted, .unit"]: {
-                color: "purple80",
-              },
-              [".selector, .attr-name, .string, .char, .builtin, .deleted, .atrule"]: {
-                color: "orange80",
-              },
+              [".punctuation, .operator, .entity, .namespace, .attr-value, .attr-equals"]:
+                {
+                  color: "blue90",
+                },
+              [".property, .tag, .boolean, .number, .constant, .symbol, .inserted, .unit"]:
+                {
+                  color: "purple80",
+                },
+              [".selector, .attr-name, .string, .char, .builtin, .deleted, .atrule"]:
+                {
+                  color: "orange80",
+                },
               [".rule, .module, .control-flow"]: {
                 color: "purple60",
               },
@@ -167,9 +174,10 @@ export const StyledHighlighter = styled.div<StyledSnippetProps>`
               [".regex"]: {
                 color: "red60",
               },
-              [".doctype, .doctype-tag, .name, .operator.arrow, .keyword, .important, .entity"]: {
-                color: "blue60",
-              },
+              [".doctype, .doctype-tag, .name, .operator.arrow, .keyword, .important, .entity"]:
+                {
+                  color: "blue60",
+                },
             },
           },
         });

@@ -28,7 +28,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerProps>`
       border-color: ${themeGet("colors.gray10")};
     `}
 
-  :focus-within {
+  &:focus-within {
     margin: calc(
       ${themeGet("borderWidths.thin")} - ${themeGet("borderWidths.light")}
     );
@@ -50,26 +50,26 @@ export const StyledInput = styled.input<StyledInputProps>`
   line-height: ${themeGet("lineHeights.scale200")};
   border: none;
 
-  ::placeholder {
+  &::placeholder {
     color: ${themeGet("textColors.tertiary")};
   }
 
-  :read-only {
+  &:read-only {
     color: ${themeGet("textColors.secondary")};
     background: ${themeGet("colors.gray10")};
   }
 
-  :disabled {
+  &:disabled {
     color: ${themeGet("components.form.inputDisabledColor")};
     background: ${themeGet("colors.gray10")};
     pointer-events: none;
   }
 
-  :focus {
+  &:focus {
     outline: none;
   }
 
-  :invalid {
+  &:invalid {
     box-shadow: none;
   }
 

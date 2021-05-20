@@ -238,7 +238,7 @@ This can be overridden using the `validate` prop. Validation can be turned off u
   <RadioGroup
     groupLabel="Select your favorite food:"
     required
-    validate={value => {
+    validate={(value) => {
       if (value === "salad") {
         return "Yeah right!";
       }

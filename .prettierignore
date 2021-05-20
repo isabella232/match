@@ -5,4 +5,18 @@ dist
 build
 public
 generated
+node_modules
 *.ejs
+
+# Match Super Bundle
+packages/match/*
+!packages/match/src
+!packages/match/package.json
+!packages/match/tsconfig.json
+
+# Match tokens
+packages/match-tokens/core/*
+!packages/match-tokens/core/package.json
+!packages/match-tokens/core/tsconfig.json
+!packages/match-tokens/core/types.d.ts
+!packages/match-tokens/core/src

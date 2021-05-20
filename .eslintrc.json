@@ -28,6 +28,8 @@
   "rules": {
     // Common abbreviations are known and readable
     "unicorn/prevent-abbreviations": "off",
+    "unicorn/prefer-module": "off",
+    "unicorn/prefer-node-protocol": "off",
     // https://basarat.gitbook.io/typescript/main-1/defaultisbad
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",

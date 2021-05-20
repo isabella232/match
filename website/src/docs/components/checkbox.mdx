@@ -27,7 +27,7 @@ import { Checkbox } from "@twilio-labs/match/components";
 const Component = () => (
   <Formik
     initialValues={{
-      accept_terms: []
+      accept_terms: [],
     }}
     onSubmit={() => {}}
   >
@@ -52,7 +52,7 @@ import { Checkbox, CheckboxGroup } from "@twilio-labs/match/components";
 const Component = () => (
   <Formik
     initialValues={{
-      animals: []
+      animals: [],
     }}
     onSubmit={() => {}}
   >
@@ -165,7 +165,7 @@ Individual checkboxes require `name`, `value`, and `label` props.
 ```jsx live
 <Formik
   initialValues={{
-    accept_terms: []
+    accept_terms: [],
   }}
   onSubmit={() => {}}
 >
@@ -185,7 +185,7 @@ The default Checkbox Group style is vertically stacked. This style of Checkbox G
 ```jsx live
 <Formik
   initialValues={{
-    notifications: ["phone", "sms"]
+    notifications: ["phone", "sms"],
   }}
   onSubmit={() => {}}
 >
@@ -225,7 +225,7 @@ The `horizontal` prop can be used to give the CheckboxGroup a horizontal layout.
 ```jsx live
 <Formik
   initialValues={{
-    meeting: []
+    meeting: [],
   }}
   onSubmit={() => {}}
 >
@@ -244,7 +244,7 @@ The `readOnly` prop can be used for displaying selections back to the user.
 ```jsx live
 <Formik
   initialValues={{
-    meeting: ["monday"]
+    meeting: ["monday"],
   }}
   onSubmit={() => {}}
 >
@@ -263,7 +263,7 @@ The `disabled` prop can be used for disallowing user input. **Note:** Disabled f
 ```jsx live
 <Formik
   initialValues={{
-    meeting: ["monday"]
+    meeting: ["monday"],
   }}
   onSubmit={() => {}}
 >
@@ -282,7 +282,7 @@ An error will be displayed if a choice is not selected.
 ```jsx live
 <Formik
   initialValues={{
-    accept_terms: []
+    accept_terms: [],
   }}
   validateOnMount
   initialTouched={{ example: true }}
@@ -304,13 +304,13 @@ The default validation can be overridden using the `validate` prop. Validation c
 ```jsx live
 <Formik
   initialValues={{
-    meeting: ["sunday", "monday"]
+    meeting: ["sunday", "monday"],
   }}
   onSubmit={() => {}}
 >
   <CheckboxGroup
     label="What are your preferred meeting days?"
-    validate={value => {
+    validate={(value) => {
       if (value.length < 2) {
         return "Please select at least two options.";
       }

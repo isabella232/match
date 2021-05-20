@@ -93,12 +93,6 @@ public
 packages/match-tokens/py/match_tokens_py/*
 packages/match-tokens/py/match_tokens_py.egg-info
 
-# Bundles
-**/bundle/*
-!**/bundle/src
-!**/bundle/package.json
-!**/bundle/tsconfig.json
-
 # Match Super Bundle
 packages/match/*
 !packages/match/src

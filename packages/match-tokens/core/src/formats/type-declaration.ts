@@ -17,17 +17,14 @@ ${props
 export const componentsTemplate = (props) => `
 export declare const components = {
 ${getUniqueAttributes(props, "type")
-  .map((componentName) =>
-    `${componentName}: {\n`
-      .concat(
-        props
-          .filter((prop) => prop.attributes.type === componentName)
-          .map(
-            (prop) => `${prop.attributes.item}: ${JSON.stringify(prop.value)}`
-          )
-          .join(",\n")
-      )
-      .concat("\n}")
+  .map(
+    (componentName) =>
+      `${componentName}: {\n` +
+      props
+        .filter((prop) => prop.attributes.type === componentName)
+        .map((prop) => `${prop.attributes.item}: ${JSON.stringify(prop.value)}`)
+        .join(",\n") +
+      "\n}"
   )
   .join(",\n")}
 }`;

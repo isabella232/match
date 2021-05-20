@@ -5022,7 +5022,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@twilio-labs/match-tokens@workspace:packages/match-tokens/core"
   dependencies:
-    "@types/node": 14.14.44
+    "@types/node": 14.17.0
     colortranslator: 1.7.1
     csstype: 3.0.8
     style-dictionary: 2.10.3
@@ -5551,10 +5551,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:14.14.44, @types/node@npm:^14.0.10, @types/node@npm:^14.14.10, @types/node@npm:^14.14.28":
-  version: 14.14.44
-  resolution: "@types/node@npm:14.14.44"
-  checksum: 5c4db716325fc8a25b5b76b800acf0ff00c8fa1e7cfcb764fc79d79594939488cb9d2a756e188eb8e8a36da51e8e2be1ffe859be901b338779cb0aa12ad73b3a
+"@types/node@npm:14.17.0":
+  version: 14.17.0
+  resolution: "@types/node@npm:14.17.0"
+  checksum: f437147b39e04b23272eae604ec301b5a91956d386f96a2a796efa856d813df116c1afea511b2c23d908c0456c479bad32862aea6d6f0eaffcc1056603b98e64
   languageName: node
   linkType: hard
 
@@ -5562,6 +5562,13 @@ __metadata:
   version: 13.13.51
   resolution: "@types/node@npm:13.13.51"
   checksum: 8aef4eb0faf0c4d2139e31efde9f61e5308408071fa77bba8532a73d11f071d8d16b04a1f8c3a1554769f0e6f07b03284a71f197f08f588cc95a7eb3aff6072a
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^14.0.10, @types/node@npm:^14.14.10, @types/node@npm:^14.14.28":
+  version: 14.14.44
+  resolution: "@types/node@npm:14.14.44"
+  checksum: 5c4db716325fc8a25b5b76b800acf0ff00c8fa1e7cfcb764fc79d79594939488cb9d2a756e188eb8e8a36da51e8e2be1ffe859be901b338779cb0aa12ad73b3a
   languageName: node
   linkType: hard
 
@@ -19044,7 +19051,7 @@ fsevents@^1.2.7:
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core"
     "@types/gh-pages": 3.0.0
     "@types/mdx-js__react": 1.5.3
-    "@types/node": 14.14.44
+    "@types/node": 14.17.0
     "@types/prop-types": 15.7.3
     "@types/react": 17.0.5
     "@types/react-helmet": 6.1.1
@@ -19131,7 +19138,7 @@ fsevents@^1.2.7:
     "@twilio-labs/match-fonts": "workspace:packages/match-fonts"
     "@types/jest": 26.0.23
     "@types/jest-axe": 3.5.1
-    "@types/node": 14.14.44
+    "@types/node": 14.17.0
     "@types/react": 17.0.5
     "@types/testing-library__jest-dom": 5.9.5
     "@typescript-eslint/eslint-plugin": 4.23.0
@@ -19186,7 +19193,7 @@ fsevents@^1.2.7:
   dependencies:
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core"
     "@types/ejs": 3.0.6
-    "@types/node": 14.14.44
+    "@types/node": 14.17.0
     ejs: 3.1.6
     ts-node: 9.1.1
     tsconfig-match: "workspace:configs/tsconfig"
@@ -21872,7 +21879,7 @@ fsevents@^1.2.7:
     "@storybook/components": 6.2.9
     "@storybook/theming": 6.2.9
     "@twilio-labs/match-themes": "workspace:packages/match-themes"
-    "@types/node": 14.14.44
+    "@types/node": 14.17.0
     "@types/prop-types": 15.7.3
     "@types/react": 17.0.5
     "@types/react-dom": 17.0.4

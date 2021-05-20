@@ -5,3 +5,11 @@ public
 generated
 .docusaurus
 .cache
+
+# Match Tokens
+packages/match-tokens/core/*
+!packages/match-tokens/core/src
+
+# Match Super Bundle
+packages/match/*
+!packages/match/src

@@ -32,7 +32,7 @@ export const StyledTextareaContainer = styled.div<StyledTextareaContainerProps>`
       border-color: ${themeGet("colors.gray10")};
     `}
 
-  :focus-within {
+  &:focus-within {
     margin: calc(
       ${themeGet("borderWidths.thin")} - ${themeGet("borderWidths.light")}
     );
@@ -68,28 +68,28 @@ export const StyledTextarea = styled.textarea<StyledTextareaProps>`
     max-height: calc(10em * ${form.textareaLineHeight} + ${space.scale60} * 2);
   `};
 
-  ::placeholder {
+  &::placeholder {
     color: ${themeGet("textColors.tertiary")};
   }
 
-  :read-only {
+  &:read-only {
     color: ${themeGet("textColors.secondary")};
     background: ${themeGet("colors.gray10")};
   }
 
-  :disabled {
+  &:disabled {
+    overflow: hidden;
     color: ${themeGet("components.form.inputDisabledColor")};
     background: ${themeGet("colors.gray10")};
-    pointer-events: none;
     resize: none;
-    overflow: hidden;
+    pointer-events: none;
   }
 
-  :focus {
+  &:focus {
     outline: none;
   }
 
-  :invalid {
+  &:invalid {
     box-shadow: none;
   }
 `;

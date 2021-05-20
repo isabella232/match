@@ -17,15 +17,14 @@ ${props.map((prop) => `${baseTokenName(prop)}: ${prop.name},`).join("\n")}
 export const componentsTemplate = (props) => `
 export const components = {
 ${getUniqueAttributes(props, "type")
-  .map((componentName) =>
-    `${componentName}: {\n`
-      .concat(
-        props
-          .filter((prop) => prop.attributes.type === componentName)
-          .map((prop) => `${prop.attributes.item}: ${prop.name}`)
-          .join(",\n")
-      )
-      .concat("\n}")
+  .map(
+    (componentName) =>
+      `${componentName}: {\n` +
+      props
+        .filter((prop) => prop.attributes.type === componentName)
+        .map((prop) => `${prop.attributes.item}: ${prop.name}`)
+        .join(",\n") +
+      "\n}"
   )
   .join(",\n")}
 }`;

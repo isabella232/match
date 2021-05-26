@@ -24,7 +24,7 @@ export const Resources: React.FC = () => (
       <div>
         <h3>
           <span>01</span>
-          <Link to="/">Accessibility 101</Link>
+          <Link to="/articles/accessibility">Accessibility 101</Link>
         </h3>
         <p>
           Inclusion is most important for us. Read about how Match puts

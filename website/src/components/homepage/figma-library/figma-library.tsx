@@ -9,8 +9,10 @@ import {
   header,
   separator,
   gatsbyImg,
+  illustrationStyle,
   sectionLink,
 } from "./figma-library.module.css";
+import illustrationImg from "./images/illustration.svg";
 
 export const FigmaLibrary: React.FC = () => (
   <Section className={section} columns={8}>
@@ -21,7 +23,7 @@ export const FigmaLibrary: React.FC = () => (
       title="Components and layer styles ready for you to use"
     />
 
-    <StaticImage src="./images/illustration.png" alt="" layout="constrained" />
+    <img src={illustrationImg} className={illustrationStyle} alt="" />
 
     <div className={sectionLink}>
       <p>

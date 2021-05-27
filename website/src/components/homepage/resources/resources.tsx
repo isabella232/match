@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import { Section } from "../../section";
 import { Grid } from "../../grid";
 import { SectionHeader } from "../section-header";
@@ -11,6 +10,7 @@ import {
   resources,
   illustration,
 } from "./resources.module.css";
+import lightbulbImg from "./images/lightbulb.svg";
 
 export const Resources: React.FC = () => (
   <Section className={section} contentClassName={content} columns={10}>
@@ -34,14 +34,20 @@ export const Resources: React.FC = () => (
       <div>
         <h3>
           <span>02</span>
-          <Link to="/">UX Research</Link>
+          UX Research{" "}
+          <sup>
+            <sup>(coming soon)</sup>
+          </sup>
         </h3>
         <p>Check out some of the user studies and surveys we have conducted!</p>
       </div>
       <div>
         <h3>
           <span>03</span>
-          <Link to="/">The Match Way</Link>
+          The Match Way{" "}
+          <sup>
+            <sup>(coming soon)</sup>
+          </sup>
         </h3>
         <p>
           When working with multiple teams, process and structure is crucial for
@@ -51,7 +57,10 @@ export const Resources: React.FC = () => (
       <div>
         <h3>
           <span>04</span>
-          <Link to="/">Fun Stuff</Link>
+          Fun Stuff{" "}
+          <sup>
+            <sup>(coming soon)</sup>
+          </sup>
         </h3>
         <p>
           The Match team loves a good super fun time! Here are some random
@@ -60,7 +69,7 @@ export const Resources: React.FC = () => (
       </div>
     </Grid>
     <div className={illustration}>
-      <StaticImage src="./images/illustration.png" />
+      <img src={lightbulbImg} alt="" />
     </div>
   </Section>
 );

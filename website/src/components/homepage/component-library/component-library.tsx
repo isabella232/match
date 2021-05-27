@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import { Section } from "../../section";
 import { Grid } from "../../grid";
 import { ArrowLink } from "../../common/arrow-link";
@@ -13,6 +12,14 @@ import {
   components,
   sectionLink,
 } from "./component-library.module.css";
+import anchorImg from "./images/anchor.svg";
+import buttonImg from "./images/button.svg";
+import cardImg from "./images/card.svg";
+import codeImg from "./images/code.svg";
+import gridImg from "./images/grid.svg";
+import iconImg from "./images/icon.svg";
+import separatorImg from "./images/separator.svg";
+import visuallyHiddenImg from "./images/visually-hidden.svg";
 
 export const ComponentLibrary: React.FC = () => (
   <Section className={section} contentClassName={content} columns={10}>
@@ -22,84 +29,36 @@ export const ComponentLibrary: React.FC = () => (
       title="Everything you need to create the best experiences"
     />
     <Grid className={components}>
-      <Link to="/">
-        <StaticImage
-          src="./images/anchor.png"
-          alt=""
-          layout="constrained"
-          className={gatsbyImg}
-          imgStyle={{ objectFit: "contain" }}
-        />
+      <Link to="/components/anchor">
+        <img src={anchorImg} alt="" className={gatsbyImg} />
         <span>Anchor</span>
       </Link>
-      <Link to="/">
-        <StaticImage
-          src="./images/button.png"
-          alt=""
-          layout="constrained"
-          className={gatsbyImg}
-          imgStyle={{ objectFit: "contain" }}
-        />
+      <Link to="/components/button">
+        <img src={buttonImg} alt="" className={gatsbyImg} />
         <span>Button</span>
       </Link>
-      <Link to="/">
-        <StaticImage
-          src="./images/card.png"
-          alt=""
-          layout="constrained"
-          className={gatsbyImg}
-          imgStyle={{ objectFit: "contain" }}
-        />
+      <Link to="/components/card">
+        <img src={cardImg} alt="" className={gatsbyImg} />
         <span>Card</span>
       </Link>
-      <Link to="/">
-        <StaticImage
-          src="./images/code.png"
-          alt=""
-          layout="constrained"
-          className={gatsbyImg}
-          imgStyle={{ objectFit: "contain" }}
-        />
+      <Link to="/components/code">
+        <img src={codeImg} alt="" className={gatsbyImg} />
         <span>Code</span>
       </Link>
-      <Link to="/">
-        <StaticImage
-          src="./images/grid.png"
-          alt=""
-          layout="constrained"
-          className={gatsbyImg}
-          imgStyle={{ objectFit: "contain" }}
-        />
+      <Link to="/components/grid">
+        <img src={gridImg} alt="" className={gatsbyImg} />
         <span>Grid</span>
       </Link>
-      <Link to="/">
-        <StaticImage
-          src="./images/icon.png"
-          alt=""
-          layout="constrained"
-          className={gatsbyImg}
-          imgStyle={{ objectFit: "contain" }}
-        />
+      <Link to="/components/icon">
+        <img src={iconImg} alt="" className={gatsbyImg} />
         <span>Icon</span>
       </Link>
-      <Link to="/">
-        <StaticImage
-          src="./images/separator.png"
-          alt=""
-          layout="constrained"
-          className={gatsbyImg}
-          imgStyle={{ objectFit: "contain" }}
-        />
+      <Link to="/components/separator">
+        <img src={separatorImg} alt="" className={gatsbyImg} />
         <span>Separator</span>
       </Link>
-      <Link to="/">
-        <StaticImage
-          src="./images/visually-hidden.png"
-          alt=""
-          layout="constrained"
-          className={gatsbyImg}
-          imgStyle={{ objectFit: "contain" }}
-        />
+      <Link to="/utilities/visually-hidden">
+        <img src={visuallyHiddenImg} alt="" className={gatsbyImg} />
         <span>VisuallyHidden</span>
       </Link>
     </Grid>

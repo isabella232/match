@@ -38,6 +38,10 @@
   vertical-align: middle;
 }
 
+.illustrationStyle {
+  max-width: 100%;
+}
+
 @media (--media-query-medium) {
   .section {
     padding-top: var(--space-scale-180);

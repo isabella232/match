@@ -5,4 +5,5 @@ export const mediaQuery: Sizes = {
   medium: { value: 768 },
   large: { value: 1024 },
   xLarge: { value: 1200 },
+  xxLarge: { value: 1440 },
 };

@@ -62,7 +62,7 @@ export const Layout: React.FC = ({ children }) => {
         <div className={clsx(layout, isNavOpen && navOpen)}>
           <Violator
             text="Beautiful and accessible UI components and patterns, crafted by the Match team. Check out the latest release: Radio Buttons!"
-            url="#"
+            url="/components/radio-group"
           />
           <Header isNavOpen={isNavOpen} handleMenuClick={handleMenuClick} />
           <Navigation isOpen={isNavOpen} />

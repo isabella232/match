@@ -21,7 +21,7 @@ import {
   image,
   themeSwitcher,
   themeSwitcherWrap,
-} from "./header.module.css";
+} from "./page-header.module.css";
 
 export const PageHeader: React.FC<PageHeaderProps> = ({
   title,

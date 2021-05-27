@@ -51,6 +51,7 @@
   display: none;
   grid-gap: var(--space-scale-260);
   grid-template-columns: auto auto;
+  font-size: var(--font-size-scale-80);
   /* Make room for nav menu button */
   transform: translate3d(-60px, 0, 0);
   transition: transform 0.2s ease-out;

@@ -1,6 +1,5 @@
 import * as React from "react";
 import clsx from "clsx";
-import { Link } from "gatsby";
 import { Section } from "../section";
 import logoSvg from "./images/logo.svg";
 import {
@@ -24,12 +23,6 @@ export const Footer: React.FC<FooterProps> = ({ className }) => (
         </div>
         <nav className={navigation}>
           <ul>
-            <li>
-              <Link to="/">The Match Way</Link>
-            </li>
-            <li>
-              <Link to="/">Terms of Use</Link>
-            </li>
             <li>
               <a
                 target="_blank"

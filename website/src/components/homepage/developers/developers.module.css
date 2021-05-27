@@ -22,6 +22,10 @@
   }
 }
 
+.codeContainer {
+  overflow: hidden;
+}
+
 .copy {
   margin: 0;
   color: var(--color-white);
@@ -30,12 +34,16 @@
 
 .gatsbyImg {
   position: relative;
+  & > div > div {
+    /* remove live code bottom margin */
+    margin-bottom: 0;
+  }
 }
 
 .swoop {
   position: absolute;
   top: -25px;
-  right: -8px;
+  right: 0;
   z-index: 0;
   width: 107px;
 }
@@ -52,7 +60,7 @@
   }
   .content {
     grid-column-gap: var(--space-scale-500);
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr minmax(min-content, 2fr);
     align-items: center;
     padding: var(--space-scale-660) var(--space-scale-420);
     background: var(--color-blue-90);
@@ -60,8 +68,10 @@
   }
   .swoop {
     top: -99px;
-    right: -33px;
     width: 267px;
+  }
+  .codeContainer {
+    overflow: visible;
   }
 }
 

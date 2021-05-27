@@ -9,6 +9,10 @@
   justify-content: center;
   height: 64px;
   background: var(--color-blue-90);
+  & a:hover {
+    color: var(--color-gray-20);
+    transition: color 0.2s ease-out;
+  }
 }
 
 .violator {

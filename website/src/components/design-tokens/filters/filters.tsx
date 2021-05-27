@@ -37,7 +37,7 @@ export const IconFilters: React.FC<IconFiltersProps> = ({
   };
 
   return (
-    <form className={container}>
+    <form className={container} onSubmit={(event) => event.preventDefault()}>
       <div className={clsx(control, search)}>
         <img src={searchSvg} alt="" />
         <input
@@ -113,7 +113,7 @@ export const TokenFilters: React.FC<TokenFiltersProps> = ({
   };
 
   return (
-    <form className={container}>
+    <form className={container} onSubmit={(event) => event.preventDefault()}>
       <div className={clsx(control, search)}>
         <img src={searchSvg} alt="" />
         <input

@@ -1,16 +1,25 @@
 import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import { Code } from "../../markdown/code";
 import { Section } from "../../section";
 import { SectionHeader } from "../section-header";
+
 import {
   section,
   content,
   header,
+  codeContainer,
   copy,
   swoop,
   gatsbyImg,
 } from "./developers.module.css";
 import swoopSvg from "./images/swoop.svg";
+
+const code = `
+<Paragraph>
+  See something that looks interesting? Try running{" "}
+  <Code variant="light">twilio api</Code>.
+</Paragraph>
+`;
 
 export const Developers: React.FC = () => (
   <Section className={section} contentClassName={content} columns={10}>
@@ -26,14 +35,13 @@ export const Developers: React.FC = () => (
         custom experiences using our design tokens.
       </p>
     </div>
-    <div>
+    <div className={codeContainer}>
       <img className={swoop} src={swoopSvg} alt="" />
-      <StaticImage
-        className={gatsbyImg}
-        src="./images/code-sample.png"
-        alt="code sample demonstrating Match"
-        layout="fullWidth"
-      />
+      <div className={gatsbyImg}>
+        <Code lang="jsx" live={true}>
+          {code}
+        </Code>
+      </div>
     </div>
   </Section>
 );

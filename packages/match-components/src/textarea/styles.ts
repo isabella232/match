@@ -48,7 +48,7 @@ export const StyledTextarea = styled.textarea<StyledTextareaProps>`
   padding: ${themeGet("space.scale60")} ${themeGet("space.scale100")};
   color: ${themeGet("components.form.inputColor")};
   font-weight: ${themeGet("fontWeights.regular")};
-  font-size: ${themeGet("fontSizes.scale80")};
+  font-size: ${themeGet("fontSizes.scale100")};
   font-family: ${themeGet("fontFamilies.text")};
   line-height: ${themeGet("components.form.textareaLineHeight")};
   background: ${themeGet("backgroundColors.white")};

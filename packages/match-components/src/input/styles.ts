@@ -45,7 +45,7 @@ export const StyledInput = styled.input<StyledInputProps>`
   padding-left: ${themeGet("space.scale100")};
   color: ${themeGet("components.form.inputColor")};
   font-weight: ${themeGet("fontWeights.regular")};
-  font-size: ${themeGet("fontSizes.scale80")};
+  font-size: ${themeGet("fontSizes.scale100")};
   font-family: ${themeGet("fontFamilies.text")};
   line-height: ${themeGet("lineHeights.scale200")};
   border: none;
@@ -81,6 +81,7 @@ export const StyledInput = styled.input<StyledInputProps>`
       },
       [InputSize.SMALL]: {
         py: "scale7",
+        fontSize: "scale80",
       },
     },
   })};

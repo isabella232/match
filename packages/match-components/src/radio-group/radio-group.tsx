@@ -19,7 +19,7 @@ export const RadioGroup = React.forwardRef<
 >(
   (
     {
-      helper,
+      additional,
       required,
       disabled,
       groupLabel,
@@ -54,7 +54,7 @@ export const RadioGroup = React.forwardRef<
 
     const describedby: string[] = [];
     hasError && describedby.push(seed(`${name}_error`));
-    Boolean(helper) && describedby.push(seed(`${name}_helper`));
+    Boolean(additional) && describedby.push(seed(`${name}_additional`));
 
     return (
       <StyledRadioGroupWrapper
@@ -84,8 +84,8 @@ export const RadioGroup = React.forwardRef<
         >
           {groupLabel}
         </Label>
-        {Boolean(helper) && (
-          <HelpText id={seed(`${name}_helper`)}>{helper}</HelpText>
+        {Boolean(additional) && (
+          <HelpText id={seed(`${name}_additional`)}>{additional}</HelpText>
         )}
         <StyledRadioGroup horizontal={horizontal} hasError={hasError}>
           {React.Children.map(children, (child) =>
@@ -120,7 +120,7 @@ RadioGroup.propTypes = {
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
-  helper: PropTypes.string,
+  additional: PropTypes.string,
   horizontal: PropTypes.bool,
   validate: PropTypes.func,
   noValidate: PropTypes.bool,

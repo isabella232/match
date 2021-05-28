@@ -52,6 +52,7 @@ export const StyledInput = styled.input<StyledInputProps>`
 
   &::placeholder {
     color: ${themeGet("textColors.tertiary")};
+    opacity: 1; /* Firefox */
   }
 
   &:read-only {

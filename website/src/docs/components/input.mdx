@@ -47,7 +47,7 @@ const Component = () => (
 | readOnly?    | boolean                   | null     | Sets the input as readonly.                         |
 | hideLabel?   | boolean                   | null     | Visually hides the label.                           |
 | placeholder? | string                    | null     | Sets the input's placeholder text.                  |
-| helper?      | string                    | null     | Supporting validation instructions.                 |
+| additional?  | string                    | null     | Supporting validation instructions.                 |
 | validate?    | (value: string) => string | null     | Overrides built in validation.                      |
 | noValidate?  | boolean                   | null     | Disables built in validation.                       |
 | minLength?   | number                    | null     | Minimum character length.                           |
@@ -68,7 +68,7 @@ Here are some quick accessibility tips to ensure a positive user experience for 
 - Always include a descriptive label for each Input.
 - Do not use placeholder text as a replacement for labels.
 - Use the most appropriate input type for the data requested (e.g. text, email, or url).
-- Use `helper` to provide information on how to pass the Input's validation.
+- Use `additional` to provide information on how to pass the Input's validation.
 - Use error messages to provide information on how to correct invalid data.
 
 ---
@@ -77,9 +77,9 @@ Here are some quick accessibility tips to ensure a positive user experience for 
 
 All Inputs must include a label. A label may be visually hidden only if the purpose of the Input is abundantly apparent. The `hideLabel` prop will remove the label entirely and apply an `aria-label` to the input element for screen readers.
 
-Labels should be short and descriptive with any instructional text belonging in `helper`. Keep supplemental helper text concise and relevant to the input's validation requirements.
+Labels should be short and descriptive with any instructional text belonging in `additional`. Keep supplemental additional text concise and relevant to the input's validation requirements.
 
-When an Input contains invalid data, provide an error message with instructional cues on how to make the correction. Any `helper` text provided with the Input will be replaced by the error. Be sure to repeat any relevant information that would have been lost.
+When an Input contains invalid data, provide an error message with instructional cues on how to make the correction. Any `additional` text provided with the Input will be replaced by the error. Be sure to repeat any relevant information that would have been lost.
 
 Inputs should only be used on a white background.
 
@@ -132,7 +132,7 @@ Labels and help text are controlled via the Input component props in order to en
       name="email"
       label="Email Address"
       placeholder="(e.g. example@twilio.com)"
-      helper="Please enter a valid email."
+      additional="Please enter a valid email."
       required
     />
   </Form>
@@ -141,7 +141,7 @@ Labels and help text are controlled via the Input component props in order to en
 
 ### Input with Error
 
-Inputs come with basic [constraint validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) enabled by default. You may override the built in validation with the `validate` prop, or completely disable with `noValidate`. For more advanced validation please read the [Formik documentation](https://formik.org/docs/guides/validation). Note that `helper` text is replaced by the validation error.
+Inputs come with basic [constraint validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) enabled by default. You may override the built in validation with the `validate` prop, or completely disable with `noValidate`. For more advanced validation please read the [Formik documentation](https://formik.org/docs/guides/validation). Note that `additional` text is replaced by the validation error.
 
 ```jsx live
 <Formik
@@ -155,7 +155,7 @@ Inputs come with basic [constraint validation](https://developer.mozilla.org/en-
       type="email"
       name="email"
       label="Email Address"
-      helper="Please enter a valid email."
+      additional="Please enter a valid email."
       required
     />
   </Form>

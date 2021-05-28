@@ -70,6 +70,7 @@ export const StyledTextarea = styled.textarea<StyledTextareaProps>`
 
   &::placeholder {
     color: ${themeGet("textColors.tertiary")};
+    opacity: 1; /* Firefox */
   }
 
   &:read-only {

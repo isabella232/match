@@ -9,7 +9,7 @@ export interface SnippetProps {
   variant?: `${SnippetVariant}`;
   language: `${SnippetLanguage}`;
   /** Filename or snippet name. */
-  title?: string;
+  label?: string;
   /** Link to full GitHub or Gist source code. */
   githubLink?: string;
   /** Include line numbers in code block. */
@@ -35,7 +35,7 @@ export interface SnippetGroupProps {
   variant?: `${SnippetVariant}`;
   children: Array<React.ReactElement<SnippetProps>>;
   /** File name or snippet name. */
-  title?: string;
+  label?: string;
   /** Force mobile optimized layout for all breakpoints. */
   compact?: boolean;
 }

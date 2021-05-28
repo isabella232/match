@@ -73,10 +73,10 @@ describe("Radio", () => {
 const RadioGroupWithTheme = withTheme()(RadioGroup);
 
 describe("Radio Group", () => {
-  test("helper message", () => {
+  test("additional message", () => {
     const { getByText } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioGroupWithTheme groupLabel="Example" helper="helper">
+        <RadioGroupWithTheme groupLabel="Example" additional="additional">
           <Radio
             name="example"
             value="apples"
@@ -98,7 +98,7 @@ describe("Radio Group", () => {
         </RadioGroupWithTheme>
       </Formik>
     );
-    expect(getByText(/helper/i)).toBeVisible();
+    expect(getByText(/additional/i)).toBeVisible();
   });
 
   test("error message", async () => {
@@ -152,7 +152,7 @@ describe("Radio Group", () => {
   test("accessibility violations", async () => {
     const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioGroupWithTheme groupLabel="Example" helper="helper">
+        <RadioGroupWithTheme groupLabel="Example" additional="additional">
           <Radio
             name="example"
             value="apples"
@@ -181,7 +181,11 @@ describe("Radio Group", () => {
   test("readonly accessibility violations", async () => {
     const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioGroupWithTheme groupLabel="Example" helper="helper" readOnly>
+        <RadioGroupWithTheme
+          groupLabel="Example"
+          additional="additional"
+          readOnly
+        >
           <Radio
             name="example"
             value="apples"
@@ -210,7 +214,11 @@ describe("Radio Group", () => {
   test("disabled accessibility violations", async () => {
     const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioGroupWithTheme groupLabel="Example" helper="helper" disabled>
+        <RadioGroupWithTheme
+          groupLabel="Example"
+          additional="additional"
+          disabled
+        >
           <Radio
             name="example"
             value="apples"
@@ -244,7 +252,11 @@ describe("Radio Group", () => {
         initialTouched={{ example: true }}
         onSubmit={() => {}}
       >
-        <RadioGroupWithTheme groupLabel="Example" helper="helper" required>
+        <RadioGroupWithTheme
+          groupLabel="Example"
+          additional="additional"
+          required
+        >
           <Radio
             name="example"
             value="apples"

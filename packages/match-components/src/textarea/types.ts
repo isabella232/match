@@ -17,7 +17,7 @@ export interface TextareaProps
   /** Sets the input's placeholder text. */
   placeholder?: string;
   /** Supporting validation instructions.  */
-  helper?: string;
+  additional?: string;
   /** Minimum character count. */
   minLength?: number;
   /** Maximum character count. */

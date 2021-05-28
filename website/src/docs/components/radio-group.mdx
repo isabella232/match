@@ -45,7 +45,7 @@ const Component = () => (
 | required?   | boolean                   | null     | Sets the group to be required     |
 | disabled?   | boolean                   | null     | Sets the group to disables        |
 | readOnly?   | boolean                   | null     | Sets the radio button as readonly |
-| helper?     | string                    | null     | Supporting information            |
+| additional? | string                    | null     | Supporting information            |
 | horizontal? | boolean                   | null     | Sets the alignment to horizontal  |
 | validate?   | (value: string) => string | null     | Overrides built in validation     |
 | noValidate? | boolean                   | null     | Disables built in validation      |
@@ -80,9 +80,9 @@ Radio groups are used in forms when a user has to select a single option from tw
 ### Accessibility
 
 - Use the label prop to convey an option.
-- Use helper text to provide extra context when needed.
+- Use additional text to provide extra context when needed.
 - Labels should be presented after the radio button.
-- Keep labels and helper text brief and descriptive for users using assistive technology, so they can understand the question clearly.
+- Keep labels and additional text brief and descriptive for users using assistive technology, so they can understand the question clearly.
 
 ---
 
@@ -90,7 +90,7 @@ Radio groups are used in forms when a user has to select a single option from tw
 
 All radio groups should have a group label, that indicates the question the user will be answering by selecting a radio button. Additionally, all individual radio buttons must have a label that informs the user what option is associated with that radio button. Both group labels and labels should be short and descriptive.
 
-Helper text can be used on the Radio Group to expand on the instruction or the question being asked. Additional text can be used on individual Radio components to expand on the option or the meaning of the label. Keep supplemental text concise and relevant to the Radio Group and Radio buttons.
+Additional text can be used on the Radio Group to expand on the instruction or the question being asked. Additional text can be used on individual Radio components to expand on the option or the meaning of the label. Keep supplemental text concise and relevant to the Radio Group and Radio buttons.
 
 A Radio Group can be set as required. Setting it to required adds the required indicator next to the group label and adds validation to make sure that one of the radio buttons is selected upon submitting the form. If a radio group is "optional" users will not be able to unselect an option. If you need to give users a way to unselect an option consider adding a clear button or use a different form field.
 
@@ -162,15 +162,15 @@ The prop `horizontal` can be used to align options horizontally. Horizontal Radi
 </Formik>
 ```
 
-### Helper text and additional text
+### Additional text
 
-The prop `helper` can be used on the Radio Group to supply additional information that is relevant to the entire group. The prop `additional` can be used on an individual Radio to provide supplemental information for that option.
+The prop `additional` can be used on the Radio Group to supply additional information that is relevant to the entire group. The prop `additional` can be used on an individual Radio to provide supplemental information for that option.
 
 ```jsx live
 <Formik initialValues={{ group: "" }} onSubmit={() => {}}>
   <RadioGroup
     groupLabel="Who inspires you the most?"
-    helper="Choose one individual who you aspire to be like or who you enjoy reading about!"
+    additional="Choose one individual who you aspire to be like or who you enjoy reading about!"
   >
     <Radio
       name="group"

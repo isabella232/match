@@ -70,7 +70,7 @@ export const CheckboxGroup = React.forwardRef<
       });
 
     hasError && describedby.push(seed(`${name}_error`));
-    Boolean(additional) && describedby.push(seed(`${name}_helper`));
+    Boolean(additional) && describedby.push(seed(`${name}_additional`));
 
     return (
       <StyledCheckboxGroup
@@ -103,7 +103,7 @@ export const CheckboxGroup = React.forwardRef<
           </Label>
         )}
         {Boolean(additional) && (
-          <StyledHelpText id={seed(`${name}_helper`)} size={size}>
+          <StyledHelpText id={seed(`${name}_additional`)} size={size}>
             {additional}
           </StyledHelpText>
         )}

@@ -23,7 +23,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
     {
       label,
-      helper,
+      additional,
       name,
       disabled,
       required,
@@ -89,7 +89,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     });
 
     const hasError = meta.touched && Boolean(meta.error);
-    const hasHelper = Boolean(helper);
+    const hasAdditional = Boolean(additional);
 
     React.useEffect(() => {
       if (resize === TextareaResizeOptions.SMART) {
@@ -144,7 +144,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             aria-label={hideLabel ? label : undefined}
             aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
             aria-describedby={
-              hasHelper || hasError ? seed(`${name}_message`) : undefined
+              hasAdditional || hasError ? seed(`${name}_message`) : undefined
             }
             aria-invalid={hasError}
             aria-disabled={disabled}
@@ -163,12 +163,12 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             />
           )}
         </StyledTextareaContainer>
-        {(hasHelper || hasError) && (
+        {(hasAdditional || hasError) && (
           <HelpText
             id={seed(`${name}_message`)}
             variant={hasError ? HelpTextVariant.ERROR : undefined}
           >
-            {hasError ? meta.error : helper}
+            {hasError ? meta.error : additional}
           </HelpText>
         )}
       </StyledTextareaWrapper>
@@ -187,7 +187,7 @@ Textarea.propTypes = {
   readOnly: PropTypes.bool,
   hideLabel: PropTypes.bool,
   placeholder: PropTypes.string,
-  helper: PropTypes.string,
+  additional: PropTypes.string,
   rows: PropTypes.oneOf([3, 4, 5, 6, 7, 8, 9, 10]),
   resize: PropTypes.oneOf(Object.values(TextareaResizeOptions)),
   minLength: PropTypes.number,

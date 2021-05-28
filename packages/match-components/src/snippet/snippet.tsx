@@ -44,7 +44,7 @@ SyntaxHighlighter.registerLanguage(SnippetLanguage.GROOVY, groovy);
 
 export const Snippet: React.FC<SnippetProps> = ({
   children,
-  title,
+  label,
   language,
   wrapLines,
   githubLink,
@@ -80,7 +80,7 @@ export const Snippet: React.FC<SnippetProps> = ({
       {!isSingleLine && !isGrouped && (
         <StyledSnippetHeader variant={variant}>
           <StyledSnippetTitle>
-            {title ? title : getLanguageNiceName(language)}
+            {label ? label : getLanguageNiceName(language)}
           </StyledSnippetTitle>
           <SnippetActions
             variant={variant}
@@ -142,7 +142,7 @@ Snippet.propTypes = {
   children: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(Object.values(SnippetVariant)),
   language: PropTypes.oneOf(Object.values(SnippetLanguage)).isRequired,
-  title: PropTypes.string,
+  label: PropTypes.string,
   showLineNumbers: PropTypes.bool,
   wrapLines: PropTypes.bool,
   githubLink: PropTypes.string,

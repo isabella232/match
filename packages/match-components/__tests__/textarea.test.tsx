@@ -9,13 +9,17 @@ import { Textarea } from "../src";
 const TextareaWithTheme = withTheme()(Textarea);
 
 describe("Textarea", () => {
-  test("helper message", () => {
+  test("additional message", () => {
     const { getByText } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <TextareaWithTheme name="example" label="Example" helper="helper" />
+        <TextareaWithTheme
+          name="example"
+          label="Example"
+          additional="additional"
+        />
       </Formik>
     );
-    expect(getByText(/helper/i)).toBeVisible();
+    expect(getByText(/additional/i)).toBeVisible();
   });
 
   test("error message", async () => {
@@ -25,7 +29,7 @@ describe("Textarea", () => {
           data-testid="example"
           name="example"
           label="Example"
-          helper="helper"
+          additional="additional"
           validate={() => "error message"}
         />
       </Formik>
@@ -35,7 +39,7 @@ describe("Textarea", () => {
     await waitFor(() =>
       expect(screen.getByRole("alert")).toHaveTextContent(/error message/i)
     );
-    expect(screen.queryByText(/helper/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/additional/i)).not.toBeInTheDocument();
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
@@ -47,7 +51,7 @@ describe("Textarea", () => {
           name="example"
           label="Example"
           placeholder="Example"
-          helper="Write something"
+          additional="Write something"
         />
       </Formik>
     );
@@ -63,7 +67,7 @@ describe("Textarea", () => {
           name="example"
           label="Example"
           placeholder="Example"
-          helper="Write something"
+          additional="Write something"
         />
       </Formik>
     );
@@ -79,7 +83,7 @@ describe("Textarea", () => {
           name="example"
           label="Example"
           placeholder="Example"
-          helper="Write something"
+          additional="Write something"
         />
       </Formik>
     );

@@ -9,13 +9,17 @@ import { Input } from "../src";
 const InputWithTheme = withTheme()(Input);
 
 describe("Input", () => {
-  test("helper message", () => {
+  test("additional message", () => {
     render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <InputWithTheme name="example" label="Example" helper="helper" />
+        <InputWithTheme
+          name="example"
+          label="Example"
+          additional="additional"
+        />
       </Formik>
     );
-    expect(screen.getByText(/helper/i)).toBeVisible();
+    expect(screen.getByText(/additional/i)).toBeVisible();
   });
 
   test("error message", async () => {
@@ -25,7 +29,7 @@ describe("Input", () => {
           data-testid="example"
           name="example"
           label="Example"
-          helper="helper"
+          additional="additional"
           validate={() => "error message"}
         />
       </Formik>
@@ -35,7 +39,7 @@ describe("Input", () => {
     await waitFor(() =>
       expect(screen.getByRole("alert")).toHaveTextContent(/error message/i)
     );
-    expect(screen.queryByText(/helper/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/additional/i)).not.toBeInTheDocument();
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
@@ -47,7 +51,7 @@ describe("Input", () => {
           name="example"
           label="Name"
           placeholder="Your Name"
-          helper="Enter your name."
+          additional="Enter your name."
         />
       </Formik>
     );
@@ -63,7 +67,7 @@ describe("Input", () => {
           name="example"
           label="Name"
           placeholder="Your Name"
-          helper="Enter your name."
+          additional="Enter your name."
         />
       </Formik>
     );
@@ -79,7 +83,7 @@ describe("Input", () => {
           name="example"
           label="Name"
           placeholder="Your Name"
-          helper="Enter your name."
+          additional="Enter your name."
         />
       </Formik>
     );

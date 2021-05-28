@@ -14,7 +14,7 @@ export default {
     horizontal: false,
     disabled: false,
     readOnly: false,
-    helper: "",
+    additional: "",
   },
   argTypes: {
     name: {
@@ -29,7 +29,7 @@ export default {
     horizontal: {
       control: { type: "boolean" },
     },
-    helper: {
+    additional: {
       control: { type: "text" },
     },
     readOnly: {
@@ -99,7 +99,7 @@ AdditionalText.args = {
   groupLabel: "Who inspires you most?",
   required: true,
   horizontal: false,
-  helper:
+  additional:
     "Choose the individual who you aspire to be like or enjoy reading about!",
 };
 
@@ -124,5 +124,5 @@ Error.args = {
   groupLabel: "Select your favorite fruit:",
   required: true,
   horizontal: false,
-  helper: "",
+  additional: "",
 };

@@ -12,7 +12,7 @@ export default {
     size: InputSize.NORMAL,
     placeholder: "Placeholder text",
     label: "Label",
-    helper: "Helper text.",
+    additional: "Additional text.",
     error: "",
     required: false,
     readOnly: false,
@@ -40,7 +40,7 @@ export default {
     label: {
       control: { type: "text" },
     },
-    helper: {
+    additional: {
       control: { type: "text" },
     },
     error: {

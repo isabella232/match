@@ -26,7 +26,7 @@ const Component = () => (
 | ---------------- | --------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
 | variant?         | SnippetVariant  | 'dark'  | 'dark', 'light'                                                                                               |
 | language         | SnippetLanguage | null    | 'go', 'javascript', 'csharp', 'php', 'ruby', 'python', 'java', 'json', 'c', 'bash', 'shell-session', 'groovy' |
-| title?           | string          | null    | Filename or snippet name.                                                                                     |
+| label?           | string          | null    | Filename or snippet name.                                                                                     |
 | githubLink?      | string          | null    | Link to full GitHub or Gist source code.                                                                      |
 | showLineNumbers? | boolean         | true    | Include line numbers in code block.                                                                           |
 | wrapLines?       | boolean         | false   | Wraps long lines of code.                                                                                     |
@@ -37,7 +37,7 @@ const Component = () => (
 | Prop     | Type           | Default | Description                                        |
 | -------- | -------------- | ------- | -------------------------------------------------- |
 | variant? | SnippetVariant | 'dark'  | 'dark', 'light'                                    |
-| title?   | string         | null    | File name or snippet name.                         |
+| label?   | string         | null    | File name or snippet name.                         |
 | compact? | boolean        | false   | Force mobile optimized layout for all breakpoints. |
 
 ---
@@ -54,7 +54,7 @@ Multiple Snippets may be combined with the SnippetGroup component. A common use 
 
 Both Snippet and SnippetGroup are fully keyboard accessible. Here are some tips to ensure a positive user experience for all users:
 
-- Provide a descriptive title such as the current filename or step in a process to clarify the purpose of the Snippet.
+- Provide a descriptive label such as the current filename or step in a process to clarify the purpose of the Snippet.
 - Enable long line wrapping whenever possible for a better reading experience.
 
 ---
@@ -65,7 +65,7 @@ Both Snippet and SnippetGroup are fully keyboard accessible. Here are some tips 
 
 ### Single Line
 
-Single line Snippets exclude the title bar and line numbers. It is automatically detected but will default to the multi line layout if line wrapping is enabled.
+Single line Snippets exclude the label bar and line numbers. It is automatically detected but will default to the multi line layout if line wrapping is enabled.
 
 ```jsx live
 <Snippet language="shell-session">
@@ -75,7 +75,7 @@ Single line Snippets exclude the title bar and line numbers. It is automatically
 
 ### Multi Line
 
-A multi line snippet displays a title and line numbers by default. If no title is provided the snippet language will be used as a fallback.
+A multi line snippet displays a label and line numbers by default. If no label is provided the snippet language will be used as a fallback.
 
 ```jsx live
 <Snippet
@@ -110,11 +110,11 @@ $client->messages->create(
 
 ### Grouped
 
-Snippets can be grouped to provide multiple languages for a code example. The title supplied to each Snippet will be used as the tab name for navigation. If no title is provided the language will be used as a fallback.
+Snippets can be grouped to provide multiple languages for a code example. The label supplied to each Snippet will be used as the tab name for navigation. If no label is provided the language will be used as a fallback.
 
 ```jsx live
-<SnippetGroup title="Sending SMS using the Programmable SMS API">
-  <Snippet language="javascript" title="Node.js" maxLines={10}>
+<SnippetGroup label="Sending SMS using the Programmable SMS API">
+  <Snippet language="javascript" label="Node.js" maxLines={10}>
     {`// Download the helper library from https://www.twilio.com/docs/node/install
 // Your Account Sid and Auth Token from twilio.com/console
 // and set the environment variables. See http://twil.io/secure
@@ -169,7 +169,7 @@ class Program
 When placing snippet groups in a tight space, the compact property may be used to force a mobile optimized layout for all breakpoints.
 
 ```jsx live
-<SnippetGroup title="Outbound Call" variant="light" compact>
+<SnippetGroup label="Outbound Call" variant="light" compact>
   <Snippet language="ruby" maxLines={10}>
     {`# Download the helper library from https://www.twilio.com/docs/ruby/install
 require 'rubygems'

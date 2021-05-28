@@ -50,7 +50,7 @@ export interface RadioGroupProps
   /** Sets the radio button as readonly. */
   readOnly?: boolean;
   /** Sets the group to disables*/
-  helper?: string;
+  additional?: string;
   /** Sets the alignment to horizontal */
   horizontal?: boolean;
   /** Overrides built in validation. */

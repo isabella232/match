@@ -14,14 +14,14 @@ export default {
   component: Snippet,
   args: {
     ...Snippet.defaultProps,
-    title: "",
+    label: "",
     githubLink: "",
     maxLines: 10,
   },
   argTypes: {
     children: { table: { disable: true } },
     language: { table: { disable: true } },
-    title: { table: { disable: true } },
+    label: { table: { disable: true } },
     variant: {
       control: { type: "select", options: Object.values(SnippetVariant) },
     },
@@ -150,16 +150,16 @@ export const MultiLine = Template.bind({});
 MultiLine.args = {
   language: SnippetLanguage.JAVASCRIPT,
   children: jsExample,
-  title: "Multi Line Snippet",
+  label: "Multi Line Snippet",
 };
 
 export const Group: Story<SnippetGroupProps> = ({
   variant,
-  title,
+  label,
   compact,
   ...props
 }: SnippetGroupProps) => (
-  <SnippetGroup variant={variant} title={title} compact={compact}>
+  <SnippetGroup variant={variant} label={label} compact={compact}>
     <Snippet {...props} language={SnippetLanguage.JAVASCRIPT}>
       {jsExample}
     </Snippet>
@@ -172,7 +172,7 @@ export const Group: Story<SnippetGroupProps> = ({
   </SnippetGroup>
 );
 Group.args = {
-  title: "Grouped Snippets",
+  label: "Grouped Snippets",
   variant: SnippetVariant.DARK,
   compact: false,
 };

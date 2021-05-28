@@ -25,7 +25,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       type,
       label,
       hideLabel,
-      helper,
+      additional,
       size,
       disabled,
       required,
@@ -87,7 +87,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       ...props,
     });
     const hasError = meta.touched && Boolean(meta.error);
-    const hasHelper = Boolean(helper);
+    const hasAdditional = Boolean(additional);
 
     return (
       <StyledInputWrapper
@@ -123,7 +123,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             aria-label={hideLabel ? label : undefined}
             aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
             aria-describedby={
-              hasHelper || hasError ? seed(`${name}_message`) : undefined
+              hasAdditional || hasError ? seed(`${name}_message`) : undefined
             }
             aria-invalid={hasError}
             aria-disabled={disabled}
@@ -131,12 +131,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {...props}
           />
         </StyledInputContainer>
-        {(hasHelper || hasError) && (
+        {(hasAdditional || hasError) && (
           <HelpText
             id={seed(`${name}_message`)}
             variant={hasError ? HelpTextVariant.ERROR : undefined}
           >
-            {hasError ? meta.error : helper}
+            {hasError ? meta.error : additional}
           </HelpText>
         )}
       </StyledInputWrapper>
@@ -157,7 +157,7 @@ Input.propTypes = {
   readOnly: PropTypes.bool,
   hideLabel: PropTypes.bool,
   placeholder: PropTypes.string,
-  helper: PropTypes.string,
+  additional: PropTypes.string,
   error: PropTypes.string,
   minLength: PropTypes.number,
   maxLength: PropTypes.number,

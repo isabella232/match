@@ -20,7 +20,7 @@ export default {
     name: "example",
     placeholder: "Placeholder text",
     label: "Label",
-    helper: "Helper text.",
+    additional: "Additional text.",
     required: false,
     readOnly: false,
     disabled: false,
@@ -36,7 +36,7 @@ export default {
     label: {
       control: { type: "text" },
     },
-    helper: {
+    additional: {
       control: { type: "text" },
     },
     rows: {

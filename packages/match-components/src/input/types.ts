@@ -19,7 +19,7 @@ export interface InputProps
   /** Sets the input's placeholder text. */
   placeholder?: string;
   /** Supporting validation instructions.  */
-  helper?: string;
+  additional?: string;
   /** Error message to display when invalid. */
   error?: string;
   /** Overrides built in validation. */

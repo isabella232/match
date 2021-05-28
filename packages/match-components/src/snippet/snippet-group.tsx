@@ -18,7 +18,7 @@ import {
 import { SnippetActions } from "./snippet-actions";
 
 export const SnippetGroup: React.FC<SnippetGroupProps> = ({
-  title,
+  label,
   variant,
   children,
   compact,
@@ -37,7 +37,7 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
     const activeTab = React.Children.toArray(children).find(
       (child) =>
         React.isValidElement(child) &&
-        tab.selectedId === seed(child.props.language + child.props.title)
+        tab.selectedId === seed(child.props.language + child.props.label)
     );
     if (!React.isValidElement(activeTab)) return;
     setCode(activeTab.props.children);
@@ -48,14 +48,14 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
     <StyledSnippetGroup
       variant={variant}
       compact={compact}
-      hasTitle={Boolean(title)}
+      hasTitle={Boolean(label)}
     >
       <StyledSnippetHeader variant={variant}>
-        {title && <StyledSnippetTitle>{title}</StyledSnippetTitle>}
+        {label && <StyledSnippetTitle>{label}</StyledSnippetTitle>}
         <StyledTabList {...tab} aria-label="Languages">
-          {React.Children.map(children, ({ props: { title, language } }) => (
-            <StyledTab {...tab} id={seed(language + title)}>
-              {title ? title : getLanguageNiceName(language)}
+          {React.Children.map(children, ({ props: { label, language } }) => (
+            <StyledTab {...tab} id={seed(language + label)}>
+              {label ? label : getLanguageNiceName(language)}
             </StyledTab>
           ))}
         </StyledTabList>
@@ -68,9 +68,9 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
             id={seed("language-select")}
             onChange={handleSelectChange}
           >
-            {React.Children.map(children, ({ props: { title, language } }) => (
-              <option value={seed(language + title)}>
-                {title ? title : getLanguageNiceName(language)}
+            {React.Children.map(children, ({ props: { label, language } }) => (
+              <option value={seed(language + label)}>
+                {label ? label : getLanguageNiceName(language)}
               </option>
             ))}
           </select>
@@ -90,7 +90,7 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
 SnippetGroup.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
   variant: PropTypes.oneOf(Object.values(SnippetVariant)),
-  title: PropTypes.string,
+  label: PropTypes.string,
   compact: PropTypes.bool,
 };
 

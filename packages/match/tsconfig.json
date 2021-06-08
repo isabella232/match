@@ -3,9 +3,8 @@
   "compilerOptions": {
     "composite": false,
     "outDir": "./",
-    "rootDir": "./src",
-    "module": "CommonJS"
+    "rootDir": "./src"
   },
   "include": ["src/**/*", "../match-components/types.d.ts"],
-  "exclude": ["components", "themes", "tokens", "icons", "logos"]
+  "exclude": ["components", "themes", "tokens"]
 }

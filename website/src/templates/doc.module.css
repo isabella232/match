@@ -1,49 +1,49 @@
 .mdxContent {
-  margin-top: var(--space-scale-340);
+  margin-top: var(--space-scale340);
   margin-bottom: 100px;
-  color: var(--color-gray-90);
+  color: var(--color-gray90);
   font-weight: var(--font-weight-regular);
   & h2,
   & h3 {
     margin-top: 0;
     font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-scale-140);
+    line-height: var(--line-height-scale140);
   }
   & h2 {
-    margin-top: var(--space-scale-540);
-    margin-bottom: var(--space-scale-140);
+    margin-top: var(--space-scale540);
+    margin-bottom: var(--space-scale140);
     font-size: 32px;
   }
   & h3 {
-    margin-top: var(--space-scale-180);
-    margin-bottom: var(--space-scale-60);
-    font-size: var(--font-size-scale-180);
+    margin-top: var(--space-scale180);
+    margin-bottom: var(--space-scale60);
+    font-size: var(--font-size-scale180);
   }
   & hr {
     height: 1px;
-    margin: var(--space-scale-420) 0;
-    background: var(--color-gray-20);
+    margin: var(--space-scale420) 0;
+    background: var(--color-gray20);
     border: 0;
   }
   & p {
-    margin: var(--space-scale-100) 0;
-    font-size: var(--font-size-scale-100);
-    line-height: var(--line-height-scale-220);
+    margin: var(--space-scale100) 0;
+    font-size: var(--font-size-scale100);
+    line-height: var(--line-height-scale220);
   }
   & ol {
     padding: 0 20px;
-    font-size: var(--font-size-scale-100);
-    line-height: var(--line-height-scale-220);
+    font-size: var(--font-size-scale100);
+    line-height: var(--line-height-scale220);
   }
   & ol,
   & ul {
-    margin: var(--space-scale-100) 0;
+    margin: var(--space-scale100) 0;
     padding: 0;
-    padding-left: var(--space-scale-140);
-    font-size: var(--font-size-scale-100);
-    line-height: var(--line-height-scale-220);
+    padding-left: var(--space-scale140);
+    font-size: var(--font-size-scale100);
+    line-height: var(--line-height-scale220);
     & li + li {
-      margin-top: var(--space-scale-20);
+      margin-top: var(--space-scale20);
     }
   }
   & pre {
@@ -51,12 +51,12 @@
   }
   & code {
     padding: 2px 8px;
-    background: var(--color-gray-10);
-    border: 1px solid var(--color-gray-20);
+    background: var(--color-gray10);
+    border: 1px solid var(--color-gray20);
     border-radius: 2px;
   }
   & td {
-    font-size: var(--font-size-scale-100);
+    font-size: var(--font-size-scale100);
     & a::after {
       display: inline-block;
       width: 12px;
@@ -81,7 +81,7 @@
       margin-bottom: 28px;
     }
     & > hr {
-      margin: var(--space-scale-540) 0;
+      margin: var(--space-scale540) 0;
     }
   }
 }

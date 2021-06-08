@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import * as React from "react";
 import {
   Snippet,
   SnippetGroup,
@@ -23,7 +23,8 @@ export default {
     language: { table: { disable: true } },
     label: { table: { disable: true } },
     variant: {
-      control: { type: "select", options: Object.values(SnippetVariant) },
+      options: Object.values(SnippetVariant),
+      control: { type: "select" },
     },
     githubLink: { control: { type: "text" } },
     wrapLines: {

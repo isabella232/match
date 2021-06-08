@@ -1,7 +1,9 @@
+import { MarginProps } from "@twilio-labs/match-props";
 import { AnchorVariant, AnchorTarget } from "./constants";
 
 export interface AnchorProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends MarginProps,
+    React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
   variant?: `${AnchorVariant}`;
   /** A URL to route to. */

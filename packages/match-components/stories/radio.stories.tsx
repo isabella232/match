@@ -1,6 +1,6 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Formik } from "formik";
+import * as React from "react";
 import { Radio, RadioSize, RadioGroup, RadioGroupProps } from "../src";
 
 export default {
@@ -39,7 +39,8 @@ export default {
       control: { type: "boolean" },
     },
     size: {
-      control: { type: "select", options: Object.values(RadioSize) },
+      options: Object.values(RadioSize),
+      control: { type: "select" },
     },
   },
 } as Meta;

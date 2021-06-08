@@ -1,8 +1,8 @@
-import * as React from "react";
 import * as PropTypes from "prop-types";
+import * as React from "react";
 import { marginPropTypes, textColorPropType } from "@twilio-labs/match-props";
-import { StyledParagraph } from "./styles";
 import { ParagraphVariant } from "./constants";
+import { StyledParagraph } from "./styles";
 import type { ParagraphProps } from "./types";
 
 export const Paragraph: React.FC<ParagraphProps> = (props) => (

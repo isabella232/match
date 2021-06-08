@@ -1,26 +1,26 @@
-import * as React from "react";
 import * as PropTypes from "prop-types";
+import * as React from "react";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import javascript from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
-import csharp from "react-syntax-highlighter/dist/cjs/languages/prism/csharp";
-import php from "react-syntax-highlighter/dist/cjs/languages/prism/php";
-import ruby from "react-syntax-highlighter/dist/cjs/languages/prism/ruby";
-import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
-import java from "react-syntax-highlighter/dist/cjs/languages/prism/java";
-import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
-import c from "react-syntax-highlighter/dist/cjs/languages/prism/c";
 import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
-import shell from "react-syntax-highlighter/dist/cjs/languages/prism/shell-session";
+import c from "react-syntax-highlighter/dist/cjs/languages/prism/c";
+import csharp from "react-syntax-highlighter/dist/cjs/languages/prism/csharp";
 import go from "react-syntax-highlighter/dist/cjs/languages/prism/go";
 import groovy from "react-syntax-highlighter/dist/cjs/languages/prism/groovy";
-import { getLanguageNiceName } from "./get-language-nice-name";
-import { SnippetActions } from "./snippet-actions";
+import java from "react-syntax-highlighter/dist/cjs/languages/prism/java";
+import javascript from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
+import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
+import php from "react-syntax-highlighter/dist/cjs/languages/prism/php";
+import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
+import ruby from "react-syntax-highlighter/dist/cjs/languages/prism/ruby";
+import shell from "react-syntax-highlighter/dist/cjs/languages/prism/shell-session";
+import { marginPropTypes } from "@twilio-labs/match-props";
 import {
   SnippetLanguage,
   SnippetVariant,
   SnippetHorizontalScroll,
 } from "./constants";
-import type { SnippetProps } from "./types";
+import { getLanguageNiceName } from "./get-language-nice-name";
+import { SnippetActions } from "./snippet-actions";
 import {
   StyledSnippet,
   StyledSnippetHeader,
@@ -28,6 +28,7 @@ import {
   StyledSnippetBody,
   StyledHighlighter,
 } from "./styles";
+import type { SnippetProps } from "./types";
 
 SyntaxHighlighter.registerLanguage(SnippetLanguage.JAVASCRIPT, javascript);
 SyntaxHighlighter.registerLanguage(SnippetLanguage.CSHARP, csharp);
@@ -52,6 +53,12 @@ export const Snippet: React.FC<SnippetProps> = ({
   variant,
   showLineNumbers,
   maxLines,
+  marginX,
+  marginY,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
   ...props
 }) => {
   const [horizontalScrollPos, setHorizontalScrollPos] = React.useState(
@@ -76,7 +83,16 @@ export const Snippet: React.FC<SnippetProps> = ({
   };
 
   return (
-    <StyledSnippet variant={variant} isSingleLine={isSingleLine}>
+    <StyledSnippet
+      variant={variant}
+      isSingleLine={isSingleLine}
+      marginX={marginX}
+      marginY={marginY}
+      marginTop={marginTop}
+      marginRight={marginRight}
+      marginBottom={marginBottom}
+      marginLeft={marginLeft}
+    >
       {!isSingleLine && !isGrouped && (
         <StyledSnippetHeader variant={variant}>
           <StyledSnippetTitle>
@@ -139,6 +155,7 @@ export const Snippet: React.FC<SnippetProps> = ({
 };
 
 Snippet.propTypes = {
+  ...marginPropTypes,
   children: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(Object.values(SnippetVariant)),
   language: PropTypes.oneOf(Object.values(SnippetLanguage)).isRequired,

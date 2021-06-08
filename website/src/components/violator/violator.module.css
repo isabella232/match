@@ -8,18 +8,18 @@
   align-items: center;
   justify-content: center;
   height: 64px;
-  background: var(--color-blue-90);
+  background: var(--color-blue90);
   & a:hover {
-    color: var(--color-gray-20);
+    color: var(--color-gray20);
     transition: color 0.2s ease-out;
   }
 }
 
 .violator {
-  padding: var(--space-scale-100);
+  padding: var(--space-scale100);
   color: var(--color-white);
-  font-size: var(--font-size-scale-80);
-  line-height: var(--line-height-scale-220);
+  font-size: var(--font-size-scale80);
+  line-height: var(--line-height-scale220);
   text-decoration: none;
 }
 

@@ -4,9 +4,8 @@
   "description": "Match token library for Python",
   "homepage": "https://match.twilio.design",
   "author": "Twilio Inc.",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "private": true,
-  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/twilio-labs/match",
@@ -15,15 +14,10 @@
   "scripts": {
     "build": "yarn clean && yarn compile",
     "clean": "rm -rf match_tokens_py",
-    "compile": "ts-node src/index.ts"
+    "compile": "node src/index.cjs"
   },
   "devDependencies": {
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
-    "@types/ejs": "3.0.6",
-    "@types/node": "14.17.0",
-    "ejs": "3.1.6",
-    "ts-node": "9.1.1",
-    "tsconfig-match": "workspace:configs/tsconfig",
-    "typescript": "4.2.4"
+    "ejs": "3.1.6"
   }
 }

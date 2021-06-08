@@ -35,6 +35,8 @@ jobs:
         run: yarn install --immutable
       - name: Bootstrap
         run: yarn bootstrap
+        env:
+          STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
 
       # Test
       - name: Run prettier check

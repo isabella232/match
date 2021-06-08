@@ -1,12 +1,12 @@
 .meetMatch {
   justify-content: center;
-  padding-top: var(--space-scale-340);
-  padding-bottom: var(--space-scale-420);
+  padding-top: var(--space-scale340);
+  padding-bottom: var(--space-scale420);
 }
 
 .pasteLink {
-  font-size: var(--font-size-scale-80);
-  line-height: var(--line-height-scale-220);
+  font-size: var(--font-size-scale80);
+  line-height: var(--line-height-scale220);
   text-align: center;
   & > span {
     display: block;
@@ -24,21 +24,21 @@
 }
 
 .intro h1 {
-  margin: 0 0 var(--space-scale-180);
+  margin: 0 0 var(--space-scale180);
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-scale-340);
-  line-height: var(--line-height-scale-125);
+  font-size: var(--font-size-scale340);
+  line-height: var(--line-height-scale125);
 }
 
 .intro p {
   margin: 0;
-  font-size: var(--font-size-scale-80);
-  line-height: var(--line-height-scale-220);
+  font-size: var(--font-size-scale80);
+  line-height: var(--line-height-scale220);
 }
 
 .getStarted {
-  grid-row-gap: var(--space-scale-140);
-  margin-bottom: var(--space-scale-260);
+  grid-row-gap: var(--space-scale140);
+  margin-bottom: var(--space-scale260);
   & a {
     color: inherit;
     text-decoration: none;
@@ -48,7 +48,7 @@
   }
   & .gatsbyImg {
     max-height: 160px;
-    margin-bottom: var(--space-scale-60);
+    margin-bottom: var(--space-scale60);
     border-radius: 8px;
   }
   & figure:last-of-type .gatsbyImg {
@@ -56,14 +56,14 @@
   }
   & figcaption {
     font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-scale-220);
+    line-height: var(--line-height-scale220);
   }
 }
 
 @media (--media-query-medium) {
   .meetMatch {
-    padding-top: var(--space-scale-740);
-    padding-bottom: var(--space-scale-660);
+    padding-top: var(--space-scale740);
+    padding-bottom: var(--space-scale660);
   }
   .pasteLink > span {
     display: inline;
@@ -73,11 +73,11 @@
   }
   .intro p {
     padding: 0 5%;
-    font-size: var(--font-size-scale-90);
+    font-size: var(--font-size-scale90);
   }
   .getStarted {
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: var(--space-scale-340);
+    margin-bottom: var(--space-scale340);
   }
   .getStarted .gatsbyImg,
   .getStarted figure:last-of-type .gatsbyImg {

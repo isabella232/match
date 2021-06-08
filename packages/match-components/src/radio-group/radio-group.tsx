@@ -1,16 +1,16 @@
-import * as React from "react";
-import * as PropTypes from "prop-types";
-import { useUIDSeed } from "react-uid";
-import { marginPropTypes } from "@twilio-labs/match-props";
 import { useFormikContext } from "formik";
+import * as PropTypes from "prop-types";
+import * as React from "react";
+import { useUIDSeed } from "react-uid";
 import {
   Label,
   LabelSize,
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
-import { StyledRadioGroupWrapper, StyledRadioGroup } from "./styles";
+import { marginPropTypes } from "@twilio-labs/match-props";
 import { RadioSize } from "./constants";
+import { StyledRadioGroupWrapper, StyledRadioGroup } from "./styles";
 import type { RadioGroupProps } from "./types";
 
 export const RadioGroup = React.forwardRef<

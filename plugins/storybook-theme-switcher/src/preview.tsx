@@ -1,6 +1,6 @@
+import addons, { makeDecorator, Channel } from "@storybook/addons";
 import * as React from "react";
 import { MatchThemeProvider, ThemeVariants } from "@twilio-labs/match-themes";
-import addons, { makeDecorator, Channel } from "@storybook/addons";
 import { PARAM_KEY, STORAGE_ID, SET, CHANGED } from "./constants";
 
 interface ThemeWrapperProps {
@@ -13,16 +13,15 @@ const ThemeWrapper: React.FC<ThemeWrapperProps> = ({ channel, ...props }) => {
       ThemeVariants.TWILIO
   );
 
-  const handleThemeChange = (theme: ThemeVariants) => {
-    setMatchTheme(theme);
-    sessionStorage.setItem(STORAGE_ID, theme);
-    channel.emit(CHANGED, theme);
-  };
-
   React.useEffect(() => {
+    const handleThemeChange = (theme: ThemeVariants) => {
+      setMatchTheme(theme);
+      sessionStorage.setItem(STORAGE_ID, theme);
+      channel.emit(CHANGED, theme);
+    };
     channel.addListener(SET, handleThemeChange);
     return () => channel.removeListener(SET, handleThemeChange);
-  }, []);
+  }, [channel]);
 
   return <MatchThemeProvider theme={matchTheme} {...props} />;
 };

@@ -12,14 +12,14 @@
 .shadowExample,
 .borderExample,
 .radiusExample {
-  min-width: var(--space-scale-500);
-  height: var(--space-scale-500);
+  min-width: var(--space-scale500);
+  height: var(--space-scale500);
   border-radius: var(--border-radius-base);
 }
 
 .colorExample {
-  min-width: var(--space-scale-340);
-  height: var(--space-scale-340);
+  min-width: var(--space-scale340);
+  height: var(--space-scale340);
   border-radius: var(--border-radius-base);
 
   &[data-token="white"] {
@@ -41,7 +41,7 @@
   background: var(--color-base-purple);
 
   &[data-token="squircle"] {
-    max-width: var(--space-scale-500);
+    max-width: var(--space-scale500);
   }
 }
 
@@ -58,12 +58,12 @@
 }
 
 .fontWeightExample {
-  font-size: var(--font-size-scale-140);
+  font-size: var(--font-size-scale140);
   line-height: 1;
 }
 
 .spacingExample {
-  background-color: var(--color-blue-60);
+  background-color: var(--color-blue60);
 }
 
 @media (--media-query-medium) {

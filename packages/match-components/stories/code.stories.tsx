@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import * as React from "react";
 import { Code, CodeVariant } from "../src";
 
 export default {

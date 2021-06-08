@@ -3,8 +3,9 @@
   "version": "1.0.0-alpha.6",
   "description": "Twilio Match Design System Themes",
   "author": "Twilio Inc.",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "main": "src/index.ts",
+  "type": "module",
   "files": [
     "dist"
   ],
@@ -15,7 +16,6 @@
   },
   "publishConfig": {
     "main": "dist/index.js",
-    "module": "dist/index.es.js",
     "types": "dist/index.d.ts",
     "registry": "https://npm.pkg.github.com/"
   },
@@ -33,26 +33,28 @@
     "react": "17.x",
     "react-dom": "17.x",
     "react-is": "17.x",
+    "reakit": "1.x",
     "styled-components": "5.x"
   },
   "devDependencies": {
     "@emotion/core": "11.0.0",
-    "@testing-library/react": "11.2.6",
+    "@testing-library/react": "11.2.7",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/prop-types": "15.7.3",
-    "@types/react": "17.0.5",
-    "@types/react-dom": "17.0.4",
+    "@types/react": "17.0.9",
+    "@types/react-dom": "17.0.6",
     "@types/styled-components": "5.1.9",
-    "core-js": "3.12.1",
+    "core-js": "3.14.0",
     "prop-types": "15.7.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-is": "17.0.2",
-    "rollup": "2.47.0",
+    "reakit": "1.3.8",
+    "rollup": "2.51.0",
     "rollup-config-match": "workspace:configs/rollup",
     "styled-components": "5.3.0",
     "tsconfig-match": "workspace:configs/tsconfig",
     "tslib": "2.2.0",
-    "typescript": "4.2.4"
+    "typescript": "4.3.2"
   }
 }

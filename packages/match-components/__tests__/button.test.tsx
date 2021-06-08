@@ -1,6 +1,6 @@
-import * as React from "react";
 import { render } from "@testing-library/react";
 import { axe } from "jest-axe";
+import * as React from "react";
 import { withTheme } from "@twilio-labs/match-themes";
 import { Button } from "../src";
 

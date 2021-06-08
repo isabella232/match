@@ -1,7 +1,8 @@
-import * as React from "react";
 import * as PropTypes from "prop-types";
-import { StyledAnchor } from "./styles";
+import * as React from "react";
+import { marginPropTypes } from "@twilio-labs/match-props";
 import { AnchorVariant, AnchorTarget } from "./constants";
+import { StyledAnchor } from "./styles";
 import type { AnchorProps } from "./types";
 
 const EXTERNAL_URL_REGEX = /^(https?:)\S*$/;
@@ -18,9 +19,23 @@ export const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
   ({ children, ...props }, ref) => {
     return (
       <StyledAnchor ref={ref} {...secureExternalLink(props.href)} {...props}>
-        {React.Children.map(children, (child) =>
-          typeof child === "string" ? child.trim() : child
-        )}
+        {React.Children.map(children, (child) => {
+          if (typeof child === "string") {
+            return child.trim();
+          }
+          if (
+            React.isValidElement(child) &&
+            child.type["displayName"].endsWith("Icon")
+          ) {
+            return React.cloneElement(child, {
+              color: "currentColor",
+              size: "0.75em",
+              marginBottom: "0.15em",
+              marginLeft: "0.5em",
+            });
+          }
+          return child;
+        })}
       </StyledAnchor>
     );
   }
@@ -29,6 +44,7 @@ export const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 Anchor.displayName = "Anchor";
 
 Anchor.propTypes = {
+  ...marginPropTypes,
   children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(Object.values(AnchorVariant)),
   href: PropTypes.string.isRequired,

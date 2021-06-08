@@ -3,15 +3,13 @@
   "version": "1.0.0-alpha.5",
   "description": "Token libraries for the Twilio Match Design System.",
   "author": "Twilio Inc.",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "main": "twilio/index.js",
-  "module": "twilio/es6.js",
   "style": "twilio/variables.css",
   "types": "twilio/index.d.ts",
   "files": [
     "twilio",
-    "sendgrid",
-    "ahoy"
+    "sendgrid"
   ],
   "repository": {
     "type": "git",
@@ -19,22 +17,23 @@
     "directory": "packages/match-tokens/core"
   },
   "publishConfig": {
+    "type": "module",
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "build": "yarn clean && yarn compile",
-    "clean": "rm -rf twilio sendgrid ahoy",
+    "clean": "rm -rf twilio sendgrid",
     "compile": "ts-node ./src/build.ts",
     "type-check": "tsc --noEmit --composite false",
     "publish": "yarn npm publish --tolerate-republish"
   },
   "devDependencies": {
-    "@types/node": "14.17.0",
+    "@types/node": "15.12.1",
     "colortranslator": "1.7.1",
     "csstype": "3.0.8",
-    "style-dictionary": "2.10.3",
-    "ts-node": "9.1.1",
+    "style-dictionary": "3.0.0",
+    "ts-node": "10.0.0",
     "tsconfig-match": "workspace:configs/tsconfig",
-    "typescript": "4.2.4"
+    "typescript": "4.3.2"
   }
 }

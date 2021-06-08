@@ -1,8 +1,4 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
   "env": {
     "node": true,
     "browser": true
@@ -12,62 +8,86 @@
       "version": "detect"
     }
   },
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:eslint-comments/recommended",
-    "plugin:unicorn/recommended",
-    "plugin:import/errors",
-    "plugin:import/typescript",
-    "plugin:promise/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
-    "prettier"
-  ],
-  "plugins": ["unicorn", "import"],
-  "rules": {
-    // Common abbreviations are known and readable
-    "unicorn/prevent-abbreviations": "off",
-    "unicorn/prefer-module": "off",
-    "unicorn/prefer-node-protocol": "off",
-    // https://basarat.gitbook.io/typescript/main-1/defaultisbad
-    "import/prefer-default-export": "off",
-    "import/no-default-export": "error",
-    // Allow unused vars when prefixed with an underscore
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { "argsIgnorePattern": "^_" }
-    ],
-    // no-onchange rule is deprecated.
-    "jsx-a11y/no-onchange": "off"
-  },
   "overrides": [
     {
-      "files": ["*.js"],
+      "files": ["*.ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:eslint-comments/recommended",
+        "plugin:unicorn/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "plugin:promise/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "prettier"
+      ],
+      "plugins": ["unicorn", "import"],
       "rules": {
-        "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "import/no-default-export": "off"
+        // Common abbreviations are known and readable
+        "unicorn/prevent-abbreviations": "off",
+        "unicorn/prefer-node-protocol": "off",
+        // https://basarat.gitbook.io/typescript/main-1/defaultisbad
+        "import/prefer-default-export": "off",
+        "import/no-default-export": "error",
+        "import/order": [
+          "error",
+          {
+            "pathGroups": [
+              {
+                "pattern": "@twilio-labs/**",
+                "group": "external",
+                "position": "after"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["builtin"]
+          }
+        ],
+        // Allow unused vars when prefixed with an underscore
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          { "argsIgnorePattern": "^_" }
+        ],
+        // no-onchange rule is deprecated.
+        "jsx-a11y/no-onchange": "off"
       }
     },
     {
-      "files": [
-        "website/**/*.{ts,tsx}",
-        "website-new/**/*.{ts,tsx}",
-        "plugins/**/*.{ts,tsx}"
+      "files": ["*.js", "*.cjs"],
+      "parser": "babel-eslint",
+      "plugins": ["unicorn", "import"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:eslint-comments/recommended",
+        "plugin:unicorn/recommended",
+        "plugin:import/recommended",
+        "plugin:promise/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "prettier"
       ],
       "rules": {
-        "import/prefer-default-export": "off",
-        "import/no-default-export": "off",
-        "react/prop-types": "off",
-        "react/display-name": "off",
-        "react/no-unescaped-entities": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "unicorn/consistent-function-scoping": "off",
-        "unicorn/no-null": "off",
-        "import/no-unresolved": [
-          "ERROR",
-          { "ignore": ["^@theme", "^@docusaurus", "^@generated", "^@site"] }
+        "unicorn/prevent-abbreviations": "off",
+        "unicorn/prefer-module": "off",
+        "unicorn/prefer-node-protocol": "off",
+        "import/order": [
+          "error",
+          {
+            "pathGroups": [
+              {
+                "pattern": "@twilio-labs/**",
+                "group": "external",
+                "position": "after"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["builtin"]
+          }
         ]
       }
     },
@@ -87,6 +107,19 @@
       "rules": {
         "@typescript-eslint/no-empty-function": "off",
         "import/no-default-export": "off"
+      }
+    },
+    {
+      "files": ["website/**/*.{ts,tsx}", "plugins/**/*.{ts,tsx}"],
+      "rules": {
+        "import/prefer-default-export": "off",
+        "import/no-default-export": "off",
+        "react/prop-types": "off",
+        "react/display-name": "off",
+        "react/no-unescaped-entities": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "unicorn/consistent-function-scoping": "off",
+        "unicorn/no-null": "off"
       }
     }
   ]

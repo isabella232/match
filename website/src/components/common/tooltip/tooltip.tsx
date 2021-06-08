@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useUID } from "react-uid";
-import { TooltipProps } from "./types";
 import { tooltip } from "./tooltip.module.css";
+import { TooltipProps } from "./types";
 
 export const Tooltip: React.FC<TooltipProps> = ({ tip, ...props }) => {
   const uid = useUID();

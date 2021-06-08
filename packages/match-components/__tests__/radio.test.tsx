@@ -1,8 +1,8 @@
-import * as React from "react";
 import { render, waitFor } from "@testing-library/react";
-import { axe } from "jest-axe";
-import { withTheme } from "@twilio-labs/match-themes";
 import { Formik } from "formik";
+import { axe } from "jest-axe";
+import * as React from "react";
+import { withTheme } from "@twilio-labs/match-themes";
 import { Radio, RadioGroup } from "../src";
 
 const RadioWithTheme = withTheme()(Radio);

@@ -1,6 +1,6 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Formik } from "formik";
+import * as React from "react";
 import { Anchor, Checkbox, CheckboxProps, CheckboxSize } from "../src";
 
 export default {
@@ -32,7 +32,8 @@ export default {
       control: { type: "boolean" },
     },
     size: {
-      control: { type: "select", options: Object.values(CheckboxSize) },
+      options: Object.values(CheckboxSize),
+      control: { type: "select" },
     },
   },
 } as Meta;

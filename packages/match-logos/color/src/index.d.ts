@@ -1,0 +1,22 @@
+import { ColorLogoType } from "@twilio-labs/match-logos-core";
+
+export const BookingLogo: ColorLogoType;
+export const ChimeLogo: ColorLogoType;
+export const DonorsChooseLogo: ColorLogoType;
+export const FoursquareLogo: ColorLogoType;
+export const GlassdoorLogo: ColorLogoType;
+export const GojekLogo: ColorLogoType;
+export const HappyGrasshopperLogo: ColorLogoType;
+export const HubspotLogo: ColorLogoType;
+export const IbmLogo: ColorLogoType;
+export const IbottaLogo: ColorLogoType;
+export const LightspeedLogo: ColorLogoType;
+export const LivestreamLogo: ColorLogoType;
+export const NextdoorLogo: ColorLogoType;
+export const RezoraLogo: ColorLogoType;
+export const StravaLogo: ColorLogoType;
+export const StripeLogo: ColorLogoType;
+export const TeamsnapLogo: ColorLogoType;
+export const TwitchLogo: ColorLogoType;
+export const VivinoLogo: ColorLogoType;
+export const ZiprecruiterLogo: ColorLogoType;

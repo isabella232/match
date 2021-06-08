@@ -29,6 +29,8 @@ jobs:
         run: yarn install --immutable
       - name: Build packages
         run: yarn build:all
+        env:
+          STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
 
       # Publish GitHub Packages
       - name: Publish packages

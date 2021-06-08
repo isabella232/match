@@ -1,23 +1,22 @@
-import * as React from "react";
-import clsx from "clsx";
 import { MDXProvider } from "@mdx-js/react";
-import "@twilio-labs/match-fonts";
+import clsx from "clsx";
+import * as React from "react";
 import "@twilio-labs/match-tokens/twilio/variables.css";
 import { MatchProvider } from "../../context/match";
 import "./variables.css";
 import "./global.css";
-import { Violator } from "../violator";
-import { Header } from "../header";
 import { Footer } from "../footer";
+import { Header } from "../header";
+import { Code } from "../markdown/code";
+import { Table } from "../markdown/table";
 import { Navigation } from "../navigation";
+import { Violator } from "../violator";
 import {
   layout,
   footerContent,
   mainContent,
   navOpen,
 } from "./layout.module.css";
-import { Table } from "../markdown/table";
-import { Code } from "../markdown/code";
 
 function getCodeChild(children: Array<React.ReactElement<any>>) {
   const childrenArray = React.Children.toArray(children);

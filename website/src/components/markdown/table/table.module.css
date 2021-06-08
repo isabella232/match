@@ -1,5 +1,5 @@
 .tableWrapper {
-  margin: var(--space-scale-180) 0;
+  margin: var(--space-scale180) 0;
   overflow-x: auto;
   border: var(--border-width-thin) solid var(--border-color-card);
   border-radius: var(--border-radius-base);
@@ -8,20 +8,20 @@
 .table {
   width: 100%;
   font-weight: var(--font-weight-thin);
-  font-size: var(--font-size-scale-80);
-  line-height: var(--line-height-scale-220);
+  font-size: var(--font-size-scale80);
+  line-height: var(--line-height-scale220);
   border-width: 0;
   border-radius: var(--border-radius-base);
   border-collapse: separate;
   border-spacing: 0;
   & th {
-    padding: var(--space-scale-60) var(--space-scale-180);
-    color: var(--color-gray-90);
+    padding: var(--space-scale60) var(--space-scale180);
+    color: var(--color-gray90);
     font-weight: var(--font-weight-semibold);
     text-align: left;
   }
   & td {
-    padding: var(--space-scale-100) var(--space-scale-180);
+    padding: var(--space-scale100) var(--space-scale180);
   }
   & tr + tr td {
     border-top: var(--border-width-thin) solid var(--border-color-card);

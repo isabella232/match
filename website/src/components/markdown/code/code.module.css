@@ -1,41 +1,41 @@
 .snippet {
   margin: 0;
-  margin-bottom: var(--space-scale-180);
-  padding: var(--space-scale-100) var(--space-scale-180);
+  margin-bottom: var(--space-scale180);
+  padding: var(--space-scale100) var(--space-scale180);
   overflow: auto;
-  font-size: var(--font-size-scale-80);
+  font-size: var(--font-size-scale80);
   font-family: var(--font-family-code);
-  line-height: var(--line-height-scale-220);
+  line-height: var(--line-height-scale220);
   direction: ltr;
   white-space: pre;
   text-align: left;
   word-break: normal;
   word-spacing: normal;
   hyphens: none;
-  background-color: var(--color-gray-90);
+  background-color: var(--color-gray90);
   border-radius: var(--border-radius-base);
   scrollbar-width: thin;
-  scrollbar-color: var(--color-gray-40) var(--color-gray-90);
+  scrollbar-color: var(--color-gray40) var(--color-gray90);
   &::-webkit-scrollbar {
     width: 12px;
     height: 12px;
   }
   &::-webkit-scrollbar-track {
-    background: var(--color-gray-90);
+    background: var(--color-gray90);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--color-gray-40);
-    border: 3px solid var(--color-gray-90);
+    background-color: var(--color-gray40);
+    border: 3px solid var(--color-gray90);
     border-radius: 20px;
   }
 }
 
 .singleLine {
-  padding: var(--space-scale-60) var(--space-scale-100);
+  padding: var(--space-scale60) var(--space-scale100);
 }
 
 .liveSnippet {
-  margin-bottom: var(--space-scale-420);
+  margin-bottom: var(--space-scale420);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   & textarea,
@@ -49,9 +49,9 @@
 
 .livePreview {
   display: grid;
-  grid-row-gap: var(--space-scale-180);
-  padding: var(--space-scale-100) var(--space-scale-180) var(--space-scale-300);
-  border: var(--border-width-thin) solid var(--color-gray-40);
+  grid-row-gap: var(--space-scale180);
+  padding: var(--space-scale100) var(--space-scale180) var(--space-scale300);
+  border: var(--border-width-thin) solid var(--color-gray40);
   border-radius: var(--border-radius-base);
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;

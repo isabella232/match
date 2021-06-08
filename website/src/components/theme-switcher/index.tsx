@@ -1,11 +1,11 @@
-import * as React from "react";
 import clsx from "clsx";
-import { ThemeVariants } from "@twilio-labs/match-themes";
+import * as React from "react";
 import { useTabState, Tab, TabList } from "reakit/Tab";
-import twilioIcon from "../../images/logos/twilio.svg";
-import sendgridIcon from "../../images/logos/sendgrid.svg";
-import { MatchActions } from "../../reducers/match";
+import { ThemeVariants } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../context/match";
+import sendgridIcon from "../../images/logos/sendgrid.svg";
+import twilioIcon from "../../images/logos/twilio.svg";
+import { MatchActions } from "../../reducers/match";
 import { tabList, snippet, inverseSnippet, header } from "./styles.module.css";
 
 interface ThemeSwitcherProps {
@@ -50,22 +50,14 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ variant }) => {
       })}
       aria-label="Match themes"
     >
-      {Object.entries(ThemeVariants).map(([key, val]) => {
-        if (val === "Ahoy") return;
-        return (
-          <Tab
-            {...tab}
-            key={key}
-            id={val}
-            onClick={() => handleThemeChange(val)}
-          >
-            {variant === "header" && (
-              <img src={icons[val]} alt="" aria-hidden="true" />
-            )}
-            {val}
-          </Tab>
-        );
-      })}
+      {Object.entries(ThemeVariants).map(([key, val]) => (
+        <Tab {...tab} key={key} id={val} onClick={() => handleThemeChange(val)}>
+          {variant === "header" && (
+            <img src={icons[val]} alt="" aria-hidden="true" />
+          )}
+          {val}
+        </Tab>
+      ))}
     </TabList>
   );
 };

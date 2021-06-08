@@ -1,7 +1,7 @@
-import * as React from "react";
 import clsx from "clsx";
-import { AccordionProps } from "./types";
+import * as React from "react";
 import { accordion } from "./accordion.module.css";
+import { AccordionProps } from "./types";
 
 export const Accordion: React.FC<AccordionProps> = ({
   allowToggle,

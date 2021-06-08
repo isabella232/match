@@ -1,16 +1,15 @@
-import * as React from "react";
 import Fuse from "fuse.js";
+import * as React from "react";
+import type { IconType } from "@twilio-labs/match-icons-core";
+import * as productIcons from "@twilio-labs/match-icons-product";
+import * as sendgridIcons from "@twilio-labs/match-icons-sendgrid";
+import * as twilioIcons from "@twilio-labs/match-icons-twilio";
 import { ThemeVariants } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../../context/match";
-import { IconFilters } from "../filters/filters";
-import * as productIcons from "@twilio-labs/match-icons-product";
-import * as twilioIcons from "@twilio-labs/match-icons-twilio";
-import * as sendgridIcons from "@twilio-labs/match-icons-sendgrid";
-import { Icon as IconType } from "@twilio-labs/match-primitives";
 import { IconItem } from "../../../types";
-import { iconMetadata } from "./icon-metadata";
 import { Copy } from "../../common/copy";
-
+import { IconFilters } from "../filters/filters";
+import { iconMetadata } from "./icon-metadata";
 import {
   copyButton,
   grid,
@@ -32,7 +31,7 @@ export const Icons: React.FC = () => {
   const collection = React.useMemo(() => {
     // Get all available icons based on theme
     let themeIcons: {
-      [iconName: string]: typeof IconType;
+      [iconName: string]: IconType;
     };
 
     switch (theme) {
@@ -106,8 +105,8 @@ export const Icons: React.FC = () => {
           const categoryNameLower = categoryName.toLowerCase();
           const iconPackageName =
             categoryNameLower === "product"
-              ? "@twilio-labs/match/icons/product"
-              : `@twilio-labs/match/icons/${theme.toLowerCase()}`;
+              ? "@twilio-labs/match-icons-product"
+              : `@twilio-labs/match-icons-${theme.toLowerCase()}`;
           return (
             <div key={`${theme}.${categoryName}`} className={groupStyle}>
               <h2 id={categoryNameLower}>{categoryName} icons</h2>

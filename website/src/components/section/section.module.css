@@ -3,9 +3,9 @@
 }
 
 .content {
-  width: calc(100% - var(--space-scale-180) * 2);
+  width: calc(100% - var(--space-scale180) * 2);
   max-width: var(--match-content-width);
-  margin: 0 var(--space-scale-180);
+  margin: 0 var(--space-scale180);
 }
 
 .content.colSpan10 {
@@ -18,9 +18,9 @@
 
 @media (--media-query-medium) {
   .content {
-    width: calc(100% - var(--space-scale-260) * 2);
-    margin-right: var(--space-scale-260);
-    margin-left: var(--space-scale-260);
+    width: calc(100% - var(--space-scale260) * 2);
+    margin-right: var(--space-scale260);
+    margin-left: var(--space-scale260);
   }
 }
 

@@ -1,16 +1,16 @@
-import * as React from "react";
 import * as PropTypes from "prop-types";
-import { TooltipReference, useTooltipState } from "reakit/Tooltip";
+import * as React from "react";
 import { Button } from "reakit/Button";
+import { TooltipReference, useTooltipState } from "reakit/Tooltip";
 import { SnippetVariant } from "./constants";
-import type { SnippetActionsProps } from "./types";
+import { CopyIcon } from "./copy-icon";
+import { GithubIcon } from "./github-icon";
 import {
   StyledSnippetActions,
   StyledTooltip,
   StyledTooltipArrow,
 } from "./styles";
-import { CopyIcon } from "./copy-icon";
-import { GithubIcon } from "./github-icon";
+import type { SnippetActionsProps } from "./types";
 
 export const SnippetActions: React.FC<SnippetActionsProps> = ({
   code,
@@ -44,7 +44,7 @@ export const SnippetActions: React.FC<SnippetActionsProps> = ({
         onBlur={() => setCopyMessage("")}
         aria-labelledby={copyTooltip.baseId}
       >
-        <CopyIcon decorative color="currentColor" />
+        <CopyIcon />
       </TooltipReference>
       <StyledTooltip success={copyMessage === "Copied"} {...copyTooltip}>
         <span>{copyMessage ? copyMessage : "Copy to clipboard"}</span>
@@ -60,7 +60,7 @@ export const SnippetActions: React.FC<SnippetActionsProps> = ({
             rel="noreferrer noopener"
             aria-labelledby={githubTooltip.baseId}
           >
-            <GithubIcon decorative color="currentColor" />
+            <GithubIcon />
           </TooltipReference>
           <StyledTooltip {...githubTooltip}>
             Open code sample

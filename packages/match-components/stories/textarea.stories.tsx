@@ -1,6 +1,6 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Formik } from "formik";
+import * as React from "react";
 import { Textarea, TextareaProps, TextareaResizeOptions } from "../src";
 
 const defaultValue = `
@@ -43,9 +43,9 @@ export default {
       control: { type: "number", options: { min: 3, max: 10 } },
     },
     resize: {
+      options: Object.values(TextareaResizeOptions),
       control: {
         type: "select",
-        options: Object.values(TextareaResizeOptions),
       },
     },
     required: {

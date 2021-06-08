@@ -1,9 +1,9 @@
-import * as React from "react";
 import clsx from "clsx";
 import { Link } from "gatsby";
-import type { ArrowLinkProps } from "./types";
+import * as React from "react";
 import { arrowLink } from "./arrow-link.module.css";
 import arrow from "./arrow.svg";
+import type { ArrowLinkProps } from "./types";
 
 export const ArrowLink: React.FC<ArrowLinkProps> = ({
   to,

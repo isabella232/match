@@ -1,7 +1,7 @@
 .container {
   display: grid;
-  grid-row-gap: var(--space-scale-140);
-  margin-bottom: var(--space-scale-540);
+  grid-row-gap: var(--space-scale140);
+  margin-bottom: var(--space-scale540);
 }
 
 .control {
@@ -11,8 +11,8 @@
   & button,
   & a {
     color: var(--text-color-tertiary);
-    font-size: var(--font-size-scale-80);
-    line-height: var(--line-height-scale-160);
+    font-size: var(--font-size-scale80);
+    line-height: var(--line-height-scale160);
     text-align: left;
     text-decoration: none;
   }
@@ -20,13 +20,13 @@
   & > input,
   & > button {
     width: 100%;
-    padding: var(--space-scale-60);
+    padding: var(--space-scale60);
     background: var(--color-white);
-    border: var(--border-width-thin) solid var(--color-gray-20);
+    border: var(--border-width-thin) solid var(--color-gray20);
     border-radius: var(--border-radius-medium);
 
     &:hover {
-      border-color: var(--color-gray-60);
+      border-color: var(--color-gray60);
     }
 
     &:focus {
@@ -49,11 +49,11 @@
 
 .control.search {
   & > input {
-    padding-left: var(--space-scale-260);
+    padding-left: var(--space-scale260);
   }
 
   & img {
-    left: var(--space-scale-60);
+    left: var(--space-scale60);
   }
 }
 
@@ -64,17 +64,17 @@
   }
 
   & img {
-    right: var(--space-scale-140);
+    right: var(--space-scale140);
   }
 }
 
 .control .dropdownMenu {
   z-index: 2;
   display: grid;
-  grid-row-gap: var(--space-scale-60);
+  grid-row-gap: var(--space-scale60);
   justify-items: flex-start;
   width: 100%;
-  padding: var(--space-scale-60);
+  padding: var(--space-scale60);
   background: var(--color-white);
   border: var(--border-width-thin) solid var(--border-color-card);
   border-top: 0;
@@ -97,7 +97,7 @@
 
 @media (--media-query-medium) {
   .container {
-    grid-column-gap: var(--space-scale-140);
+    grid-column-gap: var(--space-scale140);
     grid-template-columns: 2fr 1fr;
   }
 }

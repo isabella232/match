@@ -1,7 +1,6 @@
-import * as React from "react";
 import clsx from "clsx";
+import * as React from "react";
 import { Section } from "../section";
-import logoSvg from "./images/logo.svg";
 import {
   section,
   footer,
@@ -9,6 +8,7 @@ import {
   navigation,
   support,
 } from "./footer.module.css";
+import logoSvg from "./images/logo.svg";
 
 export interface FooterProps {
   className?: string;

@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import * as React from "react";
 import { Heading, HeadingProps, HeadingVariant } from "../src";
 
 export default {
@@ -14,7 +14,8 @@ export default {
     children: { table: { disable: true } },
     inverse: { table: { disable: true } },
     variant: {
-      control: { type: "select", options: Object.values(HeadingVariant) },
+      options: Object.values(HeadingVariant),
+      control: { type: "select" },
     },
   },
 } as Meta;

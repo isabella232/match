@@ -1,8 +1,9 @@
-import * as React from "react";
+import { useField } from "formik";
 import * as PropTypes from "prop-types";
+import * as React from "react";
 import { useUIDSeed } from "react-uid";
 import { marginPropTypes } from "@twilio-labs/match-props";
-import { useField } from "formik";
+import { RadioSize } from "./constants";
 import {
   StyledRadio,
   StyledRadioWrapper,
@@ -11,7 +12,6 @@ import {
   StyledRadioAdditional,
   StyledRadioTextWrapper,
 } from "./styles";
-import { RadioSize } from "./constants";
 import type { RadioProps } from "./types";
 
 export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(

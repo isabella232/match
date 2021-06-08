@@ -3,14 +3,12 @@
   "version": "1.0.0-alpha.6",
   "description": "Twilio Match Design System",
   "author": "Twilio Inc.",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "main": "components/index.js",
   "files": [
     "components",
     "themes",
-    "tokens",
-    "icons",
-    "logos"
+    "tokens"
   ],
   "repository": {
     "type": "git",
@@ -22,12 +20,18 @@
   },
   "scripts": {
     "build": "yarn clean && yarn compile",
-    "clean": "rm -rf components themes tokens icons logos",
+    "clean": "rm -rf components themes tokens icons",
     "compile": "tsc",
     "type-check": "tsc --noEmit --composite false",
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
+    "@twilio-labs/match-icons-product": "1.0.0-alpha.6",
+    "@twilio-labs/match-icons-sendgrid": "1.0.0-alpha.6",
+    "@twilio-labs/match-icons-twilio": "1.0.0-alpha.6",
+    "@twilio-labs/match-logos-brand": "1.0.0-alpha.5",
+    "@twilio-labs/match-logos-color": "1.0.0-alpha.6",
+    "@twilio-labs/match-logos-mono": "1.0.0-alpha.6",
     "formik": "2.x",
     "prop-types": "15.x",
     "react": "17.x",
@@ -37,18 +41,26 @@
     "styled-components": "5.x"
   },
   "devDependencies": {
-    "@babel/core": "7.14.0",
+    "@babel/core": "7.14.3",
     "@emotion/core": "11.0.0",
     "@storybook/react": "6.2.9",
+    "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core",
+    "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product",
+    "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid",
+    "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio",
+    "@twilio-labs/match-logos-brand": "workspace:packages/match-logos/brand",
+    "@twilio-labs/match-logos-color": "workspace:packages/match-logos/color",
+    "@twilio-labs/match-logos-core": "workspace:packages/match-logos/core",
+    "@twilio-labs/match-logos-mono": "workspace:packages/match-logos/mono",
     "@types/babel__core": "7.1.14",
     "@types/prop-types": "15.7.3",
-    "@types/react": "17.0.5",
-    "@types/react-dom": "17.0.4",
+    "@types/react": "17.0.9",
+    "@types/react-dom": "17.0.6",
     "@types/react-syntax-highlighter": "13.5.0",
     "@types/styled-components": "5.1.9",
     "@types/styled-system": "5.1.11",
     "@types/styled-system__theme-get": "5.0.1",
-    "formik": "2.2.6",
+    "formik": "2.2.9",
     "prop-types": "15.7.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -57,18 +69,12 @@
     "styled-components": "5.3.0",
     "tsconfig-match": "workspace:configs/tsconfig",
     "tslib": "2.2.0",
-    "typescript": "4.2.4"
+    "typescript": "4.3.2"
   },
   "dependencies": {
     "@styled-system/theme-get": "5.1.2",
     "@twilio-labs/match-components": "workspace:packages/match-components",
     "@twilio-labs/match-hooks": "workspace:packages/match-hooks",
-    "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product",
-    "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid",
-    "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio",
-    "@twilio-labs/match-logos-brand": "workspace:packages/match-logos/brand",
-    "@twilio-labs/match-logos-color": "workspace:packages/match-logos/color",
-    "@twilio-labs/match-logos-mono": "workspace:packages/match-logos/mono",
     "@twilio-labs/match-primitives": "workspace:packages/match-primitives",
     "@twilio-labs/match-props": "workspace:packages/match-props",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
@@ -80,7 +86,22 @@
     "styled-system": "5.1.5"
   },
   "peerDependenciesMeta": {
-    "formik": {
+    "@twilio-labs/match-icons-product": {
+      "optional": true
+    },
+    "@twilio-labs/match-icons-sendgrid": {
+      "optional": true
+    },
+    "@twilio-labs/match-icons-twilio": {
+      "optional": true
+    },
+    "@twilio-labs/match-logos-brand": {
+      "optional": true
+    },
+    "@twilio-labs/match-logos-color": {
+      "optional": true
+    },
+    "@twilio-labs/match-logos-mono": {
       "optional": true
     }
   }

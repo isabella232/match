@@ -1,7 +1,8 @@
-import { getUniqueAttributes } from ".";
+import type { DesignToken } from "style-dictionary";
 import { GROUP_NAME_MAP } from "../constants";
+import { getUniqueAttributes } from ".";
 
-const getGroupName = (group): string => {
+const getGroupName = (group: string): string => {
   const groupName = GROUP_NAME_MAP.get(group);
   if (groupName === undefined) {
     throw new Error(
@@ -12,14 +13,14 @@ const getGroupName = (group): string => {
 };
 
 export const formatGroupTokensWithTemplate = (
-  props,
-  categoryTemplate
+  props: DesignToken[],
+  categoryTemplate: (groupName: string, props: DesignToken[]) => string
 ): string =>
   getUniqueAttributes(props, "category")
     .map((group) =>
       categoryTemplate(
         getGroupName(group),
-        props.filter((prop) => prop.attributes.category === group)
+        props.filter((prop) => prop?.attributes?.category === group)
       )
     )
     .join("\n");

@@ -1,7 +1,7 @@
-import * as React from "react";
 import { render } from "@testing-library/react";
-import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
+import * as React from "react";
 import * as SendGridDesignTokens from "@twilio-labs/match-tokens/sendgrid";
+import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
 import { withTheme, ThemeConsumer, ThemeVariants } from "../src";
 
 const ThemeConsumerExample: React.FC = () => {

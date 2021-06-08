@@ -1,24 +1,24 @@
 .tokenTable {
   width: 100%;
-  margin-top: var(--space-scale-180);
-  margin-bottom: var(--space-scale-420);
+  margin-top: var(--space-scale180);
+  margin-bottom: var(--space-scale420);
   font-weight: var(--font-weight-thin);
-  font-size: var(--font-size-scale-80);
-  line-height: var(--line-height-scale-220);
+  font-size: var(--font-size-scale80);
+  line-height: var(--line-height-scale220);
   border: var(--border-width-thin) solid var(--border-color-card);
   border-radius: var(--border-radius-base);
   border-collapse: separate;
   border-spacing: 0;
 
   & th {
-    padding: var(--space-scale-60) var(--space-scale-140);
-    color: var(--color-gray-90);
+    padding: var(--space-scale60) var(--space-scale140);
+    color: var(--color-gray90);
     font-weight: var(--font-weight-semibold);
     text-align: left;
   }
 
   & td {
-    padding: var(--space-scale-100) var(--space-scale-140);
+    padding: var(--space-scale100) var(--space-scale140);
   }
 
   & th + th {
@@ -35,7 +35,7 @@
   }
 
   & thead th:first-child {
-    padding-left: var(--space-scale-180);
+    padding-left: var(--space-scale180);
   }
 
   & tbody tr td:nth-of-type(3) {
@@ -47,7 +47,7 @@
     font-weight: var(--font-weight-regular);
     font-family: var(--font-family-code);
     font-style: normal;
-    background: var(--color-gray-10);
+    background: var(--color-gray10);
     border-radius: var(--border-radius-base);
   }
 }

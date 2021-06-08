@@ -1,8 +1,8 @@
-import * as React from "react";
 import * as PropTypes from "prop-types";
-import type { LabelProps, asTags } from "./types";
-import { StyledLabel, StyledRequired } from "./styles";
+import * as React from "react";
 import { LabelSize } from "./constants";
+import { StyledLabel, StyledRequired } from "./styles";
+import type { LabelProps, asTags } from "./types";
 
 export const Label: React.FC<LabelProps> = ({
   children,

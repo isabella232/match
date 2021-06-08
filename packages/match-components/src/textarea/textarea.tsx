@@ -1,22 +1,22 @@
-import * as React from "react";
-import * as PropTypes from "prop-types";
-import { useUIDSeed } from "react-uid";
 import { useField } from "formik";
-import { marginPropTypes } from "@twilio-labs/match-props";
+import * as PropTypes from "prop-types";
+import * as React from "react";
+import { useUIDSeed } from "react-uid";
+import { useMergedRefs } from "@twilio-labs/match-hooks";
 import {
   Label,
   LabelSize,
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
-import { useMergedRefs } from "@twilio-labs/match-hooks";
+import { marginPropTypes } from "@twilio-labs/match-props";
+import { TextareaResizeOptions } from "./constants";
 import {
   StyledTextarea,
   StyledShadowTextarea,
   StyledTextareaContainer,
   StyledTextareaWrapper,
 } from "./styles";
-import { TextareaResizeOptions } from "./constants";
 import type { TextareaProps } from "./types";
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(

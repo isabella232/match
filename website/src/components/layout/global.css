@@ -1,7 +1,7 @@
 body {
   color: var(--text-color-primary);
   font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-scale-100);
+  font-size: var(--font-size-scale100);
   font-family: var(--font-family-text);
 }
 
@@ -10,7 +10,7 @@ body.noscroll {
 }
 
 a {
-  color: var(--color-blue-60);
+  color: var(--color-blue60);
 }
 
 @media (--media-query-large) {

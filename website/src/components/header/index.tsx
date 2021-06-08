@@ -1,5 +1,8 @@
-import * as React from "react";
 import clsx from "clsx";
+import * as React from "react";
+import iconGithub from "../../images/icons/github.svg";
+import iconRoadmap from "../../images/icons/roadmap.svg";
+import logo from "../../images/logo.svg";
 import {
   icon,
   link,
@@ -12,9 +15,6 @@ import {
   navMenuButtonAnimated,
   active,
 } from "./header.module.css";
-import logo from "../../images/logo.svg";
-import iconGithub from "../../images/icons/github.svg";
-import iconRoadmap from "../../images/icons/roadmap.svg";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
   isNavOpen?: boolean;

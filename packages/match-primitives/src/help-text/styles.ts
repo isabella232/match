@@ -1,9 +1,9 @@
+import { themeGet } from "@styled-system/theme-get";
 import styled from "styled-components";
 import { variant } from "styled-system";
-import { themeGet } from "@styled-system/theme-get";
 import { StyledIcon } from "../icon";
-import type { HelpTextProps } from "./types";
 import { HelpTextVariant } from "./constants";
+import type { HelpTextProps } from "./types";
 
 export const StyledHelpText = styled.div<HelpTextProps>`
   margin-top: ${themeGet("space.scale7")};

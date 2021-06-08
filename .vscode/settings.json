@@ -24,10 +24,11 @@
   "css.validate": false,
   "cSpell.enabled": true,
   "cSpell.words": [
+    "authy",
     "clsx",
     "cta",
-    "docgen",
     "figma",
+    "formik",
     "ittb",
     "noopener",
     "noreferrer",
@@ -41,8 +42,7 @@
     "tsbuildinfo",
     "twilio",
     "wcag",
-    "yarnrc",
-    "formik"
+    "yarnrc"
   ],
   "cSpell.allowCompoundWords": true,
   "cSpell.enableFiletypes": ["mdx"],

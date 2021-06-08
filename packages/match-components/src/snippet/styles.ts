@@ -1,19 +1,19 @@
-import styled, { css } from "styled-components";
-import { variant, compose } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
-import { Tooltip, TooltipArrow } from "reakit/Tooltip";
 import { Tab, TabList } from "reakit/Tab";
+import { Tooltip, TooltipArrow } from "reakit/Tooltip";
+import styled, { css } from "styled-components";
+import { variant, compose, space } from "styled-system";
 import { StyledIcon } from "@twilio-labs/match-primitives";
-import type {
-  StyledSnippetProps,
-  StyledSnippetGroupProps,
-  StyledTooltipProps,
-} from "./types";
 import {
   SnippetVariant,
   SnippetLanguage,
   SnippetHorizontalScroll,
 } from "./constants";
+import type {
+  StyledSnippetProps,
+  StyledSnippetGroupProps,
+  StyledTooltipProps,
+} from "./types";
 
 export const StyledHighlighter = styled.div<StyledSnippetProps>`
   overflow-x: auto;
@@ -451,18 +451,21 @@ export const StyledSnippet = styled.div<StyledSnippetProps>`
       grid-template-columns: auto min-content;
     `}
 
-  ${variant({
-    variants: {
-      [SnippetVariant.LIGHT]: {
-        color: "gray100",
-        backgroundColor: "gray10",
+  ${compose(
+    space,
+    variant({
+      variants: {
+        [SnippetVariant.LIGHT]: {
+          color: "gray100",
+          backgroundColor: "gray10",
+        },
+        [SnippetVariant.DARK]: {
+          color: "white",
+          backgroundColor: "gray90",
+        },
       },
-      [SnippetVariant.DARK]: {
-        color: "white",
-        backgroundColor: "gray90",
-      },
-    },
-  })}
+    })
+  )}
 `;
 
 export const StyledTab = styled(Tab)`
@@ -595,37 +598,40 @@ export const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
       }
     `}
 
-  ${variant({
-    variants: {
-      [SnippetVariant.DARK]: {
-        [StyledSnippetTitle]: {
-          borderColor: "gray80",
-        },
-        [StyledSnippetSelect]: {
-          color: "blue30",
-        },
-        [StyledTab]: {
-          color: "white",
-          ["&[aria-selected=true]"]: {
+  ${compose(
+    space,
+    variant({
+      variants: {
+        [SnippetVariant.DARK]: {
+          [StyledSnippetTitle]: {
+            borderColor: "gray80",
+          },
+          [StyledSnippetSelect]: {
             color: "blue30",
-            backgroundColor: "gray90",
+          },
+          [StyledTab]: {
+            color: "white",
+            ["&[aria-selected=true]"]: {
+              color: "blue30",
+              backgroundColor: "gray90",
+            },
+          },
+        },
+        [SnippetVariant.LIGHT]: {
+          [StyledSnippetTitle]: {
+            borderColor: "white",
+          },
+          [StyledSnippetSelect]: {
+            color: "gray100",
+          },
+          [StyledTab]: {
+            color: "gray100",
+            ["&[aria-selected=true]"]: {
+              backgroundColor: "white",
+            },
           },
         },
       },
-      [SnippetVariant.LIGHT]: {
-        [StyledSnippetTitle]: {
-          borderColor: "white",
-        },
-        [StyledSnippetSelect]: {
-          color: "gray100",
-        },
-        [StyledTab]: {
-          color: "gray100",
-          ["&[aria-selected=true]"]: {
-            backgroundColor: "white",
-          },
-        },
-      },
-    },
-  })}
+    })
+  )}
 `;

@@ -5,6 +5,7 @@
     "declaration": true,
     "jsx": "react",
     "moduleResolution": "Node",
+    "module": "ESNext",
 
     // ECMAScript targets
     "target": "ES6",

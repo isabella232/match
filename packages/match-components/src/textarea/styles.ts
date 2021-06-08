@@ -1,12 +1,12 @@
+import { themeGet } from "@styled-system/theme-get";
 import styled, { css } from "styled-components";
 import { space } from "styled-system";
-import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
+import { TextareaResizeOptions } from "./constants";
 import type {
   StyledTextareaProps,
   StyledTextareaContainerProps,
 } from "./types";
-import { TextareaResizeOptions } from "./constants";
 
 export const StyledTextareaContainer = styled.div<StyledTextareaContainerProps>`
   position: relative;

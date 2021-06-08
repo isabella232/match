@@ -1,8 +1,8 @@
-import * as React from "react";
-import * as PropTypes from "prop-types";
 import { isoToCountryCode, imageUrl, codeList } from "flagpack-core";
-import { StyledFlag } from "./styles";
+import * as PropTypes from "prop-types";
+import * as React from "react";
 import { FlagSize } from "./constants";
+import { StyledFlag } from "./styles";
 import type { FlagProps } from "./types";
 
 const flagSizeMap = {

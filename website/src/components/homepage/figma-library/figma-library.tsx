@@ -1,9 +1,9 @@
-import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { Section } from "../../section";
+import * as React from "react";
 import { ArrowLink } from "../../common/arrow-link";
-import { Separator } from "../separator";
+import { Section } from "../../section";
 import { SectionHeader } from "../section-header";
+import { Separator } from "../separator";
 import {
   section,
   header,

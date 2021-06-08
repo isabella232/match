@@ -1,13 +1,12 @@
-import * as React from "react";
 import clsx from "clsx";
-import { uid } from "react-uid";
 import { Link } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import * as React from "react";
+import { uid } from "react-uid";
+
 import arrowDiagonalIcon from "../../../images/icons/arrow-diagonal.svg";
 import { Section } from "../../section";
 import { ThemeSwitcher } from "../../theme-switcher";
-import type { PageHeaderProps, Crumb } from "./types";
 import {
   header,
   content,
@@ -22,6 +21,7 @@ import {
   themeSwitcher,
   themeSwitcherWrap,
 } from "./page-header.module.css";
+import type { PageHeaderProps, Crumb } from "./types";
 
 export const PageHeader: React.FC<PageHeaderProps> = ({
   title,

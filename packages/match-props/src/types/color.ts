@@ -1,9 +1,9 @@
+import { ResponsiveValue } from "styled-system";
 import {
   colors,
   backgroundColors,
   textColors,
 } from "@twilio-labs/match-tokens";
-import { ResponsiveValue } from "styled-system";
 
 export type ColorOptions = keyof typeof colors | "currentColor";
 export type ColorProp = ResponsiveValue<ColorOptions>;

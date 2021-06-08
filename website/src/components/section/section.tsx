@@ -1,7 +1,7 @@
-import * as React from "react";
 import clsx from "clsx";
-import type { SectionProps } from "./types";
+import * as React from "react";
 import { section, content, colSpan10, colSpan8 } from "./section.module.css";
+import type { SectionProps } from "./types";
 
 export const Section: React.FC<SectionProps> = ({
   children,

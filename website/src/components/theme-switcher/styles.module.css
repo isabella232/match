@@ -5,7 +5,7 @@
     cursor: pointer;
     &:focus {
       outline-style: solid;
-      outline-color: var(--color-blue-60);
+      outline-color: var(--color-blue60);
       outline-offset: 1px;
     }
   }
@@ -14,11 +14,11 @@
 .snippet button,
 .inverseSnippet button {
   padding: 5px 8px;
-  color: var(--color-blue-60);
+  color: var(--color-blue60);
   font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-scale-60);
-  line-height: var(--line-height-scale-100);
-  border: var(--border-width-thin) solid var(--color-blue-60);
+  font-size: var(--font-size-scale60);
+  line-height: var(--line-height-scale100);
+  border: var(--border-width-thin) solid var(--color-blue60);
   & + button {
     border-left: none;
     border-top-right-radius: var(--border-radius-medium);
@@ -30,11 +30,11 @@
     border-bottom-left-radius: var(--border-radius-medium);
   }
   &:hover {
-    background-color: var(--color-gray-20);
+    background-color: var(--color-gray20);
   }
   &[aria-selected="true"] {
     color: var(--color-white);
-    background-color: var(--color-blue-60);
+    background-color: var(--color-blue60);
   }
 }
 
@@ -42,23 +42,23 @@
   color: var(--color-white);
   border-color: var(--color-white);
   &:hover {
-    background-color: var(--color-blue-90);
+    background-color: var(--color-blue90);
   }
   &:focus {
     outline-color: var(--color-white);
   }
   &[aria-selected="true"] {
-    color: var(--color-blue-60);
+    color: var(--color-blue60);
     background-color: var(--color-white);
   }
 }
 
 .header button {
-  padding: var(--space-scale-100) 0 var(--space-scale-40);
+  padding: var(--space-scale100) 0 var(--space-scale40);
   color: var(--color-white);
   font-weight: var(--font-weight-light);
-  font-size: var(--space-scale-100);
-  line-height: var(--line-height-scale-220);
+  font-size: var(--space-scale100);
+  line-height: var(--line-height-scale220);
   border-bottom: var(--border-width-medium) solid transparent;
   & img {
     margin-top: -1px;
@@ -66,9 +66,9 @@
     vertical-align: middle;
   }
   & + button {
-    margin-left: var(--space-scale-420);
+    margin-left: var(--space-scale420);
   }
   &[aria-selected="true"] {
-    border-color: var(--color-blue-40);
+    border-color: var(--color-blue40);
   }
 }

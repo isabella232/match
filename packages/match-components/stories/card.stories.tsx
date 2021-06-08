@@ -1,7 +1,7 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Card, CardProps, CardVariant } from "../src";
+import * as React from "react";
 import { space } from "@twilio-labs/match-tokens";
+import { Card, CardProps, CardVariant } from "../src";
 
 export default {
   title: "Components/Card",
@@ -15,10 +15,12 @@ export default {
     children: { table: { disable: true } },
     variant: { table: { disable: true } },
     padding: {
-      control: { type: "select", options: Object.keys(space) },
+      options: Object.keys(space),
+      control: { type: "select" },
     },
     margin: {
-      control: { type: "select", options: Object.keys(space) },
+      options: Object.keys(space),
+      control: { type: "select" },
     },
   },
 } as Meta;

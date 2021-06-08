@@ -1,11 +1,10 @@
-import * as React from "react";
 import clsx from "clsx";
-import styled from "styled-components";
+import { Formik } from "formik";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import prismTheme from "prism-react-renderer/themes/nightOwl";
+import * as React from "react";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
-import { Formik } from "formik";
-import { StyledBase } from "@twilio-labs/match-themes";
+import styled from "styled-components";
 import * as components from "@twilio-labs/match-components";
 import {
   ChatIcon,
@@ -14,10 +13,10 @@ import {
   ExpandIcon,
   DownloadIcon,
 } from "@twilio-labs/match-icons-twilio";
-import { AirbnbLogo } from "@twilio-labs/match-logos-mono";
 import { ChimeLogo } from "@twilio-labs/match-logos-color";
+import { AirbnbLogo } from "@twilio-labs/match-logos-mono";
+import { StyledBase } from "@twilio-labs/match-themes";
 import { ThemeSwitcher } from "../../theme-switcher";
-import type { CodeProps, PreviewProps } from "./types";
 import {
   snippet,
   singleLine,
@@ -26,6 +25,7 @@ import {
   themeSwitcher,
   previewContent,
 } from "./code.module.css";
+import type { CodeProps, PreviewProps } from "./types";
 
 const StyledPreview = styled.div<PreviewProps>`
   background: ${({ bg, theme }) => theme.backgroundColors[bg]};

@@ -1,6 +1,13 @@
-import * as React from "react";
 import clsx from "clsx";
 import { useStaticQuery, graphql, Link } from "gatsby";
+import * as React from "react";
+
+import iconComponents from "../../images/icons/components.svg";
+import iconDesignTokens from "../../images/icons/design-tokens.svg";
+import iconGettingStarted from "../../images/icons/getting-started.svg";
+import iconGithub from "../../images/icons/github.svg";
+import iconRoadmap from "../../images/icons/roadmap.svg";
+import iconUtilities from "../../images/icons/utility.svg";
 import { Accordion, AccordionGroup, AccordionItem } from "../accordion";
 import {
   siteNavigation,
@@ -10,13 +17,6 @@ import {
   icon,
   siteNavFooter,
 } from "./navigation.module.css";
-
-import iconGettingStarted from "../../images/icons/getting-started.svg";
-import iconDesignTokens from "../../images/icons/design-tokens.svg";
-import iconComponents from "../../images/icons/components.svg";
-import iconUtilities from "../../images/icons/utility.svg";
-import iconGithub from "../../images/icons/github.svg";
-import iconRoadmap from "../../images/icons/roadmap.svg";
 
 const sections = {
   ["Getting Started"]: iconGettingStarted,

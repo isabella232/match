@@ -1,7 +1,7 @@
-import * as React from "react";
 import clsx from "clsx";
-import { useTheme } from "@twilio-labs/match-themes";
+import * as React from "react";
 import { hex, score } from "wcag-contrast";
+import { useTheme } from "@twilio-labs/match-themes";
 import { Token } from "../../../types";
 import { textColorExample, inverse } from "./examples.module.css";
 

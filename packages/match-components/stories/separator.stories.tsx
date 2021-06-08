@@ -1,7 +1,7 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Separator, SeparatorProps, SeparatorVariant } from "../src";
+import * as React from "react";
 import { space } from "@twilio-labs/match-tokens";
+import { Separator, SeparatorProps, SeparatorVariant } from "../src";
 
 export default {
   title: "Components/Separator",
@@ -12,7 +12,8 @@ export default {
   argTypes: {
     variant: { table: { disable: true } },
     marginY: {
-      control: { type: "select", options: Object.keys(space) },
+      options: Object.keys(space),
+      control: { type: "select" },
     },
   },
 } as Meta;

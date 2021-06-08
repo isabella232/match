@@ -1,18 +1,18 @@
-import * as React from "react";
-import * as PropTypes from "prop-types";
 import { useField } from "formik";
+import * as PropTypes from "prop-types";
+import * as React from "react";
 import { useUIDSeed } from "react-uid";
-import { marginPropTypes } from "@twilio-labs/match-props";
 import { Label, LabelSize } from "@twilio-labs/match-primitives";
+import { marginPropTypes } from "@twilio-labs/match-props";
+import { CheckmarkIcon } from "./checkmark-icon";
+import { CheckboxSize } from "./constants";
 import {
   StyledCheckbox,
   StyledCheckboxWrapper,
   HiddenInput,
   StyledCheckboxLabel,
 } from "./styles";
-import { CheckboxSize } from "./constants";
 import type { CheckboxProps } from "./types";
-import { CheckmarkIcon } from "./checkmark-icon";
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   (
@@ -79,7 +79,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           checked={field.checked}
           size={size}
         >
-          {field.checked && <CheckmarkIcon decorative color="currentColor" />}
+          {field.checked && <CheckmarkIcon />}
           <HiddenInput
             ref={ref}
             tabIndex={0}
@@ -127,7 +127,7 @@ Checkbox.displayName = "Checkbox";
 Checkbox.propTypes = {
   ...marginPropTypes,
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
   size: PropTypes.oneOf(Object.values(CheckboxSize)),
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,

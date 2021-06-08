@@ -1,9 +1,9 @@
+import { themeGet } from "@styled-system/theme-get";
 import styled, { css } from "styled-components";
 import { variant, space } from "styled-system";
-import { themeGet } from "@styled-system/theme-get";
 import { MarginProps } from "@twilio-labs/match-props";
-import type { StyledInputProps, StyledInputContainerProps } from "./types";
 import { InputSize } from "./constants";
+import type { StyledInputProps, StyledInputContainerProps } from "./types";
 
 export const StyledInputContainer = styled.div<StyledInputContainerProps>`
   overflow: hidden;

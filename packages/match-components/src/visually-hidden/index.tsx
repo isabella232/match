@@ -1,7 +1,7 @@
-import * as React from "react";
 import * as PropTypes from "prop-types";
-import type { VisuallyHiddenProps, asTags } from "./types";
+import * as React from "react";
 import { StyledVisuallyHidden } from "./styles";
+import type { VisuallyHiddenProps, asTags } from "./types";
 
 const VisuallyHidden: React.FC<VisuallyHiddenProps> = (props) => (
   <StyledVisuallyHidden {...props} />

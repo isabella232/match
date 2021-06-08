@@ -20,10 +20,10 @@
     padding: 4px 8px;
     color: var(--color-white);
     font-weight: var(--font-weight-thin);
-    font-size: var(--font-size-scale-60);
-    line-height: var(--line-height-scale-160);
+    font-size: var(--font-size-scale60);
+    line-height: var(--line-height-scale160);
     white-space: nowrap;
-    background: var(--color-blue-90);
+    background: var(--color-blue90);
     border-radius: var(--border-radius-small);
     transform: translateX(-50%);
     pointer-events: none;
@@ -42,7 +42,7 @@
     width: 0;
     height: 0;
     margin: 0 auto;
-    border-color: var(--color-blue-90) transparent transparent transparent;
+    border-color: var(--color-blue90) transparent transparent transparent;
     border-style: solid;
     border-width: 4px 5px 5px 5px;
     transform: none;

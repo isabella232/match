@@ -1,11 +1,11 @@
-import * as React from "react";
 import clsx from "clsx";
+import * as React from "react";
 import { useMenuState, Menu, MenuItem, MenuButton } from "reakit/Menu";
-import { MatchActions } from "../../../reducers/match";
 import { MatchContext } from "../../../context/match";
+import { MatchActions } from "../../../reducers/match";
 import { IconItem as Icon, Token } from "../../../types";
-import searchSvg from "./images/search.svg";
 import dropdownSvg from "./images/dropdown.svg";
+import searchSvg from "./images/search.svg";
 import {
   container,
   control,

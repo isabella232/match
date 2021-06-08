@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import * as React from "react";
 import { DownloadIcon, ExpandIcon } from "@twilio-labs/match-icons-twilio";
 import { Button, ButtonProps, ButtonVariant, ButtonSize } from "../src";
 
@@ -18,7 +18,8 @@ export default {
     children: { table: { disable: true } },
     variant: { table: { disable: true } },
     size: {
-      control: { type: "select", options: Object.values(ButtonSize) },
+      options: Object.values(ButtonSize),
+      control: { type: "select" },
     },
     prompt: {
       control: { type: "boolean" },

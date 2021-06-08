@@ -1,32 +1,32 @@
 .section {
   justify-content: center;
-  padding: var(--space-scale-420) 0;
+  padding: var(--space-scale420) 0;
 }
 
 .header {
   grid-area: header;
-  margin-bottom: var(--space-scale-140);
+  margin-bottom: var(--space-scale140);
 }
 
 .resources {
   grid-auto-rows: 1fr;
-  grid-row-gap: var(--space-scale-180);
-  margin-bottom: var(--space-scale-180);
+  grid-row-gap: var(--space-scale180);
+  margin-bottom: var(--space-scale180);
   & > div {
-    padding-left: var(--space-scale-260);
-    border-left: 3px solid var(--color-blue-30);
+    padding-left: var(--space-scale260);
+    border-left: 3px solid var(--color-blue30);
   }
   & h3 {
     margin: 0;
-    margin-bottom: var(--space-scale-20);
+    margin-bottom: var(--space-scale20);
     font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-scale-100);
-    line-height: var(--line-height-scale-220);
+    font-size: var(--font-size-scale100);
+    line-height: var(--line-height-scale220);
     & span {
       display: block;
-      margin-bottom: var(--space-scale-7);
-      color: var(--color-blue-80);
-      font-size: var(--font-size-scale-80);
+      margin-bottom: var(--space-scale7);
+      color: var(--color-blue80);
+      font-size: var(--font-size-scale80);
     }
     & a {
       color: inherit;
@@ -35,8 +35,8 @@
   }
   & p {
     margin: 0;
-    font-size: var(--font-size-scale-80);
-    line-height: var(--line-height-scale-220);
+    font-size: var(--font-size-scale80);
+    line-height: var(--line-height-scale220);
   }
 }
 
@@ -48,11 +48,11 @@
 
 @media (--media-query-medium) {
   .section {
-    padding: var(--space-scale-660) 0;
+    padding: var(--space-scale660) 0;
   }
   .content {
     display: grid;
-    grid-column-gap: var(--space-scale-260);
+    grid-column-gap: var(--space-scale260);
     grid-template-areas: "header resources";
     grid-template-columns: 1fr 2fr;
   }
@@ -60,7 +60,7 @@
     margin: 0;
   }
   .resources {
-    grid-row-gap: var(--space-scale-340);
+    grid-row-gap: var(--space-scale340);
     grid-template-columns: repeat(2, 1fr);
     margin: 0;
   }
@@ -71,6 +71,6 @@
 
 @media (--media-query-large) {
   .content {
-    grid-column-gap: var(--space-scale-420);
+    grid-column-gap: var(--space-scale420);
   }
 }

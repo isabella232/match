@@ -1,0 +1,23 @@
+import type { IconType } from "@twilio-labs/match-icons-core";
+
+export const AbTesting: IconType;
+export const Automation: IconType;
+export const BulletCheck: IconType;
+export const BulletMinus: IconType;
+export const Chart: IconType;
+export const Check: IconType;
+export const ChevronDown: IconType;
+export const ChevronUp: IconType;
+export const Close: IconType;
+export const Cloud: IconType;
+export const Design: IconType;
+export const EmailApi: IconType;
+export const Email: IconType;
+export const ExpertServices: IconType;
+export const List: IconType;
+export const Marketing: IconType;
+export const Search: IconType;
+export const SignUp: IconType;
+export const Stats: IconType;
+export const Templates: IconType;
+export const Testing: IconType;

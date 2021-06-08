@@ -1,7 +1,7 @@
-import { AccordionGroupProps } from "./types";
+import clsx from "clsx";
 import * as React from "react";
 import { useUID } from "react-uid";
-import clsx from "clsx";
+import iconChevron from "../../images/icons/chevron-up.svg";
 import {
   accordionGroup,
   decorator,
@@ -9,7 +9,7 @@ import {
   itemWrapper,
   itemExpanded,
 } from "./accordion.module.css";
-import iconChevron from "../../images/icons/chevron-up.svg";
+import { AccordionGroupProps } from "./types";
 
 export const AccordionGroup: React.FC<AccordionGroupProps> = ({
   allowToggle,

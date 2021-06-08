@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { variant } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
+import styled from "styled-components";
+import { compose, space, variant } from "styled-system";
 import { CodeVariant } from "./constants";
 import type { CodeProps } from "./types";
 
@@ -13,18 +13,21 @@ export const StyledCode = styled.code<CodeProps>`
   border-width: ${themeGet("borderWidths.thin")};
   border-radius: ${themeGet("radii.small")};
 
-  ${variant({
-    variants: {
-      [CodeVariant.DARK]: {
-        color: "white",
-        backgroundColor: "gray90",
-        borderColor: "gray90",
+  ${compose(
+    space,
+    variant({
+      variants: {
+        [CodeVariant.DARK]: {
+          color: "white",
+          backgroundColor: "gray90",
+          borderColor: "gray90",
+        },
+        [CodeVariant.LIGHT]: {
+          color: "gray100",
+          backgroundColor: "gray10",
+          borderColor: "gray20",
+        },
       },
-      [CodeVariant.LIGHT]: {
-        color: "gray100",
-        backgroundColor: "gray10",
-        borderColor: "gray20",
-      },
-    },
-  })}
+    })
+  )}
 `;

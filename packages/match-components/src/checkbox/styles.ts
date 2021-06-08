@@ -1,6 +1,7 @@
-import styled, { css } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
+import styled, { css } from "styled-components";
 import { space, variant } from "styled-system";
+import { StyledIcon } from "@twilio-labs/match-primitives";
 import { CheckboxSize } from "./constants";
 import {
   StyledCheckboxProps,
@@ -60,7 +61,7 @@ export const StyledCheckbox = styled.div<StyledCheckboxProps>`
     })}
 
   /* Checkmark Icon */
-  & > span {
+  ${StyledIcon} {
     width: auto;
     height: auto;
   }

@@ -1,20 +1,20 @@
-import * as React from "react";
-import * as PropTypes from "prop-types";
 import { useFormikContext } from "formik";
+import * as PropTypes from "prop-types";
+import * as React from "react";
 import { useUIDSeed } from "react-uid";
-import { marginPropTypes } from "@twilio-labs/match-props";
 import {
   Label,
   LabelSize,
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
+import { marginPropTypes } from "@twilio-labs/match-props";
+import { CheckboxSize } from "./constants";
 import {
   StyledHelpText,
   StyledCheckboxGroup,
   StyledCheckboxGroupInnerWrapper,
 } from "./styles";
-import { CheckboxSize } from "./constants";
 import type { CheckboxGroupProps } from "./types";
 
 export const CheckboxGroup = React.forwardRef<

@@ -1,11 +1,11 @@
-import * as React from "react";
 import clsx from "clsx";
-import type { SectionHeaderProps } from "./types";
+import * as React from "react";
 import {
   sectionHeader,
   centerAlign,
   leftAlign,
 } from "./section-header.module.css";
+import type { SectionHeaderProps } from "./types";
 
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   className,

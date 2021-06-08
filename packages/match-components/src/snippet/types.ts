@@ -1,10 +1,11 @@
+import { MarginProps } from "@twilio-labs/match-props";
 import {
   SnippetVariant,
   SnippetLanguage,
   SnippetHorizontalScroll,
 } from "./constants";
 
-export interface SnippetProps {
+export interface SnippetProps extends MarginProps {
   children: string;
   variant?: `${SnippetVariant}`;
   language: `${SnippetLanguage}`;
@@ -31,7 +32,7 @@ export interface SnippetActionsProps {
   variant?: `${SnippetVariant}`;
 }
 
-export interface SnippetGroupProps {
+export interface SnippetGroupProps extends MarginProps {
   variant?: `${SnippetVariant}`;
   children: Array<React.ReactElement<SnippetProps>>;
   /** File name or snippet name. */
@@ -40,13 +41,13 @@ export interface SnippetGroupProps {
   compact?: boolean;
 }
 
-export interface StyledSnippetGroupProps {
+export interface StyledSnippetGroupProps extends MarginProps {
   variant?: `${SnippetVariant}`;
   compact?: boolean;
   hasTitle?: boolean;
 }
 
-export interface StyledSnippetProps {
+export interface StyledSnippetProps extends MarginProps {
   variant?: `${SnippetVariant}`;
   language?: `${SnippetLanguage}`;
   isSingleLine?: boolean;

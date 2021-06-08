@@ -1,9 +1,9 @@
+import { themeGet } from "@styled-system/theme-get";
 import styled from "styled-components";
 import { compose, variant, space, typography } from "styled-system";
 import { textColor } from "@twilio-labs/match-props";
-import type { ParagraphProps } from "./types";
 import { ParagraphVariant } from "./constants";
-import { themeGet } from "@styled-system/theme-get";
+import type { ParagraphProps } from "./types";
 
 export const StyledParagraph = styled.p<ParagraphProps>`
   margin: 0;

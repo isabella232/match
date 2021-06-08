@@ -1,10 +1,10 @@
+import Fuse from "fuse.js";
 import * as React from "react";
 import { useTheme } from "@twilio-labs/match-themes";
-import Fuse from "fuse.js";
 import { MatchContext } from "../../../context/match";
+import { Token } from "../../../types";
 import { TokenFilters } from "../filters/filters";
 import { TokenTable } from "../token-table/token-table";
-import { Token } from "../../../types";
 import { tokenList } from "./token-list.module.css";
 
 type Tokens = { [category: string]: Token[] };

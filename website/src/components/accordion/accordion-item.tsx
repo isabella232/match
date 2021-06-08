@@ -1,7 +1,7 @@
-import * as React from "react";
 import clsx from "clsx";
-import { AccordionItemProps } from "./types";
+import * as React from "react";
 import { accordionItem } from "./accordion.module.css";
+import { AccordionItemProps } from "./types";
 
 export const AccordionItem: React.FC<AccordionItemProps> = ({
   children,

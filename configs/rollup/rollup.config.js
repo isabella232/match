@@ -1,11 +1,11 @@
-import typescript from "rollup-plugin-typescript2";
+import fs from "fs";
+import path from "path";
 import babel from "@rollup/plugin-babel";
-import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
+import resolve from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
-import path from "path";
-import fs from "fs";
+import typescript from "rollup-plugin-typescript2";
 
 const pkg = JSON.parse(
   fs.readFileSync(path.join(process.cwd(), "package.json"))
@@ -16,10 +16,6 @@ export default {
   output: [
     {
       file: pkg.publishConfig.main,
-      format: "cjs",
-    },
-    {
-      file: pkg.publishConfig.module,
       format: "esm",
     },
   ],

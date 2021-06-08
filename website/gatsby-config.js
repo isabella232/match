@@ -44,7 +44,7 @@ module.exports = {
               maxWidth: 1200,
               linkImagesToOriginal: false,
               quality: 90,
-              wrapperStyle: "margin: var(--space-scale-180) auto;",
+              wrapperStyle: "margin: var(--space-scale180) auto;",
             },
           },
         ],

@@ -4,10 +4,21 @@ Match is a design system used to build accessible, consistent, and high quality 
 
 ## Getting started
 
-You must [generate an SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [attach it to your Github account](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) before proceeding. Once you are set up, clone the Match repository anywhere on your computer...
+### Prerequisites
+
+1. You must have a valid [Streamline license](https://app.streamlinehq.com/profile/developer) in order for the `@twilio-labs/match-icons-twilio` package to install. Ensure that your license key is present in the `STREAMLINE_SECRET` environment variable. We recommend setting this in your `~/.zshenv` file.
+2. Storybook and Gatsby will attempt to load on `http://www.local.twilio.com`. Please ensure that you have the following in your `/etc/hosts` file: `127.0.0.1 www.local.twilio.com`.
+
+Clone the Match repository anywhere on your computer...
 
 ```shell
 git clone git@github.com:twilio-labs/match.git
+```
+
+Install and bootstrap Match dependencies...
+
+```shell
+yarn && yarn bootstrap
 ```
 
 ### Dev Container

@@ -1,7 +1,5 @@
 import * as React from "react";
 import { Token } from "../../../types";
-import { TextColor } from "./text-color";
-import iconSvg from "./images/icon.svg";
 import {
   example,
   colorExample,
@@ -12,6 +10,8 @@ import {
   shadowExample,
   radiusExample,
 } from "./examples.module.css";
+import iconSvg from "./images/icon.svg";
+import { TextColor } from "./text-color";
 
 export type ExampleProps = {
   token: Token;

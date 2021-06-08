@@ -1,6 +1,6 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Formik } from "formik";
+import * as React from "react";
 import { Input, InputProps, InputSize } from "../src";
 
 export default {
@@ -26,13 +26,14 @@ export default {
       table: { disable: true },
     },
     type: {
+      options: ["text", "email", "tel", "url", "number", "password"],
       control: {
         type: "select",
-        options: ["text", "email", "tel", "url", "number", "password"],
       },
     },
     size: {
-      control: { type: "select", options: Object.values(InputSize) },
+      options: Object.values(InputSize),
+      control: { type: "select" },
     },
     placeholder: {
       control: { type: "text" },

@@ -1,7 +1,7 @@
-import * as React from "react";
+import { useField } from "formik";
 import * as PropTypes from "prop-types";
+import * as React from "react";
 import { useUIDSeed } from "react-uid";
-import { marginPropTypes } from "@twilio-labs/match-props";
 import { useMergedRefs } from "@twilio-labs/match-hooks";
 import {
   Label,
@@ -9,13 +9,13 @@ import {
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
-import { useField } from "formik";
+import { marginPropTypes } from "@twilio-labs/match-props";
+import { InputSize } from "./constants";
 import {
   StyledInput,
   StyledInputContainer,
   StyledInputWrapper,
 } from "./styles";
-import { InputSize } from "./constants";
 import type { InputProps } from "./types";
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(

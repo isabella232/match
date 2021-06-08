@@ -1,5 +1,4 @@
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import "@twilio-labs/match-fonts";
 
 export const parameters = {
   backgrounds: {

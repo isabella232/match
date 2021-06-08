@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
+import * as React from "react";
 import { textColors } from "@twilio-labs/match-tokens/twilio";
 import { Paragraph, ParagraphProps, ParagraphVariant } from "../src";
 
@@ -10,15 +10,17 @@ export default {
     color: undefined,
     children:
       "Well, Art is Art, isn't it? Still, on the other hand, water is water. And east is east and west is west and if you take cranberries and stew them like applesauce they taste much more like prunes than rhubarb does.",
-    variant: Paragraph.defaultProps.variant,
+    variant: Paragraph?.defaultProps?.variant,
   },
   argTypes: {
     children: { table: { disable: true } },
     variant: {
-      control: { type: "select", options: Object.values(ParagraphVariant) },
+      options: Object.values(ParagraphVariant),
+      control: { type: "select" },
     },
     color: {
-      control: { type: "select", options: Object.keys(textColors) },
+      options: Object.keys(textColors),
+      control: { type: "select" },
     },
   },
 } as Meta;

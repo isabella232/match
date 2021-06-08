@@ -1,12 +1,13 @@
-import * as React from "react";
 import * as PropTypes from "prop-types";
-import { useTabState, TabPanel } from "reakit/Tab";
+import * as React from "react";
 import { useUIDSeed } from "react-uid";
+import { useTabState, TabPanel } from "reakit/Tab";
+import { marginPropTypes } from "@twilio-labs/match-props";
 import { VisuallyHidden } from "../visually-hidden";
 import { ChevronDownIcon } from "./chevron-down-icon";
-import { getLanguageNiceName } from "./get-language-nice-name";
-import type { SnippetGroupProps } from "./types";
 import { SnippetVariant } from "./constants";
+import { getLanguageNiceName } from "./get-language-nice-name";
+import { SnippetActions } from "./snippet-actions";
 import {
   StyledSnippetGroup,
   StyledSnippetHeader,
@@ -15,13 +16,19 @@ import {
   StyledTab,
   StyledTabList,
 } from "./styles";
-import { SnippetActions } from "./snippet-actions";
+import type { SnippetGroupProps } from "./types";
 
 export const SnippetGroup: React.FC<SnippetGroupProps> = ({
   label,
   variant,
   children,
   compact,
+  marginX,
+  marginY,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
 }) => {
   const tab = useTabState();
   const seed = useUIDSeed();
@@ -49,6 +56,12 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
       variant={variant}
       compact={compact}
       hasTitle={Boolean(label)}
+      marginX={marginX}
+      marginY={marginY}
+      marginTop={marginTop}
+      marginRight={marginRight}
+      marginBottom={marginBottom}
+      marginLeft={marginLeft}
     >
       <StyledSnippetHeader variant={variant}>
         {label && <StyledSnippetTitle>{label}</StyledSnippetTitle>}
@@ -74,7 +87,7 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
               </option>
             ))}
           </select>
-          <ChevronDownIcon decorative size="medium" color="currentColor" />
+          <ChevronDownIcon size="medium" />
         </StyledSnippetSelect>
         <SnippetActions variant={variant} code={code} githubLink={githubLink} />
       </StyledSnippetHeader>
@@ -88,6 +101,7 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
 };
 
 SnippetGroup.propTypes = {
+  ...marginPropTypes,
   children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
   variant: PropTypes.oneOf(Object.values(SnippetVariant)),
   label: PropTypes.string,

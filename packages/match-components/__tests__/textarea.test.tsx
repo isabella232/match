@@ -1,9 +1,9 @@
-import * as React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { axe } from "jest-axe";
-import { withTheme } from "@twilio-labs/match-themes";
 import { Formik } from "formik";
+import { axe } from "jest-axe";
+import * as React from "react";
+import { withTheme } from "@twilio-labs/match-themes";
 import { Textarea } from "../src";
 
 const TextareaWithTheme = withTheme()(Textarea);

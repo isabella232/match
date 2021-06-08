@@ -1,8 +1,9 @@
-import * as React from "react";
 import { Link } from "gatsby";
-import { Section } from "../../section";
+import * as React from "react";
 import { Grid } from "../../grid";
+import { Section } from "../../section";
 import { SectionHeader } from "../section-header";
+import lightbulbImg from "./images/lightbulb.svg";
 import {
   section,
   content,
@@ -10,7 +11,6 @@ import {
   resources,
   illustration,
 } from "./resources.module.css";
-import lightbulbImg from "./images/lightbulb.svg";
 
 export const Resources: React.FC = () => (
   <Section className={section} contentClassName={content} columns={10}>

@@ -1,133 +1,9 @@
-import styled, { css, keyframes } from "styled-components";
-import { Button } from "reakit/Button";
 import { themeGet } from "@styled-system/theme-get";
-import { StyledIcon } from "@twilio-labs/match-primitives";
+import { Button } from "reakit/Button";
+import styled, { css, keyframes } from "styled-components";
+import { compose, space, variant } from "styled-system";
 import { ButtonSize, ButtonVariant } from "./constants";
 import type { ButtonProps } from "./types";
-
-const sizes = {
-  [ButtonSize.NORMAL]: css`
-    padding: ${({ theme }) =>
-      `calc(${theme.space.scale100} - ${theme.borderWidths.light})
-      calc(${theme.space.scale180} - ${theme.borderWidths.light})`};
-    font-size: ${({ theme }) => theme.fontSizeScale100};
-
-    ${StyledIcon} {
-      width: ${({ theme }) => theme.iconSizes.medium};
-      height: ${({ theme }) => theme.iconSizes.medium};
-    }
-  `,
-  [ButtonSize.SMALL]: css`
-    padding: ${({ theme }) =>
-      `calc(${theme.space.scale20} - ${theme.borderWidths.light})
-      calc(${theme.space.scale100} - ${theme.borderWidths.light})`};
-    font-size: ${({ theme }) => theme.fontSizeScale80};
-
-    ${StyledIcon} {
-      width: ${({ theme }) => theme.iconSizes.small};
-      height: ${({ theme }) => theme.iconSizes.small};
-    }
-  `,
-  [ButtonSize.ICON]: css`
-    padding: ${({ theme }) =>
-      `calc(${theme.space.scale60} - ${theme.borderWidths.light})`};
-    ${StyledIcon} {
-      width: ${({ theme }) => theme.iconSizes.large};
-      height: ${({ theme }) => theme.iconSizes.large};
-      margin: 0;
-    }
-  `,
-};
-
-const variants = {
-  [ButtonVariant.PRIMARY]: css`
-    color: ${({ theme }) => theme.textColorInversePrimary};
-    background: ${({ theme }) => theme.colorBlue60};
-    border-color: ${({ theme }) => theme.colorBlue60};
-
-    &:hover {
-      background: ${({ theme }) => theme.colorBlue70};
-      border-color: ${({ theme }) => theme.colorBlue70};
-    }
-
-    &:focus,
-    &:active {
-      background: ${({ theme }) => theme.colorBlue80};
-      border-color: ${({ theme }) => theme.colorBlue80};
-    }
-  `,
-  [ButtonVariant.SECONDARY]: css`
-    color: ${({ theme }) => theme.colorBlue60};
-    background: ${({ theme }) => theme.colorWhite};
-    border-color: ${({ theme }) => theme.colorBlue60};
-
-    &:hover {
-      color: ${({ theme }) => theme.textColorInversePrimary};
-      background: ${({ theme }) => theme.colorBlue60};
-    }
-
-    &:focus,
-    &:active {
-      color: ${({ theme }) => theme.textColorInversePrimary};
-      background: ${({ theme }) => theme.colorBlue70};
-      border-color: ${({ theme }) => theme.colorBlue70};
-    }
-  `,
-  [ButtonVariant.TERTIARY]: css`
-    color: ${({ theme }) => theme.textColorInversePrimary};
-    background: transparent;
-    border-color: ${({ theme }) => theme.colorWhite};
-
-    &:hover {
-      background: ${({ theme }) => theme.colorBlue60};
-      border-color: ${({ theme }) => theme.colorBlue60};
-    }
-
-    &:focus {
-      outline-color: ${({ theme }) => theme.colorWhite};
-    }
-
-    &:focus,
-    &:active {
-      background: ${({ theme }) => theme.colorBlue70};
-      border-color: ${({ theme }) => theme.colorBlue70};
-    }
-
-    &:disabled {
-      color: ${({ theme }) => theme.colorGray100};
-      background: ${({ theme }) => theme.colorGray40};
-      border-color: ${({ theme }) => theme.colorGray40};
-    }
-  `,
-  [ButtonVariant.INVERSE]: css`
-    color: ${({ theme }) => theme.components.button.inverseText};
-    background: ${({ theme }) => theme.colorWhite};
-    border-color: ${({ theme }) => theme.colorWhite};
-
-    &:hover {
-      color: ${({ theme }) => theme.textColorInversePrimary};
-      background: ${({ theme }) => theme.components.button.inverseHoverBg};
-      border-color: ${({ theme }) => theme.components.button.inverseHoverBg};
-    }
-
-    &:focus {
-      outline-color: ${({ theme }) => theme.colorWhite};
-    }
-
-    &:focus,
-    &:active {
-      color: ${({ theme }) => theme.textColorInversePrimary};
-      background: ${({ theme }) => theme.components.button.inverseFocusBg};
-      border-color: ${({ theme }) => theme.components.button.inverseFocusBg};
-    }
-
-    &:disabled {
-      color: ${({ theme }) => theme.colorGray100};
-      background: ${({ theme }) => theme.colorGray40};
-      border-color: ${({ theme }) => theme.colorGray40};
-    }
-  `,
-};
 
 const blink = keyframes`
   0%,
@@ -233,12 +109,6 @@ export const StyledButton = styled(Button).withConfig({
     }
   }
 
-  ${StyledIcon} {
-    margin-left: 0.5em;
-    color: inherit;
-    vertical-align: middle;
-  }
-
   ${({ fullWidth }) =>
     fullWidth &&
     css`
@@ -246,6 +116,112 @@ export const StyledButton = styled(Button).withConfig({
       width: 100%;
     `}
 
-  ${({ size }) => size && sizes[size]}
-  ${({ variant }) => variant && variants[variant]}
+  ${({ theme }) =>
+    compose(
+      space,
+      variant({
+        variants: {
+          [ButtonVariant.PRIMARY]: {
+            color: theme.textColorInversePrimary,
+            backgroundColor: "blue60",
+            borderColor: "blue60",
+            ["&:hover"]: {
+              backgroundColor: "blue70",
+              borderColor: "blue70",
+            },
+
+            ["&:focus, &:active"]: {
+              backgroundColor: "blue80",
+              borderColor: "blue80",
+            },
+          },
+          [ButtonVariant.SECONDARY]: {
+            color: "blue60",
+            backgroundColor: "white",
+            borderColor: "blue60",
+
+            ["&:hover"]: {
+              color: theme.textColors.inversePrimary,
+              backgroundColor: "blue60",
+            },
+
+            ["&:focus, &:active"]: {
+              color: theme.textColors.inversePrimary,
+              backgroundColor: "blue70",
+              borderColor: "blue70",
+            },
+          },
+          [ButtonVariant.TERTIARY]: {
+            color: theme.textColors.inversePrimary,
+            backgroundColor: "transparent",
+            borderColor: "white",
+
+            ["&:hover"]: {
+              backgroundColor: "blue60",
+              borderColor: "blue60",
+            },
+
+            ["&:focus"]: {
+              outlineColor: theme.colors.white,
+            },
+
+            ["&:focus, &:active"]: {
+              backgroundColor: "blue70",
+              borderColor: "blue70",
+            },
+
+            ["&:disabled"]: {
+              color: "gray100",
+              backgroundColor: "gray40",
+              borderColor: "gray40",
+            },
+          },
+          [ButtonVariant.INVERSE]: {
+            color: theme.components.button.inverseText,
+            backgroundColor: "white",
+            borderColor: "white",
+
+            ["&:hover"]: {
+              color: theme.textColors.inversePrimary,
+              backgroundColor: theme.components.button.inverseHoverBg,
+              borderColor: theme.components.button.inverseHoverBg,
+            },
+
+            ["&:focus"]: {
+              outlineColor: theme.colors.white,
+            },
+
+            ["&:focus, &:active"]: {
+              color: theme.textColors.inversePrimary,
+              backgroundColor: theme.components.button.inverseFocusBg,
+              borderColor: theme.components.button.inverseFocusBg,
+            },
+
+            ["&:disabled"]: {
+              color: "gray100",
+              backgroundColor: "gray40",
+              borderColor: "gray40",
+            },
+          },
+        },
+      }),
+      variant({
+        prop: "size",
+        variants: {
+          [ButtonSize.NORMAL]: {
+            paddingY: `calc(${theme.space.scale100} - ${theme.borderWidths.light})`,
+            paddingX: `calc(${theme.space.scale180} - ${theme.borderWidths.light})`,
+            fontSize: "scale100",
+          },
+          [ButtonSize.SMALL]: {
+            paddingY: `calc(${theme.space.scale20} - ${theme.borderWidths.light})`,
+            paddingX: `calc(${theme.space.scale100} - ${theme.borderWidths.light})`,
+            fontSize: "scale80",
+          },
+          [ButtonSize.ICON]: {
+            padding: `calc(${theme.space.scale60} - ${theme.borderWidths.light})`,
+          },
+        },
+      })
+    )};
 `;

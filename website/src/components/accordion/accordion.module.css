@@ -3,7 +3,7 @@
   margin: 0;
   padding: 8px 0;
   color: var(--colors-blue-90);
-  font-size: var(--font-size-scale-80);
+  font-size: var(--font-size-scale80);
   letter-spacing: 0.02em;
   /* All LI elements */
   & li {
@@ -38,7 +38,7 @@
   & h3 {
     margin: 0;
     font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-scale-80);
+    font-size: var(--font-size-scale80);
   }
   & .marker {
     width: 10px;

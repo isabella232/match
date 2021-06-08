@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
-import { MarginProps } from "@twilio-labs/match-props";
+import styled, { css } from "styled-components";
 import { compose, space, variant } from "styled-system";
+import { MarginProps } from "@twilio-labs/match-props";
 import { RadioSize } from "./constants";
 import {
   StyledRadioProps,

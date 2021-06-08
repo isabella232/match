@@ -6,7 +6,7 @@ export interface CheckboxProps
     Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   name: string;
   value: string;
-  label: string;
+  label: React.ReactNode;
   /** Whether the checkbox is a member of a group
    * @ignore
    */

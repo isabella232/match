@@ -1,9 +1,9 @@
 .section {
   justify-content: center;
-  padding-top: var(--space-scale-260);
-  padding-bottom: var(--space-scale-420);
+  padding-top: var(--space-scale260);
+  padding-bottom: var(--space-scale420);
   text-align: center;
-  background: var(--color-blue-10);
+  background: var(--color-blue10);
 }
 
 .separator {
@@ -11,7 +11,7 @@
 }
 
 .header {
-  margin-bottom: var(--space-scale-260);
+  margin-bottom: var(--space-scale260);
   & > p {
     color: var(--color-purple-80);
   }
@@ -21,13 +21,13 @@
 }
 
 .sectionLink {
-  margin-top: var(--space-scale-260);
+  margin-top: var(--space-scale260);
   & p {
     margin: 0;
-    line-height: var(--line-height-scale-220);
+    line-height: var(--line-height-scale220);
   }
   & p + p {
-    margin-top: var(--space-scale-260);
+    margin-top: var(--space-scale260);
   }
 }
 
@@ -44,17 +44,17 @@
 
 @media (--media-query-medium) {
   .section {
-    padding-top: var(--space-scale-180);
-    padding-bottom: var(--space-scale-660);
+    padding-top: var(--space-scale180);
+    padding-bottom: var(--space-scale660);
   }
   .header {
-    margin-bottom: var(--space-scale-420);
+    margin-bottom: var(--space-scale420);
     padding: 0 15%;
   }
   .sectionLink {
-    margin-top: var(--space-scale-420);
+    margin-top: var(--space-scale420);
     & p + p {
-      margin-top: var(--space-scale-180);
+      margin-top: var(--space-scale180);
     }
   }
 }

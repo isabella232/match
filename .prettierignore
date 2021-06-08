@@ -5,12 +5,14 @@ dist
 build
 public
 generated
+streamline
 node_modules
 *.ejs
 
 # Match Super Bundle
 packages/match/*
 !packages/match/src
+!packages/match/stories
 !packages/match/package.json
 !packages/match/tsconfig.json
 

@@ -1,16 +1,16 @@
 import StyleDictionary from "style-dictionary";
-import { es6TokenFormatter } from "./es6";
 import { commonJsTokenFormatter } from "./common";
 import { customMediaTokenFormatter } from "./custom-media";
+import { moduleTokenFormatter } from "./module";
 import { typeDeclarationTokenFormatter } from "./type-declaration";
 
 export const registerFormats = (dictionary: typeof StyleDictionary): void => {
   dictionary.registerFormat({
-    name: "match/es6",
-    formatter: es6TokenFormatter,
+    name: "match/module",
+    formatter: moduleTokenFormatter,
   });
   dictionary.registerFormat({
-    name: "match/common",
+    name: "match/common-js",
     formatter: commonJsTokenFormatter,
   });
   dictionary.registerFormat({

@@ -1,6 +1,6 @@
-import * as React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { codeList } from "flagpack-core";
+import * as React from "react";
 import { Flag, FlagProps, FlagSize } from "../src/flag";
 
 export default {
@@ -12,7 +12,8 @@ export default {
   },
   argTypes: {
     size: {
-      control: { type: "select", options: Object.values(FlagSize) },
+      options: Object.values(FlagSize),
+      control: { type: "select" },
     },
     decorative: {
       control: { type: "boolean" },

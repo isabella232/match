@@ -1,7 +1,9 @@
+import { MarginProps } from "@twilio-labs/match-props";
 import { ButtonVariant, ButtonSize, ButtonType } from "./constants";
 
 export interface ButtonProps
-  extends React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
+  extends MarginProps,
+    React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   children: React.ReactNode;
   variant?: `${ButtonVariant}`;
   type?: `${ButtonType}`;

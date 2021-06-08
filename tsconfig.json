@@ -1,4 +1,7 @@
 {
   "extends": "tsconfig-match",
-  "exclude": ["node_modules", "dist", "build"]
+  "compilerOptions": {
+    "allowJs": true
+  },
+  "exclude": ["node_modules", "dist", "build", "generated"]
 }

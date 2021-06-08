@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useAddonState, useChannel } from "@storybook/api";
 import {
   Icons,
   IconButton,
@@ -6,7 +6,7 @@ import {
   TooltipLinkList,
 } from "@storybook/components";
 import { styled } from "@storybook/theming";
-import { useAddonState, useChannel } from "@storybook/api";
+import * as React from "react";
 import { ThemeVariants } from "@twilio-labs/match-themes";
 import { ADDON_ID, STORAGE_ID, CHANGED, SET } from "./constants";
 

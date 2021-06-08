@@ -96,6 +96,7 @@ packages/match-tokens/py/match_tokens_py.egg-info
 # Match Super Bundle
 packages/match/*
 !packages/match/src
+!packages/match/stories
 !packages/match/package.json
 !packages/match/tsconfig.json
 

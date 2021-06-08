@@ -1,24 +1,24 @@
 .section {
   justify-content: center;
-  padding: var(--space-scale-420) 0;
-  background: var(--color-blue-90);
+  padding: var(--space-scale420) 0;
+  background: var(--color-blue90);
 }
 
 .content {
   display: grid;
-  grid-row-gap: var(--space-scale-180);
+  grid-row-gap: var(--space-scale180);
   & > div {
     position: relative;
   }
 }
 
 .header {
-  margin-bottom: var(--space-scale-60);
+  margin-bottom: var(--space-scale60);
   & p {
-    color: var(--color-green-20);
+    color: var(--color-green20);
   }
   & h2 {
-    color: var(--color-green-30);
+    color: var(--color-green30);
   }
 }
 
@@ -29,7 +29,7 @@
 .copy {
   margin: 0;
   color: var(--color-white);
-  line-height: var(--line-height-scale-220);
+  line-height: var(--line-height-scale220);
 }
 
 .gatsbyImg {
@@ -55,15 +55,15 @@
       to bottom,
       var(--background-color-light) 0%,
       var(--background-color-light) 60%,
-      var(--color-blue-10) 60%
+      var(--color-blue10) 60%
     );
   }
   .content {
-    grid-column-gap: var(--space-scale-500);
+    grid-column-gap: var(--space-scale500);
     grid-template-columns: 1fr minmax(min-content, 2fr);
     align-items: center;
-    padding: var(--space-scale-660) var(--space-scale-420);
-    background: var(--color-blue-90);
+    padding: var(--space-scale660) var(--space-scale420);
+    background: var(--color-blue90);
     border-radius: 10px;
   }
   .swoop {
@@ -77,6 +77,6 @@
 
 @media (--media-query-large) {
   .section .content {
-    max-width: calc(var(--match-10-column-width) + var(--space-scale-420) * 2);
+    max-width: calc(var(--match-10-column-width) + var(--space-scale420) * 2);
   }
 }

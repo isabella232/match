@@ -1,50 +1,7 @@
 import styled, { css } from "styled-components";
-import { StyledIcon } from "@twilio-labs/match-primitives";
+import { space, variant, compose } from "styled-system";
 import { AnchorVariant } from "./constants";
 import type { AnchorProps } from "./types";
-
-const variants = {
-  [AnchorVariant.PRIMARY]: css`
-    color: ${({ theme }) => theme.colorBlue60};
-
-    &:hover {
-      color: ${({ theme }) => theme.colorBlue70};
-    }
-
-    &:focus,
-    &:active {
-      color: ${({ theme }) => theme.colorBlue80};
-    }
-  `,
-  [AnchorVariant.INVERSE]: css`
-    color: ${({ theme }) => theme.colorWhite};
-
-    &:hover {
-      color: ${({ theme }) => theme.colorBlue30};
-    }
-
-    &:focus {
-      outline-color: ${({ theme }) => theme.colorWhite};
-    }
-
-    &:focus,
-    &:active {
-      color: ${({ theme }) => theme.colorBlue40};
-    }
-  `,
-  [AnchorVariant.TEXT]: css`
-    color: inherit;
-
-    &:hover {
-      color: ${({ theme }) => theme.colorBlue60};
-    }
-
-    &:focus,
-    &:active {
-      color: ${({ theme }) => theme.colorBlue70};
-    }
-  `,
-};
 
 export const StyledAnchor = styled.a<AnchorProps>`
   text-decoration: underline;
@@ -58,15 +15,6 @@ export const StyledAnchor = styled.a<AnchorProps>`
     -moz-outline-radius: 4px;
   }
 
-  ${StyledIcon} {
-    width: 0.75em;
-    height: 0.75em;
-    margin-bottom: 0.15em;
-    margin-left: 0.5em;
-    color: inherit;
-    vertical-align: middle;
-  }
-
   ${({ noUnderline }) =>
     noUnderline &&
     css`
@@ -78,5 +26,42 @@ export const StyledAnchor = styled.a<AnchorProps>`
       }
     `}
 
-  ${({ variant }) => variant && variants[variant]}
+  ${({ theme }) =>
+    compose(
+      space,
+      variant({
+        variants: {
+          [AnchorVariant.PRIMARY]: {
+            color: "blue60",
+            ["&:hover"]: {
+              color: "blue70",
+            },
+            ["&:focus, &:active"]: {
+              color: "blue80",
+            },
+          },
+          [AnchorVariant.INVERSE]: {
+            color: "white",
+            ["&:hover"]: {
+              color: "blue30",
+            },
+            ["&:focus"]: {
+              outlineColor: theme.colors.white,
+            },
+            ["&:focus, &:active"]: {
+              color: "blue40",
+            },
+          },
+          [AnchorVariant.TEXT]: {
+            color: "inherit",
+            ["&:hover"]: {
+              color: "blue60",
+            },
+            ["&:focus, &:active"]: {
+              color: "blue70",
+            },
+          },
+        },
+      })
+    )}
 `;

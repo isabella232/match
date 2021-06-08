@@ -1,9 +1,9 @@
-import * as React from "react";
 import * as PropTypes from "prop-types";
+import * as React from "react";
+import { Provider as ReakitProvider } from "reakit";
 import { ThemeProvider } from "styled-components";
-import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
 import * as SendGridDesignTokens from "@twilio-labs/match-tokens/sendgrid";
-import * as AhoyDesignTokens from "@twilio-labs/match-tokens/ahoy";
+import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
 import { ThemeVariants } from "./constants";
 import { GlobalStyles, StyledBase } from "./styles";
 
@@ -21,27 +21,23 @@ export const MatchThemeProvider: React.FC<MatchThemeProviderProps> = ({
     switch (theme) {
       case ThemeVariants.SENDGRID:
         return SendGridDesignTokens;
-      case ThemeVariants.AHOY:
-        return AhoyDesignTokens;
       case ThemeVariants.TWILIO:
       default:
         return TwilioDesignTokens;
     }
   }, [theme]);
   return (
-    <ThemeProvider theme={tokens}>
-      <GlobalStyles />
-      {!excludeBaseStyles ? <StyledBase {...props} /> : <div {...props} />}
-    </ThemeProvider>
+    <ReakitProvider>
+      <ThemeProvider theme={tokens}>
+        <GlobalStyles />
+        {!excludeBaseStyles ? <StyledBase {...props} /> : <div {...props} />}
+      </ThemeProvider>
+    </ReakitProvider>
   );
 };
 
 MatchThemeProvider.propTypes = {
-  theme: PropTypes.oneOf([
-    ThemeVariants.TWILIO,
-    ThemeVariants.SENDGRID,
-    ThemeVariants.AHOY,
-  ]).isRequired,
+  theme: PropTypes.oneOf([...Object.values(ThemeVariants)]).isRequired,
   excludeBaseStyles: PropTypes.bool,
 };
 

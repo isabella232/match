@@ -1,14 +1,14 @@
-import StyleDictionary from "style-dictionary";
 import path from "path";
-import pkg from "../package.json";
+import StyleDictionary, { DesignToken } from "style-dictionary";
 import { registerFormats } from "./formats";
 import { registerTransforms } from "./transforms";
 
 registerFormats(StyleDictionary);
 registerTransforms(StyleDictionary);
 
-function getStyleDictionaryConfig(brand) {
+function getStyleDictionaryConfig(brand: string) {
   return {
+    // eslint-disable-next-line unicorn/prefer-module
     source: [path.resolve(__dirname, `tokens/${brand}/index.ts`)],
     platforms: {
       js: {
@@ -16,20 +16,16 @@ function getStyleDictionaryConfig(brand) {
         buildPath: `${brand}/`,
         files: [
           {
-            format: "match/common",
+            format: "match/module",
             destination: "index.js",
+          },
+          {
+            format: "match/common-js",
+            destination: "index.cjs",
           },
           {
             format: "match/type-declaration",
             destination: "index.d.ts",
-          },
-          {
-            format: "match/es6",
-            destination: "es6.js",
-          },
-          {
-            format: "match/type-declaration",
-            destination: "es6.d.ts",
           },
         ],
       },
@@ -40,12 +36,14 @@ function getStyleDictionaryConfig(brand) {
           {
             format: "css/variables",
             destination: "variables.css",
-            filter: (prop) => prop.attributes.category !== "mediaQuery",
+            filter: (prop: DesignToken) =>
+              prop?.attributes?.category !== "mediaQuery",
           },
           {
             format: "match/custom-media",
             destination: "custom-media.css",
-            filter: (prop) => prop.attributes.category === "mediaQuery",
+            filter: (prop: DesignToken) =>
+              prop?.attributes?.category === "mediaQuery",
           },
         ],
       },
@@ -63,7 +61,7 @@ function getStyleDictionaryConfig(brand) {
   };
 }
 
-pkg.files.map((brand) => {
+["twilio", "sendgrid"].map((brand) => {
   const StyleDictionaryExtended = StyleDictionary.extend(
     getStyleDictionaryConfig(brand)
   );

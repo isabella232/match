@@ -11,10 +11,10 @@ github: https://github.com/twilio-labs/match/blob/main/packages/match-icons
 
 ### Usage
 
-There are currently 3 supported icon packages. `@twilio-labs/match/icons/twilio`, `@twilio-labs/match/icons/sendgrid`, and the universal `@twilio-labs/match/icons/product`. Icons are imported individually from their respective packages.
+There are currently 3 supported icon packages. `@twilio-labs/match-icons-twilio`, `@twilio-labs/match-icons-sendgrid`, and the universal `@twilio-labs/match-icons-product`. Icons are imported individually from their respective packages. The `@twilio-labs/match-icons-twilio` package requires a valid Streamline license. Ensure that you have a `STREAMLINE_SECRET` environment variable set with the license key found on the [Streamline developer page](https://app.streamlinehq.com/profile/developer).
 
 ```jsx
-import { ChatIcon } from "@twilio-labs/match/icons/twilio";
+import { ChatIcon } from "@twilio-labs/match-icons-twilio";
 
 const Component = () => <ChatIcon decorative />;
 ```

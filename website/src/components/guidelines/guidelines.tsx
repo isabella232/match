@@ -1,13 +1,13 @@
-import * as React from "react";
 import clsx from "clsx";
-import doIcon from "./images/do.svg";
-import doNotIcon from "./images/do-not.svg";
+import * as React from "react";
 import {
   guidelines,
   heading,
   doGuide,
   doNotGuide,
 } from "./guidelines.module.css";
+import doNotIcon from "./images/do-not.svg";
+import doIcon from "./images/do.svg";
 
 export interface GuidelineProps {
   children: React.ReactNode;

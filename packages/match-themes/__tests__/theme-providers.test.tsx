@@ -1,9 +1,8 @@
-import * as React from "react";
 import { render } from "@testing-library/react";
-import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
+import * as React from "react";
 import * as SendGridDesignTokens from "@twilio-labs/match-tokens/sendgrid";
-import * as AhoyDesignTokens from "@twilio-labs/match-tokens/ahoy";
-import { TwilioTheme, SendGridTheme, AhoyTheme, ThemeConsumer } from "../src";
+import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
+import { TwilioTheme, SendGridTheme, ThemeConsumer } from "../src";
 
 const ThemeConsumerExample = (): React.ReactElement => {
   return (
@@ -30,16 +29,6 @@ describe("Theme Providers", () => {
       <SendGridTheme>
         <ThemeConsumerExample />
       </SendGridTheme>
-    );
-    expect(getByTestId("color")).toHaveTextContent(colorBrand);
-  });
-
-  test("should render the Ahoy brand color", (): void => {
-    const { colorBrand } = AhoyDesignTokens;
-    const { getByTestId } = render(
-      <AhoyTheme>
-        <ThemeConsumerExample />
-      </AhoyTheme>
     );
     expect(getByTestId("color")).toHaveTextContent(colorBrand);
   });

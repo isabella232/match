@@ -1,8 +1,8 @@
-import styled, { css } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
-import type { StyledLabelProps } from "./types";
-import { LabelSize } from "./constants";
+import styled, { css } from "styled-components";
 import { variant } from "styled-system";
+import { LabelSize } from "./constants";
+import type { StyledLabelProps } from "./types";
 
 export const StyledRequired = styled.span`
   display: inline-block;

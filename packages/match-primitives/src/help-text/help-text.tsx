@@ -1,9 +1,9 @@
-import * as React from "react";
 import * as PropTypes from "prop-types";
-import type { HelpTextProps } from "./types";
+import * as React from "react";
 import { HelpTextVariant } from "./constants";
-import { StyledHelpText } from "./styles";
 import { ErrorIcon } from "./error-icon";
+import { StyledHelpText } from "./styles";
+import type { HelpTextProps } from "./types";
 
 export const HelpText: React.FC<HelpTextProps> = ({
   variant,
@@ -17,12 +17,7 @@ export const HelpText: React.FC<HelpTextProps> = ({
       {...props}
     >
       {variant === HelpTextVariant.ERROR && (
-        <ErrorIcon
-          marginRight="scale7"
-          size="medium"
-          color="red60"
-          title="Validation error"
-        />
+        <ErrorIcon marginRight="scale7" size="medium" color="red60" />
       )}
       {children}
     </StyledHelpText>

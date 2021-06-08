@@ -1,5 +1,5 @@
-import * as React from "react";
 import { render } from "@testing-library/react";
+import * as React from "react";
 import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
 import { TwilioTheme, useTheme } from "../src";
 

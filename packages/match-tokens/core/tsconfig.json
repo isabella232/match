@@ -2,7 +2,9 @@
   "extends": "tsconfig-match",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "noImplicitAny": false
+    // Fake out ts-node until this RFC is sorted out:
+    // https://github.com/TypeStrong/ts-node/issues/1007
+    "module": "CommonJS"
   },
-  "include": ["src/**/*", "package.json"]
+  "include": ["src/**/*"]
 }

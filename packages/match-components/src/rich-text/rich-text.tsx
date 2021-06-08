@@ -1,10 +1,10 @@
-import * as React from "react";
-import * as PropTypes from "prop-types";
 import parse, {
   domToReact,
   HTMLReactParserOptions,
   Element,
 } from "html-react-parser";
+import * as PropTypes from "prop-types";
+import * as React from "react";
 import {
   Anchor,
   AnchorVariant,

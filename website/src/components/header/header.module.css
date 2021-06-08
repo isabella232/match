@@ -15,17 +15,17 @@
 }
 
 .link {
-  color: var(--color-gray-100);
+  color: var(--color-gray100);
   text-decoration-color: transparent;
   transition: text-decoration-color 200ms ease-in;
 }
 
 .link:hover {
-  text-decoration-color: var(--color-gray-100);
+  text-decoration-color: var(--color-gray100);
 }
 
 .icon {
-  margin: 0 var(--space-scale-20);
+  margin: 0 var(--space-scale20);
 }
 
 .innerWrapper {
@@ -33,7 +33,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: var(--space-scale-140);
+  padding: var(--space-scale140);
   color: var(--color-white);
 }
 
@@ -42,16 +42,16 @@
   grid-gap: 16px;
   grid-template-columns: auto auto;
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-scale-60);
-  line-height: var(--line-height-scale-100);
+  font-size: var(--font-size-scale60);
+  line-height: var(--line-height-scale100);
   letter-spacing: 0.02em;
 }
 
 .sideLinks {
   display: none;
-  grid-gap: var(--space-scale-260);
+  grid-gap: var(--space-scale260);
   grid-template-columns: auto auto;
-  font-size: var(--font-size-scale-80);
+  font-size: var(--font-size-scale80);
   /* Make room for nav menu button */
   transform: translate3d(-60px, 0, 0);
   transition: transform 0.2s ease-out;
@@ -84,7 +84,7 @@
   width: 20px;
   height: 2px;
   background-color: white;
-  background-color: var(--color-gray-70);
+  background-color: var(--color-gray70);
   cursor: pointer;
   transition: all 0.6s cubic-bezier(1, 0, 0, 1);
   &::before,
@@ -93,8 +93,8 @@
     display: block;
     width: 20px;
     height: 2px;
-    color: var(--color-gray-70);
-    background-color: var(--color-gray-70);
+    color: var(--color-gray70);
+    background-color: var(--color-gray70);
     transition: all 0.6s cubic-bezier(1, 0, 0, 1);
     content: "";
   }
@@ -115,14 +115,14 @@
     &::before {
       top: -5px;
       left: 10%;
-      background-color: var(--color-gray-70);
+      background-color: var(--color-gray70);
       transform: rotateZ(45deg);
       content: "";
     }
     &::after {
       bottom: -8px;
       left: 10%;
-      background-color: var(--color-gray-70);
+      background-color: var(--color-gray70);
       transform: rotateZ(-45deg);
       content: "";
     }

@@ -1,0 +1,197 @@
+---
+id: list
+title: List
+section: Components
+description: Lists are simple groupings of related text or images, formatted vertically. List items typically begin with a bullet point or number.
+figma: https://www.figma.com/file/oYazzpZ4XWFUlwD1pDHNms/Core-Components?node-id=1873%3A4251
+github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/list
+---
+
+import { Guidelines, Do, DoNot } from "../../components/guidelines";
+
+## Code
+
+### Usage
+
+```jsx
+import { List, ListItem } from "@twilio-labs/match/components";
+
+const Component = () => (
+  <List>
+    <ListItem>Ahoy</ListItem>
+    <ListItem>World</ListItem>
+  </List>
+);
+```
+
+### List Props
+
+| Prop     | Type        | Default    | Description                             |
+| -------- | ----------- | ---------- | --------------------------------------- |
+| variant? | ListVariant | 'bulleted' | 'bulleted', 'numbered', 'icon'          |
+| size?    | ListSize    | 'normal'   | 'normal', 'small'                       |
+| inverse? | boolean     | false      | Use inverse styles on dark backgrounds. |
+
+Also supports [margin](/components/#margin-props) props.
+
+### List Item Props
+
+| Prop        | Type   | Default | Description                                         |
+| ----------- | ------ | ------- | --------------------------------------------------- |
+| additional? | string | null    | Supporting text displayed below list item contents. |
+
+---
+
+## Guidelines
+
+### About Lists
+
+Lists are a grouping of list items that are represented consecutively one after the other and delineated by numeric, bulleted or iconic markings. Lists may be ordered or unordered. If the meaning of the content would change be reordering the list items, use an ordered (numbered) list. Otherwise use an unordered (bulleted, icon) list.
+
+### Accessibility
+
+Always group `ListItem` within a `List` component. When nesting lists, ensure that `ListItem` is a direct descendant of `List`.
+
+---
+
+## Composition
+
+Of the available list variants, numbered is the only one which provides semantic meaning to the order of items.
+
+<Guidelines>
+  <Do>
+    <ul>
+      <li>Use bulleted or icon lists for more randomized lists.</li>
+      <li>
+        Use nested lists to provide additional, related information to parent
+        list items.
+      </li>
+    </ul>
+  </Do>
+  <DoNot>
+    <ul>
+      <li>
+        Use a numbered list or a nested list where items don't have a specific
+        order.
+      </li>
+      <li>
+        Use nested lists that contain items that are unrelated to the parent
+        list item.
+      </li>
+    </ul>
+  </DoNot>
+</Guidelines>
+
+---
+
+## Examples
+
+### Bulleted
+
+Use the bulleted variant for lists with no significant meaning to the order of items. This is the default `List` variant.
+
+```jsx live
+<List>
+  <ListItem>Rufus T. Firefly</ListItem>
+  <ListItem>Otis B. Driftwood</ListItem>
+  <ListItem>Captain Geoffrey T. Spaulding</ListItem>
+</List>
+```
+
+### Numbered
+
+Use the numbered variant for lists with any significance to the order of items.
+
+```jsx live
+<List variant="numbered">
+  <ListItem>The Cocoanuts</ListItem>
+  <ListItem>Animal Crackers</ListItem>
+  <ListItem>Monkey Business</ListItem>
+  <ListItem>Horse Feathers</ListItem>
+  <ListItem>Duck Soup</ListItem>
+</List>
+```
+
+### Nested
+
+Lists may be nested within other list items.
+
+```jsx live
+<List variant="numbered">
+  <ListItem>
+    The party of the first part shall be known in this contract as the party of
+    the first part.
+    <List>
+      <ListItem>
+        The first part of the party of the first part shall be known in this
+        contract as the first part of the party of the first part.
+      </ListItem>
+    </List>
+  </ListItem>
+  <ListItem>
+    The party of the second part shall be known in this contract as the party of
+    the second part.
+  </ListItem>
+</List>
+```
+
+### Additional Text
+
+```jsx live
+<>
+  <List variant="bulleted" marginBottom="scale180">
+    <ListItem additional="aka Chico">Leonard Joseph Marx</ListItem>
+  </List>
+  <List variant="numbered" marginBottom="scale180">
+    <ListItem additional="aka Groucho">Julius Henry Marx</ListItem>
+  </List>
+  <List variant="icon">
+    <ListItem additional="aka Zeppo">Herbert Manfred Marx</ListItem>
+  </List>
+</>
+```
+
+### Icon
+
+Use the icon variant for decorative lists with no significant meaning to the order of items.
+
+```jsx live
+<List variant="icon">
+  <ListItem>A Night at the Opera</ListItem>
+  <ListItem>A Day at the Races</ListItem>
+  <ListItem>A Night in Casablanca</ListItem>
+</List>
+```
+
+### Inverse
+
+All `List` variants support inverse themes.
+
+```jsx live bg=darkest
+<>
+  <List inverse variant="bulleted" marginBottom="scale180">
+    <ListItem>Go West</ListItem>
+  </List>
+  <List inverse variant="numbered" marginBottom="scale180">
+    <ListItem>Room Service</ListItem>
+  </List>
+  <List inverse variant="icon">
+    <ListItem>The Big Store</ListItem>
+  </List>
+</>
+```
+
+### Size
+
+The `List` component supports normal and small sizes.
+
+```jsx live
+<>
+  <List size="normal" marginBottom="scale180">
+    <ListItem additional="aka Harpo">Arthur Marx</ListItem>
+  </List>
+  <List size="small">
+    <ListItem additional="aka Gummo">Milton Marx</ListItem>
+  </List>
+</>
+```

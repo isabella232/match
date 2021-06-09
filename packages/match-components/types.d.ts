@@ -1,3 +1,5 @@
+declare module "*.svg";
+
 declare module "flagpack-core" {
   declare const codeList: Array<{
     countryName: string;

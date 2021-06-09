@@ -3,40 +3,40 @@
   margin-bottom: 100px;
   color: var(--color-gray90);
   font-weight: var(--font-weight-regular);
-  & h2,
-  & h3 {
+  & > h2,
+  & > h3 {
     margin-top: 0;
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-scale140);
   }
-  & h2 {
+  & > h2 {
     margin-top: var(--space-scale540);
     margin-bottom: var(--space-scale140);
     font-size: 32px;
   }
-  & h3 {
+  & > h3 {
     margin-top: var(--space-scale180);
     margin-bottom: var(--space-scale60);
     font-size: var(--font-size-scale180);
   }
-  & hr {
+  & > hr {
     height: 1px;
     margin: var(--space-scale420) 0;
     background: var(--color-gray20);
     border: 0;
   }
-  & p {
+  & > p {
     margin: var(--space-scale100) 0;
     font-size: var(--font-size-scale100);
     line-height: var(--line-height-scale220);
   }
-  & ol {
+  & > ol {
     padding: 0 20px;
     font-size: var(--font-size-scale100);
     line-height: var(--line-height-scale220);
   }
-  & ol,
-  & ul {
+  & > ol,
+  & > ul {
     margin: var(--space-scale100) 0;
     padding: 0;
     padding-left: var(--space-scale140);
@@ -46,26 +46,11 @@
       margin-top: var(--space-scale20);
     }
   }
-  & pre {
-    margin: 16px 0 36px;
-  }
-  & code {
+  & > p code {
     padding: 2px 8px;
     background: var(--color-gray10);
     border: 1px solid var(--color-gray20);
     border-radius: 2px;
-  }
-  & td {
-    font-size: var(--font-size-scale100);
-    & a::after {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin: 0 8px;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.75 11.25L11.25 0.75M11.25 0.75H3.375M11.25 0.75V8.625' stroke='%23043CB5' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-      transform: scale(0.8);
-      content: "";
-    }
   }
   & > *:first-child {
     margin-top: 0;

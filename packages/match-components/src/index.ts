@@ -12,6 +12,7 @@ export * from "./form";
 export * from "./grid";
 export * from "./heading";
 export * from "./input";
+export * from "./list";
 export * from "./paragraph";
 export * from "./radio-group";
 export * from "./rich-text";

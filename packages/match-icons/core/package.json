@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-icons-core",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Twilio Match Design System Icons",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",
@@ -17,7 +17,7 @@
     "directory": "packages/match-icons/core"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   },
   "scripts": {
     "publish": "yarn npm publish --tolerate-republish"

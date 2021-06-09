@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-tokens",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "Token libraries for the Twilio Match Design System.",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",
@@ -18,7 +18,7 @@
   },
   "publishConfig": {
     "type": "module",
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   },
   "scripts": {
     "build": "yarn clean && yarn compile",

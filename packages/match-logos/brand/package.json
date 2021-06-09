@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-logos-brand",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "Twilio Match Design System Brand Logos",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",
@@ -17,7 +17,7 @@
     "directory": "packages/match-logos/brand"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   },
   "scripts": {
     "convert": "svgr -d generated svg",

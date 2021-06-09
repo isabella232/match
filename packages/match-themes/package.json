@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-themes",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "Twilio Match Design System Themes",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",
@@ -17,7 +17,7 @@
   "publishConfig": {
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   },
   "scripts": {
     "build": "yarn clean && yarn compile",
@@ -28,7 +28,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
-    "@twilio-labs/match-tokens": "^1.0.0-alpha.5",
+    "@twilio-labs/match-tokens": "^1.0.0-alpha.6",
     "prop-types": "15.x",
     "react": "17.x",
     "react-dom": "17.x",

@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-hooks",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "Twilio Match Design System React Hooks",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",
@@ -17,7 +17,7 @@
   "publishConfig": {
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   },
   "scripts": {
     "build": "yarn clean && yarn compile",

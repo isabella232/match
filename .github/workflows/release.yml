@@ -32,11 +32,11 @@ jobs:
         env:
           STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
 
-      # Publish GitHub Packages
+      # Publish NPM Packages
       - name: Publish packages
         run: yarn publish:all
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # Publish PyPI Package
       - uses: actions/setup-python@v2

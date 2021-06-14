@@ -6,13 +6,13 @@ export const onRenderBody = ({ setHeadComponents }) => {
       key="whitney+surveyor"
       rel="stylesheet"
       type="text/css"
-      href="https://cloud.typography.com/6230892/752864/css/fonts.css"
+      href="https://cdn.twilio-assets.com/fonts/twilio.css"
     />,
     <link
       key="colfax"
       rel="stylesheet"
       type="text/css"
-      href="https://cdn.dev.twilio-assets.com/sendgrid.css"
+      href="https://cdn.twilio-assets.com/fonts/sendgrid.css"
     />,
     <link key="gfonts" rel="preconnect" href="https://fonts.gstatic.com" />,
     <link

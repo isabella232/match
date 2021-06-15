@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-icons-twilio",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0",
   "description": "Twilio Match Design System Icons",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",
@@ -18,22 +18,20 @@
     "directory": "packages/match-icons/twilio"
   },
   "publishConfig": {
-    "access": "public",
-    "scripts": {
-      "postinstall": "node tools/fetch-streamline.cjs"
-    }
+    "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && yarn convert && yarn fetch-streamline",
-    "clean": "rm -rf generated streamline",
+    "build": "yarn clean && yarn convert",
+    "clean": "rm -rf generated",
     "convert": "svgr -d generated svg",
-    "fetch-streamline": "node tools/fetch-streamline.cjs",
-    "publish": "yarn npm publish --tolerate-republish"
+    "publish": "yarn npm publish --tolerate-republish",
+    "fetch-streamline": "rm -rf streamline && yarn postinstall",
+    "postinstall": "node tools/fetch-streamline.cjs"
   },
   "devDependencies": {
     "@svgr/cli": "5.5.0",
-    "@types/react-dom": "17.0.6",
-    "@types/react-is": "^17.0.0",
+    "@types/react-dom": "17.0.7",
+    "@types/react-is": "^17.0.1",
     "prop-types": "15.7.2",
     "react-dom": "17.0.2",
     "react-is": "17.0.2",

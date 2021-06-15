@@ -1,6 +1,16 @@
 import { ResponsiveValue } from "styled-system";
+import { iconSizes } from "@twilio-labs/match-tokens";
 
-export interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
+export type IconSizeOptions =
+  | keyof typeof iconSizes
+  | `${string}em`
+  | `${string}px`
+  | `${string}rem`;
+
+export type IconSizeProp = ResponsiveValue<IconSizeOptions>;
+
+// This should always match IconProps from @twilio-labs/match-icons-core/src/index.d.ts
+export type IconComponentProp = React.FC<{
   color?:
     | "white"
     | "baseRed"
@@ -32,6 +42,4 @@ export interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
   marginRight?: ResponsiveValue<string>;
   marginBottom?: ResponsiveValue<string>;
   marginLeft?: ResponsiveValue<string>;
-}
-
-export type IconType = React.FC<IconProps>;
+}>;

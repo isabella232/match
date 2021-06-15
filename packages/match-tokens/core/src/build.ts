@@ -17,11 +17,11 @@ function getStyleDictionaryConfig(brand: string) {
         files: [
           {
             format: "match/module",
-            destination: "index.js",
+            destination: "index.mjs",
           },
           {
             format: "match/common-js",
-            destination: "index.cjs",
+            destination: "index.js",
           },
           {
             format: "match/type-declaration",

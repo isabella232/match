@@ -110,7 +110,7 @@
       }
     },
     {
-      "files": ["website/**/*.{ts,tsx}", "plugins/**/*.{ts,tsx}"],
+      "files": ["website/**/*.{ts,tsx}"],
       "rules": {
         "import/prefer-default-export": "off",
         "import/no-default-export": "off",

@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-logos-core",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0",
   "description": "Twilio Match Design System Logos",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",
@@ -23,8 +23,8 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "devDependencies": {
-    "@types/react-dom": "17.0.6",
-    "@types/react-is": "^17.0.0",
+    "@types/react-dom": "17.0.7",
+    "@types/react-is": "^17.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-is": "17.0.2",

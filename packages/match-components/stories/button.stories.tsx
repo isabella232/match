@@ -17,6 +17,7 @@ export default {
   argTypes: {
     children: { table: { disable: true } },
     variant: { table: { disable: true } },
+    icon: { table: { disable: true } },
     size: {
       options: Object.values(ButtonSize),
       control: { type: "select" },
@@ -66,13 +67,14 @@ Inverse.parameters = {
 
 export const IconWithText = Template.bind({});
 IconWithText.args = {
-  children: ["Download ", <DownloadIcon decorative key="downloadicon" />],
+  icon: DownloadIcon,
 };
 
 export const IconOnly = Template.bind({});
 IconOnly.args = {
   size: ButtonSize.ICON,
-  children: <ExpandIcon title="Expand" />,
+  children: "Expand",
+  icon: ExpandIcon,
 };
 IconOnly.argTypes = {
   size: { control: { disable: true } },

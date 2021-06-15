@@ -8,6 +8,14 @@ const children = `
 <h3>Hello World</h3>
 <hr/>
 <p><a href="#foo">Hello</a> world</p>
+<ol>
+<li>Hello</li>
+<li>World</li>
+</ol>
+<ul>
+<li>Hello</li>
+<li>World</li>
+</ul>
 `.trim();
 
 export default {

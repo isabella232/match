@@ -16,6 +16,10 @@ export default {
   output: [
     {
       file: pkg.publishConfig.main,
+      format: "cjs",
+    },
+    {
+      file: pkg.publishConfig.module,
       format: "esm",
     },
   ],

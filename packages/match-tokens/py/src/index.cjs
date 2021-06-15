@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const ejs = require("ejs");
-const SendGridDesignTokens = require("@twilio-labs/match-tokens/sendgrid/index.cjs");
-const TwilioDesignTokens = require("@twilio-labs/match-tokens/twilio/index.cjs");
+const SendGridDesignTokens = require("@twilio-labs/match-tokens/sendgrid");
+const TwilioDesignTokens = require("@twilio-labs/match-tokens/twilio");
 const pkg = require("../package.json");
 
 const src = "./templates";

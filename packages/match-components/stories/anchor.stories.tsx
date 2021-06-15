@@ -14,6 +14,7 @@ export default {
   argTypes: {
     children: { table: { disable: true } },
     variant: { table: { disable: true } },
+    icon: { table: { disable: true } },
     noUnderline: {
       control: { type: "boolean" },
     },
@@ -23,11 +24,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<AnchorProps> = (args) => (
-  <p>
-    <Anchor {...args} />
-  </p>
-);
+const Template: Story<AnchorProps> = (args) => <Anchor {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -56,13 +53,13 @@ External.args = {
 
 export const PrimaryIcon = Template.bind({});
 PrimaryIcon.args = {
-  children: ["Ahoy ", <OutboundIcon decorative key="outboundicon" />],
+  icon: OutboundIcon,
 };
 
 export const InverseIcon = Template.bind({});
 InverseIcon.args = {
   variant: AnchorVariant.INVERSE,
-  children: ["Ahoy ", <OutboundIcon decorative key="outboundicon" />],
+  icon: OutboundIcon,
 };
 InverseIcon.parameters = {
   backgrounds: { default: "Darkest" },
@@ -71,5 +68,5 @@ InverseIcon.parameters = {
 export const TextIcon = Template.bind({});
 TextIcon.args = {
   variant: AnchorVariant.TEXT,
-  children: ["Ahoy ", <OutboundIcon decorative key="outboundicon" />],
+  icon: OutboundIcon,
 };

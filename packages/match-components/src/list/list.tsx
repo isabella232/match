@@ -24,6 +24,6 @@ List.defaultProps = {
 };
 
 List.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
   variant: PropTypes.oneOf(Object.values(ListVariant)),
+  inverse: PropTypes.bool,
 };

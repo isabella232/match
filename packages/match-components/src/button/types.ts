@@ -1,4 +1,4 @@
-import { MarginProps } from "@twilio-labs/match-props";
+import { MarginProps, IconComponentProp } from "@twilio-labs/match-props";
 import { ButtonVariant, ButtonSize, ButtonType } from "./constants";
 
 export interface ButtonProps
@@ -8,6 +8,7 @@ export interface ButtonProps
   variant?: `${ButtonVariant}`;
   type?: `${ButtonType}`;
   size?: `${ButtonSize}`;
+  icon?: IconComponentProp;
   /** Should the button include an animated prompt? */
   prompt?: boolean;
   /** A URL to route to. The button's 'type' attribute will be ignored. */

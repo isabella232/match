@@ -5,17 +5,13 @@ import parse, {
 } from "html-react-parser";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import {
-  Anchor,
-  AnchorVariant,
-  Code,
-  Heading,
-  HeadingVariant,
-  Paragraph,
-  Separator,
-  SeparatorVariant,
-} from "..";
-import { RichTextProps } from "./types";
+import { Anchor, AnchorVariant } from "../anchor";
+import { Code } from "../code";
+import { Heading, HeadingVariant } from "../heading";
+import { Paragraph } from "../paragraph";
+import { Separator, SeparatorVariant } from "../separator";
+import { List, ListItem, ListVariant } from "../list";
+import type { RichTextProps } from "./types";
 
 export const RichText: React.FC<RichTextProps> = ({ children, inverse }) => {
   const options: HTMLReactParserOptions = {
@@ -63,6 +59,20 @@ export const RichText: React.FC<RichTextProps> = ({ children, inverse }) => {
                 {domToReact(children, options)}
               </Paragraph>
             );
+          case "OL":
+            return (
+              <List inverse={inverse} variant={ListVariant.NUMBERED}>
+                {domToReact(children, options)}
+              </List>
+            );
+          case "UL":
+            return (
+              <List inverse={inverse} variant={ListVariant.BULLETED}>
+                {domToReact(children, options)}
+              </List>
+            );
+          case "LI":
+            return <ListItem>{domToReact(children, options)}</ListItem>;
         }
       }
     },

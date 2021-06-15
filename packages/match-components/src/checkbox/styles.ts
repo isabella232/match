@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { space, variant } from "styled-system";
 import { StyledIcon } from "@twilio-labs/match-primitives";
 import { CheckboxSize } from "./constants";
-import {
+import type {
   StyledCheckboxProps,
   StyledCheckboxWrapperProps,
   StyledCheckboxLabelProps,

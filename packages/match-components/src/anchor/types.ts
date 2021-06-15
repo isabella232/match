@@ -1,4 +1,4 @@
-import { MarginProps } from "@twilio-labs/match-props";
+import { MarginProps, IconComponentProp } from "@twilio-labs/match-props";
 import { AnchorVariant, AnchorTarget } from "./constants";
 
 export interface AnchorProps
@@ -6,6 +6,7 @@ export interface AnchorProps
     React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
   variant?: `${AnchorVariant}`;
+  icon?: IconComponentProp;
   /** A URL to route to. */
   href: string;
   /** Defaults to '_blank' for external links */

@@ -33,10 +33,10 @@ jobs:
       # Bootstrap Match
       - name: Install Node dependencies
         run: yarn install --immutable
-      - name: Bootstrap
-        run: yarn bootstrap
         env:
           STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
+      - name: Bootstrap
+        run: yarn bootstrap
 
       # Test
       - name: Run prettier check

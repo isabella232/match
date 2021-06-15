@@ -27,10 +27,10 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install Node dependencies
         run: yarn install --immutable
-      - name: Build packages
-        run: yarn build:all
         env:
           STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
+      - name: Build packages
+        run: yarn build:all
 
       # Publish NPM Packages
       - name: Publish packages

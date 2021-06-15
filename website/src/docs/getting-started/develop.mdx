@@ -16,61 +16,18 @@ description: Installation and usage instructions for developing with Match.
 | [react-is](https://www.npmjs.com/package/react-is)      | 17.x    |
 | [react-uid](https://www.npmjs.com/package/react-is)     | 2.x     |
 | [styled-components](https://www.styled-components.com/) | 5.x     |
+| [styled-system](https://styled-system.com/)             | 5.x     |
 
 ```shell
-npm install --save prop-types react react-dom react-is react-uid styled-components
+npm install --save prop-types react react-dom react-is react-uid styled-components styled-system
 ```
 
-## 2. Configure GitHub Package Registry
-
-The Match packages are hosted on the GitHub Package Registry and require some additional configuration to install.
-
-### Authentication
-
-Begin by generating a [personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) on GitHub with the `read:packages` permission.
-
-For Yarn v2 and up, add the folowing to the `.yarnrc.yml` file in your home folder.
-
-```yaml
-npmRegistries:
-  "https://npm.pkg.github.com":
-    npmAuthToken: REPLACE-THIS-WITH-YOUR-ACCESS-TOKEN
-```
-
-For NPM and Yarn v1.x, run the following command. Use your access token when prompted for your password.
-
-```shell
-npm login --registry=https://npm.pkg.github.com
-```
-
-### Project Settings
-
-For Yarn 2 and up, add the following to the .yarnrc.yml file in the root of your project:
-
-```yaml
-npmScopes:
-  twilio-labs:
-    npmRegistryServer: "https://npm.pkg.github.com"
-```
-
-For Yarn 1, add the following to the .yarnrc file in the root of your project.
-
-```
-"@twilio-labs:registry" "https://npm.pkg.github.com"
-```
-
-For NPM, add the following to the .npmrc file in the root of your project.
-
-```
-@twilio-labs:registry=https://npm.pkg.github.com
-```
-
-## 3. Install Match packages
+## 2. Install Match packages
 
 Install the following package so you can consume Match’s tokens and themes to build custom page sections.
 
 **Package:** @twilio-labs/match<br />
-**Version:** 1.0.0-alpha.4
+**Version:** 1.0.0
 
 ```bash
 npm install --save @twilio-labs/match

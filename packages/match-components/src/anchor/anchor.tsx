@@ -16,26 +16,19 @@ const secureExternalLink = (
 };
 
 export const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
-  ({ children, ...props }, ref) => {
+  ({ children, icon: Icon, ...props }, ref) => {
     return (
       <StyledAnchor ref={ref} {...secureExternalLink(props.href)} {...props}>
-        {React.Children.map(children, (child) => {
-          if (typeof child === "string") {
-            return child.trim();
-          }
-          if (
-            React.isValidElement(child) &&
-            child.type["displayName"].endsWith("Icon")
-          ) {
-            return React.cloneElement(child, {
-              color: "currentColor",
-              size: "0.75em",
-              marginBottom: "0.15em",
-              marginLeft: "0.5em",
-            });
-          }
-          return child;
-        })}
+        {children}
+        {Icon && (
+          <Icon
+            decorative={true}
+            color="currentColor"
+            size="0.75em"
+            marginBottom="0.15em"
+            marginLeft="0.5em"
+          />
+        )}
       </StyledAnchor>
     );
   }
@@ -45,6 +38,7 @@ Anchor.displayName = "Anchor";
 
 Anchor.propTypes = {
   ...marginPropTypes,
+  icon: PropTypes.func,
   children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(Object.values(AnchorVariant)),
   href: PropTypes.string.isRequired,

@@ -1,13 +1,27 @@
 const { writeFileSync, appendFileSync, mkdirSync } = require("fs");
 const path = require("path");
+const fs = require("fs");
 const svgr = require("@svgr/core").default;
 const svgrConfig = require("@twilio-labs/match-icons-core/svgr/config.cjs");
 const niceName = require("@twilio-labs/match-icons-core/svgr/nice-name.cjs");
 const getSVGs = require("./get-svgs.cjs");
 const iconList = require("./icon-list.cjs");
 
+// Try to get ENV vars from .env.local for Next.js projects
+if (
+  process.env.PROJECT_CWD &&
+  fs.existsSync(path.join(process.env.PROJECT_CWD, ".env.local"))
+) {
+  require("dotenv").config({
+    path: path.join(process.env.PROJECT_CWD, ".env.local"),
+  });
+}
+
 const streamlineConfiguration = {
-  secret: process.env.STREAMLINE_SECRET,
+  secret:
+    process.env.STREAMLINE_SECRET ||
+    process.env.SECRET_STREAMLINE ||
+    process.env.SECRET_STREAMLINE_SECRET,
   families: ["streamline-regular"],
 };
 

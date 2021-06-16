@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-icons-twilio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Twilio Match Design System Icons",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",
@@ -42,7 +42,8 @@
   "dependencies": {
     "@svgr/core": "5.5.0",
     "@svgr/plugin-jsx": "5.5.0",
-    "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core"
+    "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core",
+    "dotenv": "10.0.0"
   },
   "peerDependencies": {
     "prop-types": "15.x",

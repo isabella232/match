@@ -5577,6 +5577,7 @@ __metadata:
     "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core"
     "@types/react-dom": 17.0.7
     "@types/react-is": ^17.0.1
+    dotenv: 10.0.0
     prop-types: 15.7.2
     react-dom: 17.0.2
     react-is: 17.0.2
@@ -5860,7 +5861,7 @@ __metadata:
   peerDependencies:
     "@twilio-labs/match-icons-product": 1.0.0
     "@twilio-labs/match-icons-sendgrid": 1.0.0
-    "@twilio-labs/match-icons-twilio": 1.0.0
+    "@twilio-labs/match-icons-twilio": 1.0.1
     "@twilio-labs/match-logos-brand": 1.0.0
     "@twilio-labs/match-logos-color": 1.0.0
     "@twilio-labs/match-logos-mono": 1.0.0
@@ -12155,6 +12156,13 @@ __metadata:
   peerDependencies:
     webpack: ^1 || ^2 || ^3 || ^4
   checksum: 21bfe5dd6a669ad9a64669ed7ada53e0036f7c97f55c43c07dd846bf6ddb963224139a25c667346f1a168b0e59e560ae87eac642edb30947bb2fa4ec0017ecb7
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:10.0.0":
+  version: 10.0.0
+  resolution: "dotenv@npm:10.0.0"
+  checksum: f412c5fe8c24fbe313d302d2500e247ba8a1946492db405a4de4d30dd0eb186a88a43f13c958c5a7de303938949c4231c56994f97d05c4bc1f22478d631b4005
   languageName: node
   linkType: hard
 

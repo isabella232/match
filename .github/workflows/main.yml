@@ -1,9 +1,23 @@
-name: PR Checks
+name: Main
 
-on: pull_request
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build_and_tests:
+  update_release_draft:
+    runs-on: ubuntu-latest
+    steps:
+      # Drafts your next Release notes as Pull Requests are merged into "master"
+      - uses: release-drafter/release-drafter@v5
+        with:
+          # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
+          config-name: release-drafter-config.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  chromatic:
     runs-on: ubuntu-latest
     steps:
       # Chromatic requires full git history
@@ -38,18 +52,6 @@ jobs:
       - name: Bootstrap
         run: yarn bootstrap
 
-      # Test
-      - name: Run prettier check
-        run: yarn prettier:check
-      - name: Run eslint
-        run: yarn lint:js
-      - name: Run stylelint
-        run: yarn lint:css
-      - name: Run type checker
-        run: yarn type-check
-      - name: Run tests
-        run: yarn test:ci
-
       # Upload to Chromatic
       - name: Build Storybook
         run: yarn build:storybook
@@ -59,5 +61,6 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: ./build
+          autoAcceptChanges: "main"
         env:
           CHROMATIC_STORYBOOK_VERSION: react@6.3.0-rc.5

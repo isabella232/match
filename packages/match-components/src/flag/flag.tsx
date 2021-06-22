@@ -11,6 +11,15 @@ const flagSizeMap = {
   [FlagSize.LARGE]: "l",
 };
 
+// bug in html-loader that prevents CommonJS module from being flattened: https://github.com/webpack-contrib/html-loader/issues/203
+const resolveCommonModule = (module: { default: string } | string) => {
+  if (typeof module === "object") {
+    module = module.default;
+  }
+
+  return module;
+};
+
 export const Flag: React.FC<FlagProps> = ({
   size = FlagSize.NORMAL,
   code,
@@ -22,9 +31,15 @@ export const Flag: React.FC<FlagProps> = ({
   const alt = !decorative
     ? codeList.find(({ alpha2 }) => alpha2 === countryCode)?.countryName
     : undefined;
+
   return (
     <StyledFlag flagSize={size}>
-      <img src={url} alt={alt} aria-hidden={Boolean(decorative)} {...props} />
+      <img
+        src={resolveCommonModule(url)}
+        alt={alt}
+        aria-hidden={Boolean(decorative)}
+        {...props}
+      />
     </StyledFlag>
   );
 };

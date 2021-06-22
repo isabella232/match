@@ -31,6 +31,7 @@
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "clsx": "1.1.1",
+    "flagpack-core": "1.1.2",
     "formik": "2.2.9",
     "fuse.js": "6.4.6",
     "gatsby": "3.7.1",

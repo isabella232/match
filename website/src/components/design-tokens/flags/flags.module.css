@@ -1,0 +1,14 @@
+.flagWrapper {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-auto-flow: row dense;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  margin: 40px 0;
+}
+
+.flag {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 8px;
+}

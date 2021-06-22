@@ -3,11 +3,7 @@ export * from "./button";
 export * from "./card";
 export * from "./checkbox";
 export * from "./code";
-/**
- * Flag component breaks docusaurus 🦖💔
- * TODO: restore Flag after completion of Project Wombat
- */
-// export * from "./flag";
+export * from "./flag";
 export * from "./form";
 export * from "./grid";
 export * from "./heading";

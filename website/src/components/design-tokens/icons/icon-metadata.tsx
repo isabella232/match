@@ -14,6 +14,7 @@ export const iconMetadata: iconMetadataType = {
   ChevronDownIcon: { category: "Action" },
   ChevronUpIcon: { category: "Action" },
   CloseIcon: { category: "Action" },
+  CodeBracketIcon: { category: "Action" },
   CopyIcon: { category: "Action" },
   DownloadIcon: { category: "Action" },
   ExpandIcon: { category: "Action" },

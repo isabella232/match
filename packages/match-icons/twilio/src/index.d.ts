@@ -64,6 +64,7 @@ export const WirelessIcon: IconType;
 
 // Generated SVG Icons
 export const BulletCheckIcon: IconType;
+export const CodeBracketIcon: IconType;
 export const CopyIcon: IconType;
 export const CubesIcon: IconType;
 export const EngagementIcon: IconType;

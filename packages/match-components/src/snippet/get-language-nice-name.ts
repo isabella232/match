@@ -16,6 +16,5 @@ const niceNameMap = {
 };
 
 export const getLanguageNiceName = (language: `${SnippetLanguage}`): string => {
-  if (language in niceNameMap) return niceNameMap[language];
-  return language;
+  return niceNameMap[language];
 };

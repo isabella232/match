@@ -16,4 +16,23 @@ module.exports = {
     ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/.jest/file-mock.ts",
   },
+  collectCoverageFrom: ["<rootDir>/packages/**/*.{ts,tsx}"],
+  coveragePathIgnorePatterns: [
+    "<rootDir>/packages/match-tokens/",
+    "<rootDir>/packages/match-props/",
+    "<rootDir>/packages/(?:.+?)/dist/",
+    "<rootDir>/packages/(?:.+?)/stories/",
+    "<rootDir>/packages/(?:.+?)/styles.ts",
+    "<rootDir>/packages/(?:.+?)/index.ts",
+    "<rootDir>/packages/(?:.+?)/constants.ts",
+    "<rootDir>/packages/(?:.+?)/*.d.ts",
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100,
+    },
+  },
 };

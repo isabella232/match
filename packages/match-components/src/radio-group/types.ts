@@ -8,7 +8,7 @@ export interface RadioProps
   label: string;
   value: string;
   /** Sets the size of the radio button */
-  size?: RadioSize;
+  size?: `${RadioSize}`;
   /** Disables the radio button. */
   disabled?: boolean;
   /** Sets the radio button as readonly. */
@@ -28,11 +28,11 @@ export interface StyledRadioProps {
   disabled?: boolean;
   readOnly?: boolean;
   checked?: boolean;
-  radioSize?: RadioSize;
+  radioSize?: `${RadioSize}`;
 }
 
 export interface StyledRadioWrapperProps extends MarginProps {
-  radioSize?: RadioSize;
+  radioSize?: `${RadioSize}`;
 }
 
 export interface RadioGroupProps
@@ -42,7 +42,7 @@ export interface RadioGroupProps
   /** Sets the label for the group*/
   groupLabel: string;
   /** Sets the size of the radio group */
-  size?: RadioSize;
+  size?: `${RadioSize}`;
   /** Sets the group to be required*/
   required?: boolean;
   /** Sets the group to disables*/

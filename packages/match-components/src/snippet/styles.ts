@@ -4,11 +4,7 @@ import { Tooltip, TooltipArrow } from "reakit/Tooltip";
 import styled, { css } from "styled-components";
 import { variant, compose, space } from "styled-system";
 import { StyledIcon } from "@twilio-labs/match-primitives";
-import {
-  SnippetVariant,
-  SnippetLanguage,
-  SnippetHorizontalScroll,
-} from "./constants";
+import { SnippetVariant, SnippetLanguage } from "./constants";
 import type {
   StyledSnippetProps,
   StyledSnippetGroupProps,
@@ -355,8 +351,8 @@ export const StyledSnippetBody = styled.div<StyledSnippetProps>`
         padding: ${themeGet("space.scale20")} 0;
       }
 
-      ::before,
-      ::after {
+      &::before,
+      &::after {
         position: absolute;
         top: ${themeGet("space.scale60")};
         bottom: ${themeGet("space.scale60")};
@@ -366,12 +362,20 @@ export const StyledSnippetBody = styled.div<StyledSnippetProps>`
         pointer-events: none;
       }
 
-      ::before {
+      &::before {
         left: ${themeGet("space.scale100")};
       }
 
-      ::after {
+      &::after {
         right: ${themeGet("space.scale100")};
+      }
+
+      &[data-scroll-x="0"]::before {
+        opacity: 0;
+      }
+
+      &[data-scroll-x="100"]::after {
+        opacity: 0;
       }
     `}
 
@@ -410,21 +414,6 @@ export const StyledSnippetBody = styled.div<StyledSnippetProps>`
                 ${theme.colors.gray10} 0%,
                 rgba(244,244,246,0) 100%
               )`,
-            },
-          },
-        },
-      }),
-      variant({
-        prop: "horizontalScrollPos",
-        variants: {
-          [SnippetHorizontalScroll.LEFT]: {
-            ["::before"]: {
-              opacity: 0,
-            },
-          },
-          [SnippetHorizontalScroll.RIGHT]: {
-            ["::after"]: {
-              opacity: 0,
             },
           },
         },

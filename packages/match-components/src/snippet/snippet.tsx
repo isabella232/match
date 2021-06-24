@@ -14,11 +14,7 @@ import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
 import ruby from "react-syntax-highlighter/dist/cjs/languages/prism/ruby";
 import shell from "react-syntax-highlighter/dist/cjs/languages/prism/shell-session";
 import { marginPropTypes } from "@twilio-labs/match-props";
-import {
-  SnippetLanguage,
-  SnippetVariant,
-  SnippetHorizontalScroll,
-} from "./constants";
+import { SnippetLanguage, SnippetVariant } from "./constants";
 import { getLanguageNiceName } from "./get-language-nice-name";
 import { SnippetActions } from "./snippet-actions";
 import {
@@ -61,25 +57,20 @@ export const Snippet: React.FC<SnippetProps> = ({
   marginLeft,
   ...props
 }) => {
-  const [horizontalScrollPos, setHorizontalScrollPos] = React.useState(
-    SnippetHorizontalScroll.LEFT
-  );
+  const [scrollX, setScrollX] = React.useState(0);
   const lineCount = children.split(/\n/g).length;
   const lineNumberWidth = lineCount.toString().length;
   const isSingleLine = Boolean(!wrapLines && lineCount === 1);
   const isShell = Boolean(language === SnippetLanguage.SHELL);
 
   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
-    if (e.currentTarget.scrollLeft === 0) {
-      setHorizontalScrollPos(SnippetHorizontalScroll.LEFT);
-    } else if (
-      e.currentTarget.scrollLeft ===
-      e.currentTarget.scrollWidth - e.currentTarget.clientWidth
-    ) {
-      setHorizontalScrollPos(SnippetHorizontalScroll.RIGHT);
-    } else {
-      setHorizontalScrollPos(SnippetHorizontalScroll.MIDDLE);
-    }
+    setScrollX(
+      Math.round(
+        (e.currentTarget.scrollLeft /
+          (e.currentTarget.scrollWidth - e.currentTarget.clientWidth)) *
+          100
+      )
+    );
   };
 
   return (
@@ -108,13 +99,14 @@ export const Snippet: React.FC<SnippetProps> = ({
       <StyledSnippetBody
         variant={variant}
         isSingleLine={isSingleLine}
-        horizontalScrollPos={horizontalScrollPos}
+        data-scroll-x={isSingleLine ? scrollX.toString() : undefined}
       >
         <StyledHighlighter
           tabIndex={0}
           variant={variant}
           language={language}
           maxLines={maxLines}
+          data-testid="scrollable"
           onScroll={isSingleLine ? handleScroll : undefined}
         >
           <SyntaxHighlighter

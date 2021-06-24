@@ -54,15 +54,15 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
       const { validity } = innerRef.current;
 
-      if (validity.valueMissing) {
+      if (required && !Boolean(value)) {
         return "This field is required";
       }
 
-      if (validity.tooShort) {
+      if (minLength && value && value.length < minLength) {
         return `Must be at least ${minLength} characters long`;
       }
 
-      if (validity.tooLong) {
+      if (maxLength && value && value.length > maxLength) {
         return `Must be less than ${maxLength} characters long`;
       }
 

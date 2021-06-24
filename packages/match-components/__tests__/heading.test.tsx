@@ -7,6 +7,15 @@ import { Heading, HeadingVariant } from "../src";
 const HeadingWithTheme = withTheme()(Heading);
 
 describe("Heading", () => {
+  test("different variant and as", () => {
+    const { getByText } = render(
+      <HeadingWithTheme variant="h2" as="h1">
+        Ahoy
+      </HeadingWithTheme>
+    );
+    expect(getByText(/ahoy/i).tagName.toLowerCase()).toBe("h1");
+  });
+
   test("accessibility violations", async () => {
     const { container } = render(
       <HeadingWithTheme variant={HeadingVariant.H1}>

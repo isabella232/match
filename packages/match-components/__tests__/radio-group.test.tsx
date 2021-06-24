@@ -1,80 +1,123 @@
-import { render, waitFor } from "@testing-library/react";
+import { screen, render, waitFor } from "@testing-library/react";
 import { Formik } from "formik";
 import { axe } from "jest-axe";
 import * as React from "react";
 import { withTheme } from "@twilio-labs/match-themes";
 import { Radio, RadioGroup } from "../src";
 
-const RadioWithTheme = withTheme()(Radio);
-
-describe("Radio", () => {
-  test("radio additional text", () => {
-    const { getByText } = render(
-      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioWithTheme
-          name="example"
-          value="example"
-          label="Example"
-          additional="additional"
-        />
-      </Formik>
-    );
-    expect(getByText(/additional/i)).toBeVisible();
-  });
-
-  test("radio accessibility violations", async () => {
-    const { container } = render(
-      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioWithTheme
-          name="example"
-          value="example"
-          label="example"
-          additional="Additional Text"
-        />
-      </Formik>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-
-  test("radio readonly accessibility violations", async () => {
-    const { container } = render(
-      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioWithTheme
-          readOnly
-          name="example"
-          value="example"
-          label="Example"
-          additional="Additional Text"
-        />
-      </Formik>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-
-  test("radio disabled accessibility violations", async () => {
-    const { container } = render(
-      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioWithTheme
-          disabled
-          name="example"
-          label="example"
-          value="example"
-          additional="Additional text"
-        />
-      </Formik>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
-
 const RadioGroupWithTheme = withTheme()(RadioGroup);
 
 describe("Radio Group", () => {
-  test("additional message", () => {
-    const { getByText } = render(
+  test("different names warning", async () => {
+    const warn = jest.spyOn(console, "warn").mockImplementation(() => {});
+    render(
+      <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
+        <RadioGroupWithTheme groupLabel="Select your favorite fruit:">
+          <Radio name="example" value="apples" label="apples" />
+          <Radio name="example_bad" value="bananas" label="bananas" />
+          <Radio name="example" value="oranges" label="oranges" />
+        </RadioGroupWithTheme>
+      </Formik>
+    );
+    expect(warn).toBeCalled();
+    warn.mockRestore();
+  });
+
+  test("required", async () => {
+    render(
+      <Formik
+        initialValues={{ example: "" }}
+        validateOnMount
+        initialTouched={{ example: true }}
+        onSubmit={() => {}}
+      >
+        <RadioGroupWithTheme groupLabel="Select your favorite fruit:" required>
+          <Radio name="example" value="apples" label="apples" />
+          <Radio name="example" value="bananas" label="bananas" />
+          <Radio name="example" value="oranges" label="oranges" />
+        </RadioGroupWithTheme>
+      </Formik>
+    );
+    await waitFor(() =>
+      expect(screen.getByRole("alert")).toHaveTextContent(
+        /this field is required/i
+      )
+    );
+  });
+
+  test("custom validation", async () => {
+    render(
+      <Formik
+        validateOnMount
+        initialValues={{ example: "apples" }}
+        initialTouched={{ example: true }}
+        onSubmit={() => {}}
+      >
+        <RadioGroupWithTheme
+          groupLabel="Select your favorite fruit:"
+          required
+          validate={(value) => {
+            if (value === "apples") {
+              return "yeah right";
+            }
+          }}
+        >
+          <Radio name="example" value="apples" label="apples" />
+          <Radio name="example" value="bananas" label="bananas" />
+          <Radio name="example" value="oranges" label="oranges" />
+        </RadioGroupWithTheme>
+      </Formik>
+    );
+    await waitFor(() =>
+      expect(screen.getByRole("alert")).toHaveTextContent(/yeah right/i)
+    );
+  });
+
+  test("no validation", async () => {
+    const validate = jest.fn();
+    render(
+      <Formik
+        initialValues={{ example: "" }}
+        validateOnMount
+        initialTouched={{ example: true }}
+        onSubmit={() => {}}
+      >
+        <RadioGroupWithTheme
+          groupLabel="Select your favorite fruit:"
+          validate={validate}
+          noValidate
+        >
+          <Radio name="example" value="apples" label="apples" />
+          <Radio name="example" value="bananas" label="bananas" />
+          <Radio name="example" value="oranges" label="oranges" />
+        </RadioGroupWithTheme>
+      </Formik>
+    );
+    await waitFor(() => expect(validate).not.toHaveBeenCalled());
+  });
+
+  test("valid", async () => {
+    const validate = jest.fn();
+    render(
+      <Formik
+        initialValues={{ example: "apples" }}
+        validateOnMount
+        initialTouched={{ example: true }}
+        onSubmit={() => {}}
+        validate={validate}
+      >
+        <RadioGroupWithTheme groupLabel="Select your favorite fruit:">
+          <Radio name="example" value="apples" label="apples" />
+          <Radio name="example" value="bananas" label="bananas" />
+          <Radio name="example" value="oranges" label="oranges" />
+        </RadioGroupWithTheme>
+      </Formik>
+    );
+    await waitFor(() => expect(validate).toHaveBeenCalled());
+  });
+
+  test("accessibility violations", async () => {
+    const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
         <RadioGroupWithTheme groupLabel="Example" additional="additional">
           <Radio
@@ -98,61 +141,18 @@ describe("Radio Group", () => {
         </RadioGroupWithTheme>
       </Formik>
     );
-    expect(getByText(/additional/i)).toBeVisible();
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 
-  test("error message", async () => {
-    const { getByRole } = render(
-      <Formik
-        initialValues={{ example: "" }}
-        validateOnMount
-        initialTouched={{ example: true }}
-        onSubmit={() => {}}
-      >
-        <RadioGroupWithTheme groupLabel="Select your favorite fruit:" required>
-          <Radio name="example" value="apples" label="apples" />
-          <Radio name="example" value="bananas" label="bananas" />
-          <Radio name="example" value="oranges" label="oranges" />
-        </RadioGroupWithTheme>
-      </Formik>
-    );
-    await waitFor(() =>
-      expect(getByRole("alert")).toHaveTextContent(/this field is required/i)
-    );
-  });
-
-  test("error message with custom validation", async () => {
-    const { getByRole } = render(
-      <Formik
-        validateOnMount
-        initialValues={{ example: "apples" }}
-        initialTouched={{ example: true }}
-        onSubmit={() => {}}
-      >
-        <RadioGroupWithTheme
-          groupLabel="Select your favorite fruit:"
-          required
-          validate={(value) => {
-            if (value === "apples") {
-              return "yeah right";
-            }
-          }}
-        >
-          <Radio name="example" value="apples" label="apples" />
-          <Radio name="example" value="bananas" label="bananas" />
-          <Radio name="example" value="oranges" label="oranges" />
-        </RadioGroupWithTheme>
-      </Formik>
-    );
-    await waitFor(() =>
-      expect(getByRole("alert")).toHaveTextContent(/yeah right/i)
-    );
-  });
-
-  test("accessibility violations", async () => {
+  test("small accessibility violations", async () => {
     const { container } = render(
       <Formik initialValues={{ example: "" }} onSubmit={() => {}}>
-        <RadioGroupWithTheme groupLabel="Example" additional="additional">
+        <RadioGroupWithTheme
+          groupLabel="Example"
+          additional="additional"
+          size="small"
+        >
           <Radio
             name="example"
             value="apples"
@@ -245,7 +245,7 @@ describe("Radio Group", () => {
   });
 
   test("error accessibility violations", async () => {
-    const { container, getByRole } = render(
+    const { container } = render(
       <Formik
         initialValues={{ example: "" }}
         validateOnMount
@@ -278,7 +278,7 @@ describe("Radio Group", () => {
         </RadioGroupWithTheme>
       </Formik>
     );
-    await waitFor(() => expect(getByRole("alert")).toBeInTheDocument());
+    await waitFor(() => screen.findByRole("alert"));
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

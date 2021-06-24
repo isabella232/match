@@ -22,7 +22,6 @@ export const SnippetActions: React.FC<SnippetActionsProps> = ({
   const [copyMessage, setCopyMessage] = React.useState("");
 
   const copyToClipboard = () => {
-    if (!navigator || !navigator.clipboard) return;
     return navigator.clipboard
       .writeText(code)
       .then(() => setCopyMessage("Copied"))

@@ -6,7 +6,7 @@ export const useTheme = (): TwilioThemeShape | SendGridThemeShape => {
   const context = React.useContext(ThemeContext);
   if (!context) {
     throw new Error(
-      "[useHook]: must be used within a @twilio-labs/match-themes provider"
+      "[useHook]: must be used within a @twilio-labs/match theme provider"
     );
   }
   return context;

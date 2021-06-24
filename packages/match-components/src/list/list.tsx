@@ -7,7 +7,7 @@ import { ListVariant, ListSize } from "./constants";
 export const List = React.forwardRef<
   HTMLUListElement | HTMLOListElement,
   ListProps
->(({ variant = ListVariant.BULLETED, ...props }, ref) => (
+>(({ variant, ...props }, ref) => (
   <StyledList
     ref={ref}
     as={variant === ListVariant.NUMBERED ? "ol" : "ul"}

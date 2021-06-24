@@ -28,12 +28,12 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "devDependencies": {
-    "@types/node": "15.12.2",
+    "@types/node": "15.12.4",
     "colortranslator": "1.7.1",
     "csstype": "3.0.8",
     "style-dictionary": "3.0.1",
     "ts-node": "10.0.0",
     "tsconfig-match": "workspace:configs/tsconfig",
-    "typescript": "4.3.2"
+    "typescript": "4.3.4"
   }
 }

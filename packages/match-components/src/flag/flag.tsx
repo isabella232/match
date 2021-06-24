@@ -1,6 +1,7 @@
-import { isoToCountryCode, imageUrl, codeList } from "flagpack-core";
+import { isoToCountryCode, imageUrl } from "flagpack-core";
 import * as PropTypes from "prop-types";
 import * as React from "react";
+import { resolveCommonModule } from "./utils";
 import { FlagSize } from "./constants";
 import { StyledFlag } from "./styles";
 import type { FlagProps } from "./types";
@@ -11,27 +12,15 @@ const flagSizeMap = {
   [FlagSize.LARGE]: "l",
 };
 
-// bug in html-loader that prevents CommonJS module from being flattened: https://github.com/webpack-contrib/html-loader/issues/203
-const resolveCommonModule = (module: { default: string } | string) => {
-  if (typeof module === "object") {
-    module = module.default;
-  }
-
-  return module;
-};
-
 export const Flag: React.FC<FlagProps> = ({
-  size = FlagSize.NORMAL,
+  size,
   code,
   decorative,
   ...props
 }) => {
   const countryCode = isoToCountryCode(code).toUpperCase();
-  const url = imageUrl(countryCode, flagSizeMap[size]);
-  const alt = !decorative
-    ? codeList.find(({ alpha2 }) => alpha2 === countryCode)?.countryName
-    : undefined;
-
+  const url = size && imageUrl(countryCode, flagSizeMap[size]);
+  const alt = !decorative ? isoToCountryCode(code, "countryName") : undefined;
   return (
     <StyledFlag flagSize={size}>
       <img

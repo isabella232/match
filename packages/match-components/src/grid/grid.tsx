@@ -10,7 +10,7 @@ import {
 import { StyledGrid, StyledCell } from "./styles";
 import type { GridProps, CellProps } from "./types";
 
-const Grid: React.FC<GridProps> = (props) => <StyledGrid {...props} />;
+export const Grid: React.FC<GridProps> = (props) => <StyledGrid {...props} />;
 
 Grid.propTypes = {
   ...marginPropTypes,
@@ -32,7 +32,7 @@ Grid.propTypes = {
 
 Grid.displayName = "Grid";
 
-const Cell: React.FC<CellProps> = (props) => <StyledCell {...props} />;
+export const Cell: React.FC<CellProps> = (props) => <StyledCell {...props} />;
 
 Cell.propTypes = {
   ...marginPropTypes,
@@ -47,6 +47,3 @@ Cell.propTypes = {
 };
 
 Cell.displayName = "Cell";
-
-export { Grid, Cell };
-export type { GridProps, CellProps };

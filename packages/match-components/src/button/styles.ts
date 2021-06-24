@@ -16,13 +16,13 @@ export const StyledPrompt = styled.span`
 
   &::before {
     display: inline-block;
-    width: ${({ theme }) => theme.iconSizes.small};
-    height: ${({ theme }) => theme.iconSizes.small};
+    width: ${themeGet("iconSizes.small")};
+    height: ${themeGet("iconSizes.small")};
     border-color: currentColor;
     border-style: solid;
     border-width: 0;
-    border-right-width: ${({ theme }) => theme.borderWidths.light};
-    border-bottom-width: ${({ theme }) => theme.borderWidths.light};
+    border-right-width: ${themeGet("borderWidths.light")};
+    border-bottom-width: ${themeGet("borderWidths.light")};
     transform: ${({ theme: { iconSizes, borderWidths } }) =>
       `rotate(-45deg)
       translateX(calc(${iconSizes.small} - ${borderWidths.light}))
@@ -32,11 +32,11 @@ export const StyledPrompt = styled.span`
 
   &::after {
     display: inline-block;
-    width: ${({ theme }) => theme.iconSizes.small};
+    width: ${themeGet("iconSizes.small")};
     margin-left: 0.25em;
     border-color: currentColor;
     border-style: solid;
-    border-width: ${({ theme }) => theme.borderWidths.light} 0 0;
+    border-width: ${themeGet("borderWidths.light")} 0 0;
     transform: ${({ theme: { iconSizes, borderWidths } }) =>
       `translateX(calc(-${iconSizes.small} / 2))
       translateY(calc(-${iconSizes.small} / 2 + ${borderWidths.light} / 2))
@@ -44,7 +44,7 @@ export const StyledPrompt = styled.span`
     content: "";
   }
 
-  @media ${({ theme }) => theme.mediaQueries.medium} {
+  @media ${themeGet("mediaQueries.medium")} {
     &::before {
       transform: ${({ theme }) =>
         `rotate(-45deg)
@@ -64,31 +64,31 @@ export const StyledButton = styled(Button).withConfig({
   shouldForwardProp: (prop, validate) => validate(prop),
 })<ButtonProps>`
   display: inline-block;
-  font-weight: ${({ theme }) => theme.fontWeightMedium};
-  font-family: ${({ theme }) => theme.fontFamilyText};
+  font-weight: ${themeGet("fontWeights.medium")};
+  font-family: ${themeGet("fontFamilies.text")};
   text-align: center;
   text-decoration: none;
   border-style: solid;
-  border-width: ${({ theme }) => theme.borderWidths.light};
+  border-width: ${themeGet("borderWidths.light")};
   border-radius: ${themeGet("radii.base")};
   cursor: pointer;
   transition-duration: 0.2s;
   transition-property: color, background, border;
   transition-timing-function: ease-in;
-  line-height: ${({ theme }) => theme.fontSizes.scale100};
+  line-height: ${themeGet("fontSizes.scale100")};
 
   &:focus {
     outline-width: 2px;
     outline-style: solid;
-    outline-color: ${({ theme }) => theme.colorBlue60};
+    outline-color: ${themeGet("colors.blue60")};
     outline-offset: 2px;
     -moz-outline-radius: 4px;
   }
 
   &:disabled {
-    color: ${({ theme }) => theme.colorGray80};
-    background: ${({ theme }) => theme.colorGray10};
-    border-color: ${({ theme }) => theme.colorGray10};
+    color: ${themeGet("colors.gray80")};
+    background: ${themeGet("colors.gray10")};
+    border-color: ${themeGet("colors.gray10")};
     cursor: not-allowed;
   }
 

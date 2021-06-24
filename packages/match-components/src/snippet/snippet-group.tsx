@@ -46,9 +46,10 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
         React.isValidElement(child) &&
         tab.selectedId === seed(child.props.language + child.props.label)
     );
-    if (!React.isValidElement(activeTab)) return;
-    setCode(activeTab.props.children);
-    setGithubLink(activeTab.props.githubLink);
+    setCode(React.isValidElement(activeTab) && activeTab.props.children);
+    setGithubLink(
+      React.isValidElement(activeTab) && activeTab.props.githubLink
+    );
   }, [tab.selectedId, children, seed]);
 
   return (

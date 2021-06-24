@@ -10,13 +10,14 @@ describe("List", () => {
   test("bulleted variant", async () => {
     const { container } = render(
       <ListWithTheme variant={ListVariant.BULLETED}>
-        <ListItem>Ahoy</ListItem>
+        <ListItem additional="additional text">Ahoy</ListItem>
         <ListItem>World</ListItem>
       </ListWithTheme>
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
   test("numbered variant", async () => {
     const { container } = render(
       <ListWithTheme variant={ListVariant.NUMBERED}>
@@ -27,6 +28,7 @@ describe("List", () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
   test("icon variant", async () => {
     const { container } = render(
       <ListWithTheme variant={ListVariant.ICON}>

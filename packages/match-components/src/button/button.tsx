@@ -1,30 +1,21 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import { marginPropTypes, IconSizeProp } from "@twilio-labs/match-props";
+import { marginPropTypes, IconSizeOptions } from "@twilio-labs/match-props";
 import { ButtonVariant, ButtonSize, ButtonType } from "./constants";
 import { StyledButton, StyledPrompt } from "./styles";
 import type { ButtonProps } from "./types";
 
-const getIconSize = (size: ButtonSize): IconSizeProp => {
-  switch (size) {
-    case ButtonSize.NORMAL:
-      return "medium";
-    case ButtonSize.SMALL:
-      return "small";
-    case ButtonSize.ICON:
-      return "large";
-  }
+const iconSizes: { [size: string]: IconSizeOptions } = {
+  [ButtonSize.NORMAL]: "medium",
+  [ButtonSize.SMALL]: "small",
+  [ButtonSize.ICON]: "large",
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ type, prompt, children, size, icon: Icon, ...props }, ref) => {
-    if (props.download && !props.href) {
-      console.warn("[Button]: Href must be provided for a download link.");
-    }
-
     if (
       size === ButtonSize.ICON &&
-      !Boolean(Icon) &&
+      Boolean(Icon) &&
       typeof children !== "string"
     ) {
       console.warn(
@@ -35,15 +26,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <StyledButton
         ref={ref}
-        forwardedAs={props.href ? "a" : "button"}
-        type={!props.href ? type : undefined}
+        forwardedAs={Boolean(props.href) ? "a" : "button"}
+        type={!Boolean(props.href) ? type : undefined}
         size={size}
         {...props}
       >
         {size !== ButtonSize.ICON && children}
         {Icon && (
           <Icon
-            size={getIconSize(size as ButtonSize)}
+            size={size && iconSizes[size]}
             color="currentColor"
             marginLeft={size !== ButtonSize.ICON ? "0.5em" : undefined}
             decorative={

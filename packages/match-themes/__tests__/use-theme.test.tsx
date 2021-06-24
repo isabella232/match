@@ -9,7 +9,7 @@ const HookExampleComponent = (): React.ReactElement => {
 };
 
 describe("useTheme", () => {
-  test("should be able to access the theme object", (): void => {
+  test("should be able to access the theme object", () => {
     const { colorBrand } = TwilioDesignTokens;
     const { getByTestId } = render(
       <TwilioTheme>
@@ -17,5 +17,14 @@ describe("useTheme", () => {
       </TwilioTheme>
     );
     expect(getByTestId("color")).toHaveTextContent(colorBrand);
+  });
+
+  test("should throw error", () => {
+    const error = jest.spyOn(console, "error").mockImplementation(() => {});
+    expect(() => render(<HookExampleComponent />)).toThrow(
+      "[useHook]: must be used within a @twilio-labs/match theme provider"
+    );
+    expect(error).toBeCalled();
+    error.mockRestore();
   });
 });

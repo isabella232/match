@@ -106,7 +106,8 @@
       },
       "rules": {
         "@typescript-eslint/no-empty-function": "off",
-        "import/no-default-export": "off"
+        "import/no-default-export": "off",
+        "react/display-name": "off"
       }
     },
     {

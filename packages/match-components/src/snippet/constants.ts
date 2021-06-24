@@ -17,9 +17,3 @@ export enum SnippetLanguage {
   GO = "go",
   GROOVY = "groovy",
 }
-
-export enum SnippetHorizontalScroll {
-  LEFT = "left",
-  MIDDLE = "middle",
-  RIGHT = "right",
-}

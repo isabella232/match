@@ -5,6 +5,7 @@ dist
 build
 public
 generated
+coverage
 streamline
 node_modules
 *.ejs

@@ -8,12 +8,11 @@ export const Label: React.FC<LabelProps> = ({
   children,
   required,
   requiredStyleAtEnd,
-  as,
   size,
   ...props
 }) => {
   return (
-    <StyledLabel required={required} as={as} labelSize={size} {...props}>
+    <StyledLabel required={required} labelSize={size} {...props}>
       {required && !requiredStyleAtEnd && <StyledRequired />}
       {children}
       {required && requiredStyleAtEnd && <StyledRequired />}

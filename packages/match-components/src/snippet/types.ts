@@ -1,9 +1,5 @@
 import { MarginProps } from "@twilio-labs/match-props";
-import {
-  SnippetVariant,
-  SnippetLanguage,
-  SnippetHorizontalScroll,
-} from "./constants";
+import { SnippetVariant, SnippetLanguage } from "./constants";
 
 export interface SnippetProps extends MarginProps {
   children: string;
@@ -51,7 +47,6 @@ export interface StyledSnippetProps extends MarginProps {
   variant?: `${SnippetVariant}`;
   language?: `${SnippetLanguage}`;
   isSingleLine?: boolean;
-  horizontalScrollPos?: SnippetHorizontalScroll;
   maxLines?: number;
   showLineNumbers?: boolean;
 }

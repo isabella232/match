@@ -47,27 +47,28 @@ export const CheckboxGroup = React.forwardRef<
     const name = children[0].props.name;
     const seed = useUIDSeed();
     const { touched, errors } = useFormikContext();
-    const values: Array<string> = [];
     const describedby: string[] = [];
+    const childrenArray = React.Children.toArray(children);
 
     // Make sure the errored control has been touched
-    const hasError = React.Children.toArray(children).some(
+    const hasError = childrenArray.some(
       (child) =>
         React.isValidElement(child) &&
         touched[child.props.name] &&
         errors[child.props.name]
     );
 
-    children &&
-      children.map((child) => {
-        // Checkboxes should have unique values
-        if (values.includes(child.props.value)) {
-          console.warn(
-            "[CheckboxGroup]: All checkboxes within a group should have unique values"
-          );
-        }
-        values.push(child.props.value);
-      });
+    if (
+      new Set(
+        childrenArray
+          .map((child) => React.isValidElement(child) && child.props.value)
+          .filter(Boolean)
+      ).size !== childrenArray.length
+    ) {
+      console.warn(
+        "[CheckboxGroup]: All checkboxes within a group should have unique values"
+      );
+    }
 
     hasError && describedby.push(seed(`${name}_error`));
     Boolean(additional) && describedby.push(seed(`${name}_additional`));
@@ -94,7 +95,7 @@ export const CheckboxGroup = React.forwardRef<
             required={Boolean(required)}
             as="legend"
             size={
-              Boolean(size == CheckboxSize.NORMAL)
+              Boolean(size === CheckboxSize.NORMAL)
                 ? LabelSize.NORMAL
                 : LabelSize.SMALL
             }
@@ -140,4 +141,8 @@ CheckboxGroup.propTypes = {
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   additional: PropTypes.string,
+};
+
+CheckboxGroup.defaultProps = {
+  size: CheckboxSize.NORMAL,
 };

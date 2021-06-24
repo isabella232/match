@@ -28,7 +28,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       disabled,
       required,
       hideLabel,
-      rows = 3,
+      rows,
       resize,
       validate: validateOverride,
       noValidate,
@@ -51,9 +51,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     const shadowRef = React.useRef<HTMLTextAreaElement>(null);
 
     const resizeTextarea = () => {
-      if (shadowRef.current) {
-        setHeight(shadowRef.current.scrollHeight);
-      }
+      shadowRef.current && setHeight(shadowRef.current.scrollHeight);
     };
 
     const validate = (value: string) => {
@@ -61,17 +59,15 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 
       if (validateOverride) return validateOverride(value);
 
-      const { validity } = innerRef.current;
-
-      if (validity.valueMissing) {
+      if (required && !Boolean(value)) {
         return "This field is required";
       }
 
-      if (validity.tooShort) {
+      if (minLength && value && value.length < minLength) {
         return `Must be at least ${minLength} characters long`;
       }
 
-      if (validity.tooLong) {
+      if (maxLength && value && value.length > maxLength) {
         return `Must be less than ${maxLength} characters long`;
       }
     };
@@ -148,7 +144,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             }
             aria-invalid={hasError}
             aria-disabled={disabled}
-            style={{ height: Boolean(height) ? `${height}px` : undefined }}
+            smartHeight={height}
             {...field}
             {...props}
           />

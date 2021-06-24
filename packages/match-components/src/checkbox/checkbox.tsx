@@ -48,7 +48,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
         required &&
         (currentValue === undefined || currentValue.length === 0)
       ) {
-        return "This field is required.";
+        return "This field is required";
       }
     };
     const [field, meta] = useField({

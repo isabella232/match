@@ -12,7 +12,7 @@ const ThemeConsumerExample: React.FC = () => {
   );
 };
 
-describe("withTheme provider", () => {
+describe("withTheme", () => {
   test("should render the Twilio brand color", (): void => {
     const { colorBrand } = TwilioDesignTokens;
     const WithTwilioTheme = withTheme()(ThemeConsumerExample);

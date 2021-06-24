@@ -14,16 +14,11 @@ export interface ThemeConsumerProps {
 export const ThemeConsumer = ({
   children,
   ...props
-}: ThemeConsumerProps): React.ReactElement => {
-  if (!children || typeof children !== "function") {
-    throw new Error("[ThemeConsumer]: You must pass a function as children");
-  }
-  return (
-    <WrappedThemeConsumer>
-      {(theme) => children({ ...props, theme })}
-    </WrappedThemeConsumer>
-  );
-};
+}: ThemeConsumerProps): React.ReactElement => (
+  <WrappedThemeConsumer>
+    {(theme) => children({ ...props, theme })}
+  </WrappedThemeConsumer>
+);
 
 ThemeConsumer.propTypes = {
   children: PropTypes.func,

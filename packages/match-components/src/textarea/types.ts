@@ -40,6 +40,7 @@ export interface StyledTextareaContainerProps {
 }
 
 export interface StyledTextareaProps {
-  rows: number;
+  rows?: number;
   resize?: `${TextareaResizeOptions}`;
+  smartHeight?: number;
 }

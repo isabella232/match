@@ -39,14 +39,23 @@ export const RadioGroup = React.forwardRef<
     },
     ref
   ) => {
-    const name = children[0].props.name;
-    children.map((child) => {
-      if (child.props.name != name) {
+    const name = React.useMemo(() => {
+      const childrenNames = [
+        ...new Set(
+          React.Children.toArray(children)
+            .map((child) => React.isValidElement(child) && child.props.name)
+            .filter(Boolean)
+        ),
+      ];
+
+      if (childrenNames.length > 1) {
         console.warn(
           "[RadioGroup]: All Radios within a group should use the same name"
         );
       }
-    });
+
+      return childrenNames[0];
+    }, [children]);
     const { touched, errors } = useFormikContext();
     const hasError = touched[name] && errors[name];
 

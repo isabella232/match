@@ -57,13 +57,16 @@ export const StyledTextarea = styled.textarea<StyledTextareaProps>`
     resize === TextareaResizeOptions.MANUAL ? "vertical" : "none"};
 
   ${({
-    rows,
+    rows = 3,
+    smartHeight,
     theme: {
       components: { form },
       space,
     },
   }) => css`
-    height: calc(${rows}em * ${form.textareaLineHeight} + ${space.scale60} * 2);
+    height: ${Boolean(smartHeight)
+      ? `${smartHeight}px`
+      : `calc(${rows}em * ${form.textareaLineHeight} + ${space.scale60} * 2)`};
     min-height: calc(3em * ${form.textareaLineHeight} + ${space.scale60} * 2);
     max-height: calc(10em * ${form.textareaLineHeight} + ${space.scale60} * 2);
   `};

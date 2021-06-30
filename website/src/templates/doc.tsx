@@ -20,7 +20,7 @@ export const pageQuery = graphql`
       frontmatter {
         image {
           childImageSharp {
-            gatsbyImageData(width: 380)
+            gatsbyImageData(width: 380, placeholder: BLURRED)
           }
         }
       }

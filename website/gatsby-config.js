@@ -56,6 +56,7 @@ module.exports = {
         defaultQuality: 90,
       },
     },
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-remark-images",
     "gatsby-transformer-sharp",

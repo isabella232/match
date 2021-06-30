@@ -87,6 +87,8 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
                     alt=""
                     layout="fixed"
                     aria-hidden="true"
+                    loading="eager"
+                    placeholder="blurred"
                   />
                   Figma
                   <img
@@ -104,6 +106,8 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
                     alt=""
                     layout="fixed"
                     aria-hidden="true"
+                    loading="eager"
+                    placeholder="blurred"
                   />
                   Github
                   <img
@@ -118,7 +122,12 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         </div>
         {gatsbyImage && (
           <div className={image}>
-            <GatsbyImage image={gatsbyImage} alt="" aria-hidden="true" />
+            <GatsbyImage
+              image={gatsbyImage}
+              loading="eager"
+              alt=""
+              aria-hidden="true"
+            />
           </div>
         )}
       </Section>

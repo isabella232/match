@@ -4,7 +4,7 @@ import * as React from "react";
 import { Flag, FlagProps, FlagSize } from "../src/flag";
 
 export default {
-  title: "Components/Flag",
+  title: "Foundation/Flags",
   component: Flag,
   args: {
     size: FlagSize.NORMAL,

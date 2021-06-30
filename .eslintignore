@@ -6,6 +6,7 @@ build
 public
 generated
 streamline
+coverage
 .cache
 
 # Match Tokens

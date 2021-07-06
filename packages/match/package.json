@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Twilio Match Design System",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",
@@ -26,6 +26,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "peerDependencies": {
+    "@twilio-labs/match-flags": "1.0.0",
     "@twilio-labs/match-icons-product": "1.0.0",
     "@twilio-labs/match-icons-sendgrid": "1.0.0",
     "@twilio-labs/match-icons-twilio": "1.0.1",
@@ -46,6 +47,7 @@
     "@babel/runtime": "7.14.6",
     "@emotion/core": "11.0.0",
     "@storybook/react": "6.3.2",
+    "@twilio-labs/match-flags": "workspace:packages/match-flags",
     "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core",
     "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product",
     "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid",
@@ -82,12 +84,14 @@
     "@twilio-labs/match-props": "workspace:packages/match-props",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
-    "flagpack-core": "1.1.2",
     "html-react-parser": "1.2.7",
     "react-syntax-highlighter": "15.4.3",
     "reakit": "1.3.8"
   },
   "peerDependenciesMeta": {
+    "@twilio-labs/match-flags": {
+      "optional": true
+    },
     "@twilio-labs/match-icons-product": {
       "optional": true
     },

@@ -1,0 +1,49 @@
+{
+  "name": "@twilio-labs/match-flags",
+  "version": "1.0.0",
+  "description": "Twilio Match Design System Flags Library",
+  "author": "Twilio Inc.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "generated",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "packages/match-flags"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf generated",
+    "compile": "node templates/build.cjs",
+    "publish": "yarn npm publish --tolerate-republish"
+  },
+  "devDependencies": {
+    "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
+    "@types/lodash": "^4",
+    "@types/react": "17.0.11",
+    "@types/styled-components": "5.1.10",
+    "@types/styled-system": "5.1.11",
+    "ejs": "3.1.6",
+    "flagpack-core": "1.1.2",
+    "lodash": "4.17.21",
+    "react": "17.0.2",
+    "styled-components": "5.3.0",
+    "styled-system": "5.1.5"
+  },
+  "peerDependencies": {
+    "prop-types": "15.x",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "react-is": "17.x",
+    "styled-components": "5.x",
+    "styled-system": "5.x"
+  }
+}

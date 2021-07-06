@@ -4,7 +4,7 @@ title: Flag
 section: Components
 description: "A flag is a visual symbol that represents a country, state, union, or concept. Flags are in alphabetical order and have their ISO code at the end of their name. Svgs are adapted from this open source project: https://flagpack.xyz/"
 figma: figma.com/file/dJZlEiQ5KmoxGSRRWHFuug/Flags
-github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/flag
+github: https://github.com/twilio-labs/match/tree/main/packages/match-flags/
 ---
 
 ## Code
@@ -12,16 +12,15 @@ github: https://github.com/twilio-labs/match/tree/main/packages/match-components
 ### Usage
 
 ```jsx
-import { Flag, flagCodes } from "@twilio-labs/match/components";
+import { RainbowFlag } from "@twilio-labs/match-flags";
 
-const Component = () => <Flag code={"US"} />;
+const Component = () => <RainbowFlag />;
 ```
 
 ### Props
 
 | Prop        | Type     | Default  | Description                                                                                            |
 | ----------- | -------- | -------- | ------------------------------------------------------------------------------------------------------ |
-| code        | string   | null     | The specified flag code, see https://flagpack.xyz/docs/flag-index for reference                        |
 | size?       | FlagSize | 'normal' | 'small', 'normal', 'large'                                                                             |
 | decorative? | boolean  | false    | Determines if icon is decorative or informative. Decorative icon titles are not read by screenreaders. |
 
@@ -34,15 +33,15 @@ const Component = () => <Flag code={"US"} />;
 `alt` text is provided for accessibility compliance unless the icon is specifically designated as decorative.
 
 ```jsx live
-<Flag code={"US"} decorative={false} />
+<RainbowFlag decorative={true} />
 ```
 
 ### Sizes
 
 ```jsx live
 <>
-  <Flag code={"RAINBOW"} size={"small"} /> <Flag code={"RAINBOW"} />{" "}
-  <Flag code={"RAINBOW"} size={"large"} />
+  <RainbowFlag size="small" /> <RainbowFlag size="normal" />{" "}
+  <RainbowFlag size="large" />
 </>
 ```
 
@@ -50,14 +49,6 @@ const Component = () => <Flag code={"US"} />;
 
 Flags of the countries and territories of the world.<br />
 Sizes: Small (12px), Normal (16px), Large (24px)
-
-```jsx
-<div>
-  {flagCodes.map(({ alpha2 }) => (
-    <Flag code={alpha2} />
-  ))}
-</div>
-```
 
 import { Flags } from "../../components/design-tokens/flags";
 

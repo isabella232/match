@@ -1,0 +1,67 @@
+import * as React from "react";
+import * as PropTypes from "prop-types";
+import styled from "styled-components";
+import { variant } from "styled-system";
+import { StyledFlag } from "../src/flag";
+
+const Styled<%-name%> = styled.span`
+  ${variant({
+    prop: "flagSize",
+    variants: {
+      small: {
+        backgroundImage: `url("data:image/svg+xml,<%-small%>")`
+      },
+      normal: {
+        backgroundImage: `url("data:image/svg+xml,<%-medium%>")`
+      },
+      large: {
+        backgroundImage: `url("data:image/svg+xml,<%-large%>")`
+      }
+    }
+  })}
+`;
+
+export const <%-name%> = ({ size, decorative, ...props }) => (
+  <StyledFlag flagSize={size} {...props}>
+    <Styled<%-name%>
+      role="img"
+      aria-label="<%-countryName%>"
+      aria-hidden={decorative}
+      flagSize={size}
+    />
+  </StyledFlag>
+);
+
+<%-name%>.propTypes = {
+  size: PropTypes.oneOf([
+    "small",
+    "normal",
+    "large"
+  ]),
+  decorative: PropTypes.bool,
+  margin: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+  marginTop: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+  marginRight: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+  marginBottom: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+  marginLeft: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
+};
+
+<%-name%>.defaultProps = {
+  size: "normal",
+  decorative: false,
+};

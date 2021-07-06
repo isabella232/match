@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-components",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Twilio Match Design System Components",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",
@@ -34,7 +34,6 @@
     "@twilio-labs/match-props": "^1.1.0",
     "@twilio-labs/match-themes": "^1.1.0",
     "@twilio-labs/match-tokens": "^1.1.0",
-    "flagpack-core": "1.x",
     "formik": "2.x",
     "html-react-parser": "1.x",
     "prop-types": "15.x",
@@ -75,7 +74,6 @@
     "@types/styled-system__theme-get": "5.0.1",
     "core-js": "3.15.2",
     "csstype": "3.0.8",
-    "flagpack-core": "1.1.2",
     "formik": "2.2.9",
     "html-react-parser": "1.2.7",
     "jest": "27.0.6",

@@ -1,0 +1,17 @@
+import { ResponsiveValue } from "styled-system";
+
+export interface FlagProps extends React.HTMLAttributes<HTMLSpanElement> {
+  size?: ResponsiveValue<"small" | "normal" | "large">;
+  decorative?: boolean;
+  margin?: ResponsiveValue<string>;
+  marginTop?: ResponsiveValue<string>;
+  marginRight?: ResponsiveValue<string>;
+  marginBottom?: ResponsiveValue<string>;
+  marginLeft?: ResponsiveValue<string>;
+}
+
+export type FlagType = React.FC<FlagProps>;
+
+<% components.forEach((component) => { -%>
+export const <%=component%>: FlagType;
+<% }); -%>

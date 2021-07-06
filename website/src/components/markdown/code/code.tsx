@@ -16,6 +16,7 @@ import {
 import { ChimeLogo } from "@twilio-labs/match-logos-color";
 import { AirbnbLogo } from "@twilio-labs/match-logos-mono";
 import { StyledBase } from "@twilio-labs/match-themes";
+import { RainbowFlag } from "@twilio-labs/match-flags";
 import { ThemeSwitcher } from "../../theme-switcher";
 import {
   snippet,
@@ -55,6 +56,7 @@ export const Code: React.FC<CodeProps> = ({
           DownloadIcon,
           AirbnbLogo,
           ChimeLogo,
+          RainbowFlag,
         }}
         language={lang}
         theme={prismTheme}

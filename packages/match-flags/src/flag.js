@@ -1,23 +1,21 @@
 import styled from "styled-components";
 import { compose, variant, space } from "styled-system";
-import { FlagSize } from "./constants";
-import type { StyledFlagProps } from "./types";
 
 /**
  * Flag styles adapted from react-flagpack:
  * https://github.com/Yummygum/react-flagpack/blob/main/src/Flag.scss
  */
-export const StyledFlag = styled.span<StyledFlagProps>`
+export const StyledFlag = styled.span`
   position: relative;
   display: inline-block;
   overflow: hidden;
   vertical-align: middle;
 
-  img {
+  [role="img"] {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-size: contain;
   }
 
   ::before {
@@ -40,7 +38,7 @@ export const StyledFlag = styled.span<StyledFlagProps>`
     variant({
       prop: "flagSize",
       variants: {
-        [FlagSize.SMALL]: {
+        small: {
           width: "16px",
           height: "12px",
           borderRadius: "1px",
@@ -48,7 +46,7 @@ export const StyledFlag = styled.span<StyledFlagProps>`
             borderRadius: "1px",
           },
         },
-        [FlagSize.NORMAL]: {
+        normal: {
           width: "21.33px",
           height: "16px",
           borderRadius: "1.5px",
@@ -56,7 +54,7 @@ export const StyledFlag = styled.span<StyledFlagProps>`
             borderRadius: "1.5px",
           },
         },
-        [FlagSize.LARGE]: {
+        large: {
           width: "32px",
           height: "24px",
           borderRadius: "2px",

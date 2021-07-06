@@ -10,7 +10,7 @@
     "website"
   ],
   "scripts": {
-    "bootstrap": "yarn build:tokens && yarn build:icons && yarn build:logos",
+    "bootstrap": "yarn build:tokens && yarn build:icons && yarn build:logos && yarn build:flags",
     "start:all": "concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -h www.local.twilio.com -p 6006",
     "start:website": "yarn workspace match-website start",
@@ -26,6 +26,7 @@
     "build:tokens": "yarn workspace @twilio-labs/match-tokens build",
     "build:icons": "yarn workspaces foreach --topological-dev --parallel --include '@twilio-labs/match-icons*' run build",
     "build:logos": "yarn workspaces foreach --topological-dev --parallel --include '@twilio-labs/match-logos*' run build",
+    "build:flags": "yarn workspace @twilio-labs/match-flags build",
     "build:storybook": "build-storybook -c .storybook -o ./build --loglevel error",
     "version:all": "yarn version check --interactive && yarn version apply --all",
     "publish:all": "yarn workspaces foreach --topological-dev run publish",

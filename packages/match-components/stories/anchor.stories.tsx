@@ -1,6 +1,6 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
 import * as React from "react";
-import { OutboundIcon } from "@twilio-labs/match-icons-twilio";
+import { OutboundIcon } from "@twilio-labs/match-icons/twilio";
 import { Anchor, AnchorProps, AnchorVariant } from "../src";
 
 export default {

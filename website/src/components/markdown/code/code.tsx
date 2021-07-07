@@ -12,9 +12,9 @@ import {
   OutboundIcon,
   ExpandIcon,
   DownloadIcon,
-} from "@twilio-labs/match-icons-twilio";
-import { ChimeLogo } from "@twilio-labs/match-logos-color";
-import { AirbnbLogo } from "@twilio-labs/match-logos-mono";
+} from "@twilio-labs/match-icons/twilio";
+import { ChimeLogo } from "@twilio-labs/match-logos/color";
+import { AirbnbLogo } from "@twilio-labs/match-logos/mono";
 import { StyledBase } from "@twilio-labs/match-themes";
 import { RainbowFlag } from "@twilio-labs/match-flags";
 import { ThemeSwitcher } from "../../theme-switcher";

@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import { axe } from "jest-axe";
 import * as React from "react";
 import { withTheme } from "@twilio-labs/match-themes";
-import { DownloadIcon } from "@twilio-labs/match-icons-twilio";
+import { DownloadIcon } from "@twilio-labs/match-icons/twilio";
 import { Anchor } from "../src";
 
 const AnchorWithTheme = withTheme()(Anchor);

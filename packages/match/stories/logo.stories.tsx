@@ -6,10 +6,10 @@ import type {
   LogoType,
   ColorLogoProps,
   ColorLogoType,
-} from "@twilio-labs/match-logos-core";
-import * as monoLogos from "@twilio-labs/match-logos-mono";
-import * as brandLogos from "@twilio-labs/match-logos-brand";
-import * as colorLogos from "@twilio-labs/match-logos-color";
+} from "@twilio-labs/match-logos";
+import * as monoLogos from "@twilio-labs/match-logos/mono";
+import * as brandLogos from "@twilio-labs/match-logos/brand";
+import * as colorLogos from "@twilio-labs/match-logos/color";
 
 export default {
   title: "Foundation/Logos",

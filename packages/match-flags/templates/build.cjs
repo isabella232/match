@@ -64,13 +64,6 @@ codeList.map(({ countryName, alpha2 }) => {
           )
           .toString()
       ),
-      medium: encodeSVG(
-        fs
-          .readFileSync(
-            require.resolve(`flagpack-core/svg/m/${alpha2}.svg`).replace()
-          )
-          .toString()
-      ),
       large: encodeSVG(
         fs
           .readFileSync(

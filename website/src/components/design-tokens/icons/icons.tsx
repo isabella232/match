@@ -1,9 +1,9 @@
 import Fuse from "fuse.js";
 import * as React from "react";
-import type { IconType } from "@twilio-labs/match-icons-core";
-import * as productIcons from "@twilio-labs/match-icons-product";
-import * as sendgridIcons from "@twilio-labs/match-icons-sendgrid";
-import * as twilioIcons from "@twilio-labs/match-icons-twilio";
+import type { IconType } from "@twilio-labs/match-icons/src";
+import * as productIcons from "@twilio-labs/match-icons/product";
+import * as sendgridIcons from "@twilio-labs/match-icons/sendgrid";
+import * as twilioIcons from "@twilio-labs/match-icons/twilio";
 import { ThemeVariants } from "@twilio-labs/match-themes";
 import { MatchContext } from "../../../context/match";
 import { IconItem } from "../../../types";
@@ -105,8 +105,8 @@ export const Icons: React.FC = () => {
           const categoryNameLower = categoryName.toLowerCase();
           const iconPackageName =
             categoryNameLower === "product"
-              ? "@twilio-labs/match-icons-product"
-              : `@twilio-labs/match-icons-${theme.toLowerCase()}`;
+              ? "@twilio-labs/match-icons/product"
+              : `@twilio-labs/match-icons/${theme.toLowerCase()}`;
           return (
             <div key={`${theme}.${categoryName}`} className={groupStyle}>
               <h2 id={categoryNameLower}>{categoryName} icons</h2>

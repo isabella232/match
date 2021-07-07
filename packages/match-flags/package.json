@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/match-flags",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Twilio Match Design System Flags Library",
   "author": "Twilio Inc.",
   "license": "Apache-2.0",

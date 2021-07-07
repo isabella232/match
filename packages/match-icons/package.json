@@ -1,0 +1,60 @@
+{
+  "name": "@twilio-labs/match-icons",
+  "version": "1.0.0",
+  "description": "Twilio Match Design System Icons",
+  "author": "Twilio Inc.",
+  "license": "Apache-2.0",
+  "main": "src/index.js",
+  "type": "module",
+  "types": "src/index.d.ts",
+  "files": [
+    "twilio",
+    "sendgrid",
+    "product",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "packages/match-icons/twilio"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn convert",
+    "clean": "rm -rf twilio/generated sendgrid/generated product/generated",
+    "convert": "yarn convert:twilio && yarn convert:sendgrid && yarn convert:product",
+    "convert:twilio": "svgr -d twilio/generated svg/twilio",
+    "convert:sendgrid": "svgr -d sendgrid/generated svg/sendgrid",
+    "convert:product": "svgr -d product/generated svg/product",
+    "publish": "yarn npm publish --tolerate-republish",
+    "fetch-streamline": "rm -rf twilio/vendor && yarn postinstall",
+    "postinstall": "node src/streamline/fetch-icons.cjs"
+  },
+  "devDependencies": {
+    "@svgr/cli": "5.5.0",
+    "@types/react-dom": "17.0.8",
+    "@types/react-is": "^17.0.1",
+    "prop-types": "15.7.2",
+    "react-dom": "17.0.2",
+    "react-is": "17.0.2",
+    "react-uid": "2.3.1",
+    "styled-components": "5.3.0",
+    "styled-system": "5.1.5"
+  },
+  "dependencies": {
+    "@svgr/core": "5.5.0",
+    "@svgr/plugin-jsx": "5.5.0",
+    "dotenv": "10.0.0"
+  },
+  "peerDependencies": {
+    "prop-types": "15.x",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "react-is": "17.x",
+    "react-uid": "2.x",
+    "styled-components": "5.x",
+    "styled-system": "5.x"
+  }
+}

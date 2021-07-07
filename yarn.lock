@@ -2276,6 +2276,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@humanwhocodes/config-array@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@humanwhocodes/config-array@npm:0.5.0"
+  dependencies:
+    "@humanwhocodes/object-schema": ^1.2.0
+    debug: ^4.1.1
+    minimatch: ^3.0.4
+  checksum: 44ee6a9f05d93dd9d5935a006b17572328ba9caff8002442f601736cbda79c580cc0f5a49ce9eb88fbacc5c3a6b62098357c2e95326cd17bb9f1a6c61d6e95e7
+  languageName: node
+  linkType: hard
+
+"@humanwhocodes/object-schema@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@humanwhocodes/object-schema@npm:1.2.0"
+  checksum: 40b75480376de8104d65f7c44a7dd76d30fb57823ca8ba3a3239b2b568323be894d93440578a72fd8e5e2cc3df3577ce0d2f0fe308b990dd51cf35392bf3c9a2
+  languageName: node
+  linkType: hard
+
 "@iarna/toml@npm:^2.2.5":
   version: 2.2.5
   resolution: "@iarna/toml@npm:2.2.5"
@@ -4825,10 +4843,7 @@ __metadata:
     "@testing-library/react": 12.0.0
     "@testing-library/user-event": 13.1.9
     "@twilio-labs/match-hooks": "workspace:packages/match-hooks"
-    "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core"
-    "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product"
-    "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid"
-    "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio"
+    "@twilio-labs/match-icons": "workspace:packages/match-icons"
     "@twilio-labs/match-primitives": "workspace:packages/match-primitives"
     "@twilio-labs/match-props": "workspace:packages/match-props"
     "@twilio-labs/match-themes": "workspace:packages/match-themes"
@@ -4866,7 +4881,7 @@ __metadata:
     "@styled-system/theme-get": 5.x
     "@twilio-labs/match-hooks": ^1.1.0
     "@twilio-labs/match-primitives": ^1.1.0
-    "@twilio-labs/match-props": ^1.1.0
+    "@twilio-labs/match-props": ^1.1.1
     "@twilio-labs/match-themes": ^1.1.0
     "@twilio-labs/match-tokens": ^1.1.0
     formik: 2.x
@@ -4932,80 +4947,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@twilio-labs/match-icons-core@workspace:packages/match-icons/core":
+"@twilio-labs/match-icons@workspace:packages/match-icons":
   version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-icons-core@workspace:packages/match-icons/core"
-  dependencies:
-    react: 17.0.2
-    react-dom: 17.0.2
-    react-is: 17.0.2
-    styled-components: 5.3.0
-    styled-system: 5.1.5
-  peerDependencies:
-    react: 17.x
-    styled-components: 5.x
-    styled-system: 5.x
-  languageName: unknown
-  linkType: soft
-
-"@twilio-labs/match-icons-product@workspace:packages/match-icons/product":
-  version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-icons-product@workspace:packages/match-icons/product"
-  dependencies:
-    "@svgr/cli": 5.5.0
-    "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core"
-    "@types/react-dom": 17.0.8
-    "@types/react-is": ^17.0.1
-    prop-types: 15.7.2
-    react-dom: 17.0.2
-    react-is: 17.0.2
-    react-uid: 2.3.1
-    styled-components: 5.3.0
-    styled-system: 5.1.5
-  peerDependencies:
-    prop-types: 15.x
-    react: 17.x
-    react-dom: 17.x
-    react-is: 17.x
-    react-uid: 2.x
-    styled-components: 5.x
-    styled-system: 5.x
-  languageName: unknown
-  linkType: soft
-
-"@twilio-labs/match-icons-sendgrid@workspace:packages/match-icons/sendgrid":
-  version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-icons-sendgrid@workspace:packages/match-icons/sendgrid"
-  dependencies:
-    "@svgr/cli": 5.5.0
-    "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core"
-    "@types/react-dom": 17.0.8
-    "@types/react-is": ^17.0.1
-    prop-types: 15.7.2
-    react-dom: 17.0.2
-    react-is: 17.0.2
-    react-uid: 2.3.1
-    styled-components: 5.3.0
-    styled-system: 5.1.5
-  peerDependencies:
-    prop-types: 15.x
-    react: 17.x
-    react-dom: 17.x
-    react-is: 17.x
-    react-uid: 2.x
-    styled-components: 5.x
-    styled-system: 5.x
-  languageName: unknown
-  linkType: soft
-
-"@twilio-labs/match-icons-twilio@workspace:packages/match-icons/twilio":
-  version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-icons-twilio@workspace:packages/match-icons/twilio"
+  resolution: "@twilio-labs/match-icons@workspace:packages/match-icons"
   dependencies:
     "@svgr/cli": 5.5.0
     "@svgr/core": 5.5.0
     "@svgr/plugin-jsx": 5.5.0
-    "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core"
     "@types/react-dom": 17.0.8
     "@types/react-is": ^17.0.1
     dotenv: 10.0.0
@@ -5026,85 +4974,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@twilio-labs/match-logos-brand@workspace:packages/match-logos/brand":
+"@twilio-labs/match-logos@workspace:packages/match-logos":
   version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-logos-brand@workspace:packages/match-logos/brand"
+  resolution: "@twilio-labs/match-logos@workspace:packages/match-logos"
   dependencies:
     "@svgr/cli": 5.5.0
-    "@twilio-labs/match-logos-core": "workspace:packages/match-logos/core"
+    "@types/react": 17.0.11
     "@types/react-dom": 17.0.8
     "@types/react-is": ^17.0.1
     prop-types: 15.7.2
-    react-dom: 17.0.2
-    react-is: 17.0.2
-    react-uid: 2.3.1
-    styled-components: 5.3.0
-    styled-system: 5.1.5
-  peerDependencies:
-    prop-types: 15.x
-    react: 17.x
-    react-dom: 17.x
-    react-is: 17.x
-    react-uid: 2.x
-    styled-components: 5.x
-    styled-system: 5.x
-  languageName: unknown
-  linkType: soft
-
-"@twilio-labs/match-logos-color@workspace:packages/match-logos/color":
-  version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-logos-color@workspace:packages/match-logos/color"
-  dependencies:
-    "@svgr/cli": 5.5.0
-    "@twilio-labs/match-logos-core": "workspace:packages/match-logos/core"
-    "@types/react-dom": 17.0.8
-    "@types/react-is": ^17.0.1
-    prop-types: 15.7.2
-    react-dom: 17.0.2
-    react-is: 17.0.2
-    react-uid: 2.3.1
-    styled-components: 5.3.0
-    styled-system: 5.1.5
-  peerDependencies:
-    prop-types: 15.x
-    react: 17.x
-    react-dom: 17.x
-    react-is: 17.x
-    react-uid: 2.x
-    styled-components: 5.x
-    styled-system: 5.x
-  languageName: unknown
-  linkType: soft
-
-"@twilio-labs/match-logos-core@workspace:packages/match-logos/core":
-  version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-logos-core@workspace:packages/match-logos/core"
-  dependencies:
-    "@types/react-dom": 17.0.8
-    "@types/react-is": ^17.0.1
     react: 17.0.2
-    react-dom: 17.0.2
-    react-is: 17.0.2
-    styled-components: 5.3.0
-    styled-system: 5.1.5
-  peerDependencies:
-    react: 17.x
-    react-dom: 17.x
-    react-is: 17.x
-    styled-components: 5.x
-    styled-system: 5.x
-  languageName: unknown
-  linkType: soft
-
-"@twilio-labs/match-logos-mono@workspace:packages/match-logos/mono":
-  version: 0.0.0-use.local
-  resolution: "@twilio-labs/match-logos-mono@workspace:packages/match-logos/mono"
-  dependencies:
-    "@svgr/cli": 5.5.0
-    "@twilio-labs/match-logos-core": "workspace:packages/match-logos/core"
-    "@types/react-dom": 17.0.8
-    "@types/react-is": ^17.0.1
-    prop-types: 15.7.2
     react-dom: 17.0.2
     react-is: 17.0.2
     react-uid: 2.3.1
@@ -5162,7 +5041,7 @@ __metadata:
     typescript: 4.3.4
   peerDependencies:
     "@styled-system/theme-get": 5.x
-    "@twilio-labs/match-props": ^1.1.0
+    "@twilio-labs/match-props": ^1.1.1
     "@twilio-labs/match-themes": ^1.1.0
     prop-types: 15.x
     react: 17.x
@@ -5258,14 +5137,8 @@ __metadata:
     "@twilio-labs/match-components": "workspace:packages/match-components"
     "@twilio-labs/match-flags": "workspace:packages/match-flags"
     "@twilio-labs/match-hooks": "workspace:packages/match-hooks"
-    "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core"
-    "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product"
-    "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid"
-    "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio"
-    "@twilio-labs/match-logos-brand": "workspace:packages/match-logos/brand"
-    "@twilio-labs/match-logos-color": "workspace:packages/match-logos/color"
-    "@twilio-labs/match-logos-core": "workspace:packages/match-logos/core"
-    "@twilio-labs/match-logos-mono": "workspace:packages/match-logos/mono"
+    "@twilio-labs/match-icons": "workspace:packages/match-icons"
+    "@twilio-labs/match-logos": "workspace:packages/match-logos"
     "@twilio-labs/match-primitives": "workspace:packages/match-primitives"
     "@twilio-labs/match-props": "workspace:packages/match-props"
     "@twilio-labs/match-themes": "workspace:packages/match-themes"
@@ -5293,13 +5166,6 @@ __metadata:
     tslib: 2.3.0
     typescript: 4.3.4
   peerDependencies:
-    "@twilio-labs/match-flags": 1.0.0
-    "@twilio-labs/match-icons-product": 1.0.0
-    "@twilio-labs/match-icons-sendgrid": 1.0.0
-    "@twilio-labs/match-icons-twilio": 1.0.1
-    "@twilio-labs/match-logos-brand": 1.0.0
-    "@twilio-labs/match-logos-color": 1.0.0
-    "@twilio-labs/match-logos-mono": 1.0.0
     formik: 2.x
     prop-types: 15.x
     react: 17.x
@@ -5308,21 +5174,6 @@ __metadata:
     react-uid: 2.x
     styled-components: 5.x
     styled-system: 5.x
-  peerDependenciesMeta:
-    "@twilio-labs/match-flags":
-      optional: true
-    "@twilio-labs/match-icons-product":
-      optional: true
-    "@twilio-labs/match-icons-sendgrid":
-      optional: true
-    "@twilio-labs/match-icons-twilio":
-      optional: true
-    "@twilio-labs/match-logos-brand":
-      optional: true
-    "@twilio-labs/match-logos-color":
-      optional: true
-    "@twilio-labs/match-logos-mono":
-      optional: true
   languageName: unknown
   linkType: soft
 
@@ -12628,7 +12479,57 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:7.29.0, eslint@npm:^7.20.0":
+"eslint@npm:7.30.0":
+  version: 7.30.0
+  resolution: "eslint@npm:7.30.0"
+  dependencies:
+    "@babel/code-frame": 7.12.11
+    "@eslint/eslintrc": ^0.4.2
+    "@humanwhocodes/config-array": ^0.5.0
+    ajv: ^6.10.0
+    chalk: ^4.0.0
+    cross-spawn: ^7.0.2
+    debug: ^4.0.1
+    doctrine: ^3.0.0
+    enquirer: ^2.3.5
+    escape-string-regexp: ^4.0.0
+    eslint-scope: ^5.1.1
+    eslint-utils: ^2.1.0
+    eslint-visitor-keys: ^2.0.0
+    espree: ^7.3.1
+    esquery: ^1.4.0
+    esutils: ^2.0.2
+    fast-deep-equal: ^3.1.3
+    file-entry-cache: ^6.0.1
+    functional-red-black-tree: ^1.0.1
+    glob-parent: ^5.1.2
+    globals: ^13.6.0
+    ignore: ^4.0.6
+    import-fresh: ^3.0.0
+    imurmurhash: ^0.1.4
+    is-glob: ^4.0.0
+    js-yaml: ^3.13.1
+    json-stable-stringify-without-jsonify: ^1.0.1
+    levn: ^0.4.1
+    lodash.merge: ^4.6.2
+    minimatch: ^3.0.4
+    natural-compare: ^1.4.0
+    optionator: ^0.9.1
+    progress: ^2.0.0
+    regexpp: ^3.1.0
+    semver: ^7.2.1
+    strip-ansi: ^6.0.0
+    strip-json-comments: ^3.1.0
+    table: ^6.0.9
+    text-table: ^0.2.0
+    v8-compile-cache: ^2.0.3
+  bin:
+    eslint: bin/eslint.js
+  checksum: 872f90844b164dd61ec1bb949d2e33e7fbd189e0652fabe2cbbd0bdce1e4cd7ed08e72fa213795a453ae39fe24460771800608e765febb9e778deb28b9db3cc1
+  languageName: node
+  linkType: hard
+
+"eslint@npm:^7.20.0":
   version: 7.29.0
   resolution: "eslint@npm:7.29.0"
   dependencies:
@@ -19410,12 +19311,8 @@ fsevents@^1.2.7:
     "@twilio-labs/match-components": "workspace:packages/match-components"
     "@twilio-labs/match-flags": "workspace:packages/match-flags"
     "@twilio-labs/match-hooks": "workspace:packages/match-hooks"
-    "@twilio-labs/match-icons-core": "workspace:packages/match-icons/core"
-    "@twilio-labs/match-icons-product": "workspace:packages/match-icons/product"
-    "@twilio-labs/match-icons-sendgrid": "workspace:packages/match-icons/sendgrid"
-    "@twilio-labs/match-icons-twilio": "workspace:packages/match-icons/twilio"
-    "@twilio-labs/match-logos-color": "workspace:packages/match-logos/color"
-    "@twilio-labs/match-logos-mono": "workspace:packages/match-logos/mono"
+    "@twilio-labs/match-icons": "workspace:packages/match-icons"
+    "@twilio-labs/match-logos": "workspace:packages/match-logos"
     "@twilio-labs/match-primitives": "workspace:packages/match-primitives"
     "@twilio-labs/match-props": "workspace:packages/match-props"
     "@twilio-labs/match-themes": "workspace:packages/match-themes"
@@ -19512,7 +19409,7 @@ fsevents@^1.2.7:
     babel-plugin-styled-components: 1.13.1
     concurrently: 6.2.0
     core-js: 3.15.2
-    eslint: 7.29.0
+    eslint: 7.30.0
     eslint-config-prettier: 8.3.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-eslint-comments: 3.2.0

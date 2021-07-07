@@ -1,0 +1,55 @@
+{
+  "name": "@twilio-labs/match-logos",
+  "version": "1.0.0",
+  "description": "Twilio Match Design System Logos",
+  "author": "Twilio Inc.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "brand",
+    "color",
+    "mono",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "packages/match-logos"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn convert",
+    "clean": "rm -rf brand/generated color/generated mono/generated",
+    "convert": "yarn convert:brand && yarn convert:color && yarn convert:mono",
+    "convert:brand": "svgr --config-file templates/config-brand.cjs -d brand/generated svg/brand",
+    "convert:color": "svgr --config-file templates/config-color.cjs -d color/generated svg/color",
+    "convert:mono": "svgr --config-file templates/config-mono.cjs -d mono/generated svg/mono",
+    "publish": "yarn npm publish --tolerate-republish"
+  },
+  "peerDependencies": {
+    "prop-types": "15.x",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "react-is": "17.x",
+    "react-uid": "2.x",
+    "styled-components": "5.x",
+    "styled-system": "5.x"
+  },
+  "devDependencies": {
+    "@svgr/cli": "5.5.0",
+    "@types/react": "17.0.11",
+    "@types/react-dom": "17.0.8",
+    "@types/react-is": "^17.0.1",
+    "prop-types": "15.7.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-is": "17.0.2",
+    "react-uid": "2.3.1",
+    "styled-components": "5.3.0",
+    "styled-system": "5.1.5"
+  }
+}

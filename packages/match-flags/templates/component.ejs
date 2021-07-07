@@ -11,9 +11,6 @@ const Styled<%-name%> = styled.span`
       small: {
         backgroundImage: `url("data:image/svg+xml,<%-small%>")`
       },
-      normal: {
-        backgroundImage: `url("data:image/svg+xml,<%-medium%>")`
-      },
       large: {
         backgroundImage: `url("data:image/svg+xml,<%-large%>")`
       }
@@ -27,7 +24,7 @@ export const <%-name%> = ({ size, decorative, ...props }) => (
       role="img"
       aria-label="<%-countryName%>"
       aria-hidden={decorative}
-      flagSize={size}
+      flagSize={size === "small" ? "small" : "large"}
     />
   </StyledFlag>
 );

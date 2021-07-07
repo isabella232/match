@@ -6,7 +6,7 @@ build
 public
 generated
 coverage
-streamline
+vendor
 node_modules
 *.ejs
 

@@ -1,11 +1,11 @@
 import * as React from "react";
 import { uid } from "react-uid";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import type { IconProps, IconType } from "@twilio-labs/match-icons-core";
+import type { IconProps, IconType } from "@twilio-labs/match-icons";
 import { iconSizes } from "@twilio-labs/match-tokens";
-import * as twilioIcons from "@twilio-labs/match-icons-twilio";
-import * as sendgridIcons from "@twilio-labs/match-icons-sendgrid";
-import * as productIcons from "@twilio-labs/match-icons-product";
+import * as twilioIcons from "@twilio-labs/match-icons/twilio";
+import * as sendgridIcons from "@twilio-labs/match-icons/sendgrid";
+import * as productIcons from "@twilio-labs/match-icons/product";
 
 export default {
   title: "Foundation/Icons",

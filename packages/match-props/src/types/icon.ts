@@ -9,7 +9,7 @@ export type IconSizeOptions =
 
 export type IconSizeProp = ResponsiveValue<IconSizeOptions>;
 
-// This should always match IconProps from @twilio-labs/match-icons-core/src/index.d.ts
+// This should always match IconProps from @twilio-labs/match-icons/src/index.d.ts
 export type IconComponentProp = React.FC<{
   color?:
     | "white"

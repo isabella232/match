@@ -32,3 +32,17 @@ Install the following package so you can consume Match’s tokens and themes to 
 ```bash
 npm install --save @twilio-labs/match
 ```
+
+## 3. Wrap your app with a theme component
+
+For example, if you want to use the `TwilioTheme`:
+
+```jsx
+import * as React from "react";
+import { TwilioTheme } from "@twilio-labs/match/themes";
+
+const App: React.FC = ({ children }) => <TwilioTheme>{children}</TwilioTheme>;
+export { App };
+```
+
+See [available themes here](https://github.com/twilio-labs/match/blob/main/packages/match-themes/src/constants.ts).

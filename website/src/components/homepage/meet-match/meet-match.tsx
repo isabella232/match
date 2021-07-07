@@ -28,7 +28,7 @@ export const MeetMatch: React.FC = () => (
     <SectionHeader tagline="Get Started" title="Start using Match today" />
     <Grid className={getStarted}>
       <figure>
-        <Link to="/" tabIndex={-1}>
+        <Link to="/getting-started/design/" tabIndex={-1}>
           <StaticImage
             className={gatsbyImg}
             src="images/design.png"
@@ -42,7 +42,7 @@ export const MeetMatch: React.FC = () => (
         </figcaption>
       </figure>
       <figure>
-        <Link to="/" tabIndex={-1}>
+        <Link to="/getting-started/develop/" tabIndex={-1}>
           <StaticImage
             className={gatsbyImg}
             src="images/develop.png"
@@ -56,7 +56,11 @@ export const MeetMatch: React.FC = () => (
         </figcaption>
       </figure>
       <figure>
-        <Link to="/" tabIndex={-1}>
+        <Link
+          to="https://www.twilio.com/brand/messaging/writing-style"
+          tabIndex={-1}
+          target="_blank"
+        >
           <StaticImage
             className={gatsbyImg}
             src="images/write.png"

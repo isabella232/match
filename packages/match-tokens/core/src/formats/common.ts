@@ -1,4 +1,5 @@
 import type { Dictionary, DesignToken } from "style-dictionary";
+
 import {
   baseTokenName,
   getUniqueAttributes,

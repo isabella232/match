@@ -3,7 +3,9 @@ import userEvent from "@testing-library/user-event";
 import { Formik } from "formik";
 import { axe } from "jest-axe";
 import * as React from "react";
+
 import { withTheme } from "@twilio-labs/match-themes";
+
 import { Textarea } from "../src";
 
 const TextareaWithTheme = withTheme()(Textarea);
@@ -178,7 +180,7 @@ describe("Textarea", () => {
         />
       </Formik>
     );
-    await waitFor(() => screen.getByRole("alert"));
+    await screen.findByRole("alert");
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

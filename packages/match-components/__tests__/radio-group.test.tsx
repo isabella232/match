@@ -2,7 +2,9 @@ import { screen, render, waitFor } from "@testing-library/react";
 import { Formik } from "formik";
 import { axe } from "jest-axe";
 import * as React from "react";
+
 import { withTheme } from "@twilio-labs/match-themes";
+
 import { Radio, RadioGroup } from "../src";
 
 const RadioGroupWithTheme = withTheme()(RadioGroup);

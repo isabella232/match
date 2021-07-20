@@ -1,5 +1,6 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
 import * as React from "react";
+
 import {
   Snippet,
   SnippetGroup,
@@ -40,6 +41,8 @@ export default {
 } as Meta;
 
 const Template: Story<SnippetProps> = (args) => <Snippet {...args} />;
+
+// cspell:disable
 
 const shellExample = `$ echo "The woods are lovely, dark and deep, But I have promises to keep, and miles to go before I sleep."`;
 
@@ -140,6 +143,8 @@ namespace TwilioBlazorPhonecalls.Server.Controllers
         }
     }
 }`;
+
+// cspell:enable
 
 export const SingleLine = Template.bind({});
 SingleLine.args = {

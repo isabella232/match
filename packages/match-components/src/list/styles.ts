@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { compose, space, variant } from "styled-system";
 import { themeGet } from "@styled-system/theme-get";
+
 import type { ListProps } from "./types";
 import { ListVariant, ListSize } from "./constants";
 

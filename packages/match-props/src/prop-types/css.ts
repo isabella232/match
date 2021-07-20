@@ -1,4 +1,5 @@
 import * as PropTypes from "prop-types";
+
 import { CSSUnit } from "../types";
 import { responsiveProp } from "../validators";
 

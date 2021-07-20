@@ -2,6 +2,7 @@ import { useFormikContext } from "formik";
 import * as PropTypes from "prop-types";
 import * as React from "react";
 import { useUIDSeed } from "react-uid";
+
 import {
   Label,
   LabelSize,
@@ -9,6 +10,7 @@ import {
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
 import { marginPropTypes } from "@twilio-labs/match-props";
+
 import { CheckboxSize } from "./constants";
 import {
   StyledHelpText,

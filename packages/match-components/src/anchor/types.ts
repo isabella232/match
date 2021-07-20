@@ -1,4 +1,5 @@
 import { MarginProps, IconComponentProp } from "@twilio-labs/match-props";
+
 import { AnchorVariant, AnchorTarget } from "./constants";
 
 export interface AnchorProps

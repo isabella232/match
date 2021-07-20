@@ -1,4 +1,5 @@
 import { MarginProps } from "@twilio-labs/match-props";
+
 import { CheckboxSize } from "./constants";
 
 export interface CheckboxProps

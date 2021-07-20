@@ -1,5 +1,6 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
+
 import { HelpTextVariant } from "./constants";
 import { ErrorIcon } from "./error-icon";
 import { StyledHelpText } from "./styles";

@@ -2,6 +2,7 @@ import { useField } from "formik";
 import * as PropTypes from "prop-types";
 import * as React from "react";
 import { useUIDSeed } from "react-uid";
+
 import { useMergedRefs } from "@twilio-labs/match-hooks";
 import {
   Label,
@@ -10,6 +11,7 @@ import {
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
 import { marginPropTypes } from "@twilio-labs/match-props";
+
 import { InputSize } from "./constants";
 import {
   StyledInput,

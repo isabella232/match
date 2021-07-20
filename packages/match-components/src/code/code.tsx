@@ -1,6 +1,8 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
+
 import { marginPropTypes } from "@twilio-labs/match-props";
+
 import { CodeVariant } from "./constants";
 import { StyledCode } from "./styles";
 import type { CodeProps } from "./types";

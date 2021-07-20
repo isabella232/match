@@ -1,7 +1,9 @@
 import { themeGet } from "@styled-system/theme-get";
 import styled, { css } from "styled-components";
 import { space, variant } from "styled-system";
+
 import { StyledIcon } from "@twilio-labs/match-primitives";
+
 import { CheckboxSize } from "./constants";
 import type {
   StyledCheckboxProps,
@@ -72,9 +74,9 @@ export const StyledCheckbox = styled.div<StyledCheckboxProps>`
   }
 
   /* Active + Focus */
-  :active,
-  :focus,
-  :focus-within {
+  &:active,
+  &:focus,
+  &:focus-within {
     border-color: ${themeGet("colors.blue50")};
   }
 
@@ -104,9 +106,9 @@ export const StyledCheckbox = styled.div<StyledCheckboxProps>`
     disabled &&
     css`
       /* Disable hover effects on readonly */
-      pointer-events: none;
       background-color: ${themeGet("colors.gray30")};
       border-color: ${themeGet("colors.gray30")};
+      pointer-events: none;
     `}
 
   /* Readonly */
@@ -114,14 +116,13 @@ export const StyledCheckbox = styled.div<StyledCheckboxProps>`
     readOnly &&
     css`
       /* Disable hover effects on readonly */
-      pointer-events: none;
+      color: ${themeGet("colors.gray30")};
       background-color: ${themeGet("colors.gray10")};
       border-color: ${themeGet("colors.gray20")};
-      /* Set icon color */
-      color: ${themeGet("colors.gray30")};
+      pointer-events: none;
     `}
 
-  /* Errored */
+  /* Error */
   ${({ hasError }) =>
     hasError &&
     css`

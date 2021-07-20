@@ -1,5 +1,7 @@
 import type { DesignToken } from "style-dictionary";
+
 import { GROUP_NAME_MAP } from "../constants";
+
 import { getUniqueAttributes } from ".";
 
 const getGroupName = (group: string): string => {

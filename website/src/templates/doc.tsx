@@ -2,9 +2,11 @@ import { graphql, PageProps } from "gatsby";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import * as React from "react";
+
 import { Layout } from "../components/layout";
 import { PageHeader } from "../components/common/page-header";
 import { Section } from "../components/section";
+
 import { mdxContent } from "./doc.module.css";
 
 export const pageQuery = graphql`

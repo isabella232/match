@@ -1,6 +1,7 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Formik } from "formik";
 import * as React from "react";
+
 import { Anchor, Checkbox, CheckboxProps, CheckboxSize } from "../src";
 
 export default {

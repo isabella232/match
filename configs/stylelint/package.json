@@ -1,0 +1,40 @@
+{
+  "name": "@twilio-labs/stylelint-config-match",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "main": ".stylelintrc.json",
+  "files": [
+    ".stylelintrc.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "configs/stylelint"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "publish": "yarn npm publish --tolerate-republish"
+  },
+  "peerDependencies": {
+    "stylelint": "*",
+    "stylelint-a11y": "*",
+    "stylelint-config-prettier": "*",
+    "stylelint-config-rational-order": "*",
+    "stylelint-config-recommended": "*",
+    "stylelint-declaration-block-no-ignored-properties": "*",
+    "stylelint-no-unsupported-browser-features": "*",
+    "stylelint-order": "*"
+  },
+  "devDependencies": {
+    "stylelint": "13.13.1",
+    "stylelint-a11y": "1.2.3",
+    "stylelint-config-prettier": "8.0.2",
+    "stylelint-config-rational-order": "0.1.2",
+    "stylelint-config-recommended": "5.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "2.3.0",
+    "stylelint-no-unsupported-browser-features": "5.0.1",
+    "stylelint-order": "4.1.0"
+  }
+}

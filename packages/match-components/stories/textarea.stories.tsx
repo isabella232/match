@@ -1,8 +1,10 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Formik } from "formik";
 import * as React from "react";
+
 import { Textarea, TextareaProps, TextareaResizeOptions } from "../src";
 
+// cspell:disable
 const defaultValue = `
 I opened my eyes
 And looked up at the rain,
@@ -11,6 +13,7 @@ And flowed into my brain,
 And all that I hear as I lie in my bed
 Is the slishity-slosh of the rain in my head.
 `.trim();
+// cspell:enable
 
 export default {
   title: "Components/Textarea",

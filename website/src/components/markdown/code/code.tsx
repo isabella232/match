@@ -5,6 +5,7 @@ import prismTheme from "prism-react-renderer/themes/nightOwl";
 import * as React from "react";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import styled from "styled-components";
+
 import * as components from "@twilio-labs/match-components";
 import {
   ChatIcon,
@@ -17,7 +18,9 @@ import { ChimeLogo } from "@twilio-labs/match-logos/color";
 import { AirbnbLogo } from "@twilio-labs/match-logos/mono";
 import { StyledBase } from "@twilio-labs/match-themes";
 import { RainbowFlag } from "@twilio-labs/match-flags";
+
 import { ThemeSwitcher } from "../../theme-switcher";
+
 import {
   snippet,
   singleLine,

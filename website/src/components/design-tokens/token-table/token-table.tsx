@@ -1,9 +1,11 @@
 import * as React from "react";
 import { VisuallyHidden } from "reakit";
+
 import { Token } from "../../../types";
 import { remToPx } from "../../../utils";
 import { Copy } from "../../common/copy";
 import { Example } from "../examples";
+
 import { tokenTable } from "./token-table.module.css";
 
 export type TokenTableProps = {

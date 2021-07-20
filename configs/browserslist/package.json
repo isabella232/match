@@ -1,0 +1,20 @@
+{
+  "name": "@twilio-labs/browserslist-config-match",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/twilio-labs/match",
+    "directory": "configs/browserslist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "publish": "yarn npm publish --tolerate-republish"
+  }
+}

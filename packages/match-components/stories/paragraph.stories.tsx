@@ -1,6 +1,8 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
 import * as React from "react";
+
 import { textColors } from "@twilio-labs/match-tokens/twilio";
+
 import { Paragraph, ParagraphProps, ParagraphVariant } from "../src";
 
 export default {

@@ -2,8 +2,11 @@ import * as PropTypes from "prop-types";
 import * as React from "react";
 import { useUIDSeed } from "react-uid";
 import { useTabState, TabPanel } from "reakit/Tab";
+
 import { marginPropTypes } from "@twilio-labs/match-props";
+
 import { VisuallyHidden } from "../visually-hidden";
+
 import { ChevronDownIcon } from "./chevron-down-icon";
 import { SnippetVariant } from "./constants";
 import { getLanguageNiceName } from "./get-language-nice-name";

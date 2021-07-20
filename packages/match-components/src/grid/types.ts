@@ -1,5 +1,6 @@
 import * as CSS from "csstype";
 import { ResponsiveValue } from "styled-system";
+
 import {
   PaddingProps,
   MarginProps,
@@ -88,7 +89,7 @@ export interface CellProps
    */
   alignSelf?: ResponsiveValue<CSS.Property.AlignSelf>;
   /**
-   * Sets the justification of the cell in the grid along the appropriste axis
+   * Sets the justification of the cell in the grid along the appropriate axis
    * @type string
    */
   justifySelf?: ResponsiveValue<CSS.Property.JustifySelf>;

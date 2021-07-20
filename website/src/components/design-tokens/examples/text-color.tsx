@@ -1,8 +1,11 @@
 import clsx from "clsx";
 import * as React from "react";
 import { hex, score } from "wcag-contrast";
+
 import { useTheme } from "@twilio-labs/match-themes";
+
 import { Token } from "../../../types";
+
 import { textColorExample, inverse } from "./examples.module.css";
 
 export type TextColorProps = {

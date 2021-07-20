@@ -24,13 +24,17 @@ npm install --save formik prop-types react react-dom react-is react-uid styled-c
 
 ## 2. Install Match packages
 
-Install the following package so you can consume Match’s tokens and themes to build custom page sections.
+Install the following packages so you can consume Match’s tokens and themes to build custom page sections.
 
-**Package:** @twilio-labs/match<br />
-**Version:** 1.0.0
+| Package                  | Version |
+| ------------------------ | ------- |
+| @twilio-labs/match       | 2.x     |
+| @twilio-labs/match-icons | 1.x     |
+| @twilio-labs/match-logos | 1.x     |
+| @twilio-labs/match-flags | 1.x     |
 
 ```bash
-npm install --save @twilio-labs/match
+npm install --save @twilio-labs/match @twilio-labs/match-icons @twilio-labs/match-logos @twilio-labs/match-flags
 ```
 
 ## 3. Wrap your app with a theme component
@@ -46,3 +50,71 @@ export { App };
 ```
 
 See [available themes here](https://github.com/twilio-labs/match/blob/main/packages/match-themes/src/constants.ts).
+
+## Code Quality
+
+Match distributes reusable configuration for [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/), [Browserslist](https://github.com/browserslist/browserslist) and [TypeScript](https://www.typescriptlang.org/). It is highly recommended to extend from these configs for a consistent development experience. Additionally we recommend using [cspell](https://github.com/streetsidesoftware/cspell/tree/main/packages/cspell) and [Prettier](https://prettier.io/) for code spell checking and automatic formatting.
+
+### ESLint
+
+Install the Match ESLint configuration and all peer dependencies.
+
+```bash
+npm install --save-dev @twilio-labs/eslint-config-match @typescript-eslint/eslint-plugin @typescript-eslint/parser babel-eslint eslint eslint-config-prettier eslint-plugin-eslint-comments eslint-plugin-import eslint-plugin-jest eslint-plugin-jest-formatting eslint-plugin-jsx-a11y eslint-plugin-promise eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-testing-library eslint-plugin-unicorn
+```
+
+Create a `.eslintrc.json` file in the root of your project and add the following.
+
+```json
+{
+  "extends": ["@twilio-labs/eslint-config-match"]
+}
+```
+
+### Stylelint
+
+Install the Match Stylelint configuration and all peer dependencies.
+
+```bash
+npm install --save-dev @twilio-labs/stylelint-config-match stylelint stylelint-a11y stylelint-config-prettier stylelint-config-rational-order stylelint-config-recommended stylelint-declaration-block-no-ignored-properties stylelint-no-unsupported-browser-features stylelint-order
+```
+
+Create a `.stylelintrc.json` file in the root of your project and add the following.
+
+```json
+{
+  "extends": ["@twilio-labs/stylelint-config-match"]
+}
+```
+
+### TypeScript
+
+Install the Match TypeScript configuration.
+
+```bash
+npm install --save-dev @twilio-labs/tsconfig-match
+```
+
+Create a `tsconfig.json` file in the root of your project and add the following.
+
+```json
+{
+  "extends": "@twilio-labs/tsconfig-match"
+}
+```
+
+### Browserslist
+
+Install the Match browserslist configuration.
+
+```bash
+npm install --save-dev @twilio-labs/browserslist-config-match
+```
+
+Add the following to your project's `package.json` file.
+
+```json
+{
+  "browserslist": ["extends @twilio-labs/browserslist-config-match"]
+}
+```

@@ -1,6 +1,7 @@
 import { themeGet } from "@styled-system/theme-get";
 import styled, { css } from "styled-components";
 import { space } from "styled-system";
+
 import { CardVariant } from "./constants";
 import type { CardProps } from "./types";
 

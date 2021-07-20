@@ -1,6 +1,8 @@
 import { ColorTranslator } from "colortranslator";
+
 import { Backgrounds } from "../../types";
 import { makeGradient } from "../../utils";
+
 import { color } from "./color";
 
 const brandHighlight = new ColorTranslator(color.brandHighlight.value);

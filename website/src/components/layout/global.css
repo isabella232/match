@@ -5,7 +5,7 @@ body {
   font-family: var(--font-family-text);
 }
 
-body.noscroll {
+body.no-scroll {
   overflow: hidden;
 }
 
@@ -14,7 +14,7 @@ a {
 }
 
 @media (--media-query-large) {
-  body.noscroll {
+  body.no-scroll {
     overflow: visible;
   }
 }

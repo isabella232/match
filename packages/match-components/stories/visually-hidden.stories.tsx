@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import { VisuallyHidden } from "../src";
 
 export default {

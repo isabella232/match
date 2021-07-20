@@ -1,7 +1,9 @@
 import { themeGet } from "@styled-system/theme-get";
 import styled, { css } from "styled-components";
 import { compose, space, variant } from "styled-system";
+
 import { MarginProps } from "@twilio-labs/match-props";
+
 import { RadioSize } from "./constants";
 import {
   StyledRadioProps,
@@ -84,6 +86,7 @@ export const StyledRadio = styled.span<StyledRadioProps>`
   }
 
   &:focus-within,
+  &:focus,
   &:active {
     border-color: ${themeGet("borderColors.focusPrimary")};
 
@@ -105,9 +108,9 @@ export const StyledRadio = styled.span<StyledRadioProps>`
   ${({ disabled }) =>
     disabled &&
     css`
-      pointer-events: none;
       background-color: ${themeGet("colors.gray30")};
       border-color: ${themeGet("colors.gray30")};
+      pointer-events: none;
     `}
 
     ${({ checked }) =>
@@ -117,15 +120,15 @@ export const StyledRadio = styled.span<StyledRadioProps>`
       border-color: ${themeGet("colors.blue60")};
 
       &::after {
-        display: inline-block;
         position: absolute;
         top: 50%;
         left: 50%;
+        display: inline-block;
         width: 6px;
         height: 6px;
-        transform: translate(-50%, -50%);
         background-color: ${themeGet("colors.white")};
         border-radius: 50%;
+        transform: translate(-50%, -50%);
         content: "";
       }
     `}
@@ -145,6 +148,8 @@ export const StyledRadio = styled.span<StyledRadioProps>`
     css`
       background-color: ${themeGet("colors.gray10")};
       border-color: ${themeGet("borderColors.card")};
+
+      /* stylelint-disable-next-line no-duplicate-selectors -- intentionally overridden */
       &::after {
         background-color: ${themeGet("colors.gray30")};
       }
@@ -154,9 +159,11 @@ export const StyledRadio = styled.span<StyledRadioProps>`
     checked &&
     disabled &&
     css`
-      pointer-events: none;
       background-color: ${themeGet("colors.gray30")};
       border-color: ${themeGet("colors.gray30")};
+      pointer-events: none;
+
+      /* stylelint-disable-next-line no-duplicate-selectors -- intentionally overridden */
       &::after {
         background-color: ${themeGet("colors.gray10")};
       }

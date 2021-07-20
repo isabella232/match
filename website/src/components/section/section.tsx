@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import * as React from "react";
+
 import { section, content, colSpan10, colSpan8 } from "./section.module.css";
 import type { SectionProps } from "./types";
 

@@ -2,6 +2,7 @@ import * as PropTypes from "prop-types";
 import * as React from "react";
 import { Button } from "reakit/Button";
 import { TooltipReference, useTooltipState } from "reakit/Tooltip";
+
 import { SnippetVariant } from "./constants";
 import { CopyIcon } from "./copy-icon";
 import { GithubIcon } from "./github-icon";

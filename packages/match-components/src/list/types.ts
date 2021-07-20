@@ -1,5 +1,7 @@
 import * as React from "react";
+
 import { MarginProps } from "@twilio-labs/match-props";
+
 import { ListVariant, ListSize } from "./constants";
 
 export interface ListItemProps extends React.LiHTMLAttributes<HTMLLIElement> {

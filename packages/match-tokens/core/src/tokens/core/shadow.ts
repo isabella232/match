@@ -1,6 +1,8 @@
 import { ColorTranslator } from "colortranslator";
+
 import { Shadows } from "../../types";
 import { makeBoxShadow } from "../../utils";
+
 import { color } from "./color";
 
 const gray100 = new ColorTranslator(color.gray100.value);

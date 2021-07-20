@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+
 const ejs = require("ejs");
 const _ = require("lodash");
 const codeList = require("flagpack-core/countryCodeList.json");

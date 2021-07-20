@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import { Icon } from "@twilio-labs/match-primitives";
 import type { IconProps } from "@twilio-labs/match-primitives";
 

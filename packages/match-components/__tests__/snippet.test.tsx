@@ -2,7 +2,9 @@ import { screen, render, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import * as React from "react";
+
 import { withTheme } from "@twilio-labs/match-themes";
+
 import { Snippet, SnippetLanguage } from "../src";
 
 const SnippetWithTheme = withTheme()(Snippet);
@@ -23,7 +25,7 @@ describe("Snippet", () => {
         {shellExample}
       </SnippetWithTheme>
     );
-    expect(screen.getByTestId("scrollable").parentElement).toHaveAttribute(
+    expect(screen.getByTestId("scrollable-parent")).toHaveAttribute(
       "data-scroll-x",
       "0"
     );

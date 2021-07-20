@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
+
 import type { ListItemProps } from "./types";
 import { StyledListItem, StyledAdditional } from "./styles";
 

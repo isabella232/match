@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useUID } from "react-uid";
+
 import { tooltip } from "./tooltip.module.css";
 import { TooltipProps } from "./types";
 

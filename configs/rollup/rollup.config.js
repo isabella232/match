@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+
 import babel from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
@@ -11,6 +12,7 @@ const pkg = JSON.parse(
   fs.readFileSync(path.join(process.cwd(), "package.json"))
 );
 
+// eslint-disable-next-line import/no-default-export
 export default {
   input: pkg.main,
   output: [

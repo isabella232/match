@@ -1,4 +1,5 @@
 import type { MarginProps } from "@twilio-labs/match-props";
+
 import { HeadingVariant } from "./constants";
 
 export interface HeadingProps

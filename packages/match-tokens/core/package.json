@@ -28,12 +28,13 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "devDependencies": {
+    "@twilio-labs/browserslist-config-match": "workspace:configs/browserslist",
+    "@twilio-labs/tsconfig-match": "workspace:configs/tsconfig",
     "@types/node": "15.12.5",
     "colortranslator": "1.7.1",
     "csstype": "3.0.8",
     "style-dictionary": "3.0.1",
     "ts-node": "10.0.0",
-    "tsconfig-match": "workspace:configs/tsconfig",
     "typescript": "4.3.4"
   }
 }

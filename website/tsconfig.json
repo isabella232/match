@@ -1,4 +1,4 @@
 {
-  "extends": "tsconfig-match",
+  "extends": "@twilio-labs/tsconfig-match",
   "include": ["./src/**/*", "./types.d.ts"]
 }

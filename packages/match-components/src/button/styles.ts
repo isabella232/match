@@ -2,6 +2,7 @@ import { themeGet } from "@styled-system/theme-get";
 import { Button } from "reakit/Button";
 import styled, { css, keyframes } from "styled-components";
 import { compose, space, variant } from "styled-system";
+
 import { ButtonSize, ButtonVariant } from "./constants";
 import type { ButtonProps } from "./types";
 
@@ -48,7 +49,7 @@ export const StyledPrompt = styled.span`
     &::before {
       transform: ${({ theme }) =>
         `rotate(-45deg)
-        translateY(calc(-${theme.borderWidths.light} / 2))`};
+          translateY(calc(-${theme.borderWidths.light} / 2))`};
       transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -56,6 +57,17 @@ export const StyledPrompt = styled.span`
       transform: none;
       transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
       animation: ${blink} 1.1s infinite;
+    }
+
+    @media (prefers-reduced-motion) {
+      &::before {
+        transition: none;
+      }
+
+      &::after {
+        transition: none;
+        animation: none;
+      }
     }
   }
 `;
@@ -66,16 +78,16 @@ export const StyledButton = styled(Button).withConfig({
   display: inline-block;
   font-weight: ${themeGet("fontWeights.medium")};
   font-family: ${themeGet("fontFamilies.text")};
+  line-height: ${themeGet("fontSizes.scale100")};
   text-align: center;
   text-decoration: none;
   border-style: solid;
   border-width: ${themeGet("borderWidths.light")};
   border-radius: ${themeGet("radii.base")};
   cursor: pointer;
+  transition-timing-function: ease-in;
   transition-duration: 0.2s;
   transition-property: color, background, border;
-  transition-timing-function: ease-in;
-  line-height: ${themeGet("fontSizes.scale100")};
 
   &:focus {
     outline-width: 2px;

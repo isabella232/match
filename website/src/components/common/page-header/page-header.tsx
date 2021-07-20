@@ -7,6 +7,7 @@ import { uid } from "react-uid";
 import arrowDiagonalIcon from "../../../images/icons/arrow-diagonal.svg";
 import { Section } from "../../section";
 import { ThemeSwitcher } from "../../theme-switcher";
+
 import {
   header,
   content,

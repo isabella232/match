@@ -1,6 +1,7 @@
 import { MDXProvider } from "@mdx-js/react";
 import clsx from "clsx";
 import * as React from "react";
+
 import "@twilio-labs/match-tokens/twilio/variables.css";
 import { MatchProvider } from "../../context/match";
 import "./variables.css";
@@ -11,6 +12,7 @@ import { Code } from "../markdown/code";
 import { Table } from "../markdown/table";
 import { Navigation } from "../navigation";
 import { Violator } from "../violator";
+
 import {
   layout,
   footerContent,
@@ -34,7 +36,7 @@ export const Layout: React.FC = ({ children }) => {
   };
 
   React.useEffect(() => {
-    document.body.className = isNavOpen ? "noscroll" : "";
+    document.body.className = isNavOpen ? "no-scroll" : "";
   });
 
   return (

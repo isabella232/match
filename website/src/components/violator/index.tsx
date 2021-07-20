@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import * as React from "react";
+
 import iconArrow from "../../images/icons/arrow-diagonal.svg";
+
 import { icon, violator, wrapper } from "./violator.module.css";
 
 interface ViolatorProps extends React.HTMLAttributes<HTMLElement> {

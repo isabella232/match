@@ -1,7 +1,9 @@
 import clsx from "clsx";
 import * as React from "react";
 import { useUID } from "react-uid";
+
 import iconChevron from "../../images/icons/chevron-up.svg";
+
 import {
   accordionGroup,
   decorator,

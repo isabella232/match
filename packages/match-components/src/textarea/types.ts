@@ -1,4 +1,5 @@
 import { MarginProps } from "@twilio-labs/match-props";
+
 import { TextareaResizeOptions } from "./constants";
 
 export interface TextareaProps

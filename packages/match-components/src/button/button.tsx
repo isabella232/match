@@ -1,6 +1,8 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
+
 import { marginPropTypes, IconSizeOptions } from "@twilio-labs/match-props";
+
 import { ButtonVariant, ButtonSize, ButtonType } from "./constants";
 import { StyledButton, StyledPrompt } from "./styles";
 import type { ButtonProps } from "./types";

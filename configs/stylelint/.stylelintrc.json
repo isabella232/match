@@ -1,0 +1,28 @@
+{
+  "plugins": [
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-declaration-block-no-ignored-properties"
+  ],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-rational-order",
+    "stylelint-a11y/recommended",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "declaration-bang-space-before": null,
+    "plugin/declaration-block-no-ignored-properties": true,
+    "plugin/no-unsupported-browser-features": [
+      true,
+      {
+        "severity": "warning",
+        "ignore": [
+          "multicolumn",
+          "css3-cursors",
+          "css-resize",
+          "css-appearance"
+        ]
+      }
+    ]
+  }
+}

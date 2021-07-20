@@ -1,3 +1,4 @@
+// cspell:disable
 module.exports = {
   ["keyboard-arrow-left-9ULnnb"]: "ArrowBack",
   ["keyboard-arrow-right-9UL3zx"]: "ArrowForward",
@@ -62,3 +63,4 @@ module.exports = {
   ["style-two-pin-wifi-ZOsybj"]: "Wifi",
   ["wireless-payment-smartphone-1-08UPop"]: "Wireless",
 };
+// cspell:enable

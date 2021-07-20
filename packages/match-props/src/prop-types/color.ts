@@ -3,6 +3,7 @@ import {
   backgroundColors,
   textColors,
 } from "@twilio-labs/match-tokens";
+
 import { tokenProp } from "../validators";
 
 export const colorPropType = tokenProp([

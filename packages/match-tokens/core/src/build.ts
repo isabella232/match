@@ -1,5 +1,7 @@
 import path from "path";
+
 import StyleDictionary, { DesignToken } from "style-dictionary";
+
 import { registerFormats } from "./formats";
 import { registerTransforms } from "./transforms";
 

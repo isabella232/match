@@ -1,6 +1,8 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
 import * as React from "react";
+
 import { space } from "@twilio-labs/match-tokens";
+
 import { Separator, SeparatorProps, SeparatorVariant } from "../src";
 
 export default {

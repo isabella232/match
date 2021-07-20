@@ -1,4 +1,5 @@
 import { MarginProps } from "@twilio-labs/match-props";
+
 import { SeparatorVariant } from "./constants";
 
 export interface SeparatorProps

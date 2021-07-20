@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import * as React from "react";
+
 import { accordion } from "./accordion.module.css";
 import { AccordionProps } from "./types";
 

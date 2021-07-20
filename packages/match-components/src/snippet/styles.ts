@@ -3,7 +3,9 @@ import { Tab, TabList } from "reakit/Tab";
 import { Tooltip, TooltipArrow } from "reakit/Tooltip";
 import styled, { css } from "styled-components";
 import { variant, compose, space } from "styled-system";
+
 import { StyledIcon } from "@twilio-labs/match-primitives";
+
 import { SnippetVariant, SnippetLanguage } from "./constants";
 import type {
   StyledSnippetProps,
@@ -351,6 +353,7 @@ export const StyledSnippetBody = styled.div<StyledSnippetProps>`
         padding: ${themeGet("space.scale20")} 0;
       }
 
+      /* stylelint-disable-next-line a11y/media-prefers-reduced-motion -- animation is minimal */
       &::before,
       &::after {
         position: absolute;
@@ -558,6 +561,7 @@ export const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
           line-height: ${themeGet("lineHeights.scale140")};
         }
 
+        /* stylelint-disable-next-line no-duplicate-selectors -- intentionally overridden */
         ${StyledSnippetTitle} {
           grid-column-end: span 2;
           border-style: solid;
@@ -579,6 +583,7 @@ export const StyledSnippetGroup = styled.div<StyledSnippetGroupProps>`
     compact &&
     !hasTitle &&
     css`
+      /* stylelint-disable-next-line no-duplicate-selectors -- intentionally overridden */
       ${StyledSnippetHeader} {
         grid-template-columns: min-content min-content;
         justify-content: space-between;

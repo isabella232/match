@@ -2,7 +2,9 @@ import { useField } from "formik";
 import * as PropTypes from "prop-types";
 import * as React from "react";
 import { useUIDSeed } from "react-uid";
+
 import { marginPropTypes } from "@twilio-labs/match-props";
+
 import { RadioSize } from "./constants";
 import {
   StyledRadio,

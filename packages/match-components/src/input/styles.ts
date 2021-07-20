@@ -1,7 +1,9 @@
 import { themeGet } from "@styled-system/theme-get";
 import styled, { css } from "styled-components";
 import { variant, space } from "styled-system";
+
 import { MarginProps } from "@twilio-labs/match-props";
+
 import { InputSize } from "./constants";
 import type { StyledInputProps, StyledInputContainerProps } from "./types";
 
@@ -66,6 +68,7 @@ export const StyledInput = styled.input<StyledInputProps>`
     pointer-events: none;
   }
 
+  /* stylelint-disable-next-line a11y/no-outline-none -- focus state handled by wrapper */
   &:focus {
     outline: none;
   }

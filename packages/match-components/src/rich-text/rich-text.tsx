@@ -5,12 +5,14 @@ import parse, {
 } from "html-react-parser";
 import * as PropTypes from "prop-types";
 import * as React from "react";
+
 import { Anchor, AnchorVariant } from "../anchor";
 import { Code } from "../code";
 import { Heading, HeadingVariant } from "../heading";
 import { Paragraph } from "../paragraph";
 import { Separator, SeparatorVariant } from "../separator";
 import { List, ListItem, ListVariant } from "../list";
+
 import type { RichTextProps } from "./types";
 
 export const RichText: React.FC<RichTextProps> = ({ children, inverse }) => {

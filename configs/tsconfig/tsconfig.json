@@ -1,4 +1,6 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Twilio Match",
   "compilerOptions": {
     // Always include these settings
     "composite": true,
@@ -9,7 +11,7 @@
 
     // ECMAScript targets
     "target": "ES6",
-    "lib": ["ES2018", "DOM", "DOM.Iterable", "ScriptHost"],
+    "lib": ["ESNEXT", "DOM", "DOM.Iterable", "ScriptHost"],
 
     // These settings are optional
     "declarationMap": true,
@@ -18,25 +20,23 @@
     // https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping
     "baseUrl": ".",
 
-    // Extra
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "allowSyntheticDefaultImports": false,
-    "newLine": "lf",
-    "noErrorTruncation": true,
-    "noLib": false,
-
     // Process & infer types from .js files.
     "allowJs": false,
     "checkJs": false,
 
-    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    // Strictness
     "strict": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": false,
+
+    // Formatting
     "removeComments": true,
+    "newLine": "lf",
+    "forceConsistentCasingInFileNames": true,
 
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,

@@ -1,4 +1,5 @@
 import { space } from "@twilio-labs/match-tokens";
+
 import { tokenProp } from "../validators";
 
 export const spacePropType = tokenProp(Object.keys(space));

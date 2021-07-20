@@ -3,7 +3,9 @@ import userEvent from "@testing-library/user-event";
 import { Formik } from "formik";
 import { axe } from "jest-axe";
 import * as React from "react";
+
 import { withTheme } from "@twilio-labs/match-themes";
+
 import { Checkbox } from "../src/checkbox";
 
 const CheckboxWithTheme = withTheme()(Checkbox);

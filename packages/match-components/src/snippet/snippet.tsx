@@ -13,7 +13,9 @@ import php from "react-syntax-highlighter/dist/cjs/languages/prism/php";
 import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
 import ruby from "react-syntax-highlighter/dist/cjs/languages/prism/ruby";
 import shell from "react-syntax-highlighter/dist/cjs/languages/prism/shell-session";
+
 import { marginPropTypes } from "@twilio-labs/match-props";
+
 import { SnippetLanguage, SnippetVariant } from "./constants";
 import { getLanguageNiceName } from "./get-language-nice-name";
 import { SnippetActions } from "./snippet-actions";
@@ -100,6 +102,7 @@ export const Snippet: React.FC<SnippetProps> = ({
         variant={variant}
         isSingleLine={isSingleLine}
         data-scroll-x={isSingleLine ? scrollX.toString() : undefined}
+        data-testid="scrollable-parent"
       >
         <StyledHighlighter
           tabIndex={0}

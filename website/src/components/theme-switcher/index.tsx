@@ -1,11 +1,14 @@
 import clsx from "clsx";
 import * as React from "react";
 import { useTabState, Tab, TabList } from "reakit/Tab";
+
 import { ThemeVariants } from "@twilio-labs/match-themes";
+
 import { MatchContext } from "../../context/match";
 import sendgridIcon from "../../images/logos/sendgrid.svg";
 import twilioIcon from "../../images/logos/twilio.svg";
 import { MatchActions } from "../../reducers/match";
+
 import { tabList, snippet, inverseSnippet, header } from "./styles.module.css";
 
 interface ThemeSwitcherProps {

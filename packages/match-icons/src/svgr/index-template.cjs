@@ -1,5 +1,6 @@
 const path = require("path");
 const { writeFileSync } = require("fs");
+
 const niceName = require("./nice-name.cjs");
 
 const template = (filePaths) => {

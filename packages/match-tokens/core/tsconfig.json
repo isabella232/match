@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig-match",
+  "extends": "@twilio-labs/tsconfig-match",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "module": "CommonJS"

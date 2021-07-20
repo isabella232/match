@@ -2,8 +2,10 @@ import { useField } from "formik";
 import * as PropTypes from "prop-types";
 import * as React from "react";
 import { useUIDSeed } from "react-uid";
+
 import { Label, LabelSize } from "@twilio-labs/match-primitives";
 import { marginPropTypes } from "@twilio-labs/match-props";
+
 import { CheckmarkIcon } from "./checkmark-icon";
 import { CheckboxSize } from "./constants";
 import {

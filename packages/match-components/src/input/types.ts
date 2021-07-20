@@ -1,4 +1,5 @@
 import { MarginProps } from "@twilio-labs/match-props";
+
 import { InputSize } from "./constants";
 
 export interface InputProps

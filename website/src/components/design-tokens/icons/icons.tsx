@@ -1,14 +1,17 @@
 import Fuse from "fuse.js";
 import * as React from "react";
+
 import type { IconType } from "@twilio-labs/match-icons/src";
 import * as productIcons from "@twilio-labs/match-icons/product";
 import * as sendgridIcons from "@twilio-labs/match-icons/sendgrid";
 import * as twilioIcons from "@twilio-labs/match-icons/twilio";
 import { ThemeVariants } from "@twilio-labs/match-themes";
+
 import { MatchContext } from "../../../context/match";
 import { IconItem } from "../../../types";
 import { Copy } from "../../common/copy";
 import { IconFilters } from "../filters/filters";
+
 import { iconMetadata } from "./icon-metadata";
 import {
   copyButton,

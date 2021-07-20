@@ -1,9 +1,11 @@
 import { Link } from "gatsby";
 import * as React from "react";
+
 import { ArrowLink } from "../../common/arrow-link";
 import { Grid } from "../../grid";
 import { Section } from "../../section";
 import { SectionHeader } from "../section-header";
+
 import {
   section,
   content,

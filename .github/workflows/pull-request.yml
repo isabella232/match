@@ -41,6 +41,8 @@ jobs:
       # Test
       - name: Run prettier check
         run: yarn prettier:check
+      - name: Run spell check
+        run: yarn lint:spelling --no-summary
       - name: Run eslint
         run: yarn lint:js
       - name: Run stylelint

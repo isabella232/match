@@ -1,5 +1,6 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
 import * as React from "react";
+
 import { Grid, Cell } from "../src";
 
 export default {

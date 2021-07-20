@@ -1,6 +1,8 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
+
 import { marginPropTypes } from "@twilio-labs/match-props";
+
 import { AnchorVariant, AnchorTarget } from "./constants";
 import { StyledAnchor } from "./styles";
 import type { AnchorProps } from "./types";

@@ -1,6 +1,7 @@
 import { themeGet } from "@styled-system/theme-get";
 import styled from "styled-components";
 import { compose, space, variant } from "styled-system";
+
 import { HeadingVariant } from "./constants";
 import type { HeadingProps } from "./types";
 

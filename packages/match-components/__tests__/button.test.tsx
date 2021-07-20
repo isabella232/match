@@ -1,23 +1,25 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import * as React from "react";
+
 import { withTheme } from "@twilio-labs/match-themes";
 import { DownloadIcon } from "@twilio-labs/match-icons/twilio";
+
 import { Button, ButtonSize } from "../src";
 
 const ButtonWithTheme = withTheme()(Button);
 
 describe("Button", () => {
   test("renders as a button", () => {
-    const { getByText } = render(<ButtonWithTheme>Click Me</ButtonWithTheme>);
-    expect(getByText(/click me/i).tagName.toLowerCase()).toBe("button");
+    render(<ButtonWithTheme>Click Me</ButtonWithTheme>);
+    expect(screen.getByText(/click me/i).tagName.toLowerCase()).toBe("button");
   });
 
   test("renders as an anchor", () => {
-    const { getByText } = render(
+    render(
       <ButtonWithTheme href="https://twilio.com">Click Me</ButtonWithTheme>
     );
-    expect(getByText(/click me/i).tagName.toLowerCase()).toBe("a");
+    expect(screen.getByText(/click me/i).tagName.toLowerCase()).toBe("a");
   });
 
   test("icon missing text warning", async () => {

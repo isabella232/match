@@ -1,4 +1,5 @@
 import { MarginProps } from "@twilio-labs/match-props";
+
 import { SnippetVariant, SnippetLanguage } from "./constants";
 
 export interface SnippetProps extends MarginProps {

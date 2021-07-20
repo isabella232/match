@@ -1,6 +1,8 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
+
 import { marginPropTypes } from "@twilio-labs/match-props";
+
 import { HeadingVariant } from "./constants";
 import { StyledHeading } from "./styles";
 import type { HeadingProps } from "./types";

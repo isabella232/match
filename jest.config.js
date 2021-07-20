@@ -13,7 +13,7 @@ module.exports = {
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/.jest/setup-files-after-env.ts"],
   moduleNameMapper: {
-    ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+    ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$":
       "<rootDir>/.jest/file-mock.ts",
   },
   collectCoverageFrom: ["<rootDir>/packages/**/*.{ts,tsx}"],

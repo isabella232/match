@@ -1,7 +1,9 @@
 import { themeGet } from "@styled-system/theme-get";
 import styled from "styled-components";
 import { variant } from "styled-system";
+
 import { StyledIcon } from "../icon";
+
 import { HelpTextVariant } from "./constants";
 import type { HelpTextProps } from "./types";
 

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { space, variant, compose } from "styled-system";
+
 import { AnchorVariant } from "./constants";
 import type { AnchorProps } from "./types";
 

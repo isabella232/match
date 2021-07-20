@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ThemeContext } from "styled-components";
+
 import { TwilioThemeShape, SendGridThemeShape } from "./types";
 
 export const useTheme = (): TwilioThemeShape | SendGridThemeShape => {

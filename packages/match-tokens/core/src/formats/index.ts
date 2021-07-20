@@ -1,4 +1,5 @@
 import StyleDictionary from "style-dictionary";
+
 import { commonJsTokenFormatter } from "./common";
 import { customMediaTokenFormatter } from "./custom-media";
 import { moduleTokenFormatter } from "./module";

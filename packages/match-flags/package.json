@@ -26,6 +26,7 @@
     "publish": "yarn npm publish --tolerate-republish"
   },
   "devDependencies": {
+    "@twilio-labs/browserslist-config-match": "workspace:configs/browserslist",
     "@twilio-labs/match-tokens": "workspace:packages/match-tokens/core",
     "@types/lodash": "^4",
     "@types/react": "17.0.11",

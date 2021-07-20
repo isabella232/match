@@ -1,6 +1,8 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import * as React from "react";
+
 import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
+
 import { TwilioTheme, useTheme } from "../src";
 
 const HookExampleComponent = (): React.ReactElement => {
@@ -11,12 +13,12 @@ const HookExampleComponent = (): React.ReactElement => {
 describe("useTheme", () => {
   test("should be able to access the theme object", () => {
     const { colorBrand } = TwilioDesignTokens;
-    const { getByTestId } = render(
+    render(
       <TwilioTheme>
         <HookExampleComponent />
       </TwilioTheme>
     );
-    expect(getByTestId("color")).toHaveTextContent(colorBrand);
+    expect(screen.getByTestId("color")).toHaveTextContent(colorBrand);
   });
 
   test("should throw error", () => {

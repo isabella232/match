@@ -1,6 +1,8 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
+
 import { marginPropTypes } from "@twilio-labs/match-props";
+
 import { SeparatorVariant } from "./constants";
 import { StyledSeparator } from "./styles";
 import type { SeparatorProps } from "./types";

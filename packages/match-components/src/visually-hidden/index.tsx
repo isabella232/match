@@ -1,5 +1,6 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
+
 import { StyledVisuallyHidden } from "./styles";
 import type { VisuallyHiddenProps, asTags } from "./types";
 

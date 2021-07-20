@@ -1,6 +1,8 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
 import * as React from "react";
+
 import { DownloadIcon, ExpandIcon } from "@twilio-labs/match-icons/twilio";
+
 import { Button, ButtonProps, ButtonVariant, ButtonSize } from "../src";
 
 export default {

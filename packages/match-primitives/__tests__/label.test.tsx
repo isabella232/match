@@ -1,19 +1,21 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import * as React from "react";
+
 import { withTheme } from "@twilio-labs/match-themes";
+
 import { Label, LabelSize } from "../src";
 
 const LabelWithTheme = withTheme()(Label);
 
 describe("Label", () => {
   test("required indicator", () => {
-    const { container, rerender } = render(
+    const { rerender } = render(
       <LabelWithTheme required={true} disabled={false}>
         Help text
       </LabelWithTheme>
     );
-    expect(container.querySelectorAll("span").length).toEqual(1);
+    expect(screen.getByTestId("required-indicator")).toBeInTheDocument();
     rerender(
       <LabelWithTheme
         required={true}
@@ -23,13 +25,13 @@ describe("Label", () => {
         Help text
       </LabelWithTheme>
     );
-    expect(container.querySelectorAll("span").length).toEqual(1);
+    expect(screen.getByTestId("required-indicator")).toBeInTheDocument();
     rerender(
       <LabelWithTheme required={false} disabled={false}>
         Help text
       </LabelWithTheme>
     );
-    expect(container.querySelectorAll("span").length).toEqual(0);
+    expect(screen.queryByTestId("required-indicator")).not.toBeInTheDocument();
   });
 
   test("accessibility violations", async () => {

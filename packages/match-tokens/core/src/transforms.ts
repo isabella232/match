@@ -1,5 +1,6 @@
 import { ColorTranslator } from "colortranslator";
 import StyleDictionary from "style-dictionary";
+
 import { REM_CATEGORIES, COLOR_CATEGORIES } from "./constants";
 import { pxToRem } from "./utils";
 

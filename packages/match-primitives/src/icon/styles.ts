@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { color, space, compose } from "styled-system";
+
 import { iconSize } from "@twilio-labs/match-props";
+
 import type { IconProps } from "./types";
 
 export const StyledIcon = styled.span<IconProps>`

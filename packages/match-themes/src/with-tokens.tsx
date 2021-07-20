@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Provider as ReakitProvider } from "reakit";
 import { ThemeProvider } from "styled-components";
+
 import { GlobalStyles, StyledBase } from "./styles";
 import { TwilioThemeShape, SendGridThemeShape } from "./types";
 

@@ -23,39 +23,5 @@
   },
   "css.validate": false,
   "cSpell.enabled": true,
-  "cSpell.words": [
-    "authy",
-    "clsx",
-    "cta",
-    "figma",
-    "formik",
-    "ittb",
-    "noopener",
-    "noreferrer",
-    "npmrc",
-    "pypi",
-    "reakit",
-    "semver",
-    "sendgrid",
-    "squircle",
-    "svgr",
-    "tsbuildinfo",
-    "twilio",
-    "wcag",
-    "yarnrc"
-  ],
-  "cSpell.allowCompoundWords": true,
-  "cSpell.enableFiletypes": ["mdx"],
-  "cSpell.ignorePaths": [
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/buid/**",
-    ".docusaurus",
-    ".vscode",
-    ".yarn",
-    ".devcontainer",
-    "*.lock",
-    "*.snap"
-  ],
-  "cSpell.language": "en"
+  "cSpell.enableFiletypes": ["mdx"]
 }

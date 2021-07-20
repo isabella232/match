@@ -1,4 +1,5 @@
 import { MarginProps, TextColorOptions } from "@twilio-labs/match-props";
+
 import { ParagraphVariant } from "./constants";
 
 export interface ParagraphProps

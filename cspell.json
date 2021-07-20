@@ -1,0 +1,73 @@
+{
+  // Version of the setting file.  Always 0.1
+  "version": "0.1",
+  // language - current active spelling language
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+    "authy",
+    "sendgrid",
+    "clsx",
+    "cta",
+    "figma",
+    "formik",
+    "noopener",
+    "noreferrer",
+    "npmrc",
+    "pypi",
+    "reakit",
+    "semver",
+    "squircle",
+    "svgr",
+    "tsbuildinfo",
+    "twilio",
+    "wcag",
+    "yarnrc",
+    "bynder",
+    "svgs",
+    "deque",
+    "wifi",
+    "fira",
+    "cond",
+    "neue",
+    "consolas",
+    "gfonts",
+    "testid",
+    "atrule",
+    "labelledby",
+    "unhover",
+    "deburr",
+    "rerender"
+  ],
+  "ignoreWords": [
+    "csvg",
+    "dsys",
+    "kessel",
+    "spaulding",
+    "zeppo",
+    "gummo",
+    "harpo",
+    "oatly",
+    "stylelintrc",
+    "pnpify",
+    "chromaui"
+  ],
+  // flagWords - list of words to be always considered incorrect
+  // This is useful for offensive words and common spelling errors.
+  // For example "hte" should be "the"
+  "flagWords": ["hte"],
+  "allowCompoundWords": true,
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/generated/**",
+    "**/public/**",
+    "**/coverage/**",
+    ".devcontainer",
+    ".vscode",
+    ".yarn",
+    "*.lock",
+    "cspell.json"
+  ]
+}

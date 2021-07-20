@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import type { VisuallyHiddenProps } from "./types";
 
 const StyledVisuallyHidden = styled.span<VisuallyHiddenProps>`

@@ -2,8 +2,10 @@ import * as PropTypes from "prop-types";
 import * as React from "react";
 import { Provider as ReakitProvider } from "reakit";
 import { ThemeProvider } from "styled-components";
+
 import * as SendGridDesignTokens from "@twilio-labs/match-tokens/sendgrid";
 import * as TwilioDesignTokens from "@twilio-labs/match-tokens/twilio";
+
 import { ThemeVariants } from "./constants";
 import { GlobalStyles, StyledBase } from "./styles";
 

@@ -1,15 +1,17 @@
-import { render, waitFor } from "@testing-library/react";
+import { screen, render, waitFor } from "@testing-library/react";
 import { Formik } from "formik";
 import { axe } from "jest-axe";
 import * as React from "react";
+
 import { withTheme } from "@twilio-labs/match-themes";
+
 import { Checkbox, CheckboxGroup, CheckboxSize } from "../src/checkbox";
 
 const CheckboxGroupWithTheme = withTheme()(CheckboxGroup);
 
 describe("CheckboxGroup", () => {
   test("additional text", async () => {
-    const { getByText } = render(
+    render(
       <Formik initialValues={{}} onSubmit={() => {}}>
         <CheckboxGroupWithTheme
           label="Test checkbox group"
@@ -25,12 +27,12 @@ describe("CheckboxGroup", () => {
         </CheckboxGroupWithTheme>
       </Formik>
     );
-    expect(getByText(/describes the fieldset/i)).toBeVisible();
-    expect(getByText(/describes the first checkbox/i)).toBeVisible();
+    expect(screen.getByText(/describes the fieldset/i)).toBeVisible();
+    expect(screen.getByText(/describes the first checkbox/i)).toBeVisible();
   });
 
   test("error text", async () => {
-    const { getByRole } = render(
+    render(
       <Formik
         validateOnMount
         initialValues={{}}
@@ -65,7 +67,9 @@ describe("CheckboxGroup", () => {
     );
 
     await waitFor(() =>
-      expect(getByRole("alert")).toHaveTextContent(/this field is required/i)
+      expect(screen.getByRole("alert")).toHaveTextContent(
+        /this field is required/i
+      )
     );
   });
 

@@ -14,12 +14,13 @@
     "start:all": "concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -h www.local.twilio.com -p 6006",
     "start:website": "yarn workspace match-website start",
-    "prettier": "prettier --list-different '**/*.{ts,tsx,js,json,md,mdx,yml,css}'",
-    "prettier:write": "prettier --write '**/*.{ts,tsx,js,json,md,mdx,yml,css}'",
-    "prettier:check": "prettier --check '**/*.{ts,tsx,js,json,md,mdx,yml,css}'",
+    "prettier": "prettier --list-different '**/*.{ts,tsx,js,cjs,mjs,json,md,mdx,yml,css}'",
+    "prettier:write": "prettier --write '**/*.{ts,tsx,js,cjs,mjs,json,md,mdx,yml,css}'",
+    "prettier:check": "prettier --check '**/*.{ts,tsx,js,cjs,mjs,json,md,mdx,yml,css}'",
     "lint": "yarn lint:js && yarn lint:css",
-    "lint:js": "eslint '**/*.{ts,tsx,js}'",
+    "lint:js": "eslint '**/*.{ts,tsx,js,cjs,mjs}'",
     "lint:css": "stylelint './**/*.css' && stylelint './**/styles.ts'",
+    "lint:spelling": "cspell './**/*.{ts,tsx,js,cjs,mjs,json,md,mdx,yml,css}'",
     "lint:staged": "lint-staged",
     "type-check": "yarn workspaces foreach run type-check",
     "build:all": "yarn workspaces foreach --topological-dev run build",
@@ -38,10 +39,11 @@
     "postinstall": "husky install"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,json,yml,md,mdx,css}": [
-      "prettier --write"
+    "*.{js,ts,tsx,cjs,mjs,json,yml,md,mdx,css}": [
+      "prettier --write",
+      "cspell --no-summary"
     ],
-    "*.{js,ts,tsx}": [
+    "*.{js,cjs,mjs,ts,tsx}": [
       "eslint"
     ],
     "*.{css}": [
@@ -71,14 +73,18 @@
     "@storybook/react": "6.3.2",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
+    "@twilio-labs/browserslist-config-match": "workspace:configs/browserslist",
+    "@twilio-labs/eslint-config-match": "workspace:configs/eslint",
     "@twilio-labs/match-themes": "workspace:packages/match-themes",
+    "@twilio-labs/stylelint-config-match": "workspace:configs/stylelint",
+    "@twilio-labs/tsconfig-match": "workspace:configs/tsconfig",
     "@types/jest": "26.0.23",
     "@types/jest-axe": "3.5.1",
     "@types/node": "15.12.5",
     "@types/react": "17.0.11",
     "@types/testing-library__jest-dom": "5.14.0",
-    "@typescript-eslint/eslint-plugin": "4.28.1",
-    "@typescript-eslint/parser": "4.28.1",
+    "@typescript-eslint/eslint-plugin": "4.28.3",
+    "@typescript-eslint/parser": "4.28.3",
     "@yarnpkg/pnpify": "3.0.0-rc.7",
     "babel-eslint": "10.1.0",
     "babel-jest": "27.0.6",
@@ -86,16 +92,20 @@
     "babel-plugin-styled-components": "1.13.1",
     "concurrently": "6.2.0",
     "core-js": "3.15.2",
+    "cspell": "5.6.6",
     "eslint": "7.30.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-jest": "24.3.6",
+    "eslint-plugin-jest-formatting": "3.0.0",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-promise": "5.1.0",
     "eslint-plugin-react": "7.24.0",
     "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-testing-library": "4.9.1",
     "eslint-plugin-unicorn": "34.0.1",
     "husky": "^6.0.0",
     "jest": "27.0.6",
@@ -107,6 +117,7 @@
     "react-is": "17.0.2",
     "regenerator-runtime": "0.13.8",
     "stylelint": "13.13.1",
+    "stylelint-a11y": "1.2.3",
     "stylelint-config-prettier": "8.0.2",
     "stylelint-config-rational-order": "0.1.2",
     "stylelint-config-recommended": "5.0.0",
@@ -116,23 +127,11 @@
     "stylelint-order": "4.1.0",
     "stylelint-processor-styled-components": "1.10.0",
     "ts-jest": "27.0.3",
-    "tsconfig-match": "workspace:configs/tsconfig",
     "typescript": "4.3.4",
     "webpack": "5.41.1"
   },
   "browserslist": [
-    "last 2 versions and > 1%",
-    "last 2 Firefox versions",
-    "last 2 Chrome versions",
-    "last 2 Edge versions",
-    "last 2 Safari versions",
-    "last 2 FirefoxAndroid versions",
-    "last 2 ChromeAndroid versions",
-    "last 2 iOS versions",
-    "not op_mini all",
-    "not IE <= 11",
-    "not IE_Mob <= 11",
-    "not dead"
+    "extends @twilio-labs/browserslist-config-match"
   ],
   "engines": {
     "node": "14.x"

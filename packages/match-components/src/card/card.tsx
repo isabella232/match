@@ -1,6 +1,8 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
+
 import { paddingPropTypes, marginPropTypes } from "@twilio-labs/match-props";
+
 import { CardVariant } from "./constants";
 import { StyledCard } from "./styles";
 import type { CardProps } from "./types";

@@ -1,9 +1,12 @@
 const { writeFileSync, appendFileSync, mkdirSync } = require("fs");
 const path = require("path");
 const fs = require("fs");
+
 const svgr = require("@svgr/core").default;
+
 const svgrConfig = require("../svgr/config.cjs");
 const niceName = require("../svgr/nice-name.cjs");
+
 const getSVGs = require("./get-svgs.cjs");
 const iconList = require("./icon-list.cjs");
 

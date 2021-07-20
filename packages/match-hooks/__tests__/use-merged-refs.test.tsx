@@ -1,5 +1,6 @@
 import * as React from "react";
 import { render } from "@testing-library/react";
+
 import { useMergedRefs } from "../src";
 
 const RefHandler = React.forwardRef((_props, ref) => {

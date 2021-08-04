@@ -12,8 +12,7 @@ const EXTERNAL_URL_REGEX = /^(https?:)\S*$/;
 const secureExternalLink = (
   href?: string
 ): Record<string, unknown> | undefined => {
-  if (!href) return {};
-  if (EXTERNAL_URL_REGEX.test(href)) {
+  if (href && EXTERNAL_URL_REGEX.test(href)) {
     return { rel: "noreferrer noopener", target: "_blank" };
   }
 };

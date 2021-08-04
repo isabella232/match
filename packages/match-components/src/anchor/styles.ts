@@ -5,7 +5,12 @@ import { AnchorVariant } from "./constants";
 import type { AnchorProps } from "./types";
 
 export const StyledAnchor = styled.a<AnchorProps>`
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
   text-decoration: underline;
+  background: none;
+  border: none;
   cursor: pointer;
 
   &:focus {

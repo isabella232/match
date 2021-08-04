@@ -10,8 +10,9 @@ import type { AnchorProps } from "./types";
 const EXTERNAL_URL_REGEX = /^(https?:)\S*$/;
 
 const secureExternalLink = (
-  href: string
+  href?: string
 ): Record<string, unknown> | undefined => {
+  if (!href) return {};
   if (EXTERNAL_URL_REGEX.test(href)) {
     return { rel: "noreferrer noopener", target: "_blank" };
   }
@@ -20,7 +21,12 @@ const secureExternalLink = (
 export const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
   ({ children, icon: Icon, ...props }, ref) => {
     return (
-      <StyledAnchor ref={ref} {...secureExternalLink(props.href)} {...props}>
+      <StyledAnchor
+        as={Boolean(props.href) ? "a" : "button"}
+        ref={ref}
+        {...secureExternalLink(props.href)}
+        {...props}
+      >
         {children}
         {Icon && (
           <Icon
@@ -43,7 +49,7 @@ Anchor.propTypes = {
   icon: PropTypes.func,
   children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(Object.values(AnchorVariant)),
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string,
   target: PropTypes.oneOf(Object.values(AnchorTarget)),
   rel: PropTypes.string,
   noUnderline: PropTypes.bool,

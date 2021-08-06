@@ -9,7 +9,7 @@ import { Anchor } from "../src";
 
 const AnchorWithTheme = withTheme()(Anchor);
 
-describe("Button", () => {
+describe("Anchor", () => {
   test("renders external anchor", () => {
     render(
       <AnchorWithTheme href="https://twilio.com">Click Me</AnchorWithTheme>
@@ -48,6 +48,13 @@ describe("Button", () => {
     expect(screen.getByText(/click me/i).getAttribute("rel")).toEqual(
       "noopener"
     );
+  });
+
+  test("renders as a button", () => {
+    render(<AnchorWithTheme>I am a button</AnchorWithTheme>);
+    expect(
+      screen.getByText(/i am a button/i).tagName.toLocaleLowerCase()
+    ).toEqual("button");
   });
 
   test("accessibility violations", async () => {

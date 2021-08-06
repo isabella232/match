@@ -23,7 +23,7 @@ const Component = () => <Anchor href="/">Ahoy</Anchor>;
 | Prop         | Type          | Default   | Description                              |
 | ------------ | ------------- | --------- | ---------------------------------------- |
 | variant?     | AnchorVariant | 'primary' | 'primary', 'inverse', 'text'             |
-| href         | string        | null      | A URL to route to.                       |
+| href?        | string        | null      | A URL to route to.                       |
 | target?      | AnchorTarget  | null      | '\_self', '\_blank', '\_parent', '\_top' |
 | rel?         | string        | null      | Defaults to '\_blank' for external links |
 | noUnderline? | boolean       | false     | Removes the underline from the anchor.   |
@@ -35,12 +35,14 @@ const Component = () => <Anchor href="/">Ahoy</Anchor>;
 ### Anchors vs Buttons
 
 All actions outside of linking to another URL should use a button. For example, actions such as submitting a form or closing a module should
-use a button.
+use a Button.
 
-The button component can also be used as a CTA anchor when the href prop is included. In this situation the element looks like a button but
+If an Anchor does not link to a valid URL, omit the `href` attribute to render as a button. Never set `href` to "#" or "javascript:void(0)".
+
+The Button component can also be used as a CTA anchor when the href prop is included. In this situation the element looks like a button but
 renders as an anchor.
 
-Learn more about the [button component](/docs/components/button) to determine if it will fit your needs better.
+Learn more about the [Button component](/docs/components/button) to determine if it will fit your needs better.
 
 ### Accessibility
 

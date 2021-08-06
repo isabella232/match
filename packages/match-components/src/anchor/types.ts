@@ -9,7 +9,7 @@ export interface AnchorProps
   variant?: `${AnchorVariant}`;
   icon?: IconComponentProp;
   /** A URL to route to. */
-  href: string;
+  href?: string;
   /** Defaults to '_blank' for external links */
   target?: `${AnchorTarget}`;
   /** Defaults to 'noreferrer noopener' for external links  */

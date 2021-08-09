@@ -49,8 +49,6 @@ jobs:
         run: yarn install --immutable
         env:
           STREAMLINE_SECRET: ${{ secrets.STREAMLINE_SECRET }}
-      - name: Bootstrap
-        run: yarn bootstrap
 
       # Upload to Chromatic
       - name: Build Storybook

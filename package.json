@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "bootstrap": "yarn build:tokens && yarn build:icons && yarn build:logos && yarn build:flags",
+    "clean": "yarn workspaces foreach run clean && jest --clearCache && yarn cache clean",
     "start:all": "concurrently \"yarn:start:storybook\" \"yarn:start:website\"",
     "start:storybook": "start-storybook -h www.local.twilio.com -p 6006",
     "start:website": "yarn workspace match-website start",
@@ -36,7 +37,7 @@
     "test:ci": "jest --ci --coverage",
     "test:coverage": "jest --runInBand --coverage",
     "yarn:update": "yarn plugin import typescript && yarn plugin import version && yarn plugin import interactive-tools && yarn plugin import workspace-tools",
-    "postinstall": "husky install"
+    "postinstall": "husky install && yarn bootstrap"
   },
   "lint-staged": {
     "*.{js,ts,tsx,cjs,mjs,json,yml,md,mdx,css}": [

@@ -6,8 +6,8 @@ Match is a design system used to build accessible, consistent, and high quality 
 
 ### Prerequisites
 
-1. You must have a valid [Streamline license](https://app.streamlinehq.com/profile/developer) in order for the `@twilio-labs/match-icons-twilio` package to install. Ensure that your license key is present in the `STREAMLINE_SECRET` environment variable. We recommend setting this in your `~/.zshenv` file.
-2. Storybook and Gatsby will attempt to load on `http://www.local.twilio.com`. Please ensure that you have the following in your `/etc/hosts` file: `127.0.0.1 www.local.twilio.com`.
+1. You must have a valid, non-free [Streamline license](https://app.streamlinehq.com/profile/developer) in order for the `@twilio-labs/match-icons-twilio` package to install. Ensure that your license key is present in the `STREAMLINE_SECRET` environment variable. We recommend setting this in your `~/.zshenv` file. Alternatively, you may create a `.env.local` file in the root of the project.
+2. Storybook and Gatsby will attempt to load on `http://www.local.twilio.com`. Please ensure that you have the following line in the `/etc/hosts` file on your machine: `127.0.0.1 www.local.twilio.com`.
 
 Clone the Match repository anywhere on your computer...
 
@@ -18,7 +18,7 @@ git clone git@github.com:twilio-labs/match.git
 Install and bootstrap Match dependencies...
 
 ```shell
-yarn && yarn bootstrap
+yarn
 ```
 
 ### Dev Container

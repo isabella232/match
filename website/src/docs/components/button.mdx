@@ -122,10 +122,7 @@ Disabled buttons will not receive any click events. It should be obvious to the 
 Buttons of any variety and size may include an icon from one of the [Match icon libraries](/docs/components/icon). Always place icons to the right of the button text.
 
 ```jsx live
-<Button>
-  Download
-  <DownloadIcon decorative />
-</Button>
+<Button icon={DownloadIcon}>Download</Button>
 ```
 
 ### Icon Only
@@ -133,7 +130,5 @@ Buttons of any variety and size may include an icon from one of the [Match icon 
 Icon only buttons must use the `icon` size, but may be used with any variant. Be sure to include a descriptive title for your icon.
 
 ```jsx live
-<Button size="icon">
-  <ExpandIcon title="expand" />
-</Button>
+<Button icon={ExpandIcon} size="icon" />
 ```

@@ -5133,6 +5133,7 @@ __metadata:
     babel-eslint: 10.1.0
     eslint: 7.30.0
     eslint-config-prettier: 8.3.0
+    eslint-import-resolver-typescript: 2.4.0
     eslint-plugin-eslint-comments: 3.2.0
     eslint-plugin-import: 2.23.4
     eslint-plugin-jest: 24.3.6
@@ -5149,6 +5150,7 @@ __metadata:
     babel-eslint: "*"
     eslint: "*"
     eslint-config-prettier: "*"
+    eslint-import-resolver-typescript: "*"
     eslint-plugin-eslint-comments: "*"
     eslint-plugin-import: "*"
     eslint-plugin-jest: "*"
@@ -12758,6 +12760,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-import-resolver-typescript@npm:2.4.0":
+  version: 2.4.0
+  resolution: "eslint-import-resolver-typescript@npm:2.4.0"
+  dependencies:
+    debug: ^4.1.1
+    glob: ^7.1.6
+    is-glob: ^4.0.1
+    resolve: ^1.17.0
+    tsconfig-paths: ^3.9.0
+  peerDependencies:
+    eslint: "*"
+    eslint-plugin-import: "*"
+  checksum: 2db0de33531f563bbbeecbdb080e3ff7ac0dbdd01f82ed690ccc9b29f746e431bf639322b1f1384f5c67055104c722cf70d9bf837d3ef70d6f3cf4ec2ba6562d
+  languageName: node
+  linkType: hard
+
 "eslint-module-utils@npm:^2.6.1":
   version: 2.6.1
   resolution: "eslint-module-utils@npm:2.6.1"
@@ -20014,6 +20032,7 @@ fsevents@^1.2.7:
     eslint: 7.30.0
     eslint-config-prettier: 8.3.0
     eslint-import-resolver-node: 0.3.4
+    eslint-import-resolver-typescript: 2.4.0
     eslint-plugin-eslint-comments: 3.2.0
     eslint-plugin-import: 2.23.4
     eslint-plugin-jest: 24.3.6

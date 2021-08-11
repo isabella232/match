@@ -6,7 +6,11 @@
   "settings": {
     "react": {
       "version": "detect"
-    }
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": "typescript"
   },
   "extends": [
     "plugin:unicorn/recommended",
@@ -28,12 +32,7 @@
         "newlines-between": "always",
         "pathGroups": [
           {
-            "pattern": "@twilio-labs/**",
-            "group": "internal",
-            "position": "before"
-          },
-          {
-            "pattern": "@/**",
+            "pattern": "@?(twilio-labs)/**",
             "group": "internal",
             "position": "after"
           }

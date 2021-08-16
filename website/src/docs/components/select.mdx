@@ -1,0 +1,175 @@
+---
+id: select
+title: Select
+section: Components
+description: The select component allows users to choose a value from a list.
+image: ../../images/docs/components/select-header.png
+figma: https://www.figma.com/file/oYazzpZ4XWFUlwD1pDHNms/Core-Components?node-id=717%3A692
+github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/select
+---
+
+import { Guidelines, Do, DoNot } from "../../components/guidelines";
+import { StaticImage } from "gatsby-plugin-image";
+
+## Code
+
+### Installation
+
+```shell
+yarn add @twilio-labs/match formik
+```
+
+### Usage
+
+```jsx
+import { Formik } from "formik";
+import { Select, Option } from "@twilio-labs/match/components";
+
+const selectOptions: Option[] = [
+  { value: "yes", label: "Yes" },
+  { value: "ofCourse", label: "Of course!" },
+];
+
+const Component = () => (
+  <Formik initialValues={{ yesNo: "" }} onSubmit={() => {}}>
+    <Form>
+      <Select name="yesNo" label="Is Match Awesome?" options={selectOptions} />
+    </Form>
+  </Formik>
+);
+```
+
+### Props
+
+| Prop         | Type                      | Default  | Description                                   |
+| ------------ | ------------------------- | -------- | --------------------------------------------- |
+| name         | string                    | null     |                                               |
+| label        | string                    | null     |                                               |
+| size?        | SelectSize                | 'normal' | 'normal', 'small'                             |
+| required?    | boolean                   | null     | Sets the select as required.                  |
+| disabled?    | boolean                   | null     | Disables the select.                          |
+| hideLabel?   | boolean                   | null     | Visually hides the label.                     |
+| placeholder? | string                    | null     | Sets the select's placeholder default option. |
+| additional?  | string                    | null     | Supporting validation instructions.           |
+| validate?    | (value: string) => string | null     | Overrides built in validation.                |
+| noValidate?  | boolean                   | null     | Disables built in validation.                 |
+
+---
+
+## Guidelines
+
+### About Selects
+
+Selects are form controls that allow the user to choose from a list of options. Each option can be enabled / disabled, and grouped.
+
+### Accessibility
+
+Here are some quick accessibility tips to ensure a positive user experience for all users.
+
+- Always include a descriptive label for each Select.
+- Do not use placeholder text as a replacement for labels.
+- Use `additional` to provide information on how to pass the Select's validation.
+- Use error messages to provide information on how to correct invalid data.
+
+---
+
+## Composition
+
+All Selects must include a label. A label may be visually hidden only if the purpose of the Select is abundantly apparent. The `hideLabel` prop will remove the label entirely and apply an `aria-label` to the select element for screen readers.
+
+Labels should be short and descriptive with any instructional text belonging in `additional`. Keep supplemental additional text concise and relevant to the select's validation requirements.
+
+When a Select is required and a value is not selected, provide an error message with instructional cues on how to make the correction. Any `additional` text provided with the Select will be replaced by the error. Be sure to repeat any relevant information that would have been lost.
+
+import img from "../../images/docs/components/select-header.png";
+
+<Guidelines>
+  <Do>
+    <ul>
+      <li>
+        Use help text to provide additional information to the user that could
+        help prevent errors.
+      </li>
+      <li>
+        Use disabled to show a user that a select can not be interacted with
+        yet.
+      </li>
+    </ul>
+  </Do>
+  <DoNot>
+    <ul>
+      <li>Don't use placeholder text for every field.</li>
+      <li>
+        Don't use placeholder text to provide error preventing information.
+      </li>
+      <li>
+        Don't use disabled to show information in an select that can not be
+        edited.
+      </li>
+    </ul>
+  </DoNot>
+</Guidelines>
+
+---
+
+## Examples
+
+### Select with Help Text
+
+Labels and help text are controlled via the Select component props in order to ensure consistency and accessibility best practices.
+
+```jsx live fullWidth
+<Formik initialValues={{ yesNo: "" }} onSubmit={() => {}}>
+  <Form>
+    <Select
+      name="yesNo"
+      label="Choose an option"
+      options={[{ value: "yes", label: "Yes" }]}
+      placeholder="Choose one..."
+      additional="Please choose one option"
+      required
+    />
+  </Form>
+</Formik>
+```
+
+### Select with Error
+
+Selects come with basic [constraint validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) enabled by default. You may override the built in validation with the `validate` prop, or completely disable with `noValidate`. For more advanced validation please read the [Formik documentation](https://formik.org/docs/guides/validation). Note that `additional` text is replaced by the validation error.
+
+```jsx live fullWidth
+<Formik
+  validateOnMount
+  initialTouched={{ yesNo: true }}
+  initialValues={{ yesNo: "" }}
+  onSubmit={() => {}}
+>
+  <Form>
+    <Select
+      name="yesNo"
+      label="Choose an option"
+      options={[{ value: "yes", label: "Yes" }]}
+      placeholder="Choose one..."
+      additional="Please choose one option"
+      required
+    />
+  </Form>
+</Formik>
+```
+
+### Disabled Select
+
+Disabled selects cannot be interacted with. Use a read-only select for showing static information which cannot be edited.
+
+```jsx live fullWidth
+<Formik initialValues={{ yesNo: "" }} onSubmit={() => {}}>
+  <Form>
+    <Select
+      name="yesNo"
+      label="Choose an option"
+      options={[{ value: "yes", label: "Yes" }]}
+      disabled
+    />
+  </Form>
+</Formik>
+```

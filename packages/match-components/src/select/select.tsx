@@ -1,38 +1,37 @@
-import { useField } from "formik";
 import * as PropTypes from "prop-types";
 import * as React from "react";
+import { useField } from "formik";
 import { useUIDSeed } from "react-uid";
 
-import { useMergedRefs } from "@twilio-labs/match-hooks";
 import {
-  Label,
-  LabelSize,
   HelpText,
   HelpTextVariant,
+  Label,
+  LabelSize,
 } from "@twilio-labs/match-primitives";
 import { marginPropTypes } from "@twilio-labs/match-props";
+import { useMergedRefs } from "@twilio-labs/match-hooks";
 
-import { InputSize } from "./constants";
+import type { SelectProps } from "./types";
 import {
-  StyledInput,
-  StyledInputContainer,
-  StyledInputWrapper,
+  StyledSelect,
+  StyledSelectContainer,
+  StyledSelectWrapper,
 } from "./styles";
-import type { InputProps } from "./types";
+import { SelectSize } from "./constants";
 
-export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   (
     {
       name,
-      type,
       label,
       hideLabel,
-      additional,
+      helperText,
       size,
       disabled,
       required,
-      minLength,
-      maxLength,
+      placeholder,
+      options,
       validate: validateOverride,
       noValidate,
       margin,
@@ -46,53 +45,32 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    const innerRef = React.useRef<HTMLInputElement>(null);
-    const mergedRefs = useMergedRefs<HTMLInputElement>(innerRef, ref);
+    const innerRef = React.useRef<HTMLSelectElement>(null);
+    const mergedRefs = useMergedRefs<HTMLSelectElement>(innerRef, ref);
 
     const validate = (value: string) => {
       if (noValidate || !innerRef.current) return;
 
       if (validateOverride) return validateOverride(value);
 
-      const { validity } = innerRef.current;
-
       if (required && !Boolean(value)) {
         return "This field is required";
-      }
-
-      if (minLength && value && value.length < minLength) {
-        return `Must be at least ${minLength} characters long`;
-      }
-
-      if (maxLength && value && value.length > maxLength) {
-        return `Must be less than ${maxLength} characters long`;
-      }
-
-      if (validity.typeMismatch && type === "email") {
-        return "Must be a valid email";
-      }
-
-      if (validity.typeMismatch && type === "url") {
-        return "Must be a valid URL";
       }
     };
 
     const seed = useUIDSeed();
     const [field, meta] = useField({
       name,
-      type,
       validate,
       required,
       disabled,
-      minLength,
-      maxLength,
       ...props,
     });
     const hasError = meta.touched && Boolean(meta.error);
-    const hasAdditional = Boolean(additional);
+    const hasAdditional = Boolean(helperText);
 
     return (
-      <StyledInputWrapper
+      <StyledSelectWrapper
         margin={margin}
         marginY={marginY}
         marginX={marginX}
@@ -104,7 +82,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {!hideLabel && (
           <Label
             id={seed(`${name}_label`)}
-            htmlFor={seed(`${name}_input`)}
+            htmlFor={seed(`${name}_select`)}
             disabled={Boolean(disabled)}
             required={Boolean(required)}
             size={LabelSize.NORMAL}
@@ -112,16 +90,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {label}
           </Label>
         )}
-        <StyledInputContainer hasError={hasError} disabled={Boolean(disabled)}>
-          <StyledInput
-            id={seed(`${name}_input`)}
+        <StyledSelectContainer hasError={hasError} disabled={Boolean(disabled)}>
+          <StyledSelect
+            id={seed(`${name}_select`)}
             ref={mergedRefs}
-            type={type}
             disabled={disabled}
             required={required}
             inputSize={size}
-            minLength={minLength}
-            maxLength={maxLength}
             aria-label={hideLabel ? label : undefined}
             aria-labelledby={!hideLabel ? seed(`${name}_label`) : undefined}
             aria-describedby={
@@ -131,43 +106,49 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             aria-disabled={disabled}
             {...field}
             {...props}
-          />
-        </StyledInputContainer>
+          >
+            {placeholder && <option value="">{placeholder}</option>}
+            {options.map((option, key) => {
+              return (
+                <option value={option.value} key={key}>
+                  {option.label}
+                </option>
+              );
+            })}
+          </StyledSelect>
+        </StyledSelectContainer>
         {(hasAdditional || hasError) && (
           <HelpText
             id={seed(`${name}_message`)}
             variant={hasError ? HelpTextVariant.ERROR : undefined}
           >
-            {hasError ? meta.error : additional}
+            {hasError ? meta.error : helperText}
           </HelpText>
         )}
-      </StyledInputWrapper>
+      </StyledSelectWrapper>
     );
   }
 );
 
-Input.displayName = "Input";
+Select.displayName = "Select";
 
-Input.propTypes = {
+Select.propTypes = {
   ...marginPropTypes,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["text", "email", "tel", "number", "url", "password"]),
-  size: PropTypes.oneOf(Object.values(InputSize)),
-  required: PropTypes.bool,
-  disabled: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  hideLabel: PropTypes.bool,
   placeholder: PropTypes.string,
-  additional: PropTypes.string,
+  helperText: PropTypes.string,
+  defaultValue: PropTypes.string,
+  value: PropTypes.string,
+  required: PropTypes.bool,
   error: PropTypes.string,
-  minLength: PropTypes.number,
-  maxLength: PropTypes.number,
-  validate: PropTypes.func,
-  noValidate: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  disabled: PropTypes.bool,
+  type: PropTypes.oneOf(["single", "multiple"]),
+  size: PropTypes.oneOf(Object.values(SelectSize)),
+  options: PropTypes.array.isRequired,
 };
 
-Input.defaultProps = {
-  type: "text",
-  size: InputSize.NORMAL,
+Select.defaultProps = {
+  size: SelectSize.NORMAL,
 };

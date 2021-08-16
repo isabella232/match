@@ -11,6 +11,7 @@ export * from "./list";
 export * from "./paragraph";
 export * from "./radio-group";
 export * from "./rich-text";
+export * from "./select";
 export * from "./separator";
 export * from "./snippet";
 export * from "./textarea";

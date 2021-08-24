@@ -3,7 +3,7 @@ import * as PropTypes from "prop-types";
 import * as React from "react";
 import { useUIDSeed } from "react-uid";
 
-import { Label, LabelSize } from "@twilio-labs/match-primitives";
+import { StyledRequired } from "@twilio-labs/match-primitives";
 import { marginPropTypes } from "@twilio-labs/match-props";
 
 import { CheckmarkIcon } from "./checkmark-icon";
@@ -99,22 +99,12 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           />
         </StyledCheckbox>
         <StyledCheckboxLabel size={size}>
-          {label && (
-            <Label
-              disabled={Boolean(disabled)}
-              required={Boolean(required) && !Boolean(isGrouped)}
-              requiredStyleAtEnd={true}
-              size={
-                Boolean(size == CheckboxSize.NORMAL)
-                  ? LabelSize.NORMAL
-                  : LabelSize.SMALL
-              }
-              id={seed(`${name}_label`)}
-              htmlFor={seed(`${name}_input`)}
-            >
-              {label}
-            </Label>
-          )}
+          <label id={seed(`${name}_label`)} htmlFor={seed(`${name}_input`)}>
+            {label}
+            {Boolean(required) && !Boolean(isGrouped) && (
+              <StyledRequired data-testid="required-indicator" />
+            )}
+          </label>
           {additional && (
             <span id={seed(`${name}_additional`)}>{additional}</span>
           )}

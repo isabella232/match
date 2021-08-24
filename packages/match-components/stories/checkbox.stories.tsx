@@ -49,7 +49,12 @@ export const SingleCheckbox = Template.bind({});
 
 export const AnchorInLabel = Template.bind({});
 AnchorInLabel.args = {
-  label: <Anchor href="https://www.twilio.com/">This text is a link</Anchor>,
+  label: [
+    "This label contains ",
+    <Anchor key="anchor" href="https://www.twilio.com/">
+      a link
+    </Anchor>,
+  ],
   additional: "More about this",
 };
 

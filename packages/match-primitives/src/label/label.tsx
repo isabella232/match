@@ -8,19 +8,13 @@ import type { LabelProps, asTags } from "./types";
 export const Label: React.FC<LabelProps> = ({
   children,
   required,
-  requiredStyleAtEnd,
   size,
   ...props
 }) => {
   return (
     <StyledLabel required={required} labelSize={size} {...props}>
-      {required && !requiredStyleAtEnd && (
-        <StyledRequired data-testid="required-indicator" />
-      )}
+      {required && <StyledRequired data-testid="required-indicator" />}
       {children}
-      {required && requiredStyleAtEnd && (
-        <StyledRequired data-testid="required-indicator" />
-      )}
     </StyledLabel>
   );
 };
@@ -30,7 +24,6 @@ Label.displayName = "Label";
 Label.propTypes = {
   children: PropTypes.node.isRequired,
   required: PropTypes.bool.isRequired,
-  requiredStyleAtEnd: PropTypes.bool,
   disabled: PropTypes.bool.isRequired,
   size: PropTypes.oneOf(Object.values(LabelSize)),
   as: PropTypes.oneOf(["label", "legend"] as asTags[]),

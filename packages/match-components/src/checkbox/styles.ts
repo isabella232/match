@@ -18,9 +18,8 @@ import type {
 export const StyledCheckboxWrapper = styled.div<StyledCheckboxWrapperProps>`
   ${space}
   display: grid;
-  grid-gap: 12px;
+  grid-gap: ${themeGet("space.scale60")};
   grid-template-columns: min-content max-content;
-  margin: 8px 0;
   /* This sets the checkbox size */
   font-size: ${themeGet("fontSizes.scale100")};
   line-height: 28px;
@@ -49,18 +48,17 @@ export const StyledCheckbox = styled.div<StyledCheckboxProps>`
   border: 2px solid ${themeGet("colors.gray40")};
   border-radius: 3px;
 
-  ${() =>
-    variant({
-      prop: "size",
-      variants: {
-        [CheckboxSize.SMALL]: {
-          marginTop: "1px",
-        },
-        [CheckboxSize.NORMAL]: {
-          marginTop: "3px",
-        },
+  ${variant({
+    prop: "size",
+    variants: {
+      [CheckboxSize.SMALL]: {
+        marginTop: "5px",
       },
-    })}
+      [CheckboxSize.NORMAL]: {
+        marginTop: "6px",
+      },
+    },
+  })}
 
   /* Checkmark Icon */
   ${StyledIcon} {
@@ -68,32 +66,27 @@ export const StyledCheckbox = styled.div<StyledCheckboxProps>`
     height: auto;
   }
 
-  /* Hover */
   &:hover {
     background-color: ${themeGet("colors.gray20")};
   }
 
-  /* Active + Focus */
   &:active,
   &:focus,
   &:focus-within {
     border-color: ${themeGet("colors.blue50")};
   }
 
-  /* Checked */
   ${({ checked }) =>
     checked &&
     css`
       background-color: ${themeGet("colors.blue60")};
       border-color: ${themeGet("colors.blue60")};
 
-      /* Hover */
       :hover {
         background-color: ${themeGet("colors.blue70")};
         border-color: ${themeGet("colors.blue70")};
       }
 
-      /* Active + Focus */
       :active,
       :focus,
       :focus-within {
@@ -101,7 +94,6 @@ export const StyledCheckbox = styled.div<StyledCheckboxProps>`
       }
     `}
 
-  /* Disabled */
   ${({ disabled }) =>
     disabled &&
     css`
@@ -111,7 +103,6 @@ export const StyledCheckbox = styled.div<StyledCheckboxProps>`
       pointer-events: none;
     `}
 
-  /* Readonly */
   ${({ readOnly }) =>
     readOnly &&
     css`
@@ -122,7 +113,6 @@ export const StyledCheckbox = styled.div<StyledCheckboxProps>`
       pointer-events: none;
     `}
 
-  /* Error */
   ${({ hasError }) =>
     hasError &&
     css`
@@ -143,27 +133,43 @@ export const StyledCheckboxLabel = styled.div<StyledCheckboxLabelProps>`
   flex-direction: column;
   max-width: 100%;
 
-  span {
+  > span {
     color: ${themeGet("colors.gray70")};
     font-weight: ${themeGet("fontWeights.regular")};
-    font-size: ${themeGet("fontSizes.scale80")};
-    line-height: 21px;
-    ${({ size }) =>
-      Boolean(size == CheckboxSize.SMALL) &&
-      css`
-        font-size: ${themeGet("fontSizes.scale60")};
-        line-height: 18px;
-      `}
+    line-height: ${themeGet("lineHeights.scale180")};
   }
 
-  label {
+  > label {
     color: ${themeGet("colors.gray90")};
     font-weight: ${themeGet("fontWeights.medium")};
+    line-height: ${themeGet("lineHeights.scale220")};
 
     span {
       vertical-align: text-top;
     }
   }
+
+  ${variant({
+    prop: "size",
+    variants: {
+      [CheckboxSize.SMALL]: {
+        ["> label"]: {
+          fontSize: "scale80",
+        },
+        ["> span"]: {
+          fontSize: "scale60",
+        },
+      },
+      [CheckboxSize.NORMAL]: {
+        ["> label"]: {
+          fontSize: "scale100",
+        },
+        ["> span"]: {
+          fontSize: "scale80",
+        },
+      },
+    },
+  })}
 `;
 
 export const StyledCheckboxGroup = styled.fieldset<StyledCheckboxGroupProps>`

@@ -128,7 +128,7 @@ export const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
         {hasError && (
           <HelpText
             id={seed(`${name}_message`)}
-            variant={hasError ? HelpTextVariant.ERROR : undefined}
+            variant={HelpTextVariant.ERROR}
           >
             {meta.error}
           </HelpText>

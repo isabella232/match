@@ -17,16 +17,6 @@ describe("Label", () => {
     );
     expect(screen.getByTestId("required-indicator")).toBeInTheDocument();
     rerender(
-      <LabelWithTheme
-        required={true}
-        requiredStyleAtEnd={true}
-        disabled={false}
-      >
-        Help text
-      </LabelWithTheme>
-    );
-    expect(screen.getByTestId("required-indicator")).toBeInTheDocument();
-    rerender(
       <LabelWithTheme required={false} disabled={false}>
         Help text
       </LabelWithTheme>

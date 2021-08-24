@@ -1,4 +1,4 @@
-import { LabelSize } from "./constants";
+import { LabelSize, LabelAlignment } from "./constants";
 
 export type asTags = "label" | "legend";
 
@@ -10,6 +10,7 @@ export interface LabelProps
   fieldValue?: string;
   size?: LabelSize;
   as?: asTags;
+  alignment?: `${LabelAlignment}`;
 }
 
 export interface StyledLabelProps extends LabelProps {

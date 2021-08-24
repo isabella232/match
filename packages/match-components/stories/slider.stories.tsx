@@ -2,6 +2,8 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Formik } from "formik";
 import * as React from "react";
 
+import { LabelAlignment } from "@twilio-labs/match-primitives";
+
 import { Slider, SliderProps } from "../src";
 
 export default {
@@ -9,7 +11,7 @@ export default {
   component: Slider,
   args: {
     name: "example",
-    label: "Label",
+    label: "Number of things:",
     maxPlus: false,
     required: false,
     disabled: false,
@@ -17,6 +19,7 @@ export default {
     max: 1000,
     step: 1,
     validate: undefined,
+    alignment: LabelAlignment.LEFT,
   },
   argTypes: {
     name: {
@@ -43,6 +46,10 @@ export default {
     step: {
       control: { type: "number" },
     },
+    alignment: {
+      options: Object.values(LabelAlignment),
+      control: { type: "select" },
+    },
   },
 } as Meta;
 
@@ -58,6 +65,17 @@ const Template: Story<SliderProps> = (args) => (
 );
 
 export const Primary = Template.bind({});
+
+export const Centered = Template.bind({});
+Centered.args = {
+  alignment: LabelAlignment.CENTER,
+  label: "things",
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};
 
 export const Error = Template.bind({});
 Error.args = {

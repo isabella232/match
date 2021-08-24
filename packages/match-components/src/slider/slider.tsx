@@ -7,12 +7,18 @@ import { useMergedRefs } from "@twilio-labs/match-hooks";
 import {
   Label,
   LabelSize,
+  LabelAlignment,
   HelpText,
   HelpTextVariant,
 } from "@twilio-labs/match-primitives";
 import { marginPropTypes } from "@twilio-labs/match-props";
 
-import { StyledSlider, StyledMinMax, StyledSliderWrapper } from "./styles";
+import {
+  StyledSlider,
+  StyledMinMax,
+  StyledSliderLabel,
+  StyledSliderWrapper,
+} from "./styles";
 import type { SliderProps } from "./types";
 
 export const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
@@ -27,6 +33,7 @@ export const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
       min,
       validate: validateOverride,
       noValidate,
+      alignment,
       margin,
       marginY,
       marginX,
@@ -78,8 +85,16 @@ export const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
           disabled={Boolean(disabled)}
           required={Boolean(required)}
           size={LabelSize.NORMAL}
+          alignment={alignment}
         >
-          {label}
+          {alignment === LabelAlignment.CENTER ? (
+            `${field.value.toLocaleString()} ${label}`
+          ) : (
+            <StyledSliderLabel>
+              <span>{label}</span>
+              <span>{field.value.toLocaleString()}</span>
+            </StyledSliderLabel>
+          )}
         </Label>
         <StyledSlider
           type="range"
@@ -103,7 +118,7 @@ export const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
           {...field}
           {...props}
         />
-        <StyledMinMax>
+        <StyledMinMax disabled={Boolean(disabled)}>
           <span>{min.toLocaleString()}</span>
           <span>
             {max.toLocaleString()}

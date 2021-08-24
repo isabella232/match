@@ -1,4 +1,5 @@
 import { MarginProps } from "@twilio-labs/match-props";
+import { LabelAlignment } from "@twilio-labs/match-primitives";
 
 export interface SliderProps
   extends MarginProps,
@@ -17,6 +18,7 @@ export interface SliderProps
   min: number;
   max: number;
   step?: number;
+  alignment?: `${LabelAlignment}`;
 }
 
 export interface StyledSliderProps {

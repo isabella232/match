@@ -183,12 +183,18 @@ export const StyledSlider = styled.input`
   }
 `;
 
-export const StyledMinMax = styled.div`
+export const StyledMinMax = styled.div<{ disabled: boolean }>`
   display: flex;
   justify-content: space-between;
   color: ${themeGet("textColors.secondary")};
   font-weight: ${themeGet("fontWeights.light")};
   font-size: ${themeGet("fontSizes.scale60")};
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${themeGet("colors.gray60")};
+    `}
 `;
 
 export const StyledSliderWrapper = styled.div<MarginProps>`
@@ -197,4 +203,9 @@ export const StyledSliderWrapper = styled.div<MarginProps>`
   label {
     pointer-events: none;
   }
+`;
+
+export const StyledSliderLabel = styled.span`
+  display: flex;
+  justify-content: space-between;
 `;

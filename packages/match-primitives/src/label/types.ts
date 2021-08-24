@@ -8,6 +8,7 @@ export interface LabelProps
   disabled: boolean;
   required: boolean;
   requiredStyleAtEnd?: boolean;
+  fieldValue?: string;
   size?: LabelSize;
   as?: asTags;
 }

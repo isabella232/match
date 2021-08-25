@@ -32,9 +32,9 @@
   line-height: var(--line-height-scale220);
 }
 
-.gatsbyImg {
+.snippet {
   position: relative;
-  & > div > div {
+  & > div {
     /* remove live code bottom margin */
     margin-bottom: 0;
   }

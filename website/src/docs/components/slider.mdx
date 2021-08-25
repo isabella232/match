@@ -1,0 +1,150 @@
+---
+id: slider
+title: Slider
+section: Components
+description: Sliders are an input that provides a visual indication of adjustable content, where the user can increase or decrease the value by moving the handle along a horizontal track.
+figma: https://www.figma.com/file/oYazzpZ4XWFUlwD1pDHNms/Core-Components?node-id=4673%3A7205
+github: https://github.com/twilio-labs/match/tree/main/packages/match-components/src/slider
+---
+
+import { Guidelines, Do, DoNot } from "../../components/guidelines";
+
+## Code
+
+### Installation
+
+```shell
+yarn add @twilio-labs/match formik
+```
+
+### Usage
+
+```jsx
+import { Formik } from "formik";
+import { Input, Form } from "@twilio-labs/match/components";
+
+const Component = () => (
+  <Formik initialValues={{ sheep: "" }} onSubmit={() => {}}>
+    <Form>
+      <Slider name="sheep" label="Number of Sheep:" min={0} max={100} />
+    </Form>
+  </Formik>
+);
+```
+
+### Props
+
+| Prop        | Type                      | Default | Description                    |
+| ----------- | ------------------------- | ------- | ------------------------------ |
+| name        | string                    | null    |                                |
+| label       | string                    | null    |                                |
+| required?   | boolean                   | null    | Sets the input as required.    |
+| disabled?   | boolean                   | null    | Disables the input.            |
+| validate?   | (value: string) => string | null    | Overrides built in validation. |
+| noValidate? | boolean                   | null    | Disables built in validation.  |
+| min         | number                    | null    | Starting slider range.         |
+| max         | number                    | null    | Ending slider range.           |
+| step?       | number                    | 1       | Slider stepping interval.      |
+| alignment?  | LabelAlignment            | 'left'  | 'left', 'center'               |
+
+---
+
+## Guidelines
+
+### About Inputs
+
+A Slider provides a coarse numeric value input that must be within a defined range of numbers.
+
+### Accessibility
+
+Here are some quick accessibility tips to ensure a positive user experience for all users.
+
+- Always include a descriptive label for each Slider.
+- Only use a Slider when the exact input value is not important.
+- Do not use ranges that are extremely large (i.e. 1-1,000).
+- Do not use ranges that are too small (i.e. 1-3).
+- Use error messages to provide information on how to correct invalid data.
+
+---
+
+## Composition
+
+All Sliders must include minimum and maximum allowable input range and a short, descriptive label.
+
+When a Slider contains invalid data, provide an error message with instructional cues on how to make the correction.
+
+Sliders should only be used on a white background.
+
+<Guidelines>
+  <Do>
+    <ul>
+      <li>Use Sliders when approximate input values are desired.</li>
+    </ul>
+  </Do>
+  <DoNot>
+    <ul>
+      <li>
+        Don't use a slider if choosing a specific value is important. The slider
+        interaction isn't as precise as explicitly typing or choosing an option
+        from a list.
+      </li>
+    </ul>
+  </DoNot>
+</Guidelines>
+
+---
+
+## Examples
+
+### Slider with Left Alignment
+
+Slider labels are left aligned by default. The selected value will appear to the right of the label text.
+
+```jsx live fullWidth
+<Formik initialValues={{ sheep: 25 }} onSubmit={() => {}}>
+  <Form>
+    <Slider name="sheep" label="Number of Sheep:" min={0} max={100} />
+  </Form>
+</Formik>
+```
+
+### Slider with Center Alignment
+
+When a Slider label is centered, the selected value appears on the left.
+
+```jsx live fullWidth
+<Formik initialValues={{ sheep: 25 }} onSubmit={() => {}}>
+  <Form>
+    <Slider name="sheep" label="sheep" min={0} max={100} alignment="center" />
+  </Form>
+</Formik>
+```
+
+### Slider with Error
+
+If a Slider is required a value of 0 will be considered invalid. You may override the built in validation with the `validate` prop, or completely disable with `noValidate`. For more advanced validation please read the [Formik documentation](https://formik.org/docs/guides/validation).
+
+```jsx live fullWidth
+<Formik
+  validateOnMount
+  initialTouched={{ sheep: true }}
+  initialValues={{ sheep: 0 }}
+  onSubmit={() => {}}
+>
+  <Form>
+    <Slider name="sheep" label="Number of Sheep:" min={0} max={100} required />
+  </Form>
+</Formik>
+```
+
+### Disabled Slider
+
+Disabled form fields cannot be interacted with.
+
+```jsx live fullWidth
+<Formik initialValues={{ sheep: 25 }} onSubmit={() => {}}>
+  <Form>
+    <Slider name="sheep" label="Number of Sheep:" min={0} max={100} disabled />
+  </Form>
+</Formik>
+```

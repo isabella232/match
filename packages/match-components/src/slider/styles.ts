@@ -187,7 +187,7 @@ export const StyledMinMax = styled.div<{ disabled: boolean }>`
   display: flex;
   justify-content: space-between;
   color: ${themeGet("textColors.secondary")};
-  font-weight: ${themeGet("fontWeights.light")};
+  font-weight: ${themeGet("fontWeights.medium")};
   font-size: ${themeGet("fontSizes.scale60")};
 
   ${({ disabled }) =>

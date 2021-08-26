@@ -1,6 +1,6 @@
 .snippet {
   margin: 0;
-  margin-bottom: var(--space-scale180);
+  margin-bottom: var(--space-scale420);
   padding: var(--space-scale100) var(--space-scale180);
   overflow: auto;
   font-size: var(--font-size-scale80);
@@ -35,7 +35,6 @@
 }
 
 .liveSnippet {
-  margin-bottom: var(--space-scale420);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   & textarea,

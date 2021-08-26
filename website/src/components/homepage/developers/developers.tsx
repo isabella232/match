@@ -11,7 +11,7 @@ import {
   codeContainer,
   copy,
   swoop,
-  gatsbyImg,
+  snippet,
 } from "./developers.module.css";
 import swoopSvg from "./images/swoop.svg";
 
@@ -38,7 +38,7 @@ export const Developers: React.FC = () => (
     </div>
     <div className={codeContainer}>
       <img className={swoop} src={swoopSvg} alt="" />
-      <div className={gatsbyImg}>
+      <div className={snippet}>
         <Code lang="jsx" live={true}>
           {code}
         </Code>

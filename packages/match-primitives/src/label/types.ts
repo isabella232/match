@@ -1,4 +1,4 @@
-import { LabelSize } from "./constants";
+import { LabelSize, LabelAlignment } from "./constants";
 
 export type asTags = "label" | "legend";
 
@@ -7,9 +7,10 @@ export interface LabelProps
   children: React.ReactNode;
   disabled: boolean;
   required: boolean;
-  requiredStyleAtEnd?: boolean;
+  fieldValue?: string;
   size?: LabelSize;
   as?: asTags;
+  alignment?: `${LabelAlignment}`;
 }
 
 export interface StyledLabelProps extends LabelProps {

@@ -120,6 +120,7 @@ export const CheckboxGroup = React.forwardRef<
               validate,
               noValidate,
               isGrouped: true,
+              marginTop: "scale20",
             })
           )}
         </StyledCheckboxGroupInnerWrapper>

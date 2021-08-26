@@ -34,18 +34,19 @@ const Component = () => (
 
 ### Props
 
-| Prop        | Type                      | Default | Description                    |
-| ----------- | ------------------------- | ------- | ------------------------------ |
-| name        | string                    | null    |                                |
-| label       | string                    | null    |                                |
-| required?   | boolean                   | null    | Sets the input as required.    |
-| disabled?   | boolean                   | null    | Disables the input.            |
-| validate?   | (value: string) => string | null    | Overrides built in validation. |
-| noValidate? | boolean                   | null    | Disables built in validation.  |
-| min         | number                    | null    | Starting slider range.         |
-| max         | number                    | null    | Ending slider range.           |
-| step?       | number                    | 1       | Slider stepping interval.      |
-| alignment?  | LabelAlignment            | 'left'  | 'left', 'center'               |
+| Prop        | Type                      | Default | Description                           |
+| ----------- | ------------------------- | ------- | ------------------------------------- |
+| name        | string                    | null    |                                       |
+| label       | string                    | null    |                                       |
+| required?   | boolean                   | null    | Sets the input as required.           |
+| disabled?   | boolean                   | null    | Disables the input.                   |
+| validate?   | (value: string) => string | null    | Overrides built in validation.        |
+| noValidate? | boolean                   | null    | Disables built in validation.         |
+| min         | number                    | null    | Starting slider range.                |
+| max         | number                    | null    | Ending slider range.                  |
+| maxPlus?    | boolean                   | false   | Appends a plus sign to the max value. |
+| step?       | number                    | 1       | Slider stepping interval.             |
+| alignment?  | LabelAlignment            | 'left'  | 'left', 'center'                      |
 
 ---
 

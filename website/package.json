@@ -30,7 +30,7 @@
     "clsx": "1.1.1",
     "formik": "2.2.9",
     "fuse.js": "6.4.6",
-    "gatsby": "3.8.1",
+    "gatsby": "3.13.0",
     "gatsby-plugin-catch-links": "3.8.0",
     "gatsby-plugin-compile-es6-packages": "2.1.0",
     "gatsby-plugin-image": "1.8.0",

@@ -25,14 +25,13 @@ export const AccordionGroup: React.FC<AccordionGroupProps> = ({
   ...props
 }) => {
   const uid = useUID();
-  const isExpanded = expanded && expanded.length > 1;
   return (
     <li className={clsx(accordionGroup, className)} {...props}>
       <button
         onClick={() => handleClick && id && handleClick(id)}
         aria-controls={uid}
-        aria-expanded={isExpanded}
-        aria-disabled={!allowToggle && isExpanded}
+        aria-expanded={expanded}
+        aria-disabled={!allowToggle && expanded}
       >
         <h3>
           {icon && <img className={decorator} src={icon} alt="" />}

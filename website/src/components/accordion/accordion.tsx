@@ -2,7 +2,7 @@ import clsx from "clsx";
 import * as React from "react";
 
 import { accordion } from "./accordion.module.css";
-import { AccordionProps } from "./types";
+import { AccordionProps, AccordionGroupProps } from "./types";
 
 export const Accordion: React.FC<AccordionProps> = ({
   allowToggle,
@@ -37,16 +37,17 @@ export const Accordion: React.FC<AccordionProps> = ({
 
   return (
     <ul className={clsx(accordion, className)} {...props}>
-      {React.Children.map(children, (child, index) => {
-        if (React.isValidElement(child)) {
-          const key = `accordionGroup${index}`;
-          return React.cloneElement(child, {
-            allowToggle,
-            expanded: expanded.includes(key),
-            handleClick: handleItemClick,
-            id: key,
-          });
-        }
+      {React.Children.map<
+        React.ReactNode,
+        React.ReactElement<AccordionGroupProps>
+      >(children, (child, index) => {
+        const key = `accordionGroup${index}`;
+        return React.cloneElement(child, {
+          allowToggle,
+          expanded: expanded.includes(key),
+          handleClick: handleItemClick,
+          id: key,
+        });
       })}
     </ul>
   );

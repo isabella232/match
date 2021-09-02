@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/eslint-config-match",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "Apache-2.0",
   "main": ".eslintrc.json",
   "files": [
@@ -36,21 +36,21 @@
     "eslint-plugin-unicorn": "*"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "4.28.3",
-    "@typescript-eslint/parser": "4.28.3",
+    "@typescript-eslint/eslint-plugin": "4.30.0",
+    "@typescript-eslint/parser": "4.30.0",
     "babel-eslint": "10.1.0",
-    "eslint": "7.30.0",
+    "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-typescript": "2.4.0",
     "eslint-plugin-eslint-comments": "3.2.0",
-    "eslint-plugin-import": "2.23.4",
-    "eslint-plugin-jest": "24.3.6",
+    "eslint-plugin-import": "2.24.2",
+    "eslint-plugin-jest": "24.4.0",
     "eslint-plugin-jest-formatting": "3.0.0",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-promise": "5.1.0",
-    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react": "7.25.1",
     "eslint-plugin-react-hooks": "4.2.0",
-    "eslint-plugin-testing-library": "4.9.1",
-    "eslint-plugin-unicorn": "34.0.1"
+    "eslint-plugin-testing-library": "4.12.0",
+    "eslint-plugin-unicorn": "35.0.0"
   }
 }

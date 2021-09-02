@@ -3,6 +3,7 @@ export interface AccordionProps extends React.HTMLAttributes<HTMLUListElement> {
   allowToggle?: boolean;
   /* Allow for multiple accordion sections to be expanded at the same time. Assumes data-allow-toggle */
   allowMultiple?: boolean;
+  children: Array<React.ReactElement<AccordionGroupProps>>;
 }
 
 export interface AccordionGroupProps
@@ -10,7 +11,7 @@ export interface AccordionGroupProps
   /* Label for the group */
   heading: string;
   allowToggle?: boolean;
-  expanded?: Array<string>;
+  expanded?: boolean;
   handleClick?: (key: string) => void;
   icon?: string;
 }

@@ -19,7 +19,7 @@ import {
   StyledTab,
   StyledTabList,
 } from "./styles";
-import type { SnippetGroupProps } from "./types";
+import type { SnippetGroupProps, SnippetProps } from "./types";
 
 export const SnippetGroup: React.FC<SnippetGroupProps> = ({
   label,
@@ -70,7 +70,10 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
       <StyledSnippetHeader variant={variant}>
         {label && <StyledSnippetTitle>{label}</StyledSnippetTitle>}
         <StyledTabList {...tab} aria-label="Languages">
-          {React.Children.map(children, ({ props: { label, language } }) => (
+          {React.Children.map<
+            React.ReactNode,
+            React.ReactElement<SnippetProps>
+          >(children, ({ props: { label, language } }) => (
             <StyledTab {...tab} id={seed(language + label)}>
               {label ? label : getLanguageNiceName(language)}
             </StyledTab>
@@ -85,7 +88,10 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
             id={seed("language-select")}
             onChange={handleSelectChange}
           >
-            {React.Children.map(children, ({ props: { label, language } }) => (
+            {React.Children.map<
+              React.ReactNode,
+              React.ReactElement<SnippetProps>
+            >(children, ({ props: { label, language } }) => (
               <option value={seed(language + label)}>
                 {label ? label : getLanguageNiceName(language)}
               </option>
@@ -95,11 +101,17 @@ export const SnippetGroup: React.FC<SnippetGroupProps> = ({
         </StyledSnippetSelect>
         <SnippetActions variant={variant} code={code} githubLink={githubLink} />
       </StyledSnippetHeader>
-      {React.Children.map(children, (child) => (
-        <TabPanel {...tab} tabIndex={undefined}>
-          {React.cloneElement(child, { isGrouped: true, variant })}
-        </TabPanel>
-      ))}
+      {React.Children.map<React.ReactNode, React.ReactElement<SnippetProps>>(
+        children,
+        (child) => (
+          <TabPanel {...tab} tabIndex={undefined}>
+            {React.cloneElement(child, {
+              isGrouped: true,
+              variant,
+            })}
+          </TabPanel>
+        )
+      )}
     </StyledSnippetGroup>
   );
 };

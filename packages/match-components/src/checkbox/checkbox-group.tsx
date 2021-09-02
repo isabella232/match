@@ -17,7 +17,7 @@ import {
   StyledCheckboxGroup,
   StyledCheckboxGroupInnerWrapper,
 } from "./styles";
-import type { CheckboxGroupProps } from "./types";
+import type { CheckboxGroupProps, CheckboxProps } from "./types";
 
 export const CheckboxGroup = React.forwardRef<
   HTMLFieldSetElement,
@@ -111,7 +111,10 @@ export const CheckboxGroup = React.forwardRef<
           </StyledHelpText>
         )}
         <StyledCheckboxGroupInnerWrapper horizontal={horizontal}>
-          {React.Children.map(children, (child) =>
+          {React.Children.map<
+            React.ReactNode,
+            React.ReactElement<CheckboxProps>
+          >(children, (child) =>
             React.cloneElement(child, {
               size,
               disabled,

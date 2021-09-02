@@ -1,6 +1,6 @@
 {
   "name": "@twilio-labs/stylelint-config-match",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "Apache-2.0",
   "main": ".stylelintrc.json",
   "files": [
@@ -33,7 +33,7 @@
     "stylelint-config-prettier": "8.0.2",
     "stylelint-config-rational-order": "0.1.2",
     "stylelint-config-recommended": "5.0.0",
-    "stylelint-declaration-block-no-ignored-properties": "2.3.0",
+    "stylelint-declaration-block-no-ignored-properties": "2.4.0",
     "stylelint-no-unsupported-browser-features": "5.0.1",
     "stylelint-order": "4.1.0"
   }

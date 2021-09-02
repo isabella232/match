@@ -13,7 +13,7 @@ import { marginPropTypes } from "@twilio-labs/match-props";
 
 import { RadioSize } from "./constants";
 import { StyledRadioGroupWrapper, StyledRadioGroup } from "./styles";
-import type { RadioGroupProps } from "./types";
+import type { RadioGroupProps, RadioProps } from "./types";
 
 export const RadioGroup = React.forwardRef<
   HTMLFieldSetElement,
@@ -99,16 +99,18 @@ export const RadioGroup = React.forwardRef<
           <HelpText id={seed(`${name}_additional`)}>{additional}</HelpText>
         )}
         <StyledRadioGroup horizontal={horizontal} hasError={hasError}>
-          {React.Children.map(children, (child) =>
-            React.cloneElement(child, {
-              disabled: disabled,
-              size: size,
-              readOnly: readOnly,
-              required: required,
-              name: name,
-              validate: validate,
-              noValidate: noValidate,
-            })
+          {React.Children.map<React.ReactNode, React.ReactElement<RadioProps>>(
+            children,
+            (child) =>
+              React.cloneElement(child, {
+                disabled: disabled,
+                size: size,
+                readOnly: readOnly,
+                required: required,
+                name: name,
+                validate: validate,
+                noValidate: noValidate,
+              })
           )}
         </StyledRadioGroup>
         {hasError && (
